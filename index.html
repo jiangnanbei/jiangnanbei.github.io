@@ -156,6 +156,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-找最小值和下标20170330" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/30/找最小值和下标20170330/">找最小值和下标20170330</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/30/找最小值和下标20170330/" class="archive-article-date">
+  	<time datetime="2017-03-30T06:22:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>我们要找的是在一个数组中最小的一个值和它的位置,如果你上来直接排序的话,这个时候最小值的位置就改变了,所以我们不能采取先排序再找位置的策略.</p>
+<pre><code>var arr = [34,71,8,934,10];
+var value = 999;
+var index = -1;
+
+for(var i = 0; i &lt; arr.length; i++){
+    if( arr[i] &lt; value){
+        value = arr[i];
+        index = i;
+    }
+}
+
+alert(&apos;min:&apos;+value + &apos; index:&apos; +index);
+
+输出结果为:min:8 index:2
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/30/找最小值和下标20170330/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-《一流人才思考习惯》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -419,72 +496,6 @@
 
 
   
-    <article id="post-学习编程的秘诀" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/29/学习编程的秘诀/">学习编程的秘诀!</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/29/学习编程的秘诀/" class="archive-article-date">
-  	<time datetime="2017-03-29T13:38:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>学习编程的秘诀自然是学习解决问题的秘诀,那就拿编程中比较让人蛋疼的数据结构开始吧.</p>
-<p>1.判断一个数字是否为素数?<br>2.判断一个数字是否是回文数?<br>3.编程实现求一个十进制数字的二进制形式….<br>4…….</p>
-<p>买到任何一本与数据结构有关的书籍,你总会看到无数的这种题,然后你就想啊想啊,想啊想啊,到最后你就是想不出来,然后你就痛苦,然后看下一道题你还是搞不定…到最后你竟然发现没有一道题你可以搞定的,然后你就开始怀疑你的智商,最后你就开始怀疑自己适不适合搞计算机,最终你竟然愚蠢的相信了自己不适合搞计算机…%&gt;_&lt;%<br>
-        
-          <a class="article-more-a" href="/2017/03/29/学习编程的秘诀/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-貌似有知识 -编程随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/29/学习编程的秘诀/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -599,11 +610,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-貌似有知识</a>
+                <a href="javascript:void(0)" class="js-tag color4">-算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-貌似有知识 -编程随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-貌似有知识</a>
               </li>
             
             <div class="clearfix"></div>
