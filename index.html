@@ -156,26 +156,97 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-123" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-string与string-h和cstring的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/14/123/">123</a>
+      <a class="article-title" href="/2017/04/14/string与string-h和cstring的区别/">string与string.h和cstring的区别</a>
     </h1>
   
 
         
-        <a href="/2017/04/14/123/" class="archive-article-date">
-  	<time datetime="2017-04-14T04:54:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-14</time>
+        <a href="/2017/04/14/string与string-h和cstring的区别/" class="archive-article-date">
+  	<time datetime="2017-04-14T14:47:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p><code>&lt;string.h&gt;</code>是C版本的头文件，包含比如<code>strcpy</code>、<code>strcat</code>之类的字符串处理函数。</p>
+<p><code>&lt;cstring&gt;</code>在<code>C++</code>标准化(1998年)过程中，为了兼容以前，标准化组织将所有这些文件都进行了新的定义，加入到了标准库中，加入后的文件名就新增了一个”c”前缀并且去掉了.h的后缀名，所以<code>string.h</code>头文件成了<code>cstring</code>头文件。但是其实现却是相同的或是兼容以前的，这就是<code>&lt;cstring&gt;</code>的来源，不要觉得又多了一个东西。</p>
+<p><code>&lt;string&gt;</code>是C++标准定义的头文件，它定义了一个<code>string</code>的字符串类，里面包含了<code>string</code>类的各种操作，如<code>s.size()</code>, <code>s.erase()</code>, <code>s.insert()</code>等。但<code>&lt;string&gt;</code>又包含了老的C版本的字符串操作如<code>strcpy</code>、<code>strcat</code>等，这就相当于，在<code>&lt;string&gt;</code>的文件中除了定义自己的<code>string</code>类之外，还加了一个<code>#include&lt;string.h&gt;</code>一句包含了C版本的字符串操作。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/14/string与string-h和cstring的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-什么是营销" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/14/什么是营销/">什么是营销?</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/14/什么是营销/" class="archive-article-date">
+  	<time datetime="2017-04-14T14:35:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>何谓营销?营销是作为思维的存在，而非具体学科.你所学所知的“市场营销”，其实是“企业营销”，冰山一角而已。</p>
+<p>那么什么是营销？</p>
+<p><strong>营销就是A为B创造对方想要的价值，建立与维持关系，以获得回报的思维过程.</strong></p>
+<p><strong>思维过程表达式：STP+4P+CRM</strong></p>
+<p>A与B的等量代换能生一切法，真实不虚.<br>
+        
+          <a class="article-more-a" href="/2017/04/14/什么是营销/#more">more >></a>
         
       
 
@@ -184,11 +255,87 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">营销</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/14/123/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/04/14/什么是营销/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-影响软件性能的因素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/14/影响软件性能的因素/">影响软件性能的因素</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/14/影响软件性能的因素/" class="archive-article-date">
+  	<time datetime="2017-04-14T13:02:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>软件性能是软件的一种非功能特性，它关注的不是软件是否能够完成特定的功能，而是在完成该功能时展示出来的及时性。由于感受软件性能的主体是人，不同的人对于同样的软件能有不同的主观感受，而且不同的人对于软件性能关心的视角也不同。</p>
+<p>目前，大部分系统都是为多用户、跨地域、多部门机构提供服务的，目前一般中小企业的员工人数也有几十号人，实际并发数量比较小，在软件性能方面影响不大，但是对于中大型企业、大型国企或跨国跨区域的集团企业，公司的员工有几千人，甚至几万人，而且一般一套系统都要运行很多年，这样存量数据也非常惊人，对于软件系统的性能表现影响巨大。<br>
+        
+          <a class="article-more-a" href="/2017/04/14/影响软件性能的因素/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">软件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/14/影响软件性能的因素/">展开全文 >></a>
         </p>
       
 
@@ -340,137 +487,6 @@ var a2 = new Array;
 
 
   
-    <article id="post-《穷查理宝典》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/10/《穷查理宝典》/">《穷查理宝典》</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/10/《穷查理宝典》/" class="archive-article-date">
-  	<time datetime="2017-04-10T06:42:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>《穷查理宝典》收录了查理过去20年来主要的公开演讲。除简单而权威的查理传略外，其后的《芒格的生活、学习和决策方法》以及《芒格主义：查理的即席谈话》整理了芒格最精华的思维与决策方式和以往在伯克希尔·哈撒韦公司和西科金融公司年会上犀利——和幽默——的评论。</p>
-<p>而最后最珍贵的十一篇讲稿则全面展现了这个传奇人物的聪明才智。贯穿全书的是芒格展示出来的聪慧、机智，其令人敬服的价值观和深不可测的修辞天赋。他拥有百科全书式的知识，所以从古代的雄辩家，到18、19世纪的欧洲文豪，再到当代的流行文化偶像，这些人的名言他都能信手拈来，并用这些来强调终身学习和保持求知欲望的好处。<br>
-        
-          <a class="article-more-a" href="/2017/04/10/《穷查理宝典》/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/10/《穷查理宝典》/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-《牛奶可乐经济学》" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/10/《牛奶可乐经济学》/">《牛奶可乐经济学》</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/10/《牛奶可乐经济学》/" class="archive-article-date">
-  	<time datetime="2017-04-10T06:35:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>《牛奶可乐经济学》原名叫做《经济博物学家：破解日常生活的密码》。作者罗伯特•弗兰克教授著有最畅销的中级经济学教材《微观经济学和行为》，他教的微观经济学入门课程每年都会吸引6000多名学生，他布置过这样的书面作业：“利用经济学原理，探讨你亲身观察到的事件或行为模式中的有趣题。”而且不要长篇大论，字数限制在500字以内。“文章里面不要掺杂复杂的技术，要假设你是在给一个从没上过经济学课的亲戚讲故事。”</p>
-<p>《牛奶可乐经济学》就是一本这样的故事合集。问题千奇百怪，分析工具却相当简单——成本效益原则。<strong>当一个行动带来的收益大于成本时，人们就会采取行动。这是绝大多数举动的根源。</strong></p>
-<p><strong>比如，为什么最畅销的书常常打折销售，而最热门的电影却不打折？</strong>因为对电影院来说，最稀缺的资源不是电影本身，而是座位。大受欢迎的电影即使不打折也会满座，出于收益最大化的考虑，电影院有理由不给票价打折。但是书不一样，如果预见到哪些产品更热门，卖家往往可以提前准备好充足的库存。卖家给书打折以促进销量，是更有利的做法。<br>
-        
-          <a class="article-more-a" href="/2017/04/10/《牛奶可乐经济学》/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/10/《牛奶可乐经济学》/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -581,11 +597,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">C语言</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,15 +605,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">营销</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color1">时间的朋友</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">时间的朋友</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,15 +633,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">人生</a>
+                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,6 +646,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">商业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">人生</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">软件</a>
               </li>
             
             <div class="clearfix"></div>
