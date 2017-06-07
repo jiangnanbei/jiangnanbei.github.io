@@ -1,0 +1,772 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="性能优化," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="什么是 DOM？ DOM 就是用于操作 xml 和 html 文档的应用程序，浏览器会把 DOM 和 JS 独立实现。
+JS 操作 DOM 就像是从一个岛到了另一个岛，岛与岛之间的桥，每次通过都是要收取过桥费的,所以我们要尽量减少过桥的次数，意思就是说能在独立的岛上去完成的，就在独立的岛上去做，避免跨“岛”操作。减少 DOM 与 JS 的交互，可以大大提高浏览器的性能。
+1.使用缓存1234567">
+<meta property="og:type" content="article">
+<meta property="og:title" content="性能优化之DOM与JS">
+<meta property="og:url" content="http://ijiangnanbei.com/2016/11/20/性能优化之DOM与JS/index.html">
+<meta property="og:site_name" content="江南北的个人站">
+<meta property="og:description" content="什么是 DOM？ DOM 就是用于操作 xml 和 html 文档的应用程序，浏览器会把 DOM 和 JS 独立实现。
+JS 操作 DOM 就像是从一个岛到了另一个岛，岛与岛之间的桥，每次通过都是要收取过桥费的,所以我们要尽量减少过桥的次数，意思就是说能在独立的岛上去完成的，就在独立的岛上去做，避免跨“岛”操作。减少 DOM 与 JS 的交互，可以大大提高浏览器的性能。
+1.使用缓存1234567">
+<meta property="og:updated_time" content="2017-06-07T08:37:41.449Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="性能优化之DOM与JS">
+<meta name="twitter:description" content="什么是 DOM？ DOM 就是用于操作 xml 和 html 文档的应用程序，浏览器会把 DOM 和 JS 独立实现。
+JS 操作 DOM 就像是从一个岛到了另一个岛，岛与岛之间的桥，每次通过都是要收取过桥费的,所以我们要尽量减少过桥的次数，意思就是说能在独立的岛上去完成的，就在独立的岛上去做，避免跨“岛”操作。减少 DOM 与 JS 的交互，可以大大提高浏览器的性能。
+1.使用缓存1234567">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ijiangnanbei.com/2016/11/20/性能优化之DOM与JS/"/>
+
+
+
+
+
+  <title>性能优化之DOM与JS | 江南北的个人站</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9f1e93c72ab49f0eac76c314748416d3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">江南北的个人站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/20/性能优化之DOM与JS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">性能优化之DOM与JS</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-20T16:36:13+08:00">
+                2016-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>什么是 DOM？ DOM 就是用于操作 xml 和 html 文档的应用程序，浏览器会把 DOM 和 JS 独立实现。</p>
+<p>JS 操作 DOM 就像是从一个岛到了另一个岛，岛与岛之间的桥，每次通过都是要收取过桥费的,所以我们要尽量减少过桥的次数，意思就是说能在独立的岛上去完成的，就在独立的岛上去做，避免跨“岛”操作。<strong>减少 DOM 与 JS 的交互，可以大大提高浏览器的性能。</strong></p>
+<h3 id="1-使用缓存"><a href="#1-使用缓存" class="headerlink" title="1.使用缓存"></a>1.使用缓存</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>);</div><div class="line">		<span class="keyword">var</span> str = <span class="string">''</span>;</div><div class="line">		<span class="comment">//未使用缓存</span></div><div class="line">		<span class="built_in">console</span>.time(<span class="string">'hello'</span>); </div><div class="line"></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">5000</span>; i++)&#123;</div><div class="line">			oDiv.innerHTML  += <span class="string">'A'</span>;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="built_in">console</span>.timeEnd(<span class="string">'hello'</span>);</div><div class="line">		</div><div class="line">		<span class="comment">//使用缓存</span></div><div class="line">		<span class="built_in">console</span>.time(<span class="string">'hello'</span>); </div><div class="line">		</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">5000</span>; i++)&#123;</div><div class="line">			str += <span class="string">'A'</span>;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		oDiv.innerHTML = str;</div><div class="line">		</div><div class="line">		<span class="built_in">console</span>.timeEnd(<span class="string">'hello'</span>);	 </div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p>通过测试可以发现：使用缓存可以大大提高浏览器的性能。<br><a id="more"></a></p>
+<h3 id="2-innerHTML-和-DOM-方法对比"><a href="#2-innerHTML-和-DOM-方法对比" class="headerlink" title="2.innerHTML 和 DOM 方法对比"></a>2.innerHTML 和 DOM 方法对比</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;ul id="ul1"&gt;&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	window.onload = function()&#123;</div><div class="line">		var oDiv = document.getElementById('ul1');</div><div class="line">		var str = '';</div><div class="line">		</div><div class="line">		//DOM 方法</div><div class="line">		console.time('hello');</div><div class="line"></div><div class="line">		for(var i=0; i&lt;5000; i++)&#123;</div><div class="line">			var oLi = document.createElement('li');</div><div class="line">			oDiv.appendChild(oLi);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		console.timeEnd('hello');</div><div class="line">		</div><div class="line">		//innerHTML 方法</div><div class="line">		console.time('hello');</div><div class="line"></div><div class="line">		for(var i=0; i&lt;5000; i++)&#123;</div><div class="line">			str += '&lt;li&gt;&lt;/li&gt;';</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		oDiv.innerHTML = str;</div><div class="line">		console.timeEnd('hello');</div><div class="line">		/**</div><div class="line">		 * chrome : (</div><div class="line">		 */</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>通过测试可以发现：webkit 内核的浏览器 DOM 方法要比 innerHTML 方法的性能要好，其他的浏览器则相反，所以这个时候你就要根据你的用户量有针对性的去做选择。</p>
+<h3 id="3-节点克隆"><a href="#3-节点克隆" class="headerlink" title="3.节点克隆"></a>3.节点克隆</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;ul id="ul1"&gt;&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	</div><div class="line">	window.onload = function()&#123;</div><div class="line">		var oDiv = document.getElementById('ul1');</div><div class="line">		var str = '';</div><div class="line">		</div><div class="line">		//未使用节点克隆</div><div class="line">		console.time('hello');</div><div class="line"></div><div class="line">		for(var i=0; i&lt;5000; i++)&#123;</div><div class="line">			var oLi = document.createElement('li');</div><div class="line">			oLi.innerHTML = 'li';</div><div class="line">			oDiv.appendChild(oLi);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		console.timeEnd('hello');</div><div class="line"></div><div class="line">		//使用节点克隆</div><div class="line">		console.time('hello');</div><div class="line">		</div><div class="line">		var oLi = document.createElement('li');</div><div class="line">		oLi.innerHTML = 'li';</div><div class="line">		</div><div class="line">		for(var i=0; i&lt;5000; i++)&#123;</div><div class="line">			var newLi = oLi.cloneNode(true);</div><div class="line">			oDiv.appendChild(newLi);</div><div class="line">		&#125;</div><div class="line">		console.timeEnd('hello');</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>通过测试可以发先：使用节点克隆可以大大提高浏览器的性能</p>
+<h3 id="4-访问元素集合尽量用局部变量"><a href="#4-访问元素集合尽量用局部变量" class="headerlink" title="4.访问元素集合尽量用局部变量"></a>4.访问元素集合尽量用局部变量</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;ul id="ul1"&gt;	&lt;/ul&gt;</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	window.onload = function()&#123;</div><div class="line"></div><div class="line">		var oUl = document.getElementById('ul1');</div><div class="line">		var aLi = oUl.getElementsByTagName('li');</div><div class="line"></div><div class="line">		for(var i=0; i&lt;5000; i++)&#123;</div><div class="line">			var oLi = document.createElement('li');</div><div class="line">			oUl.appendChild(oLi);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		//未使用局部变量</div><div class="line">		console.time('hello');</div><div class="line">		</div><div class="line">		//这个操作里面比较影响性能的就是 aLi.length 原因就</div><div class="line">		//是 for 循环的时候你每次都要重新获取其长度，这就是</div><div class="line">		//频繁的 DOM 操作,所以说我们要把它变成一个局部变量。</div><div class="line">		//对一个变量进行循环,不会涉及到多次的 DOM 操作,性能</div><div class="line">		//就会好一些</div><div class="line">		</div><div class="line">		for(var i=0; i&lt;aLi.length; i++)&#123;</div><div class="line">			aLi[i].innerHTML = i;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		console.timeEnd('hello');</div><div class="line"></div><div class="line">		//使用局部变量</div><div class="line">		console.time('hello');</div><div class="line">		</div><div class="line">		var len = aLi.length;</div><div class="line">		</div><div class="line">		for(var i=0; i&lt;len; i++)&#123;</div><div class="line">			aLi[i].innerHTML = i;</div><div class="line">		&#125;</div><div class="line">		console.timeEnd('hello');</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//未使用局部变量</span></div><div class="line"><span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">''</span>);</div><div class="line"><span class="keyword">var</span> oInput = <span class="built_in">document</span>.getElementById(<span class="string">''</span>);</div><div class="line"><span class="keyword">var</span> oUl = <span class="built_in">document</span>.getElementById(<span class="string">''</span>);</div><div class="line"></div><div class="line"><span class="comment">//使用局部变量</span></div><div class="line"><span class="keyword">var</span> doc = <span class="built_in">document</span>;</div><div class="line"><span class="keyword">var</span> oDiv = doc.getElementById(<span class="string">''</span>);</div><div class="line"><span class="keyword">var</span> oInput = doc.getElementById(<span class="string">''</span>);</div><div class="line"><span class="keyword">var</span> oUl = doc.getElementById(<span class="string">''</span>);</div></pre></td></tr></table></figure>
+<p>通过测试可以发现：使用局部变量比未使用局部变量性能要高很多。</p>
+<h3 id="5-尽量用只获取元素的节点方法"><a href="#5-尽量用只获取元素的节点方法" class="headerlink" title="5.尽量用只获取元素的节点方法"></a>5.尽量用只获取元素的节点方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">childNodes;<span class="comment">//不仅获取元素节点同时获取文本节点</span></div><div class="line"></div><div class="line">children;<span class="comment">//只会获取到元素节点</span></div><div class="line">firstChild;<span class="comment">//只会获取到元素节点</span></div><div class="line">firstElementChild;<span class="comment">//只会获取到元素节点</span></div></pre></td></tr></table></figure>
+<p>尽量用只获元素节点的方法可以提高浏览器的性能</p>
+<h3 id="6-使用新选择器"><a href="#6-使用新选择器" class="headerlink" title="6.使用新选择器"></a>6.使用新选择器</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">	&lt;ul id="ul1"&gt;</div><div class="line">		&lt;li&gt;1111&lt;/li&gt;</div><div class="line">		&lt;li&gt;1111&lt;/li&gt;</div><div class="line">		&lt;li&gt;1111&lt;/li&gt;</div><div class="line">		&lt;li&gt;1111&lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">	</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	var oUl = document.getElementById('ul1');</div><div class="line">	var aLi = document.getElementsByTagName('li');</div><div class="line"></div><div class="line">	//上面的两句话可以用下面的一句话代替</div><div class="line">	var aLi = document.querySelectorAll('#ul1 li');</div><div class="line">	// ie 8 以下的浏览器不支持该属性</div><div class="line">	                                               </div><div class="line"></div><div class="line">	for(var i=0; i&lt;aLi.length; i++)&#123;</div><div class="line">		aLi[i].style.color = 'red';</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>利用 <code>querySelector</code> ,<code>querySelectorAll</code> 这些新的选择器对性能的提升是很大的。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/性能优化/" rel="tag"># 性能优化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/20/性能优化之DOM与浏览器/" rel="next" title="性能优化之DOM与浏览器">
+                <i class="fa fa-chevron-left"></i> 性能优化之DOM与浏览器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/21/跨浏览器的事件处理程序/" rel="prev" title="跨浏览器的事件处理程序">
+                跨浏览器的事件处理程序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="江南北" />
+          <p class="site-author-name" itemprop="name">江南北</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用缓存"><span class="nav-number">1.</span> <span class="nav-text">1.使用缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-innerHTML-和-DOM-方法对比"><span class="nav-number">2.</span> <span class="nav-text">2.innerHTML 和 DOM 方法对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-节点克隆"><span class="nav-number">3.</span> <span class="nav-text">3.节点克隆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-访问元素集合尽量用局部变量"><span class="nav-number">4.</span> <span class="nav-text">4.访问元素集合尽量用局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-尽量用只获取元素的节点方法"><span class="nav-number">5.</span> <span class="nav-text">5.尽量用只获取元素的节点方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-使用新选择器"><span class="nav-number">6.</span> <span class="nav-text">6.使用新选择器</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">江南北</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
