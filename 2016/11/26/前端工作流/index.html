@@ -1,0 +1,792 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="随着 web 应用越来越复杂，项目的结构和代码量也变的愈加庞大，前端人员越来越需要在工程化的层面提高开发效率，前端开发是一个飞速发展的领域，市面上现在有各种各样的工具来辅助我们开发，比如说我们在开发过程中就可能会用到下面这些工具：
+1.包管理器 npm我们在开发项目的过程中，会引入各种各样的依赖，比如说：
+
+JS 框架：react 
+CSS 框架：Semantic-UI,Bootstrap
+如果你">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端工作流">
+<meta property="og:url" content="http://ijiangnanbei.com/2016/11/26/前端工作流/index.html">
+<meta property="og:site_name" content="江南北的个人站">
+<meta property="og:description" content="随着 web 应用越来越复杂，项目的结构和代码量也变的愈加庞大，前端人员越来越需要在工程化的层面提高开发效率，前端开发是一个飞速发展的领域，市面上现在有各种各样的工具来辅助我们开发，比如说我们在开发过程中就可能会用到下面这些工具：
+1.包管理器 npm我们在开发项目的过程中，会引入各种各样的依赖，比如说：
+
+JS 框架：react 
+CSS 框架：Semantic-UI,Bootstrap
+如果你">
+<meta property="og:updated_time" content="2017-06-07T09:07:01.681Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端工作流">
+<meta name="twitter:description" content="随着 web 应用越来越复杂，项目的结构和代码量也变的愈加庞大，前端人员越来越需要在工程化的层面提高开发效率，前端开发是一个飞速发展的领域，市面上现在有各种各样的工具来辅助我们开发，比如说我们在开发过程中就可能会用到下面这些工具：
+1.包管理器 npm我们在开发项目的过程中，会引入各种各样的依赖，比如说：
+
+JS 框架：react 
+CSS 框架：Semantic-UI,Bootstrap
+如果你">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ijiangnanbei.com/2016/11/26/前端工作流/"/>
+
+
+
+
+
+  <title>前端工作流 | 江南北的个人站</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9f1e93c72ab49f0eac76c314748416d3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">江南北的个人站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/26/前端工作流/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">前端工作流</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-26T16:44:46+08:00">
+                2016-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>随着 web 应用越来越复杂，项目的结构和代码量也变的愈加庞大，前端人员越来越需要在工程化的层面提高开发效率，前端开发是一个飞速发展的领域，市面上现在有各种各样的工具来辅助我们开发，比如说我们在开发过程中就可能会用到下面这些工具：</p>
+<h3 id="1-包管理器-npm"><a href="#1-包管理器-npm" class="headerlink" title="1.包管理器 npm"></a>1.包管理器 npm</h3><p>我们在开发项目的过程中，会引入各种各样的依赖，比如说：</p>
+<ul>
+<li>JS 框架：react </li>
+<li>CSS 框架：Semantic-UI,Bootstrap</li>
+<li>如果你的代码风格偏向函数式编程，你可能会用到 Lodash 或者 underscore </li>
+<li>如果你的项目涉及到数据交互，你还需要 Axios 来帮你发起ajax 或者 http 请求</li>
+</ul>
+<p>如果这些依赖在开发的过程中一个一个的去网站下载一定会很麻烦，所以我们需要一个工具来帮助我们安装这些依赖，这个工具就是包管理器。</p>
+<p>管理器在帮助我们安装项目依赖的时候，也会帮助我们安装包的依赖，比如说包管理器在安装 Semantic-UI 的时候，发现 Semantic-UI 使用到了 jQuery，那么包管理器就会帮助我们安装 jQuery 。我们会使用到的包管理器是 npm。</p>
+<p>npm不仅可以帮助我们安装包，也能够帮助我们更新、卸载和分析包。<br><a id="more"></a></p>
+<h3 id="2-任务流工具Grunt-和-Gulp"><a href="#2-任务流工具Grunt-和-Gulp" class="headerlink" title="2.任务流工具Grunt 和 Gulp"></a>2.任务流工具Grunt 和 Gulp</h3><p>但是仅有包管理器还是不够的，比如你在项目开展的过程中要进行代码检查，编译SCSS文件，合并Sprite图片，压缩合并代码，这些一个一个的动作我们叫做任务，这些任务是一个接着一个执行的，我们把它叫做任务流，帮我们做任务流的工具，我们叫做任务流工具。</p>
+<p>Grunt 和 Gulp就是任务流工具，但是任务流工具没办法帮助我们支撑模块化开发，随着 commonJS 和 ES6 的出现，模块化开发在前端有了越来越多的实践。</p>
+<h3 id="3-模块打包器-webpack"><a href="#3-模块打包器-webpack" class="headerlink" title="3.模块打包器 webpack"></a>3.模块打包器 webpack</h3><p>但是在目前浏览器环境代码滑块化还是无法使用，所以如果有一个工具能够让我们在开发的时候使用标准的模块化语法，而上线的时候有帮助我们对代码进行编译转换合并成单个文件让浏览器来运行，这个工具我们把它叫做模块打包器。</p>
+<p>事实上 webpack 不仅仅帮助我们打包文件，他还会做一些任务流工具做的工作，比如说编译文件，代码检查。</p>
+<h3 id="4-生产依赖和开发依赖"><a href="#4-生产依赖和开发依赖" class="headerlink" title="4.生产依赖和开发依赖"></a>4.生产依赖和开发依赖</h3><h4 id="生产依赖"><a href="#生产依赖" class="headerlink" title="生产依赖"></a>生产依赖</h4><ul>
+<li>JS 框架：react </li>
+<li>CSS 框架：Semantic-UI,Bootstrap</li>
+<li>如果你的代码风格偏向函数式编程，你可能会用到 Lodash 或者 underscore </li>
+<li>如果你的项目涉及到数据交互，你还需要 Axios 来帮你发起ajax 或者 http 请求</li>
+</ul>
+<h4 id="开发依赖"><a href="#开发依赖" class="headerlink" title="开发依赖"></a>开发依赖</h4><ul>
+<li>模块打包器 webpack</li>
+<li>任务流工具 gulp</li>
+</ul>
+<h4 id="如何区分开发依赖和生产依赖？"><a href="#如何区分开发依赖和生产依赖？" class="headerlink" title="如何区分开发依赖和生产依赖？"></a>如何区分开发依赖和生产依赖？</h4><p>当你的项目放到浏览器端去运行的时候你还需要它吗？如果需要那它就是生产依赖，反之则是开发依赖。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端开发/" rel="tag"># 前端开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/25/前端面试指南HTML5篇/" rel="next" title="前端面试指南HTML5篇">
+                <i class="fa fa-chevron-left"></i> 前端面试指南HTML5篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/26/如何阻止浏览器的默认行为？/" rel="prev" title="如何阻止浏览器的默认行为？">
+                如何阻止浏览器的默认行为？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="江南北" />
+          <p class="site-author-name" itemprop="name">江南北</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">99</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-包管理器-npm"><span class="nav-number">1.</span> <span class="nav-text">1.包管理器 npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-任务流工具Grunt-和-Gulp"><span class="nav-number">2.</span> <span class="nav-text">2.任务流工具Grunt 和 Gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-模块打包器-webpack"><span class="nav-number">3.</span> <span class="nav-text">3.模块打包器 webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-生产依赖和开发依赖"><span class="nav-number">4.</span> <span class="nav-text">4.生产依赖和开发依赖</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生产依赖"><span class="nav-number">4.1.</span> <span class="nav-text">生产依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开发依赖"><span class="nav-number">4.2.</span> <span class="nav-text">开发依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何区分开发依赖和生产依赖？"><span class="nav-number">4.3.</span> <span class="nav-text">如何区分开发依赖和生产依赖？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">江南北</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
