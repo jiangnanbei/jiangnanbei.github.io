@@ -1,0 +1,802 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jQuery," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="1.选择元素1.原生选择符 1.标签选择符 $(&amp;#39;p&amp;#39;)
+2.ID 选择符 $(&amp;#39;#some-id&amp;#39;)
+3.类选择符 $(&amp;#39;.some-class&amp;#39;)
+4.否定式伪类选择符 $(&amp;#39;#some-id li:not(.some-class)&amp;#39;)
+5.属性选择符$(&amp;#39;img[alt]&amp;#39;),属性选择符使用一种从正则表达式借鉴来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery入门">
+<meta property="og:url" content="http://ijiangnanbei.com/2016/12/01/jQuery入门/index.html">
+<meta property="og:site_name" content="江南北的个人站">
+<meta property="og:description" content="1.选择元素1.原生选择符 1.标签选择符 $(&amp;#39;p&amp;#39;)
+2.ID 选择符 $(&amp;#39;#some-id&amp;#39;)
+3.类选择符 $(&amp;#39;.some-class&amp;#39;)
+4.否定式伪类选择符 $(&amp;#39;#some-id li:not(.some-class)&amp;#39;)
+5.属性选择符$(&amp;#39;img[alt]&amp;#39;),属性选择符使用一种从正则表达式借鉴来">
+<meta property="og:updated_time" content="2017-06-09T09:38:56.854Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery入门">
+<meta name="twitter:description" content="1.选择元素1.原生选择符 1.标签选择符 $(&amp;#39;p&amp;#39;)
+2.ID 选择符 $(&amp;#39;#some-id&amp;#39;)
+3.类选择符 $(&amp;#39;.some-class&amp;#39;)
+4.否定式伪类选择符 $(&amp;#39;#some-id li:not(.some-class)&amp;#39;)
+5.属性选择符$(&amp;#39;img[alt]&amp;#39;),属性选择符使用一种从正则表达式借鉴来">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ijiangnanbei.com/2016/12/01/jQuery入门/"/>
+
+
+
+
+
+  <title>jQuery入门 | 江南北的个人站</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9f1e93c72ab49f0eac76c314748416d3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">江南北的个人站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/01/jQuery入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">jQuery入门</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-01T17:35:31+08:00">
+                2016-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-选择元素"><a href="#1-选择元素" class="headerlink" title="1.选择元素"></a>1.选择元素</h2><h3 id="1-原生选择符"><a href="#1-原生选择符" class="headerlink" title="1.原生选择符"></a>1.原生选择符</h3><p> 1.标签选择符 <code>$(&#39;p&#39;)</code></p>
+<p>2.<code>ID</code> 选择符 <code>$(&#39;#some-id&#39;)</code></p>
+<p>3.类选择符 <code>$(&#39;.some-class&#39;)</code></p>
+<p>4.否定式伪类选择符 <code>$(&#39;#some-id li:not(.some-class)&#39;)</code></p>
+<p>5.属性选择符<code>$(&#39;img[alt]&#39;)</code>,属性选择符使用一种从正则表达式借鉴来的通配符语法，以 <code>^</code> 表示值在字符串的开始位置，以 <code>$</code> 表示值在字符串的结尾，用 <code>*</code> 号表示要匹配的值可以出现在字符串的任意位置，用叹号 <code>!</code> 表示对值取反。</p>
+<p><code>eg：$(&#39;a[href^=&quot;mailto:&quot;]&#39;)</code>选中所有电子邮件的链接。<code>$(&#39;a[href$=&quot;.pdf&quot;]&#39;)</code>选中所有pdf文件的链接。</p>
+<p>属性选择符也可以组合使用，例如，可以为 <code>href</code>属性以 <code>http</code> 开头且任意位置包含 <code>henry</code> 的所有链接 <code>$(&#39;a[href^=&quot;http&quot;][href*=&quot;henry&quot;]&#39;)</code><br><a id="more"></a></p>
+<h3 id="2-自定义选择符"><a href="#2-自定义选择符" class="headerlink" title="2.自定义选择符"></a>2.自定义选择符</h3><p><code>jquery</code> 中的多数自定义选择符都可以让我们从已经找到的元素中选出一个或多个元素。自定义选择符通常跟在一个 <code>css</code> 选择符的后面，<strong>基于已经选择的元素集的位置来查找元素</strong>。自定义选择符的语法与 <code>cs</code>s 中的伪类选择符语法相同，即选择符以冒号（:）开头。</p>
+<p>例如。我们想要选取带 <code>class</code> 伪类的 <code>div</code> 集合中的 第2项，那么应该使用以下的代码：<code>$(&#39;div.class:eq(1)&#39;)</code></p>
+<p>注意：<code>js</code> 中的数组采用的是从 <code>0</code> 开始的编号方式，所以 <code>eq(1)</code> 取得是集合中的第二个元素。而 <code>css</code> 则是从 <code>1</code> 开始的，因此 <code>css</code> 选择符 <code>$(&#39;div:nth-child(1)&#39;)</code> 取得的是作为其父元素第一个子元素的所有 <code>div</code> 元素，<code>nth-child()</code> 可以接受 <code>odd</code> 或者是 <code>even</code> 为参数。<code>eq()</code> ,<code>:odd</code>和 <code>:even</code> 都使用<code>js</code> 内置从 <code>0</code> 开始的编号方式。所以如果你想选择一个表格中的所有偶数行可以这样写: <code>$(&#39;tr:even&#39;)</code>（注意，这里是 <code>even</code> 而不是 <code>odd</code>）</p>
+<h3 id="3-基于上下文的内容选择元素"><a href="#3-基于上下文的内容选择元素" class="headerlink" title="3.基于上下文的内容选择元素"></a>3.基于上下文的内容选择元素</h3><p><code>$(&#39;td:contains(hello)&#39;)</code> 所有单元格中的 <code>hello</code> 字段都会被选中。</p>
+<h3 id="4-基于表单的选择符"><a href="#4-基于表单的选择符" class="headerlink" title="4.基于表单的选择符"></a>4.基于表单的选择符</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">:input    输入字段、文本区、选择列表和按钮元素</div><div class="line">:button   按钮元素或 type 属性值为 button 的输入元素</div><div class="line">:enabled  启用的表单元素</div><div class="line">:disabled 禁用的表单元素</div><div class="line">:checked  勾选的单选按钮或复选框</div><div class="line">:selected 选择的选项元素</div><div class="line"></div><div class="line">$(<span class="string">'input[type="radio"]:checked'</span>)</div><div class="line">$(<span class="string">'input[type="password"],input[type="text"]:disabled'</span>)</div></pre></td></tr></table></figure>
+<h2 id="2-DOM方法"><a href="#2-DOM方法" class="headerlink" title="2.DOM方法"></a>2.DOM方法</h2><h3 id="1-DOM-遍历方法"><a href="#1-DOM-遍历方法" class="headerlink" title="1.DOM 遍历方法"></a>1.DOM 遍历方法</h3><h4 id="1-给所有的外部链接添加一个类"><a href="#1-给所有的外部链接添加一个类" class="headerlink" title="1.给所有的外部链接添加一个类"></a>1.给所有的外部链接添加一个类</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'a'</span>).filter(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.hostname &amp;&amp; <span class="keyword">this</span>.hostname != location.hostname;</div><div class="line">&#125;).addClass(<span class="string">'class'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 我们可以利用 .filter() 方法，向其中传入筛选函数，利用</span></div><div class="line"><span class="comment">// jquery的隐式迭代能力，得到我们想要的结果。</span></div></pre></td></tr></table></figure>
+<h4 id="2-next-和-nextAll"><a href="#2-next-和-nextAll" class="headerlink" title="2..next() 和 .nextAll()"></a>2..next() 和 .nextAll()</h4><p><code>.next()</code> 方法只选择下一个最接近的同辈元素。<code>.nextAll()</code> 会选出后面所有的同辈元素。</p>
+<p>这两者分别有一个对应的方法，即<code>.pre()</code> 和<code>.preAll()</code></p>
+<h4 id="3-siblings"><a href="#3-siblings" class="headerlink" title="3..siblings()"></a>3..siblings()</h4><p><code>.siblings()</code> 能够选择处于相同<code>dom</code> 层次的所有其他元素，无论这些元素处于当前元素之前还是之后。</p>
+<h4 id="4-addBack"><a href="#4-addBack" class="headerlink" title="4..addBack()"></a>4..addBack()</h4><p><code>$(&#39;.class&#39;).next().addBack();</code> 不仅可以包含当前元素还可以包含当前元素的下一个元素。</p>
+<h3 id="2-连缀"><a href="#2-连缀" class="headerlink" title="2.连缀"></a>2.连缀</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'td:contains(hello)'</span>)</div><div class="line">.parent()</div><div class="line">.find(<span class="string">'td:eq(1)'</span>)</div><div class="line">.addClass(<span class="string">'class'</span>)</div><div class="line">.end() <span class="comment">// 恢复到包含 hello 的单元格的父元素</span></div><div class="line">.find(<span class="string">'td:eq(2)'</span>)</div><div class="line">.addClass(<span class="string">'class'</span>)</div></pre></td></tr></table></figure>
+<h3 id="3-访问-dom-元素"><a href="#3-访问-dom-元素" class="headerlink" title="3.访问 dom 元素"></a>3.访问 dom 元素</h3><p>如果想知道带有 <code>id=&quot;ele&quot;</code> 属性的元素的标签名，可以使用下面的方法：<code>$(&#39;#ele&#39;)[0].tagName;</code>，可以在选择符后面直接使用方括号。</p>
+<h2 id="3-事件"><a href="#3-事件" class="headerlink" title="3.事件"></a>3.事件</h2><h3 id="1-在页面加载后执行任务"><a href="#1-在页面加载后执行任务" class="headerlink" title="1.在页面加载后执行任务"></a>1.在页面加载后执行任务</h3><h4 id="1-引用函数与调用函数"><a href="#1-引用函数与调用函数" class="headerlink" title="1.引用函数与调用函数"></a>1.引用函数与调用函数</h4><p>将函数指定为事件处理程序时，如果带着圆括号，函数会被立即调用；没有圆括号，函数名就只是函数的标识符或函数引用，可以用于在将来在调用函数。</p>
+<h4 id="2-ready-方法"><a href="#2-ready-方法" class="headerlink" title="2..ready()方法"></a>2.<code>.ready()</code>方法</h4><p>1一：$().ready()方法支持我们预定在dom加载完成之后调用某个函数，而不必等待页面中的图像加载。同时他为我们提供了很好的跨浏览器解决方案：<br>1.尽可能使用浏览器的原生的 dom 实现就绪，并以 window.onload 事件处理程序作为后备。<br>2.可以多次调用并按照调用他们的顺序执行<br>3.即便是在浏览器事件发生之后把函数传给  $().ready() ，这些函数也会执行<br>4.异步处理事件的约定，必要时脚本可以延迟执行<br>5.通过重复检查一个几乎与 dom 同时可用的方法，在较早版本的浏览器中模拟 dom 就绪事件<br>6.ready()方法的参数可以是一个已经定义好的函数的引用</p>
+<p>$().ready(function(){</p>
+<p>})</p>
+<p>这种匿名写作的函数在 jquery 中十分方便，特别适合传递那些不会被重用的函数。而且与此同时创建的闭包也是一种非常高级和强大的工具。但是，加入处理不当的话，闭包也会给我们带来意想不到的后果和内存占用问题。</p>
+<h4 id="3-什么是加载完成？"><a href="#3-什么是加载完成？" class="headerlink" title="3.什么是加载完成？"></a>3.什么是加载完成？</h4><p>一般来说使用$(document).ready()要优于使用onload 事件处理程序，但必须要明确的一点是，因为支持文件可能还没有加载完成，所以类似图像的高度和宽度这样的属性此时不一定会有效。如果需要访问这些属性，可能就得选择一个onload事件处理程序（或者是使用jquery为load事件设置处理程序）这两种机制能够和平共存。</p>
+<h4 id="4-避免-命名冲突"><a href="#4-避免-命名冲突" class="headerlink" title="4.避免$命名冲突"></a>4.避免$命名冲突</h4><p>由于很多库都使用$标识符，因此就需要一种方式来避免名称冲突。jquery提供了一种加jQuery.noConflict()方法，调用该方法可以把对$标识符的控制权让渡还给其他库。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"prototype.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script src=<span class="string">"jquery.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">jQuery.noConflict();</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;script src=<span class="string">"myscript.js&gt;&lt;/script&gt;</span></div></pre></td></tr></table></figure>
+<p>调用jQuery.noConflict();，可以将控制权交还给最先包含的库（prototype.js），这样就可以在自定义脚本中使用两个库了，但是，在需要使用jquery方法时，必须要记住要用jQuery而不是用$来调用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</div><div class="line"><span class="comment">// 我们可以在函数内部将jQuery重命名为$，而不必担心造成冲突。</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web-front-end/blob/master/Learning%20jQuery%20Demos/%E6%A0%B7%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%99%A8.html">样式转换器demo</a></p>
+<h3 id="2-事件传播"><a href="#2-事件传播" class="headerlink" title="2.事件传播"></a>2.事件传播</h3><h4 id="1-hover-方法"><a href="#1-hover-方法" class="headerlink" title="1..hover()方法"></a>1.<code>.hover()</code>方法</h4><p><code>.hover()</code> 接受两个函数参数，第一个函数会在鼠标指针进入被选择的元素时执行，而第二个函数会在鼠标指针离开该元素时触发。<strong>同时，使用<code>.hover()</code>一意味着可以避免js 中的事件传播导致的头痛问题。</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">'class'</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="2-事件的旅程"><a href="#2-事件的旅程" class="headerlink" title="2.事件的旅程"></a>2.事件的旅程</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">span</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>事件捕获：事件首先交给最外层的元素，接着在交给更具体的元素，即<div>-&gt;<span>-&gt;<a></li>
+<li>事件冒泡：当事件发生时，首先交给最具体的元素，在这个元素获得响应机会之后，事件会向上冒泡到更一般的元素。即：<a>-&gt;<span>-&gt;<div></li>
+</ul>
+<p>为了全包跨浏览器的一致性，而且也为了让人更容易理解，jquery会始终的事件的冒泡阶段注册事件处理程序<strong>。因此，我们总是可以假定最具体的元素会首先获得响应事件的机会。</strong></p>
+<h4 id="3-事件冒泡的副作用"><a href="#3-事件冒泡的副作用" class="headerlink" title="3.事件冒泡的副作用"></a>3.事件冒泡的副作用</h4><p>事件冒泡可能会导致始料不及的行为，特别是在错误的元素响应mouseover或者mouseout事件的情况下。假设在我们这个例子中，为<div>注册了一个mouseout事件处理程序，当用户的鼠标指针退出这个<div>时，会按照预期运行mouseout事件处理程序。因为这个过程发生在顶层元素上，所以其他的元素不会取得这个事件。但是，当指针从<a>元素上离开时，<a>元素回取得一个mouseout事件。然后这个事件会向上冒泡到<span>和<div>，从而触发事件处理程序。这种冒泡序列不是我们所希望的。</p>
+<p>mouseenter和moseleave事件，无论是单独绑定，还是在.hover()方法中组合绑定，都可以避免这些冒泡问题。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/29/冒泡排序/" rel="next" title="冒泡排序">
+                <i class="fa fa-chevron-left"></i> 冒泡排序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/29/学习和智商有关系吗/" rel="prev" title="学习和智商有关系吗?">
+                学习和智商有关系吗? <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="江南北" />
+          <p class="site-author-name" itemprop="name">江南北</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">104</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-选择元素"><span class="nav-number">1.</span> <span class="nav-text">1.选择元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-原生选择符"><span class="nav-number">1.1.</span> <span class="nav-text">1.原生选择符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-自定义选择符"><span class="nav-number">1.2.</span> <span class="nav-text">2.自定义选择符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-基于上下文的内容选择元素"><span class="nav-number">1.3.</span> <span class="nav-text">3.基于上下文的内容选择元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-基于表单的选择符"><span class="nav-number">1.4.</span> <span class="nav-text">4.基于表单的选择符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-DOM方法"><span class="nav-number">2.</span> <span class="nav-text">2.DOM方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-DOM-遍历方法"><span class="nav-number">2.1.</span> <span class="nav-text">1.DOM 遍历方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-给所有的外部链接添加一个类"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.给所有的外部链接添加一个类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-next-和-nextAll"><span class="nav-number">2.1.2.</span> <span class="nav-text">2..next() 和 .nextAll()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-siblings"><span class="nav-number">2.1.3.</span> <span class="nav-text">3..siblings()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-addBack"><span class="nav-number">2.1.4.</span> <span class="nav-text">4..addBack()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-连缀"><span class="nav-number">2.2.</span> <span class="nav-text">2.连缀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-访问-dom-元素"><span class="nav-number">2.3.</span> <span class="nav-text">3.访问 dom 元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-事件"><span class="nav-number">3.</span> <span class="nav-text">3.事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在页面加载后执行任务"><span class="nav-number">3.1.</span> <span class="nav-text">1.在页面加载后执行任务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-引用函数与调用函数"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.引用函数与调用函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ready-方法"><span class="nav-number">3.1.2.</span> <span class="nav-text">2..ready()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-什么是加载完成？"><span class="nav-number">3.1.3.</span> <span class="nav-text">3.什么是加载完成？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-避免-命名冲突"><span class="nav-number">3.1.4.</span> <span class="nav-text">4.避免$命名冲突</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-事件传播"><span class="nav-number">3.2.</span> <span class="nav-text">2.事件传播</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-hover-方法"><span class="nav-number">3.2.1.</span> <span class="nav-text">1..hover()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-事件的旅程"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.事件的旅程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-事件冒泡的副作用"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.事件冒泡的副作用</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">江南北</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

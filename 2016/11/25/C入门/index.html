@@ -1,0 +1,937 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="C/C++," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="1.前言这是我学习过程中自己整理出来的C语言入门简明教程,希望它能让你轻松入门,这只是开始,后面的路还很长,加油,程序人!
+入门的最基本的方法就是从C语言入手,当你成为C语言的高手,那么你就很容易进到操作系统的平台里面去;当你进入到操作系统的平台里面去实际做程序的时候,就会懂得进行调试;当你懂得调试的时候,你就会发现能轻而易举的了解整个平台的架构.这个时候,计算机基本上一切都在你的掌握之中了,没有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C入门">
+<meta property="og:url" content="http://ijiangnanbei.com/2016/11/25/C入门/index.html">
+<meta property="og:site_name" content="江南北的个人站">
+<meta property="og:description" content="1.前言这是我学习过程中自己整理出来的C语言入门简明教程,希望它能让你轻松入门,这只是开始,后面的路还很长,加油,程序人!
+入门的最基本的方法就是从C语言入手,当你成为C语言的高手,那么你就很容易进到操作系统的平台里面去;当你进入到操作系统的平台里面去实际做程序的时候,就会懂得进行调试;当你懂得调试的时候,你就会发现能轻而易举的了解整个平台的架构.这个时候,计算机基本上一切都在你的掌握之中了,没有">
+<meta property="og:updated_time" content="2017-06-09T09:34:57.491Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C入门">
+<meta name="twitter:description" content="1.前言这是我学习过程中自己整理出来的C语言入门简明教程,希望它能让你轻松入门,这只是开始,后面的路还很长,加油,程序人!
+入门的最基本的方法就是从C语言入手,当你成为C语言的高手,那么你就很容易进到操作系统的平台里面去;当你进入到操作系统的平台里面去实际做程序的时候,就会懂得进行调试;当你懂得调试的时候,你就会发现能轻而易举的了解整个平台的架构.这个时候,计算机基本上一切都在你的掌握之中了,没有">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ijiangnanbei.com/2016/11/25/C入门/"/>
+
+
+
+
+
+  <title>C入门 | 江南北的个人站</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9f1e93c72ab49f0eac76c314748416d3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">江南北的个人站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/25/C入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">C入门</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-25T17:12:26+08:00">
+                2016-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>这是我学习过程中自己整理出来的C语言入门简明教程,希望它能让你轻松入门,这只是开始,后面的路还很长,加油,程序人!</p>
+<p><strong>入门的最基本的方法就是从C语言入手,当你成为C语言的高手,那么你就很容易进到操作系统的平台里面去;当你进入到操作系统的平台里面去实际做程序的时候,就会懂得进行调试;当你懂得调试的时候,你就会发现能轻而易举的了解整个平台的架构.这个时候,计算机基本上一切都在你的掌握之中了,没有什么东西能逃得出你的手心—梁肇新</strong></p>
+<h2 id="2-C语言的起源和发展"><a href="#2-C语言的起源和发展" class="headerlink" title="2.C语言的起源和发展"></a>2.C语言的起源和发展</h2><p>程序设计语言的发展过程:第一代机器语言；第二代汇编语言；第三方代高级语言。高级语言中又分为 结构化语言 和 面向对象语言，其中结构化语言的代表有:<code>Basic</code> ,<code>Fortran</code> , <code>Pascal</code> ,<code>C.</code> 面向对象小对象语言的代表有:<code>C++</code> , <code>java</code> ,<code>C#</code>.</p>
+<p>C 语言是结构化语言, C++ 是面向对象的语言。结构化语言的缺陷：数据和操作是分离的，导致你写大项目的时候,会出现意想不到的问题。</p>
+<p>C++ 是面向对象里面最难的语言，如果你学会了C++，其他的面向对象的语言你可以很轻松的就掌握了。<br><a id="more"></a></p>
+<h2 id="3-C语言的特点"><a href="#3-C语言的特点" class="headerlink" title="3.C语言的特点"></a>3.C语言的特点</h2><h3 id="1-C语言的优点"><a href="#1-C语言的优点" class="headerlink" title="1.C语言的优点:"></a>1.C语言的优点:</h3><p>速度快,代码量小,功能强大.(Java里面没有指针,不能直接访问我们的硬件).</p>
+<h3 id="2-C语言的缺点："><a href="#2-C语言的缺点：" class="headerlink" title="2.C语言的缺点："></a>2.C语言的缺点：</h3><p>危险性高,在Ｃ语言中只要你写一个程序错的不是很离谱，他都认为你写这个程序有特殊的含义，不会给你报错；开发周期长,Ｃ语言是一个面向过程的语言，当代码上了十万行之后就很容易奔溃，会出现各种各样的错误；可移植性弱,Ｃ语言写的程序有的机器可能不能跑，即便能很多的运行结果也是不一样的.</p>
+<h3 id="3-C语言的应用领域："><a href="#3-C语言的应用领域：" class="headerlink" title="3.Ｃ语言的应用领域："></a>3.Ｃ语言的应用领域：</h3><p>系统软件开发,操作系统:windows,Linux,nuix;驱动程序:主板驱动,显卡驱动,摄像头驱动;数据库:DB2,Oracle,Sql.</p>
+<p>应用软件开发,办公软件:wps;图形图像多媒体:ps;嵌入式软件开发:智能手机,掌上电脑;游戏开发:2d,3d游戏.</p>
+<h3 id="4-C语言的重要性"><a href="#4-C语言的重要性" class="headerlink" title="4.C语言的重要性:"></a>4.C语言的重要性:</h3><p>一名合格的黑客必须掌握的语言,比如说你要制造一个病毒,病毒一个最基本的特征就是感染我们的操作系统,你要编写病毒,你就要首先找到用C语言编写的操作系统的漏洞.</p>
+<p>任何一个想终生从事程序设计和开发的人员必须熟练掌握的语言.大企业,外企招聘必考的语言.为学习数据结构,C++,java,奠定基础.</p>
+<h2 id="4-怎样学习C语言？"><a href="#4-怎样学习C语言？" class="headerlink" title="4.怎样学习C语言？"></a>4.怎样学习C语言？</h2><h3 id="1-怎样学习C语言"><a href="#1-怎样学习C语言" class="headerlink" title="1.怎样学习C语言?"></a>1.怎样学习C语言?</h3><p>多思考,多问为什么,学完之后必须要实践.</p>
+<p>我们都有过这样的体验,上课即便你听懂了,下课之后当你自己敲的时候,敲出来的也一定是错的,即便你敲对了,也是蒙对的.这个程序从你看懂到你把它敲正确是需要一个过程的,没有一个人看懂之后可以直接把程序敲正确,即便是天才也不行.</p>
+<p>如果你学习一门新课,在没有人给你讲的情况下,你要能把一本书给看懂,那这本书可以说写的是非常好的,下面是几本不错的学习C语言的书籍:</p>
+<p>入门书籍:     《C语言程序设计》<br>系统学习语法: 《C primer plus》<br>深入研究指针: 《C和指针》<br>C语言高手:    《C专家编程》《C缺陷与艺术》 </p>
+<h3 id="2-学习的目标"><a href="#2-学习的目标" class="headerlink" title="2.学习的目标?"></a>2.学习的目标?</h3><p>本教程知识简明的C语言入门教程,希望你学完之后能<strong>熟练掌握C语言的语法规则;掌握简单的算法;理解面向过程的思想,这非常有助于将来面向对象思想的学习;能看懂程序;会调试程序;掌握将大问题化为一系列小问题来解决的思想;为学习C++,java和数据结构打下良好的基础.</strong></p>
+<h3 id="3-学习java为什么要先学习C语言"><a href="#3-学习java为什么要先学习C语言" class="headerlink" title="3.学习java为什么要先学习C语言?"></a>3.学习java为什么要先学习C语言?</h3><p>学习C就是在学习java,因为C语言至少有80%的语法知识都被java继承了.C是面向过程语言的代表,学好C有助于学习java里面面向对象的思想的学习.</p>
+<p>学好C的指针是理解java中引用的基础,如果不懂指针就不可能对java中的引用有深刻的理解,而引用是java 中一个最基本但又十分重要的 概念.<strong>(如果你不懂java里面的引用,那么很复杂的程序你就看不懂了)</strong></p>
+<h2 id="5-预备计算机专业基础知识"><a href="#5-预备计算机专业基础知识" class="headerlink" title="5.预备计算机专业基础知识"></a>5.预备计算机专业基础知识</h2><h3 id="1-CPU-内存条-硬盘-显卡-主板和显示器之间的关系"><a href="#1-CPU-内存条-硬盘-显卡-主板和显示器之间的关系" class="headerlink" title="1.CPU,内存条,硬盘,显卡,主板和显示器之间的关系?"></a>1.CPU,内存条,硬盘,显卡,主板和显示器之间的关系?</h3><p>我们来看一个电影是如何运行的?当你双击一部电影的时候,操作系统就会把硬盘上的这部电影的数据掉入内存条中,因为 CPU 不能直接处理硬盘上的数据,所以当数据存储到内存条中之后, CPU 再去处理内存条中的数据(电影),然后把其中的一些数据变成图像,一些数据变成声音,图像数据通过显卡在显示器显示出来,声音数据发送给声卡,声卡将其变成声音输出。</p>
+<p>主板将CPU,内存条,硬盘,显卡连接在一起,并在他们之间传递数据。</p>
+<h3 id="2-hellow-word-这个程序是如何被运行起来的"><a href="#2-hellow-word-这个程序是如何被运行起来的" class="headerlink" title="2.hellow word 这个程序是如何被运行起来的?"></a>2.hellow word 这个程序是如何被运行起来的?</h3><p>在 VC++6.0 中编程,点击 compile 和 build 按钮之后会产生一个<code>.exe</code>文件,这里需要说明的是我们的软件是不能直接执行<code>.exe</code>文件的,这个文件在后台是靠操作系统来执行的,操作系统调用CPU,CPU来执行这个程序。</p>
+<p>所有软件的运行都是建立在操作系统的基础之上的。</p>
+<h3 id="3-什么是数据类型"><a href="#3-什么是数据类型" class="headerlink" title="3.什么是数据类型?"></a>3.什么是数据类型?</h3><p>编程语言就是要解决实际的问题,<strong>你解决问题的第一步就是把数据保存到计算机里面,</strong>存储的时候就要按照数据类型进行分类.<strong>(在你编程的过程中,一定要时刻记住”内存”这一个概念,最终你会发现编程的许多问题,其实都是内存的问题.)</strong></p>
+<p>基本数据类型:整数(整形 int ,短整形 short int,长整形 long int ),浮点数(单精度浮点数 float ,双精度浮点数 double),字符( char )(C语言里面是没有一个类型可以直接存储字符串的,如果你要存储一个字符串的话可以使用一个字符数组)</p>
+<p>组合数据类型:结构体;枚举;共用体(所谓组合类型就是把基本类型拼凑到一起)。</p>
+<h3 id="4-CPU-内存条-vc6-0-和操作系统之间的关系"><a href="#4-CPU-内存条-vc6-0-和操作系统之间的关系" class="headerlink" title="4.CPU ,内存条, vc6.0 和操作系统之间的关系?"></a>4.CPU ,内存条, vc6.0 和操作系统之间的关系?</h3><p>在 VC++6.0 中当你编号程序,点击 compile 和 build 按钮之后会产生一个<code>.exe</code>文件,这里需要说明的是我们的软件是不能直接执行<code>.exe</code>文件的,在后台是靠操作系统来执行的,操作系统调用CPU,CPU来执行这个程序。</p>
+<p>所有软件的运行都是建立在操作系统的基础之上的。</p>
+<p>比如:<code>i=3;</code>,软件发出请求,操作系统为其在内存条中分配一块空间,然后把这块空闲的空间与字母i产生关联,你所使用的子母i,实际上使用的就是字母i所对应的存储空间。</p>
+<h3 id="5-变量为什么必须初始化"><a href="#5-变量为什么必须初始化" class="headerlink" title="5.变量为什么必须初始化?"></a>5.变量为什么必须初始化?</h3><p>所谓初始化就是赋值的意思,之所以要初始化数据,是为了防止内存里面存储的数据并不是你想要的数据,内存里面可能是上一个程序遗留下来的垃圾数据。</p>
+<p>所谓释放内存就是可以把这个空间的使用权限分配给其他程序去使用,<br>如果你没有给一个变量赋初值,他就会自动的把一个很大的数字放进去,这个数字叫做”填充字”,这个填充字的作用就是在你没有初始化就使用的时候,给你一个错误提示.所以说任何一个变量在使用之前要进行初始化。</p>
+<h3 id="6-软件运行与内存的关系"><a href="#6-软件运行与内存的关系" class="headerlink" title="6.软件运行与内存的关系?"></a>6.软件运行与内存的关系?</h3><p>内存是在操作系统的统一管理下使用的。</p>
+<p>软件在运行前需要向操作系统申请运行空间,在内存空闲空间足够时,操作系统将分配一段内存空间并将外存中软件拷贝一份存入该内存空间中,并启动该软件的运行。</p>
+<p>在软件运行期间,该软件所占内存空间不再分配给其他软件.当软件运行完毕后,操作系统将回收该内存空间(注意:操作系统并不清空该内存空间遗留下来的数据)以便再次分配给其他软件使用。</p>
+<p>综上所述:一个软件所分配到的内存空间中极可能存在着以前其他软件使用过后的残留数据,这些数据被称之为垃圾数据.所以通常情况下我们为一个变量,一个数组,分配好存储空间之后都要对该内存空间初始化。</p>
+<h3 id="7-什么叫进制"><a href="#7-什么叫进制" class="headerlink" title="7.什么叫进制?"></a>7.什么叫进制?</h3><p>来说一说我们生活中用到的进制:一周七天七进制,一年十二个月十二进制,一小时六十分钟六十进制,电脑中的数据二进制.在我们生活中随处都可以见到进制的影子。</p>
+<p>所谓进制就是逢几进一,八进制在前面加一个0(零),十六进制前面加0x。</p>
+<p>十进制:基数0,1,2,3,4,5,6,7,8,9。</p>
+<p>十进数制举例:0,1,2,3,4,5,6,7,8,9,(逢十进一)10…19,(逢十进一),20…29…。</p>
+<p>二进制:基数0,1。</p>
+<p>二进制数举例:0,1(加1,逢二进1),10,(0加1没有进位)11,(11加1有进位)100,101,110(他们对应的十进制数字分别是0,1,2,3,4,5,6,),<strong>无论是十进制还是二进制它都是一个数值不同的计算方式,本质上都是一样的.</strong></p>
+<p>八进制:基数0,1,3,4,5,6,7.</p>
+<p>八进制数举例:0,1,3,4,5,6,7,10(10-&gt;8),11(11-&gt;9)….</p>
+<p>十六进制:基数 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F.</p>
+<p>十六进制数举例:0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,(10–1F),(20–2F)….(F0-FF).</p>
+<p>%d 表示以十进制输出；%x 表示以十六进制输出；%o 表示以八进制输出。</p>
+<h3 id="8-为什么现在的计算机使用二进制"><a href="#8-为什么现在的计算机使用二进制" class="headerlink" title="8.为什么现在的计算机使用二进制?"></a>8.为什么现在的计算机使用二进制?</h3><p>因为从硬件上比较容易实现对数据的操作。</p>
+<h3 id="9-常量在计算机中是如何表示的"><a href="#9-常量在计算机中是如何表示的" class="headerlink" title="9.常量在计算机中是如何表示的?"></a>9.常量在计算机中是如何表示的?</h3><p>整数:十进制,十六进制,八进制。</p>
+<p>浮点数:传统写法,科学计数法。</p>
+<p>字符:单个字符用单引号括起来，字符串用双引号括起来。</p>
+<h3 id="10-常量以什么样的二进制代码存储在计算机中"><a href="#10-常量以什么样的二进制代码存储在计算机中" class="headerlink" title="10.常量以什么样的二进制代码存储在计算机中?"></a>10.常量以什么样的二进制代码存储在计算机中?</h3><p>整数是以补码的形式转化为二进制代码存储在计算机中的。</p>
+<p>实数是以IEEE754标准….。</p>
+<p>字符的本质实际上与整数的存储方式相同。</p>
+<h2 id="6-预备编程基础知识"><a href="#6-预备编程基础知识" class="headerlink" title="6.预备编程基础知识"></a>6.预备编程基础知识</h2><h3 id="1-代码规范化"><a href="#1-代码规范化" class="headerlink" title="1.代码规范化"></a>1.代码规范化</h3><p>写出规范的代码不但方便你自己观看同时也方便别人观看,最重要的是当你的程序写的很大的时候，规范的代码使你的程序不容易出错。</p>
+<h3 id="2-为什么创建文件的时候要选择C-？"><a href="#2-为什么创建文件的时候要选择C-？" class="headerlink" title="2.为什么创建文件的时候要选择C++？"></a>2.为什么创建文件的时候要选择C++？</h3><p>因为C++是完全兼容C的，所以我们创建文件的时候选择的是C++的格式。</p>
+<h3 id="3-什么是字节？"><a href="#3-什么是字节？" class="headerlink" title="3.什么是字节？"></a>3.什么是字节？</h3><p>字节就是存储数据的单位,并且是我们硬件所能访问的最小单位。硬件上不能精确到位只能精确到字节,一个字节等于八位,硬件通过我们的地址总线确定的是字节,要精确到位需要用软件来实现(C语言里面字符占一个字节,java里面字符占两个字节)。</p>
+<p>1字节=8位；1k=1024个字节；1M=1024k；1G=1024M。</p>
+<p>说到字节，你肯定会有这样的一个经历：你买一个硬盘内存总是会比实际的要小，这是为什么呢？</p>
+<p>商家是按 1k=1000字节 为单位计算的,而计算机是以 1k=1024字节 为单位计算的，两种换算单位的不一样就导致了我们实际使用的内存比产品标注的内存要小。</p>
+<h3 id="4-char-使用的常见问题"><a href="#4-char-使用的常见问题" class="headerlink" title="4.char 使用的常见问题"></a>4.char 使用的常见问题</h3><p><code>char ch=&quot;ab&quot;;//error</code> 不能把一个字符串放到字符里面。</p>
+<p><code>char ch=&quot;a&quot;;//error</code>   这个双引号里面其实有两个字符<code>a\0</code>，所以这样书写也是错的。</p>
+<p><strong>在C语言里面字符串有两种保存方式，其一是通过指针，其二是通过数组。</strong></p>
+<h3 id="5-什么是-Ascii-码？"><a href="#5-什么是-Ascii-码？" class="headerlink" title="5.什么是 Ascii 码？"></a>5.什么是 Ascii 码？</h3><p>Ascii 码不是一个值,而是一种规定,规定了不同的字符用哪个整数值去表示。</p>
+<h3 id="6-进制"><a href="#6-进制" class="headerlink" title="6.进制"></a>6.进制</h3><h4 id="1-什么是进制？"><a href="#1-什么是进制？" class="headerlink" title="1.什么是进制？"></a>1.什么是进制？</h4><p>所谓进制就是逢几进一，我们生活中导出都有进制的影子。比如说一周七天就是逢七进一；一分钟60秒就是逢60进一；一天24小时就是逢24进一；一年12个月就是逢12进一…</p>
+<h4 id="2-如何把-r-进制转化为十进制？"><a href="#2-如何把-r-进制转化为十进制？" class="headerlink" title="2.如何把 r 进制转化为十进制？"></a>2.如何把 r 进制转化为十进制？</h4><ol>
+<li>5进制的234转成10进制: 4<em>1+3</em>5+2<em>5</em>5</li>
+<li>16进制的234转成10进制:4<em>1+3</em>16+2<em>16</em>16</li>
+</ol>
+<h3 id="3-如何把十进制转化成-r-进制？"><a href="#3-如何把十进制转化成-r-进制？" class="headerlink" title="3.如何把十进制转化成 r 进制？"></a>3.如何把十进制转化成 r 进制？</h3><p>关于如何把 十 进制转化成 r 进制，总结成一句话就是：对其不停的用 r 求余，然后取“倒”。</p>
+<h4 id="4-不同的进制所代表的的数值之间的关系？"><a href="#4-不同的进制所代表的的数值之间的关系？" class="headerlink" title="4.不同的进制所代表的的数值之间的关系？"></a>4.不同的进制所代表的的数值之间的关系？</h4><p>本质上都是同一个数字</p>
+<h3 id="7-逗号表达式"><a href="#7-逗号表达式" class="headerlink" title="7.逗号表达式"></a>7.逗号表达式</h3><p>格式：(a,b,c,d)</p>
+<p>功能：从左到右执行，最终表达式的值是最后一项的值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</div><div class="line"><span class="comment">//最终的结果是：3</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> i,j=<span class="number">2</span>;</div><div class="line">i = (++j,j++,j+<span class="number">2</span>,j<span class="number">-3</span>);</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</div><div class="line"><span class="comment">//最终的结果是：1</span></div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> a,b,c,d,e,f,i;</div><div class="line"><span class="comment">//i 的值是最后一个逗号表达式的值</span></div><div class="line">i = (a=<span class="number">1</span>,b=<span class="number">2</span>,c=<span class="number">3</span>,d=<span class="number">4</span>,e=<span class="number">5</span>,f=<span class="number">6</span>);</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,i);</div><div class="line"><span class="comment">//result : 6</span></div></pre></td></tr></table></figure>
+<p><strong>不推荐使用逗号表达式的写法</strong></p>
+<h2 id="7-scanf-用法"><a href="#7-scanf-用法" class="headerlink" title="7.scanf 用法"></a>7.scanf 用法</h2><h3 id="1-用法一-scanf-quot-输入控制符-quot-输入参数"><a href="#1-用法一-scanf-quot-输入控制符-quot-输入参数" class="headerlink" title="1.用法一:scanf(&quot;输入控制符&quot;,输入参数);"></a>1.用法一:<code>scanf(&quot;输入控制符&quot;,输入参数);</code></h3><p>功能:将从键盘输入的字符转化为输入控制符所规定格式的数据,然后存入以输入参数的值为地址的变量中。</p>
+<p>举例：<code>scanf(&quot;%d&quot;,&amp;i);</code>这里之所以要用<code>%d</code>是因为来自你键盘的所有输入都是以字符的形式保存的,所以在这里我们用<code>%d</code>将其转化为一个十进制的数。</p>
+<h3 id="2-用法二-scanf-quot-非输入控制符-输入控制符-quot-输入参数"><a href="#2-用法二-scanf-quot-非输入控制符-输入控制符-quot-输入参数" class="headerlink" title="2.用法二:scanf(&quot;非输入控制符 输入控制符&quot;,输入参数);"></a>2.用法二:<code>scanf(&quot;非输入控制符 输入控制符&quot;,输入参数);</code></h3><p>功能:非输入控制符必须原样输入。</p>
+<p>举例：<code>scanf(&quot;m%d&quot;,&amp;i);</code>在这里<code>%d</code>前面有一个非输出控制符,所以这里就要求你在输入的时候,你的输入前必须要有一个非输出控制符。比如说你直接输入<code>123</code>就是错的,但是如果你输入<code>m123</code>就是对的,这个时候最终<code>i</code>的值就是 <code>123</code>，但是如果你输入<code>m123n</code>也是对的，但是我们一般不会在前面加一个非输出控制符,目的是让用户输入的越简单越好。</p>
+<h3 id="3-如何用-scanf-编写出高质量的程序？"><a href="#3-如何用-scanf-编写出高质量的程序？" class="headerlink" title="3.如何用 scanf 编写出高质量的程序？"></a>3.如何用 scanf 编写出高质量的程序？</h3><p>使用 scanf 之前最好先使用 printf 提示用户以什么要的方式来输入。</p>
+<p>scanf 中尽量不要使用非输入控制符,尤其是 \n 。</p>
+<h2 id="8-printf-用法"><a href="#8-printf-用法" class="headerlink" title="8.printf 用法"></a>8.printf 用法</h2><p>1.printf (“字符串\n”);</p>
+<p>2.printf(“输出控制符”,输出参数);为什么要指定输出控制符?因为所有的东西都是以二进制保存在计算机中的。</p>
+<p>3.printf(“输出控制符1 输出控制符2 …”,输出参数1,输出参数2….);。</p>
+<p>4.printf(“输出控制符 非输出控制符”,输出参数);</p>
+<p>输出控制符有:%d，%ld,%c,%f,%lf,%x(%X,%#x,%#X)。</p>
+<p>为什么需要输出控制符？</p>
+<p>0和1 组成的代码可以表示数据也可以表示指令，如果 0和1 组成的代码表示的是数据的话,那么同样的 0和1 代码组合以不同的输出格式输出就会有不同的输出结果。</p>
+<h2 id="9-流程控制"><a href="#9-流程控制" class="headerlink" title="9.流程控制"></a>9.流程控制</h2><h3 id="1-流程控制的分类"><a href="#1-流程控制的分类" class="headerlink" title="1.流程控制的分类:"></a>1.流程控制的分类:</h3><p>顺序执行；选择执行；循环执行。</p>
+<h3 id="2-流程控制为什么重要"><a href="#2-流程控制为什么重要" class="headerlink" title="2.流程控制为什么重要?"></a>2.流程控制为什么重要?</h3><p>图灵认为在现实世界中无论多么复杂的问题,你都可以用顺序,选择和循环三种结构去实现。计算机领域所有的问题都有流程控制的思想,比如说数据库。</p>
+<h2 id="10-if-语句"><a href="#10-if-语句" class="headerlink" title="10.if 语句"></a>10.if 语句</h2><h3 id="1-If-的范围问题"><a href="#1-If-的范围问题" class="headerlink" title="1.If 的范围问题"></a>1.If 的范围问题</h3><pre><code>if(表达式)
+    语句a;
+    语句b;
+</code></pre><p>解释: if 默认只能控制语句 a 的执行或者不执行,也就是说语句 b 一定会执行, if 语句在没有加大括号的情况下只能控制紧邻其后的那一条语句的执行。</p>
+<h3 id="2-常见问题解析"><a href="#2-常见问题解析" class="headerlink" title="2.常见问题解析"></a>2.常见问题解析</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="number">1</span> &gt; <span class="number">2</span>);</div><div class="line">        prinft(<span class="string">"aaa"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"bbb\n"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">result: aaa bbb</div><div class="line"><span class="comment">//解析：之所以导致这样的结果，是因为你在 if 语句的结尾加了一个分号</span></div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//下面这两个语句是等价的</span></div><div class="line"><span class="keyword">else</span>(<span class="number">5</span>&gt;<span class="number">10</span>);</div><div class="line">     <span class="built_in">printf</span>(<span class="string">"ccc"</span>);</div><div class="line"></div><div class="line"> <span class="keyword">else</span></div><div class="line">     (<span class="number">5</span>&gt;<span class="number">10</span>);</div><div class="line"><span class="built_in">printf</span>(<span class="string">"ccc"</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>()&#123;</div><div class="line"></div><div class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>()&#123;</div><div class="line"></div><div class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>()&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//这样写语法不会出错但是逻辑上有漏洞</span></div></pre></td></tr></table></figure>
+<h2 id="11-for-循环"><a href="#11-for-循环" class="headerlink" title="11.for 循环"></a>11.for 循环</h2><h3 id="1-for-循环的执行流程"><a href="#1-for-循环的执行流程" class="headerlink" title="1.for 循环的执行流程"></a>1.for 循环的执行流程</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="number">1</span>;<span class="number">2</span>;<span class="number">3</span>)</div><div class="line">&#123;</div><div class="line">    <span class="number">4</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//执行流程：先执行1,1执行完了开始执行2,2执行完了标志着循环成立，这个时候就开始执行循环体4，然后再执行3，3执行完了才标志着一次循环的结束。3执行完之后继续执行2，然后执行4，然后执行3...</span></div></pre></td></tr></table></figure>
+<h3 id="2-多层-for-循环的嵌套使用"><a href="#2-多层-for-循环的嵌套使用" class="headerlink" title="2.多层 for 循环的嵌套使用"></a>2.多层 for 循环的嵌套使用</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="number">1</span>;<span class="number">2</span>;<span class="number">3</span>)</div><div class="line">    <span class="keyword">for</span>(<span class="number">4</span>;<span class="number">5</span>;<span class="number">6</span>)</div><div class="line">        a;</div><div class="line">        b;</div><div class="line">        </div><div class="line"><span class="comment">//上面这个 for 循环等价于</span></div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="number">1</span>;<span class="number">2</span>;<span class="number">3</span>)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="number">4</span>;<span class="number">5</span>;<span class="number">6</span>)</div><div class="line">    &#123;</div><div class="line">        a;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">b;</div><div class="line"></div><div class="line"><span class="comment">//其执行流程为：1-&gt;2-&gt;如果2成立，执行内部循环-&gt;3-&gt;2-&gt;如果2成立，执行内部循环。（只有当2不成立的时候才会执行b；内部循环的执行逻辑和外部循环是一样的；每当执行内部循环的时候，4 都会执行。）</span></div></pre></td></tr></table></figure>
+<h3 id="3-for-循环举例"><a href="#3-for-循环举例" class="headerlink" title="3.for 循环举例"></a>3.for 循环举例</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i,j;</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"aaa\n"</span>);</div><div class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;<span class="number">3</span>; j++)</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"bbb\n"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*</div><div class="line">输出结果为：（注意这个输出结果）</div><div class="line">aaa</div><div class="line">aaa</div><div class="line">aaa</div><div class="line">bbb</div><div class="line">bbb</div><div class="line">bbb</span></div></pre></td></tr></table></figure>
+<h2 id="12-while-概述"><a href="#12-while-概述" class="headerlink" title="12.while 概述"></a>12.while 概述</h2><h3 id="1-while-语句格式"><a href="#1-while-语句格式" class="headerlink" title="1.while 语句格式"></a>1.while 语句格式</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(表达式)</div><div class="line">    语句；</div></pre></td></tr></table></figure>
+<h3 id="2-while-与-for-的比较（二者可以互换）"><a href="#2-while-与-for-的比较（二者可以互换）" class="headerlink" title="2.while 与 for 的比较（二者可以互换）"></a>2.while 与 for 的比较（二者可以互换）</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=<span class="number">1000</span>; i++)</div><div class="line">    sum += i;</div><div class="line"></div><div class="line"><span class="keyword">while</span>(i &lt;= <span class="number">1000</span>)</div><div class="line">&#123;</div><div class="line">    sum += i;<span class="comment">//(这两个语句顺序不可以互换)</span></div><div class="line">    i++;<span class="comment">//(这两个语句顺序不可以互换)</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//同理下面这两个语句也是等价的</span></div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="number">1</span>;<span class="number">2</span>;<span class="number">3</span>)</div><div class="line">    a;</div><div class="line"></div><div class="line"><span class="keyword">while</span>(<span class="number">2</span>)</div><div class="line">&#123;</div><div class="line">    a;</div><div class="line">    <span class="number">3</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3-do…while…-语句"><a href="#3-do…while…-语句" class="headerlink" title="3.do…while… 语句"></a>3.do…while… 语句</h3><p>主要是用于人机交互。</p>
+<h2 id="13-switch-语句"><a href="#13-switch-语句" class="headerlink" title="13.switch 语句"></a>13.switch 语句</h2><h3 id="1-switch-语句的格式"><a href="#1-switch-语句的格式" class="headerlink" title="1.switch 语句的格式"></a>1.switch 语句的格式</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">switch</span>(表达式)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">case</span> 常量表达式<span class="number">1</span>：语句<span class="number">1</span>；</div><div class="line">    <span class="keyword">case</span> 常量表达式<span class="number">2</span>：语句<span class="number">2</span>；</div><div class="line">    <span class="keyword">case</span> 常量表达式<span class="number">3</span>：语句<span class="number">3</span>；</div><div class="line">    <span class="keyword">default</span>：语句<span class="number">4</span>；</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</div><div class="line">第一：所有case后面的常量表达式为便于描述我们姑且称之为标签，这些标签只能都是：枚举常量；数值常量；字符常量；常变量；宏名中的一种，注意普通变量，枚举变量是不可以作为便签使用的。</div><div class="line"></div><div class="line">（常变量：是一个变量，只能被赋予一个值，一般用const定义。）</div><div class="line"></div><div class="line">第二：switch 后面括号里的表达式允许是任何类型。（但是 vc++ 中只允许是 int 或 char 型。）</div><div class="line"></div><div class="line">第三：执行文一个 case 语句后，流程控制就转移到下一个 case 语句继续执行。case 常量表达式只是起语句标号的作用，并不是在该处进行条件判断。在执行 switch 语句时，根据 swtich() 中表达式的值找到与之匹配的 case 语句，就从此 case 子句开始执行下去，不再进行判断。</div><div class="line"></div><div class="line"> 第四：switch 是选择不是循环，如果在 switch 中出现了 break 语句。该语句的功能只是退出 switch 语句转去执行它下面的语句。在 switch 出现 continue 是错误的，除非 switch 本身就属于 for 或 while 循环的一部分。</div><div class="line">*/</span></div></pre></td></tr></table></figure>
+<h2 id="14-break-详解"><a href="#14-break-详解" class="headerlink" title="14.break 详解"></a>14.break 详解</h2><h3 id="1-break-如果用于循环是用来终止循环的"><a href="#1-break-如果用于循环是用来终止循环的" class="headerlink" title="1.break 如果用于循环是用来终止循环的"></a>1.break 如果用于循环是用来终止循环的</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=<span class="number">3</span>; i++)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="number">3</span> &gt; <span class="number">2</span>)</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">        <span class="comment">//break 在这里是用于终止 for 循环的</span></div><div class="line">    </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"这条语句永远不会输出"</span>);</div><div class="line">    </div><div class="line">    <span class="comment">//break 虽然是 if 内部的语句，但却是用来终止整个for循环的，</span></div><div class="line">    <span class="comment">//所以 printf 里面的内容永远不会输出。</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;<span class="number">4</span>; j++)</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">        <span class="comment">//在多层循环中，break 只能终止离它最近的那个循环</span></div><div class="line">    print(<span class="string">"hello\n"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</div><div class="line">result:</div><div class="line">hello</div><div class="line">hello</div><div class="line">hello</div><div class="line">*/</span></div></pre></td></tr></table></figure>
+<p>break 如果用于 switch 是用来终止 switch 的，在多层 switch 嵌套中，break 只能终止离它最近的 switch。</p>
+<p>break 不能直接用于 if，除非 if 属于循环内部的一个句子。</p>
+<h3 id="2-return-和-break-的区别"><a href="#2-return-和-break-的区别" class="headerlink" title="2.return 和 break 的区别"></a>2.return 和 break 的区别</h3><p>return 是用来终止函数用的，一执行 return，return 所在的函数就立即终止了；return 可以终止被调函数，向主调函数返回表达式的值，如果表达式为空，则只终止函数，不向主调函数返回任何值。</p>
+<h2 id="15-continue"><a href="#15-continue" class="headerlink" title="15.continue"></a>15.continue</h2><h3 id="1-通过下面三个例子我们来看看-continue-的作用"><a href="#1-通过下面三个例子我们来看看-continue-的作用" class="headerlink" title="1.通过下面三个例子我们来看看 continue 的作用"></a>1.通过下面三个例子我们来看看 continue 的作用</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,s=<span class="number">0</span>;</div><div class="line">    <span class="keyword">do</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(i % <span class="number">2</span>)</div><div class="line">        &#123;</div><div class="line">            i++;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">            <span class="comment">//continue 执行完之后将会转向执行 while 判断</span></div><div class="line">        &#125;</div><div class="line">        i++;</div><div class="line">        s += i;</div><div class="line">    &#125;<span class="keyword">while</span>(i &lt; <span class="number">7</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,s);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="number">1</span>;<span class="number">2</span>;<span class="number">3</span>)</div><div class="line">&#123;</div><div class="line">    A;</div><div class="line">    B;</div><div class="line">    <span class="keyword">continue</span>;</div><div class="line">    <span class="comment">//执行完 continue 之后不会执行C,D会转而执行for循环的判断条件</span></div><div class="line">    C;</div><div class="line">    D;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a=<span class="number">1</span>,b;</div><div class="line">    <span class="keyword">for</span>(b=<span class="number">1</span>; b&lt;=<span class="number">10</span>; b++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(a &gt;= <span class="number">8</span>)</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">            <span class="comment">//如果要是执行 break 语句则会转而执行第 17 行</span></div><div class="line">        <span class="keyword">if</span>(<span class="number">1</span> == a%<span class="number">2</span>)</div><div class="line">        &#123;</div><div class="line">            a += <span class="number">5</span>;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">            <span class="comment">//如果要是执行 continue 语句,则会转而执行for循环的判断条件</span></div><div class="line">        &#125;</div><div class="line">        a -= <span class="number">3</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"b=%d"</span>,b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="16-数组概述"><a href="#16-数组概述" class="headerlink" title="16.数组概述"></a>16.数组概述</h2><h3 id="1-为什么需要数组？"><a href="#1-为什么需要数组？" class="headerlink" title="1.为什么需要数组？"></a>1.为什么需要数组？</h3><ol>
+<li>数组可以用来保存大量同类型的数据</li>
+<li>一维数组可以模拟线性事物</li>
+<li>二维数组可以模拟平面事物</li>
+<li>三维数组可以模拟立体事物</li>
+<li>利用数组可以模拟现实的世界</li>
+</ol>
+<h3 id="2-我们这里为什么不详细讲数组？"><a href="#2-我们这里为什么不详细讲数组？" class="headerlink" title="2.我们这里为什么不详细讲数组？"></a>2.我们这里为什么不详细讲数组？</h3><p>数组的操作太麻烦，我们一般不直接操作语言级别的数组，而是通过别人提供的一种以数组为内核的工具去方便的操作数组。</p>
+<h3 id="3-一维数组的使用"><a href="#3-一维数组的使用" class="headerlink" title="3.一维数组的使用"></a>3.一维数组的使用</h3><h4 id="1-如何定义一维数组？"><a href="#1-如何定义一维数组？" class="headerlink" title="1.如何定义一维数组？"></a>1.如何定义一维数组？</h4><p>一维数组是为 n 个变量<strong>连续分配</strong>存储空间；所有变量的数据<strong>类型必须相同</strong>；所有变量<strong>所占的字节大小必须相同</strong>。</p>
+<h4 id="2-一维数组的初始化"><a href="#2-一维数组的初始化" class="headerlink" title="2.一维数组的初始化"></a>2.一维数组的初始化</h4><p>完全初始化：<code>int a[5] = {1,2,3,4,5};</code><br>不完全初始化：<code>int a[5] = {1,2,3};</code>(未初始化的元素为0）<br>不初始化：<code>int a[5];</code>(所有的元素都是垃圾值）<br>清零：<code>int a[5] = {0};</code>（数组内的所有元素均为0）</p>
+<h4 id="3-初始化的错误写法"><a href="#3-初始化的错误写法" class="headerlink" title="3.初始化的错误写法"></a>3.初始化的错误写法</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一个错误写法</span></div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>];</div><div class="line">a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</div><div class="line"><span class="comment">/*</div><div class="line">这里我们就没有 a[5] 这个元素，同时你把多个值赋值给一个元素肯</div><div class="line">定也是不可以的，只有在定义数组的同时才可以整体赋值。</div><div class="line">*/</span></div><div class="line"></div><div class="line"><span class="comment">//第二个错误写法</span></div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = <span class="number">100</span>;<span class="comment">//我们没有 a[5] 这个元素</span></div><div class="line"></div><div class="line"><span class="comment">//第三个错误写法</span></div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</div><div class="line"><span class="keyword">int</span> b[<span class="number">5</span>];</div><div class="line">b = a;</div><div class="line"><span class="comment">/*</div><div class="line">这样做是不可以把数组a的值全部赋值给数组b的，数组名代表的是数</div><div class="line">组第一个元素的地址。</div><div class="line">*/</span></div></pre></td></tr></table></figure>
+<h3 id="4-二维数组的使用"><a href="#4-二维数组的使用" class="headerlink" title="4.二维数组的使用"></a>4.二维数组的使用</h3><h4 id="1-二维数组的初始化"><a href="#1-二维数组的初始化" class="headerlink" title="1.二维数组的初始化"></a>1.二维数组的初始化</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> a[<span class="number">3</span>][<span class="number">4</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>&#125;;</div><div class="line"></div><div class="line"><span class="keyword">int</span> a[<span class="number">3</span>][<span class="number">4</span>]=&#123;</div><div class="line">  &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;,</div><div class="line">  &#123;<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>&#125;,</div><div class="line">  &#123;<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//总共十二个元素可以当做三行四列来看待</span></div><div class="line"></div><div class="line">a[i][j];<span class="comment">//表示的是第i+1行第j+1列的元素。</span></div></pre></td></tr></table></figure>
+<h2 id="17-函数"><a href="#17-函数" class="headerlink" title="17.函数"></a>17.函数</h2><h3 id="1-什么叫函数？"><a href="#1-什么叫函数？" class="headerlink" title="1.什么叫函数？"></a>1.什么叫函数？</h3><ol>
+<li>逻辑上：能够完成特定功能的独立的代码单元。</li>
+<li>物理上：能够接收数据,能够对接受的数据进行处理,能够将处理的结果返回。</li>
+</ol>
+<p>总结:函数是一个工具,是为了解决大量的类似问题而设计的。函数可以当做一个黑匣子，只告诉你如何去使用,但是不给你内部的东西。</p>
+<h3 id="2-为什么需要函数？"><a href="#2-为什么需要函数？" class="headerlink" title="2.为什么需要函数？"></a>2.为什么需要函数？</h3><ol>
+<li>之所以需要函数是为了避免重复性操作。</li>
+<li>学完函数就非常容易理解什么是面向过程的思想。</li>
+<li>有利用程序的模块化。</li>
+<li>面向过程的一个特点,就是把大问题分解成小问题,小问题再分解成更小的问题，整个程序是由很多个模块组成的,我修改这一个模块,不会影响另一个模块,这就提高了程序的健壮性。(C语言的基本单位是函数)</li>
+</ol>
+<h3 id="3-如何定义函数？"><a href="#3-如何定义函数？" class="headerlink" title="3.如何定义函数？"></a>3.如何定义函数？</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">函数的名字  函数的返回值 (函数的形参列表)</div><div class="line">&#123;</div><div class="line">    函数的执行体;</div><div class="line">&#125;</div><div class="line"><span class="comment">//函数定义的本质是详细描述函数之所以实现某个特定功能的具体方法。</span></div></pre></td></tr></table></figure>
+<p>函数返回值的类型也称为函数的类型,因为如果函数名前的返回值类型和函数执行体中的 return 表达式中的返回值类型不同的话,则最终函数返回值的类型以函数名前的返回值类型为准(会自动进行类型转换)。</p>
+<h3 id="4-函数的分类？"><a href="#4-函数的分类？" class="headerlink" title="4.函数的分类？"></a>4.函数的分类？</h3><ol>
+<li>有参函数和无参函数。</li>
+<li>有返回值函数和无返回值函数。</li>
+<li>库函数 和 用户自定义函数。</li>
+<li>普通函数 和 主函数(main函数)。</li>
+</ol>
+<p>一个程序必须有且只能有一个主函数，主函数既是程序的入口也是程序的出口；主函数可以调用普通函数,反之则不可以，但是普通函数之间可以相互调用。</p>
+<h3 id="5-注意的问题"><a href="#5-注意的问题" class="headerlink" title="5.注意的问题"></a>5.注意的问题</h3><ol>
+<li>函数如何去定义，就看你如何去实现功能。</li>
+<li>如何函数调用写在了函数定义的前面，则必须加函数前置声明，函数声明的作用就是告诉编译器即将出现的若干个字母是函数名，同时告诉编译器形参和返回值的具体情况。</li>
+<li>函数声明是一个语句，所以末尾必须加分号。</li>
+<li>对库函数的声明是通过<code>#include &lt;库函数的名字.h&gt;</code>来实现的。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="comment">//判断一个数是不是素数的函数</span></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> val)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i;</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>; i&lt;val; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(val % i == <span class="number">0</span>)</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span>(i == val)</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        <span class="comment">/*</div><div class="line">        我们在写一个函数的时候，功能要尽量单一，内部最好不要</div><div class="line">        编写对结果处理的代码，（所以我们这里写的是return</div><div class="line">        true）结果交给主调用函数去处理，这个函数的功能就是判             断一个数是不是素数，至于判断的结果该怎么处理，这</div><div class="line">        个就交给主调函数去处理了。</div><div class="line">        */</span></div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="6-如何合理设计函数来解决实际问题？"><a href="#6-如何合理设计函数来解决实际问题？" class="headerlink" title="6.如何合理设计函数来解决实际问题？"></a>6.如何合理设计函数来解决实际问题？</h3><ol>
+<li>一个函数的功能应该尽可能的单一,不要把过多的功能在一个函数中体现出来。</li>
+<li>多学习,多模仿牛人的代码,用心的去看,用心的去模仿。</li>
+</ol>
+<h2 id="18-变量的作用域和存储方式"><a href="#18-变量的作用域和存储方式" class="headerlink" title="18.变量的作用域和存储方式"></a>18.变量的作用域和存储方式</h2><h3 id="1-按作用域划分"><a href="#1-按作用域划分" class="headerlink" title="1.按作用域划分"></a>1.按作用域划分</h3><ol>
+<li><p>全局变量。在所有函数外部定义的变量叫做全局变量；如果你的函数声明在了全局变量的前面,那你的函数里也是不可以使用全局变量的；全局变量的使用范围:从定义开始到整个程序结束。</p>
+</li>
+<li><p>局部变量。在一个函数内部定义的变量或者是函数的形参统称为局部变量。</p>
+</li>
+</ol>
+<p>全局变量和局部变量命名冲突的问题:在一个函数内部,如果定义的局部变量的名字和全局变量的一样,局部变量会屏蔽掉全局变量。</p>
+<h3 id="2-按变量的存储方式划分"><a href="#2-按变量的存储方式划分" class="headerlink" title="2.按变量的存储方式划分"></a>2.按变量的存储方式划分</h3><ol>
+<li>静态变量</li>
+<li>自动变量</li>
+<li>寄存器变量</li>
+</ol>
+<h2 id="19-浮点数存储所带来的问题"><a href="#19-浮点数存储所带来的问题" class="headerlink" title="19.浮点数存储所带来的问题"></a>19.浮点数存储所带来的问题</h2><h3 id="1-存储精度的问题"><a href="#1-存储精度的问题" class="headerlink" title="1.存储精度的问题"></a>1.存储精度的问题</h3><p>float 和 double 都不能保证精确的存储每一个小数， 浮点数存放的只是一个近似值。</p>
+<p>面试题:如何判断一个浮点型变量x的值是否是0?<br>答：<code>if(|x-0.000001|&lt;=0.000001)--&gt;x=0</code></p>
+<h3 id="2-为什么循环更新的变量不能定义成浮点型？"><a href="#2-为什么循环更新的变量不能定义成浮点型？" class="headerlink" title="2.为什么循环更新的变量不能定义成浮点型？"></a>2.为什么循环更新的变量不能定义成浮点型？</h3><p>由于浮点型存储的是一个近似值,所以在进行循环的判断条件的求值的时候,其值会影响判断条件的结果。</p>
+<p>比如说:i&lt;=100,如果这个时候i的值是100.000001,于是这一步就没有加入循环,这个时候就会影响整个循环的执行，我们更新部分的值只能是一个整数。</p>
+<h3 id="3-强制类型转换"><a href="#3-强制类型转换" class="headerlink" title="3.强制类型转换"></a>3.强制类型转换</h3><p>格式：(数据类型)(表达式)<br><code>eg:(float)(5) == 5.00000</code></p>
+<h2 id="20-自增自减运算符"><a href="#20-自增自减运算符" class="headerlink" title="20.自增自减运算符"></a>20.自增自减运算符</h2><h3 id="1-分类"><a href="#1-分类" class="headerlink" title="1.分类"></a>1.分类</h3><ol>
+<li>前自增后自增</li>
+<li>前自减后自减</li>
+</ol>
+<h3 id="2-二者的异同"><a href="#2-二者的异同" class="headerlink" title="2.二者的异同"></a>2.二者的异同</h3><p>相同：最终都使 i 的值加一</p>
+<p>不同：前自增整体表达式的值是i加1之后的值；后自增整体表达式的值是i加1之前的值。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i,j,k,m;</div><div class="line">    i = <span class="number">3</span>;</div><div class="line">    j = <span class="number">3</span>;</div><div class="line">    k = i++;</div><div class="line">    m = ++j;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d %d %d"</span>,i,j,k,m);</div><div class="line">&#125;</div><div class="line"><span class="comment">//result : 4 4 3 4</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">3</span>;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,i++,++i,i);</div><div class="line"><span class="comment">//result : 4 5 5</span></div></pre></td></tr></table></figure>
+<h3 id="3-为什么会出现自增？"><a href="#3-为什么会出现自增？" class="headerlink" title="3.为什么会出现自增？"></a>3.为什么会出现自增？</h3><p>有<code>i += 1;</code>不就可以了吗?为什么还有出现<code>i++</code>?原因:代码更精炼,自增的速度更快。</p>
+<h3 id="4-学习自增时要明白的几个问题"><a href="#4-学习自增时要明白的几个问题" class="headerlink" title="4.学习自增时要明白的几个问题"></a>4.学习自增时要明白的几个问题</h3><p>我们编程时应该尽量屏蔽掉前自增和后自增的区别，自增表达式单独成一个语句,最好不要作为一个更大的表达式的一部分来使用。</p>
+<p>比如：<code>int m = i++ + ++i + i + i++;</code>,这样写不但是不规范的代码,而且是不可移植的代码。</p>
+<p>这个程序在不同的机器上的运行结果是不一样的,这里面牵扯到一个叫做顺序点的问题,因为我们不知道<code>i++</code>执行结束之后,这一步是否立即生效,就是在我执行<code>++i</code>的时候,前面的i有没有立即加1是不知道的,我们只有顺序点才能明确的知道这个操作是否生效,而顺序点只有三个:逗号,括号,分号。</p>
+<p><strong>作为一个优秀的程序员,在你的程序里面不应该体现出i++和++i的区别。</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C-C/" rel="tag"># C/C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/25/前端面试指南HTML5篇/" rel="next" title="前端面试指南HTML5篇">
+                <i class="fa fa-chevron-left"></i> 前端面试指南HTML5篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/26/前端工作流/" rel="prev" title="前端工作流">
+                前端工作流 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="江南北" />
+          <p class="site-author-name" itemprop="name">江南北</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">104</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-前言"><span class="nav-number">1.</span> <span class="nav-text">1.前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-C语言的起源和发展"><span class="nav-number">2.</span> <span class="nav-text">2.C语言的起源和发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-C语言的特点"><span class="nav-number">3.</span> <span class="nav-text">3.C语言的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-C语言的优点"><span class="nav-number">3.1.</span> <span class="nav-text">1.C语言的优点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-C语言的缺点："><span class="nav-number">3.2.</span> <span class="nav-text">2.C语言的缺点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-C语言的应用领域："><span class="nav-number">3.3.</span> <span class="nav-text">3.Ｃ语言的应用领域：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-C语言的重要性"><span class="nav-number">3.4.</span> <span class="nav-text">4.C语言的重要性:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-怎样学习C语言？"><span class="nav-number">4.</span> <span class="nav-text">4.怎样学习C语言？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-怎样学习C语言"><span class="nav-number">4.1.</span> <span class="nav-text">1.怎样学习C语言?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-学习的目标"><span class="nav-number">4.2.</span> <span class="nav-text">2.学习的目标?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-学习java为什么要先学习C语言"><span class="nav-number">4.3.</span> <span class="nav-text">3.学习java为什么要先学习C语言?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-预备计算机专业基础知识"><span class="nav-number">5.</span> <span class="nav-text">5.预备计算机专业基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CPU-内存条-硬盘-显卡-主板和显示器之间的关系"><span class="nav-number">5.1.</span> <span class="nav-text">1.CPU,内存条,硬盘,显卡,主板和显示器之间的关系?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-hellow-word-这个程序是如何被运行起来的"><span class="nav-number">5.2.</span> <span class="nav-text">2.hellow word 这个程序是如何被运行起来的?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-什么是数据类型"><span class="nav-number">5.3.</span> <span class="nav-text">3.什么是数据类型?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-CPU-内存条-vc6-0-和操作系统之间的关系"><span class="nav-number">5.4.</span> <span class="nav-text">4.CPU ,内存条, vc6.0 和操作系统之间的关系?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-变量为什么必须初始化"><span class="nav-number">5.5.</span> <span class="nav-text">5.变量为什么必须初始化?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-软件运行与内存的关系"><span class="nav-number">5.6.</span> <span class="nav-text">6.软件运行与内存的关系?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-什么叫进制"><span class="nav-number">5.7.</span> <span class="nav-text">7.什么叫进制?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-为什么现在的计算机使用二进制"><span class="nav-number">5.8.</span> <span class="nav-text">8.为什么现在的计算机使用二进制?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-常量在计算机中是如何表示的"><span class="nav-number">5.9.</span> <span class="nav-text">9.常量在计算机中是如何表示的?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-常量以什么样的二进制代码存储在计算机中"><span class="nav-number">5.10.</span> <span class="nav-text">10.常量以什么样的二进制代码存储在计算机中?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-预备编程基础知识"><span class="nav-number">6.</span> <span class="nav-text">6.预备编程基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-代码规范化"><span class="nav-number">6.1.</span> <span class="nav-text">1.代码规范化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-为什么创建文件的时候要选择C-？"><span class="nav-number">6.2.</span> <span class="nav-text">2.为什么创建文件的时候要选择C++？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-什么是字节？"><span class="nav-number">6.3.</span> <span class="nav-text">3.什么是字节？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-char-使用的常见问题"><span class="nav-number">6.4.</span> <span class="nav-text">4.char 使用的常见问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-什么是-Ascii-码？"><span class="nav-number">6.5.</span> <span class="nav-text">5.什么是 Ascii 码？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-进制"><span class="nav-number">6.6.</span> <span class="nav-text">6.进制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-什么是进制？"><span class="nav-number">6.6.1.</span> <span class="nav-text">1.什么是进制？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-如何把-r-进制转化为十进制？"><span class="nav-number">6.6.2.</span> <span class="nav-text">2.如何把 r 进制转化为十进制？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何把十进制转化成-r-进制？"><span class="nav-number">6.7.</span> <span class="nav-text">3.如何把十进制转化成 r 进制？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-不同的进制所代表的的数值之间的关系？"><span class="nav-number">6.7.1.</span> <span class="nav-text">4.不同的进制所代表的的数值之间的关系？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-逗号表达式"><span class="nav-number">6.8.</span> <span class="nav-text">7.逗号表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-scanf-用法"><span class="nav-number">7.</span> <span class="nav-text">7.scanf 用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-用法一-scanf-quot-输入控制符-quot-输入参数"><span class="nav-number">7.1.</span> <span class="nav-text">1.用法一:scanf("输入控制符",输入参数);</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-用法二-scanf-quot-非输入控制符-输入控制符-quot-输入参数"><span class="nav-number">7.2.</span> <span class="nav-text">2.用法二:scanf("非输入控制符 输入控制符",输入参数);</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何用-scanf-编写出高质量的程序？"><span class="nav-number">7.3.</span> <span class="nav-text">3.如何用 scanf 编写出高质量的程序？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-printf-用法"><span class="nav-number">8.</span> <span class="nav-text">8.printf 用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-流程控制"><span class="nav-number">9.</span> <span class="nav-text">9.流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-流程控制的分类"><span class="nav-number">9.1.</span> <span class="nav-text">1.流程控制的分类:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-流程控制为什么重要"><span class="nav-number">9.2.</span> <span class="nav-text">2.流程控制为什么重要?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-if-语句"><span class="nav-number">10.</span> <span class="nav-text">10.if 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-If-的范围问题"><span class="nav-number">10.1.</span> <span class="nav-text">1.If 的范围问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-常见问题解析"><span class="nav-number">10.2.</span> <span class="nav-text">2.常见问题解析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-for-循环"><span class="nav-number">11.</span> <span class="nav-text">11.for 循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-for-循环的执行流程"><span class="nav-number">11.1.</span> <span class="nav-text">1.for 循环的执行流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-多层-for-循环的嵌套使用"><span class="nav-number">11.2.</span> <span class="nav-text">2.多层 for 循环的嵌套使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-for-循环举例"><span class="nav-number">11.3.</span> <span class="nav-text">3.for 循环举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-while-概述"><span class="nav-number">12.</span> <span class="nav-text">12.while 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-while-语句格式"><span class="nav-number">12.1.</span> <span class="nav-text">1.while 语句格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-while-与-for-的比较（二者可以互换）"><span class="nav-number">12.2.</span> <span class="nav-text">2.while 与 for 的比较（二者可以互换）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-do…while…-语句"><span class="nav-number">12.3.</span> <span class="nav-text">3.do…while… 语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-switch-语句"><span class="nav-number">13.</span> <span class="nav-text">13.switch 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-switch-语句的格式"><span class="nav-number">13.1.</span> <span class="nav-text">1.switch 语句的格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-break-详解"><span class="nav-number">14.</span> <span class="nav-text">14.break 详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-break-如果用于循环是用来终止循环的"><span class="nav-number">14.1.</span> <span class="nav-text">1.break 如果用于循环是用来终止循环的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-return-和-break-的区别"><span class="nav-number">14.2.</span> <span class="nav-text">2.return 和 break 的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-continue"><span class="nav-number">15.</span> <span class="nav-text">15.continue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-通过下面三个例子我们来看看-continue-的作用"><span class="nav-number">15.1.</span> <span class="nav-text">1.通过下面三个例子我们来看看 continue 的作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-数组概述"><span class="nav-number">16.</span> <span class="nav-text">16.数组概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-为什么需要数组？"><span class="nav-number">16.1.</span> <span class="nav-text">1.为什么需要数组？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-我们这里为什么不详细讲数组？"><span class="nav-number">16.2.</span> <span class="nav-text">2.我们这里为什么不详细讲数组？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-一维数组的使用"><span class="nav-number">16.3.</span> <span class="nav-text">3.一维数组的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-如何定义一维数组？"><span class="nav-number">16.3.1.</span> <span class="nav-text">1.如何定义一维数组？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-一维数组的初始化"><span class="nav-number">16.3.2.</span> <span class="nav-text">2.一维数组的初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-初始化的错误写法"><span class="nav-number">16.3.3.</span> <span class="nav-text">3.初始化的错误写法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-二维数组的使用"><span class="nav-number">16.4.</span> <span class="nav-text">4.二维数组的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-二维数组的初始化"><span class="nav-number">16.4.1.</span> <span class="nav-text">1.二维数组的初始化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-函数"><span class="nav-number">17.</span> <span class="nav-text">17.函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么叫函数？"><span class="nav-number">17.1.</span> <span class="nav-text">1.什么叫函数？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-为什么需要函数？"><span class="nav-number">17.2.</span> <span class="nav-text">2.为什么需要函数？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何定义函数？"><span class="nav-number">17.3.</span> <span class="nav-text">3.如何定义函数？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-函数的分类？"><span class="nav-number">17.4.</span> <span class="nav-text">4.函数的分类？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-注意的问题"><span class="nav-number">17.5.</span> <span class="nav-text">5.注意的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-如何合理设计函数来解决实际问题？"><span class="nav-number">17.6.</span> <span class="nav-text">6.如何合理设计函数来解决实际问题？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-变量的作用域和存储方式"><span class="nav-number">18.</span> <span class="nav-text">18.变量的作用域和存储方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-按作用域划分"><span class="nav-number">18.1.</span> <span class="nav-text">1.按作用域划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-按变量的存储方式划分"><span class="nav-number">18.2.</span> <span class="nav-text">2.按变量的存储方式划分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-浮点数存储所带来的问题"><span class="nav-number">19.</span> <span class="nav-text">19.浮点数存储所带来的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-存储精度的问题"><span class="nav-number">19.1.</span> <span class="nav-text">1.存储精度的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-为什么循环更新的变量不能定义成浮点型？"><span class="nav-number">19.2.</span> <span class="nav-text">2.为什么循环更新的变量不能定义成浮点型？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-强制类型转换"><span class="nav-number">19.3.</span> <span class="nav-text">3.强制类型转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-自增自减运算符"><span class="nav-number">20.</span> <span class="nav-text">20.自增自减运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-分类"><span class="nav-number">20.1.</span> <span class="nav-text">1.分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-二者的异同"><span class="nav-number">20.2.</span> <span class="nav-text">2.二者的异同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-为什么会出现自增？"><span class="nav-number">20.3.</span> <span class="nav-text">3.为什么会出现自增？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-学习自增时要明白的几个问题"><span class="nav-number">20.4.</span> <span class="nav-text">4.学习自增时要明白的几个问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">江南北</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
