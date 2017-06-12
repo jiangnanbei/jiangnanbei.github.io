@@ -327,6 +327,157 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/29/冒泡排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/29/冒泡排序/" itemprop="url">冒泡排序</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-29T17:20:05+08:00">
+                2016-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/29/冒泡排序/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/11/29/冒泡排序/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="思想："><a href="#思想：" class="headerlink" title="思想："></a>思想：</h3><p>每次比较相邻的两个元素,如果他们的顺序错误,就把他们交换一下。</p>
+<p>比如你要给 2 3 8 4 6这五个数字从打到小排序，首先第一个数字和第二个数字比较,如果第一个数字小于第二个数字则交换位置，然后第二个数字和第三个数字比较,如果第二个数字比第三个数字小则交换位置。以此类推,如此一遍循环下来,最小的一个数字已经到了最后一个位置。然后开始第二遍从第一个元素开始的相邻的两个元素的比较…</p>
+<p>如果有n个数字则我们只需要比较n-1遍即可.</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">6</span>&#125;;</div><div class="line">	<span class="keyword">int</span> t;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span><span class="number">-1</span>;i++)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">if</span>(a[i]&lt;a[i+<span class="number">1</span>])</div><div class="line">			&#123;</div><div class="line">				t=a[i];</div><div class="line">				a[i]=a[i+<span class="number">1</span>];</div><div class="line">				a[i+<span class="number">1</span>]=t;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, a[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/28/对员工的年龄进行排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1109,167 +1260,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/25/前端面试指南HTML5篇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/25/前端面试指南HTML5篇/" itemprop="url">前端面试指南HTML5篇</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-25T13:24:04+08:00">
-                2016-11-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/25/前端面试指南HTML5篇/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/25/前端面试指南HTML5篇/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="1-介绍一下你对浏览器内核的理解？"><a href="#1-介绍一下你对浏览器内核的理解？" class="headerlink" title="1.介绍一下你对浏览器内核的理解？"></a>1.介绍一下你对浏览器内核的理解？</h3><p>主要分成两部分：渲染引擎和<code>JS</code>引擎。</p>
-<p>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。</p>
-<p>浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p>
-<p>JS 引擎则：解析和执行 <code>javascript</code> 来实现网页的动态效果。</p>
-<p>最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。</p>
-<h3 id="2-常见的浏览器内核有哪些？"><a href="#2-常见的浏览器内核有哪些？" class="headerlink" title="2.常见的浏览器内核有哪些？"></a>2.常见的浏览器内核有哪些？</h3><p><code>Trident</code> 内核：<code>IE</code> ,<code>MaxThon</code> ,<code>TT</code> ,<code>The World</code> ,<code>360</code>, <code>搜狗浏览器</code>等。[又称 MSHTML ]。</p>
-<p><code>Gecko</code>内核：<code>Netscape6</code> 及以上版本，<code>FF</code>, <code>MozillaSuite</code> / <code>SeaMonkey</code>等。</p>
-<p><code>Presto</code>内核：<code>Opera7</code>及以上。      [<code>Opera</code>内核原为：<code>Presto</code>，现为：<code>Blink</code>;]</p>
-<p><code>Webkit</code> 内核：<code>Safari</code>,<code>Chrome</code>等。   [ <code>Chrome</code> 的：<code>Blink</code>（<code>WebKit</code>的分支）]<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/11/25/前端面试指南HTML5篇/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/25/前端面试指南HTML5篇-一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1431,7 +1421,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/24/npm-简单使用/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/25/前端面试指南HTML5篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1450,7 +1440,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/11/24/npm-简单使用/" itemprop="url">npm 简单使用</a></h2>
+                <a class="post-title-link" href="/2016/11/25/前端面试指南HTML5篇/" itemprop="url">前端面试指南HTML5篇</a></h2>
         
 
         <div class="post-meta">
@@ -1462,8 +1452,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-24T16:43:05+08:00">
-                2016-11-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-25T13:24:04+08:00">
+                2016-11-25
               </time>
             
 
@@ -1503,9 +1493,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/11/24/npm-简单使用/#comments" itemprop="discussionUrl">
+                <a href="/2016/11/25/前端面试指南HTML5篇/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/24/npm-简单使用/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/11/25/前端面试指南HTML5篇/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1531,13 +1521,22 @@
 
       
         
-          
-            <p>我们使用 <code>npm</code> 来管理我们的项目依赖，但是在这之前我们需要一样东西来描述我们的项目是什么样子的，这个就是 <code>package.json</code> 文件。</p>
-<p>有了 <code>package.json</code> 文件之后，<code>npm</code>通过查看 <code>package.json</code> 就能够知道我们的项目大概是一个什么样子，所以我们要做的第一件事情就是在我们的项目中建一个 <code>package.json</code> 的文件。</p>
-<h4 id="下面是几个使用-npm-的命令："><a href="#下面是几个使用-npm-的命令：" class="headerlink" title="下面是几个使用 npm 的命令："></a>下面是几个使用 <code>npm</code> 的命令：</h4><p>-<code>npm install 包名</code> 安装包<br>-<code>npm install --save 包名</code> 安装包，并在 <code>package.json</code> 记录为生产依赖<br>-<code>npm install --save-dev 包名</code>安装包，并在 <code>package.json</code> 中记录为开发依赖</p>
-<p>-<code>npm uninstall 包名</code> 卸载包<br>-<code>npm uninstall --save 包名</code> 卸载包，并在 <code>package.json</code>中删除记录<br>-<code>npm uninstall --save-div 包名</code> 卸载包，并在 <code>package.json</code> 中删除记录</p>
-
-          
+          <h3 id="1-介绍一下你对浏览器内核的理解？"><a href="#1-介绍一下你对浏览器内核的理解？" class="headerlink" title="1.介绍一下你对浏览器内核的理解？"></a>1.介绍一下你对浏览器内核的理解？</h3><p>主要分成两部分：渲染引擎和<code>JS</code>引擎。</p>
+<p>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。</p>
+<p>浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p>
+<p>JS 引擎则：解析和执行 <code>javascript</code> 来实现网页的动态效果。</p>
+<p>最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。</p>
+<h3 id="2-常见的浏览器内核有哪些？"><a href="#2-常见的浏览器内核有哪些？" class="headerlink" title="2.常见的浏览器内核有哪些？"></a>2.常见的浏览器内核有哪些？</h3><p><code>Trident</code> 内核：<code>IE</code> ,<code>MaxThon</code> ,<code>TT</code> ,<code>The World</code> ,<code>360</code>, <code>搜狗浏览器</code>等。[又称 MSHTML ]。</p>
+<p><code>Gecko</code>内核：<code>Netscape6</code> 及以上版本，<code>FF</code>, <code>MozillaSuite</code> / <code>SeaMonkey</code>等。</p>
+<p><code>Presto</code>内核：<code>Opera7</code>及以上。      [<code>Opera</code>内核原为：<code>Presto</code>，现为：<code>Blink</code>;]</p>
+<p><code>Webkit</code> 内核：<code>Safari</code>,<code>Chrome</code>等。   [ <code>Chrome</code> 的：<code>Blink</code>（<code>WebKit</code>的分支）]<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/25/前端面试指南HTML5篇/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1623,7 +1622,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">117</span>
+                <span class="site-state-item-count">118</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1634,7 +1633,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1645,7 +1644,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
