@@ -327,7 +327,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/25/前端面试指南HTML5篇-一）/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/25/C入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -346,7 +346,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/11/25/前端面试指南HTML5篇-一）/" itemprop="url">前端面试指南HTML5篇</a></h2>
+                <a class="post-title-link" href="/2016/11/25/C入门/" itemprop="url">C入门</a></h2>
         
 
         <div class="post-meta">
@@ -358,7 +358,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-25T13:24:04+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-25T17:12:26+08:00">
                 2016-11-25
               </time>
             
@@ -381,8 +381,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
                   </a>
                 </span>
 
@@ -399,9 +399,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/11/25/前端面试指南HTML5篇-一）/#comments" itemprop="discussionUrl">
+                <a href="/2016/11/25/C入门/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/25/前端面试指南HTML5篇-一）/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/11/25/C入门/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -427,18 +427,14 @@
 
       
         
-          <h3 id="1-介绍一下你对浏览器内核的理解？"><a href="#1-介绍一下你对浏览器内核的理解？" class="headerlink" title="1.介绍一下你对浏览器内核的理解？"></a>1.介绍一下你对浏览器内核的理解？</h3><p>主要分成两部分：渲染引擎和<code>JS</code>引擎。</p>
-<p>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。</p>
-<p>浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p>
-<p>JS 引擎则：解析和执行 <code>javascript</code> 来实现网页的动态效果。</p>
-<p>最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。</p>
-<h3 id="2-常见的浏览器内核有哪些？"><a href="#2-常见的浏览器内核有哪些？" class="headerlink" title="2.常见的浏览器内核有哪些？"></a>2.常见的浏览器内核有哪些？</h3><p><code>Trident</code> 内核：<code>IE</code> ,<code>MaxThon</code> ,<code>TT</code> ,<code>The World</code> ,<code>360</code>, <code>搜狗浏览器</code>等。[又称 MSHTML ]。</p>
-<p><code>Gecko</code>内核：<code>Netscape6</code> 及以上版本，<code>FF</code>, <code>MozillaSuite</code> / <code>SeaMonkey</code>等。</p>
-<p><code>Presto</code>内核：<code>Opera7</code>及以上。      [<code>Opera</code>内核原为：<code>Presto</code>，现为：<code>Blink</code>;]</p>
-<p><code>Webkit</code> 内核：<code>Safari</code>,<code>Chrome</code>等。   [ <code>Chrome</code> 的：<code>Blink</code>（<code>WebKit</code>的分支）]<br>
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是我学习过程中自己整理出来的C语言入门简明教程,希望它能让你轻松入门,这只是开始,后面的路还很长,加油,程序人!</p>
+<p><strong>入门的最基本的方法就是从C语言入手,当你成为C语言的高手,那么你就很容易进到操作系统的平台里面去;当你进入到操作系统的平台里面去实际做程序的时候,就会懂得进行调试;当你懂得调试的时候,你就会发现能轻而易举的了解整个平台的架构.这个时候,计算机基本上一切都在你的掌握之中了,没有什么东西能逃得出你的手心—梁肇新</strong></p>
+<h2 id="C语言的起源和发展"><a href="#C语言的起源和发展" class="headerlink" title="C语言的起源和发展"></a>C语言的起源和发展</h2><p>程序设计语言的发展过程:第一代机器语言；第二代汇编语言；第三方代高级语言。高级语言中又分为 结构化语言 和 面向对象语言，其中结构化语言的代表有:<code>Basic</code> ,<code>Fortran</code> , <code>Pascal</code> ,<code>C.</code> 面向对象小对象语言的代表有:<code>C++</code> , <code>java</code> ,<code>C#</code>.</p>
+<p>C 语言是结构化语言, C++ 是面向对象的语言。结构化语言的缺陷：数据和操作是分离的，导致你写大项目的时候,会出现意想不到的问题。</p>
+<p>C++ 是面向对象里面最难的语言，如果你学会了C++，其他的面向对象的语言你可以很轻松的就掌握了。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/11/25/前端面试指南HTML5篇-一）/#more" rel="contents">
+            <a class="btn" href="/2016/11/25/C入门/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -600,6 +596,167 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/11/25/前端面试指南HTML5篇/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/25/前端面试指南HTML5篇-一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/25/前端面试指南HTML5篇-一）/" itemprop="url">前端面试指南HTML5篇</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-25T13:24:04+08:00">
+                2016-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/25/前端面试指南HTML5篇-一）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/11/25/前端面试指南HTML5篇-一）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="1-介绍一下你对浏览器内核的理解？"><a href="#1-介绍一下你对浏览器内核的理解？" class="headerlink" title="1.介绍一下你对浏览器内核的理解？"></a>1.介绍一下你对浏览器内核的理解？</h3><p>主要分成两部分：渲染引擎和<code>JS</code>引擎。</p>
+<p>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。</p>
+<p>浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p>
+<p>JS 引擎则：解析和执行 <code>javascript</code> 来实现网页的动态效果。</p>
+<p>最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。</p>
+<h3 id="2-常见的浏览器内核有哪些？"><a href="#2-常见的浏览器内核有哪些？" class="headerlink" title="2.常见的浏览器内核有哪些？"></a>2.常见的浏览器内核有哪些？</h3><p><code>Trident</code> 内核：<code>IE</code> ,<code>MaxThon</code> ,<code>TT</code> ,<code>The World</code> ,<code>360</code>, <code>搜狗浏览器</code>等。[又称 MSHTML ]。</p>
+<p><code>Gecko</code>内核：<code>Netscape6</code> 及以上版本，<code>FF</code>, <code>MozillaSuite</code> / <code>SeaMonkey</code>等。</p>
+<p><code>Presto</code>内核：<code>Opera7</code>及以上。      [<code>Opera</code>内核原为：<code>Presto</code>，现为：<code>Blink</code>;]</p>
+<p><code>Webkit</code> 内核：<code>Safari</code>,<code>Chrome</code>等。   [ <code>Chrome</code> 的：<code>Blink</code>（<code>WebKit</code>的分支）]<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/25/前端面试指南HTML5篇-一）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1400,166 +1557,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/21/跨浏览器的事件处理程序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/21/跨浏览器的事件处理程序/" itemprop="url">跨浏览器的事件处理程序</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-21T16:38:37+08:00">
-                2016-11-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/21/跨浏览器的事件处理程序/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/21/跨浏览器的事件处理程序/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>要保证事件处理的代码在大多数浏览器下能够一致的运行，只需关注冒泡阶段即可。</p>
-<p>第一个要创建的方法是 <code>addHandler()</code> ，它的职责是视情况分别使用 DOM0 级方法、DOM2 级方法或 IE 方法来添加事件。这个方法属于一个叫做 EventUtil 的对象，<code>addHandler()</code> 接受三个参数：要操作的元素、事件名称和事件处理程序函数。</p>
-<p>与 <code>addHandler()</code> 方法相对应的是 <code>removeHandler()</code>，他也接收相同的参数。这个方法的职责是移除之前添加的事件处理程序，无论该事件处理程序是采取什么方式添加到元素中的，如果其他方法无效，默认采用 DOM0 级方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> EventUtil = &#123;</div><div class="line">    <span class="attr">addHandler</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> element, type, handler </span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( element.addEventListener ) &#123;</div><div class="line">            element.addEventListener( type, handler, <span class="literal">false</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( element.attachEvent ) &#123;</div><div class="line">            element.attachEvent( <span class="string">"on"</span> + type, handler );</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            element[ <span class="string">"on"</span> + type ] = handler;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attr">removeHandler</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> element, type, handler </span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( element.removeEventListener ) &#123;</div><div class="line">            element.removeEventListener( type, handler, <span class="literal">false</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( element.detachEvent ) &#123;</div><div class="line">            element.detachEvent( <span class="string">"on"</span> + type, handler );</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            element[ <span class="string">"on"</span> + type ] = <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;!--more--&gt;</div><div class="line"><span class="comment">//使用方法</span></div><div class="line"><span class="keyword">var</span> oBtn = <span class="built_in">document</span>.querySelector(<span class="string">"#btn"</span>);</div><div class="line"><span class="keyword">var</span> handler = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert( <span class="string">"haha"</span> );</div><div class="line">&#125;</div><div class="line"></div><div class="line">EventUtil.addHandler( oBtn, <span class="string">"click"</span>, handler );</div><div class="line"><span class="comment">// EventUtil.removeHandler( oBtn, "click", handler );</span></div></pre></td></tr></table></figure>
-<p>这两个方法首先都会检测传入的元素中是否存在 DOM2 级方法，如果存在该方法则使用该方法。</p>
-<p>如果存在的是 IE 的方法，则使用第二种方案。注意，为了在 IE8 级更早的版本中运行，此时的事件类型必须加上 <code>“on”</code> 前缀。</p>
-<p>最后一种可能就是使用 DOM0 级方法（在现代浏览器中应该不会执行这里的代码）。此时我们使用的是方括号语法来将属性名指定为事件处理程序。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1604,7 +1606,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">120</span>
+                <span class="site-state-item-count">121</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
