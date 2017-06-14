@@ -34,9 +34,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[奇数次的数]]></title>
-    <url>%2F2017%2F06%2F13%2F%E5%A5%87%E6%95%B0%E6%AC%A1%E7%9A%84%E6%95%B0%2F</url>
-    <content type="text"><![CDATA[问题描述： 给定一个整形数组 arr 。已知 arr 中只有 1 个数出现了奇数次，其他的数都出现了偶数次，请返回出现了奇数次的数。 时间复杂度为 O(N) ，额外空间复杂度为 O(1)。 思路： 整数 n 与 0 异或的结果是 n，整数 n 与整数 n 异或的结果是 0.所以先申请一个整形变量，记为 use。把 use 和每个数异或（use = use ^当前数），最后 use 的值就是出现了奇数次的那个数。 异或运算满足交换律和结合律。 代码： 123456789101112#include &lt;iostream&gt;using namespace std;int main() &#123; int use = 0; int arr[5] = &#123;1,2,2,3,3&#125;; for(int i=0; i&lt;5; i++) &#123; use ^= arr[i]; &#125; cout &lt;&lt; use &lt;&lt; endl;&#125;]]></content>
+    <title><![CDATA[奇数次的数（一个）]]></title>
+    <url>%2F2017%2F06%2F13%2F%E5%A5%87%E6%95%B0%E6%AC%A1%E7%9A%84%E6%95%B0%EF%BC%88%E4%B8%80%E4%B8%AA%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[问题描述： 给定一个整形数组 arr 。已知 arr 中只有 1 个数出现了奇数次，其他的数都出现了偶数次，请返回出现了奇数次的数。 时间复杂度为 O(N) ，额外空间复杂度为 O(1)。 思路： 整数 n 与 0 异或的结果是 n，整数 n 与整数 n 异或的结果是 0.所以先申请一个整形变量，记为 use。把 use 和每个数异或（use = use ^当前数），最后 use 的值就是出现了奇数次的那个数。 异或运算满足交换律和结合律。 代码： 123456789101112#include &lt;iostream&gt;using namespace std;int main() &#123; int use = 0; int arr[5] = &#123;1,2,2,3,3&#125;; for(int i=0; i&lt;5; i++) &#123; use ^= arr[i]; &#125; cout &lt;&lt; use &lt;&lt; endl;&#125; 补充： 按位异或运算将两个运算分量的对应位按位遵照以下规则进行计算：^ 0 = 0, 0 ^ 1 = 1, 1 ^ 0 = 1, 1 ^ 1 = 0,即相应位的值相同的，结果为 0，不相同的结果为 1。 异或运算的意思是求两个运算分量相应位值是否相异，相异的为 1，相同的为 0。按位异或运算的典型用法是求一个位串信息的某几位信息的反。如欲求整型变量 j 的最右 4 位信息的反，用逻辑异或运算 017^j ，就能求得j最右 4 位的信息的反,即原来为 1 的位，结果是 0 ,原来为 0 的位，结果是 1。 0^num = num; 1^num = ~num; num ^ num = 0; 其中num = 0或者1。 a^a^b^b^c = (a^a)^(b^b)^c=0^0^c=c;]]></content>
       <categories>
         <category>编程</category>
       </categories>
@@ -292,6 +292,17 @@
       </categories>
       <tags>
         <tag>商业</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[面向过程与面向对象的区别]]></title>
+    <url>%2F2017%2F04%2F22%2F%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[从编程发展史谈面向对象当软件还非常简单的时候，我们只需要面向过程编程：12345678910111213141516定义函数函数一函数二函数三函数四定义数据数据一数据二数据三数据四最后各种函数，数据的操作。 当软件发展起来后，我们的软件变得越来越大，代码量越来越多，复杂度远超Hello World的时候，我们的编写就有麻烦了：函数和数据会定义得非常多，这时候就面临两个问题。 首先是命名冲突。英文单词也就那么几个，可能写着写着取名时就没合适的短词用了，为了避免冲突，只能把函数名取得越来越长。 然后是代码重复。比如你做一个计算器程序，你的函数就要确保处理的是合理的数据，这样最起码加减乘除四个函数里，你就都要写对参数进行检测的代码，写四遍或者复制粘贴四遍不会很烦，但多了你就痛苦了，而且因为这些检测代码是跟你的加减乘除函数的本意是无关的，却一定要写在那里，使代码变得不好阅读，意图模糊。 比如你做一个计算器程序，你的函数就要确保处理的是合理的数据，这样最起码加减乘除四个函数里，你就都要写对参数进行检测的代码，写四遍或者复制粘贴四遍不会很烦，但多了你就痛苦了，而且因为这些检测代码是跟你的加减乘除函数的本意是无关的，却一定要写在那里，使代码变得不好阅读，意图模糊。 随着软件业的发展，解决办法就要出来了： 代码重复。我们可以用函数里面调用函数的方法，比如把检测代码抽出来成一个独立函数，然后加减乘除四个函数运行时只要调用一下检测函数对参数进行检查就可以了。分布在四个函数里的重复代码变成了一个函数，是不是好维护多了。 命名冲突，我们就把这一堆函数们进行分类吧。 1234567891011121314151617181920212223242526272829303132333435363738394041424344//分类之前，我们取名只能这样取：检测整数加整数减整数乘整数除复数加复数减复数乘复数除小数加...//进行分类后我们取名可以这样取：整数 &#123; 检测 加 减 乘 除&#125;复数 &#123; 检测 加 减 乘 除&#125;小数 &#123; 检测 加 减 乘 除&#125;分数 &#123; 检测 加 减 乘 除&#125; 这个时候一种叫做类的概念就呼之欲出了，这样我们打开一个整数类代码文件，里面就是简简单单的加减乘除四个函数，简单清晰不会跟外面的其他加减乘除函数命名冲突。 当然，进行归类后，又出现了各种问题和与之对应的解决方法，比如四个类中的检测也是应该提取出来的，所以简单的起因最终发展出什么继承衍生之类挺复杂的一套编程模式。然后学术界那帮人就又乱起什么高大上的名字了，所谓面向对象程序设计去祸害大学里那帮孩子。 就算未来出来一个什么新的面向XX编程，我们也不用多想为什么会出现，肯定是为了解决麻烦而已。 123456789101112131415//上面进行归类以后，代码其实还是不好维护的，然后我们就继续提取为：数 &#123; 检测 加 减 乘 除&#125;整数 &#123; 沿用上面数的设计&#125;小数 &#123; 沿用上面数的设计&#125; 所谓继承，就是数这个类的整体设计，沿用给整数，分数小数这些类，作为他们的编写大纲去编写加减乘除这些函数的具体代码。根据整数，分数，小数各自的性质，做出各自的调整。 这时数这个类，如果你给它里面的加减乘除函数的写了一些很粗糙简单的代码，就叫做父类，基础类。子类们“继承”了父类（把代码进行了复杂化）。 如果没写，那这个类其实就只是个设计图，叫做抽象类。子类们“实现”了抽象类（把空空的设计变成了具体代码）。 模版是什么？像 C++ 这种复杂成狗的语言是强类型的，就是给变量进行了类型区分的，比如整数类型，双整数类型。很明显这两种变量所能容纳的数据体积是不一样的，单个函数不能通吃多种类型的参数，我们就可能会面临下面两套代码并存的局面。1234567891011121314151617//第一套代码：单整数类 &#123; 单整数加 单整数减 单整数乘 单整数除&#125;//第二套代码双整数类 &#123; 双整数加 双整数减 双整数乘 双整数除&#125; 所以 C++ 跟其他强类型语言为我们提供了一个所谓模版功能：12345678910111213&lt;变量类型&gt;整数 &#123; &lt;变量类型&gt;加 &lt;变量类型&gt;减 &lt;变量类型&gt;乘 &lt;变量类型&gt;除&#125;/*整数类等于把变量类型设置为整数，套上模版双整数类等于把变量类型设置为双整数，套上模版 这样就写了一份代码，得到了两份类的代码。当然，弱类型的编程语言，比如 JavaScript 或者 PHP 是没有这种烦恼的，因为变量没有类型之分。但变量类型有时候还是很重要的，弱类型语言里就会出现类似数加字符串这种运算，可能并不是程序员的预期和本意，所以比起强类型性语言而言经常会出现很多无聊的BUG。*/ 上面发展出了父类之后，我们发现编程还是有问题的，小数类：123456小数类 &#123; 加 减 乘 除&#125; 如果我们需要一个能自动实现结果四舍五入的小数计算类，同时又需要一个不实现结果四舍五入的小数计算类，怎么办呢，难道要写两个类吗？不要。所以做出了“实例”或者“对象”这一东西，首先把类改成：123456789小数类 &#123; 标识变量：是否四舍五入 标识变量：是否限定小数点后位数 构造函数（设置上面的标识） 加（会根据上面两个标识变量输出不同结果） 减（会根据上面两个标识变量输出不同结果） 乘（会根据上面两个标识变量输出不同结果） 除（会根据上面两个标识变量输出不同结果）&#125; 这样，我们就写一个类，但是通过构造函数，把一份代码，构造出了行为稍微有点不同的两个实例供我们使用，这时候名词来了，不能进行实例化微调化的类，叫做静态类，函数们的行为是固定的。不能实例化的类，其实只是函数们的一个集合归纳，只是对函数进行了整理，功能的强大和编码的自由灵活度是不够的。 能够进行实例化，变化出各种行为各自不大一样的实例的类，我们一般就把它们叫做类了，因为最常见。 程序员们也就能保持代码简单的同时而又可以很方便进行代码行为微调了。 面向过程与面向对象的区别，由如何把大象装进冰箱来看1.面向过程为了把大象装进冰箱，需要3个过程。123456789101112131415161718192021222324/*思路：1.把冰箱门打开（得到打开门的冰箱）2.把大象装进去（打开门后，得到里面装着大象的冰箱）3.把冰箱门关上（打开门、装好大象后，获得关好门的冰箱)*///每个过程有一个阶段性的目标，依次完成这些过程，就能把大象装进冰箱。//写法一：1：冰箱开门（冰箱）2：冰箱装进（冰箱，大象）3：冰箱关门（冰箱）//写法一变体：1：（冰箱开门 冰箱）2：（冰箱装进 冰箱大象）3：（冰箱关门 冰箱）//写法二：冰箱关门（冰箱装进（冰箱开门（冰箱），大象））//写法二变体：(冰箱关门 (冰箱装进 (冰箱开门 冰箱) 大象)) 面向对象 为了把大象装进冰箱，需要做三个动作（或者叫行为）。每个动作有一个执行者，它就是对象。12345678910111213141516 /* 思路： 1.冰箱，你给我把门打开 2.冰箱，你给我把大象装进去（或者说，大象，你给我钻到冰箱里去） 3.冰箱，你给我把门关上 */ //依次完成这些动作，你就可以把大象装进去 //写法一：1：冰箱.开门()2：冰箱.装进(大象)3：冰箱.关门()//写法二：冰箱.开门().装进(大象).关门() 总结再来一个简单的栗子：有一天你去买电脑，发现什么显卡啊、内存啊、处理器啊、价格一概不懂，于是你就懵逼了，没办法啊不懂自己就去网上查呗，于是自己捣鼓了半天终于弄懂了这才放心去买–这是面向过程。 有一天你去买电脑，自己还是不懂，于是你就叫上了一个懂电脑的哥们，其余所有事情都交给他来做了，你只管付钱了。–这是面向对象。 面向过程：执行者；面向对象：指挥者； 面向过程还是对象，名词并不重要，重要的是哪个适合，软件工程师们自己根据项目复杂度进行选择罢了。 参考文献一，参考文献二。]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>编程思想</tag>
       </tags>
   </entry>
   <entry>
@@ -637,8 +648,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -649,8 +660,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -839,18 +850,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[六道JS面试题]]></title>
-    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>面试指南</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[递归实现斐波那契数列]]></title>
     <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
     <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
@@ -860,6 +859,18 @@
       <tags>
         <tag>JS</tag>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[六道JS面试题]]></title>
+    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>面试指南</tag>
       </tags>
   </entry>
   <entry>
@@ -967,8 +978,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业技巧</tag>
         <tag>商业</tag>
+        <tag>商业技巧</tag>
       </tags>
   </entry>
   <entry>

@@ -99,17 +99,17 @@
 思路：
 整数 n 与 0 异或的结果是 n，整数 n 与整数 n 异或的结果是 0.所以先申请一个整形变量，记为 use。把 use 和每个数异或（use = use ^当前数），最后 use 的值就是出现了奇">
 <meta property="og:type" content="article">
-<meta property="og:title" content="奇数次的数">
-<meta property="og:url" content="http://ijiangnanbei.com/2017/06/13/奇数次的数/index.html">
+<meta property="og:title" content="奇数次的数（一个）">
+<meta property="og:url" content="http://ijiangnanbei.com/2017/06/13/奇数次的数（一个）/index.html">
 <meta property="og:site_name" content="江南北的个人站">
 <meta property="og:description" content="问题描述：
 给定一个整形数组 arr 。已知 arr 中只有 1 个数出现了奇数次，其他的数都出现了偶数次，请返回出现了奇数次的数。
 时间复杂度为 O(N) ，额外空间复杂度为 O(1)。
 思路：
 整数 n 与 0 异或的结果是 n，整数 n 与整数 n 异或的结果是 0.所以先申请一个整形变量，记为 use。把 use 和每个数异或（use = use ^当前数），最后 use 的值就是出现了奇">
-<meta property="og:updated_time" content="2017-06-13T16:27:45.173Z">
+<meta property="og:updated_time" content="2017-06-13T22:48:35.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="奇数次的数">
+<meta name="twitter:title" content="奇数次的数（一个）">
 <meta name="twitter:description" content="问题描述：
 给定一个整形数组 arr 。已知 arr 中只有 1 个数出现了奇数次，其他的数都出现了偶数次，请返回出现了奇数次的数。
 时间复杂度为 O(N) ，额外空间复杂度为 O(1)。
@@ -142,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://ijiangnanbei.com/2017/06/13/奇数次的数/"/>
+  <link rel="canonical" href="http://ijiangnanbei.com/2017/06/13/奇数次的数（一个）/"/>
 
 
 
 
 
-  <title>奇数次的数 | 江南北的个人站</title>
+  <title>奇数次的数（一个） | 江南北的个人站</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -338,7 +338,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/13/奇数次的数/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/13/奇数次的数（一个）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -355,7 +355,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">奇数次的数</h2>
+          <h2 class="post-title" itemprop="name headline">奇数次的数（一个）</h2>
         
 
         <div class="post-meta">
@@ -408,9 +408,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/13/奇数次的数/#comments" itemprop="discussionUrl">
+                <a href="/2017/06/13/奇数次的数（一个）/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/13/奇数次的数/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/06/13/奇数次的数（一个）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -443,7 +443,13 @@
 <p>异或运算满足交换律和结合律。</p>
 <p><strong>代码：</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> use = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>&#125;;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">5</span>; i++)</div><div class="line">	&#123;</div><div class="line">		use ^= arr[i];</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; use &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+<a id="more"></a>
+<p><strong>补充：</strong></p>
+<p>按位异或运算将两个运算分量的对应位按位遵照以下规则进行计算：<code>^ 0 = 0, 0 ^ 1 = 1, 1 ^ 0 = 1, 1 ^ 1 = 0</code>,即相应位的值相同的，结果为 0，不相同的结果为 1。</p>
+<p>异或运算的意思是求两个运算分量相应位值是否相异，相异的为 1，相同的为 0。按位异或运算的典型用法是求一个位串信息的某几位信息的反。如欲求整型变量 j 的最右 4 位信息的反，用逻辑异或运算 017^j ，就能求得j最右 4 位的信息的反,即原来为 1 的位，结果是 0 ,原来为 0 的位，结果是 1。</p>
+<pre><code>0^num = num; 1^num = ~num; num ^ num = 0; 其中num = 0或者1。 
+a^a^b^b^c = (a^a)^(b^b)^c=0^0^c=c;
+</code></pre>
       
     </div>
 
@@ -578,7 +584,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">122</span>
+                <span class="site-state-item-count">123</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -751,9 +757,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://ijiangnanbei.com/2017/06/13/奇数次的数/';
-          this.page.identifier = '2017/06/13/奇数次的数/';
-          this.page.title = '奇数次的数';
+          this.page.url = 'http://ijiangnanbei.com/2017/06/13/奇数次的数（一个）/';
+          this.page.identifier = '2017/06/13/奇数次的数（一个）/';
+          this.page.title = '奇数次的数（一个）';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://jiangnanbei.disqus.com/embed.js';
