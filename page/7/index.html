@@ -474,7 +474,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/23/隐藏页面元素/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/03/自增自减运算符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -493,7 +493,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/23/隐藏页面元素/" itemprop="url">隐藏页面元素的几个技巧</a></h2>
+                <a class="post-title-link" href="/2017/01/03/自增自减运算符/" itemprop="url">自增自减运算符</a></h2>
         
 
         <div class="post-meta">
@@ -505,8 +505,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-23T17:53:20+08:00">
-                2016-12-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-03T18:48:29+08:00">
+                2017-01-03
               </time>
             
 
@@ -528,8 +528,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
                   </a>
                 </span>
 
@@ -546,9 +546,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/23/隐藏页面元素/#comments" itemprop="discussionUrl">
+                <a href="/2017/01/03/自增自减运算符/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/23/隐藏页面元素/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/01/03/自增自减运算符/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -575,14 +575,18 @@
       
         
           
-            <p><strong>每一个方法的背后其实都是一个效果的实现原理。你的方法越多，你所做出来的效果也就越多。</strong></p>
-<h3 id="1-display：none；"><a href="#1-display：none；" class="headerlink" title="1.display：none；"></a><code>1.display：none；</code></h3><p>显示为无,不占据文档流。得到它的高很麻烦。</p>
-<h3 id="2-visibility：hidden；"><a href="#2-visibility：hidden；" class="headerlink" title="2.visibility：hidden；"></a><code>2.visibility：hidden；</code></h3><p>隐藏，仍然占据文档流，很容易就可以得到它的高。</p>
-<h3 id="3-width-height"><a href="#3-width-height" class="headerlink" title="3.width / height;"></a><code>3.width / height;</code></h3><p>宽高改为 <code>0</code>，去除边框。如果你能想到用高去控制，你就可以做出让一个元素慢慢打开的动画效果。比如说，移动到导航栏上，导航的内容慢慢的下来。</p>
-<h3 id="4-透明度"><a href="#4-透明度" class="headerlink" title="4.透明度"></a>4.透明度</h3><p>把透明度改为 <code>0</code> 就看不到了。利用透明度你可以做一个淡入淡出的效果。</p>
-<h3 id="5-通过定位移出布局-left-top-值"><a href="#5-通过定位移出布局-left-top-值" class="headerlink" title="5.通过定位移出布局 left/top 值"></a>5.通过定位移出布局 <code>left/top</code> 值</h3><p>利用定位的原理，你可以做“弹出”的效果，用一个 <code>div</code> 将其覆盖，然后慢慢地将其从 <code>div</code> 下方弹出，很多门户网站常常用这个技巧来做新闻“弹出”的效果。</p>
-<h3 id="6-拿另一和背景色一样的-div-将其盖住，"><a href="#6-拿另一和背景色一样的-div-将其盖住，" class="headerlink" title="6.拿另一和背景色一样的 div 将其盖住，"></a>6.拿另一和背景色一样的 <code>div</code> 将其盖住，</h3><p>拿另一和背景色一样的 <code>div</code> 将其盖住，然后用各种方式移开和背景色一样的 <code>div</code>，就可以得到各种各样的动画效果。比如说，你可以让和背景色一样的 <code>div</code> 四周不停的缩小，就可以做出一个类似于“回”字的效果。</p>
-<p><strong>很多你所看到的惊讶的效果背后，其实就是这样出来的。</strong></p>
+            <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
+<li>前自增后自增</li>
+<li>前自减后自减</li>
+</ol>
+<h3 id="二者的异同"><a href="#二者的异同" class="headerlink" title="二者的异同"></a>二者的异同</h3><p>相同：最终都使 i 的值加一</p>
+<p>不同：前自增整体表达式的值是i加1之后的值；后自增整体表达式的值是i加1之前的值。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i,j,k,m;</div><div class="line">    i = <span class="number">3</span>;</div><div class="line">    j = <span class="number">3</span>;</div><div class="line">    k = i++;</div><div class="line">    m = ++j;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d %d %d"</span>,i,j,k,m);</div><div class="line">&#125;</div><div class="line"><span class="comment">//result : 4 4 3 4</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">3</span>;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,i++,++i,i);</div><div class="line"><span class="comment">//result : 4 5 5</span></div></pre></td></tr></table></figure>
+<h3 id="为什么会出现自增？"><a href="#为什么会出现自增？" class="headerlink" title="为什么会出现自增？"></a>为什么会出现自增？</h3><p>有<code>i += 1;</code>不就可以了吗?为什么还有出现<code>i++</code>?原因:代码更精炼,自增的速度更快。</p>
+<h3 id="学习自增时要明白的几个问题"><a href="#学习自增时要明白的几个问题" class="headerlink" title="学习自增时要明白的几个问题"></a>学习自增时要明白的几个问题</h3><p>我们编程时应该尽量屏蔽掉前自增和后自增的区别，自增表达式单独成一个语句,最好不要作为一个更大的表达式的一部分来使用。</p>
+<p>比如：<code>int m = i++ + ++i + i + i++;</code>,这样写不但是不规范的代码,而且是不可移植的代码。</p>
+<p>这个程序在不同的机器上的运行结果是不一样的,这里面牵扯到一个叫做顺序点的问题,因为我们不知道<code>i++</code>执行结束之后,这一步是否立即生效,就是在我执行<code>++i</code>的时候,前面的i有没有立即加1是不知道的,我们只有顺序点才能明确的知道这个操作是否生效,而顺序点只有三个:逗号,括号,分号。</p>
+<p><strong>作为一个优秀的程序员,在你的程序里面不应该体现出i++和++i的区别。</strong></p>
 
           
         
@@ -630,7 +634,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/21/控制多个选项卡自动播放/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/01/浮点数存储所带来的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -649,7 +653,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/21/控制多个选项卡自动播放/" itemprop="url">控制多个选项卡自动播放</a></h2>
+                <a class="post-title-link" href="/2017/01/01/浮点数存储所带来的问题/" itemprop="url">浮点数存储所带来的问题</a></h2>
         
 
         <div class="post-meta">
@@ -661,8 +665,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-21T15:33:21+08:00">
-                2016-12-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-01T18:47:31+08:00">
+                2017-01-01
               </time>
             
 
@@ -684,8 +688,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
                   </a>
                 </span>
 
@@ -702,9 +706,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/21/控制多个选项卡自动播放/#comments" itemprop="discussionUrl">
+                <a href="/2017/01/01/浮点数存储所带来的问题/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/21/控制多个选项卡自动播放/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/01/01/浮点数存储所带来的问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -731,10 +735,11 @@
       
         
           
-            <p>我们使用组件开发的好处就是可以根据不同的需求，快速的做出可扩展可复用的组件，提高团队协同开发的效率。</p>
-<p>在下面的这个例子中，我复用原来的组件，在原来的组件的基础上扩展出了一个可自动播放的功能：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></div><div class="line">		<span class="selector-tag">input</span>&#123;<span class="attribute">padding</span>: <span class="number">0</span>;<span class="attribute">width</span>: <span class="number">20px</span>;<span class="attribute">height</span>: <span class="number">30px</span>;&#125;</div><div class="line">		<span class="selector-class">.active</span>&#123;<span class="attribute">background-color</span>: red;&#125;</div><div class="line">		<span class="selector-id">#tab1</span> <span class="selector-tag">div</span>&#123;<span class="attribute">width</span>: <span class="number">300px</span>;<span class="attribute">height</span>: <span class="number">250px</span>;<span class="attribute">position</span>: relative;<span class="attribute">border</span>: <span class="number">1px</span> solid;<span class="attribute">display</span>: none;&#125;</div><div class="line">		<span class="selector-id">#tab2</span> <span class="selector-tag">div</span>&#123;<span class="attribute">width</span>: <span class="number">300px</span>;<span class="attribute">height</span>: <span class="number">250px</span>;<span class="attribute">position</span>: relative;<span class="attribute">border</span>: <span class="number">1px</span> solid;<span class="attribute">display</span>: none;&#125;</div><div class="line">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"tab1"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display: block"</span>&gt;</span>111<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>222<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>333<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"tab2"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display: block"</span>&gt;</span>111<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>222<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>333<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Tab</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.doc = <span class="built_in">document</span>;</div><div class="line">	<span class="keyword">this</span>.tab = <span class="keyword">this</span>.doc.getElementById(id);</div><div class="line">	<span class="keyword">this</span>.aBtn = <span class="keyword">this</span>.tab.getElementsByTagName(<span class="string">'input'</span>);</div><div class="line">	<span class="keyword">this</span>.aDiv = <span class="keyword">this</span>.tab.getElementsByTagName(<span class="string">'div'</span>);</div><div class="line">	<span class="keyword">this</span>.iNow = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Tab.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> This  = <span class="keyword">this</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,len=<span class="keyword">this</span>.aBtn.length; i&lt;len; i++) &#123;</div><div class="line">		<span class="keyword">this</span>.aBtn[i].index = i;</div><div class="line">		<span class="keyword">this</span>.aBtn[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			This.change(<span class="keyword">this</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Tab.prototype.change = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>,len=<span class="keyword">this</span>.aBtn.length; j&lt;len; j++) &#123;</div><div class="line">			<span class="keyword">this</span>.aBtn[j].className = <span class="string">''</span>;</div><div class="line">			<span class="keyword">this</span>.aDiv[j].style.display = <span class="string">'none'</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.aBtn[obj.index].className = <span class="string">'active'</span>;</div><div class="line">	<span class="keyword">this</span>.aDiv[obj.index].style.display = <span class="string">'block'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Tab.prototype.autoplay = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> This = <span class="keyword">this</span>;</div><div class="line">	setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,len=This.aBtn.length; i&lt;len; i++) &#123;</div><div class="line">			This.aBtn[i].className = <span class="string">''</span>;</div><div class="line">			This.aDiv[i].style.display = <span class="string">'none'</span>;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		This.aBtn[This.iNow].className = <span class="string">'active'</span>;</div><div class="line">		This.aDiv[This.iNow].style.display = <span class="string">'block'</span>;</div><div class="line">		This.iNow++;</div><div class="line"></div><div class="line">		This.iNow &gt; <span class="number">2</span> ? This.iNow = This.iNow % This.aBtn.length : This.iNow;</div><div class="line">		</div><div class="line">	&#125;,<span class="number">500</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> tab1 = <span class="keyword">new</span> Tab(<span class="string">'tab1'</span>);</div><div class="line">tab1.init();</div><div class="line">	</div><div class="line"><span class="keyword">var</span> tab2 = <span class="keyword">new</span> Tab(<span class="string">'tab2'</span>);</div><div class="line"><span class="comment">// 复用原来的组件</span></div><div class="line">tab2.init();</div><div class="line"><span class="comment">// 在原来的组件基础上，增加自动播放功能</span></div><div class="line">tab2.autoplay();</div><div class="line"></div><div class="line"></div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/github/blob/master/JS_OOP/files/1.3%E6%8E%A7%E5%88%B6%E5%A4%9A%E4%B8%AA%E9%80%89%E9%A1%B9%E5%8D%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE.html">效果展示</a></p>
+            <h3 id="存储精度的问题"><a href="#存储精度的问题" class="headerlink" title="存储精度的问题"></a>存储精度的问题</h3><p>float 和 double 都不能保证精确的存储每一个小数， 浮点数存放的只是一个近似值。</p>
+<p>面试题:如何判断一个浮点型变量x的值是否是0?<br>答：<code>if(|x-0.000001|&lt;=0.000001)--&gt;x=0</code></p>
+<h3 id="为什么循环更新的变量不能定义成浮点型？"><a href="#为什么循环更新的变量不能定义成浮点型？" class="headerlink" title="为什么循环更新的变量不能定义成浮点型？"></a>为什么循环更新的变量不能定义成浮点型？</h3><p>由于浮点型存储的是一个近似值,所以在进行循环的判断条件的求值的时候,其值会影响判断条件的结果。</p>
+<p>比如说:i&lt;=100,如果这个时候i的值是100.000001,于是这一步就没有加入循环,这个时候就会影响整个循环的执行，我们更新部分的值只能是一个整数。</p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p>格式：(数据类型)(表达式)<br><code>eg:(float)(5) == 5.00000</code></p>
 
           
         
@@ -782,7 +787,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/20/this指向/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/01/变量的作用域和存储方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -801,7 +806,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/20/this指向/" itemprop="url">this指向</a></h2>
+                <a class="post-title-link" href="/2017/01/01/变量的作用域和存储方式/" itemprop="url">变量的作用域和存储方式</a></h2>
         
 
         <div class="post-meta">
@@ -813,8 +818,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-20T15:33:21+08:00">
-                2016-12-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-01T18:46:21+08:00">
+                2017-01-01
               </time>
             
 
@@ -836,8 +841,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
                   </a>
                 </span>
 
@@ -854,9 +859,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/20/this指向/#comments" itemprop="discussionUrl">
+                <a href="/2017/01/01/变量的作用域和存储方式/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/20/this指向/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/01/01/变量的作用域和存储方式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -883,10 +888,18 @@
       
         
           
-            <p>能清楚的知道 this 的指向，对于编写面向对象的程序来说是至关重要的。下面我们来看两个小例子：</p>
-<h3 id="1-第一个例子"><a href="#1-第一个例子" class="headerlink" title="1.第一个例子"></a>1.第一个例子</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">oDiv.onclick = show;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// 此时 this 指向 oDiv;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="2-第二个例子"><a href="#2-第二个例子" class="headerlink" title="2.第二个例子"></a>2.第二个例子</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">oDiv.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	show();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// 这个时候 this 指向 window</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>对于 this 指向，我们在编写面向对象程序的时候要记住，在事件处理程序和定时器事件中，this 的指向会发生改变。</strong></p>
+            <h3 id="按作用域划分"><a href="#按作用域划分" class="headerlink" title="按作用域划分"></a>按作用域划分</h3><ol>
+<li><p>全局变量。在所有函数外部定义的变量叫做全局变量；如果你的函数声明在了全局变量的前面,那你的函数里也是不可以使用全局变量的；全局变量的使用范围:从定义开始到整个程序结束。</p>
+</li>
+<li><p>局部变量。在一个函数内部定义的变量或者是函数的形参统称为局部变量。</p>
+</li>
+</ol>
+<p>全局变量和局部变量命名冲突的问题:在一个函数内部,如果定义的局部变量的名字和全局变量的一样,局部变量会屏蔽掉全局变量。</p>
+<h3 id="按变量的存储方式划分"><a href="#按变量的存储方式划分" class="headerlink" title="按变量的存储方式划分"></a>按变量的存储方式划分</h3><ol>
+<li>静态变量</li>
+<li>自动变量</li>
+<li>寄存器变量</li>
+</ol>
 
           
         
@@ -934,7 +947,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/17/传统选项卡和面向对象选项卡的编写/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/30/函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -953,7 +966,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/17/传统选项卡和面向对象选项卡的编写/" itemprop="url">传统选项卡和面向对象选项卡的编写</a></h2>
+                <a class="post-title-link" href="/2016/12/30/函数/" itemprop="url">函数</a></h2>
         
 
         <div class="post-meta">
@@ -965,8 +978,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-17T15:33:21+08:00">
-                2016-12-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-30T18:45:15+08:00">
+                2016-12-30
               </time>
             
 
@@ -988,8 +1001,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
                   </a>
                 </span>
 
@@ -1006,9 +1019,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/17/传统选项卡和面向对象选项卡的编写/#comments" itemprop="discussionUrl">
+                <a href="/2016/12/30/函数/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/17/传统选项卡和面向对象选项卡的编写/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/12/30/函数/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1034,12 +1047,29 @@
 
       
         
-          <h3 id="1-传统方式编写选项卡"><a href="#1-传统方式编写选项卡" class="headerlink" title="1.传统方式编写选项卡"></a>1.传统方式编写选项卡</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;title&gt;&lt;/title&gt;</div><div class="line">	&lt;style type="text/css"&gt;</div><div class="line">		*&#123;margin: 0;padding: 0&#125;</div><div class="line">		#box&#123;</div><div class="line">			height: 100px;</div><div class="line">			width: 250px;</div><div class="line">			margin: 50px auto;</div><div class="line">		&#125;</div><div class="line">		#box input[type=button]&#123;</div><div class="line">			width: 20px;</div><div class="line">			height: 20px;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		#box .backcolor&#123;</div><div class="line">			background-color: red;</div><div class="line">		&#125;</div><div class="line">		#container&#123;</div><div class="line">			width: 250px;</div><div class="line">			height: 100px;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		#container div&#123;</div><div class="line">			width: 250px;</div><div class="line">			height: 100px;</div><div class="line">			border: 1px solid;</div><div class="line">			position: absolute;</div><div class="line">			display: none;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		#container .active&#123;</div><div class="line">			display: block;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id="box"&gt;</div><div class="line">	&lt;input type="button" value="1" class="backcolor"&gt;</div><div class="line">	&lt;input type="button" value="2"&gt;</div><div class="line">	&lt;input type="button" value="3"&gt;</div><div class="line">	&lt;div id="container"&gt;</div><div class="line">		&lt;div class="active"&gt;111&lt;/div&gt;</div><div class="line">		&lt;div&gt;222&lt;/div&gt;</div><div class="line">		&lt;div&gt;333&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	var aBtn = document.getElementsByTagName('input');</div><div class="line">	var oDiv = document.getElementById('container');</div><div class="line">	var aCon = oDiv.getElementsByTagName('div');</div><div class="line"></div><div class="line">	for(var i=0; i&lt;aBtn.length; i++)&#123;</div><div class="line">		aBtn[i].index = i;</div><div class="line">		</div><div class="line">		aBtn[i].onclick = function()&#123;</div><div class="line">		</div><div class="line">			for(var i=0; i&lt;aBtn.length; i++)&#123;</div><div class="line">				aBtn[i].className = '';</div><div class="line">				aCon[i].style.display = 'none';</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			this.className = 'backcolor';</div><div class="line">			aCon[this.index].style.display = 'block';</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/github/blob/master/JS_OOP/files/7.0%E4%BC%A0%E7%BB%9F%E9%80%89%E9%A1%B9%E5%8D%A1.html">效果展示</a><br>
+          <h3 id="什么叫函数？"><a href="#什么叫函数？" class="headerlink" title="什么叫函数？"></a>什么叫函数？</h3><ol>
+<li>逻辑上：能够完成特定功能的独立的代码单元。</li>
+<li>物理上：能够接收数据,能够对接受的数据进行处理,能够将处理的结果返回。</li>
+</ol>
+<p>总结:函数是一个工具,是为了解决大量的类似问题而设计的。函数可以当做一个黑匣子，只告诉你如何去使用,但是不给你内部的东西。</p>
+<h3 id="为什么需要函数？"><a href="#为什么需要函数？" class="headerlink" title="为什么需要函数？"></a>为什么需要函数？</h3><ol>
+<li>之所以需要函数是为了避免重复性操作。</li>
+<li>学完函数就非常容易理解什么是面向过程的思想。</li>
+<li>有利用程序的模块化。</li>
+<li>面向过程的一个特点,就是把大问题分解成小问题,小问题再分解成更小的问题，整个程序是由很多个模块组成的,我修改这一个模块,不会影响另一个模块,这就提高了程序的健壮性。(C语言的基本单位是函数)</li>
+</ol>
+<h3 id="如何定义函数？"><a href="#如何定义函数？" class="headerlink" title="如何定义函数？"></a>如何定义函数？</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">函数的名字  函数的返回值 (函数的形参列表)</div><div class="line">&#123;</div><div class="line">    函数的执行体;</div><div class="line">&#125;</div><div class="line"><span class="comment">//函数定义的本质是详细描述函数之所以实现某个特定功能的具体方法。</span></div></pre></td></tr></table></figure>
+<p>函数返回值的类型也称为函数的类型,因为如果函数名前的返回值类型和函数执行体中的 return 表达式中的返回值类型不同的话,则最终函数返回值的类型以函数名前的返回值类型为准(会自动进行类型转换)。</p>
+<h3 id="函数的分类？"><a href="#函数的分类？" class="headerlink" title="函数的分类？"></a>函数的分类？</h3><ol>
+<li>有参函数和无参函数。</li>
+<li>有返回值函数和无返回值函数。</li>
+<li>库函数 和 用户自定义函数。</li>
+<li>普通函数 和 主函数(main函数)。</li>
+</ol>
+<p>一个程序必须有且只能有一个主函数，主函数既是程序的入口也是程序的出口；主函数可以调用普通函数,反之则不可以，但是普通函数之间可以相互调用。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/12/17/传统选项卡和面向对象选项卡的编写/#more" rel="contents">
+            <a class="btn" href="/2016/12/30/函数/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1089,7 +1119,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/15/工厂模式之原型/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/30/数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1108,7 +1138,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/15/工厂模式之原型/" itemprop="url">工厂模式之原型</a></h2>
+                <a class="post-title-link" href="/2016/12/30/数组/" itemprop="url">数组</a></h2>
         
 
         <div class="post-meta">
@@ -1120,8 +1150,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-15T15:33:21+08:00">
-                2016-12-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-30T18:42:35+08:00">
+                2016-12-30
               </time>
             
 
@@ -1143,8 +1173,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
                   </a>
                 </span>
 
@@ -1161,9 +1191,172 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/15/工厂模式之原型/#comments" itemprop="discussionUrl">
+                <a href="/2016/12/30/数组/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/15/工厂模式之原型/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/12/30/数组/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="为什么需要数组？"><a href="#为什么需要数组？" class="headerlink" title="为什么需要数组？"></a>为什么需要数组？</h3><ol>
+<li>数组可以用来保存大量同类型的数据</li>
+<li>一维数组可以模拟线性事物</li>
+<li>二维数组可以模拟平面事物</li>
+<li>三维数组可以模拟立体事物</li>
+<li>利用数组可以模拟现实的世界</li>
+</ol>
+<h3 id="我们这里为什么不详细讲数组？"><a href="#我们这里为什么不详细讲数组？" class="headerlink" title="我们这里为什么不详细讲数组？"></a>我们这里为什么不详细讲数组？</h3><p>数组的操作太麻烦，我们一般不直接操作语言级别的数组，而是通过别人提供的一种以数组为内核的工具去方便的操作数组。</p>
+<h3 id="一维数组的使用"><a href="#一维数组的使用" class="headerlink" title="一维数组的使用"></a>一维数组的使用</h3><h4 id="如何定义一维数组？"><a href="#如何定义一维数组？" class="headerlink" title="如何定义一维数组？"></a>如何定义一维数组？</h4><p>一维数组是为 n 个变量<strong>连续分配</strong>存储空间；所有变量的数据<strong>类型必须相同</strong>；所有变量<strong>所占的字节大小必须相同</strong>。</p>
+<h4 id="一维数组的初始化"><a href="#一维数组的初始化" class="headerlink" title="一维数组的初始化"></a>一维数组的初始化</h4><p>完全初始化：<code>int a[5] = {1,2,3,4,5};</code><br>不完全初始化：<code>int a[5] = {1,2,3};</code>(未初始化的元素为0）<br>不初始化：<code>int a[5];</code>(所有的元素都是垃圾值）<br>清零：<code>int a[5] = {0};</code>（数组内的所有元素均为0）</p>
+<h4 id="初始化的错误写法"><a href="#初始化的错误写法" class="headerlink" title="初始化的错误写法"></a>初始化的错误写法</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一个错误写法</span></div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>];</div><div class="line">a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</div><div class="line"><span class="comment">/*</div><div class="line">这里我们就没有 a[5] 这个元素，同时你把多个值赋值给一个元素肯</div><div class="line">定也是不可以的，只有在定义数组的同时才可以整体赋值。</div><div class="line">*/</span></div><div class="line"></div><div class="line"><span class="comment">//第二个错误写法</span></div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = <span class="number">100</span>;<span class="comment">//我们没有 a[5] 这个元素</span></div><div class="line"></div><div class="line"><span class="comment">//第三个错误写法</span></div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</div><div class="line"><span class="keyword">int</span> b[<span class="number">5</span>];</div><div class="line">b = a;</div><div class="line"><span class="comment">/*</div><div class="line">这样做是不可以把数组a的值全部赋值给数组b的，数组名代表的是数</div><div class="line">组第一个元素的地址。</div><div class="line">*/</span></div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/30/数组/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/26/continue-概述/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/26/continue-概述/" itemprop="url">continue 概述</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-26T18:41:07+08:00">
+                2016-12-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/12/26/continue-概述/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/12/26/continue-概述/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1190,10 +1383,9 @@
       
         
           
-            <p>我们创建的每一个函数都有一个 prototype 属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。</p>
-<p>使用原型对象的好处是可以让所有对象实例共享它所包含的属性和方法。换句话说，不必在构造函数中定义对象实例的信息，而是可以将这些信息直接添加到原型对象中。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">		<span class="comment">//能够共享的放在构造函数里面</span></div><div class="line">		<span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">			<span class="keyword">this</span>.name=name;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">//不能够共享的放在原型里面</span></div><div class="line">		CreatePerson.prototype.showName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			alert(<span class="keyword">this</span>.name);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">var</span> p1 = <span class="keyword">new</span> CreatePerson(<span class="string">'xiaoming'</span>);</div><div class="line">		<span class="keyword">var</span> p2 = <span class="keyword">new</span>  CreatePerson(<span class="string">'xiaoqiang'</span>);</div><div class="line">		</div><div class="line">		alert(p1.showName == p2.showName);<span class="comment">//true--&gt;they have same address.</span></div><div class="line">		<span class="comment">//这就是原型模式和构造函数模式的不同之处，即这些属性和方法是由所有实例共享的</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
-<p><strong>原型模式的写法：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"></div><div class="line">	<span class="comment">// function 构造函数()</span></div><div class="line">	<span class="comment">// &#123;</span></div><div class="line">	<span class="comment">// 	this.属性;</span></div><div class="line">	<span class="comment">// &#125;</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">construct</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">this</span>.property</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// 构造函数.原型.方法 = function()&#123;&#125;</span></div><div class="line">	construct.prototype.method=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">	<span class="comment">// var 对象1 = new 构造函数();</span></div><div class="line">	<span class="keyword">var</span> obj1 = <span class="keyword">new</span> construct();</div><div class="line"></div><div class="line">	<span class="comment">// 对象1.方法();</span></div><div class="line">	obj1.method();</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
-
+            <h3 id="通过下面三个例子我们来看看-continue-的作用"><a href="#通过下面三个例子我们来看看-continue-的作用" class="headerlink" title="通过下面三个例子我们来看看 continue 的作用"></a>通过下面三个例子我们来看看 continue 的作用</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,s=<span class="number">0</span>;</div><div class="line">    <span class="keyword">do</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(i % <span class="number">2</span>)</div><div class="line">        &#123;</div><div class="line">            i++;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">            <span class="comment">//continue 执行完之后将会转向执行 while 判断</span></div><div class="line">        &#125;</div><div class="line">        i++;</div><div class="line">        s += i;</div><div class="line">    &#125;<span class="keyword">while</span>(i &lt; <span class="number">7</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,s);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="number">1</span>;<span class="number">2</span>;<span class="number">3</span>)</div><div class="line">&#123;</div><div class="line">    A;</div><div class="line">    B;</div><div class="line">    <span class="keyword">continue</span>;</div><div class="line">    <span class="comment">//执行完 continue 之后不会执行C,D会转而执行for循环的判断条件</span></div><div class="line">    C;</div><div class="line">    D;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a=<span class="number">1</span>,b;</div><div class="line">    <span class="keyword">for</span>(b=<span class="number">1</span>; b&lt;=<span class="number">10</span>; b++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(a &gt;= <span class="number">8</span>)</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">            <span class="comment">//如果要是执行 break 语句则会转而执行第 17 行</span></div><div class="line">        <span class="keyword">if</span>(<span class="number">1</span> == a%<span class="number">2</span>)</div><div class="line">        &#123;</div><div class="line">            a += <span class="number">5</span>;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">            <span class="comment">//如果要是执行 continue 语句,则会转而执行for循环的判断条件</span></div><div class="line">        &#125;</div><div class="line">        a -= <span class="number">3</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"b=%d"</span>,b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -1240,7 +1432,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/14/普通方法与原型方法/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/26/break-详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1259,7 +1451,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/14/普通方法与原型方法/" itemprop="url">普通方法与原型方法</a></h2>
+                <a class="post-title-link" href="/2016/12/26/break-详解/" itemprop="url">break 详解</a></h2>
         
 
         <div class="post-meta">
@@ -1271,8 +1463,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-14T15:33:21+08:00">
-                2016-12-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-26T18:39:42+08:00">
+                2016-12-26
               </time>
             
 
@@ -1294,8 +1486,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
                   </a>
                 </span>
 
@@ -1312,9 +1504,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/14/普通方法与原型方法/#comments" itemprop="discussionUrl">
+                <a href="/2016/12/26/break-详解/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/14/普通方法与原型方法/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/12/26/break-详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1341,161 +1533,12 @@
       
         
           
-            <h3 id="1-普通方法"><a href="#1-普通方法" class="headerlink" title="1.普通方法"></a>1.普通方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">	<span class="keyword">var</span> arr2 = [<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line">	arr1.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> result = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">			result+=<span class="keyword">this</span>[i];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	alert(arr.sum());</div><div class="line"></div><div class="line">	arr2.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> result = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">			result+=<span class="keyword">this</span>[i];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	alert(arr2.sum());</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
-<p>从上面的例子可以看出，对于普通方法而言我们要对每一个对象分别创建一个方法。</p>
-<h3 id="2-原型方法"><a href="#2-原型方法" class="headerlink" title="2.原型方法"></a>2.原型方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">	<span class="keyword">var</span> arr2 = [<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line">	<span class="comment">//使用原型方法这个时候你只需要借用构造函数创建一个函数</span></div><div class="line">	<span class="built_in">Array</span>.prototype.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> result = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">			result+=<span class="keyword">this</span>[i];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	alert(arr.sum());</div><div class="line">	alert(arr2.sum());</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
-<h3 id="3-普通方法和原型方法的优先级比较"><a href="#3-普通方法和原型方法的优先级比较" class="headerlink" title="3.普通方法和原型方法的优先级比较"></a>3.普通方法和原型方法的优先级比较</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> arr = [];</div><div class="line">	arr.number = <span class="number">10</span>;</div><div class="line">	<span class="built_in">Array</span>.prototype.number = <span class="number">20</span>;</div><div class="line"></div><div class="line">	alert(arr.number); <span class="comment">//result : 10</span></div><div class="line">	</div><div class="line">	<span class="comment">//从中我们可以看出，普通方法的优先级高于原型方法</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
+            <h3 id="break-如果用于循环是用来终止循环的"><a href="#break-如果用于循环是用来终止循环的" class="headerlink" title="break 如果用于循环是用来终止循环的"></a>break 如果用于循环是用来终止循环的</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=<span class="number">3</span>; i++)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="number">3</span> &gt; <span class="number">2</span>)</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">        <span class="comment">//break 在这里是用于终止 for 循环的</span></div><div class="line">    </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"这条语句永远不会输出"</span>);</div><div class="line">    </div><div class="line">    <span class="comment">//break 虽然是 if 内部的语句，但却是用来终止整个for循环的，</span></div><div class="line">    <span class="comment">//所以 printf 里面的内容永远不会输出。</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;<span class="number">4</span>; j++)</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">        <span class="comment">//在多层循环中，break 只能终止离它最近的那个循环</span></div><div class="line">    print(<span class="string">"hello\n"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</div><div class="line">result:</div><div class="line">hello</div><div class="line">hello</div><div class="line">hello</div><div class="line">*/</span></div></pre></td></tr></table></figure>
+<p>break 如果用于 switch 是用来终止 switch 的，在多层 switch 嵌套中，break 只能终止离它最近的 switch。</p>
+<p>break 不能直接用于 if，除非 if 属于循环内部的一个句子。</p>
+<h3 id="return-和-break-的区别"><a href="#return-和-break-的区别" class="headerlink" title="return 和 break 的区别"></a>return 和 break 的区别</h3><p>return 是用来终止函数用的，一执行 return，return 所在的函数就立即终止了；return 可以终止被调函数，向主调函数返回表达式的值，如果表达式为空，则只终止函数，不向主调函数返回任何值。</p>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/13/理解对象的引用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/13/理解对象的引用/" itemprop="url">理解对象的引用</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-13T15:33:21+08:00">
-                2016-12-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/13/理解对象的引用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/13/理解对象的引用/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-实例一"><a href="#1-实例一" class="headerlink" title="1.实例一"></a>1.实例一</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">		</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">		<span class="keyword">this</span>.name=name;</div><div class="line">		<span class="keyword">this</span>.showName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			alert(<span class="keyword">this</span>.name);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> p1 = <span class="keyword">new</span> CreatePerson(<span class="string">'xiaoming'</span>);</div><div class="line">	<span class="keyword">var</span> p2 = <span class="keyword">new</span>  CreatePerson(<span class="string">'xiaoqiang'</span>);</div><div class="line"></div><div class="line">	alert(p1.showName == p2.showName);<span class="comment">//false</span></div><div class="line">	<span class="comment">//由于对对象的引用不同，所以这里的结果是 false</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="2-实列二"><a href="#2-实列二" class="headerlink" title="2.实列二"></a>2.实列二</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">	<span class="keyword">var</span> b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"></div><div class="line">	<span class="comment">// they have the same value but different addresses</span></div><div class="line">	alert(a == b);<span class="comment">//false</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="3-实例三"><a href="#3-实例三" class="headerlink" title="3.实例三"></a>3.实例三</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">	<span class="keyword">var</span> b = a;</div><div class="line"></div><div class="line">	b.push(<span class="number">4</span>);</div><div class="line">	alert(b);<span class="comment">//[1,2,3,4]</span></div><div class="line">	alert(a);<span class="comment">//[1,2,3,4]</span></div><div class="line">	alert(a == b);<span class="comment">//ture--&gt;same address</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="4-实例四"><a href="#4-实例四" class="headerlink" title="4.实例四"></a>4.实例四</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">	<span class="keyword">var</span> b = a;</div><div class="line">	<span class="comment">//只要你重新声明了一个变量，在内存里就会有一块新的空间被创建</span></div><div class="line">	b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line">	alert(b);<span class="comment">//[1,2,3,4];</span></div><div class="line">	alert(a);<span class="comment">//[1,2,3] </span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
           
         
       
@@ -1537,7 +1580,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1582,7 +1625,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">137</span>
+                <span class="site-state-item-count">148</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
