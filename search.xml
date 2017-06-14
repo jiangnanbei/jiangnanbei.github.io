@@ -12,6 +12,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[识破障眼法]]></title>
+    <url>%2F2017%2F06%2F14%2F%E8%AF%86%E7%A0%B4%E9%9A%9C%E7%9C%BC%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[读书笔记：《世说新语》 继续谈说话技巧中的怎么”不说”，但是这个不说，除了借机会听、借机会学，更重要的是你要借机会分析那个说话的人，尤其是当你不说，他却一直说个不停，甚至抢你话的时候，你更得小心，因为他说话很可能是障眼法，把你的注意力分散，免得你发现他的弱点，甚至弊端。 房地产掮客小姐的技巧很简单，她一方面掠过房子的弱点，根本不提；一方面不断说话，把你的注意力带开。 知道了这一点，以后你买自己不熟悉的东西，除了少说话、多听、多比较，而且要在对方指东的时候，除了往东看，也好好往相反的西边看看；当他指着天花板滔滔不绝的时候，你千万小心地上。 而且无论买什么东西都如此。当你看上一块玉，那卖家指着那玉上的优点、特点，说得天花乱坠的时候，你千万小心，只怕优点之外，全是缺点，等你买回家才发现好多裂璺。上古董铺更得小心，如果他的光线特别昏暗，别以为古董铺因为古，所以应该点古董油灯，而要想想，会不会有些东西是见不得光的，光线一亮，他就露马腳了。 至于在办公室里。如果你是主管，当你叫一个职员进来问话，他不直接答，或答一半，忽然把话题岔开，好像另有急事向你报告，譬如你问他今天一共收了多少钱、出了几箱货的时候，他刚答一半，说收了五千多呢……突然话题一转，说：”对了！今天老王来找您……”这时候你也得小心，会不会因为那人心里有鬼，怕你发觉，于是主动把话题带开。 在心理学上早发现人们会这样表现，连你的子女或另一半，当他们突然多话，而且常常抢着说，或一进门就主动找话题的时候，都有可能是声东击西。 至于当你自己是小职员的时候，更得以此为戒。你千万要避免在主管的话题之外找话题。尤其不能抢话，把话题带开。就算你能干、口才好，又有事情急着想报告，也要懂得忍，等主管的问话告一段落，或会议讨论的事情告一段落之后再说，否则不但会显得你毛躁，而且令人起疑，你言词闪烁是不是有什么心虚的事。 就算你心里没鬼，也不能喋喋不休。你想嘛，“喋喋不休，言不及义”怎么比得上“不鸣则已，一鸣惊人”。]]></content>
+      <categories>
+        <category>貌似有知识</category>
+      </categories>
+      <tags>
+        <tag>貌似有知识</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[弹出窗口屏蔽程序]]></title>
     <url>%2F2017%2F06%2F13%2F%E5%BC%B9%E5%87%BA%E7%AA%97%E5%8F%A3%E5%B1%8F%E8%94%BD%E7%A8%8B%E5%BA%8F%2F</url>
     <content type="text"><![CDATA[大多数浏览器都内置有弹出窗口屏蔽程序，而没有内置此类程序的浏览器，也可以安装带有内置屏蔽程序的实用工具。于是，在弹出窗口被屏蔽时，就应该考虑两种可能性。如果是浏览器内置的屏蔽程序阻止的窗口弹出，那么 window.open() 很可能会返回 null。此时，只要检测这个返回值就可以确定弹出的窗口是否被屏蔽了。 如果是浏览器扩展或其他程序阻止的弹出窗口，那么 window.open() 通常会抛出一个错误。因此，要想准确的检测出弹出窗口是否被屏蔽，必须在检测返回值的同时，将对 window.open() 的调用封装在一个 try-catch 块中，如下所示： 1234567891011121314var blocked = false;try &#123; var wroxWin = window.open('www.ijiangnanbei.com','_blank'); if(wroxWin == null) &#123; blocked = true; &#125;&#125; catch (ex) &#123; blocked = true;&#125;if(blocked) &#123; alert('the popup was blocked!");&#125;]]></content>
@@ -248,6 +259,28 @@
       </categories>
       <tags>
         <tag>心智</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[尾部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%B0%BE%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[页尾设计 页尾，也称为 Tailer，指的是页面底部部分，通常放置联系方式和版权信息等补充信息。由于其位置不够显著、重要性较低，因此也往往成为设计师容易忽略的地方。 需要规避的细节问题页尾的信息过多过杂由于页尾不太重要，因此应该尽量简化它，节约页面宝贵的空间。 不同页面的页尾不统一 有时候，由于网站的迅速扩张，页面数量迅速增加，如缺乏统一的规范约束，往往容易导致页尾等元素在同一类型页面中表现得不够统一。 这虽然只是一个很小的细节，却容易让用户对网站的专业度产生怀疑，这是页面设计中需要注意的问题之一。 版权说明格式 一般网站都会在页尾进行版权说明，目前国际上标准的格式是：Copyright[日期（dates）]by[作者/所有者（author/owner）]，其中 Copyright 通常可以用 © 代替，但是不可以用（c）。All Rights Reserved 在某些国家曾经是必需的，但是现在在大多数国家，都不是法律上必须有的字样。 设计新趋势为了更好的利用网站的空间，目前有些网站在页尾除了放置联系方式和版权信息以外，也放置网站的辅助导航，使页尾发挥更大的引导作用。]]></content>
+      <categories>
+        <category>UI设计</category>
+      </categories>
+      <tags>
+        <tag>UI设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[头部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%A4%B4%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[网站上每个元素都是为了满足了用户、网站或者赞助商不同角度的需求而存在的。按照各部分作用的不同，可将网站划分成以下功能区域，包括头部、页尾、导航区、搜索区、登录注册区、信息展示区、广告区等。 头部 网页头部，也称为 Header，简称头部，指的是网站页面的顶部区域，通常包含网站的 Logo、Slogan、Banner、导航条等元素，有时还提供常用功能的快速入口，如登录、帮助等。头部主要用于网站展示品牌形象，告诉用户目前在浏览哪个网站以及该网站主要提供什么内容。 头部类型实用型头部实用型的网站头部设计简洁、不花哨，能够在合理有限的空间内起到必要的作用，一般其只包含 Logo、导航条和快速入口等重要元素。 大型网站由于页面空间有限，而且品牌的知名度使其不需要使用过多的元素去渲染网站的特色和气氛，因此往往采用这种类型的头部设计。 设计型头部很多网站，尤其是个性化的网站，往往会利用头部的设计体现出网站的特色，常见于博客、小型特色网站以及部分企业网站首页。 设计型头部的优点在于有很大的发挥空间，如果设计效果好，就会造成很强的视觉冲击力，给用户留下很深的印象；其缺点在于往往占用过多空间，削减了网站内容的重要性，造成喧宾夺主的效果，也容易产生头重脚轻的感觉。 头部元素的设计不管是哪种类型的头部，一般包括 Logo、Slogan、导航条等元素。 LogoLogo 的基本作用之一是返回页面首页，使用户在网站迷路时，可以找到回去的路，增加用户在网站上的方向感和安全感。更重要的是 Logo 代表着网站的品牌和形象，尤其对知名的网站来讲，Logo 能够唤起用户对网站的品牌认知度，从而提升用户的信任感。 Logo 本身的设计非常重要，必需清晰易辨识，能体现出网站的定位和特色，具体的设计更多取决于设计者，在这不多加叙述。 对于不同类型的页面或者网站，Logo 的呈现的方式不一样。如独立的 logo，适用于网站首页。logo+文字，适用于网站子类目。logo+logo，适用于合并后的网站。 除此之外，很多网站会在节日期间设计应景的节日 logo 体现气氛，提升用户对网站的体验。 SloganSlogan 虽然只是一句简单的标语，但能够很好地体现出网站的定位和特色，显示企业文化、塑造网站个性，配合 Logo 一起使用能够达到更好的效果。Slogan 一般要求朗朗上口，而且点出网站的最大亮点。好的标语往往能让用户更好地记住网站的特色及其提供的主要服务。如： ·阿里巴巴。“全球领先的网上贸易市场和商人社区”。 ·淘宝。“淘我喜欢！” 除了 Logo 和 Slogan 以上两个主要元素之外，总体上来讲，同一级别或者同一类型页面的头部设计应该尽量保持一致。]]></content>
+      <categories>
+        <category>UI设计</category>
+      </categories>
+      <tags>
+        <tag>UI设计</tag>
       </tags>
   </entry>
   <entry>
@@ -912,8 +945,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -924,8 +957,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -1524,6 +1557,28 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[结构体使用概述]]></title>
+    <url>%2F2016%2F08%2F30%2F%E7%BB%93%E6%9E%84%E4%BD%93%E4%BD%BF%E7%94%A8%E6%A6%82%E8%BF%B0%2F</url>
+    <content type="text"><![CDATA[结构体与我们面向对象里面的‘类’是类似的，只不过结构体里面没有‘方法’,只有成员，结构体是类的一个过渡。 结构体是用户根据自己的需求自己定义的复合数据类型，java 里面类也是一个数据类型。 12345678910111213141516171819#include &lt;stdio.h&gt;struct Student&#123; int sid; char name[200]; int age;&#125;int main(void)&#123; struct Student st = &#123;1000,'jiang',20&#125;; //st.sid = 99;这是第一种方式，不过我们常用第二种方式 struct Student * pst; pst = &amp;st; //pst-&gt;sid 等价于 (*pst).sid 等价于 st.sid pst-&gt;sid = 99;&#125;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如何通过函数修改实参的值？]]></title>
+    <url>%2F2016%2F08%2F29%2F%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%87%BD%E6%95%B0%E4%BF%AE%E6%94%B9%E5%AE%9E%E5%8F%82%E7%9A%84%E5%80%BC%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[要修改一个变量的值同时被调函数没有返回值，那你只能通过传递地址的方式来进行修改。 123456789101112131415161718192021#include &lt;stdio.h&gt;void f(int *q);int main(void)&#123; int i = 9; int *p = &amp;i; //%p 表示以16进制的方式输出 printf("%p\n",p); f(p);//虽然 p==&amp;i,但这里传入p是错的 printf("%p\n",p);&#125;void f(int *q)&#123; q = (int *)0xFFFFFF;&#125;//输出结果：0060FF08 0060FF08//两次输出的结果相同，可见把p当做参数传入时没有效果 12345678910111213141516171819202122#include &lt;stdio.h&gt;void f(int **q);int main(void)&#123; int i = 9; int *p = &amp;i; printf("%p\n",p); //p是（int*）类型，那么&amp;p就是（int**）类型，这个叫做指针的指针 //我们这么做的目的只有一个，无论这个十个什么类型的变量，想要改写 //它的值，你只需要发送它的地址就可以了 f(&amp;p); printf("%p\n",p);&#125;void f(int **q)&#123; *q = (int *)0xFFFFFF;&#125;//两次输出的结果相同，可见把&amp;p当做参数传入时有效果]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[学习编程的秘诀]]></title>
     <url>%2F2016%2F08%2F29%2F%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B%E7%9A%84%E7%A7%98%E8%AF%80%2F</url>
     <content type="text"><![CDATA[学习编程的秘诀自然是学习解决问题的秘诀,那就拿编程中比较让人蛋疼的数据结构开始吧. 1.判断一个数字是否为素数?2.判断一个数字是否是回文数?3.编程实现求一个十进制数字的二进制形式….4……. 买到任何一本与数据结构有关的书籍,你总会看到无数的这种题,然后你就想啊想啊,想啊想啊,到最后你就是想不出来,然后你就痛苦,然后看下一道题你还是搞不定…到最后你竟然发现没有一道题你可以搞定的,然后你就开始怀疑你的智商,最后你就开始怀疑自己适不适合搞计算机,最终你竟然愚蠢的相信了自己不适合搞计算机…%&gt;_&lt;% 真相是数据结构与算法的题大部分人都是想不出来的,所以如果你想不出来,你不要觉得很痛苦,你去看答案,先看懂,然后去修改,看看改一下会有什么反应,多敲,这时候你对程序的理解就会慢慢加深,积累的多了你自然就学会了. 如果你实在看不懂,那你就用最”聪明”的方法–把它背下来.没错,其实这就是最聪明的方法.真正体验过的人就会知道,当一个很难很难的知识一直待在你的脑子里,然后你还时不时的拿出来想一想,最后你会发现一个神奇的现象,你竟然会了,而且你竟然不知道你为什么会了,恩,会的不需要理由,甚至于当有人问你为什么是这样的时候,你才发现自己也不知道为什么,就好像这个难题这样去解决是理所当然的事 对一些小算法的程序,尝试自己编程去解决它(大部分人都无法自己解决),如果解决不了就看答案,关键是把答案看懂,这个要花很大的精力,也是我们学习的重点.看懂之后尝试自己去修改程序,并且知道修改之后程序的不同输出结果含义.然后自己不看答案独立做出来. 如果程序无法彻底理解就把它背出来. 过几天回顾一次,再敲一次. 周而复始,总有一天你不加思考就敲出来了. 恩,其实大神就是这么走过来的,不过他没告诉你…]]></content>
@@ -1557,6 +1612,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[数组和指针]]></title>
+    <url>%2F2016%2F08%2F28%2F%E6%95%B0%E7%BB%84%E5%92%8C%E6%8C%87%E9%92%88%2F</url>
+    <content type="text"><![CDATA[12345678910#include &lt;stdio.h&gt;int main() &#123; int a[3] = &#123;1,2,3&#125;; printf("%p\n",a); //0060FEF4 printf("%p\n",a+1); //0060FEF8 printf("%p\n",a+2); //0060FEFC&#125; 由以上程序我们知道，数组的地址是连续的，而且数组名是数组的首地址。 12345678910include &lt;stdio.h&gt;int main()&#123; int a[3] = &#123;1,2,3&#125;; printf("%d\n",*a+2);//*a+2 等价于 a[0]+2 //结果：3&#125; 1234567891011121314#include &lt;stdio.h&gt;void show(int *p,int len)&#123; //这样是可以修改 a[0] 的，此时p[0]==*(p+0)==*(a+0) p[0] = 100;&#125;int main()&#123; int a[3] = &#123;1,2,3&#125;; show(a,3); printf("%d\n",a[0]);//100&#125; a[5]={1,2,3}; a 指向的是第一个字节,所以 (a+1) 代表的就是 a 加上 1 乘以 a 所代表的字节数。 a[i] == *(a+i); 所以这样子写也是对的:3[a] == *(3+a) == a[3]。 所有指针变量只占四个字节，(我们的地址总线总共有32根)，一个指针变量无论它所指向的变量占几个字节，它本身的大小都是固定的。 double x = 66.6; p = &amp;x; x 是八个字节,一个字节是 8 位,1 个字节一个地址。 p 里面只存放了一个地址,通常就是我们第一个字节的地址,我们用第一个字节的地址表示整体的地址.]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[创业从做产品开始]]></title>
     <url>%2F2016%2F08%2F27%2F%E5%88%9B%E4%B8%9A%E4%BB%8E%E5%81%9A%E4%BA%A7%E5%93%81%E5%BC%80%E5%A7%8B%2F</url>
     <content type="text"><![CDATA[我一直认为，如果你要去创业，那么首先也是最重要的就是你得有自己的产品。就像你在经营自己的人生一样，其实你自己就是一个产品，你需要对她进行“包装”、“宣传”、“营销”、“上市”……这个产品可以不完美，但是你一定要有。 今天我想从产品的角度来谈一下创业，在我看来，现在的创业产品可以分为两大类，第一类：互联网产品，第二类；传统行业产品。 你可以用做互联网产品的思维来做传统产品，你也可以用借鉴传统行业产品的经验来做你的互联网产品，今天我们不谈做产品的思维，我们就谈一下做这两种不同的产品，我们需要抓住的那个最基本的点是什么。 做互联网产品一定是“速度为王”，所以你要想尽一切办法让你的产品快速上市，极速迭代。在这个过程中不断地去有选择的接受用户的反馈，不断地去试错，一点一点地去完善你的产品。在这个过程中，你所服务的用户中一定会有那么一小撮人一直追随着你，如果你在用心的做着这个为他们服务的产品，他们一定会陪伴着你把它做到极致，做到完美。在这个过程中，你一要稳重求快，稳中求胜，抓住这一个点把它做到极致，万万不可自我膨胀，这个产品还没有做好就想去做更多的产品，很多的创业者死就死在这里，死就死在自我膨胀。 做传统行业产品，你所要抓住的基本点是：产品不做到完美绝不上市。一个不完美的产品虽然决定不了你现在的生死，但是它注定了你以后的生死。你需要对产品进行长期的内测，包括消费者的满意的、物流、供应链、营销、竞争力、能不能大规模生产、采购….最关键的是消费者接触的第一次，如果你不能快速让消费者产生共鸣，这款产品很难再有第二次了。所以你一定要把最好的一个产品拿出来，记住是最好的一个产品，一招制敌，第一次就要将其提升到一个高度，否则你就没有第二次机会了。]]></content>
@@ -1571,7 +1637,7 @@
   <entry>
     <title><![CDATA[预备知识：指针]]></title>
     <url>%2F2016%2F08%2F27%2F%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86%EF%BC%9A%E6%8C%87%E9%92%88%2F</url>
-    <content type="text"><![CDATA[指针的重要性学好了指针你才能在程序越写越大的时候明白程序之间的来回调用 指针是C语言的灵魂 如果你不明白C语言的指针,你就不会明白面向对象语言里面的引用 指针的概念地址就是指针 指针就是地址 指针变量是存放内存单元地址的变量 指针的本质是一个操作受限的非负整数 12345678910111213141516include &lt;stdio.h&gt;int main()&#123;//p 是变量名，‘int *’表示p只能存放整形地址的变量 int *p; int i = 10; int j; p = &amp;i;// *p = i j = *p;// j = i printf("i = %d,j = %d,*p = %d",i,j,*p);//10 10 10 return 0;&#125; 由上图可知变量不一定是连续分配的。p 保存了 i 的地址，所以我们说 p 指向了 i，但 p 不是 i ，i 不是 p，修改这两个值中的任何一个不会影响另一个。如果 p 指向 i ，p 就代表了 i，不能说它是 i 的值，它就是 i 本身， p 和 i 就是同一个东西。 地址 内存单元的编号；从零开始的非负整数；范围:0—-FFFFFFFF[0-4G-1]。 内存是 cpu 唯一可以直接访问的大容量的存储设备，cpu不能访问硬盘，所以你必须要把硬盘的数据先导入内存。 内存分很多很多的小格子,这些小格子从零开始编号，一直到4G-1结束，地址其实就是内存的编号（在图中就是格子的编号）。 地址线:可以确定你对哪一个编号的单元进行操作(因为地址线是32位的,刚好能控制2的32次方个单元,所以内存的最大只能是4G) 控制线:表示是读还是写,还是只读,还是只写。 数据线:传递数据，表示最终你是把32个数据发送到 cpu 内部执行还cpu 把执行的结果写到内存里面。 为什么学习数据结构要用C语言因为我们数据结构里面一个最基本的知识就是链表，我们后面所学到的无论是树还是图，都是以我们的链表为基础的。 我们学C语言的目的之一是你首先能看懂下面的那行代码: 12345678//aa本质上是一个指针,它保存了后面在堆里面的这个对象的地址A aa = new A();//这句话就相当于把aa的地址赋值给aa2A aa2 = aa;这时aa就代表他所指向的那个对象了aa.f();]]></content>
+    <content type="text"><![CDATA[指针的重要性学好了指针你才能在程序越写越大的时候明白程序之间的来回调用 指针是C语言的灵魂 如果你不明白C语言的指针,你就不会明白面向对象语言里面的引用 指针的概念地址就是指针 指针就是地址 指针变量是存放内存单元地址的变量 指针的本质是一个操作受限的非负整数 12345678910111213141516include &lt;stdio.h&gt;int main()&#123;//p 是变量名，‘int *’表示p只能存放整形地址的变量 int *p; int i = 10; int j; p = &amp;i;// *p = i j = *p;// j = i printf("i = %d,j = %d,*p = %d",i,j,*p);//10 10 10 return 0;&#125; 由上图可知变量不一定是连续分配的。p 保存了 i 的地址，所以我们说 p 指向了 i，但 p 不是 i ，i 不是 p，修改这两个值中的任何一个不会影响另一个。如果 p 指向 i ，*p 就代表了 i，不能说它是 i 的值，它就是 i 本身， *p 和 i 就是同一个东西。 地址 内存单元的编号；从零开始的非负整数；范围:0----FFFFFFFF[0-4G-1]。 内存是 cpu 唯一可以直接访问的大容量的存储设备，cpu 不能访问硬盘，所以你必须要把硬盘的数据先导入内存。 内存分很多很多的小格子,这些小格子从零开始编号，一直到 4G-1 结束，地址其实就是内存的编号（在图中就是格子的编号）。 地址线:可以确定你对哪一个编号的单元进行操作(因为地址线是32位的,刚好能控制2的32次方个单元,所以内存的最大只能是4G) 控制线:表示是读还是写,还是只读,还是只写。 数据线:传递数据，表示最终你是把 32 个数据发送到 cpu 内部执行还 cpu 把执行的结果写到内存里面。 为什么学习数据结构要用C语言因为我们数据结构里面一个最基本的知识就是链表，我们后面所学到的无论是树还是图，都是以我们的链表为基础的。 我们学C语言的目的之一是你首先能看懂下面的那行代码: 12345678//aa本质上是一个指针,它保存了后面在堆里面的这个对象的地址A aa = new A();//这句话就相当于把aa的地址赋值给aa2A aa2 = aa;这时aa就代表他所指向的那个对象了aa.f();]]></content>
       <categories>
         <category>编程</category>
       </categories>

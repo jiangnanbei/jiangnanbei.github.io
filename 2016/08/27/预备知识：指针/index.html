@@ -117,7 +117,7 @@
 12345678910111213141516include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;//p 是">
 <meta property="og:image" content="http://ijiangnanbei.com/img/2017-06-14_203443.png">
 <meta property="og:image" content="http://ijiangnanbei.com/img/2017-06-14_204127.png">
-<meta property="og:updated_time" content="2017-06-14T12:51:49.258Z">
+<meta property="og:updated_time" content="2017-06-14T12:57:31.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="预备知识：指针">
 <meta name="twitter:description" content="指针的重要性学好了指针你才能在程序越写越大的时候明白程序之间的来回调用
@@ -450,14 +450,14 @@
 指针的本质是一个操作受限的非负整数
 </code></pre><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">include &lt;stdio.h&gt;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line"><span class="comment">//p 是变量名，‘int *’表示p只能存放整形地址的变量</span></div><div class="line">    <span class="keyword">int</span> *p;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">10</span>;</div><div class="line">    <span class="keyword">int</span> j;</div><div class="line">    </div><div class="line">    p = &amp;i;<span class="comment">// *p = i</span></div><div class="line">    j = *p;<span class="comment">// j = i</span></div><div class="line">    </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d,j = %d,*p = %d"</span>,i,j,*p);<span class="comment">//10 10 10</span></div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img src="/img/2017-06-14_203443.png" alt="vivg"></p>
-<p>由上图可知变量不一定是连续分配的。p 保存了 i 的地址，所以我们说 p 指向了 i，但 p 不是 i ，i 不是 p，修改这两个值中的任何一个不会影响另一个。如果 p 指向 i ，<em>p 就代表了 i，不能说它是 i 的值，它就是 i 本身， </em>p 和 i 就是同一个东西。<br><a id="more"></a></p>
-<h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p> 内存单元的编号；从零开始的非负整数；范围:0—-FFFFFFFF[0-4G-1]。</p>
+<p>由上图可知变量不一定是连续分配的。<code>p</code> 保存了 <code>i</code> 的地址，所以我们说 <code>p</code> 指向了 <code>i</code>，但 <code>p</code> 不是 <code>i</code> ，<code>i</code> 不是 <code>p</code>，修改这两个值中的任何一个不会影响另一个。如果 <code>p</code> 指向 <code>i</code> ，<code>*p</code> 就代表了 <code>i</code>，不能说它是 <code>i</code> 的值，它就是 <code>i</code> 本身， <code>*p</code> 和 <code>i</code> 就是同一个东西。<br><a id="more"></a></p>
+<h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p> 内存单元的编号；从零开始的非负整数；范围:<code>0----FFFFFFFF[0-4G-1]</code>。</p>
 <p> <img src="/img/2017-06-14_204127.png" alt="vivg2"></p>
-<p>内存是 cpu 唯一可以直接访问的大容量的存储设备，cpu不能访问硬盘，所以你必须要把硬盘的数据先导入内存。</p>
-<p>内存分很多很多的小格子,这些小格子从零开始编号，一直到4G-1结束，地址其实就是内存的编号（在图中就是格子的编号）。</p>
+<p>内存是 <code>cpu</code> 唯一可以直接访问的大容量的存储设备，<code>cpu</code> 不能访问硬盘，所以你必须要把硬盘的数据先导入内存。</p>
+<p>内存分很多很多的小格子,这些小格子从零开始编号，一直到 <code>4G-1</code> 结束，地址其实就是内存的编号（在图中就是格子的编号）。</p>
 <p>地址线:可以确定你对哪一个编号的单元进行操作(因为地址线是32位的,刚好能控制2的32次方个单元,所以内存的最大只能是4G)</p>
 <p>控制线:表示是读还是写,还是只读,还是只写。</p>
-<p>数据线:传递数据，表示最终你是把32个数据发送到 cpu 内部执行还cpu 把执行的结果写到内存里面。</p>
+<p>数据线:传递数据，表示最终你是把 32 个数据发送到 <code>cpu</code> 内部执行还 <code>cpu</code> 把执行的结果写到内存里面。</p>
 <h3 id="为什么学习数据结构要用C语言"><a href="#为什么学习数据结构要用C语言" class="headerlink" title="为什么学习数据结构要用C语言"></a>为什么学习数据结构要用C语言</h3><p>因为我们数据结构里面一个最基本的知识就是链表，我们后面所学到的无论是树还是图，都是以我们的链表为基础的。</p>
 <p>我们学C语言的目的之一是你首先能看懂下面的那行代码:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//aa本质上是一个指针,它保存了后面在堆里面的这个对象的地址</span></div><div class="line">A aa = <span class="keyword">new</span> A();</div><div class="line"></div><div class="line"><span class="comment">//这句话就相当于把aa的地址赋值给aa2</span></div><div class="line">A aa2 = aa;</div><div class="line"></div><div class="line">这时aa就代表他所指向的那个对象了</div><div class="line">aa.f();</div></pre></td></tr></table></figure>
@@ -605,7 +605,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">150</span>
+                <span class="site-state-item-count">156</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
