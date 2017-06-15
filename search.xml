@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[二进制中 1 的个数]]></title>
-    <url>%2F2017%2F06%2F14%2F%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD-1-%E7%9A%84%E4%B8%AA%E6%95%B0%2F</url>
-    <content type="text"><![CDATA[问题描述： 请实现一个函数，输入一个整数，输出该数二进制表示中一的个数。例如把 9 变成二进制是 1001 ，有 2 位是 1 。因此如果输入 9 则该函数输出 2。 思路： 首先把输入的数字 i 和 1 做与运算，判断 i 的最低位是不是 1。接着把 1 左移一位得到 2 ，再和 i 做与运算，就能判断 i 的次低位是不是1… 这样反复的左移，每次都能判断 i 的其中一位是不是 1。 */ 12345678910111213141516171819202122#include &lt;iostream&gt;using namespace std;int count(int n)&#123; int count = 0; unsigned int flag = 1; while(flag) &#123; if(n&amp;flag) count++; flag = flag &lt;&lt; 1; &#125; return count;&#125;int main()&#123; int num = 9; cout &lt;&lt; count(num) &lt;&lt; endl;&#125;]]></content>
+    <title><![CDATA[如何写出简洁优美的 CSS Reset]]></title>
+    <url>%2F2017%2F06%2F15%2F%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E7%AE%80%E6%B4%81%E4%BC%98%E7%BE%8E%E7%9A%84-CSS-Reset%2F</url>
+    <content type="text"><![CDATA[1.什么是 CSS resetCSS reset 的就是让各个浏览器的 CSS 样式有一个统一的基准，而这个基准更多的就是“清零”！ 2.如何写出简洁优美的CSS reset我们的 reset 应该根据自己的要求来书写。然而，目前的状态是（尤其一些中小型网站）， reset 代码直接拷贝过去，不做任何的思考。 3. 你所不知的 reset- 1. `div`、`li`、还有像 `form`,`img`, `button`, `textarea` 这样子的表单元素标签是没有 `margin` 值和 `padding` 值的。 dt 标签默认的 margin 和 padding 值就是 0。 code 标签是个属于 inline 水平的元素，不存在 margin值和 padding 值。 input元素有 padding 值 没有 margin 值 fieldset, legend这两个90年代的标签使用概率不足1%，不需要拿来重置。 简洁的 reset 可以这样书写：1body, dl, dd, h1, h2, h3, h4, h5, h6, p, form&#123;margin:0;&#125; ol,ul&#123;margin:0; padding:0;&#125; 4.reset 存在的问题1.css文件的大小显然，reset 平白无故的增加了 CSS 文件的大小，虽然，增加的大小可能有限，但是，要知道，即使 0.1 秒的载入时间差异也会影响互联网企业的收入的。 ####２.样式的重置许多的 CSS 样式要重写与重新覆盖，典型的多此一举。 3.CSS的渲染这可以说是最大的问题，样式无缘无故增加了很多的渲染，想想看，一个项目或是一个页面中有多少个 div 标签，居然使用div{margin:0; padding:0;} 当然，*{margin:0; padding:0;} 更是无法容忍的。 5.少既是多最少的 CSS 代码，最少的渲染，最少的重置就是最好的 CSS 样式代码，这反应了您的 CSS 层次。 注：参考文献]]></content>
       <categories>
-        <category>编程</category>
+        <category>前端</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -625,6 +625,28 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[使用toString做类型判断]]></title>
+    <url>%2F2016%2F12%2F28%2F%E4%BD%BF%E7%94%A8toString%E5%81%9A%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD%2F</url>
+    <content type="text"><![CDATA[使用 toString 做类型判断不管是系统对象还是我们自己写的对象都可以找到 toString，系统对象下面都是自带的，但是自己写的对象都是通过原型链找到 Object 下面的。 toString 的作用toString 的作用就是把对象转成字符串。 1234567var arr = [1,2,3];//更改toString的输出形式Array.prototype.toString = function()&#123; return this.join('+');&#125;alert(arr.toString());//1+2+3 toString 进制转换我们可以利用进制转换来转颜色值，比如说把rgba转换成16进制,或者相反。 12var num = 255;alert(num.toString(16));//ff toString 类型判断123456var arr = [];alert(Object.prototype.toString.call(arr));//[object Array]//这才是我们判断是不是数组最完美的方法alert(Object.prototype.toString.call(arr) == '[object Array]');//true 为什么使用 toString 做类型判断是最准确的？1234567891011121314151617window.onload = function()&#123; var oF = document.createElement('iframe'); document.body.appendChild(oF); //frames[]是iframe的一个集合 var ifArray = window.frames[0].Array; //你创建出来的这个数组其实就是iframe里面的数组 //这个时候你其实就跨页面了 var arr = new ifArray(); //这个时候虽然跨页面了,但是这个时候arr仍然是一个数组 // alert(arr.constructor == Array);//false // alert(arr instanceof Array);//false alert(Object.prototype.toString.call(arr) == '[object Array]');//true&#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>面向对象&amp;组件开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[instanceof 运算符的使用]]></title>
+    <url>%2F2016%2F12%2F27%2Finstanceof-%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[instanceof 运算符instanceof:判断对象与构造函数在原型链上是否有关系。 123456789function Fn()&#123;&#125;var fn1 = new Fn();//看看对象和构造函数是不是在同一个原型链上alert(fn1 instanceof Fn);//true//每一个对象的最外层都是 Object.protoalert(fn1 instanceof Object);//true 用 instanceof 做类型判断123var arr=[];alert(arr instanceof Array);//true 面试题如何判断一个变量是不是数组？首先你肯定不能用 typeof 因为它区分不开很多东西。像 ‘constructor和 &#39;instanceof 都能区分开来数组，但是他们并不是最好的方案。最好的方案其实是 toString()。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>面向对象&amp;组件开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[continue 概述]]></title>
     <url>%2F2016%2F12%2F26%2Fcontinue-%E6%A6%82%E8%BF%B0%2F</url>
     <content type="text"><![CDATA[通过下面三个例子我们来看看 continue 的作用1234567891011121314151617int main()&#123; int i=0,s=0; do &#123; if(i % 2) &#123; i++; continue; //continue 执行完之后将会转向执行 while 判断 &#125; i++; s += i; &#125;while(i &lt; 7); printf("%d\n",s); return 0;&#125; 123456789for(1;2;3)&#123; A; B; continue; //执行完 continue 之后不会执行C,D会转而执行for循环的判断条件 C; D;&#125; 123456789101112131415161718int main()&#123; int a=1,b; for(b=1; b&lt;=10; b++) &#123; if(a &gt;= 8) break; //如果要是执行 break 语句则会转而执行第 17 行 if(1 == a%2) &#123; a += 5; continue; //如果要是执行 continue 语句,则会转而执行for循环的判断条件 &#125; a -= 3; &#125; printf("b=%d",b);&#125;]]></content>
@@ -655,6 +677,28 @@
       </categories>
       <tags>
         <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hasOwnProperty 和 constructor 的使用]]></title>
+    <url>%2F2016%2F12%2F26%2FhasOwnProperty-%E5%92%8C-constructor-%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[hasOwnProperty() 方法hasOwnProperty():检测是不是对象自身下面的属性。 123456789var arr = [];arr.num = 10;Array.prototype.num2 = 20;//true,说明num这个属性是arr独享的alert(arr.hasOwnProperty('num'));//false,这个属性不是arr独享的alert(arr.hasOwnProperty('num2')); constructor 属性constructor:查看对象的构造函数 。 12345678function Aaa()&#123;&#125;var a1 = new Aaa();alert(a1.constructor);//function Aaa()&#123;&#125;var arr = [];//我们可以利用这个属性来做类型的判断alert(arr.constructor == Array); constructor 是哪来的？12345678910111213141516171819function Aaa()&#123;&#125;//当我们写完一个函数的时候,不管是我们自己写的函数,还是系统自带的函数//程序都会自动帮我们生成一句话,只有它才是每一个函数都会自动生成的// Aaa.prototype.constructor = Aaa; //我们来修改一下看看 Aaa.prototype.constructor = Array; var a1 = new Aaa(); //function Array()&#123;[navtive code]&#125; alert(a1.constructor); // hasOwnProperty是加在最外层 Object.prototype 上面的 // function hasOwnProperty()&#123;[native code]&#125; alert(a1.hasOwnProperty); //我们来验证一下 alert(a1.hasOwnProperty == Object.prototype.hasOwnProperty);//true 你是如何不经意间修改 constructor 的？constructor 是在你创建完函数之后,系统自动生成的,我们最好不要去动他，但是有时候你会在不经意之间就把它修改了。 123456789101112131415161718192021222324function Aaa()&#123;&#125; // Aaa.prototype.name = "xiaoming"; // Aaa.prototype.age = 20; //我们可以把上面两句改成json的形式,表面上看这种表达方式似乎是一样的 //但是当我们使用json的形式的时候,我们已经在不经意间修改了constructor //当你用json表示的时候,代表的是给Aaa.prototype赋值, //所以系统自动生成的Aaa.prototype.constructor = Aaa; //就被你给覆盖掉了,这时当你再去找constructor的时候 //你找到的就是json对应的constructor Aaa.prototype = &#123; //所以,当你使用简写的时候,被忘了修正指向 constructor : Aaa, name : "xiaoming", age : 20 &#125;; var a1 = new Aaa(); //function Aaa()&#123;&#125; alert(a1.constructor); for-in 找不到系统自带属性在使用 for-in 的时候，其实系统自带的属性都是循环不到的。 12345678910function Aaa()&#123;&#125;Aaa.prototype.age = 10;for(var attr in Aaa.prototype)&#123; alert(attr);&#125;//你自己添加的属性用for in是可以找到的,但是系统属性比如自动生成的//constructor就是找不到的，即使你自己重新写了constructor也是找不到的//Aaa.prototype.constructor = Aaa;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>面向对象&amp;组件开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[面向对象中的原型链]]></title>
+    <url>%2F2016%2F12%2F25%2F%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%8E%9F%E5%9E%8B%E9%93%BE%2F</url>
+    <content type="text"><![CDATA[什么是原型链？实列对象与原型之间的链接，叫做原型链。 __proto__(隐式连接) Object 对象类型是原型链的最外层. 面向对象中的原型链123456789101112function Aaa()&#123;&#125;Aaa.prototype.num = 10;var a1 = new Aaa();//num是Aaa.prototype对象下面的属性,但是a1却是另一个对象//那么a1是如何找到Aaa.prototype下面的属性的呢?通过原型链。//在这里实列对象:a1;原型是Aaa.prototype//这个原型链我们是看不到的,但是可以在firbug下面找到,他的英文名字是://__proto__(隐式连接)alert(a1.num); 123456789101112function Aaa()&#123; this.num = 20;&#125;Aaa.prototype.num = 10;var a1 = new Aaa();alert(a1.num);//20//这里最终弹出来的是20,其实只要理解了原型链你就很容易搞明白//原型链是从内层一层一层的往外层查找的,所以弹出来的是20 上面的程序为什么最终出现的结果是20呢？我们可以做个类比，你可以把普通的方法和普通的属性看作是内联样式，把原型下面的属性和方法看作是内部样式，内联样式的优先级要高于内部样式的优先级。 原型链的在最外层原型链的的最外层是: Object.prototype。 12345678function Aaa()&#123; this.num = 20;&#125;Aaa.prototype.num = 10;Object.prototype.num = 30;var a1 = new Aaa();alert(a1.num);//20]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>面向对象&amp;组件开发</tag>
       </tags>
   </entry>
   <entry>
@@ -702,6 +746,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[包装对象]]></title>
+    <url>%2F2016%2F12%2F24%2F%E5%8C%85%E8%A3%85%E5%AF%B9%E8%B1%A1%2F</url>
+    <content type="text"><![CDATA[包装对象基本类型都有自己对应的包装对象:String Number 和 Boolean 。 基本类型的方法12345678var str = 'hello';alert(typeof str);//string//注意,这个方法是str的方法,但是我们知道基本类型是没有方法的,那这个在源码中究竟是怎么设计的呢?str.charAt(0);alert(str.charAt(0));//h 源码里面是怎么给基本类型设置方法的123456789var str = new String('hello');alert(typeof str);//obj//此时str是对象,它再拥有方法就是很自然的事情了.alert(str.charAt(0));//h//源码里面是这么设计的String.prototype.charAt = function()&#123;&#125; 基本类型与包装对象的关系123456//当你执行这句话的时候,str确实是字符串var str = 'hello';//但是当你执行这句话的时候,基本类型会找到对应的包装对象类型,//然后包装对象把所有的属性和方法给了基本类型,然后包装对象消失str.charAt(0); 123456789var str = 'hello';//我们给基本类型添加方法的时候,也是把方法添加到基本类型对应的包装对象下面String.prototype.lastValue = function()&#123; return this.charAt(this.length-1);&#125;alert(str.lastValue()); 一道面试题123456789101112//执行这句话的时候就是一个基本类型var str = 'hello';//执行这句话的时候,这个时候基本类型要添加一个属性，就会在基本类型所对//应的包装对象下面创建一个对象,然后把10添加到对象的下面.//注意:添加完之后包装对象就消失了str.number = 10;//添加完之后包装对象就消失了，当你再去调用str的属性的时候,这个时候又//重新的创建了一个对象，但是这个对象和前面的那个对象并不同一个对象,这//个时候新的对象下面的属性是空的.alert(str.number);//undefined str.number 和 在原型下面添加方法是不一样的，在原形中不管你的创建了多少个对象它都可以找到原型下面的方法，原型下面的方法是共享的。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>面向对象&amp;组件开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[隐藏页面元素的几个技巧]]></title>
     <url>%2F2016%2F12%2F23%2F%E9%9A%90%E8%97%8F%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%2F</url>
     <content type="text"><![CDATA[每一个方法的背后其实都是一个效果的实现原理。你的方法越多，你所做出来的效果也就越多。 1.display：none；显示为无,不占据文档流。得到它的高很麻烦。 2.visibility：hidden；隐藏，仍然占据文档流，很容易就可以得到它的高。 3.width / height;宽高改为 0，去除边框。如果你能想到用高去控制，你就可以做出让一个元素慢慢打开的动画效果。比如说，移动到导航栏上，导航的内容慢慢的下来。 4.透明度把透明度改为 0 就看不到了。利用透明度你可以做一个淡入淡出的效果。 5.通过定位移出布局 left/top 值利用定位的原理，你可以做“弹出”的效果，用一个 div 将其覆盖，然后慢慢地将其从 div 下方弹出，很多门户网站常常用这个技巧来做新闻“弹出”的效果。 6.拿另一和背景色一样的 div 将其盖住，拿另一和背景色一样的 div 将其盖住，然后用各种方式移开和背景色一样的 div，就可以得到各种各样的动画效果。比如说，你可以让和背景色一样的 div 四周不停的缩小，就可以做出一个类似于“回”字的效果。 很多你所看到的惊讶的效果背后，其实就是这样出来的。]]></content>
@@ -710,6 +765,28 @@
       </categories>
       <tags>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[面向对象的写法]]></title>
+    <url>%2F2016%2F12%2F23%2F%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%99%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[面向对象的写法1234567891011//构造函数function construct()&#123; this.property&#125;//原型方法construct.prototype.method=function()&#123;&#125;//实例对象并调用var obj1 = new construct();obj1.method(); 系统对象的设计在 js 源码中,系统对象也是基于原型的程序，我们可以推测出来，在 js 的源码中 js 的数组是这样设计的： 123456789101112//构造函数function Array()&#123; this.length = 0;&#125;//原型方法Array.prototype.push = function()&#123;&#125;;Array.prototype.sort = function()&#123;&#125;;var arr = new Array();arr.push();arr.sort(); 使用系统对象的注意点既然我们了解了系统对象的原理，那我们在用系统对象的时候就不要去修改其属性和方法。下面就是一个错误的示例： 12345678var arr = [1,2,3];Array.prototype.push = function()&#123;&#125;arr.push(4,5,6);//只能弹出来[1,2,3]alert(arr); 尽量不要去修改或者添加系统对象下面的方法或者属性。 完善系统对象123456789101112131415var arr = [1,2,3];Array.prototype.push = function()&#123; //this就是arr,arr就是1,2,3 //arguments就是实参的集合,所以argumengs就是4,5,6 for(var i=0;i&lt;arguments.length;i++)&#123; this[this.length] = arguments[i]; &#125; return this.length;&#125;arr.push(4,5,6);alert(arr);//1,2,3,4,5,6]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>面向对象&amp;组件开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[拖拽之面向对象]]></title>
+    <url>%2F2016%2F12%2F22%2F%E6%8B%96%E6%8B%BD%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%2F</url>
+    <content type="text"><![CDATA[普通方法编写拖拽123456789101112131415161718192021222324252627282930313233343536373839404142434445&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style&gt; body&#123;margin: 0;padding: 0;&#125; /* 编写拖拽的时候，使用的是相对定位 */ #drag&#123;width: 100px;height: 100px;background-color: red;position: relative;&#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div id="drag"&gt;&lt;/div&gt; &lt;script type="text/javascript"&gt; var oDrag = document.getElementById('drag'); var disX = 0; var disY = 0; oDrag.onmousedown = function(ev) &#123; var ev = ev || window.event; disX = ev.clientX - oDrag.offsetLeft; disX = ev.clientY - oDrag.offsetTop; document.onmousemove = function(ev) &#123; var ev = ev || window.event; oDrag.style.left = ev.clientX - disX + 'px'; oDrag.style.top = ev.clientY - disY + 'px'; &#125; document.onmouseup=function()&#123; document.onmousemove=null; document.onmouseup=null; &#125; return false; &#125; &lt;/script&gt;&lt;/body&gt;&lt;/html&gt; 拖拽之变形变形方法： 尽量不要出现函数嵌套；可以有全局变量；把onload中不是赋值的语句放到单独的函数中。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt; &lt;title&gt;&lt;/title&gt; &lt;style type="text/css"&gt; #div1&#123;width: 100px;height: 100px;background: red;position: relative;&#125; &lt;/style&gt; &lt;/head&gt;&lt;body&gt; &lt;div id="div1"&gt;&lt;/div&gt; &lt;script type="text/javascript"&gt; var disX = null; var disY = null; var oDiv=null; window.onload=function()&#123; oDiv=document.getElementById('div1'); init(); &#125; function init()&#123; oDiv.onmousedown=fnDown; &#125; function fnDown(ev)&#123; var ev = ev || window.event; disX = ev.clientX - oDiv.offsetLeft; disY = ev.clientY - oDiv.offsetTop; document.onmousemove=fnMove; document.onmouseup=fnUp; return false; &#125; function fnMove(ev)&#123; var ev = ev || window.event; oDiv.style.left = ev.clientX - disX + 'px'; oDiv.style.top = ev.clientY - disY + 'px'; &#125; function fnUp()&#123; document.onmousemove=null; document.onmouseup=null; &#125; &lt;/script&gt;&lt;/body&gt;&lt;/html&gt; 拖拽之面向对象the first thing you should to know is all of the “this” in oop stands obj not dom. 编写原则：全局变量就是属性；函数就是方法；onload 中创建对象；改 this 指向问题，面向对象都是关于”对象”的。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt; &lt;title&gt;&lt;/title&gt; &lt;style type="text/css"&gt; #div1&#123;width: 100px;height: 100px;background: red;position: relative;&#125; &lt;/style&gt; &lt;/head&gt;&lt;body&gt;&lt;div id="div1"&gt;&lt;/div&gt;&lt;script type="text/javascript"&gt; window.onload=function()&#123; var d1 = new Drag('div1'); d1.init(); &#125;; function Drag(id)&#123; this.oDiv = document.getElementById(id); this.disX = 0; this.disY = 0; &#125; Drag.prototype.init = function()&#123; var This = this; this.oDiv.onmousedown=function(ev)&#123; //event只能出现在事件函数中 var ev = ev || window.event; This.fnDown(ev); //出现在事件函数中,阻止默认事件 return false; &#125; &#125; Drag.prototype.fnDown = function(ev)&#123; //event只能出现在事件函数中 //当你嵌套了一层之后,这个函数就不再是事件函数了 //只有和事件相连接的函数才叫事件函数 // var ev = ev || window.event; var This = this; this.disX = ev.clientX - this.oDiv.offsetLeft; this.disY = ev.clientY - this.ODIV.offsetTop; document.onmousemove=function(ev)&#123; //event只能出现在事件函数中 //onmousemove 没有被嵌套在事件函数中，所以它仍然是一个事件函数 var ev = ev || window.event; This.fnMove(ev); &#125; document.onmouseup=this.fnUp; &#125; Drag.prototype.fnMove = function(ev)&#123; //fnMove 被嵌套在事件函数中，所以它不再是事件函数 // var ev = ev || window.event; this.oDiv.style.left = ev.clientX - this.disX + 'px'; this.oDiv.style.top = ev.clientY - this.disY + 'px'; &#125; Drag.prototype.fnUp = function()&#123; document.onmousemove=null; document.onmouseup=null; &#125;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>面向对象&amp;组件开发</tag>
       </tags>
   </entry>
   <entry>
@@ -1166,8 +1243,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>算法</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -1178,8 +1255,8 @@
         <category>编程</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>算法</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -1275,8 +1352,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>商业技巧</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
@@ -1391,6 +1468,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[变数]]></title>
+    <url>%2F2016%2F10%2F04%2F%E5%8F%98%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[问题描述： 输入两个整数 m 和 n，计算需要改变 m 的二进制表示中多少位才可以得到 n。比如 10 的二进制表示为 1010，13 的二进制表示为 1101，需要改变 1010 中的三位才能到的 1101。 思路： 我们可以分为两步解决这个问题：第一步求这两个数的异或，第二部统计异或结果中 1 的个数。 代码： 12345678910111213141516171819202122#include &lt;iostream&gt;using namespace std;int Timesof2(int m, int n)&#123; int r = m^n; int count = 0; while(r) &#123; ++ count; r = (r-1) &amp; r; &#125; return count;&#125; int main()&#123; int m = 10, n = 13; cout &lt;&lt; Timesof2(m,n) &lt;&lt; endl;&#125;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[新产品上线策略]]></title>
     <url>%2F2016%2F10%2F03%2F%E6%96%B0%E4%BA%A7%E5%93%81%E4%B8%8A%E7%BA%BF%E7%AD%96%E7%95%A5%2F</url>
     <content type="text"><![CDATA[一个新产品上线策略主要可以从以下几个方面来考虑： 1. 商业。一个公司的所有商业行为都是为了商业目标服务的，发布、运营一个新产品也是如此。目标用户和市场情况如何，产品如何到达目标用户和市场；产品和商业模式如何运转并形成竞争力，产品如何与市场上的各利益相关方形成有效的合作关系，产品和配套的服务如何为公司创造可持续的经济利益。只有商业问题想清楚了，后续的具体做法才有坚实的目标和依据。 2.产品。弄清此次新产品上线的目的是什么，是要大张旗鼓的营销，还是悄悄进行的测试。 检验产品前端（直接面对用户的界面）能为目标用户提供怎样的使用体验，以及产品后端（服务器、CDN等）能支撑多少用户并发、稳定、流畅的访问，为产品正式上线做准备。 在产品中如何布局数据采集点，建立分析模型，为产品上线后的快速迭代、持续改进做准备。 建立用户反馈收集和处理机制，如何及时应对用户反馈、利用用户反馈进行产品改进做准备。 3.营销。选择专业公司合作还是自主进行，使用什么辅助工具。 针对目标人群进行营销方案的策划，包含策略制定、创意制定、渠道选择、效果评估等。 营销导来的用户，到达产品的过程中体验如何，产品如何最高效的吸收这些用户。 如何让用户自发的产生二次营销，产品和运营在其中如何支持。 最后，一定要注意上线前的测试。缺乏测试，直接让新产品公开上线、推广，可能在这重要的初次亮相中不仅无法收集到有效的用户和产品数据，无法获得积极的营销效果；甚至造成恶劣的影响，让产品以后都无法获得用户和市场的认同。上线前测试的目标，就是在可控的环境中模拟产品正式上线可能遇到的各种问题，以便及时改进产品、并让各团队做好产品上线的准备。]]></content>
@@ -1399,6 +1487,39 @@
       </categories>
       <tags>
         <tag>商业技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2的整数次方]]></title>
+    <url>%2F2016%2F10%2F03%2F2%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9%2F</url>
+    <content type="text"><![CDATA[问题描述： 用一条语句判断一个数是不是 2 的整数次方。 思路： 一个数如果是 2 的整数次方，那么它的二进制表示中有且只有一位是 1，而其他所有位都是 0。所以，把这个数减去 1 之后再和它自己做与运算，这个整数中唯一的 1 就会变成 0。 代码实现： 1result = n-1 &amp; n ? "false" : "true";]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[二进制中1的个数]]></title>
+    <url>%2F2016%2F10%2F02%2F%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[问题描述： 请实现一个函数，输入一个整数，输出该数二进制表示中一的个数。例如把 9 变成二进制是 1001 ，有 2 位是 1 。因此如果输入 9 则该函数输出 2。 思路： 把一个整数减去1，再和原来的整数做与运算，会把该整数最右边一个1变成0，那么一个整数的二进制表示中有多少个1，就可以进行多少次这样的操作，基于这个思路我们可以写出如下的代码： 123456789101112131415161718192021#include &lt;iostream&gt;using namespace std;int Numberof1(int n)&#123; int count = 0; while(n) &#123; ++ count; n = n-1 &amp; n; &#125; return count;&#125; int main()&#123; int n = 9; cout &lt;&lt; Numberof1(n) &lt;&lt; endl;&#125;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[二进制中 1 的个数]]></title>
+    <url>%2F2016%2F10%2F01%2F%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD-1-%E7%9A%84%E4%B8%AA%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[问题描述： 请实现一个函数，输入一个整数，输出该数二进制表示中一的个数。例如把 9 变成二进制是 1001 ，有 2 位是 1 。因此如果输入 9 则该函数输出 2。 思路： 首先把输入的数字 i 和 1 做与运算，判断 i 的最低位是不是 1。接着把 1 左移一位得到 2 ，再和 i 做与运算，就能判断 i 的次低位是不是1… 这样反复的左移，每次都能判断 i 的其中一位是不是 1。 */ 12345678910111213141516171819202122#include &lt;iostream&gt;using namespace std;int count(int n)&#123; int count = 0; unsigned int flag = 1; while(flag) &#123; if(n&amp;flag) count++; flag = flag &lt;&lt; 1; &#125; return count;&#125;int main()&#123; int num = 9; cout &lt;&lt; count(num) &lt;&lt; endl;&#125;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
