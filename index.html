@@ -418,21 +418,21 @@
       
         
           
-            <h3 id="1-什么是-CSS-reset"><a href="#1-什么是-CSS-reset" class="headerlink" title="1.什么是 CSS reset"></a>1.什么是 CSS reset</h3><p><code>CSS reset</code> 的就是让各个浏览器的 CSS 样式有一个统一的基准，而这个基准更多的就是“清零”！</p>
-<h3 id="2-如何写出简洁优美的CSS-reset"><a href="#2-如何写出简洁优美的CSS-reset" class="headerlink" title="2.如何写出简洁优美的CSS reset"></a>2.如何写出简洁优美的CSS reset</h3><p>我们的 <code>reset</code> 应该根据自己的要求来书写。然而，目前的状态是（尤其一些中小型网站）， <code>reset</code> 代码直接拷贝过去，不做任何的思考。</p>
-<h3 id="3-你所不知的-reset"><a href="#3-你所不知的-reset" class="headerlink" title="3. 你所不知的 reset"></a>3. 你所不知的 reset</h3><pre><code>- 1. `div`、`li`、还有像 `form`,`img`, `button`, `textarea` 这样子的表单元素标签是没有 `margin` 值和 `padding` 值的。
-</code></pre><ul>
+            <h3 id="什么是-CSS-reset"><a href="#什么是-CSS-reset" class="headerlink" title="什么是 CSS reset"></a>什么是 CSS reset</h3><p><code>CSS reset</code> 的就是让各个浏览器的 CSS 样式有一个统一的基准，而这个基准更多的就是“清零”！</p>
+<h3 id="如何写出简洁优美的CSS-reset"><a href="#如何写出简洁优美的CSS-reset" class="headerlink" title="如何写出简洁优美的CSS reset"></a>如何写出简洁优美的CSS reset</h3><p>我们的 <code>reset</code> 应该根据自己的要求来书写。然而，目前的状态是（尤其一些中小型网站）， <code>reset</code> 代码直接拷贝过去，不做任何的思考。</p>
+<h3 id="你所不知的-reset"><a href="#你所不知的-reset" class="headerlink" title="你所不知的 reset"></a>你所不知的 reset</h3><ul>
+<li><code>div</code>、<code>li</code>、还有像 <code>form</code>,<code>img</code>, <code>input</code>, <code>button</code>, <code>textarea</code> 这样子的表单元素标签是没有 <code>margin</code> 值和 <code>padding</code> 值的。</li>
 <li><code>dt</code> 标签默认的 <code>margin</code> 和 <code>padding</code> 值就是 <code>0</code>。</li>
 <li><code>code</code> 标签是个属于 <code>inline</code> 水平的元素，不存在 <code>margin</code>值和 <code>padding</code> 值。</li>
 <li><code>input</code>元素有 <code>padding</code> 值 没有 <code>margin</code> 值</li>
 <li><code>fieldset</code>, <code>legend</code>这两个90年代的标签使用概率不足1%，不需要拿来重置。</li>
 </ul>
 <p>简洁的 reset 可以这样书写：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>, <span class="selector-tag">dl</span>, <span class="selector-tag">dd</span>, <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>, <span class="selector-tag">p</span>, <span class="selector-tag">form</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>;&#125;   <span class="selector-tag">ol</span>,<span class="selector-tag">ul</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>;&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="4-reset-存在的问题"><a href="#4-reset-存在的问题" class="headerlink" title="4.reset 存在的问题"></a>4.reset 存在的问题</h2><h4 id="1-css文件的大小"><a href="#1-css文件的大小" class="headerlink" title="1.css文件的大小"></a>1.css文件的大小</h4><p>显然，<code>reset</code> 平白无故的增加了 CSS 文件的大小，虽然，增加的大小可能有限，但是，要知道，即使 0.1 秒的载入时间差异也会影响互联网企业的收入的。</p>
-<p>####２.样式的重置<br>许多的 CSS 样式要重写与重新覆盖，典型的多此一举。</p>
-<h4 id="3-CSS的渲染"><a href="#3-CSS的渲染" class="headerlink" title="3.CSS的渲染"></a>3.CSS的渲染</h4><p>这可以说是最大的问题，样式无缘无故增加了很多的渲染，想想看，一个项目或是一个页面中有多少个 <code>div</code> 标签，居然使用<code>div{margin:0; padding:0;}</code> 当然，<code>*{margin:0; padding:0;}</code> 更是无法容忍的。</p>
-<h2 id="5-少既是多"><a href="#5-少既是多" class="headerlink" title="5.少既是多"></a>5.少既是多</h2><p>最少的 CSS 代码，最少的渲染，最少的重置就是最好的 CSS 样式代码，这反应了您的 CSS 层次。</p>
-<p>注：<a href="http://www.zhangxinxu.com/wordpress/2010/04/css-reset%E7%9A%84%E9%87%8D%E6%96%B0%E5%AE%A1%E8%A7%86-%E9%81%BF%E5%85%8D%E6%A0%B7%E5%BC%8F%E9%87%8D%E7%BD%AE/">参考文献</a></p>
+<h3 id="reset-存在的问题"><a href="#reset-存在的问题" class="headerlink" title="reset 存在的问题"></a>reset 存在的问题</h3><h4 id="css文件的大小"><a href="#css文件的大小" class="headerlink" title="css文件的大小"></a>css文件的大小</h4><p>显然，<code>reset</code> 平白无故的增加了 CSS 文件的大小，虽然，增加的大小可能有限，但是，要知道，即使 0.1 秒的载入时间差异也会影响互联网企业的收入的。</p>
+<h4 id="样式的重置"><a href="#样式的重置" class="headerlink" title="样式的重置"></a>样式的重置</h4><p>许多的 CSS 样式要重写与重新覆盖，典型的多此一举。</p>
+<h4 id="CSS的渲染"><a href="#CSS的渲染" class="headerlink" title="CSS的渲染"></a>CSS的渲染</h4><p>这可以说是最大的问题，样式无缘无故增加了很多的渲染，想想看，一个项目或是一个页面中有多少个 <code>div</code> 标签，居然使用<code>div{margin:0; padding:0;}</code> 当然，<code>*{margin:0; padding:0;}</code> 更是无法容忍的。</p>
+<h3 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 把斜体扶正 */</span></div><div class="line"><span class="selector-tag">em</span>&#123;<span class="attribute">font-style</span>: normal;&#125; </div><div class="line"></div><div class="line"><span class="comment">/* 图片放在a链接里面外面肯定会有难看的边框，然后把它对齐 */</span></div><div class="line"><span class="selector-tag">img</span>&#123;<span class="attribute">border</span>: none;<span class="attribute">vertical-align</span>: top;&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 消灭表格之间的间隙 */</span></div><div class="line"><span class="selector-tag">table</span>&#123;<span class="attribute">border-collapse</span>: collapse;&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 在chrome下选中，他会自动给你添加一个高亮显示我们要实现的话可以用js实现 */</span></div><div class="line"><span class="selector-tag">input</span>,<span class="selector-tag">textarea</span>&#123;<span class="attribute">outline</span>: none;&#125;</div><div class="line"></div><div class="line"><span class="comment">/* chrome 可以缩放输入框 */</span></div><div class="line"><span class="selector-tag">textarea</span>&#123;<span class="attribute">resize</span>: none;<span class="attribute">overflow</span>: auto;&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">body</span>&#123;<span class="attribute">font-size</span>: <span class="number">12px</span>;<span class="attribute">font-family</span>: <span class="string">"微软雅黑"</span>;&#125;</div></pre></td></tr></table></figure>
+<h3 id="少既是多"><a href="#少既是多" class="headerlink" title="少既是多"></a>少既是多</h3><p>最少的 CSS 代码，最少的渲染，最少的重置就是最好的 CSS 样式代码，这反应了您的 CSS 层次。</p>
 
           
         
@@ -1627,7 +1627,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">167</span>
+                <span class="site-state-item-count">168</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
