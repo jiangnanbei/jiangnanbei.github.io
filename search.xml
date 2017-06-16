@@ -273,9 +273,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[头部设计]]></title>
-    <url>%2F2017%2F05%2F25%2F%E5%A4%B4%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[网站上每个元素都是为了满足了用户、网站或者赞助商不同角度的需求而存在的。按照各部分作用的不同，可将网站划分成以下功能区域，包括头部、页尾、导航区、搜索区、登录注册区、信息展示区、广告区等。 头部 网页头部，也称为 Header，简称头部，指的是网站页面的顶部区域，通常包含网站的 Logo、Slogan、Banner、导航条等元素，有时还提供常用功能的快速入口，如登录、帮助等。头部主要用于网站展示品牌形象，告诉用户目前在浏览哪个网站以及该网站主要提供什么内容。 头部类型实用型头部实用型的网站头部设计简洁、不花哨，能够在合理有限的空间内起到必要的作用，一般其只包含 Logo、导航条和快速入口等重要元素。 大型网站由于页面空间有限，而且品牌的知名度使其不需要使用过多的元素去渲染网站的特色和气氛，因此往往采用这种类型的头部设计。 设计型头部很多网站，尤其是个性化的网站，往往会利用头部的设计体现出网站的特色，常见于博客、小型特色网站以及部分企业网站首页。 设计型头部的优点在于有很大的发挥空间，如果设计效果好，就会造成很强的视觉冲击力，给用户留下很深的印象；其缺点在于往往占用过多空间，削减了网站内容的重要性，造成喧宾夺主的效果，也容易产生头重脚轻的感觉。 头部元素的设计不管是哪种类型的头部，一般包括 Logo、Slogan、导航条等元素。 LogoLogo 的基本作用之一是返回页面首页，使用户在网站迷路时，可以找到回去的路，增加用户在网站上的方向感和安全感。更重要的是 Logo 代表着网站的品牌和形象，尤其对知名的网站来讲，Logo 能够唤起用户对网站的品牌认知度，从而提升用户的信任感。 Logo 本身的设计非常重要，必需清晰易辨识，能体现出网站的定位和特色，具体的设计更多取决于设计者，在这不多加叙述。 对于不同类型的页面或者网站，Logo 的呈现的方式不一样。如独立的 logo，适用于网站首页。logo+文字，适用于网站子类目。logo+logo，适用于合并后的网站。 除此之外，很多网站会在节日期间设计应景的节日 logo 体现气氛，提升用户对网站的体验。 SloganSlogan 虽然只是一句简单的标语，但能够很好地体现出网站的定位和特色，显示企业文化、塑造网站个性，配合 Logo 一起使用能够达到更好的效果。Slogan 一般要求朗朗上口，而且点出网站的最大亮点。好的标语往往能让用户更好地记住网站的特色及其提供的主要服务。如： ·阿里巴巴。“全球领先的网上贸易市场和商人社区”。 ·淘宝。“淘我喜欢！” 除了 Logo 和 Slogan 以上两个主要元素之外，总体上来讲，同一级别或者同一类型页面的头部设计应该尽量保持一致。]]></content>
+    <title><![CDATA[尾部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%B0%BE%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[页尾设计 页尾，也称为 Tailer，指的是页面底部部分，通常放置联系方式和版权信息等补充信息。由于其位置不够显著、重要性较低，因此也往往成为设计师容易忽略的地方。 需要规避的细节问题页尾的信息过多过杂由于页尾不太重要，因此应该尽量简化它，节约页面宝贵的空间。 不同页面的页尾不统一 有时候，由于网站的迅速扩张，页面数量迅速增加，如缺乏统一的规范约束，往往容易导致页尾等元素在同一类型页面中表现得不够统一。 这虽然只是一个很小的细节，却容易让用户对网站的专业度产生怀疑，这是页面设计中需要注意的问题之一。 版权说明格式 一般网站都会在页尾进行版权说明，目前国际上标准的格式是：Copyright[日期（dates）]by[作者/所有者（author/owner）]，其中 Copyright 通常可以用 © 代替，但是不可以用（c）。All Rights Reserved 在某些国家曾经是必需的，但是现在在大多数国家，都不是法律上必须有的字样。 设计新趋势为了更好的利用网站的空间，目前有些网站在页尾除了放置联系方式和版权信息以外，也放置网站的辅助导航，使页尾发挥更大的引导作用。]]></content>
       <categories>
         <category>设计</category>
       </categories>
@@ -284,9 +284,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[尾部设计]]></title>
-    <url>%2F2017%2F05%2F25%2F%E5%B0%BE%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[页尾设计 页尾，也称为 Tailer，指的是页面底部部分，通常放置联系方式和版权信息等补充信息。由于其位置不够显著、重要性较低，因此也往往成为设计师容易忽略的地方。 需要规避的细节问题页尾的信息过多过杂由于页尾不太重要，因此应该尽量简化它，节约页面宝贵的空间。 不同页面的页尾不统一 有时候，由于网站的迅速扩张，页面数量迅速增加，如缺乏统一的规范约束，往往容易导致页尾等元素在同一类型页面中表现得不够统一。 这虽然只是一个很小的细节，却容易让用户对网站的专业度产生怀疑，这是页面设计中需要注意的问题之一。 版权说明格式 一般网站都会在页尾进行版权说明，目前国际上标准的格式是：Copyright[日期（dates）]by[作者/所有者（author/owner）]，其中 Copyright 通常可以用 © 代替，但是不可以用（c）。All Rights Reserved 在某些国家曾经是必需的，但是现在在大多数国家，都不是法律上必须有的字样。 设计新趋势为了更好的利用网站的空间，目前有些网站在页尾除了放置联系方式和版权信息以外，也放置网站的辅助导航，使页尾发挥更大的引导作用。]]></content>
+    <title><![CDATA[头部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%A4%B4%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[网站上每个元素都是为了满足了用户、网站或者赞助商不同角度的需求而存在的。按照各部分作用的不同，可将网站划分成以下功能区域，包括头部、页尾、导航区、搜索区、登录注册区、信息展示区、广告区等。 头部 网页头部，也称为 Header，简称头部，指的是网站页面的顶部区域，通常包含网站的 Logo、Slogan、Banner、导航条等元素，有时还提供常用功能的快速入口，如登录、帮助等。头部主要用于网站展示品牌形象，告诉用户目前在浏览哪个网站以及该网站主要提供什么内容。 头部类型实用型头部实用型的网站头部设计简洁、不花哨，能够在合理有限的空间内起到必要的作用，一般其只包含 Logo、导航条和快速入口等重要元素。 大型网站由于页面空间有限，而且品牌的知名度使其不需要使用过多的元素去渲染网站的特色和气氛，因此往往采用这种类型的头部设计。 设计型头部很多网站，尤其是个性化的网站，往往会利用头部的设计体现出网站的特色，常见于博客、小型特色网站以及部分企业网站首页。 设计型头部的优点在于有很大的发挥空间，如果设计效果好，就会造成很强的视觉冲击力，给用户留下很深的印象；其缺点在于往往占用过多空间，削减了网站内容的重要性，造成喧宾夺主的效果，也容易产生头重脚轻的感觉。 头部元素的设计不管是哪种类型的头部，一般包括 Logo、Slogan、导航条等元素。 LogoLogo 的基本作用之一是返回页面首页，使用户在网站迷路时，可以找到回去的路，增加用户在网站上的方向感和安全感。更重要的是 Logo 代表着网站的品牌和形象，尤其对知名的网站来讲，Logo 能够唤起用户对网站的品牌认知度，从而提升用户的信任感。 Logo 本身的设计非常重要，必需清晰易辨识，能体现出网站的定位和特色，具体的设计更多取决于设计者，在这不多加叙述。 对于不同类型的页面或者网站，Logo 的呈现的方式不一样。如独立的 logo，适用于网站首页。logo+文字，适用于网站子类目。logo+logo，适用于合并后的网站。 除此之外，很多网站会在节日期间设计应景的节日 logo 体现气氛，提升用户对网站的体验。 SloganSlogan 虽然只是一句简单的标语，但能够很好地体现出网站的定位和特色，显示企业文化、塑造网站个性，配合 Logo 一起使用能够达到更好的效果。Slogan 一般要求朗朗上口，而且点出网站的最大亮点。好的标语往往能让用户更好地记住网站的特色及其提供的主要服务。如： ·阿里巴巴。“全球领先的网上贸易市场和商人社区”。 ·淘宝。“淘我喜欢！” 除了 Logo 和 Slogan 以上两个主要元素之外，总体上来讲，同一级别或者同一类型页面的头部设计应该尽量保持一致。]]></content>
       <categories>
         <category>设计</category>
       </categories>
@@ -589,6 +589,61 @@
       </categories>
       <tags>
         <tag>心智</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端面试 CSS 篇]]></title>
+    <url>%2F2017%2F01%2F21%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95-CSS-%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[为div设置的背景色默认会延伸到哪里?The background of an element is the total size of the element, including padding and border (but not the margin). height:100% 和 height:auto 的区别height:auto;根据内容自动调节高度。 height:100%;相对其父块的高度而定义的高度，也就是按照理她最近且有定义高度的父层的高度来定义高度。 CSS继承需要注意的问题由于字体和文本样式时刻是继承的，所以在使用相对字体单位时（比如百分比和em）时要格外小心。如果某个标签的字体大小被设置为80%，而他的一个后代的字体大小也被设置为80%，那么该后代最终的字体大小是：64%（80%的80%）。]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[行内元素 块级元素 空元素]]></title>
+    <url>%2F2017%2F01%2F20%2F%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0-%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0-%E7%A9%BA%E5%85%83%E7%B4%A0%2F</url>
+    <content type="text"><![CDATA[1.行内元素：a b span img input select strong lable q textarea br 2.块级元素div ul ol li dl dt dd h1 h2 h3 h4… p address blockquote form hr table ul 3.空元素&lt;br&gt; &lt;hr&gt; &lt;img&gt; &lt;input&gt; &lt;link&gt; &lt;meta&gt; &lt;area&gt; &lt;base&gt; &lt;col&gt; &lt;embed&gt; &lt;param&gt; &lt;source&gt; &lt;track&gt; &lt;wbr&gt;]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS 浮动问题总结]]></title>
+    <url>%2F2017%2F01%2F18%2FCSS-%E6%B5%AE%E5%8A%A8%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[1.在IE6或者IE7下，元素浮动要并在同一行的元素都要加浮动。 2.IE6下的双边距Bug问题：问题描述：在IE6下，块元素有浮动和横向的margin时，横向的margin值会被放大两倍解决办法：给要浮动的元素添加display:inline;属性 3.IE6和IE7下li有若干px的间隙问题：原因：在IE6和IE7下，li本身没浮动，但内容浮动了，li下面就会多出几px的间隙解决办法：1.给li加浮动（太麻烦，会造成后续一系列的问题） 2.给li添加 vertical-align:top;属性（最常用的解决办法） 4.在IE6下，高度小于19px的元素，高度会被当做19px来处理解决办法：1.给元素添加font-size:0;属性（缺点：最小只能处理到2px） 2.给元素添加 over-flow:hidden;属性（最常用的解决办法）]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS 小知识点]]></title>
+    <url>%2F2017%2F01%2F18%2FCSS-%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[1.给&lt;img&gt;标签的alt属性添加让人一听或者一看就能明白的内容。 2.搜索引擎会将&lt;h1&gt;视为仅次于&lt;title&gt;标签的另一个搜索关键词的来源。 3.几乎所有元素的display属性值要么为block，要么为inline。最明显买的一个例外是table元素，他有自己特殊的display属性值！ 4.无论你想了解哪一个html元素，第一个要问的问题都应该是：它是块级元素还是行内元素。 5.块级元素盒子会扩展到与父元素同宽，行内元素盒子会“收缩包裹”其内容，并且会尽可能抱紧。 6.blockquote元素会默认缩进。 7.&amp;ldquo和&amp;rdquo，使用这两个引号的实体，能让页面显得更加专业。 8.用HTML来构建DOM，最后使用CSS来修改DOM。 9.h1,h2,h3{color:blue}把三个选择符组合在一起，就可以减少重复输入。（如果你想在后面单独为h3应用一条规则，在后面添加即可） 10.上下文选择符是以空格作为分隔，而分组选择符是以逗号作为分隔。 11.p*{color:red;}这样会把p包含的所有元素的文本变为红色。section *a{color:red;}任何是section的孙子元素，而非子元素的a标签都会被选中。至于a的父元素是什么，没有关系。 12.没有默认样式的span，由于我们没有明确为其添加样式，所以就继承了其父元素的样式。 13.ID也可以用在页内的导航链接中，目标是同一页的另一个位置。 14.ID值得唯一性对js尤其重要，否则就会导致js行为异常。 15.类的目的是为了标识一组具有相同特征的元素。类可以应用给任意多个页面中任意多的HTML元素的公共标识符，以便我们为这些元素应用想用的样式。 16.继承和上下文选择符能让不同的标签共享样式，从而降低你需要编写和维护的css的量。]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[伪元素使用详解]]></title>
+    <url>%2F2017%2F01%2F16%2F%E4%BC%AA%E5%85%83%E7%B4%A0%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[1. :after ::after 单双引号的区别其实无论是单引号还是双引号，他们的本质都是伪元素，只不过因为伪类使用的也是单引号，同时他们的写法类似，写法也相仿，但实际上 css3 为了区分两者，已经明确规定了伪类用一个冒号来表示，而伪元素则用两个冒号来表示。 但因为兼容性的问题，所以现在大部分还是统一的单冒号，但是抛开兼容性的问题，我们在书写时应该尽可能养成好习惯，区分两者。 2.使用伪元素需要注意的问题 在内容模块中提到，伪元素如果没有设置“content”属性，伪元素是无用的。 使用伪元素插入的内容在页面的源码里是不可见的，只能在css里可见。 插入的元素在默认情况下是内联元素（或者，在html5中，在文本语义的类别里）。因此，为了给插入的元素赋予高度，填充，边距等等，你通常必须显式地定义它是一个块级元素。 还要注意的是典型的 CSS 继承规则适用于插入的元素。例如，你有字体系列黑体，宋体，无衬线字体应用到 body 元素里，然后伪元素会像其他元素一样继承这些字体系列。 伪元素不会自然继承自父元素(如 padding margins)的样式。 你的直觉是 :before 和 :after 伪元素可能是插入的内容会被注入到目标元素的前或后注入。其实不是这样的，注入的内容将是有关联的目标元素的子元素，但它会被置于这个元素的任何内容的“前”或“后”。来看下面这样一个栗子： 1234567891011121314151617181920&lt;head&gt; &lt;title&gt;&lt;/title&gt; &lt;style type="text/css"&gt; p.box &#123; width: 300px; border: solid 1px black; padding: 20px; &#125; p.box:before &#123; content: "#"; border: solid 1px black; padding: 2px; margin: 0 10px 0 0; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p class="box"&gt;Other content.&lt;/p&gt; &lt;/body&gt; 效果展示 外面的盒子是这个段落。围绕有散列符号的边框表示伪元素的边界。所以，不是插入“before”到段落，而是伪元素被置于到此段落的“Other content”的前面。 记住伪元素必须是被应用元素的子元素。 伪元素不会出现在DOM中，这些元素不是真正的元素。因此，它们不是可用的。所以，不要使用伪元素生成内容，是你的网页的可用性和可访问性的关键。 另外一件需要记住的是，开发工具，例如火狐，不要用伪元素显示内容。所以，如果使用了，伪元素会造成难以维护和调试缓慢。 3.使用 after 伪类清除浮动使用 after 伪类清除浮动也是目前清除浮动的主流方法，其使用方式如下： 未清除浮动之前：12345678910111213141516171819&lt;head&gt; &lt;title&gt;&lt;/title&gt; &lt;style type="text/css"&gt; .container&#123; border: 1px solid; &#125; .subCon&#123; width: 100px; height: 100px; background-color: yellow; float: left; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div class="container"&gt; &lt;div class="subCon"&gt;&lt;/div&gt; &lt;/div&gt;&lt;/body&gt; 效果展示。可以看出此时因为给子级添加了浮动，所以父级并没有包住子元素。 使用 after 伪类清除浮动：12345678910111213141516171819202122232425&lt;head&gt; &lt;title&gt;&lt;/title&gt; &lt;style type="text/css"&gt; .container&#123; border: 1px solid; &#125; .clear:after&#123; content: ""; display: block; clear: both; &#125; .subCon&#123; width: 100px; height: 100px; background-color: yellow; float: left; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div class="container clear"&gt; &lt;div class="subCon"&gt;&lt;/div&gt; &lt;/div&gt;&lt;/body&gt; 效果展示。但是问题又来了，使用 after 伪元素在元素末尾添加内容在 IE6 和 IE7 下是不兼容的。 这个时候就要使用到 zoom 缩放来触发 IE 下的 haslayout ,使元素根据自身内容计算宽高。 要注意：在 IE6，IE7 下，父级元素有宽高是不用清浮动的。 兼容性处理：12345678910111213141516171819202122232425262728293031&lt;head&gt; &lt;title&gt;&lt;/title&gt; &lt;style type="text/css"&gt; .container&#123; border: 1px solid; &#125; /*在这里请浮动*/ .clear:after&#123; content: ""; display: block; clear: both; &#125; /*在这里进行兼容性处理*/ .clear&#123; *zoom:1; &#125; .subCon&#123; width: 100px; height: 100px; background-color: yellow; float: left; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div class="container clear"&gt; &lt;div class="subCon"&gt;&lt;/div&gt; &lt;/div&gt;&lt;/body&gt; 效果展示。 注意：是在父级上使用 after 伪类。 4.使用伪元素插入文本内容1234567891011121314151617181920&lt;head&gt; &lt;title&gt;&lt;/title&gt; &lt;style type="text/css"&gt; p.box &#123; width: 300px; border: solid 1px black; padding: 20px; &#125; p.box:before &#123; content: "#"; border: solid 1px black; padding: 2px; margin: 0 10px 0 0; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p class="box"&gt;Other content.&lt;/p&gt; &lt;/body&gt; 效果展示 5.使用伪元素插入非文本内容1234/* 使用伪元素插入图片 注意：url里面的内容没有引号*/p:before&#123; content: url(image.jpg);&#125; 6.给一段文字打引号效果展示&amp;&amp;源代码 7.参考文献参考文献一&amp;&amp;参考文献二]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1187,8 +1242,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -1199,8 +1254,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -1506,8 +1561,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>商业技巧</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>

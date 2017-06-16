@@ -1275,7 +1275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/16/字符串函数详解/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/21/前端面试-CSS-篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1294,7 +1294,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/16/字符串函数详解/" itemprop="url">字符串函数详解</a></h2>
+                <a class="post-title-link" href="/2017/01/21/前端面试-CSS-篇/" itemprop="url">前端面试 CSS 篇</a></h2>
         
 
         <div class="post-meta">
@@ -1306,8 +1306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-16T20:17:37+08:00">
-                2017-01-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-21T22:43:51+08:00">
+                2017-01-21
               </time>
             
 
@@ -1329,8 +1329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/后端/" itemprop="url" rel="index">
-                    <span itemprop="name">后端</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -1347,9 +1347,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/16/字符串函数详解/#comments" itemprop="discussionUrl">
+                <a href="/2017/01/21/前端面试-CSS-篇/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/01/16/字符串函数详解/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/01/21/前端面试-CSS-篇/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1376,13 +1376,12 @@
       
         
           
-            <h3 id="字符串长度函数"><a href="#字符串长度函数" class="headerlink" title="字符串长度函数"></a>字符串长度函数</h3><p>字符串长度函数：<code>strlen（）;</code> 计算的是字符串的字节长度; <code>mb_strlen（）;</code> 是根据编码计算字符串的字符个数。</p>
-<p>在 <code>utf-8</code> 编码规则中，一个中文占三个字节，<code>gbk</code> 编码格式中是一个汉字占两个字节。</p>
-<h3 id="查找字符串中子字符串位置的函数"><a href="#查找字符串中子字符串位置的函数" class="headerlink" title="查找字符串中子字符串位置的函数"></a>查找字符串中子字符串位置的函数</h3><p><code>strpos ( string $haystack , mixed $needle [, int $offset = 0 ] );</code> 第二个参数的意思是可以传混合类型；（无论是在字符串中还是在数组中都是从零开始读取其中内容的）。</p>
-<p><code>offset</code> 的作用，除了第一次出现的字符，这个字符第二次还会不会出现？<code>offset</code> 的意思就是说，把光标先偏移一段距离，再查找，别从头开始查找。</p>
-<p>在计算机里，<code>ascll</code> 字符集中，如果你的第二个参数写的是整形，则把它理解为 <code>ascll</code> 字符的编码。</p>
-<p>注意，当你查找的字符在字符串中的第一个位置时，如果用简单的 <code>if</code> 判断，此时的函数并不能识别第一个找到的字符，因为字符串是从零开始识别的。所以这时候你要这样用：注意这里的===（去等于号）（在 <code>strpos</code> 这里三等于和两等于的区别很好的体现出来了）。</p>
-<p><strong>思考题：用for循环或while循环，配置strpos，计算某父串中子串的个数？</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">subnum</span><span class="params">($str, $sub)</span></span>&#123;</div><div class="line">        <span class="comment">//子串的长度</span></div><div class="line">        $sublen = strlen($sub);</div><div class="line">        <span class="comment">//父串的长度</span></div><div class="line">        $strlen = strlen($str);</div><div class="line">        </div><div class="line">        <span class="keyword">if</span>($sublen &gt; $strlen)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>($offset=<span class="number">0</span>,$num=<span class="number">0</span>; ($offset=strpos($str,$sub,$offset)) != <span class="keyword">false</span>;)&#123;</div><div class="line">            $num += <span class="number">1</span>;</div><div class="line">            $offset += $sublen;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> $num;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    $str = <span class="string">'wo ni ta ta ni wo wo'</span>;</div><div class="line">    $sub = <span class="string">'wo'</span>;</div><div class="line">    </div><div class="line">    <span class="keyword">echo</span> subnum($str,$sub);</div><div class="line"><span class="comment">/*</div><div class="line">php的字符串函数非常强大，你要是不了解，可能会多花很多的冤枉时</div><div class="line">间，做很多的无用功，去费力写出一个函数，结果其实早就已经存在。其实只需要一个函数帮你解决问题了，所以一定要熟悉php的字符串函数（上面的那个思考题，可以直接用一个字符串函数实现，比如说substr_count()）。</div><div class="line">*/</span></div></pre></td></tr></table></figure></p>
+            <h3 id="为div设置的背景色默认会延伸到哪里"><a href="#为div设置的背景色默认会延伸到哪里" class="headerlink" title="为div设置的背景色默认会延伸到哪里?"></a>为div设置的背景色默认会延伸到哪里?</h3><p>The background of an element is the total size of the element, including padding and border (but not the margin).</p>
+<hr>
+<h3 id="height-100-和-height-auto-的区别"><a href="#height-100-和-height-auto-的区别" class="headerlink" title="height:100% 和 height:auto 的区别"></a>height:100% 和 height:auto 的区别</h3><p><code>height:auto;</code>根据内容自动调节高度。</p>
+<p><code>height:100%;</code>相对其父块的高度而定义的高度，也就是按照理她最近且有定义高度的父层的高度来定义高度。</p>
+<hr>
+<h3 id="CSS继承需要注意的问题"><a href="#CSS继承需要注意的问题" class="headerlink" title="CSS继承需要注意的问题"></a>CSS继承需要注意的问题</h3><p>由于字体和文本样式时刻是继承的，所以在使用相对字体单位时（比如百分比和em）时要格外小心。如果某个标签的字体大小被设置为80%，而他的一个后代的字体大小也被设置为80%，那么该后代最终的字体大小是：64%（80%的80%）。</p>
 
           
         
@@ -1430,7 +1429,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/13/字符串定界符用法/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/20/行内元素-块级元素-空元素/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1449,7 +1448,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/13/字符串定界符用法/" itemprop="url">字符串定界符用法</a></h2>
+                <a class="post-title-link" href="/2017/01/20/行内元素-块级元素-空元素/" itemprop="url">行内元素 块级元素 空元素</a></h2>
         
 
         <div class="post-meta">
@@ -1461,8 +1460,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-13T20:16:31+08:00">
-                2017-01-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-20T22:38:00+08:00">
+                2017-01-20
               </time>
             
 
@@ -1484,8 +1483,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/后端/" itemprop="url" rel="index">
-                    <span itemprop="name">后端</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -1502,9 +1501,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/13/字符串定界符用法/#comments" itemprop="discussionUrl">
+                <a href="/2017/01/20/行内元素-块级元素-空元素/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/01/13/字符串定界符用法/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/01/20/行内元素-块级元素-空元素/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1531,18 +1530,9 @@
       
         
           
-            <p>当你需要些一大段文本，甚至里面有好多行，又有单引号，又有双引号，导致转义的时候比较麻烦，这时候就可以用 <code>heredoc</code> 和 <code>nowdoc</code> 。</p>
-<p><code>theredoc</code> 的用法： <code>&lt;&lt;&lt;标识符 中间的大段文本 标识符；</code>。</p>
-<p><strong>注意</strong>：</p>
-<ol>
-<li>标识符的名称和变量名的要求一样，叫什么都可以；</li>
-<li>结束符独占一行，而且前面没有其他任何字符；</li>
-<li>对文本的处理和双引号一样，可以解析<code>\r</code>，<code>\t</code>，<code>\n</code>,<code>变量</code>等；<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$str = <span class="string">&lt;&lt;&lt;content</div><div class="line">    中间的大段文本</div><div class="line">content;</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>对文本进行解析比如说单引号，到了 php5.3.0 之后出现了 <code>nowdoc</code> 可以达到上述要求，非常简单又不对变量做解析。</p>
-<p><code>nowdoc</code> 的写法和 <code>heredoc</code> 的写法以后，唯独在标识符的外面用单引号包起来，就和单引号一样的效果，不去转义<code>r\</code>,<code>t\</code>,<code>\n</code>,<code>变量</code>等；</p>
-<p>当别人问你怎么声明字符串变量的时候，你要知道我们有四种方法，单双引号，还有今天学的两种。</p>
+            <h3 id="1-行内元素："><a href="#1-行内元素：" class="headerlink" title="1.行内元素："></a>1.行内元素：</h3><p><code>a</code> <code>b</code> <code>span</code> <code>img</code> <code>input</code> <code>select</code> <code>strong</code> <code>lable</code> <code>q</code> <code>textarea</code> <code>br</code> </p>
+<h3 id="2-块级元素"><a href="#2-块级元素" class="headerlink" title="2.块级元素"></a>2.块级元素</h3><p><code>div</code> <code>ul</code> <code>ol</code> <code>li</code> <code>dl</code> <code>dt</code> <code>dd</code> <code>h1</code> <code>h2</code> <code>h3</code> <code>h4…</code> <code>p</code> <code>address</code> <code>blockquote</code> <code>form</code> <code>hr</code> <code>table</code> <code>ul</code></p>
+<h3 id="3-空元素"><a href="#3-空元素" class="headerlink" title="3.空元素"></a>3.空元素</h3><p><code>&lt;br&gt;</code> <code>&lt;hr&gt;</code> <code>&lt;img&gt;</code> <code>&lt;input&gt;</code> <code>&lt;link&gt;</code> <code>&lt;meta&gt;</code> <code>&lt;area&gt;</code> <code>&lt;base&gt;</code> <code>&lt;col&gt;</code>  <code>&lt;embed&gt;</code> <code>&lt;param&gt;</code> <code>&lt;source&gt;</code> <code>&lt;track&gt;</code> <code>&lt;wbr&gt;</code></p>
 
           
         
@@ -1585,7 +1575,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1630,7 +1620,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">181</span>
+                <span class="site-state-item-count">186</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1641,7 +1631,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
