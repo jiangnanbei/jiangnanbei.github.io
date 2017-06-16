@@ -371,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/UI设计/" itemprop="url" rel="index">
-                    <span itemprop="name">UI设计</span>
+                  <a href="/categories/设计/" itemprop="url" rel="index">
+                    <span itemprop="name">设计</span>
                   </a>
                 </span>
 
@@ -1275,7 +1275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/04/JS自定义属性及其应用/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/16/字符串函数详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1294,7 +1294,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/04/JS自定义属性及其应用/" itemprop="url">JS自定义属性及其应用</a></h2>
+                <a class="post-title-link" href="/2017/01/16/字符串函数详解/" itemprop="url">字符串函数详解</a></h2>
         
 
         <div class="post-meta">
@@ -1306,8 +1306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-04T13:42:38+08:00">
-                2017-01-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-16T20:17:37+08:00">
+                2017-01-16
               </time>
             
 
@@ -1329,8 +1329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
                   </a>
                 </span>
 
@@ -1347,9 +1347,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/04/JS自定义属性及其应用/#comments" itemprop="discussionUrl">
+                <a href="/2017/01/16/字符串函数详解/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/01/04/JS自定义属性及其应用/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/01/16/字符串函数详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1375,19 +1375,16 @@
 
       
         
-          <h4 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h4><p>JS 可以给任何一个 html 元素添加自定义属性，然而你可以使用这一特性做许多有意思的事情。</p>
-<hr>
-<h3 id="实例之图片开关"><a href="#实例之图片开关" class="headerlink" title="实例之图片开关"></a>实例之图片开关</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></div><div class="line">	li&#123;width: 114px; height: 140px; list-style: none; background: url(images/normal.png); float: left; margin-left: 20px; &#125; </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>	</div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span> <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span> <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span> <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span> <span class="tag">&lt;/<span class="name">ul</span>&gt;</span> </div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></div><div class="line">	<span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> aLi=<span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</div><div class="line"></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;aLi.length;i++)&#123;</div><div class="line">		</div><div class="line">			aLi[i].onOff=<span class="literal">true</span>;</div><div class="line">			aLi[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">if</span>(<span class="keyword">this</span>.onOff)&#123;</div><div class="line">					<span class="keyword">this</span>.style.background=<span class="string">'url(images/active.png)'</span>;</div><div class="line">					<span class="keyword">this</span>.onOff=<span class="literal">false</span>;</div><div class="line">				&#125;<span class="keyword">else</span>&#123;</div><div class="line">					<span class="keyword">this</span>.style.background=<span class="string">'url(images/normal.png)'</span>;</div><div class="line">					<span class="keyword">this</span>.onOff=<span class="literal">true</span>;</div><div class="line">				&#125;</div><div class="line">				</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>Add custom property for every li. Attention: here we use custom property to attach switch for every li,in this way, we can control png switch freedom and don’t influence other li.</p>
-<p><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web-front-end/blob/master/HexoDemos/%E5%AE%9E%E4%BE%8B%E4%B9%8B%E5%9B%BE%E7%89%87%E5%BC%80%E5%85%B3.html">效果展示</a></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/04/JS自定义属性及其应用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <h3 id="字符串长度函数"><a href="#字符串长度函数" class="headerlink" title="字符串长度函数"></a>字符串长度函数</h3><p>字符串长度函数：<code>strlen（）;</code> 计算的是字符串的字节长度; <code>mb_strlen（）;</code> 是根据编码计算字符串的字符个数。</p>
+<p>在 <code>utf-8</code> 编码规则中，一个中文占三个字节，<code>gbk</code> 编码格式中是一个汉字占两个字节。</p>
+<h3 id="查找字符串中子字符串位置的函数"><a href="#查找字符串中子字符串位置的函数" class="headerlink" title="查找字符串中子字符串位置的函数"></a>查找字符串中子字符串位置的函数</h3><p><code>strpos ( string $haystack , mixed $needle [, int $offset = 0 ] );</code> 第二个参数的意思是可以传混合类型；（无论是在字符串中还是在数组中都是从零开始读取其中内容的）。</p>
+<p><code>offset</code> 的作用，除了第一次出现的字符，这个字符第二次还会不会出现？<code>offset</code> 的意思就是说，把光标先偏移一段距离，再查找，别从头开始查找。</p>
+<p>在计算机里，<code>ascll</code> 字符集中，如果你的第二个参数写的是整形，则把它理解为 <code>ascll</code> 字符的编码。</p>
+<p>注意，当你查找的字符在字符串中的第一个位置时，如果用简单的 <code>if</code> 判断，此时的函数并不能识别第一个找到的字符，因为字符串是从零开始识别的。所以这时候你要这样用：注意这里的===（去等于号）（在 <code>strpos</code> 这里三等于和两等于的区别很好的体现出来了）。</p>
+<p><strong>思考题：用for循环或while循环，配置strpos，计算某父串中子串的个数？</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">subnum</span><span class="params">($str, $sub)</span></span>&#123;</div><div class="line">        <span class="comment">//子串的长度</span></div><div class="line">        $sublen = strlen($sub);</div><div class="line">        <span class="comment">//父串的长度</span></div><div class="line">        $strlen = strlen($str);</div><div class="line">        </div><div class="line">        <span class="keyword">if</span>($sublen &gt; $strlen)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>($offset=<span class="number">0</span>,$num=<span class="number">0</span>; ($offset=strpos($str,$sub,$offset)) != <span class="keyword">false</span>;)&#123;</div><div class="line">            $num += <span class="number">1</span>;</div><div class="line">            $offset += $sublen;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> $num;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    $str = <span class="string">'wo ni ta ta ni wo wo'</span>;</div><div class="line">    $sub = <span class="string">'wo'</span>;</div><div class="line">    </div><div class="line">    <span class="keyword">echo</span> subnum($str,$sub);</div><div class="line"><span class="comment">/*</div><div class="line">php的字符串函数非常强大，你要是不了解，可能会多花很多的冤枉时</div><div class="line">间，做很多的无用功，去费力写出一个函数，结果其实早就已经存在。其实只需要一个函数帮你解决问题了，所以一定要熟悉php的字符串函数（上面的那个思考题，可以直接用一个字符串函数实现，比如说substr_count()）。</div><div class="line">*/</span></div></pre></td></tr></table></figure></p>
+
+          
         
       
     </div>
@@ -1433,7 +1430,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/03/自增自减运算符/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/13/字符串定界符用法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1452,7 +1449,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/03/自增自减运算符/" itemprop="url">自增自减运算符</a></h2>
+                <a class="post-title-link" href="/2017/01/13/字符串定界符用法/" itemprop="url">字符串定界符用法</a></h2>
         
 
         <div class="post-meta">
@@ -1464,8 +1461,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-03T18:48:29+08:00">
-                2017-01-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-13T20:16:31+08:00">
+                2017-01-13
               </time>
             
 
@@ -1505,9 +1502,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/03/自增自减运算符/#comments" itemprop="discussionUrl">
+                <a href="/2017/01/13/字符串定界符用法/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/01/03/自增自减运算符/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/01/13/字符串定界符用法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1534,18 +1531,18 @@
       
         
           
-            <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
-<li>前自增后自增</li>
-<li>前自减后自减</li>
+            <p>当你需要些一大段文本，甚至里面有好多行，又有单引号，又有双引号，导致转义的时候比较麻烦，这时候就可以用 <code>heredoc</code> 和 <code>nowdoc</code> 。</p>
+<p><code>theredoc</code> 的用法： <code>&lt;&lt;&lt;标识符 中间的大段文本 标识符；</code>。</p>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>标识符的名称和变量名的要求一样，叫什么都可以；</li>
+<li>结束符独占一行，而且前面没有其他任何字符；</li>
+<li>对文本的处理和双引号一样，可以解析<code>\r</code>，<code>\t</code>，<code>\n</code>,<code>变量</code>等；<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$str = <span class="string">&lt;&lt;&lt;content</div><div class="line">    中间的大段文本</div><div class="line">content;</span></div></pre></td></tr></table></figure>
+</li>
 </ol>
-<h3 id="二者的异同"><a href="#二者的异同" class="headerlink" title="二者的异同"></a>二者的异同</h3><p>相同：最终都使 i 的值加一</p>
-<p>不同：前自增整体表达式的值是i加1之后的值；后自增整体表达式的值是i加1之前的值。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i,j,k,m;</div><div class="line">    i = <span class="number">3</span>;</div><div class="line">    j = <span class="number">3</span>;</div><div class="line">    k = i++;</div><div class="line">    m = ++j;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d %d %d"</span>,i,j,k,m);</div><div class="line">&#125;</div><div class="line"><span class="comment">//result : 4 4 3 4</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">3</span>;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,i++,++i,i);</div><div class="line"><span class="comment">//result : 4 5 5</span></div></pre></td></tr></table></figure>
-<h3 id="为什么会出现自增？"><a href="#为什么会出现自增？" class="headerlink" title="为什么会出现自增？"></a>为什么会出现自增？</h3><p>有<code>i += 1;</code>不就可以了吗?为什么还有出现<code>i++</code>?原因:代码更精炼,自增的速度更快。</p>
-<h3 id="学习自增时要明白的几个问题"><a href="#学习自增时要明白的几个问题" class="headerlink" title="学习自增时要明白的几个问题"></a>学习自增时要明白的几个问题</h3><p>我们编程时应该尽量屏蔽掉前自增和后自增的区别，自增表达式单独成一个语句,最好不要作为一个更大的表达式的一部分来使用。</p>
-<p>比如：<code>int m = i++ + ++i + i + i++;</code>,这样写不但是不规范的代码,而且是不可移植的代码。</p>
-<p>这个程序在不同的机器上的运行结果是不一样的,这里面牵扯到一个叫做顺序点的问题,因为我们不知道<code>i++</code>执行结束之后,这一步是否立即生效,就是在我执行<code>++i</code>的时候,前面的i有没有立即加1是不知道的,我们只有顺序点才能明确的知道这个操作是否生效,而顺序点只有三个:逗号,括号,分号。</p>
-<p><strong>作为一个优秀的程序员,在你的程序里面不应该体现出i++和++i的区别。</strong></p>
+<p>对文本进行解析比如说单引号，到了 php5.3.0 之后出现了 <code>nowdoc</code> 可以达到上述要求，非常简单又不对变量做解析。</p>
+<p><code>nowdoc</code> 的写法和 <code>heredoc</code> 的写法以后，唯独在标识符的外面用单引号包起来，就和单引号一样的效果，不去转义<code>r\</code>,<code>t\</code>,<code>\n</code>,<code>变量</code>等；</p>
+<p>当别人问你怎么声明字符串变量的时候，你要知道我们有四种方法，单双引号，还有今天学的两种。</p>
 
           
         
@@ -1588,7 +1585,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1633,7 +1630,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">171</span>
+                <span class="site-state-item-count">181</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1644,7 +1641,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1655,7 +1652,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
