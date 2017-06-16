@@ -317,6 +317,350 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/24/位运算/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/24/位运算/" itemprop="url">位运算</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-24T16:36:16+08:00">
+                2016-08-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/08/24/位运算/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/08/24/位运算/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>理解位运算的第一步是理解二进制，其实二进制的位运算并不是很难掌握，因为位运算总共只有五种运算：与、或、异或、左移和右移。</p>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th style="text-align:center">Are</th>
+<th style="text-align:center">Cool</th>
+<th style="text-align:center">Cool</th>
+<th style="text-align:center">Cool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>与（&amp;）</td>
+<td style="text-align:center">0 &amp; 0 = 0</td>
+<td style="text-align:center">1 &amp; 0 = 0</td>
+<td style="text-align:center">0 &amp; 1 = 0</td>
+<td style="text-align:center">1 &amp; 1 = 1</td>
+</tr>
+<tr>
+<td>或</td>
+<td style="text-align:center">0 或 0 = 0</td>
+<td style="text-align:center">1 或 0 = 1</td>
+<td style="text-align:center">0 或 1 = 1</td>
+<td style="text-align:center">1 或 1 = 1</td>
+</tr>
+<tr>
+<td>异或（^）</td>
+<td style="text-align:center">0 ^ 0 = 0</td>
+<td style="text-align:center">1 ^ 0 = 1</td>
+<td style="text-align:center">0 ^ 1 = 1</td>
+<td style="text-align:center">1 ^ 1 = 0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="左移运算："><a href="#左移运算：" class="headerlink" title="左移运算："></a>左移运算：</h4><p>左移运算符 <code>m&lt;&lt;n</code> ,表示把 <code>m</code> 左移 <code>n</code> 位。左移 <code>n</code> 位的时候，最左边的 <code>n</code> 位将被丢弃，同时在最右边补上 <code>n</code> 个 <code>0</code>。</p>
+<h4 id="右移运算符："><a href="#右移运算符：" class="headerlink" title="右移运算符："></a>右移运算符：</h4><p>左移运算符 <code>m&gt;&gt;n</code> ,表示把 <code>m</code> 右移 <code>n</code> 位。如果数字原先是一个正数，则右移之后在左边补 <code>n</code> 个 <code>0</code>；如果数字原先是个负数，则右移之后在最左边补 <code>n</code> 个 <code>1</code>。</p>
+<h4 id="高位和地位："><a href="#高位和地位：" class="headerlink" title="高位和地位："></a>高位和地位：</h4><p>用十进制数来比喻，百位数相对于十位数、个位数就是高位。更通俗讲，就是左边的数相对于右边的数来讲是高位。</p>
+<h4 id="移位运算与乘除法："><a href="#移位运算与乘除法：" class="headerlink" title="移位运算与乘除法："></a>移位运算与乘除法：</h4><p>把整数右移一位和把整数除以 2 在数学上是等价的，那我们可不可以把右移运算换成除以 2 呢？ 答案是否定的，因为除法的效率比移位运算要低的多，在实际的编程中应尽可能地用移位运算代替乘除法。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/24/未来不迎，过往不恋/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/24/未来不迎，过往不恋/" itemprop="url">未来不迎，过往不恋</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-24T12:31:26+08:00">
+                2016-08-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心智/" itemprop="url" rel="index">
+                    <span itemprop="name">心智</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/08/24/未来不迎，过往不恋/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/08/24/未来不迎，过往不恋/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>从我懂事以来一直到我的初中，和其他的孩子一样过着按部就班的生活，一样的翘课去上网，一样的为了考上一所好的高中而时常熬夜到五六点，一样数次让我的父母操碎了心，一样的懵懵懂懂的知道了什么叫做喜欢，一样的写出了人生的第一封情书…</p>
+<p>初三那年是我真正懂事的开始，那一年我遇到了我很爱的的一个女孩，我知道为了有资格能够喜欢她我必须去做一些什么，我开始减肥，每天上学放学来回五公里我从来都是跑步，一学期减掉二十多斤。我开始好好学习，每天熬夜到凌晨两三点从来都是家常便饭，幸运的话还能看到凌晨的太阳，于是我从最初的班级倒数一直冲到年级前十，创造了我们那一届的奇迹。</p>
+<p>我开始珍惜每一分每一秒，因为从那时开始我就知道时间宝贵，人生短暂，每天当我走在路上的时候我总是集中精力去思考一些事情，比如说课上的那道数学题为什么是那样子做的，我怎样才能考到更多的分数，我是不是该把昨天背的单词再在脑海里过一遍…</p>
+<p>初三结束，和我彼此相爱的那个女孩，我们同时考上的了当时全地区最好的高中，但是最终她还是离开了我，这是我第一次失恋。很多男孩子都说自己不知道为什么自己女朋友会离开自己，我想其实你们是知道的，只不过都不想承认。于是我开始更加努力。</p>
+<p>初中没有扎实的基础导致高中的我学习很吃力，很明显的表现就是别人能用一个小时写完的数学题，我时常要写上三四个小时，还不一定写的完，于是我开始熬夜学习，从来是都别人已经睡觉了我还在水房看书，和初中一样每次都是到凌晨三四点，高一结束取得了自己认为还不错的成绩。高二开始精力没有放在学习上，因为我忽然发现这个世界好大，有很多东西我都还不知道，我应该去探索这个世界，于是我开始读书，疯狂的读书。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/24/未来不迎，过往不恋/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/0201/11/23/营销随笔/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -506,7 +850,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">169</span>
+                <span class="site-state-item-count">171</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

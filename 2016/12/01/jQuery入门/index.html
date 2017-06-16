@@ -451,7 +451,7 @@
 <p>这种匿名写作的函数在 jquery 中十分方便，特别适合传递那些不会被重用的函数。而且与此同时创建的闭包也是一种非常高级和强大的工具。但是，加入处理不当的话，闭包也会给我们带来意想不到的后果和内存占用问题。</p>
 <h4 id="什么是加载完成？"><a href="#什么是加载完成？" class="headerlink" title="什么是加载完成？"></a>什么是加载完成？</h4><p>一般来说使用$(document).ready()要优于使用onload 事件处理程序，但必须要明确的一点是，因为支持文件可能还没有加载完成，所以类似图像的高度和宽度这样的属性此时不一定会有效。如果需要访问这些属性，可能就得选择一个onload事件处理程序（或者是使用jquery为load事件设置处理程序）这两种机制能够和平共存。</p>
 <h4 id="避免-命名冲突"><a href="#避免-命名冲突" class="headerlink" title="避免$命名冲突"></a>避免$命名冲突</h4><p>由于很多库都使用$标识符，因此就需要一种方式来避免名称冲突。jquery提供了一种加jQuery.noConflict()方法，调用该方法可以把对$标识符的控制权让渡还给其他库。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"prototype.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script src=<span class="string">"jquery.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">jQuery.noConflict();</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;script src=<span class="string">"myscript.js&gt;&lt;/script&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"prototype.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script src=<span class="string">"jquery.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script&gt;</div><div class="line">jQuery.noConflict();</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script src=<span class="string">"myscript.js&gt;&lt;/script&gt;</span></div></pre></td></tr></table></figure>
 <p>调用jQuery.noConflict();，可以将控制权交还给最先包含的库（prototype.js），这样就可以在自定义脚本中使用两个库了，但是，在需要使用jquery方法时，必须要记住要用jQuery而不是用$来调用。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</div><div class="line"><span class="comment">// 我们可以在函数内部将jQuery重命名为$，而不必担心造成冲突。</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web-front-end/blob/master/Learning%20jQuery%20Demos/%E6%A0%B7%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%99%A8.html">样式转换器demo</a></p>
@@ -608,7 +608,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">169</span>
+                <span class="site-state-item-count">171</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
