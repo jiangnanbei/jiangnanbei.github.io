@@ -317,6 +317,169 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/30/数组/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/30/数组/" itemprop="url">数组</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-30T18:42:35+08:00">
+                2016-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/12/30/数组/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/12/30/数组/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="为什么需要数组？"><a href="#为什么需要数组？" class="headerlink" title="为什么需要数组？"></a>为什么需要数组？</h3><ol>
+<li>数组可以用来保存大量同类型的数据</li>
+<li>一维数组可以模拟线性事物</li>
+<li>二维数组可以模拟平面事物</li>
+<li>三维数组可以模拟立体事物</li>
+<li>利用数组可以模拟现实的世界</li>
+</ol>
+<h3 id="我们这里为什么不详细讲数组？"><a href="#我们这里为什么不详细讲数组？" class="headerlink" title="我们这里为什么不详细讲数组？"></a>我们这里为什么不详细讲数组？</h3><p>数组的操作太麻烦，我们一般不直接操作语言级别的数组，而是通过别人提供的一种以数组为内核的工具去方便的操作数组。</p>
+<h3 id="一维数组的使用"><a href="#一维数组的使用" class="headerlink" title="一维数组的使用"></a>一维数组的使用</h3><h4 id="如何定义一维数组？"><a href="#如何定义一维数组？" class="headerlink" title="如何定义一维数组？"></a>如何定义一维数组？</h4><p>一维数组是为 n 个变量<strong>连续分配</strong>存储空间；所有变量的数据<strong>类型必须相同</strong>；所有变量<strong>所占的字节大小必须相同</strong>。</p>
+<h4 id="一维数组的初始化"><a href="#一维数组的初始化" class="headerlink" title="一维数组的初始化"></a>一维数组的初始化</h4><p>完全初始化：<code>int a[5] = {1,2,3,4,5};</code><br>不完全初始化：<code>int a[5] = {1,2,3};</code>(未初始化的元素为0）<br>不初始化：<code>int a[5];</code>(所有的元素都是垃圾值）<br>清零：<code>int a[5] = {0};</code>（数组内的所有元素均为0）</p>
+<h4 id="初始化的错误写法"><a href="#初始化的错误写法" class="headerlink" title="初始化的错误写法"></a>初始化的错误写法</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一个错误写法</span></div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>];</div><div class="line">a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</div><div class="line"><span class="comment">/*</div><div class="line">这里我们就没有 a[5] 这个元素，同时你把多个值赋值给一个元素肯</div><div class="line">定也是不可以的，只有在定义数组的同时才可以整体赋值。</div><div class="line">*/</span></div><div class="line"></div><div class="line"><span class="comment">//第二个错误写法</span></div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = <span class="number">100</span>;<span class="comment">//我们没有 a[5] 这个元素</span></div><div class="line"></div><div class="line"><span class="comment">//第三个错误写法</span></div><div class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</div><div class="line"><span class="keyword">int</span> b[<span class="number">5</span>];</div><div class="line">b = a;</div><div class="line"><span class="comment">/*</div><div class="line">这样做是不可以把数组a的值全部赋值给数组b的，数组名代表的是数</div><div class="line">组第一个元素的地址。</div><div class="line">*/</span></div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/30/数组/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/28/使用toString做类型判断/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1400,164 +1563,6 @@ Object 对象类型是原型链的最外层.
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/24/scanf-和-printf-的用法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/24/scanf-和-printf-的用法/" itemprop="url">scanf 和 printf 的用法</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-24T18:34:57+08:00">
-                2016-12-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/后端/" itemprop="url" rel="index">
-                    <span itemprop="name">后端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/24/scanf-和-printf-的用法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/24/scanf-和-printf-的用法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="scanf-用法"><a href="#scanf-用法" class="headerlink" title="scanf 用法"></a>scanf 用法</h3><h4 id="用法一-scanf-quot-输入控制符-quot-输入参数"><a href="#用法一-scanf-quot-输入控制符-quot-输入参数" class="headerlink" title="用法一:scanf(&quot;输入控制符&quot;,输入参数);"></a>用法一:<code>scanf(&quot;输入控制符&quot;,输入参数);</code></h4><p>功能:将从键盘输入的字符转化为输入控制符所规定格式的数据,然后存入以输入参数的值为地址的变量中。</p>
-<p>举例：<code>scanf(&quot;%d&quot;,&amp;i);</code>这里之所以要用<code>%d</code>是因为来自你键盘的所有输入都是以字符的形式保存的,所以在这里我们用<code>%d</code>将其转化为一个十进制的数。</p>
-<h4 id="用法二-scanf-quot-非输入控制符-输入控制符-quot-输入参数"><a href="#用法二-scanf-quot-非输入控制符-输入控制符-quot-输入参数" class="headerlink" title="用法二:scanf(&quot;非输入控制符 输入控制符&quot;,输入参数);"></a>用法二:<code>scanf(&quot;非输入控制符 输入控制符&quot;,输入参数);</code></h4><p>功能:非输入控制符必须原样输入。</p>
-<p>举例：<code>scanf(&quot;m%d&quot;,&amp;i);</code>在这里<code>%d</code>前面有一个非输出控制符,所以这里就要求你在输入的时候,你的输入前必须要有一个非输出控制符。比如说你直接输入<code>123</code>就是错的,但是如果你输入<code>m123</code>就是对的,这个时候最终<code>i</code>的值就是 <code>123</code>，但是如果你输入<code>m123n</code>也是对的，但是我们一般不会在前面加一个非输出控制符,目的是让用户输入的越简单越好。</p>
-<h4 id="如何用-scanf-编写出高质量的程序？"><a href="#如何用-scanf-编写出高质量的程序？" class="headerlink" title="如何用 scanf 编写出高质量的程序？"></a>如何用 scanf 编写出高质量的程序？</h4><p>使用 scanf 之前最好先使用 printf 提示用户以什么要的方式来输入。</p>
-<p>scanf 中尽量不要使用非输入控制符,尤其是 \n 。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/24/scanf-和-printf-的用法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1607,7 +1612,7 @@ Object 对象类型是原型链的最外层.
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">189</span>
+                <span class="site-state-item-count">190</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

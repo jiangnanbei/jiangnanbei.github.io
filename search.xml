@@ -614,6 +614,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[jQuery 初级总结]]></title>
+    <url>%2F2017%2F01%2F25%2FjQuery-%E5%88%9D%E7%BA%A7%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[1.$(&#39;li.box&#39;) = $(&#39;li&#39;).filter(&#39;.box&#39;) 2.$(&#39;li&#39;).html();当一组元素的时候取的是第一个；$(&#39;li&#39;).html(&#39;hello&#39;);当一组元素的时候，给所有的元素赋值 3.innerWidth()=width+paddingouterWidth()=width+padding+border outerWidth(true)=width+padding+border+margin 4.赋值 css(&#39;width&#39;,&#39;200px&#39;);；取值 css(&#39;width&#39;) 5.可以编写多个事件，同时对应一个操作1$('ele').on('click mouseover',function()&#123;&#125;); 6.使用 json 编写不同的事件对应不同的操作12345$('ele').on(&#123; 'click' : function()&#123;&#125;, 'mouseover' : function()&#123;&#125;, 'mouseout' : function()&#123;&#125;&#125;); 7.使用 off() 阻止事件1234$('ele').on('click mouseover',function()&#123; $('ele').off('mouseover');&#125;);//会阻止 moseover 事件，但不会阻止 click 事件 8.scrollTop 滚动距离12345$(function()&#123; $document.click(function()&#123; alert($(window).scrollTop()); &#125;)&#125;) 9.阻止默认事件：ev.preventDefault();阻止冒泡事件：ev.preventPropagation();阻止默认事件+冒泡事件：return false; 10.one() 事件只执行一次1$('ele').one('click',function()&#123;&#125;); 11.获取到屏幕左的距离：offset().left获取到屏幕上的距离：offset().top 12.position().left; 到有定位的父级的 left 值（不包括 margin，同样只有 left 和 top）。 13.parent() 获取父级offsetparent() 获取有定位的父级 14.size() 获取长度 15.each()123$('li').each(function(i, elem)&#123; $(elem).html(i);&#125;) 16.下列函数都可以加上时间参数show() hide() fadeIn() fadeOut() slideDown() slideUp() fadeTo(时间，透明度值)]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CSS一侧固定一侧自适应布局]]></title>
     <url>%2F2017%2F01%2F22%2FCSS%E4%B8%80%E4%BE%A7%E5%9B%BA%E5%AE%9A%E4%B8%80%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80%2F</url>
     <content type="text"><![CDATA[页面布局如下： 12&lt;div id="lt"&gt;left&lt;/div&gt;&lt;div id="rt"&gt;right&lt;/div&gt; 左边固定 右边自适应1.左边左浮动，右边加个overflow:hidden;12#lt&#123; float: left;width:200px; background: #ff0;&#125;#rt&#123; overflow: hidden; background: #f0f;&#125; 2.左边左浮动，右边加个margin-left;12#lt&#123; float: left; width:200px; background: #ff0;&#125;#rt&#123; margin-left: 200px; background: #f0f;&#125; 3.左边绝对定位，右边加个margin-left;12#lt&#123; position: absolute; top:0; left:0; width:200px; background: #ff0;&#125;#rt&#123; margin-left: 200px; background: #f0f;&#125; 左右两边绝对定位，右边加个width,top,left,right12#lt&#123; position: absolute; top:0 ; left:0 ;width:200px; background: #ff0;&#125;#rt&#123; position: absolute; top:0 ; left:200px; width: 100% ; rigth:0;background: #f0f;&#125;]]></content>
@@ -1466,18 +1477,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[六道JS面试题]]></title>
-    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>面试指南</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[递归实现斐波那契数列]]></title>
     <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
     <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
@@ -1487,6 +1486,18 @@
       <tags>
         <tag>算法</tag>
         <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[六道JS面试题]]></title>
+    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>面试指南</tag>
       </tags>
   </entry>
   <entry>
