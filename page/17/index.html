@@ -317,6 +317,469 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/21/PHP杂记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/21/PHP杂记/" itemprop="url">PHP杂记</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-21T17:13:45+08:00">
+                2016-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/21/PHP杂记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/11/21/PHP杂记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="PHP数组下标的效率探讨"><a href="#PHP数组下标的效率探讨" class="headerlink" title="PHP数组下标的效率探讨"></a>PHP数组下标的效率探讨</h2><p>1.对于整形的索引值不必加单双引号，如果你加了单双引号，还需要把其转换为整形，影响了效率。</p>
+<p>2.字符串的下标要加上单双引号避免因常量的定义而产生错误。不加单双引号，在流程上他会先理解成常量，如果没有作有这个常量，再当成字符串来处理，其效率必然下降。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$arr = <span class="keyword">array</span>(<span class="number">1</span>=&gt;<span class="string">'csdn'</span>,name=&gt;<span class="string">'jnb'</span>);</div><div class="line"></div><div class="line"><span class="comment">//这个时候如果你定义了一个 name 的常量</span></div><div class="line">define(<span class="string">'name'</span>,<span class="string">'ansen'</span>);</div><div class="line"></div><div class="line"><span class="comment">//此时 name 不加单双引号的输出就会报错</span></div><div class="line"><span class="keyword">echo</span> $arr[name];</div></pre></td></tr></table></figure>
+<p>3.加单引号还是双引号？单引号的解析速度远远快于双引号，所以需要加单引号。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/21/跨浏览器的事件处理程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/21/跨浏览器的事件处理程序/" itemprop="url">跨浏览器的事件处理程序</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-21T16:38:37+08:00">
+                2016-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/21/跨浏览器的事件处理程序/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/11/21/跨浏览器的事件处理程序/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>要保证事件处理的代码在大多数浏览器下能够一致的运行，只需关注冒泡阶段即可。</p>
+<p>第一个要创建的方法是 <code>addHandler()</code> ，它的职责是视情况分别使用 DOM0 级方法、DOM2 级方法或 IE 方法来添加事件。这个方法属于一个叫做 EventUtil 的对象，<code>addHandler()</code> 接受三个参数：要操作的元素、事件名称和事件处理程序函数。</p>
+<p>与 <code>addHandler()</code> 方法相对应的是 <code>removeHandler()</code>，他也接收相同的参数。这个方法的职责是移除之前添加的事件处理程序，无论该事件处理程序是采取什么方式添加到元素中的，如果其他方法无效，默认采用 DOM0 级方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> EventUtil = &#123;</div><div class="line">    <span class="attr">addHandler</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> element, type, handler </span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( element.addEventListener ) &#123;</div><div class="line">            element.addEventListener( type, handler, <span class="literal">false</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( element.attachEvent ) &#123;</div><div class="line">            element.attachEvent( <span class="string">"on"</span> + type, handler );</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            element[ <span class="string">"on"</span> + type ] = handler;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attr">removeHandler</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> element, type, handler </span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( element.removeEventListener ) &#123;</div><div class="line">            element.removeEventListener( type, handler, <span class="literal">false</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( element.detachEvent ) &#123;</div><div class="line">            element.detachEvent( <span class="string">"on"</span> + type, handler );</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            element[ <span class="string">"on"</span> + type ] = <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;!--more--&gt;</div><div class="line"><span class="comment">//使用方法</span></div><div class="line"><span class="keyword">var</span> oBtn = <span class="built_in">document</span>.querySelector(<span class="string">"#btn"</span>);</div><div class="line"><span class="keyword">var</span> handler = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert( <span class="string">"haha"</span> );</div><div class="line">&#125;</div><div class="line"></div><div class="line">EventUtil.addHandler( oBtn, <span class="string">"click"</span>, handler );</div><div class="line"><span class="comment">// EventUtil.removeHandler( oBtn, "click", handler );</span></div></pre></td></tr></table></figure>
+<p>这两个方法首先都会检测传入的元素中是否存在 DOM2 级方法，如果存在该方法则使用该方法。</p>
+<p>如果存在的是 IE 的方法，则使用第二种方案。注意，为了在 IE8 级更早的版本中运行，此时的事件类型必须加上 <code>“on”</code> 前缀。</p>
+<p>最后一种可能就是使用 DOM0 级方法（在现代浏览器中应该不会执行这里的代码）。此时我们使用的是方括号语法来将属性名指定为事件处理程序。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/20/性能优化之DOM与JS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/20/性能优化之DOM与JS/" itemprop="url">性能优化之DOM与JS</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-20T16:36:13+08:00">
+                2016-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/20/性能优化之DOM与JS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/11/20/性能优化之DOM与JS/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>什么是 DOM？ DOM 就是用于操作 xml 和 html 文档的应用程序，浏览器会把 DOM 和 JS 独立实现。</p>
+<p>JS 操作 DOM 就像是从一个岛到了另一个岛，岛与岛之间的桥，每次通过都是要收取过桥费的,所以我们要尽量减少过桥的次数，意思就是说能在独立的岛上去完成的，就在独立的岛上去做，避免跨“岛”操作。<strong>减少 DOM 与 JS 的交互，可以大大提高浏览器的性能。</strong></p>
+<h3 id="1-使用缓存"><a href="#1-使用缓存" class="headerlink" title="1.使用缓存"></a>1.使用缓存</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>);</div><div class="line">		<span class="keyword">var</span> str = <span class="string">''</span>;</div><div class="line">		<span class="comment">//未使用缓存</span></div><div class="line">		<span class="built_in">console</span>.time(<span class="string">'hello'</span>); </div><div class="line"></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">5000</span>; i++)&#123;</div><div class="line">			oDiv.innerHTML  += <span class="string">'A'</span>;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="built_in">console</span>.timeEnd(<span class="string">'hello'</span>);</div><div class="line">		</div><div class="line">		<span class="comment">//使用缓存</span></div><div class="line">		<span class="built_in">console</span>.time(<span class="string">'hello'</span>); </div><div class="line">		</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">5000</span>; i++)&#123;</div><div class="line">			str += <span class="string">'A'</span>;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		oDiv.innerHTML = str;</div><div class="line">		</div><div class="line">		<span class="built_in">console</span>.timeEnd(<span class="string">'hello'</span>);	 </div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p>通过测试可以发现：使用缓存可以大大提高浏览器的性能。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/20/性能优化之DOM与JS/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/20/性能优化之DOM与浏览器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1088,462 +1551,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/15/Ajax小Demo集合/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/15/Ajax小Demo集合/" itemprop="url">Ajax小Demo集合</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-15T16:26:55+08:00">
-                2016-11-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/15/Ajax小Demo集合/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/15/Ajax小Demo集合/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="1-用Ajax实现验证登录"><a href="#1-用Ajax实现验证登录" class="headerlink" title="1.用Ajax实现验证登录"></a>1.用Ajax实现验证登录</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> username=<span class="built_in">document</span>.getElementById(<span class="string">"name"</span>).value;</div><div class="line"><span class="keyword">var</span> password=<span class="built_in">document</span>.getElementById(<span class="string">"pwd"</span>).value;</div><div class="line"><span class="keyword">var</span> xhr=<span class="literal">null</span>;</div><div class="line">xhr=<span class="keyword">new</span> XMLHttpRequest();<span class="comment">//新建一个XMLHttpRequest对象</span></div><div class="line">xhr.open(<span class="string">"get"</span>,<span class="string">'./check.php'</span>,<span class="literal">true</span>);<span class="comment">//初始化请求</span></div><div class="line">xhr.onreadystatechange=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="comment">//定义数据返回后的回调函数</span></div><div class="line">    <span class="keyword">if</span>(xhr.readyState==<span class="number">4</span>)&#123;</div><div class="line">        <span class="keyword">if</span>(xhr.status===<span class="number">200</span>)&#123;</div><div class="line">            <span class="keyword">var</span> data=xhr.responseText;</div><div class="line">            <span class="keyword">if</span>(data==<span class="number">1</span>)&#123;</div><div class="line">                result.innerText=<span class="string">"登录成功"</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(data===<span class="number">2</span>)&#123;</div><div class="line">                result.innerText=<span class="string">"登录失败"</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">xhr.send(<span class="literal">null</span>);<span class="comment">//xhr.send(null);</span></div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/11/15/Ajax小Demo集合/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/15/IFE任务之JS篇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/15/IFE任务之JS篇/" itemprop="url">IFE任务之JS篇</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-15T16:24:51+08:00">
-                2016-11-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/15/IFE任务之JS篇/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/15/IFE任务之JS篇/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-任务一：零基础JavaScript编码（一）"><a href="#1-任务一：零基础JavaScript编码（一）" class="headerlink" title="1. 任务一：零基础JavaScript编码（一）"></a>1. <a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/01.html">任务一：零基础JavaScript编码（一）</a></h4><h4 id="2-任务二：零基础JavaScript编码（二）-代码简洁优美"><a href="#2-任务二：零基础JavaScript编码（二）-代码简洁优美" class="headerlink" title="2.任务二：零基础JavaScript编码（二）(代码简洁优美)"></a>2.<a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/02.html">任务二：零基础JavaScript编码（二）</a>(代码简洁优美)</h4><h4 id="3-任务三：零基础JavaScript编码（三）"><a href="#3-任务三：零基础JavaScript编码（三）" class="headerlink" title="3.任务三：零基础JavaScript编码（三）"></a>3.<a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/03.html">任务三：零基础JavaScript编码（三）</a></h4><h4 id="4-任务四：基础JavaScript练习（一）"><a href="#4-任务四：基础JavaScript练习（一）" class="headerlink" title="4.任务四：基础JavaScript练习（一）"></a>4.<a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/04.html">任务四：基础JavaScript练习（一）</a></h4><h4 id="5-任务五：基础JavaScript练习（二）"><a href="#5-任务五：基础JavaScript练习（二）" class="headerlink" title="5.任务五：基础JavaScript练习（二）"></a>5.<a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/05.html">任务五：基础JavaScript练习（二）</a></h4><h4 id="6-任务六：基础JavaScript练习（三）–-gt-源代码-amp-amp-效果展示"><a href="#6-任务六：基础JavaScript练习（三）–-gt-源代码-amp-amp-效果展示" class="headerlink" title="6.任务六：基础JavaScript练习（三）–&gt;源代码&amp;&amp;效果展示"></a>6.<a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/06.html">任务六：基础JavaScript练习（三）–&gt;源代码</a>&amp;&amp;<a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/06.html">效果展示</a></h4>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/14/JS实现字符串反转/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/14/JS实现字符串反转/" itemprop="url">JS实现字符串反转</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-14T16:20:21+08:00">
-                2016-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/11/14/JS实现字符串反转/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/11/14/JS实现字符串反转/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="第一种方法："><a href="#第一种方法：" class="headerlink" title="第一种方法："></a>第一种方法：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;</div><div class="line">alert(str.split(<span class="string">""</span>).reverse().join(<span class="string">""</span>));<span class="comment">//cba</span></div></pre></td></tr></table></figure>
-<h3 id="第二种方法："><a href="#第二种方法：" class="headerlink" title="第二种方法："></a>第二种方法：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;</div><div class="line"><span class="keyword">var</span> len = str.length;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=len<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)&#123;</div><div class="line">	alert(str.charAt(i));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="第三种方法："><a href="#第三种方法：" class="headerlink" title="第三种方法："></a>第三种方法：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;</div><div class="line"><span class="keyword">var</span> str2 = [];</div><div class="line"><span class="keyword">var</span> str3 = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> len = str.length;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=len<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)&#123;</div><div class="line">	str2.push(str[i]);</div><div class="line">&#125;</div><div class="line">str3 = str2.join(<span class="string">""</span>);</div><div class="line">alert(str3);<span class="comment">//cba</span></div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1588,7 +1600,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">192</span>
+                <span class="site-state-item-count">195</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
