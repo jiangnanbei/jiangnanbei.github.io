@@ -317,6 +317,161 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/21/数值的整数次方/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/21/数值的整数次方/" itemprop="url">数值的整数次方</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-21T19:18:06+08:00">
+                2017-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/21/数值的整数次方/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/21/数值的整数次方/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong>题目：</strong></p>
+<p>实现函数<code>double Power(double base, int exponent)</code> 求 base 的 exponent 次方。不得使用库函数，同时不需要考虑大数问题。</p>
+<p><strong>代码：</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="comment">//我们使用全局变量来标识是否出错，如果出错了，则返回true</span></div><div class="line"><span class="keyword">bool</span> g_InvalidInput = <span class="literal">false</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">equal</span><span class="params">(<span class="keyword">double</span> num1, <span class="keyword">double</span> num2)</span></span>;</div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">PowerWithUnsignedExponent</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">unsigned</span> <span class="keyword">int</span> exponent)</span></span>;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">Power</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">int</span> exponent)</span></div><div class="line"></span>&#123;</div><div class="line">    g_InvalidInput = <span class="literal">false</span>;</div><div class="line"> </div><div class="line">    <span class="keyword">if</span>(equal(base, <span class="number">0.0</span>) &amp;&amp; exponent &lt; <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        g_InvalidInput = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> absExponent = (<span class="keyword">unsigned</span> <span class="keyword">int</span>)(exponent);</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(exponent &lt; <span class="number">0</span>)</div><div class="line">        absExponent = (<span class="keyword">unsigned</span> <span class="keyword">int</span>)(-exponent);</div><div class="line"> </div><div class="line">    <span class="keyword">double</span> result = PowerWithUnsignedExponent(base, absExponent);</div><div class="line">    <span class="keyword">if</span>(exponent &lt; <span class="number">0</span>)</div><div class="line">        result = <span class="number">1.0</span> / result;</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">PowerWithUnsignedExponent</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">unsigned</span> <span class="keyword">int</span> exponent)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">if</span>(exponent == <span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(exponent == <span class="number">1</span>)</div><div class="line">        <span class="keyword">return</span> base;</div><div class="line">    <span class="comment">//这里我们使用右移运算符代替了除以2，使用递归的方法来达到快速计算的目的</span></div><div class="line">    <span class="keyword">double</span> result = PowerWithUnsignedExponent(base, exponent &gt;&gt; <span class="number">1</span>);</div><div class="line">    result *= result;</div><div class="line">    <span class="comment">//这里我们使用了“与”运算代替求余运算来判断一个数时奇数还是偶数</span></div><div class="line">    <span class="keyword">if</span>((exponent &amp; <span class="number">0x1</span>) == <span class="number">1</span>)</div><div class="line">        result *= base;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">equal</span><span class="params">(<span class="keyword">double</span> num1, <span class="keyword">double</span> num2)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">if</span>((num1 - num2 &gt; <span class="number">-0.0000001</span>)</div><div class="line">        &amp;&amp; (num1 - num2 &lt; <span class="number">0.0000001</span>))</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// ====================测试代码====================</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Test</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">int</span> exponent, <span class="keyword">double</span> expectedResult, <span class="keyword">bool</span> expectedFlag)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">double</span> result = Power(base, exponent);</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">abs</span>(result - expectedResult) &lt; <span class="number">0.00000001</span> </div><div class="line">        &amp;&amp; g_InvalidInput == expectedFlag)</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test passed.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test failed.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="comment">// 底数、指数都为正数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test1 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">2</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数为负数、指数为正数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test2 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">-2</span>, <span class="number">3</span>, <span class="number">-8</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 指数为负数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test3 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">2</span>, <span class="number">-3</span>, <span class="number">0.125</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 指数为0</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test4 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数、指数都为0</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test5 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数为0、指数为正数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test6 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数为0、指数为负数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test7 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">0</span>, <span class="number">-4</span>, <span class="number">0</span>, <span class="literal">true</span>);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/21/数值的整数次方/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/21/什么样的人最可怕？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1386,181 +1541,17 @@
 
       
         
-          
-            <h3 id="什么是-CSS-reset"><a href="#什么是-CSS-reset" class="headerlink" title="什么是 CSS reset"></a>什么是 CSS reset</h3><p><code>CSS reset</code> 的就是让各个浏览器的 CSS 样式有一个统一的基准，而这个基准更多的就是“清零”！</p>
+          <h3 id="什么是-CSS-reset"><a href="#什么是-CSS-reset" class="headerlink" title="什么是 CSS reset"></a>什么是 CSS reset</h3><p><code>CSS reset</code> 的就是让各个浏览器的 CSS 样式有一个统一的基准，而这个基准更多的就是“清零”！</p>
 <h3 id="如何写出简洁优美的CSS-reset"><a href="#如何写出简洁优美的CSS-reset" class="headerlink" title="如何写出简洁优美的CSS reset"></a>如何写出简洁优美的CSS reset</h3><p>我们的 <code>reset</code> 应该根据自己的要求来书写。然而，目前的状态是（尤其一些中小型网站）， <code>reset</code> 代码直接拷贝过去，不做任何的思考。</p>
-<h3 id="你所不知的-reset"><a href="#你所不知的-reset" class="headerlink" title="你所不知的 reset"></a>你所不知的 reset</h3><ul>
-<li><code>div</code>、<code>li</code>、还有像 <code>form</code>,<code>img</code>, <code>input</code>, <code>button</code>, <code>textarea</code> 这样子的表单元素标签是没有 <code>margin</code> 值和 <code>padding</code> 值的。</li>
-<li><code>dt</code> 标签默认的 <code>margin</code> 和 <code>padding</code> 值就是 <code>0</code>。</li>
-<li><code>code</code> 标签是个属于 <code>inline</code> 水平的元素，不存在 <code>margin</code>值和 <code>padding</code> 值。</li>
-<li><code>input</code>元素有 <code>padding</code> 值 没有 <code>margin</code> 值</li>
-<li><code>fieldset</code>, <code>legend</code>这两个90年代的标签使用概率不足1%，不需要拿来重置。</li>
-</ul>
-<p>简洁的 reset 可以这样书写：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>, <span class="selector-tag">dl</span>, <span class="selector-tag">dd</span>, <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>, <span class="selector-tag">p</span>, <span class="selector-tag">form</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>;&#125;   <span class="selector-tag">ol</span>,<span class="selector-tag">ul</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>;&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="reset-存在的问题"><a href="#reset-存在的问题" class="headerlink" title="reset 存在的问题"></a>reset 存在的问题</h3><h4 id="css文件的大小"><a href="#css文件的大小" class="headerlink" title="css文件的大小"></a>css文件的大小</h4><p>显然，<code>reset</code> 平白无故的增加了 CSS 文件的大小，虽然，增加的大小可能有限，但是，要知道，即使 0.1 秒的载入时间差异也会影响互联网企业的收入的。</p>
-<h4 id="样式的重置"><a href="#样式的重置" class="headerlink" title="样式的重置"></a>样式的重置</h4><p>许多的 CSS 样式要重写与重新覆盖，典型的多此一举。</p>
-<h4 id="CSS的渲染"><a href="#CSS的渲染" class="headerlink" title="CSS的渲染"></a>CSS的渲染</h4><p>这可以说是最大的问题，样式无缘无故增加了很多的渲染，想想看，一个项目或是一个页面中有多少个 <code>div</code> 标签，居然使用<code>div{margin:0; padding:0;}</code> 当然，<code>*{margin:0; padding:0;}</code> 更是无法容忍的。</p>
-<h3 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 把斜体扶正 */</span></div><div class="line"><span class="selector-tag">em</span>&#123;<span class="attribute">font-style</span>: normal;&#125; </div><div class="line"></div><div class="line"><span class="comment">/* 图片放在a链接里面外面肯定会有难看的边框，然后把它对齐 */</span></div><div class="line"><span class="selector-tag">img</span>&#123;<span class="attribute">border</span>: none;<span class="attribute">vertical-align</span>: top;&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 消灭表格之间的间隙 */</span></div><div class="line"><span class="selector-tag">table</span>&#123;<span class="attribute">border-collapse</span>: collapse;&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 在chrome下选中，他会自动给你添加一个高亮显示我们要实现的话可以用js实现 */</span></div><div class="line"><span class="selector-tag">input</span>,<span class="selector-tag">textarea</span>&#123;<span class="attribute">outline</span>: none;&#125;</div><div class="line"></div><div class="line"><span class="comment">/* chrome 可以缩放输入框 */</span></div><div class="line"><span class="selector-tag">textarea</span>&#123;<span class="attribute">resize</span>: none;<span class="attribute">overflow</span>: auto;&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">body</span>&#123;<span class="attribute">font-size</span>: <span class="number">12px</span>;<span class="attribute">font-family</span>: <span class="string">"微软雅黑"</span>;&#125;</div></pre></td></tr></table></figure>
-<h3 id="少既是多"><a href="#少既是多" class="headerlink" title="少既是多"></a>少既是多</h3><p>最少的 CSS 代码，最少的渲染，最少的重置就是最好的 CSS 样式代码，这反应了您的 CSS 层次。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/14/识破障眼法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/14/识破障眼法/" itemprop="url">识破障眼法</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-14T23:41:51+08:00">
-                2017-06-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
-                    <span itemprop="name">貌似有知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/14/识破障眼法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/14/识破障眼法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>读书笔记：《世说新语》</p>
-<p>继续谈说话技巧中的怎么”不说”，但是这个不说，除了借机会听、借机会学，更重要的是你要借机会分析那个说话的人，尤其是当你不说，他却一直说个不停，甚至抢你话的时候，你更得小心，因为他说话很可能是障眼法，把你的注意力分散，免得你发现他的弱点，甚至弊端。</p>
-<p>房地产掮客小姐的技巧很简单，她一方面掠过房子的弱点，根本不提；一方面不断说话，把你的注意力带开。 </p>
-<p><strong>知道了这一点，以后你买自己不熟悉的东西，除了少说话、多听、多比较，而且要在对方指东的时候，除了往东看，也好好往相反的西边看看；当他指着天花板滔滔不绝的时候，你千万小心地上。</strong></p>
-<p>而且无论买什么东西都如此。当你看上一块玉，那卖家指着那玉上的优点、特点，说得天花乱坠的时候，你千万小心，只怕优点之外，全是缺点，等你买回家才发现好多裂璺。上古董铺更得小心，如果他的光线特别昏暗，别以为古董铺因为古，所以应该点古董油灯，而要想想，会不会有些东西是见不得光的，光线一亮，他就露马腳了。</p>
-<p>至于在办公室里。如果你是主管，当你叫一个职员进来问话，他不直接答，或答一半，忽然把话题岔开，好像另有急事向你报告，譬如你问他今天一共收了多少钱、出了几箱货的时候，他刚答一半，说收了五千多呢……突然话题一转，说：”对了！今天老王来找您……”这时候你也得小心，会不会因为那人心里有鬼，怕你发觉，于是主动把话题带开。</p>
-<p>在心理学上早发现人们会这样表现，连你的子女或另一半，当他们突然多话，而且常常抢着说，或一进门就主动找话题的时候，都有可能是声东击西。</p>
-<p>至于当你自己是小职员的时候，更得以此为戒。你千万要避免在主管的话题之外找话题。尤其不能抢话，把话题带开。就算你能干、口才好，又有事情急着想报告，也要懂得忍，等主管的问话告一段落，或会议讨论的事情告一段落之后再说，否则不但会显得你毛躁，而且令人起疑，你言词闪烁是不是有什么心虚的事。</p>
-<p>就算你心里没鬼，也不能喋喋不休。你想嘛，“喋喋不休，言不及义”怎么比得上“不鸣则已，一鸣惊人”。</p>
-
-          
+<h3 id="你所不知的-reset"><a href="#你所不知的-reset" class="headerlink" title="你所不知的 reset"></a>你所不知的 reset</h3><p>1.<code>div</code>、<code>li</code>、还有像 <code>form</code>,<code>img</code>, <code>input</code>, <code>button</code>, <code>textarea</code> 这样子的表单元素标签是没有 <code>margin</code> 值和 <code>padding</code> 值的。<br>2.<code>dt</code> 标签默认的 <code>margin</code> 和 <code>padding</code> 值就是 <code>0</code>。<br>3.<code>code</code> 标签是个属于 <code>inline</code> 水平的元素，不存在 <code>margin</code>值和 <code>padding</code> 值。<br>4.<code>input</code>元素有 <code>padding</code> 值 没有 <code>margin</code> 值<br>5.<code>fieldset</code>, <code>legend</code>这两个90年代的标签使用概率不足1%，不需要拿来重置。<br>6.在某些浏览器中，<code>q</code> 或者是 <code>blockquote</code> 前后会出现引号，该引号严重破换了美感，所以需要重置：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">blockquote</span>,<span class="selector-tag">q</span>&#123;<span class="attribute">quotes</span>:none;&#125;</div><div class="line"><span class="selector-tag">blockquote</span><span class="selector-pseudo">:before</span>,<span class="selector-tag">blockquote</span><span class="selector-pseudo">:after</span>,<span class="selector-tag">q</span><span class="selector-pseudo">:before</span>,<span class="selector-tag">q</span><span class="selector-pseudo">:after</span>&#123;<span class="attribute">content</span>:<span class="string">''</span>;<span class="attribute">content</span>:none;&#125;</div></pre></td></tr></table></figure></p>
+<p>简洁的 reset 可以这样书写：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">body, dl, dd, h1, h2, h3, h4, h5, h6, p, form&#123;margin:0;&#125;   ol,ul&#123;margin:0; padding:0;&#125;</div><div class="line">table&#123;border-collapse:collapse;border-spacing:0;&#125;</div><div class="line"></div><div class="line">//对于具有边框的的元素，可以做如下处理</div><div class="line">fieldset,img&#123;border:0;&#125;</div><div class="line">abbr,acronym&#123;border:0;font-variant:normal;&#125;</div><div class="line"></div><div class="line">//上标，下标及 baseline 的重置</div><div class="line">sup,sub&#123;font-size:100%;vertical-align:baseline;&#125;</div><div class="line"></div><div class="line">//除了重置样式之外，清除浮动也很重要</div><div class="line">.clearfix:after&#123;content:"";display:block;height:0;clear:both;visibility:hidden;&#125;</div><div class="line">.clearfix&#123;display:inline-block;&#125;</div><div class="line"></div><div class="line">/*hides from ie-mac */</div><div class="line">*html .clearfix&#123;height:1%;&#125;</div><div class="line">.clearfix&#123;display:block;&#125;</div><div class="line">/* end hide form ie-mac */</div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/15/如何写出简洁优美的-CSS-Reset/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1668,7 +1659,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
