@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何找到你的人生目标？]]></title>
+    <url>%2F2017%2F06%2F22%2F%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E4%BD%A0%E7%9A%84%E4%BA%BA%E7%94%9F%E7%9B%AE%E6%A0%87%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[TED Adam Leipzing ： 如何找到人生的目标？ 那些知道自己人生目标的人，知道这五件事： 他们是谁？他们做了什么？他们为谁而坐？那些人想要什么？需要什么？他们可以从中得到什么？结果会怎样改变？ 这听起来很难吗？事实上，你很容易就能知道自己生活的目标。很多人用尽一生的时间，寻找他们人生的目标，但是如果你只是照着计划表在考核你的人生，那不算是真正的活着。 你是谁？恩，我是王震。 你在做什么，如果你想到了很多自己喜欢的事情，那就问自己一个问题，现在哪一件事情，你自己感觉最有能力可以传授给别人的？我在做技术的同时也时刻提升自己对产品和商业的感知。 你为谁而做，想想你是为谁而做，在你脑子里想想他们的样子。我为了我的目标顾客而做，在获得商业上的成功之后，我会为了我想要去改变那一部分人而做。 他们想要什么需要什么，他们想要从你身上得到什么？他们来找你是因为你可以给他们东西。我想让他们得到更好的服务，当然我最终的目的是改变他们的思想，提升他们的认知。还有最后他们会变得如何？你的给予会让他们如何改变或者转化？他们会得到更好的产品，新的思想。 这五件事情是你必须知道的，也就是你的人生目标是什么，只有两个和你自己有关，另外三个和其他人有关，这个公式会驱使你照顾到除你之外的人们。那些有着人生目标的人清楚地知道自己为谁而做，那些人要什么，他们最后会如何改变。 你可能会注意到，无论哪个领域的成功人士都很注重，如何服务他们的对象，而不是他们自己，那些更快乐的人专注在让别人快乐，这些事情使他们感觉备受关心和照顾。生活告诉我们，如果你让别人开心，我们也会被照顾的很好。 与人谈话，其中最困难的一件事情就是，当你第一次见一个人，他可能问你这个问题，“你现在在做什么？”，当有人问你这个问题的时候，你可以这样做：只要说出你目前在做的事情就行了。比如说，你可以说“我想把这个世界变得更美好，哪怕一点点”。如此，你所说的那段话，将成为你个人的电梯演说，它会开启一个新的对话，因为你刚才的谈话对象，一定会问你：“你打算怎么改变这个世界？”，然后你接着回答他们，分享他们你的生活目标，然后你要告诉他们，他们也可以发掘自己生命的目的。]]></content>
+      <categories>
+        <category>心智</category>
+      </categories>
+      <tags>
+        <tag>心智</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数值的整数次方]]></title>
     <url>%2F2017%2F06%2F21%2F%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9%2F</url>
     <content type="text"><![CDATA[题目： 实现函数double Power(double base, int exponent) 求 base 的 exponent 次方。不得使用库函数，同时不需要考虑大数问题。 代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101#include &lt;iostream&gt;#include &lt;stdlib.h&gt;using namespace std;//我们使用全局变量来标识是否出错，如果出错了，则返回truebool g_InvalidInput = false;bool equal(double num1, double num2);double PowerWithUnsignedExponent(double base, unsigned int exponent); double Power(double base, int exponent)&#123; g_InvalidInput = false; if(equal(base, 0.0) &amp;&amp; exponent &lt; 0) &#123; g_InvalidInput = true; return 0.0; &#125; unsigned int absExponent = (unsigned int)(exponent); if(exponent &lt; 0) absExponent = (unsigned int)(-exponent); double result = PowerWithUnsignedExponent(base, absExponent); if(exponent &lt; 0) result = 1.0 / result; return result;&#125; double PowerWithUnsignedExponent(double base, unsigned int exponent)&#123; if(exponent == 0) return 1; if(exponent == 1) return base; //这里我们使用右移运算符代替了除以2，使用递归的方法来达到快速计算的目的 double result = PowerWithUnsignedExponent(base, exponent &gt;&gt; 1); result *= result; //这里我们使用了“与”运算代替求余运算来判断一个数时奇数还是偶数 if((exponent &amp; 0x1) == 1) result *= base; return result;&#125;bool equal(double num1, double num2)&#123; if((num1 - num2 &gt; -0.0000001) &amp;&amp; (num1 - num2 &lt; 0.0000001)) return true; else return false;&#125;// ====================测试代码====================void Test(double base, int exponent, double expectedResult, bool expectedFlag)&#123; double result = Power(base, exponent); if(abs(result - expectedResult) &lt; 0.00000001 &amp;&amp; g_InvalidInput == expectedFlag) cout &lt;&lt; "Test passed.\n" &lt;&lt; endl; else cout &lt;&lt; "Test failed.\n" &lt;&lt; endl;&#125;int main()&#123; // 底数、指数都为正数 cout &lt;&lt; "Test1 begins.\n" &lt;&lt; endl; Test(2, 3, 8, false); // // 底数为负数、指数为正数 cout &lt;&lt; "Test2 begins.\n" &lt;&lt; endl; Test(-2, 3, -8, false); // // 指数为负数 cout &lt;&lt; "Test3 begins.\n" &lt;&lt; endl; Test(2, -3, 0.125, false); // // 指数为0 cout &lt;&lt; "Test4 begins.\n" &lt;&lt; endl; Test(2, 0, 1, false); // // 底数、指数都为0 cout &lt;&lt; "Test5 begins.\n" &lt;&lt; endl; Test(0, 0, 1, false); // // 底数为0、指数为正数 cout &lt;&lt; "Test6 begins.\n" &lt;&lt; endl; Test(0, 4, 0, false); // // 底数为0、指数为负数 cout &lt;&lt; "Test7 begins.\n" &lt;&lt; endl; Test(0, -4, 0, true); return 0;&#125; Tips： 1.由于计算机表示小数都有误差，我们不能直接用等号判断两个小数是否相等，如果两个小数的差的绝对值很小，比如小于 0.0000001，就可以认为他们相等。 2.用右移运算代替除法运算 3.用位“与”运算代替求余运算 4.在面试的过程中你可以主动提示这些小细节，让他知道我们对编程的细节很重视。]]></content>
@@ -81,7 +92,7 @@
   <entry>
     <title><![CDATA[如何写出简洁优美的 CSS Reset]]></title>
     <url>%2F2017%2F06%2F15%2F%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E7%AE%80%E6%B4%81%E4%BC%98%E7%BE%8E%E7%9A%84-CSS-Reset%2F</url>
-    <content type="text"><![CDATA[什么是 CSS resetCSS reset 的就是让各个浏览器的 CSS 样式有一个统一的基准，而这个基准更多的就是“清零”！ 如何写出简洁优美的CSS reset我们的 reset 应该根据自己的要求来书写。然而，目前的状态是（尤其一些中小型网站）， reset 代码直接拷贝过去，不做任何的思考。 你所不知的 reset1.div、li、还有像 form,img, input, button, textarea 这样子的表单元素标签是没有 margin 值和 padding 值的。2.dt 标签默认的 margin 和 padding 值就是 0。3.code 标签是个属于 inline 水平的元素，不存在 margin值和 padding 值。4.input元素有 padding 值 没有 margin 值5.fieldset, legend这两个90年代的标签使用概率不足1%，不需要拿来重置。6.在某些浏览器中，q 或者是 blockquote 前后会出现引号，该引号严重破换了美感，所以需要重置：12blockquote,q&#123;quotes:none;&#125;blockquote:before,blockquote:after,q:before,q:after&#123;content:'';content:none;&#125; 简洁的 reset 可以这样书写：123456789101112131415161718body, dl, dd, h1, h2, h3, h4, h5, h6, p, form&#123;margin:0;&#125; ol,ul&#123;margin:0; padding:0;&#125;table&#123;border-collapse:collapse;border-spacing:0;&#125;//对于具有边框的的元素，可以做如下处理fieldset,img&#123;border:0;&#125;abbr,acronym&#123;border:0;font-variant:normal;&#125;//上标，下标及 baseline 的重置sup,sub&#123;font-size:100%;vertical-align:baseline;&#125;//除了重置样式之外，清除浮动也很重要.clearfix:after&#123;content:"";display:block;height:0;clear:both;visibility:hidden;&#125;.clearfix&#123;display:inline-block;&#125;/*hides from ie-mac */*html .clearfix&#123;height:1%;&#125;.clearfix&#123;display:block;&#125;/* end hide form ie-mac */ reset 存在的问题css文件的大小显然，reset 平白无故的增加了 CSS 文件的大小，虽然，增加的大小可能有限，但是，要知道，即使 0.1 秒的载入时间差异也会影响互联网企业的收入的。 样式的重置许多的 CSS 样式要重写与重新覆盖，典型的多此一举。 CSS的渲染这可以说是最大的问题，样式无缘无故增加了很多的渲染，想想看，一个项目或是一个页面中有多少个 div 标签，居然使用div{margin:0; padding:0;} 当然，*{margin:0; padding:0;} 更是无法容忍的。 小技巧12345678910111213141516/* 把斜体扶正 */em&#123;font-style: normal;&#125; /* 图片放在a链接里面外面肯定会有难看的边框，然后把它对齐 */img&#123;border: none;vertical-align: top;&#125;/* 消灭表格之间的间隙 */table&#123;border-collapse: collapse;&#125;/* 在chrome下选中，他会自动给你添加一个高亮显示我们要实现的话可以用js实现 */input,textarea&#123;outline: none;&#125;/* chrome 可以缩放输入框 */textarea&#123;resize: none;overflow: auto;&#125;body&#123;font-size: 12px;font-family: "微软雅黑";&#125; 少既是多最少的 CSS 代码，最少的渲染，最少的重置就是最好的 CSS 样式代码，这反应了您的 CSS 层次。]]></content>
+    <content type="text"><![CDATA[什么是 CSS resetCSS reset 的就是让各个浏览器的 CSS 样式有一个统一的基准，而这个基准更多的就是“清零”！ 如何写出简洁优美的CSS reset我们的 reset 应该根据自己的要求来书写。然而，目前的状态是（尤其一些中小型网站）， reset 代码直接拷贝过去，不做任何的思考。 你所不知的 reset1.div、li、还有像 form,img, input, button, textarea 这样子的表单元素标签是没有 margin 值和 padding 值的。2.dt 标签默认的 margin 和 padding 值就是 0。3.code 标签是个属于 inline 水平的元素，不存在 margin值和 padding 值。4.input元素有 padding 值 没有 margin 值5.fieldset, legend这两个90年代的标签使用概率不足1%，不需要拿来重置。6.在某些浏览器中，q 或者是 blockquote 前后会出现引号，该引号严重破换了美感，所以需要重置：12blockquote,q&#123;quotes:none;&#125;blockquote:before,blockquote:after,q:before,q:after&#123;content:'';content:none;&#125; 简洁的 reset 可以这样书写：123456789101112131415161718body, dl, dd, h1, h2, h3, h4, h5, h6, p, form&#123;margin:0;&#125; ol,ul&#123;margin:0; padding:0;&#125;table&#123;border-collapse:collapse;border-spacing:0;&#125;//对于具有边框的的元素，可以做如下处理fieldset,img&#123;border:0;&#125;abbr,acronym&#123;border:0;font-variant:normal;&#125;//上标，下标及 baseline 的重置sup,sub&#123;font-size:100%;vertical-align:baseline;&#125;//除了重置样式之外，清除浮动也很重要.clearfix:after&#123;content:"";display:block;height:0;clear:both;visibility:hidden;&#125;.clearfix&#123;display:inline-block;&#125;/*hides from ie-mac */*html .clearfix&#123;height:1%;&#125;.clearfix&#123;display:block;&#125;/* end hide form ie-mac */ reset 存在的问题css文件的大小显然，reset 平白无故的增加了 CSS 文件的大小，虽然，增加的大小可能有限，但是，要知道，即使 0.1 秒的载入时间差异也会影响互联网企业的收入的。 样式的重置许多的 CSS 样式要重写与重新覆盖，典型的多此一举。 CSS的渲染这可以说是最大的问题，样式无缘无故增加了很多的渲染，想想看，一个项目或是一个页面中有多少个 div 标签，居然使用div{margin:0; padding:0;} 当然，*{margin:0; padding:0;} 更是无法容忍的。 兼容 html5 的 Reset12345678910111213141516171819202122232425262728方案三html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video &#123; margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline; outline:none; &#125;html &#123; height:101%; &#125; /* 总是显示滚动条 */body &#123; font-size:62.5%; line-height:1; font-family:Arial, Tahoma, Verdana, sans-serif; &#125;article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section &#123; display:block; &#125;img &#123; border:0; max-width:100%; &#125;a &#123; text-decoration:none; &#125;a:hover &#123; text-decoration:underline; &#125;ol, ul &#123; list-style:none; &#125;blockquote, q &#123; quotes:none; &#125;blockquote:before, blockquote:after, q:before, q:after &#123; content:""; content:none; &#125;strong &#123; font-weight:bold; &#125; input &#123; outline:none; &#125;table &#123; border-collapse:collapse; border-spacing:0; &#125; 小技巧12345678910111213141516/* 把斜体扶正 */em&#123;font-style: normal;&#125; /* 图片放在a链接里面外面肯定会有难看的边框，然后把它对齐 */img&#123;border: none;vertical-align: top;&#125;/* 消灭表格之间的间隙 */table&#123;border-collapse: collapse;&#125;/* 在chrome下选中，他会自动给你添加一个高亮显示我们要实现的话可以用js实现 */input,textarea&#123;outline: none;&#125;/* chrome 可以缩放输入框 */textarea&#123;resize: none;overflow: auto;&#125;body&#123;font-size: 12px;font-family: "微软雅黑";&#125; 少既是多最少的 CSS 代码，最少的渲染，最少的重置就是最好的 CSS 样式代码，这反应了您的 CSS 层次。]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -241,6 +252,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -281,6 +293,7 @@
         <category>商业</category>
       </categories>
       <tags>
+        <tag>随笔</tag>
         <tag>商业</tag>
       </tags>
   </entry>
@@ -292,6 +305,7 @@
         <category>商业</category>
       </categories>
       <tags>
+        <tag>随笔</tag>
         <tag>商业</tag>
       </tags>
   </entry>
@@ -340,9 +354,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[尾部设计]]></title>
-    <url>%2F2017%2F05%2F25%2F%E5%B0%BE%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[页尾设计 页尾，也称为 Tailer，指的是页面底部部分，通常放置联系方式和版权信息等补充信息。由于其位置不够显著、重要性较低，因此也往往成为设计师容易忽略的地方。 需要规避的细节问题页尾的信息过多过杂由于页尾不太重要，因此应该尽量简化它，节约页面宝贵的空间。 不同页面的页尾不统一 有时候，由于网站的迅速扩张，页面数量迅速增加，如缺乏统一的规范约束，往往容易导致页尾等元素在同一类型页面中表现得不够统一。 这虽然只是一个很小的细节，却容易让用户对网站的专业度产生怀疑，这是页面设计中需要注意的问题之一。 版权说明格式 一般网站都会在页尾进行版权说明，目前国际上标准的格式是：Copyright[日期（dates）]by[作者/所有者（author/owner）]，其中 Copyright 通常可以用 © 代替，但是不可以用（c）。All Rights Reserved 在某些国家曾经是必需的，但是现在在大多数国家，都不是法律上必须有的字样。 设计新趋势为了更好的利用网站的空间，目前有些网站在页尾除了放置联系方式和版权信息以外，也放置网站的辅助导航，使页尾发挥更大的引导作用。]]></content>
+    <title><![CDATA[头部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%A4%B4%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[网站上每个元素都是为了满足了用户、网站或者赞助商不同角度的需求而存在的。按照各部分作用的不同，可将网站划分成以下功能区域，包括头部、页尾、导航区、搜索区、登录注册区、信息展示区、广告区等。 头部 网页头部，也称为 Header，简称头部，指的是网站页面的顶部区域，通常包含网站的 Logo、Slogan、Banner、导航条等元素，有时还提供常用功能的快速入口，如登录、帮助等。头部主要用于网站展示品牌形象，告诉用户目前在浏览哪个网站以及该网站主要提供什么内容。 头部类型实用型头部实用型的网站头部设计简洁、不花哨，能够在合理有限的空间内起到必要的作用，一般其只包含 Logo、导航条和快速入口等重要元素。 大型网站由于页面空间有限，而且品牌的知名度使其不需要使用过多的元素去渲染网站的特色和气氛，因此往往采用这种类型的头部设计。 设计型头部很多网站，尤其是个性化的网站，往往会利用头部的设计体现出网站的特色，常见于博客、小型特色网站以及部分企业网站首页。 设计型头部的优点在于有很大的发挥空间，如果设计效果好，就会造成很强的视觉冲击力，给用户留下很深的印象；其缺点在于往往占用过多空间，削减了网站内容的重要性，造成喧宾夺主的效果，也容易产生头重脚轻的感觉。 头部元素的设计不管是哪种类型的头部，一般包括 Logo、Slogan、导航条等元素。 LogoLogo 的基本作用之一是返回页面首页，使用户在网站迷路时，可以找到回去的路，增加用户在网站上的方向感和安全感。更重要的是 Logo 代表着网站的品牌和形象，尤其对知名的网站来讲，Logo 能够唤起用户对网站的品牌认知度，从而提升用户的信任感。 Logo 本身的设计非常重要，必需清晰易辨识，能体现出网站的定位和特色，具体的设计更多取决于设计者，在这不多加叙述。 对于不同类型的页面或者网站，Logo 的呈现的方式不一样。如独立的 logo，适用于网站首页。logo+文字，适用于网站子类目。logo+logo，适用于合并后的网站。 除此之外，很多网站会在节日期间设计应景的节日 logo 体现气氛，提升用户对网站的体验。 SloganSlogan 虽然只是一句简单的标语，但能够很好地体现出网站的定位和特色，显示企业文化、塑造网站个性，配合 Logo 一起使用能够达到更好的效果。Slogan 一般要求朗朗上口，而且点出网站的最大亮点。好的标语往往能让用户更好地记住网站的特色及其提供的主要服务。如： ·阿里巴巴。“全球领先的网上贸易市场和商人社区”。 ·淘宝。“淘我喜欢！” 除了 Logo 和 Slogan 以上两个主要元素之外，总体上来讲，同一级别或者同一类型页面的头部设计应该尽量保持一致。]]></content>
       <categories>
         <category>设计</category>
       </categories>
@@ -351,9 +365,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[头部设计]]></title>
-    <url>%2F2017%2F05%2F25%2F%E5%A4%B4%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[网站上每个元素都是为了满足了用户、网站或者赞助商不同角度的需求而存在的。按照各部分作用的不同，可将网站划分成以下功能区域，包括头部、页尾、导航区、搜索区、登录注册区、信息展示区、广告区等。 头部 网页头部，也称为 Header，简称头部，指的是网站页面的顶部区域，通常包含网站的 Logo、Slogan、Banner、导航条等元素，有时还提供常用功能的快速入口，如登录、帮助等。头部主要用于网站展示品牌形象，告诉用户目前在浏览哪个网站以及该网站主要提供什么内容。 头部类型实用型头部实用型的网站头部设计简洁、不花哨，能够在合理有限的空间内起到必要的作用，一般其只包含 Logo、导航条和快速入口等重要元素。 大型网站由于页面空间有限，而且品牌的知名度使其不需要使用过多的元素去渲染网站的特色和气氛，因此往往采用这种类型的头部设计。 设计型头部很多网站，尤其是个性化的网站，往往会利用头部的设计体现出网站的特色，常见于博客、小型特色网站以及部分企业网站首页。 设计型头部的优点在于有很大的发挥空间，如果设计效果好，就会造成很强的视觉冲击力，给用户留下很深的印象；其缺点在于往往占用过多空间，削减了网站内容的重要性，造成喧宾夺主的效果，也容易产生头重脚轻的感觉。 头部元素的设计不管是哪种类型的头部，一般包括 Logo、Slogan、导航条等元素。 LogoLogo 的基本作用之一是返回页面首页，使用户在网站迷路时，可以找到回去的路，增加用户在网站上的方向感和安全感。更重要的是 Logo 代表着网站的品牌和形象，尤其对知名的网站来讲，Logo 能够唤起用户对网站的品牌认知度，从而提升用户的信任感。 Logo 本身的设计非常重要，必需清晰易辨识，能体现出网站的定位和特色，具体的设计更多取决于设计者，在这不多加叙述。 对于不同类型的页面或者网站，Logo 的呈现的方式不一样。如独立的 logo，适用于网站首页。logo+文字，适用于网站子类目。logo+logo，适用于合并后的网站。 除此之外，很多网站会在节日期间设计应景的节日 logo 体现气氛，提升用户对网站的体验。 SloganSlogan 虽然只是一句简单的标语，但能够很好地体现出网站的定位和特色，显示企业文化、塑造网站个性，配合 Logo 一起使用能够达到更好的效果。Slogan 一般要求朗朗上口，而且点出网站的最大亮点。好的标语往往能让用户更好地记住网站的特色及其提供的主要服务。如： ·阿里巴巴。“全球领先的网上贸易市场和商人社区”。 ·淘宝。“淘我喜欢！” 除了 Logo 和 Slogan 以上两个主要元素之外，总体上来讲，同一级别或者同一类型页面的头部设计应该尽量保持一致。]]></content>
+    <title><![CDATA[尾部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%B0%BE%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[页尾设计 页尾，也称为 Tailer，指的是页面底部部分，通常放置联系方式和版权信息等补充信息。由于其位置不够显著、重要性较低，因此也往往成为设计师容易忽略的地方。 需要规避的细节问题页尾的信息过多过杂由于页尾不太重要，因此应该尽量简化它，节约页面宝贵的空间。 不同页面的页尾不统一 有时候，由于网站的迅速扩张，页面数量迅速增加，如缺乏统一的规范约束，往往容易导致页尾等元素在同一类型页面中表现得不够统一。 这虽然只是一个很小的细节，却容易让用户对网站的专业度产生怀疑，这是页面设计中需要注意的问题之一。 版权说明格式 一般网站都会在页尾进行版权说明，目前国际上标准的格式是：Copyright[日期（dates）]by[作者/所有者（author/owner）]，其中 Copyright 通常可以用 © 代替，但是不可以用（c）。All Rights Reserved 在某些国家曾经是必需的，但是现在在大多数国家，都不是法律上必须有的字样。 设计新趋势为了更好的利用网站的空间，目前有些网站在页尾除了放置联系方式和版权信息以外，也放置网站的辅助导航，使页尾发挥更大的引导作用。]]></content>
       <categories>
         <category>设计</category>
       </categories>
@@ -413,6 +427,7 @@
         <category>商业</category>
       </categories>
       <tags>
+        <tag>随笔</tag>
         <tag>商业</tag>
       </tags>
   </entry>
@@ -513,6 +528,7 @@
       </categories>
       <tags>
         <tag>读书笔记</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -524,6 +540,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -535,6 +552,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -546,6 +564,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -557,6 +576,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -568,6 +588,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -578,6 +599,7 @@
         <category>商业</category>
       </categories>
       <tags>
+        <tag>随笔</tag>
         <tag>投资</tag>
       </tags>
   </entry>
@@ -656,6 +678,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1327,6 +1350,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1610,18 +1634,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[六道JS面试题]]></title>
-    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>面试指南</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[递归实现斐波那契数列]]></title>
     <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
     <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
@@ -1631,6 +1643,18 @@
       <tags>
         <tag>算法</tag>
         <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[六道JS面试题]]></title>
+    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>面试指南</tag>
       </tags>
   </entry>
   <entry>
@@ -1738,8 +1762,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>商业技巧</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
@@ -1751,6 +1775,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1762,6 +1787,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1773,6 +1799,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1796,6 +1823,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -2038,6 +2066,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
         <tag>商业技巧</tag>
       </tags>
   </entry>
@@ -2050,6 +2079,17 @@
       </categories>
       <tags>
         <tag>心智</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[动态分配内存和跨函数使用内存]]></title>
+    <url>%2F2016%2F08%2F31%2F%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98%E5%92%8C%E8%B7%A8%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E5%86%85%E5%AD%98%2F</url>
+    <content type="text"><![CDATA[malloc 动态分配内存概述Int * Parr = (int *)malloc(sizeof(int) * len); 我们这里为什么需要进行强制类型转换？我们有 4*len 个字节，但是第一个字节没有实际含义，所以 (int*) 就是告诉我们编译器我们把第一个字节的地址当成了一个整形的地址，所谓整形地址就是说第一个字节的地址代表的是四个字节的地址，那么 parr+1 就是指向后四个，如果你把 int 改成 double 类型，此时就意味着第一个字节的地址代表了 8 个字节的地址，parr+1 那就指向后八个，就是这个意思。 跨函数使用内存A aa = new A();java 的内部就是下面这样子来写的：A *pa = (A*)malloc(sizeof(A)); 要想跨函数使用内存只能动态的来实现。]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -2105,6 +2145,7 @@
       </categories>
       <tags>
         <tag>心智</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -2166,7 +2207,7 @@
   <entry>
     <title><![CDATA[数据结构概述]]></title>
     <url>%2F2016%2F08%2F26%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E8%BF%B0%2F</url>
-    <content type="text"><![CDATA[什么是数据结构？数据结构里面，我们所谓的栈就是堆栈，数据结构里面是没有堆这么一个概念的，堆属于分配内存的一种方式，不属于存储数据的一种结构。 我们如何把现实中大量而复杂的问题以特定的数据类型(特定的数据类型指个体如何存储)和特定的存储结构(特定的存储结构指的是个体和个体的关系)保存到主存储器中(内存中)，以及在此基础上为实现某个功能(比如查找某个元，删除某个元素，对所有的元素进行排序)，而执行的相应操作，这个相应的操作叫做算法。 数据结构 = 个体 + 个体的关系 算法 = 对存储数据的操作 广义算法:从广义来讲算法和存储是没有关系的 狭义算法:从狭义上来讲存储方式不一样所执行的算法也不一样。你只有知道狭义的算法是什么，你才会理解泛型，泛型就是广义的算法。 数据结构的特点你在写代码的时候总是会遇到“栈”和“堆”，所谓栈内存和堆内存是指分配内存的算法不一样，如果是以压栈，出栈的方式分配的内存，这个就叫栈内存。而如果你是一种堆排序的方式分配的内存，这个就叫堆内存。 说到函数调用，你怎么去调用函数？你要想知道如何去调用一个函数里面真正运行的原理，你必须要去学栈，因为他是靠压栈和出栈来实现的。 同时学习操作系统你一定需要知道队列的知识。 如果你要学编译原理你会学到里面的语法树，它实际上就是我们数据结构里面的树。 数据库就是数据结构的简化版，只不过他考虑的问题更加简单了：字段-&gt;反映的是一个事物的属性；记录-&gt;表示的是一个整体的事物；表-&gt;同一类事物的集合，事物与事物之间的关系是通过外界来反映的。 程序:数据的存储+数据的操作+可以被计算机执行的语言 衡量算法的标准1.时间复杂度: 大概程序要执行的次数(最关键的运行最多的那个步骤执行了多少次)，而非执行的时间。(不同的机器运行的时间一定是不一样的) 2.空间复杂度: 算法执行过程中大概所占用的最大内存。 3.难易程度(要让别人都可以看懂) 4.健壮性]]></content>
+    <content type="text"><![CDATA[什么是数据结构？数据结构里面，我们所谓的栈就是堆栈，数据结构里面是没有堆这么一个概念的，堆属于分配内存的一种方式，不属于存储数据的一种结构。 我们如何把现实中大量而复杂的问题以特定的数据类型(特定的数据类型指个体如何存储)和特定的存储结构(特定的存储结构指的是个体和个体的关系)保存到主存储器中(内存中)，以及在此基础上为实现某个功能(比如查找某个元，删除某个元素，对所有的元素进行排序)，而执行的相应操作，这个相应的操作叫做算法。 1234567数据结构 = 个体 + 个体的关系算法 = 对存储数据的操作广义算法:从广义来讲算法和存储是没有关系的狭义算法:从狭义上来讲存储方式不一样所执行的算法也不一样。你只有知道狭义的算法是什么，你才会理解泛型，泛型就是广义的算法。 数据结构的特点你在写代码的时候总是会遇到“栈”和“堆”，所谓栈内存和堆内存是指分配内存的算法不一样，如果是以压栈，出栈的方式分配的内存，这个就叫栈内存。而如果你是一种堆排序的方式分配的内存，这个就叫堆内存。 说到函数调用，你怎么去调用函数？你要想知道如何去调用一个函数里面真正运行的原理，你必须要去学栈，因为他是靠压栈和出栈来实现的。 同时学习操作系统你一定需要知道队列的知识。 如果你要学编译原理你会学到里面的语法树，它实际上就是我们数据结构里面的树。 数据库就是数据结构的简化版，只不过他考虑的问题更加简单了：字段-&gt;反映的是一个事物的属性；记录-&gt;表示的是一个整体的事物；表-&gt;同一类事物的集合，事物与事物之间的关系是通过外界来反映的。 程序:数据的存储+数据的操作+可以被计算机执行的语言 衡量算法的标准1.时间复杂度:大概程序要执行的次数(最关键的运行最多的那个步骤执行了多少次)，而非执行的时间。(不同的机器运行的时间一定是不一样的) 2.空间复杂度:算法执行过程中大概所占用的最大内存。 3.难易程度(要让别人都可以看懂) 4.健壮性]]></content>
       <categories>
         <category>编程</category>
       </categories>
@@ -2175,7 +2216,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[创业随笔（一）]]></title>
+    <title><![CDATA[创业随笔]]></title>
     <url>%2F2016%2F08%2F25%2F%E5%88%9B%E4%B8%9A%E9%9A%8F%E7%AC%94%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
     <content type="text"><![CDATA[1.节奏感真正要创业做的好，其实是要有很强的节奏感，以为着你对整个市场的把握，你对整个资本的把握，以及你对自己企业所处状态的一种判断。比如说：你在什么时候切入到这样一个市场，你在什么时候融资，你融资多大的规模，你对未来市场的预判，包括你未来如何去花钱，乃至于最后你在什么时候挣钱，如何赚多少钱。 如果你有一个很好的节奏感，在这个过程中你会发现你每一个阶段都有一个明确的目标，每一个阶段都把握的非常清楚，你知道了什么东西你要去做，什么东西你不能做，有所为有所不为。 2.顺势而为&amp;另辟蹊径整个互联网的商业模式实际上核心就是三个：最顶层的在上游的是流量入口，中间的是内容运营，底层的是商业经营。 如果你处在别人的生态体系里，比如说BAT，你就要学会顺势而为，借用他们的生态，借用他们打造的势能，然后思考如何成就自己。但是如果你不想遵循这个生态法则，那你就必须自己要去找 到一块新的土地，一个新的领域，或者说是另辟蹊径，比如说你到海外去，到BAT鞭长莫及的地方去。 3.产品没颜值，必死为什么中国的产品普遍没有颜值？第一点就是山寨，他只想着去解决温饱问题，所以他只能沿着山寨的道路走。第二点就是：老板喜欢画龙点睛，觉得自己是见识最多的，经验最足的，这个画龙点睛其实是狗尾续貂。第三点：就是即便你请了国外的大牌设计师因为不一定能够做出很好的产品。 最后我想说：只要你花足够多的时间和精力一定可以做出一款非常漂亮的产品。]]></content>
       <categories>
@@ -2206,6 +2247,7 @@
       </categories>
       <tags>
         <tag>营销</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>

@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="江南北的个人站">
 <meta property="og:description" content="什么是数据结构？数据结构里面，我们所谓的栈就是堆栈，数据结构里面是没有堆这么一个概念的，堆属于分配内存的一种方式，不属于存储数据的一种结构。
 我们如何把现实中大量而复杂的问题以特定的数据类型(特定的数据类型指个体如何存储)和特定的存储结构(特定的存储结构指的是个体和个体的关系)保存到主存储器中(内存中)，以及在此基础上为实现某个功能(比如查找某个元，删除某个元素，对所有的元素进行排序)，而执行的相">
-<meta property="og:updated_time" content="2017-06-14T11:25:43.030Z">
+<meta property="og:updated_time" content="2017-06-21T14:43:15.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构概述">
 <meta name="twitter:description" content="什么是数据结构？数据结构里面，我们所谓的栈就是堆栈，数据结构里面是没有堆这么一个概念的，堆属于分配内存的一种方式，不属于存储数据的一种结构。
@@ -418,23 +418,16 @@
       
         <h3 id="什么是数据结构？"><a href="#什么是数据结构？" class="headerlink" title="什么是数据结构？"></a>什么是数据结构？</h3><p>数据结构里面，我们所谓的栈就是堆栈，数据结构里面是没有堆这么一个概念的，<strong>堆属于分配内存的一种方式，不属于存储数据的一种结构。</strong></p>
 <p>我们如何把现实中大量而复杂的问题以特定的数据类型(<strong>特定的数据类型指个体如何存储</strong>)和特定的存储结构(<strong>特定的存储结构指的是个体和个体的关系</strong>)保存到主存储器中(内存中)，以及在此基础上为实现某个功能(比如查找某个元，删除某个元素，对所有的元素进行排序)，而执行的相应操作，这个相应的操作叫做算法。</p>
-<pre><code>数据结构 = 个体 + 个体的关系
-
-算法 = 对存储数据的操作
-
-广义算法:从广义来讲算法和存储是没有关系的
-
-狭义算法:从狭义上来讲存储方式不一样所执行的算法也不一样。你只有知道狭义的算法是什么，你才会理解泛型，泛型就是广义的算法。
-</code></pre><h3 id="数据结构的特点"><a href="#数据结构的特点" class="headerlink" title="数据结构的特点"></a>数据结构的特点</h3><p>你在写代码的时候总是会遇到“栈”和“堆”，所谓<strong>栈内存</strong>和<strong>堆内存</strong>是指分配内存的算法不一样，如果是以压栈，出栈的方式分配的内存，这个就叫栈内存。而如果你是一种堆排序的方式分配的内存，这个就叫堆内存。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">数据结构 = 个体 + 个体的关系</div><div class="line"></div><div class="line">算法 = 对存储数据的操作</div><div class="line"></div><div class="line">广义算法:从广义来讲算法和存储是没有关系的</div><div class="line"></div><div class="line">狭义算法:从狭义上来讲存储方式不一样所执行的算法也不一样。你只有知道狭义的算法是什么，你才会理解泛型，泛型就是广义的算法。</div></pre></td></tr></table></figure>
+<h3 id="数据结构的特点"><a href="#数据结构的特点" class="headerlink" title="数据结构的特点"></a>数据结构的特点</h3><p>你在写代码的时候总是会遇到“栈”和“堆”，所谓<strong>栈内存</strong>和<strong>堆内存</strong>是指分配内存的算法不一样，如果是以压栈，出栈的方式分配的内存，这个就叫栈内存。而如果你是一种堆排序的方式分配的内存，这个就叫堆内存。</p>
 <p><strong>说到函数调用，你怎么去调用函数？你要想知道如何去调用一个函数里面真正运行的原理，你必须要去学栈，因为他是靠压栈和出栈来实现的。</strong></p>
 <p>同时学习操作系统你一定需要知道队列的知识。</p>
 <p>如果你要学编译原理你会学到里面的语法树，它实际上就是我们数据结构里面的树。</p>
 <p>数据库就是数据结构的简化版，只不过他考虑的问题更加简单了：字段-&gt;反映的是一个事物的属性；记录-&gt;表示的是一个整体的事物；表-&gt;同一类事物的集合，事物与事物之间的关系是通过外界来反映的。</p>
 <pre><code>程序:数据的存储+数据的操作+可以被计算机执行的语言
 </code></pre><a id="more"></a>
-<h3 id="衡量算法的标准"><a href="#衡量算法的标准" class="headerlink" title="衡量算法的标准"></a>衡量算法的标准</h3><p>1.时间复杂度:</p>
-<p>大概程序要执行的次数(最关键的运行最多的那个步骤执行了多少次)，而非执行的时间。(不同的机器运行的时间一定是不一样的)</p>
-<p>2.空间复杂度:<br>     算法执行过程中大概所占用的最大内存。</p>
+<h3 id="衡量算法的标准"><a href="#衡量算法的标准" class="headerlink" title="衡量算法的标准"></a>衡量算法的标准</h3><p>1.时间复杂度:大概程序要执行的次数(最关键的运行最多的那个步骤执行了多少次)，而非执行的时间。(不同的机器运行的时间一定是不一样的)</p>
+<p>2.空间复杂度:算法执行过程中大概所占用的最大内存。</p>
 <p>3.难易程度(要让别人都可以看懂)</p>
 <p>4.健壮性</p>
 
@@ -490,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/25/创业随笔（一）/" rel="next" title="创业随笔（一）">
-                <i class="fa fa-chevron-left"></i> 创业随笔（一）
+              <a href="/2016/08/25/创业随笔（一）/" rel="next" title="创业随笔">
+                <i class="fa fa-chevron-left"></i> 创业随笔
               </a>
             
           </div>
@@ -581,7 +574,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">201</span>
+                <span class="site-state-item-count">203</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
