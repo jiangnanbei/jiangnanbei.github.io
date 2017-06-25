@@ -293,8 +293,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -305,8 +305,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -427,8 +427,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1443,8 +1443,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -1455,8 +1455,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -1634,18 +1634,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[递归实现斐波那契数列]]></title>
-    <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
-    <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[六道JS面试题]]></title>
     <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
     <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
@@ -1655,6 +1643,18 @@
       <tags>
         <tag>JS</tag>
         <tag>面试指南</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[递归实现斐波那契数列]]></title>
+    <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
+    <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -1762,8 +1762,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业技巧</tag>
         <tag>商业</tag>
+        <tag>商业技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -2066,8 +2066,30 @@
       </categories>
       <tags>
         <tag>心智</tag>
-        <tag>随笔</tag>
         <tag>商业技巧</tag>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[操作单链表]]></title>
+    <url>%2F2016%2F09%2F03%2F%E6%93%8D%E4%BD%9C%E5%8D%95%E9%93%BE%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222223224225226227228229230231232233234235236237238239240241242243244245246247248#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;typedef struct Node&#123; int data; struct Node * pNext;&#125;NODE, * PNODE;PNODE create_list(void);void traverse_list(PNODE pHead);//可以把删除的节点放到第三个参数里面bool delete_list(PNODE pHead, int pos, int * pVal);bool is_empty(PNODE pHead);int length_list(PNODE pHead);bool insert_list(PNODE pHead, int pos, int val);void sort_list(PNODE pHead);int main(void)&#123; int val,pos; PNODE pHead = NULL; //在一个函数里面分配很多的内存,并把第一个内存复制给PHead pHead = create_list();//创建一个单链表并把该链表的头结点的地址赋值给pHead // printf("please input the position of the number you want to delete:"); // scanf("%d",&amp;pos); // delete_list(pHead,3,&amp;val); // traverse_list(pHead); // int len = length_list(pHead); // printf("the length of list is:",len); // sort_list(pHead); // if(insert_list(pHead,1,123)) // &#123; // traverse_list(pHead); // &#125; if(delete_list(pHead,4,&amp;val)) &#123; printf("delete successful!\n"); &#125; else &#123; printf("delete failed\n"); &#125; traverse_list(pHead); &#125;PNODE create_list(void)&#123; int len;//用来存放有效节点的个数 int i; int val;//用来存放用户输入节点的值 //注意这个头结点只是一个局部变量,和main里面的头结点不是同一个东西 //只不过最后你会把这个结点赋值给main函数里面的pHead PNODE pHead = (PNODE)malloc(sizeof(NODE));//生成头节点 //定义尾节点,在此时只有一个节点的情况下,让pTail指向pHead PNODE pTail = pHead; //如果一个节点都没有,则此时尾节点的指针域为空 pTail-&gt;pNext = NULL; //如果内存分配失败,则退出程序的执行 if(NULL == pHead) &#123; printf("distribution failed, program break down!\n"); exit(-1); &#125; printf("please input the length of your list, len ="); scanf("%d",&amp;len); for(i=0;i&lt;len;i++) &#123; printf("please input the value of %dth:", i+1); scanf("%d",&amp;val); //每循环一次就生成一个新的结点 PNODE pNew = (PNODE)malloc(sizeof(NODE)); if(NULL == pNew) &#123; printf("distribution failed, program break down!\n"); exit(-1); &#125; pNew-&gt;data = val; //把新生成的结点挂载到尾节点的后面 pTail-&gt;pNext = pNew; //清空临时结点的指针域,因为这个时候临时结点已经变成最后一个节点了 pNew-&gt;pNext = NULL; //把尾节点指向新节点,这样pTail每次指向的都是最后一个节点. pTail = pNew; &#125; return pHead;&#125;void traverse_list(PNODE pHead)&#123; int i; PNODE p = pHead-&gt;pNext; while(p != NULL) &#123; printf("%d ",p-&gt;data ); p = p-&gt;pNext; &#125; printf("\n");&#125;bool delete_list(PNODE pHead,int pos, int * pVal)&#123; // int i=1; // PNODE p = pHead; // while(p-&gt;pNext != NULL) // &#123; // if(i == pos) // &#123; // p-&gt;pNext = p-&gt;pNext-&gt;pNext; // break; // &#125; // i++; // p = p-&gt;pNext; // &#125; int i = 0; int len = length_list(pHead); PNODE p = pHead; while(NULL != p-&gt;pNext &amp;&amp; i&lt;pos-1) &#123; p = p-&gt;pNext; i++; &#125; if(i&gt;pos-1 || NULL == p-&gt;pNext) return false; PNODE q = p-&gt;pNext; *pVal = q-&gt;data; p-&gt;pNext = p-&gt;pNext-&gt;pNext; free(q); q = NULL; return true;&#125;bool is_empty(PNODE pHead)&#123; if(pHead-&gt;pNext != NULL) &#123; return false; &#125; else &#123; return true; &#125;&#125;int length_list(PNODE pHead)&#123; int i=0; PNODE p = pHead-&gt;pNext; while(p != NULL) &#123; i++; p = p-&gt;pNext; &#125; printf("%d\n", i);&#125;void sort_list(PNODE pHead)&#123; int len = length_list(pHead); int i,j,t; PNODE p,q; for(i=0, p = pHead-&gt;pNext; i&lt;len-1; i++, p = p-&gt;pNext) &#123; for(j=i+1, q = p-&gt;pNext; j&lt;len; j++, q = q-&gt;pNext) &#123; if(p-&gt;data &gt; q-&gt;data) &#123; t = p-&gt;data; p-&gt;data = q-&gt;data; q-&gt;data = t; &#125; &#125; &#125; return;&#125;bool insert_list(PNODE pHead, int pos, int val)&#123; // PNODE q; // q-&gt;data = val; // PNODE p = pHead; // int len = length_list(pHead); // for(int i=0; i&lt;=len; i++) // &#123; // if(pos &gt; len || pos &lt;0) // &#123; // printf("wrong!\n"); // &#125; // else if(i == pos) // &#123; // q-&gt;pNext = p-&gt;pNext; // p-&gt;pNext = q; // &#125; // p = p-&gt;pNext; // &#125; // return true; int i = 0; int len = length_list(pHead); PNODE p = pHead; while(NULL != p &amp;&amp; i&lt;pos-1) &#123; p = p-&gt;pNext; i++; &#125; if(i&gt;pos-1 || NULL == p) return false; PNODE pNew = (PNODE)malloc(sizeof(NODE)); if(NULL == pNew) &#123; printf("distribution failed!\n"); exit(-1); &#125; pNew-&gt;data = val; PNODE q = p-&gt;pNext; p-&gt;pNext = pNew; pNew-&gt;pNext = q; return true;&#125;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[链表]]></title>
+    <url>%2F2016%2F09%2F02%2F%E9%93%BE%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[链表的定义n 个结点离散分配，彼此通过指针相连，每个节点只有一个前驱和一个后继。 关于链表你需要明白的几个概念1.首节点 2.尾节点 3.头结点：我们会在首节点前面加一个叫头结点的东西，头结点里面没有数据，头结点里面也没有存放整个节点的个数，之所以要加一个头结点是为了方便我们对链表的操作，就是我们在进行增删改查的时候，可以简便我们对链表算法的操作。 4.头指针：指向头节点的指正变量。 5.尾指正：指向尾节点的指针变量 确定一个数组需要几个参数？确定一个数组我们只需要知道：首地址；数组长度；有效元素的个数。 确定一个链表需要几个参数？首先我们要知道头结点与后面的每一个节点的数据类型是一样的，如果后面的每一个数据都占据了 1000 个字节，那么头结点也同样占据了 1000 个字节。 确定一个链表我们只需要知道一个参数： 头指针。 每一个链表节点的数据类型如何表示？前一个节点可以通过指针找到后面一个数据的整体，不单单是数据或者指针 12345Typedef struct Nde&#123; Int data; Int Node * pNext;&#125;NODE,*PNODE; 链表的分类1.单链表 2.循环链表：能通过任何一个节点找到其他的所有节点 3.非循环链表]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -2079,6 +2101,17 @@
       </categories>
       <tags>
         <tag>心智</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[typedef 的用法]]></title>
+    <url>%2F2016%2F09%2F01%2Ftypedef-%E7%9A%84%E7%94%A8%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516#inclue &lt;stdio.h&gt;//为 struct Student 这个数据结构重新起了一个名字叫 STtypedef struct Student &#123; int sid; char name[100]; char sex;&#125;ST;int main()&#123; struct Student st;//此时这句话就等价于 ST st; struct Student *ps = &amp;st; // 此时这句话等价于 ST * ps = &amp;st; &#125; 12345678910111213141516#inclue &lt;stdio.h&gt;//注意：此时 ST 前面多了一个 *，此时 ST 代表了一个指针，等价于 typedef struct Student * ST;此时 ST 是 struct Student * 类型&#123; int sid; char name[100]; char sex;&#125;*ST;int main()&#123; struct Student st; ST ps = &amp;st; ps-&gt;sid = 99; printf("%d\n",ps-&gt;sid);&#125; 1234567891011121314#inclue &lt;stdio.h&gt;//注意：此时 PST 代表了 struct Student * ，而 ST 代表了 struct Student，我们一般写成大写，这样别人一看就知道是一个数据类型的别名&#123; int sid; char name[100]; char sex;&#125;*PST,ST;int main()&#123; ST st；//相当于 struct Student st PST pst；//相当于 struct Student * pst&#125;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
