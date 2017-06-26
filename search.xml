@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ie 兼容性问题]]></title>
+    <url>%2F2017%2F06%2F26%2Fie-%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS 清浮动详解]]></title>
+    <url>%2F2017%2F06%2F26%2FCSS-%E6%B8%85%E6%B5%AE%E5%8A%A8%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[什么是浮动？使元素脱离文档流，按照指定方向发生移动，遇到父级边界或者相邻的元素停下来。（脱离文档流：此时浮动元素在文档中不占位置，飘了起来） 浮动的特征1.块元素在一行显示2.内联元素支持宽高3.默认内容撑开宽度4.脱离文档流5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来） 清除浮动的方法after 伪类清浮动（主流方法）给浮动元素的父级添加12.clear&#123;*zoom:1&#125;.clear:after&#123;content:'';display:block;clear:both;&#125; overflow:hidden/auto 清除浮动 给父级元素添加问题：需要配合宽度或者 zoom:1 兼容 IE6 给父级元素加高问题：扩展性不好 父级浮动问题：页面中所有的元素都加浮动，margin 左右自动失效 给父级加 inline-block问题：margin 左右都失效 空标签请浮动12345//在浮动元素下添加&lt;div class="clear"&gt;&lt;/div&gt;//然后设置样式为.clear&#123;height:0;font-size:0;clear:both;&#125; 问题：在 IE6 下高度小于 19px 的元素，会被当做 19px 来处理，可以使用 font-size:0; 来解决，但是只能处理最小 2px 的高度，再小就处理不了了。 br 清浮动12//在浮动元素下加&lt;br clear="all"/&gt; 问题：不符合工作中结构、行为、样式分离的要求]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[o(1) 时间内删除链表节点]]></title>
+    <url>%2F2017%2F06%2F26%2Fo-1-%E6%97%B6%E9%97%B4%E5%86%85%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[思路：打破常规思维，当我们想删除一个节点时，并不一定要删除这个节点本身。可以先把下一个节点的内容复制出来覆盖被删除节点的内容，然后把下一个节点删除。 比如说，我们要删除节点 i，先把 i 的下一个节点 j 的内容复制到 i，然后把 i 的指针指向节点 j 的下一个节点，此时再删除节点 j，其效果刚好是把节点 i 删除了。 上述思路还有一个问题，如果要删除的节点位于链表的尾部，那么他就没有下一个节点，怎么办？ 我们仍然从链表的头结点开始，顺序遍历得到该节点的前序节点，并完成删除操作。最后需要注意的是，如果链表中只有一个节点，而我们有需要删除链表的头结点，也就是尾节点，此时在我们删除节点之后，还需要把链表的头结点设置为 null。 同时，你也要注意思维的全面性，即使你想到删除下一个节点这个办法，也未必能通过这轮面试，你应该要全面的考虑到删除的节点位于链表的尾部及输入得来链表只有一个节点这些特殊情况。 代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222223224225226227228229230231232233234235236237238239240241242243244245246247248249250#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;struct ListNode&#123; int m_nValue; ListNode* m_pNext;&#125;;// ====================链表操作====================ListNode* CreateListNode(int value)&#123; ListNode* pNode = new ListNode(); pNode-&gt;m_nValue = value; pNode-&gt;m_pNext = NULL; return pNode;&#125;void ConnectListNodes(ListNode* pCurrent, ListNode* pNext)&#123; if(pCurrent == NULL) &#123; printf("Error to connect two nodes.\n"); exit(1); &#125; pCurrent-&gt;m_pNext = pNext;&#125;void PrintListNode(ListNode* pNode)&#123; if(pNode == NULL) &#123; printf("The node is NULL\n"); &#125; else &#123; printf("The key in node is %d.\n", pNode-&gt;m_nValue); &#125;&#125;void PrintList(ListNode* pHead)&#123; printf("PrintList starts.\n"); ListNode* pNode = pHead; while(pNode != NULL) &#123; printf("%d\t", pNode-&gt;m_nValue); pNode = pNode-&gt;m_pNext; &#125; printf("\nPrintList ends.\n");&#125;void DestroyList(ListNode* pHead)&#123; ListNode* pNode = pHead; while(pNode != NULL) &#123; pHead = pHead-&gt;m_pNext; delete pNode; pNode = pHead; &#125;&#125;void AddToTail(ListNode** pHead, int value)&#123; ListNode* pNew = new ListNode(); pNew-&gt;m_nValue = value; pNew-&gt;m_pNext = NULL; if(*pHead == NULL) &#123; *pHead = pNew; &#125; else &#123; ListNode* pNode = *pHead; while(pNode-&gt;m_pNext != NULL) pNode = pNode-&gt;m_pNext; pNode-&gt;m_pNext = pNew; &#125;&#125;void RemoveNode(ListNode** pHead, int value)&#123; if(pHead == NULL || *pHead == NULL) return; ListNode* pToBeDeleted = NULL; if((*pHead)-&gt;m_nValue == value) &#123; pToBeDeleted = *pHead; *pHead = (*pHead)-&gt;m_pNext; &#125; else &#123; ListNode* pNode = *pHead; while(pNode-&gt;m_pNext != NULL &amp;&amp; pNode-&gt;m_pNext-&gt;m_nValue != value) pNode = pNode-&gt;m_pNext; if(pNode-&gt;m_pNext != NULL &amp;&amp; pNode-&gt;m_pNext-&gt;m_nValue == value) &#123; pToBeDeleted = pNode-&gt;m_pNext; pNode-&gt;m_pNext = pNode-&gt;m_pNext-&gt;m_pNext; &#125; &#125; if(pToBeDeleted != NULL) &#123; delete pToBeDeleted; pToBeDeleted = NULL; &#125;&#125;// ====================算法实现====================void DeleteNode(ListNode ** pListHead,ListNode * pToBeDeleted)&#123; if(!pListHead || !pToBeDeleted) return; //要删除的节点不是尾节点 if(pToBeDeleted-&gt;m_pNext != NULL) &#123; ListNode * pNext = pToBeDeleted-&gt;m_pNext; pToBeDeleted-&gt;m_nValue = pNext-&gt;m_nValue; pToBeDeleted-&gt;m_pNext = pNext-&gt;m_pNext; delete pNext; pNext = NULL; &#125; //链表只有一个节点，删除头结点（也是尾节点） else if(*pListHead == pToBeDeleted) &#123; delete pToBeDeleted; pToBeDeleted = NULL; *pListHead = NULL; &#125; //链表中有多个节点，删除尾节点 else &#123; ListNode * pNode = *pListHead; while(pNode-&gt;m_pNext != pToBeDeleted) pNode = pNode-&gt;m_pNext; pNode-&gt;m_pNext = NULL; delete pToBeDeleted; pToBeDeleted = NULL; &#125;&#125;// ====================测试代码====================void Test(ListNode* pListHead, ListNode* pNode)&#123; printf("The original list is: \n"); PrintList(pListHead); printf("The node to be deleted is: \n"); PrintListNode(pNode); DeleteNode(&amp;pListHead, pNode); printf("The result list is: \n"); PrintList(pListHead);&#125;// 链表中有多个结点，删除中间的结点void Test1()&#123; ListNode* pNode1 = CreateListNode(1); ListNode* pNode2 = CreateListNode(2); ListNode* pNode3 = CreateListNode(3); ListNode* pNode4 = CreateListNode(4); ListNode* pNode5 = CreateListNode(5); ConnectListNodes(pNode1, pNode2); ConnectListNodes(pNode2, pNode3); ConnectListNodes(pNode3, pNode4); ConnectListNodes(pNode4, pNode5); Test(pNode1, pNode3); DestroyList(pNode1);&#125;// 链表中有多个结点，删除尾结点void Test2()&#123; ListNode* pNode1 = CreateListNode(1); ListNode* pNode2 = CreateListNode(2); ListNode* pNode3 = CreateListNode(3); ListNode* pNode4 = CreateListNode(4); ListNode* pNode5 = CreateListNode(5); ConnectListNodes(pNode1, pNode2); ConnectListNodes(pNode2, pNode3); ConnectListNodes(pNode3, pNode4); ConnectListNodes(pNode4, pNode5); Test(pNode1, pNode5); DestroyList(pNode1);&#125;// 链表中有多个结点，删除头结点void Test3()&#123; ListNode* pNode1 = CreateListNode(1); ListNode* pNode2 = CreateListNode(2); ListNode* pNode3 = CreateListNode(3); ListNode* pNode4 = CreateListNode(4); ListNode* pNode5 = CreateListNode(5); ConnectListNodes(pNode1, pNode2); ConnectListNodes(pNode2, pNode3); ConnectListNodes(pNode3, pNode4); ConnectListNodes(pNode4, pNode5); Test(pNode1, pNode1); DestroyList(pNode1);&#125;// 链表中只有一个结点，删除头结点void Test4()&#123; ListNode* pNode1 = CreateListNode(1); Test(pNode1, pNode1);&#125;// 链表为空void Test5()&#123; Test(NULL, NULL);&#125;int main( )&#123; Test1(); Test2(); Test3(); Test4(); Test5(); return 0;&#125;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CSS 控制图片和文字在同一行显示且对齐]]></title>
     <url>%2F2017%2F06%2F25%2FCSS-%E6%8E%A7%E5%88%B6%E5%9B%BE%E7%89%87%E5%92%8C%E6%96%87%E5%AD%97%E5%9C%A8%E5%90%8C%E4%B8%80%E8%A1%8C%E6%98%BE%E7%A4%BA%E4%B8%94%E5%AF%B9%E9%BD%90%2F</url>
     <content type="text"><![CDATA[在css中给div添加上“vertical-align:middle”属性12345678910#box *&#123; vertical-align:middle; /* 居中对齐， */ font-size:14px; &#125; &lt;div id="box"&gt; &lt;img src="xxx.jpg"&gt; &lt;img src="xxx.jpg"&gt; &lt;a href="#"&gt;使用 vertical-align&lt;/a&gt; &lt;/div&gt; 把图片设置为背景图片1234567891011#box &#123; background:url(1.jpg) no-repeat left center; &#125; #bg&#123; font-size:14px; padding-left:50px;&#125; &lt;div id="box"&gt; &lt;div id="bg"&gt;&lt;a href="#"&gt;把图片设置为背景图&lt;/a&gt;&lt;/div&gt; &lt;/div&gt;]]></content>
@@ -1454,8 +1481,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -1466,8 +1493,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -1617,8 +1644,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>Demo</tag>
         <tag>Ajax</tag>
+        <tag>Demo</tag>
       </tags>
   </entry>
   <entry>
@@ -1645,18 +1672,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[六道JS面试题]]></title>
-    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>面试指南</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[递归实现斐波那契数列]]></title>
     <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
     <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
@@ -1666,6 +1681,18 @@
       <tags>
         <tag>算法</tag>
         <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[六道JS面试题]]></title>
+    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>面试指南</tag>
       </tags>
   </entry>
   <entry>
