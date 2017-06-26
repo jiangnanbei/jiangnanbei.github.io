@@ -317,6 +317,566 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/15/工厂模式之原型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/15/工厂模式之原型/" itemprop="url">工厂模式之原型</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-15T15:33:21+08:00">
+                2016-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们创建的每一个函数都有一个 prototype 属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。</p>
+<p>使用原型对象的好处是可以让所有对象实例共享它所包含的属性和方法。换句话说，不必在构造函数中定义对象实例的信息，而是可以将这些信息直接添加到原型对象中。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">		<span class="comment">//能够共享的放在构造函数里面</span></div><div class="line">		<span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">			<span class="keyword">this</span>.name=name;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">//不能够共享的放在原型里面</span></div><div class="line">		CreatePerson.prototype.showName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			alert(<span class="keyword">this</span>.name);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">var</span> p1 = <span class="keyword">new</span> CreatePerson(<span class="string">'xiaoming'</span>);</div><div class="line">		<span class="keyword">var</span> p2 = <span class="keyword">new</span>  CreatePerson(<span class="string">'xiaoqiang'</span>);</div><div class="line">		</div><div class="line">		alert(p1.showName == p2.showName);<span class="comment">//true--&gt;they have same address.</span></div><div class="line">		<span class="comment">//这就是原型模式和构造函数模式的不同之处，即这些属性和方法是由所有实例共享的</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong>原型模式的写法：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"></div><div class="line">	<span class="comment">// function 构造函数()</span></div><div class="line">	<span class="comment">// &#123;</span></div><div class="line">	<span class="comment">// 	this.属性;</span></div><div class="line">	<span class="comment">// &#125;</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">construct</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">this</span>.property</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// 构造函数.原型.方法 = function()&#123;&#125;</span></div><div class="line">	construct.prototype.method=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">	<span class="comment">// var 对象1 = new 构造函数();</span></div><div class="line">	<span class="keyword">var</span> obj1 = <span class="keyword">new</span> construct();</div><div class="line"></div><div class="line">	<span class="comment">// 对象1.方法();</span></div><div class="line">	obj1.method();</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/14/普通方法与原型方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/14/普通方法与原型方法/" itemprop="url">普通方法与原型方法</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-14T15:33:21+08:00">
+                2016-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-普通方法"><a href="#1-普通方法" class="headerlink" title="1.普通方法"></a>1.普通方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">	<span class="keyword">var</span> arr2 = [<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line">	arr1.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> result = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">			result+=<span class="keyword">this</span>[i];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	alert(arr.sum());</div><div class="line"></div><div class="line">	arr2.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> result = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">			result+=<span class="keyword">this</span>[i];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	alert(arr2.sum());</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>从上面的例子可以看出，对于普通方法而言我们要对每一个对象分别创建一个方法。</p>
+<h3 id="2-原型方法"><a href="#2-原型方法" class="headerlink" title="2.原型方法"></a>2.原型方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">	<span class="keyword">var</span> arr2 = [<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line">	<span class="comment">//使用原型方法这个时候你只需要借用构造函数创建一个函数</span></div><div class="line">	<span class="built_in">Array</span>.prototype.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> result = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">			result+=<span class="keyword">this</span>[i];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	alert(arr.sum());</div><div class="line">	alert(arr2.sum());</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h3 id="3-普通方法和原型方法的优先级比较"><a href="#3-普通方法和原型方法的优先级比较" class="headerlink" title="3.普通方法和原型方法的优先级比较"></a>3.普通方法和原型方法的优先级比较</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> arr = [];</div><div class="line">	arr.number = <span class="number">10</span>;</div><div class="line">	<span class="built_in">Array</span>.prototype.number = <span class="number">20</span>;</div><div class="line"></div><div class="line">	alert(arr.number); <span class="comment">//result : 10</span></div><div class="line">	</div><div class="line">	<span class="comment">//从中我们可以看出，普通方法的优先级高于原型方法</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/13/理解对象的引用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/13/理解对象的引用/" itemprop="url">理解对象的引用</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-13T15:33:21+08:00">
+                2016-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-实例一"><a href="#1-实例一" class="headerlink" title="1.实例一"></a>1.实例一</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">		</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">		<span class="keyword">this</span>.name=name;</div><div class="line">		<span class="keyword">this</span>.showName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			alert(<span class="keyword">this</span>.name);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> p1 = <span class="keyword">new</span> CreatePerson(<span class="string">'xiaoming'</span>);</div><div class="line">	<span class="keyword">var</span> p2 = <span class="keyword">new</span>  CreatePerson(<span class="string">'xiaoqiang'</span>);</div><div class="line"></div><div class="line">	alert(p1.showName == p2.showName);<span class="comment">//false</span></div><div class="line">	<span class="comment">//由于对对象的引用不同，所以这里的结果是 false</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="2-实列二"><a href="#2-实列二" class="headerlink" title="2.实列二"></a>2.实列二</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">	<span class="keyword">var</span> b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"></div><div class="line">	<span class="comment">// they have the same value but different addresses</span></div><div class="line">	alert(a == b);<span class="comment">//false</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="3-实例三"><a href="#3-实例三" class="headerlink" title="3.实例三"></a>3.实例三</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">	<span class="keyword">var</span> b = a;</div><div class="line"></div><div class="line">	b.push(<span class="number">4</span>);</div><div class="line">	alert(b);<span class="comment">//[1,2,3,4]</span></div><div class="line">	alert(a);<span class="comment">//[1,2,3,4]</span></div><div class="line">	alert(a == b);<span class="comment">//ture--&gt;same address</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="4-实例四"><a href="#4-实例四" class="headerlink" title="4.实例四"></a>4.实例四</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">	<span class="keyword">var</span> b = a;</div><div class="line">	<span class="comment">//只要你重新声明了一个变量，在内存里就会有一块新的空间被创建</span></div><div class="line">	b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line">	alert(b);<span class="comment">//[1,2,3,4];</span></div><div class="line">	alert(a);<span class="comment">//[1,2,3] </span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/11/构造函数模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/11/构造函数模式/" itemprop="url">构造函数模式</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-11T15:33:21+08:00">
+                2016-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">		</div><div class="line">	<span class="comment">//构造函数首字母始终都应该以一个大写字母开头</span></div><div class="line">	<span class="comment">//构造函数本身也是函数，只不过可以用来创建对象</span></div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">	</div><div class="line">		<span class="comment">//'this' 在这里代表着 p1 或 p2</span></div><div class="line">		<span class="keyword">this</span>.name=name;</div><div class="line">		<span class="keyword">this</span>.showName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			alert(<span class="keyword">this</span>.name);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// p1 和 p2 分别保存着 Person 的一个不同实列，这两个对象都有一个 constructor 属性，该属性指向 Person。</span></div><div class="line">	</div><div class="line">	<span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'xiaoming'</span>);</div><div class="line">	p1.showName();</div><div class="line">	<span class="keyword">var</span> p2 = <span class="keyword">new</span>  Person(<span class="string">'xiaoqiang'</span>);</div><div class="line">	p2.showName();</div><div class="line"></div><div class="line">	<span class="comment">//创建自定义的构造函数意味着可以将他的实例标识为一种特定的类型</span></div><div class="line">	<span class="comment">//而这正是构造函数模式胜过工厂模式的地方</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p>构造函数模式虽然好用，但也并非没有缺点，使用构造函数的主要问题，就是每个方法都要在每个实例上重新创建一遍，即每个 person 实例都包含一个不同的 function 实例，因此不同实例上的同名函数是不相同的。</p>
+<p><strong>然而创建两个完成同样任务的 function 实例的确没有必要。于是，又出现了原型模式帮我们解决这个问题。</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/10/工程模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -383,17 +943,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/10/工程模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/10/工程模式/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -533,17 +1082,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/09/面向对象简介/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/09/面向对象简介/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -687,17 +1225,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/08/详解闭包/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/08/详解闭包/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -845,17 +1372,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/05/The-tip-point-of-programming/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/05/The-tip-point-of-programming/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -882,631 +1398,6 @@
             <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="number">0</span>&lt;=i &amp;&amp; i&lt;=<span class="number">9</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'0px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">10</span>&lt;=i &amp;&amp; i&lt;=<span class="number">19</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'100px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">20</span>&lt;=i &amp;&amp; i&lt;=<span class="number">29</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'200px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">30</span>&lt;=i &amp;&amp; i&lt;=<span class="number">39</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'300px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">40</span>&lt;=i &amp;&amp; i&lt;=<span class="number">49</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'400px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">10</span>;j++)&#123;</div><div class="line">    <span class="keyword">if</span>((j*<span class="number">10</span>+<span class="number">0</span>)&lt;=i &amp;&amp; i&lt;=(j*<span class="number">10</span>+<span class="number">9</span>))&#123;</div><div class="line">    	oLi[i].style.top=j*<span class="number">110</span>+<span class="number">50</span>+<span class="string">'px'</span>;</div><div class="line">    	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">    &#125;	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>above is my track!!!wow, I get the point of programming, from easy to difficult,form clear to confusion,step by step, you can do it.escapeically, you can keep trying.</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/05/沉默是金/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/05/沉默是金/" itemprop="url">祸从口出</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-05T09:39:59+08:00">
-                2016-12-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
-                    <span itemprop="name">貌似有知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/05/沉默是金/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/05/沉默是金/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《世说新语》</p>
-<p><strong>有道是”沉默是金”，在谈怎么说话之前，我、先得谈怎么不说。因为祸从口出，常常不说要比说好得多。</strong></p>
-<p>举个我自己的例子，有一天我跟朋友约好中午碰面，因为办公室忙，出门晚了些，对方着急了，又不知道我的手机号码，就拨电话到办公室问。电话是我秘书接的，她挺聪明，说”刘先生早出门了，应该在路上，马上就到了。”</p>
-<p>你说，她不是答得很好吗？偏偏她画蛇添足，又加一句：”刘先生很忙的！”</p>
-<p>我那朋友一听就火了，回一句：”他忙？我不忙吗？”跟着就看我进门了，又把那火发到我头上：”你秘书说你忙，好像你迟到有理似的，你要知道我也忙耶！”</p>
-<p>你说我那秘书笨不笨？我又倒霉不倒霉？</p>
-<p>事实上，我的秘书非常聪明。而在讲话的时候爱画蛇添足的人常常很聪明。</p>
-<p>再举个大家常碰到或常犯的毛病。</p>
-<p>你是职员，老板问你今天客户一共叫了几箱货。</p>
-<p>常一天有一百多箱，那天特别少，只叫了十箱。你是不是很可能答：”报告老板，今天只叫了十箱耶！”</p>
-<p>你现在想，一定觉得这样说没什么错。但我要很郑重地告诉你：如果你只是个小职员，小主管，你错了！除非你是合伙人、大主管、或老板娘，你最好不要说”今天”只”叫了十箱。”而应该讲”今天叫了十箱。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/05/沉默是金/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/02/弱者的逻辑/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/02/弱者的逻辑/" itemprop="url">弱者的逻辑</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-02T07:47:40+08:00">
-                2016-12-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心智/" itemprop="url" rel="index">
-                    <span itemprop="name">心智</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/02/弱者的逻辑/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/02/弱者的逻辑/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>你刚来到城市，你跟那些大公司比，当然是它强你弱，但是你们之间不是博弈关系，你是拿自己的目标参与到它的事业里面去，如果你的目标只是每个月挣点钱，那好，你打一辈子工好了，你可能给了中国的大城市一辈子也买不起房，但是如果你参与到这个过程中，公司有公司的目标，你有你的目标，你们两个目标在一起博弈，我帮你公司实现业务的增长，你帮我实现个成长，我在这里学习业务，展示给整个市场看我的业务能力，渐渐地没准我的个人地位在社会上就成长了，没准将来我还创业呢。</p>
-<p>人和人、国家和国家，本质上是目标的博弈，而不是力量博弈。</p>
-<p>人和人、国家和国家的互动，是谁的目标好，谁的目标能够拆解为适宜的步骤，而且执行的好，谁赢！本质上说，这不是力量上的博弈，二是目标的博弈。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/01/jQuery入门/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/01/jQuery入门/" itemprop="url">jQuery入门</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-01T17:35:31+08:00">
-                2016-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/01/jQuery入门/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/01/jQuery入门/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="选择元素"><a href="#选择元素" class="headerlink" title="选择元素"></a>选择元素</h2><h3 id="原生选择符"><a href="#原生选择符" class="headerlink" title="原生选择符"></a>原生选择符</h3><p> 1.标签选择符 <code>$(&#39;p&#39;)</code></p>
-<p>2.<code>ID</code> 选择符 <code>$(&#39;#some-id&#39;)</code></p>
-<p>3.类选择符 <code>$(&#39;.some-class&#39;)</code></p>
-<p>4.否定式伪类选择符 <code>$(&#39;#some-id li:not(.some-class)&#39;)</code></p>
-<p>5.属性选择符<code>$(&#39;img[alt]&#39;)</code>,属性选择符使用一种从正则表达式借鉴来的通配符语法，以 <code>^</code> 表示值在字符串的开始位置，以 <code>$</code> 表示值在字符串的结尾，用 <code>*</code> 号表示要匹配的值可以出现在字符串的任意位置，用叹号 <code>!</code> 表示对值取反。</p>
-<p><code>eg：$(&#39;a[href^=&quot;mailto:&quot;]&#39;)</code>选中所有电子邮件的链接。<code>$(&#39;a[href$=&quot;.pdf&quot;]&#39;)</code>选中所有pdf文件的链接。</p>
-<p>属性选择符也可以组合使用，例如，可以为 <code>href</code>属性以 <code>http</code> 开头且任意位置包含 <code>henry</code> 的所有链接 <code>$(&#39;a[href^=&quot;http&quot;][href*=&quot;henry&quot;]&#39;)</code><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/01/jQuery入门/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/01/最高级的想象力是不自由的/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/01/最高级的想象力是不自由的/" itemprop="url">最高级的想象力是不自由的</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-01T07:44:24+08:00">
-                2016-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心智/" itemprop="url" rel="index">
-                    <span itemprop="name">心智</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/12/01/最高级的想象力是不自由的/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/12/01/最高级的想象力是不自由的/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我想很多人对于想象力都有一个这样的认识：想象力和知识是天敌，人在获得知识的过程中，想象力会消失。</p>
-<p>但是一个没有知识的人能够想象的出什么东西呢？看似自由的想象，背后都有其借鉴的根源，而这个“根源”其实就是那些深深地扎在你的大脑中的知识。</p>
-<p>玩过lol的人都知道，在这个游戏中你所赚到的钱的速度正好足够你购买相应等级的物品，否则就会出现“通货膨胀”或者“通货紧缩”。《英雄联盟》为此专门聘请了经济学家来进行设计，甚至必须实时的监视系统。</p>
-<p>所以，最高级的想象力是不自由的！正是因为其不自由，它的难度才大！</p>
 
           
         
@@ -1594,7 +1485,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">211</span>
+                <span class="site-state-item-count">215</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1760,14 +1651,6 @@
 
   
 
-    
-      <script id="dsq-count-scr" src="https://jiangnanbei.disqus.com/count.js" async></script>
-    
-
-    
-
-  
-
 
 
 
@@ -1786,6 +1669,10 @@
   
 
 
+
+
+
+  
 
 
 

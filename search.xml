@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[编程艺术：平稳退化]]></title>
+    <url>%2F2017%2F06%2F26%2F%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%EF%BC%9A%E5%B9%B3%E7%A8%B3%E9%80%80%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[质疑一切不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。 如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？ 平稳退化记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持 JS，但用户已经禁用它了。如果没有考虑到这种情况，人们在访问你的网站的时候就会遇到各种各样的麻烦。 如果正确的使用了 JS 脚本，就可以让访问者在他们的浏览器不支持 JS 的情况下仍能顺利的浏览你的网站。这就是所谓的平稳退化，就是说，虽然某些功能无法使用，但最基本的操作仍然能顺利完成。 弹出窗口的使用应该只在绝对必要的情况下才使用弹出窗口，因为这将牵涉到网页的可访问性问题，例如，用户使用的屏幕读取软件无法向用户说明弹出了窗口。因此，如果网页上的某个链接将弹出窗口，最好在这个链接本身的文字中予以说明。 实例：在新窗口打开链接123function popUp(winURL)&#123; window.open(winURL,"popUp","width=320,height=480");&#125; open() 方法是使用 BOM 的一个好案例，它的功能对文档的内容也无任何影响，这个方法只与浏览器环境有关。 这个函数将打开一个 320 像素宽、480像素高的新窗口“popUp”。因为我在这个函数里已经为新的窗口命名，所以当把新的 URL 地址传递给此函数时，这个函数将把心窗口里的现有文档替换为新 URL 地址处的文档，而不是再去创建一个新窗口。 “javascript:”伪协议调用 popUp() 函数的一个方法是使用伪协议。伪协议是一种非标准化的协议。“javascript:”伪协议让我们通过一个连接来调用 JS 函数。 下面是“javascript:”伪协议调用 popUp() 的具体做法：1&lt;a href="javascript:popUp('http://www.example.com/'):"&gt;example&lt;/a&gt; 这条语句在支持 “javascript:”伪协议的浏览器中正常运行，较老的浏览器会去尝试打开那个连接，但是会失败，支持这种协议但是禁用了 JS 功能的浏览器会什么也不做。 总之，在 HTML 文档里通过 “javascript:” 伪协议调用 JS 代码的做法非常不好。 内嵌的事件处理函数1&lt;a href="#" onclick="popUp('http://www.example.com/'); return false;"&gt;example&lt;/a&gt; 因为上面这条语句使用了 return false 语句，所以这个链接并不会被真正的打开，“#”符号是一个仅供内部文档使用的链接记号。在某些浏览器里，“#”链接指向当前文档的开头。把 href 的属性设置为 “#” 只是为了创建一个空链接。实际工作全部由 onclick 属性负责完成。 很遗憾，这个技巧与使用“javascript:” 伪协议调用 JS 代码的做法同样糟糕，因为他们都不能平稳退化。如果用户已经禁用了浏览器的 JS 功能，这样的链接将毫无用处。 谁关心这个？]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[《DOM 编程艺术 Demos》]]></title>
+    <url>%2F2017%2F06%2F26%2F%E3%80%8ADOM-%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF-Demos%E3%80%8B%2F</url>
+    <content type="text"><![CDATA[案例研究：JS图片库]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[阻止默认行为及其实现原理]]></title>
+    <url>%2F2017%2F06%2F26%2F%E9%98%BB%E6%AD%A2%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA%E5%8F%8A%E5%85%B6%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%2F</url>
+    <content type="text"><![CDATA[阻止默认行为1&lt;a href="images/fireworks.gif" target="_self" onclick="showPic(this) ; return false;" title="A fireworks display"; &gt;Fireworks&lt;/a&gt; 此时这个链接有两个行为，一个是执行函数 showPic() 另一个是链接的默认行为，由于我们要执行的是 showPic()， 所以我们使用 return false 阻止连接的默认行为。 实现原理在给某个元素添加了事件处理函数之后，一旦事件发生，相应的 js 代码就会得到执行。被调用的 js 代码可以返回一个值，这个值将传递给那个事件处理函数。 例如，我们可以给某个链接添加一个 onclick 事件处理函数，并让这个处理函数所触发的 js 代码返回布尔值 true 或 false，如果那段 js 代码返回的是 true，onclick 事件处理函数就认为“这个链接被点击了”；反之，如果返回的是 false ，onclick 事件处理函数就会认为这个链接没有被点击。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS 基础知识点总结]]></title>
+    <url>%2F2017%2F06%2F26%2FJS-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[宿主对象可以在脚本里使用一些已经预先定义好的其他对象。这些对象不是由 js 语言本身而是由它的运行环境提供的。具体到 web 应用，这个环境就是浏览器。有浏览器提供的预定义对象被称为宿主对象。 宿主对象包括 From、Image、Element 等，我们可以通过这些对象获得关于网页上的表单、图像和各种表单元素信息。其中 document 宿主对象可以用来获取网页上任何一个元素的信息。 两种方法设置元素的属性12345//第一种方法element.value = 'content';//第二种方法element.setAttribute('value','content'); 第二种方法比较好，起码你不用去记忆哪些元素的哪些属性可以用 DOM 之前的哪些方法去设置。虽然哪些老办法可以毫无问题的对文档里的图片、表单和其他的一些元素的属性进行设置，但第二种方法的优势在于他可以修改文档中任何一个元素的任何一个属性。 第二种方法法的另一个优势是可移植性更好。那些老方法只适用于 web 文档，DOM 则适用于任何一种标记语言。 第二种方法即 DOM 方法，是一种适用于多种环境和多种程序设计语言的通用 API。如果你想把你学到的 DOM 技巧运用在 web 浏览器以外的应用环境里，严格遵守“第一级 DOM ”能够让你避免与兼容性有关的任何问题。 chileNodes 属性chileNodes 返回的数组包含所有类型的节点，而不仅仅是元素节点。事实上，文档里几乎每一样东西都是一个节点，甚至连空格和换行符都会被解释为节点，而且它们也全都包含在 chileNodes 属性所返回的数组当中。 nodeType 属性nodeType 总共有 12 中可取的值，但其中仅有三种具有实用价值。 1.元素节点的 nodeType 属性值是12.属性节点的 nodeType 属性值是23.文本节点的 nodeType 属性值是3 这意味着，可以让函数值对特定类型的节点进行处理。 获取 p 标签内部的值123456&lt;p id="description"&gt; message &lt;/p&gt;var desc = document.getElementById("description");alert(desc.nodeValue);//nullalert(desc.childNodes[0].nodeValue);//message 注意，包含在 p 元素里面的文本是另一个节点，它是 p 元素的第一个子节点。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ie 兼容性问题]]></title>
     <url>%2F2017%2F06%2F26%2Fie-%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[1.IE6 / IE7 不支持块属性标签的 inline-block]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端开发</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[CSS 清浮动详解]]></title>
@@ -119,7 +169,7 @@
   <entry>
     <title><![CDATA[git 常用操作]]></title>
     <url>%2F2017%2F06%2F16%2Fgit-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%2F</url>
-    <content type="text"><![CDATA[1.克隆仓库到本地：git clone [url]2.查看工作区和暂存区的状态：git status3.提交文件从工作区到暂存区：git add .4.提交文件从暂存区到版本库：git commit -m &quot;注释&quot;5.提交文件直接从工作区到版本库：git commit -a -m &quot;注释&quot;6.提交：git push7.查看提交历史：git log]]></content>
+    <content type="text"><![CDATA[1.克隆仓库到本地：git clone [url]2.查看工作区和暂存区的状态：git status3.提交文件从工作区到暂存区：git add .4.提交文件从暂存区到版本库：git commit -m &quot;注释&quot;5.提交文件直接从工作区到版本库：git commit -a -m &quot;注释&quot;6.提交：git push7.查看提交历史：git log8.更新本地仓库 git pull origin master]]></content>
       <categories>
         <category>编程</category>
       </categories>
@@ -331,8 +381,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>随笔</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
@@ -343,8 +393,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>随笔</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
@@ -465,8 +515,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>随笔</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
@@ -1481,8 +1531,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -1493,8 +1543,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -1800,8 +1850,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>商业技巧</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
