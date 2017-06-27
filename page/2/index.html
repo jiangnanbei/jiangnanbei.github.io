@@ -317,6 +317,449 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/DOM编程艺术：向后兼容/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/27/DOM编程艺术：向后兼容/" itemprop="url">DOM编程艺术：向后兼容</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-27T07:39:01+08:00">
+                2017-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>即使是某位用户在访问你的网站的时候使用的是支持 JS 的浏览器，某些脚本也不一定能正常工作。</p>
+<h3 id="对象检测"><a href="#对象检测" class="headerlink" title="对象检测"></a>对象检测</h3><p>针对这一问题最简单的解决方案是：检测浏览器对 JS 的支持程度。也就是说只有浏览器理解这么多的 JS 语言才能执行这些语句。</p>
+<p>这个方案很容易实现：只要把某个方法打包在一个 <code>if</code> 语句里，就可以根据这条 <code>if</code> 条件语句表达式的求值结果是 <code>true</code> 还是 <code>false</code>，来决定应该采取怎样的行动。<strong>这种检测称为对象检测。</strong>几乎所有的东西，包括各种方法在内，都可以被当做对象来对待，而这意味着我们可以容易的把不支持某个特定 DOM 方法的浏览器检测出来。</p>
+<p>例如，如果有一个使用了 <code>getElementById()</code> 方法的函数，就可以在调用 <code>getElementById()</code> 方法之前检查用户所使用的浏览器是否支持这个方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!getElementById) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line"></div><div class="line"><span class="comment">//如果需要测试多个属性或方法是否存在，可以使用逻辑或</span></div><div class="line"><span class="keyword">if</span>(!getElementById || !getElementsByTagName) <span class="keyword">return</span> <span class="literal">false</span>;</div></pre></td></tr></table></figure>
+<p><strong>注意：在使用对象检测时，一定要删掉方法名后面的圆括号，如果不删掉，测试的将是方法的结果，无论方法是否存在。</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> links = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'a'</span>);</div><div class="line"><span class="keyword">if</span>(!getElementsByTagName) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;links.length; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (links[i].getAttribute(<span class="string">'class'</span>) == <span class="string">'popup'</span>)&#123;</div><div class="line">        links[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            popUp(<span class="keyword">this</span>.getAttribute(<span class="string">'href'</span>));</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>虽然只是一条简单的 if 语句，但它可以确保那些古老的浏览器不会因为我的脚本代码而出问题。这么做是为了让脚本有良好的向后兼容性。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/DOM编程艺术：渐进增强/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/27/DOM编程艺术：渐进增强/" itemprop="url">DOM编程艺术：渐进增强</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-27T06:52:17+08:00">
+                2017-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="结构与样式的分离"><a href="#结构与样式的分离" class="headerlink" title="结构与样式的分离"></a>结构与样式的分离</h3><p> CSS 技术突出的优点，文档结构与文档样式的分离可以确保网页都能平稳退化。具备 CSS 支持的浏览器固然可以把网页呈现的美轮美奂，不支持或者是禁用了 CSS 的浏览器同样可以把网页的内容按照正确的结构显示出来。</p>
+<h3 id="渐进增强"><a href="#渐进增强" class="headerlink" title="渐进增强"></a>渐进增强</h3><p>在创建网站的时候，给内容加上正确的 HTML 标记是第一个步骤，或许也是最重要的步骤，“标记良好的内容就是一切”。</p>
+<p>再给内容加上各种标记之后，就可以使用各种 CSS 指令控制内容的显示效果。CSS 指令构成了一个表示层。这个表示层就像是一张透明的彩色薄膜，可以包裹到文档的结构上，使文档的内容呈现出各种色彩。<strong>但即使去掉这个表示层，文档的内容也依然可以访问。</strong></p>
+<p><strong>所谓“渐进增强”就是用一些额外的信息去包裹原始数据。按照“渐进增强”创建出来的网页几乎都符合“平稳退化”原则。</strong></p>
+<p>类似于 CSS、JS 和 DOM 提供的所有功能也应该构成一个额外的指令层。显然，把 CSS 代码从 HTML 文档里分离出来可以让 CSS 更好的工作。这个适用于 CSS 表示层的结论同样适用于 JS 行为层。</p>
+<h3 id="分离-JS"><a href="#分离-JS" class="headerlink" title="分离 JS"></a>分离 JS</h3><p>类似于使用 <code>style</code> 属性。如果我们使用一个“挂钩”，就像 CSS 机制中的 <code>class</code> 或 <code>id</code> 属性那样，把 JS 代码调用行为与 HTML 文档的结构和内容分离开，网页就会健壮的多。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> links = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'a'</span>);</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;links.length; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (links[i].getAttribute(<span class="string">'class'</span>) == <span class="string">'popup'</span>)&#123;</div><div class="line">        links[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            popUp(<span class="keyword">this</span>.getAttribute(<span class="string">'href'</span>));</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上代码将把调用 <code>popUp()</code> 函数的 <code>onclick</code> 事件添加到有关的链接上。只要把它们存入一个外部的 JS 文件，就等于是把这些操作从 HTML 文档里分离出来了。而这就是“分离 JS” 的含义。</p>
+<p>但是，含有一个问题需要解决：如果这段代码存入到外部 JS 文件，他们将无法正常运行。因为这段代码的第一行代码。</p>
+<p>这条语句将在 JS 文件被加载时立刻执行。如果 JS 文件位于文档底部，就不能保证哪个文件最先加载结束，因为脚本加载时文档不完整，所以模型也不完整。没有完整的 DOM ，<code>getElementsByTagName</code> 就不能正常工作。</p>
+<p>必须让这些代码在 HTML 文档全部加在到浏览器之后立马开始执行。文档将被加载到一个浏览器窗口里， <code>documen</code> 对象又是 <code>window</code> 对象的一个属性。当 <code>window</code> 对象触发 <code>onload</code><br>事件时，<code>document</code> 对象已经存在。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = prepareLinks;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">prepareLinks</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> links = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'a'</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;links.length; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (links[i].getAttribute(<span class="string">'class'</span>) == <span class="string">'popup'</span>)&#123;</div><div class="line">            links[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                popUp(<span class="keyword">this</span>.getAttribute(<span class="string">'href'</span>));</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">popUp</span>(<span class="params">winURL</span>)</span>&#123;</div><div class="line">    <span class="built_in">window</span>.opwn(winURL,<span class="string">"popUp"</span>,<span class="string">"width=320,heigth=480"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/编程艺术：平稳退化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/编程艺术：平稳退化/" itemprop="url">DOM编程艺术：平稳退化</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T20:14:57+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="质疑一切"><a href="#质疑一切" class="headerlink" title="质疑一切"></a>质疑一切</h3><p>不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。</p>
+<p>如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？</p>
+<h3 id="平稳退化"><a href="#平稳退化" class="headerlink" title="平稳退化"></a>平稳退化</h3><p>记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持 JS，但用户已经禁用它了。如果没有考虑到这种情况，人们在访问你的网站的时候就会遇到各种各样的麻烦。</p>
+<p>如果正确的使用了 JS 脚本，就可以让访问者在他们的浏览器不支持 JS 的情况下仍能顺利的浏览你的网站。<strong>这就是所谓的平稳退化，就是说，虽然某些功能无法使用，但最基本的操作仍然能顺利完成。</strong></p>
+<h3 id="弹出窗口的使用"><a href="#弹出窗口的使用" class="headerlink" title="弹出窗口的使用"></a>弹出窗口的使用</h3><p>应该只在绝对必要的情况下才使用弹出窗口，因为这将牵涉到网页的可访问性问题，例如，用户使用的屏幕读取软件无法向用户说明弹出了窗口。因此，如果网页上的某个链接将弹出窗口，最好在这个链接本身的文字中予以说明。</p>
+<h3 id="实例：在新窗口打开链接"><a href="#实例：在新窗口打开链接" class="headerlink" title="实例：在新窗口打开链接"></a>实例：在新窗口打开链接</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function popUp(winURL)&#123;</div><div class="line">    window.open(winURL,"popUp","width=320,height=480");</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>open()</code> 方法是使用 BOM 的一个好案例，它的功能对文档的内容也无任何影响，这个方法只与浏览器环境有关。</p>
+<p>这个函数将打开一个 <code>320</code> 像素宽、<code>480</code>像素高的新窗口“popUp”。因为我在这个函数里已经为新的窗口命名，所以当把新的 URL 地址传递给此函数时，这个函数将把心窗口里的现有文档替换为新 URL 地址处的文档，而不是再去创建一个新窗口。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/26/编程艺术：平稳退化/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/《DOM-编程艺术-Demos》/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1018,445 +1461,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/o-1-时间内删除链表节点/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/26/o-1-时间内删除链表节点/" itemprop="url">o(1) 时间内删除链表节点</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T08:00:11+08:00">
-                2017-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>打破常规思维，当我们想删除一个节点时，并不一定要删除这个节点本身。可以先把下一个节点的内容复制出来覆盖被删除节点的内容，然后把下一个节点删除。</p>
-<p>比如说，我们要删除节点 i，先把 i 的下一个节点 j 的内容复制到 i，然后把 i 的指针指向节点 j 的下一个节点，此时再删除节点 j，其效果刚好是把节点 i 删除了。</p>
-<p>上述思路还有一个问题，如果要删除的节点位于链表的尾部，那么他就没有下一个节点，怎么办？</p>
-<p>我们仍然从链表的头结点开始，顺序遍历得到该节点的前序节点，并完成删除操作。最后需要注意的是，如果链表中只有一个节点，而我们有需要删除链表的头结点，也就是尾节点，此时在我们删除节点之后，还需要把链表的头结点设置为 null。</p>
-<p>同时，你也要注意思维的全面性，即使你想到删除下一个节点这个办法，也未必能通过这轮面试，你应该要全面的考虑到删除的节点位于链表的尾部及输入得来链表只有一个节点这些特殊情况。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/26/o-1-时间内删除链表节点/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/25/CSS-控制图片和文字在同一行显示且对齐/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/25/CSS-控制图片和文字在同一行显示且对齐/" itemprop="url">CSS 控制图片和文字在同一行显示且对齐</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-25T23:11:50+08:00">
-                2017-06-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="在css中给div添加上“vertical-align-middle”属性"><a href="#在css中给div添加上“vertical-align-middle”属性" class="headerlink" title="在css中给div添加上“vertical-align:middle”属性"></a>在css中给div添加上“vertical-align:middle”属性</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#box *&#123; </div><div class="line">	vertical-align:middle; /* 居中对齐， */ </div><div class="line">	font-size:14px; </div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xxx.jpg"</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xxx.jpg"</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>使用 vertical-align<span class="tag">&lt;/<span class="name">a</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="把图片设置为背景图片"><a href="#把图片设置为背景图片" class="headerlink" title="把图片设置为背景图片"></a>把图片设置为背景图片</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#box &#123; </div><div class="line">	background:url(1.jpg) no-repeat left center; </div><div class="line">&#125; </div><div class="line">#bg&#123; </div><div class="line">	font-size:14px; </div><div class="line">	padding-left:50px;</div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bg"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>把图片设置为背景图<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/22/如何找到你的人生目标？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/22/如何找到你的人生目标？/" itemprop="url">如何找到你的人生目标？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T00:00:05+08:00">
-                2017-06-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心智/" itemprop="url" rel="index">
-                    <span itemprop="name">心智</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>TED Adam Leipzing ： 如何找到人生的目标？</p>
-<p>那些知道自己人生目标的人，知道这五件事：</p>
-<p>他们是谁？<br>他们做了什么？<br>他们为谁而坐？<br>那些人想要什么？需要什么？<br>他们可以从中得到什么？结果会怎样改变？</p>
-<p>这听起来很难吗？事实上，你很容易就能知道自己生活的目标。很多人用尽一生的时间，寻找他们人生的目标，但是如果你只是照着计划表在考核你的人生，那不算是真正的活着。</p>
-<p>你是谁？恩，我是王震。</p>
-<p>你在做什么，如果你想到了很多自己喜欢的事情，那就问自己一个问题，现在哪一件事情，你自己感觉最有能力可以传授给别人的？我在做技术的同时也时刻提升自己对产品和商业的感知。</p>
-<p>你为谁而做，想想你是为谁而做，在你脑子里想想他们的样子。我为了我的目标顾客而做，在获得商业上的成功之后，我会为了我想要去改变那一部分人而做。</p>
-<p>他们想要什么需要什么，他们想要从你身上得到什么？他们来找你是因为你可以给他们东西。我想让他们得到更好的服务，当然我最终的目的是改变他们的思想，提升他们的认知。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/22/如何找到你的人生目标？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1501,7 +1510,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">222</span>
+                <span class="site-state-item-count">230</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

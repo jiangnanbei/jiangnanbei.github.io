@@ -317,7 +317,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/30/结构体使用概述/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/09/05/那些屡试不爽的谈判技巧/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -336,7 +336,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/30/结构体使用概述/" itemprop="url">结构体使用概述</a></h2>
+                <a class="post-title-link" href="/2016/09/05/那些屡试不爽的谈判技巧/" itemprop="url">那些屡试不爽的谈判技巧</a></h2>
         
 
         <div class="post-meta">
@@ -348,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-30T19:27:16+08:00">
-                2016-08-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-05T23:10:57+08:00">
+                2016-09-05
               </time>
             
 
@@ -371,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
+                  <a href="/categories/商业/" itemprop="url" rel="index">
+                    <span itemprop="name">商业</span>
                   </a>
                 </span>
 
@@ -406,291 +406,13 @@
 
       
         
-          
-            <p><strong>结构体与我们面向对象里面的‘类’是类似的，只不过结构体里面没有‘方法’,只有成员，结构体是类的一个过渡。</strong></p>
-<p>结构体是用户根据自己的需求自己定义的复合数据类型，java 里面类也是一个数据类型。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">struct Student</div><div class="line">&#123;</div><div class="line">    int sid;</div><div class="line">    char name[200];</div><div class="line">    int age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main(void)</div><div class="line">&#123;</div><div class="line">    struct Student st = &#123;1000,'jiang',20&#125;;</div><div class="line">    </div><div class="line">    //st.sid = 99;这是第一种方式，不过我们常用第二种方式</div><div class="line">    struct Student * pst;</div><div class="line">    pst = &amp;st;</div><div class="line">    //pst-&gt;sid 等价于 (*pst).sid 等价于 st.sid</div><div class="line">    pst-&gt;sid = 99;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/29/如何通过函数修改实参的值？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/29/如何通过函数修改实参的值？/" itemprop="url">如何通过函数修改实参的值？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T19:27:16+08:00">
-                2016-08-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>要修改一个变量的值同时被调函数没有返回值，那你只能通过传递地址的方式来进行修改。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> *q)</span></span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">9</span>;</div><div class="line">    <span class="keyword">int</span> *p = &amp;i;</div><div class="line">    <span class="comment">//%p 表示以16进制的方式输出</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,p);</div><div class="line">    f(p);<span class="comment">//虽然 p==&amp;i,但这里传入p是错的</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,p);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> *q)</span></div><div class="line"></span>&#123;</div><div class="line">    q = (<span class="keyword">int</span> *)<span class="number">0xFFFFFF</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//输出结果：0060FF08 0060FF08</span></div><div class="line"><span class="comment">//两次输出的结果相同，可见把p当做参数传入时没有效果</span></div></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> **q)</span></span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">9</span>;</div><div class="line">    <span class="keyword">int</span> *p = &amp;i;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,p);</div><div class="line">    <span class="comment">//p是（int*）类型，那么&amp;p就是（int**）类型，这个叫做指针的指针</span></div><div class="line">    <span class="comment">//我们这么做的目的只有一个，无论这个十个什么类型的变量，想要改写</span></div><div class="line">    <span class="comment">//它的值，你只需要发送它的地址就可以了</span></div><div class="line">    f(&amp;p);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,p);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> **q)</span></div><div class="line"></span>&#123;</div><div class="line">    *q = (<span class="keyword">int</span> *)<span class="number">0xFFFFFF</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//两次输出的结果相同，可见把&amp;p当做参数传入时有效果</span></div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/29/学习编程的秘诀/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/29/学习编程的秘诀/" itemprop="url">学习编程的秘诀</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T17:13:33+08:00">
-                2016-08-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>学习编程的秘诀自然是学习解决问题的秘诀,那就拿编程中比较让人蛋疼的数据结构开始吧.</p>
-<p>1.判断一个数字是否为素数?<br>2.判断一个数字是否是回文数?<br>3.编程实现求一个十进制数字的二进制形式….<br>4…….</p>
-<p>买到任何一本与数据结构有关的书籍,你总会看到无数的这种题,然后你就想啊想啊,想啊想啊,到最后你就是想不出来,然后你就痛苦,然后看下一道题你还是搞不定…到最后你竟然发现没有一道题你可以搞定的,然后你就开始怀疑你的智商,最后你就开始怀疑自己适不适合搞计算机,最终你竟然愚蠢的相信了自己不适合搞计算机…%&gt;_&lt;%<br>
+          <h3 id="1-第一招"><a href="#1-第一招" class="headerlink" title="1.第一招"></a>1.第一招</h3><p>要藏锋芒，针针不见血，做好防守姿势，引诱对方步步紧逼，捕捉两种错误——事实错误（所谓硬伤）、逻辑错误。</p>
+<p>在对方攻势渐缓时，以对方之前表述中的两种错误为「武器」，优雅地扔回去。只需几针，见血就收。</p>
+<p>人和人打交道，尤其部分中国人，「面子」和「规矩」是个有趣的东西，当你挑出他的两种错误，摆出来晾晒，他会让步的，一定会！而随后的形势，会向你的方向逆转。</p>
+<h3 id="2-第二招"><a href="#2-第二招" class="headerlink" title="2.第二招"></a>2.第二招</h3><p>纠结于细节，不如营造气势。对方的所有表述，可以不做任何表态，听着……只要能找到一、两个突破点，质疑、质问，然后全盘否定。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/08/29/学习编程的秘诀/#more" rel="contents">
+            <a class="btn" href="/2016/09/05/那些屡试不爽的谈判技巧/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -740,7 +462,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/29/心智随笔（一）/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/09/03/不信-如果/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -759,7 +481,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/29/心智随笔（一）/" itemprop="url">心智随笔</a></h2>
+                <a class="post-title-link" href="/2016/09/03/不信-如果/" itemprop="url">不信...如果...</a></h2>
         
 
         <div class="post-meta">
@@ -771,438 +493,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T12:27:43+08:00">
-                2016-08-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心智/" itemprop="url" rel="index">
-                    <span itemprop="name">心智</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我学会了查理. 芒格所说的用不同的专业的思维去思考一个问题。我现在能用的就是不同的思维：经济学，数学（概率论，从《万万没想到》里面学到的），心理学，工程学（我的专业），程序，设计。 </p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/28/如何编写出更有价值的程序？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/28/如何编写出更有价值的程序？/" itemprop="url">如何编写出更有价值的程序？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-28T23:19:19+08:00">
-                2016-08-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>如何写出更有保存价值和使用价值的程序呢？其实很简单，你只需要在你的程序中写上这五点即可：</p>
-<p>1.写上编写此程序的时间。</p>
-<p>2.写上编写此程序的功能。</p>
-<p>3.写上此程序输出的结果。</p>
-<p>4.写上编写此程序的目的。</p>
-<p>5.写上自己的总结，写上你从中学到的东西。</p>
-<p><strong>如果你通过一个程序明白了很多道理，那你就应该这样去写程序，如果你这样做了，那么在任何时候你打开任何一个程序，一看就知道你为什么编写这个程序，当时的你是怎么想的，你从这个程序中学到了什么。</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/28/数组和指针/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/28/数组和指针/" itemprop="url">数组和指针</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-28T19:27:16+08:00">
-                2016-08-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a[<span class="number">3</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</div><div class="line">    </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,a);   <span class="comment">//0060FEF4</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,a+<span class="number">1</span>); <span class="comment">//0060FEF8  </span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,a+<span class="number">2</span>); <span class="comment">//0060FEFC</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>由以上程序我们知道，数组的地址是连续的，而且数组名是数组的首地址。</p>
-<hr>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">include &lt;stdio.h&gt;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a[<span class="number">3</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</div><div class="line">    </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,*a+<span class="number">2</span>);<span class="comment">//*a+2 等价于 a[0]+2</span></div><div class="line">    </div><div class="line">    <span class="comment">//结果：3</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> *p,<span class="keyword">int</span> len)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="comment">//这样是可以修改 a[0] 的，此时p[0]==*(p+0)==*(a+0)</span></div><div class="line">    p[<span class="number">0</span>] = <span class="number">100</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a[<span class="number">3</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</div><div class="line">    show(a,<span class="number">3</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a[<span class="number">0</span>]);<span class="comment">//100</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/08/28/数组和指针/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/27/创业从做产品开始/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/27/创业从做产品开始/" itemprop="url">创业从做产品开始</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-27T23:52:55+08:00">
-                2016-08-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-03T20:40:31+08:00">
+                2016-09-03
               </time>
             
 
@@ -1260,11 +552,8 @@
       
         
           
-            <p>我一直认为，如果你要去创业，那么首先也是最重要的就是你得有自己的产品。就像你在经营自己的人生一样，其实你自己就是一个产品，你需要对她进行“包装”、“宣传”、“营销”、“上市”……这个产品可以不完美，但是你一定要有。</p>
-<p>今天我想从产品的角度来谈一下创业，在我看来，现在的创业产品可以分为两大类，第一类：互联网产品，第二类；传统行业产品。</p>
-<p>你可以用做互联网产品的思维来做传统产品，你也可以用借鉴传统行业产品的经验来做你的互联网产品，今天我们不谈做产品的思维，我们就谈一下做这两种不同的产品，我们需要抓住的那个最基本的点是什么。</p>
-<p>做互联网产品一定是“速度为王”，所以你要想尽一切办法让你的产品快速上市，极速迭代。在这个过程中不断地去有选择的接受用户的反馈，不断地去试错，一点一点地去完善你的产品。在这个过程中，你所服务的用户中一定会有那么一小撮人一直追随着你，如果你在用心的做着这个为他们服务的产品，他们一定会陪伴着你把它做到极致，做到完美。在这个过程中，你一要稳重求快，稳中求胜，抓住这一个点把它做到极致，万万不可自我膨胀，这个产品还没有做好就想去做更多的产品，很多的创业者死就死在这里，死就死在自我膨胀。</p>
-<p>做传统行业产品，你所要抓住的基本点是：产品不做到完美绝不上市。一个不完美的产品虽然决定不了你现在的生死，但是它注定了你以后的生死。你需要对产品进行长期的内测，包括消费者的满意的、物流、供应链、营销、竞争力、能不能大规模生产、采购….最关键的是消费者接触的第一次，如果你不能快速让消费者产生共鸣，这款产品很难再有第二次了。所以你一定要把最好的一个产品拿出来，记住是最好的一个产品，一招制敌，第一次就要将其提升到一个高度，否则你就没有第二次机会了。</p>
+            <p>我一直认为从古至今很多人的一生都被两个词所左右，一个词是“不信”，一个词是“如果”，有的人的一生平平庸庸无所作为因为他相信了前者忽视了后者，有的人的一生注定改变世界因为他坚信后者，坚信。</p>
+<p>乔布斯想“如果”手机能做的再简单一点该有多好，于是有了 iphone 美得令人窒息的设计，莱特兄弟像“如果”人能够在天上飞该有多好，于是有了飞机。</p>
 
           
         
@@ -1312,7 +601,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/27/预备知识：指针/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/09/03/操作单链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1331,7 +620,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/27/预备知识：指针/" itemprop="url">预备知识：指针</a></h2>
+                <a class="post-title-link" href="/2016/09/03/操作单链表/" itemprop="url">操作单链表</a></h2>
         
 
         <div class="post-meta">
@@ -1343,8 +632,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-27T19:27:16+08:00">
-                2016-08-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-03T19:52:19+08:00">
+                2016-09-03
               </time>
             
 
@@ -1401,20 +690,725 @@
 
       
         
-          <h3 id="指针的重要性"><a href="#指针的重要性" class="headerlink" title="指针的重要性"></a>指针的重要性</h3><pre><code>学好了指针你才能在程序越写越大的时候明白程序之间的来回调用
+          
+            <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> Node</div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> data;</div><div class="line">	<span class="keyword">struct</span> Node * pNext;</div><div class="line">&#125;NODE, * PNODE;</div><div class="line"></div><div class="line"><span class="function">PNODE <span class="title">create_list</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse_list</span><span class="params">(PNODE pHead)</span></span>;</div><div class="line"><span class="comment">//可以把删除的节点放到第三个参数里面</span></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">delete_list</span><span class="params">(PNODE pHead, <span class="keyword">int</span> pos, <span class="keyword">int</span> * pVal)</span></span>;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_empty</span><span class="params">(PNODE pHead)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">length_list</span><span class="params">(PNODE pHead)</span></span>;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insert_list</span><span class="params">(PNODE pHead, <span class="keyword">int</span> pos, <span class="keyword">int</span> val)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort_list</span><span class="params">(PNODE pHead)</span></span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> val,pos;</div><div class="line">	PNODE pHead = <span class="literal">NULL</span>;</div><div class="line">	<span class="comment">//在一个函数里面分配很多的内存,并把第一个内存复制给PHead</span></div><div class="line">	pHead = create_list();<span class="comment">//创建一个单链表并把该链表的头结点的地址赋值给pHead</span></div><div class="line">	<span class="comment">// printf("please input the position of the number you want to delete:");</span></div><div class="line">	<span class="comment">// scanf("%d",&amp;pos);</span></div><div class="line">	<span class="comment">// delete_list(pHead,3,&amp;val);</span></div><div class="line">	<span class="comment">// traverse_list(pHead);</span></div><div class="line">	<span class="comment">// int len = length_list(pHead);</span></div><div class="line">	<span class="comment">// printf("the length of list is:",len);</span></div><div class="line">	<span class="comment">// sort_list(pHead);</span></div><div class="line">	<span class="comment">// if(insert_list(pHead,1,123))</span></div><div class="line">	<span class="comment">// &#123;</span></div><div class="line">	<span class="comment">// 	traverse_list(pHead);</span></div><div class="line">	<span class="comment">// &#125;</span></div><div class="line">	<span class="keyword">if</span>(delete_list(pHead,<span class="number">4</span>,&amp;val))</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"delete successful!\n"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"delete failed\n"</span>);</div><div class="line">	&#125;</div><div class="line">	traverse_list(pHead);</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function">PNODE <span class="title">create_list</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> len;<span class="comment">//用来存放有效节点的个数</span></div><div class="line">	<span class="keyword">int</span> i;</div><div class="line">	<span class="keyword">int</span> val;<span class="comment">//用来存放用户输入节点的值</span></div><div class="line"></div><div class="line">	<span class="comment">//注意这个头结点只是一个局部变量,和main里面的头结点不是同一个东西</span></div><div class="line">	<span class="comment">//只不过最后你会把这个结点赋值给main函数里面的pHead</span></div><div class="line">	PNODE pHead = (PNODE)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(NODE));<span class="comment">//生成头节点</span></div><div class="line">	<span class="comment">//定义尾节点,在此时只有一个节点的情况下,让pTail指向pHead</span></div><div class="line">	PNODE pTail = pHead;</div><div class="line">	<span class="comment">//如果一个节点都没有,则此时尾节点的指针域为空</span></div><div class="line">	pTail-&gt;pNext = <span class="literal">NULL</span>;</div><div class="line">	<span class="comment">//如果内存分配失败,则退出程序的执行</span></div><div class="line">	<span class="keyword">if</span>(<span class="literal">NULL</span> == pHead)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"distribution failed, program break down!\n"</span>);</div><div class="line">		<span class="built_in">exit</span>(<span class="number">-1</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"please input the length of your list, len ="</span>);</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;len);</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"please input the value of %dth:"</span>, i+<span class="number">1</span>);</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;val);</div><div class="line"></div><div class="line">		<span class="comment">//每循环一次就生成一个新的结点</span></div><div class="line">		PNODE pNew = (PNODE)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(NODE));</div><div class="line">		<span class="keyword">if</span>(<span class="literal">NULL</span> == pNew)</div><div class="line">		&#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"distribution failed, program break down!\n"</span>);</div><div class="line">			<span class="built_in">exit</span>(<span class="number">-1</span>);</div><div class="line">		&#125;</div><div class="line">		pNew-&gt;data = val;</div><div class="line">		<span class="comment">//把新生成的结点挂载到尾节点的后面</span></div><div class="line">		pTail-&gt;pNext = pNew;</div><div class="line">		<span class="comment">//清空临时结点的指针域,因为这个时候临时结点已经变成最后一个节点了</span></div><div class="line">		pNew-&gt;pNext = <span class="literal">NULL</span>;</div><div class="line">		<span class="comment">//把尾节点指向新节点,这样pTail每次指向的都是最后一个节点.</span></div><div class="line">		pTail = pNew;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> pHead;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse_list</span><span class="params">(PNODE pHead)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> i;</div><div class="line">	PNODE p = pHead-&gt;pNext;</div><div class="line">	<span class="keyword">while</span>(p != <span class="literal">NULL</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,p-&gt;data );</div><div class="line">		p = p-&gt;pNext;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">delete_list</span><span class="params">(PNODE pHead,<span class="keyword">int</span> pos, <span class="keyword">int</span> * pVal)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="comment">// int i=1;</span></div><div class="line">	<span class="comment">// PNODE p = pHead;</span></div><div class="line">	<span class="comment">// while(p-&gt;pNext != NULL)</span></div><div class="line">	<span class="comment">// &#123;</span></div><div class="line">	<span class="comment">// 	if(i == pos)</span></div><div class="line">	<span class="comment">// 	&#123;</span></div><div class="line">	<span class="comment">// 		p-&gt;pNext = p-&gt;pNext-&gt;pNext;</span></div><div class="line">	<span class="comment">// 		break;</span></div><div class="line">	<span class="comment">// 	&#125;</span></div><div class="line"></div><div class="line">	<span class="comment">// 	i++;</span></div><div class="line">	<span class="comment">// 	p = p-&gt;pNext;</span></div><div class="line">	<span class="comment">// &#125;</span></div><div class="line">	</div><div class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> len = length_list(pHead);</div><div class="line">	PNODE p = pHead;</div><div class="line"></div><div class="line">	<span class="keyword">while</span>(<span class="literal">NULL</span> != p-&gt;pNext &amp;&amp; i&lt;pos<span class="number">-1</span>)</div><div class="line">	&#123;</div><div class="line">		</div><div class="line">		p = p-&gt;pNext;</div><div class="line">		i++;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(i&gt;pos<span class="number">-1</span> || <span class="literal">NULL</span> == p-&gt;pNext)</div><div class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line"></div><div class="line">	PNODE q = p-&gt;pNext;</div><div class="line">	*pVal = q-&gt;data;</div><div class="line">	p-&gt;pNext = p-&gt;pNext-&gt;pNext;</div><div class="line">	<span class="built_in">free</span>(q);</div><div class="line">	q = <span class="literal">NULL</span>;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_empty</span><span class="params">(PNODE pHead)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">if</span>(pHead-&gt;pNext != <span class="literal">NULL</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">length_list</span><span class="params">(PNODE pHead)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">	PNODE p = pHead-&gt;pNext;</div><div class="line">	<span class="keyword">while</span>(p != <span class="literal">NULL</span>)</div><div class="line">	&#123;</div><div class="line">		i++;</div><div class="line">		p = p-&gt;pNext;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, i);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort_list</span><span class="params">(PNODE pHead)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> len = length_list(pHead);</div><div class="line">	<span class="keyword">int</span> i,j,t;</div><div class="line">	PNODE p,q;</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>, p = pHead-&gt;pNext; i&lt;len<span class="number">-1</span>; i++, p = p-&gt;pNext)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span>(j=i+<span class="number">1</span>, q = p-&gt;pNext; j&lt;len; j++, q = q-&gt;pNext)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">if</span>(p-&gt;data &gt; q-&gt;data)</div><div class="line">			&#123;</div><div class="line">				t = p-&gt;data;</div><div class="line">				p-&gt;data = q-&gt;data;</div><div class="line">				q-&gt;data = t;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insert_list</span><span class="params">(PNODE pHead, <span class="keyword">int</span> pos, <span class="keyword">int</span> val)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="comment">// PNODE q;</span></div><div class="line">	<span class="comment">// q-&gt;data = val;</span></div><div class="line">	<span class="comment">// PNODE p = pHead;</span></div><div class="line">	<span class="comment">// int len = length_list(pHead);</span></div><div class="line">	<span class="comment">// for(int i=0; i&lt;=len; i++)</span></div><div class="line">	<span class="comment">// &#123;	</span></div><div class="line">	<span class="comment">// 	if(pos &gt; len || pos &lt;0)</span></div><div class="line">	<span class="comment">// 	&#123;</span></div><div class="line">	<span class="comment">// 		printf("wrong!\n");</span></div><div class="line">	<span class="comment">// 	&#125;</span></div><div class="line">	<span class="comment">// 	else if(i == pos)</span></div><div class="line">	<span class="comment">// 	&#123;</span></div><div class="line">	<span class="comment">// 		q-&gt;pNext = p-&gt;pNext;</span></div><div class="line">	<span class="comment">// 		p-&gt;pNext = q;</span></div><div class="line">			</div><div class="line">	<span class="comment">// 	&#125;</span></div><div class="line"></div><div class="line">	<span class="comment">// 	p = p-&gt;pNext;</span></div><div class="line">	<span class="comment">// &#125;</span></div><div class="line"></div><div class="line">	<span class="comment">// return true;</span></div><div class="line">	</div><div class="line"></div><div class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> len = length_list(pHead);</div><div class="line">	PNODE p = pHead;</div><div class="line"></div><div class="line">	<span class="keyword">while</span>(<span class="literal">NULL</span> != p &amp;&amp; i&lt;pos<span class="number">-1</span>)</div><div class="line">	&#123;</div><div class="line">		</div><div class="line">		p = p-&gt;pNext;</div><div class="line">		i++;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(i&gt;pos<span class="number">-1</span> || <span class="literal">NULL</span> == p)</div><div class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line"></div><div class="line">	PNODE pNew = (PNODE)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(NODE));</div><div class="line">	<span class="keyword">if</span>(<span class="literal">NULL</span> == pNew)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"distribution failed!\n"</span>);</div><div class="line">		<span class="built_in">exit</span>(<span class="number">-1</span>);</div><div class="line">	&#125;</div><div class="line">		</div><div class="line">	pNew-&gt;data = val;</div><div class="line">	PNODE q = p-&gt;pNext;</div><div class="line">	p-&gt;pNext = pNew;</div><div class="line">	pNew-&gt;pNext = q;</div><div class="line">	</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
 
-指针是C语言的灵魂
+    <div>
+      
+    </div>
 
-如果你不明白C语言的指针,你就不会明白面向对象语言里面的引用
-</code></pre><h3 id="指针的概念"><a href="#指针的概念" class="headerlink" title="指针的概念"></a>指针的概念</h3><pre><code>地址就是指针 指针就是地址
-指针变量是存放内存单元地址的变量
-指针的本质是一个操作受限的非负整数
-</code></pre><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">include &lt;stdio.h&gt;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line"><span class="comment">//p 是变量名，‘int *’表示p只能存放整形地址的变量</span></div><div class="line">    <span class="keyword">int</span> *p;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">10</span>;</div><div class="line">    <span class="keyword">int</span> j;</div><div class="line">    </div><div class="line">    p = &amp;i;<span class="comment">// *p = i</span></div><div class="line">    j = *p;<span class="comment">// j = i</span></div><div class="line">    </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d,j = %d,*p = %d"</span>,i,j,*p);<span class="comment">//10 10 10</span></div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="/img/2017-06-14_203443.png" alt="vivg"></p>
-<p>由上图可知变量不一定是连续分配的。<code>p</code> 保存了 <code>i</code> 的地址，所以我们说 <code>p</code> 指向了 <code>i</code>，但 <code>p</code> 不是 <code>i</code> ，<code>i</code> 不是 <code>p</code>，修改这两个值中的任何一个不会影响另一个。如果 <code>p</code> 指向 <code>i</code> ，<code>*p</code> 就代表了 <code>i</code>，不能说它是 <code>i</code> 的值，它就是 <code>i</code> 本身， <code>*p</code> 和 <code>i</code> 就是同一个东西。<br>
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/09/02/链表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/02/链表/" itemprop="url">链表</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-02T19:45:13+08:00">
+                2016-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="链表的定义"><a href="#链表的定义" class="headerlink" title="链表的定义"></a>链表的定义</h3><p>n 个结点离散分配，彼此通过指针相连，每个节点只有一个前驱和一个后继。</p>
+<h3 id="关于链表你需要明白的几个概念"><a href="#关于链表你需要明白的几个概念" class="headerlink" title="关于链表你需要明白的几个概念"></a>关于链表你需要明白的几个概念</h3><p>1.首节点</p>
+<p>2.尾节点</p>
+<p>3.头结点：我们会在首节点前面加一个叫头结点的东西，头结点里面没有数据，头结点里面也没有存放整个节点的个数，之所以要加一个头结点是为了方便我们对链表的操作，就是我们在进行增删改查的时候，可以简便我们对链表算法的操作。</p>
+<p>4.头指针：指向头节点的指正变量。</p>
+<p>5.尾指正：指向尾节点的指针变量</p>
+<h3 id="确定一个数组需要几个参数？"><a href="#确定一个数组需要几个参数？" class="headerlink" title="确定一个数组需要几个参数？"></a>确定一个数组需要几个参数？</h3><p>确定一个数组我们只需要知道：首地址；数组长度；有效元素的个数。</p>
+<h3 id="确定一个链表需要几个参数？"><a href="#确定一个链表需要几个参数？" class="headerlink" title="确定一个链表需要几个参数？"></a>确定一个链表需要几个参数？</h3><p>首先我们要知道头结点与后面的每一个节点的数据类型是一样的，如果后面的每一个数据都占据了 1000 个字节，那么头结点也同样占据了 1000 个字节。</p>
+<p>确定一个链表我们只需要知道一个参数： 头指针。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/08/27/预备知识：指针/#more" rel="contents">
+            <a class="btn" href="/2016/09/02/链表/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/09/01/把批评当做一种信息对待/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/01/把批评当做一种信息对待/" itemprop="url">把批评当做一种信息对待</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-01T20:21:21+08:00">
+                2016-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心智/" itemprop="url" rel="index">
+                    <span itemprop="name">心智</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在精益创业中，拿出最小可行化产品还远远不够，这只是开始，之后的进程就是不断地获取反馈并在反馈中获得优化。如何处理外界的反馈也是一门艺术。</p>
+<p>不喜欢听批评恐怕是人的一种天性。批评本身（很有可能）包含了有价值的信息，所以批评也可以理解为一种帮助。所以对待批评的合理态度是，把批评作为一种“信息”而不是一种“评价”来看待。当然“接收”并不等于“接受”，因为所有输入的信息都需要慎重的审视，只不过不要一开始就情绪化的加以排斥。很多时候，别人的批评并不正确，但思考和辨析这些批评本身对我们也是有益的。</p>
+<p>本能的抗拒批评和经过深思熟虑之后反对批评是两回事，后者往往意味着更成熟的心智和更坚定的信念。</p>
+<p>成熟心智的一个特点就是，他能不偏不倚的、公正的对待自己和他人的意见，即不固步自封也不附和盲从。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/09/01/typedef-的用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/01/typedef-的用法/" itemprop="url">typedef 的用法</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-01T19:05:11+08:00">
+                2016-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#inclue <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="comment">//为 struct Student 这个数据结构重新起了一个名字叫 ST</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> Student </div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> sid;</div><div class="line">    <span class="keyword">char</span> name[<span class="number">100</span>];</div><div class="line">    <span class="keyword">char</span> sex;</div><div class="line">&#125;ST;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">struct</span> Student st;<span class="comment">//此时这句话就等价于 ST st;</span></div><div class="line">    <span class="keyword">struct</span> Student *ps = &amp;st; <span class="comment">// 此时这句话等价于 ST * ps = &amp;st;</span></div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#inclue <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="comment">//注意：此时 ST 前面多了一个 *，此时 ST 代表了一个指针，等价于 typedef struct Student * ST;此时 ST 是 struct Student * 类型</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> sid;</div><div class="line">    <span class="keyword">char</span> name[<span class="number">100</span>];</div><div class="line">    <span class="keyword">char</span> sex;</div><div class="line">&#125;*ST;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">struct</span> Student st;</div><div class="line">    ST ps = &amp;st;</div><div class="line">    ps-&gt;sid = <span class="number">99</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ps-&gt;sid);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/09/01/typedef-的用法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/31/动态分配内存和跨函数使用内存/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/31/动态分配内存和跨函数使用内存/" itemprop="url">动态分配内存和跨函数使用内存</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-31T22:19:03+08:00">
+                2016-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="malloc-动态分配内存概述"><a href="#malloc-动态分配内存概述" class="headerlink" title="malloc 动态分配内存概述"></a>malloc 动态分配内存概述</h3><p><code>Int * Parr = (int *)malloc(sizeof(int) * len);</code></p>
+<p>我们这里为什么需要进行强制类型转换？我们有 <code>4*len</code> 个字节，但是第一个字节没有实际含义，所以 <code>(int*)</code> 就是告诉我们编译器我们把第一个字节的地址当成了一个整形的地址，所谓整形地址就是说第一个字节的地址代表的是四个字节的地址，那么 <code>parr+1</code> 就是指向后四个，如果你把 <code>int</code> 改成 <code>double</code> 类型，此时就意味着第一个字节的地址代表了 <code>8</code> 个字节的地址，<code>parr+1</code> 那就指向后八个，就是这个意思。</p>
+<h3 id="跨函数使用内存"><a href="#跨函数使用内存" class="headerlink" title="跨函数使用内存"></a>跨函数使用内存</h3><p><code>A aa = new A();</code><br><code>java</code> 的内部就是下面这样子来写的：<br><code>A *pa = (A*)malloc(sizeof(A));</code></p>
+<p>要想跨函数使用内存只能动态的来实现。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/30/我们应该如何去反思？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/30/我们应该如何去反思？/" itemprop="url">我们应该如何去反思？</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-30T20:15:36+08:00">
+                2016-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心智/" itemprop="url" rel="index">
+                    <span itemprop="name">心智</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在做完一件事情之后,我们可以怎样去反思呢?至少可以从以下几个方面来进行:</p>
+<p>1.信息:在做这件事时我利用了哪些信息?其中哪些信息是最关键的?这些信息是从哪些渠道中得来的?哪些渠道被证明是很有价值的?我可能遗漏了哪些信息?这些信息可以怎么得到?</p>
+<p>2.预期:在做事之前,是否对事情的过程和结果形成了正确的预期?我为什么会形成这样的预期?是什么造成了预期和事实之间的偏差?我的预期是否促成或阻碍了事情的进程?今后应该如何管理自己的预期?</p>
+<p>3.结果:怎样描述这件事情的结果?怎样评价这件事的结果?在描述和评价这件事的时候我用了哪些指标?这些指标是否需要改进?结果需要哪些改进?如何改进?<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/30/我们应该如何去反思？/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1459,7 +1453,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/26/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/28/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/26/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/28/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1504,7 +1498,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">222</span>
+                <span class="site-state-item-count">230</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
