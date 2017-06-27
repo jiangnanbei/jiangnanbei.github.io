@@ -1,9 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[编程艺术：平稳退化]]></title>
+    <title><![CDATA[DOM编程艺术：不要做太多的假设]]></title>
+    <url>%2F2017%2F06%2F27%2FDOM%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%EF%BC%9A%E4%B8%8D%E8%A6%81%E5%81%9A%E5%A4%AA%E5%A4%9A%E7%9A%84%E5%81%87%E8%AE%BE%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324function showPic(whichpic)&#123; var source = whichpic.getAttribute('href'); var placeholder = document.getElementById('placeholder'); placeholder.setAttribute('src',source); var text = whichpic.getAttribute('title'); var description = document.getElementById('description'); description.firstChild.nodeValue = text;&#125;function prepareGallery() &#123; if(!document.getElementsByTagName) return false; if(!document.getElementById) return false; if(!document.getElementById('imagegallery')) return false; var gallery = document.getElementById('imagegallery'); var links = gallery.getElementsByTagName('a'); for(var i=0; i&lt;links.length; i++) &#123; links[i].onclick = function() &#123; showPic(this); return false; &#125; &#125;&#125; showPic 函数里面的第一个问题是，没有进行任何测试和检查。showPic 函数将由 prepareGallery 函数调用，而后者的开头已经对 getElementById 和 getElementsByTagName 的 DOM 方法是否存在进行过检查， 所以用户的浏览器不会因为不理解这两个方法而出问题。 不过，这里还是做出了过多的假设。showPic 函数里用到了 id 属性值等于 placeholder 和 description 的元素，但是并未对这些元素是否存在做任何检查。所以需要增加一些语句来检查这些元素是否存在。 showPic 函数负责完成两件事：一是找出 id 属性值是 placeholder 的图片并修改其 src 属性；二是找出 id 属性值是 description 的元素并修改其第一个子元素的 nodeValue 属性。第一件事是这个函数必须完成的任务，第二件事只是一项锦上添花的补充。因此，你可以把检查工作分成两个步骤以获得这样一种效果：只要 placeholder 图片存在，即使 description 元素不存在，切换显示新图片的操作也将正常进行。 1234567891011121314//这部分代码用来完成函数的主要任务if(!document.getElementById('placeholder')) return false;var source = whichpic.getAttribute('href');var placeholder = document.getElementById('placeholder');placeholder.setAttribute("src",source);//只有通过了这项检查，负责修改图片说明文字的代码才会得到执行if(!document.getElementById('description')) &#123; var text = which.getAttribute('title'); var description = document.getElementById('description'); description.firstChild.nodeValue = text;&#125;//将描述部分放在 if 语句里面，description 元素将是可选的。如果它存在，将被更新，否则会忽略return true; 下面是增加了检查之后的代码清单：12345678910111213function showPic(whichpic)&#123; if(!document.getElementById('placeholder')) return false; var source = whichpic.getAttribute('href'); var placeholder = document.getElementById('placeholder'); placeholder.setAttribute("src",source); if(!document.getElementById('description')) &#123; var text = which.getAttribute('title'); var description = document.getElementById('description'); description.firstChild.nodeValue = text; &#125; return true;&#125; 改进后的 showPic 函数不再假设有关标记文档里肯定存在着 placeholder 图片和 description 元素。即使文档里没有 placeholder 图片，也不会发生任何 JS 错误。 但是，这里还有一个问题：如果把 placeholder 图片从标记文档里删掉并在浏览器里刷新页面，就会出现这种情况，无论我们点击 imagegellery 清单中的哪一个链接，都没有任何响应。 这意味着我们的脚本不能平稳退化。此时，应该让浏览器打开那个被点击的链接，而不是让什么事情都不发生。 问题在于 prepareGallery 函数做了一个这样的假设： showPic 肯定会正常返回。基于这一假设， prepareGallery 取消了 onclick 事件的默认行为。 但是，是否要返回一个 false 值以取消 onclick 事件的默认行为，其实应该有 showPic 函数决定，这个函数应该返回两个可能的值。如果图片切换成功，返回 true。如果图片切换不成功，返回 false。 为修正这个问题，应该在返回前验证 showPic 的返回值，以便决定是否组织默认行为。如果返回 true ，那么更新 placeholder 。在 onclick 事件处理函数中，我们可以利用 “!” 对 showpic 的返回值进行取反。12345links[i].onclick = function()&#123;//现在，如果 showPic 返回 true，我们就返回 false ，浏览器就不会打开那个连接//如果 showPic 返回 false，那么我们认为图片没有更新，于是返回 true以允许默认行为发生 return !showPic(this);&#125; 下面是完整的代码清单：123456789101112131415161718192021222324252627function showPic(whichpic)&#123; if(!document.getElementById('placeholder')) return false; var source = whichpic.getAttribute('href'); var placeholder = document.getElementById('placeholder'); placeholder.setAttribute("src",source); if(!document.getElementById('description')) &#123; var text = which.getAttribute('title'); var description = document.getElementById('description'); description.firstChild.nodeValue = text; &#125; return true;&#125;function prepareGallery() &#123; if(!document.getElementsByTagName) return false; if(!document.getElementById) return false; if(!document.getElementById('imagegallery')) return false; var gallery = document.getElementById('imagegallery'); var links = gallery.getElementsByTagName('a'); for(var i=0; i&lt;links.length; i++) &#123; links[i].onclick = function() &#123; return !showPic(this); &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DOM编程艺术：共享 onload 事件]]></title>
+    <url>%2F2017%2F06%2F27%2FDOM%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%EF%BC%9A%E5%85%B1%E4%BA%AB-onload-%E4%BA%8B%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[假设我有两个函数：firstFunction 和 secondFunction 。如果想让他们俩在页面加载时得到的执行，该怎么办？如果把它们逐一绑定到 onload 事件上，他们当中只有最后那个才会被实际执行： 12window.onload = fristFunction;window.onload = secondFunction; 有一种办法可以解决这一难题：可以先创建一个你们函数来容纳这两个函数，然后把那个匿名函数绑定到 onload 事件上： 1234window.onload = function()&#123; firstFunction(); secondFunction();&#125; 上面这段代码在绑定函数不是很多的场合确实可以很好的工作。 这里还有一个弹性最佳的解决方案：不管你打算在页面加载完毕时执行多少个函数，它都可以应付自如。 这个函数的名字是 addLoadEvent ，他只有一个参数：打算在页面加载完毕时执行的函数的名字。下面是这个函数将要完成的操作：123456789101112131415//1.把现有的 window.onload 事件处理函数的值存入变量 oldonload//2.如果在这个处理函数上还没有绑定任何函数，就像平时那样把新函数添加给它//3.如果在这个处理函数上已经绑定了一些函数，就把新函数追加到现有指令的末尾function addLoadEvent(func) &#123; var oldonload = window.onload; if (typeof window.onload != 'function') &#123; window.onload = func; &#125; else &#123; window.onload = function() &#123; oldonload(); func(); &#125; &#125;&#125; 这将把那些在页面加载完毕时执行的函数创建为一个队列。如果想把刚才那两个函数添加到这个队列中去，只需要写出下面两行代码即可： 12addLoadEvent(firstFunction);addLoadEvent(secondFunction); 这个函数非常实用，尤其是在代码变得越来越复杂的时候。无论在页面加载完毕时执行多少个函数，只要多写一条语句就可以安排好一切。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DOM编程艺术：预防性措施]]></title>
+    <url>%2F2017%2F06%2F27%2FDOM%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%EF%BC%9A%E9%A2%84%E9%98%B2%E6%80%A7%E6%8E%AA%E6%96%BD%2F</url>
+    <content type="text"><![CDATA[1if(!document.getElementById('imagegallery')) return false; 这项测试是一个预防性措施。现在我知道用这个调用 JS 函数的文档里有一个 id 属性值等于 imagegallery 的列表清单元素，但我不敢确定这在将来会不会发生变化。有了这个预防性措施，即使我决定以后从网页上删掉图片库，也用不着担心这个网页的 JS 代码会突然出错。 把 HTML 文档的内容和 JS 代码所实现的行为分离开来的重要性由此可见一斑。作为一条原则，如果想用 JS 给某个网页添加一条行为，就不应该让 JS 对这个网页的结构有任何的依赖。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[结构化程序设计]]></title>
+    <url>%2F2017%2F06%2F27%2F%E7%BB%93%E6%9E%84%E5%8C%96%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[结构化程序设计中有这样一条原则：函数应该只有一个入口和一个出口。 123456789101112131415function prepareGallery() &#123; if(!document.getElementsByTagName) return false; if(!document.getElementById) return false; if(!document.getElementById('imagegallery')) return false; var gallery = document.getElementById('imagegallery'); var links = gallery.getElementsByTagName('a'); for(var i=0; i&lt;links.length; i++) &#123; links[i].onclick = function() &#123; showPic(this); return false; &#125; &#125;&#125; 上面这个函数的做法已经违背了这条原则，函数的开头部分有多个 return false 语句，他们全都是这个函数的出口。根据结构化程序设计理论，应该把这些出口减少至一个。 理论上，是这样的，但是在实际工作中，过分拘泥于这项原则会使代码变得非常难以阅读。如果你遵循了这条原则，那么代码看起来将会是下面这样：这个函数的核心代码就会被掩埋在一层有一层的花括号里。 123456789function prepareGallery() &#123; if(!document.getElementsByTagName) &#123; if(!document.getElementById) &#123; if(!document.getElementById('imagegallery'))&#123; return false; &#125; &#125; &#125;&#125; 如果一个函数有多个出口，只要这些出口集中出现在函数的开头部分，就是可以接受的。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DOM编程艺术：性能优化]]></title>
+    <url>%2F2017%2F06%2F27%2FDOM%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%EF%BC%9A%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[尽量少访问 DOM 和 尽量减少标记不管是什么时候，只要是查询 DOM 中的某些元素，浏览器都会搜索整个 DOM 树，从中查找可能匹配的元素。 要是你有多个函数重复做同一件事。比如，要是有一个函数检查每个链接中的 popUp 类，而另外一个函数检查每个链接中的 hover 类，那么同样也会造成搜索浪费。 在多个函数取得一组类似元素的情况下，可以考虑重构代码，把搜索结果保存在一个全局变量里，或者把一组元素直接以参数的形式传递给函数。 另一个需要注意的地方，就是要尽量减少文档中的标记数量。过多不必要的元素只会增加 DOM 树的规模，进而增加遍历 DOM 树以查找特定元素的时间。 合并和放置脚本在把脚本引入到页面中时，要把多个脚本合并到一个 。这样，就可以减少加载页面时发送请求的数量。而减少请求的数量通常是在性能优化时首先要考虑的。 把脚本文件放在文档的末尾，就可以让页面变得更快。即使这样，在加载脚本时，window 对象的 load 事件依然可以执行对文档进行的各种操作。 压缩脚本多数情况下，你应该有两个版本，一个是工作副本，可以修改代码并添加注释；另一个是精简副本，用于放在站点上。通常，为了与非精简版本区分开，最好在精简副本的文件名中加上 min 字样。 下面是几个有代表性的代码压缩工具： 1.JSMin2.UI Compressor3.Closure Compiler]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DOM编程艺术：向后兼容]]></title>
+    <url>%2F2017%2F06%2F27%2FDOM%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%EF%BC%9A%E5%90%91%E5%90%8E%E5%85%BC%E5%AE%B9%2F</url>
+    <content type="text"><![CDATA[即使是某位用户在访问你的网站的时候使用的是支持 JS 的浏览器，某些脚本也不一定能正常工作。 对象检测针对这一问题最简单的解决方案是：检测浏览器对 JS 的支持程度。也就是说只有浏览器理解这么多的 JS 语言才能执行这些语句。 这个方案很容易实现：只要把某个方法打包在一个 if 语句里，就可以根据这条 if 条件语句表达式的求值结果是 true 还是 false，来决定应该采取怎样的行动。这种检测称为对象检测。几乎所有的东西，包括各种方法在内，都可以被当做对象来对待，而这意味着我们可以容易的把不支持某个特定 DOM 方法的浏览器检测出来。 例如，如果有一个使用了 getElementById() 方法的函数，就可以在调用 getElementById() 方法之前检查用户所使用的浏览器是否支持这个方法。 1234if(!getElementById) return false;//如果需要测试多个属性或方法是否存在，可以使用逻辑或if(!getElementById || !getElementsByTagName) return false; 注意：在使用对象检测时，一定要删掉方法名后面的圆括号，如果不删掉，测试的将是方法的结果，无论方法是否存在。 12345678910var links = document.getElementsByTagName('a');if(!getElementsByTagName) return false;for(var i=0; i&lt;links.length; i++) &#123; if (links[i].getAttribute('class') == 'popup')&#123; links[i].onclick = function()&#123; popUp(this.getAttribute('href')); return false; &#125; &#125;&#125; 虽然只是一条简单的 if 语句，但它可以确保那些古老的浏览器不会因为我的脚本代码而出问题。这么做是为了让脚本有良好的向后兼容性。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DOM编程艺术：渐进增强]]></title>
+    <url>%2F2017%2F06%2F27%2FDOM%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%EF%BC%9A%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA%2F</url>
+    <content type="text"><![CDATA[结构与样式的分离 CSS 技术突出的优点，文档结构与文档样式的分离可以确保网页都能平稳退化。具备 CSS 支持的浏览器固然可以把网页呈现的美轮美奂，不支持或者是禁用了 CSS 的浏览器同样可以把网页的内容按照正确的结构显示出来。 渐进增强在创建网站的时候，给内容加上正确的 HTML 标记是第一个步骤，或许也是最重要的步骤，“标记良好的内容就是一切”。 再给内容加上各种标记之后，就可以使用各种 CSS 指令控制内容的显示效果。CSS 指令构成了一个表示层。这个表示层就像是一张透明的彩色薄膜，可以包裹到文档的结构上，使文档的内容呈现出各种色彩。但即使去掉这个表示层，文档的内容也依然可以访问。 所谓“渐进增强”就是用一些额外的信息去包裹原始数据。按照“渐进增强”创建出来的网页几乎都符合“平稳退化”原则。 类似于 CSS、JS 和 DOM 提供的所有功能也应该构成一个额外的指令层。显然，把 CSS 代码从 HTML 文档里分离出来可以让 CSS 更好的工作。这个适用于 CSS 表示层的结论同样适用于 JS 行为层。 分离 JS类似于使用 style 属性。如果我们使用一个“挂钩”，就像 CSS 机制中的 class 或 id 属性那样，把 JS 代码调用行为与 HTML 文档的结构和内容分离开，网页就会健壮的多。 123456789var links = document.getElementsByTagName('a');for(var i=0; i&lt;links.length; i++) &#123; if (links[i].getAttribute('class') == 'popup')&#123; links[i].onclick = function()&#123; popUp(this.getAttribute('href')); return false; &#125; &#125;&#125; 以上代码将把调用 popUp() 函数的 onclick 事件添加到有关的链接上。只要把它们存入一个外部的 JS 文件，就等于是把这些操作从 HTML 文档里分离出来了。而这就是“分离 JS” 的含义。 但是，含有一个问题需要解决：如果这段代码存入到外部 JS 文件，他们将无法正常运行。因为这段代码的第一行代码。 这条语句将在 JS 文件被加载时立刻执行。如果 JS 文件位于文档底部，就不能保证哪个文件最先加载结束，因为脚本加载时文档不完整，所以模型也不完整。没有完整的 DOM ，getElementsByTagName 就不能正常工作。 必须让这些代码在 HTML 文档全部加在到浏览器之后立马开始执行。文档将被加载到一个浏览器窗口里， documen 对象又是 window 对象的一个属性。当 window 对象触发 onload事件时，document 对象已经存在。 1234567891011121314151617window.onload = prepareLinks;function prepareLinks()&#123; var links = document.getElementsByTagName('a'); for(var i=0; i&lt;links.length; i++) &#123; if (links[i].getAttribute('class') == 'popup')&#123; links[i].onclick = function()&#123; popUp(this.getAttribute('href')); return false; &#125; &#125; &#125;&#125;function popUp(winURL)&#123; window.opwn(winURL,"popUp","width=320,heigth=480");&#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DOM编程艺术：平稳退化]]></title>
     <url>%2F2017%2F06%2F26%2F%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%EF%BC%9A%E5%B9%B3%E7%A8%B3%E9%80%80%E5%8C%96%2F</url>
-    <content type="text"><![CDATA[质疑一切不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。 如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？ 平稳退化记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持 JS，但用户已经禁用它了。如果没有考虑到这种情况，人们在访问你的网站的时候就会遇到各种各样的麻烦。 如果正确的使用了 JS 脚本，就可以让访问者在他们的浏览器不支持 JS 的情况下仍能顺利的浏览你的网站。这就是所谓的平稳退化，就是说，虽然某些功能无法使用，但最基本的操作仍然能顺利完成。 弹出窗口的使用应该只在绝对必要的情况下才使用弹出窗口，因为这将牵涉到网页的可访问性问题，例如，用户使用的屏幕读取软件无法向用户说明弹出了窗口。因此，如果网页上的某个链接将弹出窗口，最好在这个链接本身的文字中予以说明。 实例：在新窗口打开链接123function popUp(winURL)&#123; window.open(winURL,"popUp","width=320,height=480");&#125; open() 方法是使用 BOM 的一个好案例，它的功能对文档的内容也无任何影响，这个方法只与浏览器环境有关。 这个函数将打开一个 320 像素宽、480像素高的新窗口“popUp”。因为我在这个函数里已经为新的窗口命名，所以当把新的 URL 地址传递给此函数时，这个函数将把心窗口里的现有文档替换为新 URL 地址处的文档，而不是再去创建一个新窗口。 “javascript:”伪协议调用 popUp() 函数的一个方法是使用伪协议。伪协议是一种非标准化的协议。“javascript:”伪协议让我们通过一个连接来调用 JS 函数。 下面是“javascript:”伪协议调用 popUp() 的具体做法：1&lt;a href="javascript:popUp('http://www.example.com/'):"&gt;example&lt;/a&gt; 这条语句在支持 “javascript:”伪协议的浏览器中正常运行，较老的浏览器会去尝试打开那个连接，但是会失败，支持这种协议但是禁用了 JS 功能的浏览器会什么也不做。 总之，在 HTML 文档里通过 “javascript:” 伪协议调用 JS 代码的做法非常不好。 内嵌的事件处理函数1&lt;a href="#" onclick="popUp('http://www.example.com/'); return false;"&gt;example&lt;/a&gt; 因为上面这条语句使用了 return false 语句，所以这个链接并不会被真正的打开，“#”符号是一个仅供内部文档使用的链接记号。在某些浏览器里，“#”链接指向当前文档的开头。把 href 的属性设置为 “#” 只是为了创建一个空链接。实际工作全部由 onclick 属性负责完成。 很遗憾，这个技巧与使用“javascript:” 伪协议调用 JS 代码的做法同样糟糕，因为他们都不能平稳退化。如果用户已经禁用了浏览器的 JS 功能，这样的链接将毫无用处。 谁关心这个？]]></content>
+    <content type="text"><![CDATA[质疑一切不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。 如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？ 平稳退化记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持 JS，但用户已经禁用它了。如果没有考虑到这种情况，人们在访问你的网站的时候就会遇到各种各样的麻烦。 如果正确的使用了 JS 脚本，就可以让访问者在他们的浏览器不支持 JS 的情况下仍能顺利的浏览你的网站。这就是所谓的平稳退化，就是说，虽然某些功能无法使用，但最基本的操作仍然能顺利完成。 弹出窗口的使用应该只在绝对必要的情况下才使用弹出窗口，因为这将牵涉到网页的可访问性问题，例如，用户使用的屏幕读取软件无法向用户说明弹出了窗口。因此，如果网页上的某个链接将弹出窗口，最好在这个链接本身的文字中予以说明。 实例：在新窗口打开链接123function popUp(winURL)&#123; window.open(winURL,"popUp","width=320,height=480");&#125; open() 方法是使用 BOM 的一个好案例，它的功能对文档的内容也无任何影响，这个方法只与浏览器环境有关。 这个函数将打开一个 320 像素宽、480像素高的新窗口“popUp”。因为我在这个函数里已经为新的窗口命名，所以当把新的 URL 地址传递给此函数时，这个函数将把心窗口里的现有文档替换为新 URL 地址处的文档，而不是再去创建一个新窗口。 “javascript:”伪协议调用 popUp() 函数的一个方法是使用伪协议。伪协议是一种非标准化的协议。“javascript:”伪协议让我们通过一个连接来调用 JS 函数。 下面是“javascript:”伪协议调用 popUp() 的具体做法：1&lt;a href="javascript:popUp('http://www.example.com/'):"&gt;example&lt;/a&gt; 这条语句在支持 “javascript:”伪协议的浏览器中正常运行，较老的浏览器会去尝试打开那个连接，但是会失败，支持这种协议但是禁用了 JS 功能的浏览器会什么也不做。 总之，在 HTML 文档里通过 “javascript:” 伪协议调用 JS 代码的做法非常不好。 内嵌的事件处理函数1&lt;a href="#" onclick="popUp('http://www.example.com/'); return false;"&gt;example&lt;/a&gt; 因为上面这条语句使用了 return false 语句，所以这个链接并不会被真正的打开，“#”符号是一个仅供内部文档使用的链接记号。在某些浏览器里，“#”链接指向当前文档的开头。把 href 的属性设置为 “#” 只是为了创建一个空链接。实际工作全部由 onclick 属性负责完成。 很遗憾，这个技巧与使用“javascript:” 伪协议调用 JS 代码的做法同样糟糕，因为他们都不能平稳退化。如果用户已经禁用了浏览器的 JS 功能，这样的链接将毫无用处。 谁关心这个？你或许会疑惑，让那些不支持或者禁用了 JS 功能的浏览器也能顺利的访问你的网站真的那么重要吗？ 如果你的用户是一个搜索机器人。搜索机器人是一种自动化程序，他们浏览 web 的目的是为了把各种网页添加到搜索引擎的数据库里。各大搜索引擎都有类似的程序。目前，只有极少数搜索引擎机器人能够理解 JS 代码。所以，如果你的 JS 网页不能平稳退化，他们在搜索引擎上的排名就可能大受损害。 具体到 popUp() 函数，为其中的 JS 代码预留出退路其实很简单：在链接里把 href 属性设置为真实存在的 URL 地址，让它成为一个有效的链接： 1&lt;a href="http://www.example.com/" onclick="popUp(this.href);return false;"&gt;example&lt;/a&gt; 所以，在把 href属性设置为真实才在的 URL 地址后，即使 JS 已经被禁用或者遇到了搜索机，这个链接也是可用的。虽然这个链接再功能上打了点折扣，因为他没有打开一个新的窗口，但是它并没有彻底失效。这是一个经典的平稳退化的例子。]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -381,8 +458,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -393,8 +470,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -442,9 +519,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[尾部设计]]></title>
-    <url>%2F2017%2F05%2F25%2F%E5%B0%BE%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[页尾设计 页尾，也称为 Tailer，指的是页面底部部分，通常放置联系方式和版权信息等补充信息。由于其位置不够显著、重要性较低，因此也往往成为设计师容易忽略的地方。 需要规避的细节问题页尾的信息过多过杂由于页尾不太重要，因此应该尽量简化它，节约页面宝贵的空间。 不同页面的页尾不统一 有时候，由于网站的迅速扩张，页面数量迅速增加，如缺乏统一的规范约束，往往容易导致页尾等元素在同一类型页面中表现得不够统一。 这虽然只是一个很小的细节，却容易让用户对网站的专业度产生怀疑，这是页面设计中需要注意的问题之一。 版权说明格式 一般网站都会在页尾进行版权说明，目前国际上标准的格式是：Copyright[日期（dates）]by[作者/所有者（author/owner）]，其中 Copyright 通常可以用 © 代替，但是不可以用（c）。All Rights Reserved 在某些国家曾经是必需的，但是现在在大多数国家，都不是法律上必须有的字样。 设计新趋势为了更好的利用网站的空间，目前有些网站在页尾除了放置联系方式和版权信息以外，也放置网站的辅助导航，使页尾发挥更大的引导作用。]]></content>
+    <title><![CDATA[头部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%A4%B4%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[网站上每个元素都是为了满足了用户、网站或者赞助商不同角度的需求而存在的。按照各部分作用的不同，可将网站划分成以下功能区域，包括头部、页尾、导航区、搜索区、登录注册区、信息展示区、广告区等。 头部 网页头部，也称为 Header，简称头部，指的是网站页面的顶部区域，通常包含网站的 Logo、Slogan、Banner、导航条等元素，有时还提供常用功能的快速入口，如登录、帮助等。头部主要用于网站展示品牌形象，告诉用户目前在浏览哪个网站以及该网站主要提供什么内容。 头部类型实用型头部实用型的网站头部设计简洁、不花哨，能够在合理有限的空间内起到必要的作用，一般其只包含 Logo、导航条和快速入口等重要元素。 大型网站由于页面空间有限，而且品牌的知名度使其不需要使用过多的元素去渲染网站的特色和气氛，因此往往采用这种类型的头部设计。 设计型头部很多网站，尤其是个性化的网站，往往会利用头部的设计体现出网站的特色，常见于博客、小型特色网站以及部分企业网站首页。 设计型头部的优点在于有很大的发挥空间，如果设计效果好，就会造成很强的视觉冲击力，给用户留下很深的印象；其缺点在于往往占用过多空间，削减了网站内容的重要性，造成喧宾夺主的效果，也容易产生头重脚轻的感觉。 头部元素的设计不管是哪种类型的头部，一般包括 Logo、Slogan、导航条等元素。 LogoLogo 的基本作用之一是返回页面首页，使用户在网站迷路时，可以找到回去的路，增加用户在网站上的方向感和安全感。更重要的是 Logo 代表着网站的品牌和形象，尤其对知名的网站来讲，Logo 能够唤起用户对网站的品牌认知度，从而提升用户的信任感。 Logo 本身的设计非常重要，必需清晰易辨识，能体现出网站的定位和特色，具体的设计更多取决于设计者，在这不多加叙述。 对于不同类型的页面或者网站，Logo 的呈现的方式不一样。如独立的 logo，适用于网站首页。logo+文字，适用于网站子类目。logo+logo，适用于合并后的网站。 除此之外，很多网站会在节日期间设计应景的节日 logo 体现气氛，提升用户对网站的体验。 SloganSlogan 虽然只是一句简单的标语，但能够很好地体现出网站的定位和特色，显示企业文化、塑造网站个性，配合 Logo 一起使用能够达到更好的效果。Slogan 一般要求朗朗上口，而且点出网站的最大亮点。好的标语往往能让用户更好地记住网站的特色及其提供的主要服务。如： ·阿里巴巴。“全球领先的网上贸易市场和商人社区”。 ·淘宝。“淘我喜欢！” 除了 Logo 和 Slogan 以上两个主要元素之外，总体上来讲，同一级别或者同一类型页面的头部设计应该尽量保持一致。]]></content>
       <categories>
         <category>设计</category>
       </categories>
@@ -453,9 +530,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[头部设计]]></title>
-    <url>%2F2017%2F05%2F25%2F%E5%A4%B4%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[网站上每个元素都是为了满足了用户、网站或者赞助商不同角度的需求而存在的。按照各部分作用的不同，可将网站划分成以下功能区域，包括头部、页尾、导航区、搜索区、登录注册区、信息展示区、广告区等。 头部 网页头部，也称为 Header，简称头部，指的是网站页面的顶部区域，通常包含网站的 Logo、Slogan、Banner、导航条等元素，有时还提供常用功能的快速入口，如登录、帮助等。头部主要用于网站展示品牌形象，告诉用户目前在浏览哪个网站以及该网站主要提供什么内容。 头部类型实用型头部实用型的网站头部设计简洁、不花哨，能够在合理有限的空间内起到必要的作用，一般其只包含 Logo、导航条和快速入口等重要元素。 大型网站由于页面空间有限，而且品牌的知名度使其不需要使用过多的元素去渲染网站的特色和气氛，因此往往采用这种类型的头部设计。 设计型头部很多网站，尤其是个性化的网站，往往会利用头部的设计体现出网站的特色，常见于博客、小型特色网站以及部分企业网站首页。 设计型头部的优点在于有很大的发挥空间，如果设计效果好，就会造成很强的视觉冲击力，给用户留下很深的印象；其缺点在于往往占用过多空间，削减了网站内容的重要性，造成喧宾夺主的效果，也容易产生头重脚轻的感觉。 头部元素的设计不管是哪种类型的头部，一般包括 Logo、Slogan、导航条等元素。 LogoLogo 的基本作用之一是返回页面首页，使用户在网站迷路时，可以找到回去的路，增加用户在网站上的方向感和安全感。更重要的是 Logo 代表着网站的品牌和形象，尤其对知名的网站来讲，Logo 能够唤起用户对网站的品牌认知度，从而提升用户的信任感。 Logo 本身的设计非常重要，必需清晰易辨识，能体现出网站的定位和特色，具体的设计更多取决于设计者，在这不多加叙述。 对于不同类型的页面或者网站，Logo 的呈现的方式不一样。如独立的 logo，适用于网站首页。logo+文字，适用于网站子类目。logo+logo，适用于合并后的网站。 除此之外，很多网站会在节日期间设计应景的节日 logo 体现气氛，提升用户对网站的体验。 SloganSlogan 虽然只是一句简单的标语，但能够很好地体现出网站的定位和特色，显示企业文化、塑造网站个性，配合 Logo 一起使用能够达到更好的效果。Slogan 一般要求朗朗上口，而且点出网站的最大亮点。好的标语往往能让用户更好地记住网站的特色及其提供的主要服务。如： ·阿里巴巴。“全球领先的网上贸易市场和商人社区”。 ·淘宝。“淘我喜欢！” 除了 Logo 和 Slogan 以上两个主要元素之外，总体上来讲，同一级别或者同一类型页面的头部设计应该尽量保持一致。]]></content>
+    <title><![CDATA[尾部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%B0%BE%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[页尾设计 页尾，也称为 Tailer，指的是页面底部部分，通常放置联系方式和版权信息等补充信息。由于其位置不够显著、重要性较低，因此也往往成为设计师容易忽略的地方。 需要规避的细节问题页尾的信息过多过杂由于页尾不太重要，因此应该尽量简化它，节约页面宝贵的空间。 不同页面的页尾不统一 有时候，由于网站的迅速扩张，页面数量迅速增加，如缺乏统一的规范约束，往往容易导致页尾等元素在同一类型页面中表现得不够统一。 这虽然只是一个很小的细节，却容易让用户对网站的专业度产生怀疑，这是页面设计中需要注意的问题之一。 版权说明格式 一般网站都会在页尾进行版权说明，目前国际上标准的格式是：Copyright[日期（dates）]by[作者/所有者（author/owner）]，其中 Copyright 通常可以用 © 代替，但是不可以用（c）。All Rights Reserved 在某些国家曾经是必需的，但是现在在大多数国家，都不是法律上必须有的字样。 设计新趋势为了更好的利用网站的空间，目前有些网站在页尾除了放置联系方式和版权信息以外，也放置网站的辅助导航，使页尾发挥更大的引导作用。]]></content>
       <categories>
         <category>设计</category>
       </categories>
@@ -515,8 +592,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1722,18 +1799,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[递归实现斐波那契数列]]></title>
-    <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
-    <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[六道JS面试题]]></title>
     <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
     <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
@@ -1743,6 +1808,18 @@
       <tags>
         <tag>JS</tag>
         <tag>面试指南</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[递归实现斐波那契数列]]></title>
+    <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
+    <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -1850,8 +1927,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业技巧</tag>
         <tag>商业</tag>
+        <tag>商业技巧</tag>
       </tags>
   </entry>
   <entry>

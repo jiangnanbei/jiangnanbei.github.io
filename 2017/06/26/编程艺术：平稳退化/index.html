@@ -97,15 +97,15 @@
 如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？
 平稳退化记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编程艺术：平稳退化">
+<meta property="og:title" content="DOM编程艺术：平稳退化">
 <meta property="og:url" content="http://ijiangnanbei.com/2017/06/26/编程艺术：平稳退化/index.html">
 <meta property="og:site_name" content="江南北的个人站">
 <meta property="og:description" content="质疑一切不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。
 如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？
 平稳退化记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持">
-<meta property="og:updated_time" content="2017-06-26T13:02:28.172Z">
+<meta property="og:updated_time" content="2017-06-26T22:51:20.524Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编程艺术：平稳退化">
+<meta name="twitter:title" content="DOM编程艺术：平稳退化">
 <meta name="twitter:description" content="质疑一切不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。
 如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？
 平稳退化记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持">
@@ -142,7 +142,7 @@
 
 
 
-  <title>编程艺术：平稳退化 | 江南北的个人站</title>
+  <title>DOM编程艺术：平稳退化 | 江南北的个人站</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -339,7 +339,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">编程艺术：平稳退化</h2>
+          <h2 class="post-title" itemprop="name headline">DOM编程艺术：平稳退化</h2>
         
 
         <div class="post-meta">
@@ -423,7 +423,12 @@
 <h3 id="内嵌的事件处理函数"><a href="#内嵌的事件处理函数" class="headerlink" title="内嵌的事件处理函数"></a>内嵌的事件处理函数</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">onclick</span>=<span class="string">"popUp('http://www.example.com/'); return false;"</span>&gt;</span>example<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>因为上面这条语句使用了 <code>return false</code> 语句，所以这个链接并不会被真正的打开，“#”符号是一个仅供内部文档使用的链接记号。<strong>在某些浏览器里，“#”链接指向当前文档的开头。把 <code>href</code> 的属性设置为 “#” 只是为了创建一个空链接。实际工作全部由 onclick 属性负责完成。</strong></p>
 <p><strong>很遗憾，这个技巧与使用“javascript:” 伪协议调用 JS 代码的做法同样糟糕，因为他们都不能平稳退化。如果用户已经禁用了浏览器的 JS 功能，这样的链接将毫无用处。</strong></p>
-<h3 id="谁关心这个？"><a href="#谁关心这个？" class="headerlink" title="谁关心这个？"></a>谁关心这个？</h3>
+<h3 id="谁关心这个？"><a href="#谁关心这个？" class="headerlink" title="谁关心这个？"></a>谁关心这个？</h3><p>你或许会疑惑，让那些不支持或者禁用了 JS 功能的浏览器也能顺利的访问你的网站真的那么重要吗？</p>
+<p>如果你的用户是一个搜索机器人。搜索机器人是一种自动化程序，他们浏览 web 的目的是为了把各种网页添加到搜索引擎的数据库里。各大搜索引擎都有类似的程序。目前，只有极少数搜索引擎机器人能够理解 JS 代码。所以，<strong>如果你的 JS 网页不能平稳退化，他们在搜索引擎上的排名就可能大受损害。</strong></p>
+<p>具体到 <code>popUp()</code> 函数，为其中的 JS 代码预留出退路其实很简单：在链接里把 <code>href</code> 属性设置为真实存在的 URL 地址，让它成为一个有效的链接：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.example.com/"</span> <span class="attr">onclick</span>=<span class="string">"popUp(this.href);return false;"</span>&gt;</span>example<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>所以，在把 <code>href</code>属性设置为真实才在的 URL 地址后，即使 JS 已经被禁用或者遇到了搜索机，这个链接也是可用的。虽然这个链接再功能上打了点折扣，因为他没有打开一个新的窗口，但是它并没有彻底失效。<strong>这是一个经典的平稳退化的例子。</strong></p>
+
       
     </div>
 
@@ -485,6 +490,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/27/DOM编程艺术：渐进增强/" rel="prev" title="DOM编程艺术：渐进增强">
+                DOM编程艺术：渐进增强 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -556,7 +565,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">215</span>
+                <span class="site-state-item-count">222</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
