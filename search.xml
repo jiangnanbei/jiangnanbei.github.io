@@ -924,6 +924,94 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[工作中的请求处理 post]]></title>
+    <url>%2F2017%2F02%2F22%2F%E5%B7%A5%E4%BD%9C%E4%B8%AD%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%84%E7%90%86-post%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;script type="text/javascript"&gt; window.onload=function()&#123; var oBtn=document.getElementById('btn'); oBtn.onclick=function()&#123; var xhr=null; try&#123; xhr=new XMLHttpRequest(); &#125;catch(e)&#123; xhr=new ActiveXObject('Microsoft.XMHTTP'); &#125; xhr.open('post','8post.php',true); //post方式：数据放在send（）方法里面传递过去 //如果你在用post传递数据的时候不告诉当前计算机你所传递的数据的格式，计算机就不会处理你传递的 //信息。通过设置请求头告诉浏览器你所发过去的文档是什么类型。 //post没有缓存问题，post是用来提交数据的，而提交数据而不会被缓存的，当你从服务器获取的时候它就可 //能被缓存 //不存在编码问题 xhr.setRequestHeader('content-type','application/x-www-form-urlencoded'); xhr.send('username=leo&amp;age=20'); xhr.onreadystatechange=function()&#123; if(xhr.readyState==4)&#123; if(xhr.status==200)&#123; alert(xhr.responseText); &#125;else&#123; alert('出错了,Err:'+xhr.status); &#125; &#125; &#125; &#125; &#125;&lt;/script&gt;&lt;/head&gt;&lt;body&gt; &lt;input type="button" name="btn" id="btn" value="Button"&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Ajax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[工作中的请求处理 get]]></title>
+    <url>%2F2017%2F02%2F20%2F%E5%B7%A5%E4%BD%9C%E4%B8%AD%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%84%E7%90%86-get%2F</url>
+    <content type="text"><![CDATA[1234567891011121314151617181920212223242526272829303132333435363738394041424344&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;script type="text/javascript"&gt; window.onload=function()&#123; var oBtn=document.getElementById('btn'); oBtn.onclick=function()&#123; var xhr=null; try&#123; xhr=new XMLHttpRequest(); &#125;catch(e)&#123; xhr=new ActiveXObject('Microsoft.XMHTTP'); &#125; //get方法出现的问题： // 1.缓存问题：在url？后面连接在一个随机数或者时间戳都可以 // 2.乱码：编码encodeURI xhr.open('get','6.get.php?username='+encodeURI('刘伟')+'&amp;age=30&amp;'+new Date().getTime(),true); //提交 xhr.send(); xhr.onreadystatechange=function()&#123; if(xhr.readyState==4)&#123; if(xhr.status==200)&#123; alert(xhr.responseText); &#125;else&#123; alert('出错了,Err:'+xhr.status); &#125; &#125; &#125; &#125; &#125;&lt;/script&gt;&lt;/head&gt;&lt;body&gt; &lt;input type="button" name="btn" id="btn" value="Button"&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Ajax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[定时刷新实例]]></title>
+    <url>%2F2017%2F02%2F20%2F%E5%AE%9A%E6%97%B6%E5%88%B7%E6%96%B0%E5%AE%9E%E4%BE%8B%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;&lt;/title&gt;&lt;script type="text/javascript" src='6ajax.js'&gt;&lt;/script&gt;&lt;script type="text/javascript"&gt; window.onload = function() &#123; var oBtn = document.getElementById('btn'); oBtn.onclick = function() &#123; setInterval(function() &#123; ajax('get', '6getNews.php', '', function(data) &#123; // JSON 是一个对象，ie 7 以下不支持 //利用 JSON.parse 将传进来的数据转换为一个数组 var data = JSON.parse(data); var oUL = document.getElementById('ul1'); var html = ''; for (var i = 0; i &lt; data.length; i++) &#123; html += '&lt;li&gt;&lt;a href=""&gt;' + data[i].title + '&lt;/a&gt; [&lt;span&gt;' + data[i].date + '&lt;/span&gt;]&lt;/li&gt;' &#125; oUL.innerHTML = html; &#125;); &#125;, 1000); &#125; &#125;&lt;/script&gt;&lt;/head&gt;&lt;body&gt; &lt;input type="button" name="btn" id="btn" value="Button"&gt; &lt;!-- 从后端获取新闻，然后将获取到的新闻放到ul里面，不刷新页面就可以获取到 --&gt; &lt;ul id="ul1"&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Ajax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[获取数据]]></title>
+    <url>%2F2017%2F02%2F18%2F%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE%2F</url>
+    <content type="text"><![CDATA[1234567891011121314151617181920212223242526272829303132333435363738394041424344454647&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;script type="text/javascript"&gt; window.onload=function()&#123; var oBtn=document.getElementById('btn'); oBtn.onclick=function()&#123; var xhr=null; try&#123; xhr=new XMLHttpRequest(); &#125;catch(e)&#123; xhr=new ActiveXObject('Microsoft.XMHTTP'); &#125; xhr.open('get','1.txt',true); xhr.send(); //readyState属性：请求状态 //0：（初始化）还没有调用open方法 //1：（载入）一调用send方法正在发送请求 //2：（载入完成）send（）方法以完成，以收到全部响应内容 //3：（解析）正在解析相应内容 //4：（完成）响应内容解析完成，可以在客户端调用了 //onreadystatechange：当状态值 readyState 改变的时候触发 xhr.onreadystatechange=function()&#123; if(xhr.readyState==4)&#123; //status:服务器状态，http状态码 if(xhr.status==200)&#123;// responseText 这是一个属性，ajax请求返回的数据就被放到了这个属性的下面这里面的所有数据都是字符串类型的 alert(xhr.responseText); &#125;else&#123; alert('出错了,Err:'+xhr.status); &#125; &#125; &#125; &#125; &#125;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;input type="button" name="btn" id="btn" value="Button"&gt;&lt;/body&gt;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Ajax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[详解表单]]></title>
+    <url>%2F2017%2F02%2F16%2F%E8%AF%A6%E8%A7%A3%E8%A1%A8%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819&lt;body&gt; &lt;!-- 表单：数据的提交 --&gt; &lt;!-- action : 数据提交的地址，默认是当前页面 --&gt; &lt;!-- method : 数据提交的方式，默认是get方式 --&gt; &lt;!-- 1.get --&gt; &lt;!-- 把数据名称和数据值用=连接，如果有多个的话，那么他会把多个数据组合用&amp;amp; --&gt; &lt;!-- 进行连接，然后把数据放到url?后面传到指定页面，url长度限制的原因，我们 --&gt; &lt;!-- 不要通过get方式传递过多的数据 --&gt; &lt;!-- 2.post --&gt; &lt;!-- 理论上无限制 --&gt; &lt;!-- enctype : 提交的数据格式，默认application/x-www-form-urlencoded --&gt; &lt;form action="1.get.php" enctype="application/x-www-form-urlencoded"&gt; &lt;input type="text" name="username" /&gt; &lt;input type="text" name="age" /&gt; &lt;input type="submit" value="提交" /&gt; &lt;/form&gt;&lt;/body&gt;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Ajax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[对象的创建和兼容性处理]]></title>
+    <url>%2F2017%2F02%2F14%2F%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E5%85%BC%E5%AE%B9%E6%80%A7%E5%A4%84%E7%90%86%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657&lt;script type="text/javascript"&gt;window.onload=function()&#123; var oBtn=document.getElementById('btn'); oBtn.onclick=function()&#123;/*利用 XMLHttpRequest 创建一个 ajax 对象，然后利用对象的属性和方法去完成一个数据交互的流程兼容性问题：ie6 及以下不支持 XMLHttpRequest ，用的是 newActiveXObject（'Microsoft.XMHTTP')，这是ie的一个插件*/ //首先定义一个对象 var xhr=null; //第一种兼容方式，ie下的兼容：/* 在 XMLHttpRequest前面加了 'window.' 在 ie6及 以下才不会报错，这时候 XMLHttpRequest 只是 window下面的一个属性，即使不存在也不会报错，只会返回undefine，代码如下：*/ /* if(window.XMLHttpRequest)&#123; xhr=new XMLHttpRequest(); &#125;else&#123; xhr=new ActiveXObject('Microsoft.XMHTTP'); &#125; */ //第二种兼容方式，用异常处理来做兼容 try&#123;//代码尝试执行这个块里面的内容，如果有错误，则会执行 catch 里面的代码,并且传入错误信息参数 xhr=new XMLHttpRequest(); &#125;catch(e)&#123; xhr=new ActiveXObject('Microsoft.XMHTTP'); &#125; /* open方法参数: 1.打开方式 2.地址 3.是否异步 异步:非阻塞 前面的代码不会影响后面代码的执行 同步:阻塞 前面的代码会影响后面代码的执行 */ xhr.open('get','1.txt',true); //提交 xhr.send(); //等待服务器返回内容 xhr.onreadystatechange=function()&#123; if(xhr.readyState==4)&#123; alert(xhr.responseText); &#125; &#125; &#125; &#125;&lt;/script&gt;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Ajax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第一个 Ajax 程序]]></title>
+    <url>%2F2017%2F02%2F13%2F%E7%AC%AC%E4%B8%80%E4%B8%AA-Ajax-%E7%A8%8B%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233&lt;script&gt;window.onload = function() &#123; var oBtn = document.getElementById('btn'); //当我点击按钮时候，我要通过`ajax`把`1.0.tex`里面的内容获取出来 oBtn.onclick = function() &#123; //打开浏览器 var xhr = new XMLHttpRequest(); //在地址栏输入地址 xhr.open('get','1.0.txt',true); //提交 xhr.send(); //等待服务器返回内容 xhr.onreadystatechange = function() &#123; if ( xhr.readyState == 4 ) &#123; alert( xhr.responseText ); &#125; &#125; &#125;&#125;&lt;/script&gt;&lt;/head&gt;&lt;body&gt; &lt;input type="button" value="按钮" id="btn" /&gt;&lt;/body&gt; 12//1.0.txthello world! 源代码&amp;源代码]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Ajax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[什么是 Ajax？]]></title>
+    <url>%2F2017%2F02%2F12%2F%E4%BB%80%E4%B9%88%E6%98%AF-Ajax%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[1.什么是 ajax？ajax : Asynchronous JavaScript and XML 异步 JavaScript 和 XML，用 javascript 异步形式去操作 xml。 2.ajax 是用来做什么的？ajax 要做的事情就是，从某个接口取数据，然后把取出来的数据，根据不同的特性进行不同的处理，然后再将处理后的结果进行进一步的操作，比如说反馈给用户或者进行数据分析。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Ajax</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[献给有野心以及想创业的朋友]]></title>
     <url>%2F2017%2F02%2F07%2F%E7%8C%AE%E7%BB%99%E6%9C%89%E9%87%8E%E5%BF%83%E4%BB%A5%E5%8F%8A%E5%90%91%E5%88%9B%E4%B8%9A%E7%9A%84%E6%9C%8B%E5%8F%8B%2F</url>
     <content type="text"><![CDATA[1、一个年轻人，如果三年的时间里，没有任何想法，他这一生，就基本这个样子，没有多大改变了。 2、成功者就是胆识加魄力，曾经在火车上听人谈起过温州人的成功，说了这么三个字，“胆子大”。这其实，就是胆识，而拿得起，放得下，就是魄力。 3、这个世界，有这么一小撮的人，打开报纸，是他们的消息，打开电视，是他们的消息，街头巷尾，议论的是他们的消息，仿佛世界是为他们准备的，他们能够呼风唤雨，无所不能。你的目标，应该是努力成为这一小撮人。 4、如果，你真的爱你的爸妈，爱你的女朋友，就好好的去奋斗，去拼搏吧，这样，你才有能力，有经济条件，有自由时间，去陪他们，去好好爱他们。 5、这个社会，是快鱼吃慢鱼，而不是慢鱼吃快鱼。 6、这个社会，是赢家通吃，输者一无所有，社会，永远都是只以成败论英雄。 7、如果你问周围朋友词语，如果十个人，九个人说不知道，那么，这是一个机遇，如果十个人，九个人都知道了，就是一个行业。 8、任何一个行业，一个市场，都是先来的有肉吃，后来的汤都没的喝。 9、这个世界上，一流的人才，可以把三流项目做成二流或更好，但是，三流人才，会把一流项目，做的还不如三流。 10、趁着年轻，多出去走走看看。读万卷书，不如行万里路，行万里路，不如阅人无数。 11、与人交往的时候，多听少说。这就是，上帝为什么给我们一个嘴巴两个耳朵的原因。 12、日常工作之外应当多注意自身修养的提高及自身技能的培训。随着计算机技术的广泛应用，为了不被社会所淘汰，就必须加强计算机技术的培训与提高。 13、不要装大，对于装大的人，最好的办法就是，捡块砖头，悄悄跟上去，一下子从背后放倒他。 14、不要随便说脏话，这会让别人觉得你没涵养，不大愿意和你交往。即使交往，也是敷衍。因为他内心认定你素质很差。15、想要抽烟的时候，先问下周围的人可不可以，要学会尊重别人。少在女生面前耍酷抽烟，你不知道，其实她们内心很反感。 16、买衣服的时候，要自己去挑，不要让家人给你买，虽然你第一第二次买的都不怎么样，可是，你会慢慢有眼光的。 17、要想进步，就只有吸取教训，成功的经验都是歪曲的，成功了，想怎么说都可以，失败者没有发言权，可是，你可以通过他的事例反思，总结。教训，不仅要从自己身上吸取，还要从别人身上吸取。 18、学习，学习，再学习，有事没事，去书店看看书，关于管理，金融，营销，人际交往，未来趋势等这些，你能获得很多。这个社会竞争太激烈了，你不学习，就会被淘汰。中国2008底，有一百多万大学生找不到工作。竞争这么激烈，所以，一定要认识一点，大学毕业了，不是学习结束了，而是学习刚刚开始。 19、如果你不是歌手，不是画家，也不是玩行为艺术的，那么，请在平时注意你的衣着。现在这个社会，衣着能表现出你属于哪一个群体，哪一个圈子。 20、记住，平均每天看电视超过三个小时以上的，一定都是那些月收入不超过两千元的，如果你想要月收入超过两千，请不要把时间浪费在电视上。同样的道理，那些平均每天玩网络游戏或聊天超过三个小时以上的，也都是那些月收入不超过两千的。 21、因为穷人很多，并且穷人没有钱，所以，他们才会在网络上聊天抱怨，消磨时间。你有见过哪个企业老总或主管经理有事没事经常在QQ群里闲聊的？ 22、无论你以后是不是从事销售部门，都看一下关于营销的书籍。因为，生活中，你处处都是在向别人推销展示你自己。 23、平时的时候，多和你的朋友沟通交流一下，不要等到需要朋友的帮助时，才想到要和他们联系，到了社会，你才会知道，能够认识一个真正的朋友，有多难? 24、如果你想知道自己将来的年收入如何。找你最经常来往的六个朋友，把他们的年收入加起来，除以六，就差不多是你的了。这个例子，可以充分的说明一点，物以类聚。 25、不要听信身边人的话，大一不谈恋爱，好的女孩子就被别人都挑走了。想想，刚上大一就耐不住寂寞，受不住诱惑，而去谈恋爱的女孩子，值得自己去追吗？大学里，可以有一场爱情，可是，不要固执地认为，刚上大一，就必须要谈恋爱。 26、记得，要做最后出牌的人，出让别人觉得出其不意的牌，在他们以为你要输掉的时候，这样，你才能赢得牌局。 27、关于爱情，有这么一句话，没有面包，怎么跳舞？无论什么时候，你决定去好好爱一个人的时候，一定要考虑给她你能给予的最好的物质生活。 28、给自己定一个五年的目标，然后，把它分解成一年一年，半年半年的，三个月的，一个月的。这样，你才能找到自己的目标和方向。 29、无论什么时候，记住尊严这两个字，做人是要有尊严，有原则，有底线的。否则，没有人会尊重你。 30、如果，我只能送你一句忠告，那就是，这个世界上没有免费的午餐，永远不要走捷径！]]></content>
@@ -1935,18 +2023,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[递归实现斐波那契数列]]></title>
-    <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
-    <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[六道JS面试题]]></title>
     <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
     <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
@@ -1956,6 +2032,18 @@
       <tags>
         <tag>JS</tag>
         <tag>面试指南</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[递归实现斐波那契数列]]></title>
+    <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
+    <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -2063,8 +2151,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>商业技巧</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
