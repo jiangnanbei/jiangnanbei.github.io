@@ -93,19 +93,19 @@
 
 
 
-<meta name="description" content="避免使用 document.write 方法document.write 最大的缺点就是它违背了“行为应该与样式分离”的原则。即使把 document.write 语句挪到外部函数里，也还是需要在标记的 body 部分使用  标签才能调用那个函数。
-1234567&amp;lt;body&amp;gt;    &amp;lt;p&amp;gt;this is a p&amp;lt;/P    &amp;lt;script&amp;gt;">
+<meta name="description" content="避免使用 document.write 方法document.write 最大的缺点就是它违背了“行为应该与样式分离”的原则。即使把 document.write 语句挪到外部函数里，也还是需要在标记的 body 部分使用 &amp;lt;script&amp;gt; 标签才能调用那个函数。
+1234567&amp;lt;body&amp;gt;    &amp;lt;p&amp;gt;this is a p&amp;lt;/P    &amp;lt;scri">
 <meta property="og:type" content="article">
 <meta property="og:title" content="document.wirte() 和 innerHTML属性">
 <meta property="og:url" content="http://ijiangnanbei.com/2017/06/28/document-wirte-和-innerHTML属性/index.html">
 <meta property="og:site_name" content="江南北的个人站">
-<meta property="og:description" content="避免使用 document.write 方法document.write 最大的缺点就是它违背了“行为应该与样式分离”的原则。即使把 document.write 语句挪到外部函数里，也还是需要在标记的 body 部分使用  标签才能调用那个函数。
-1234567&amp;lt;body&amp;gt;    &amp;lt;p&amp;gt;this is a p&amp;lt;/P    &amp;lt;script&amp;gt;">
-<meta property="og:updated_time" content="2017-06-28T03:28:18.086Z">
+<meta property="og:description" content="避免使用 document.write 方法document.write 最大的缺点就是它违背了“行为应该与样式分离”的原则。即使把 document.write 语句挪到外部函数里，也还是需要在标记的 body 部分使用 &amp;lt;script&amp;gt; 标签才能调用那个函数。
+1234567&amp;lt;body&amp;gt;    &amp;lt;p&amp;gt;this is a p&amp;lt;/P    &amp;lt;scri">
+<meta property="og:updated_time" content="2017-06-28T04:30:25.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="document.wirte() 和 innerHTML属性">
-<meta name="twitter:description" content="避免使用 document.write 方法document.write 最大的缺点就是它违背了“行为应该与样式分离”的原则。即使把 document.write 语句挪到外部函数里，也还是需要在标记的 body 部分使用  标签才能调用那个函数。
-1234567&amp;lt;body&amp;gt;    &amp;lt;p&amp;gt;this is a p&amp;lt;/P    &amp;lt;script&amp;gt;">
+<meta name="twitter:description" content="避免使用 document.write 方法document.write 最大的缺点就是它违背了“行为应该与样式分离”的原则。即使把 document.write 语句挪到外部函数里，也还是需要在标记的 body 部分使用 &amp;lt;script&amp;gt; 标签才能调用那个函数。
+1234567&amp;lt;body&amp;gt;    &amp;lt;p&amp;gt;this is a p&amp;lt;/P    &amp;lt;scri">
 
 
 
@@ -405,13 +405,13 @@
       
 
       
-        <h3 id="避免使用-document-write-方法"><a href="#避免使用-document-write-方法" class="headerlink" title="避免使用 document.write 方法"></a>避免使用 document.write 方法</h3><p><code>document.write</code> 最大的缺点就是它违背了“行为应该与样式分离”的原则。即使把 <code>document.write</code> 语句挪到外部函数里，也还是需要在标记的 body 部分使用 <script> 标签才能调用那个函数。</p>
+        <h3 id="避免使用-document-write-方法"><a href="#避免使用-document-write-方法" class="headerlink" title="避免使用 document.write 方法"></a>避免使用 document.write 方法</h3><p><code>document.write</code> 最大的缺点就是它违背了“行为应该与样式分离”的原则。即使把 <code>document.write</code> 语句挪到外部函数里，也还是需要在标记的 <code>body</code> 部分使用 <code>&lt;script&gt;</code> 标签才能调用那个函数。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;p&gt;this is a p&lt;/P</div><div class="line">    &lt;script&gt;</div><div class="line">        document.write("123");</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;p&gt;this is a p&lt;/P&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
 <p>把 JS 代码和 HTML 代码混杂在一起是一种很不好的做法。这样的标记既不容易阅读和编辑，也无法享受到把行为与结构分离开来的好处。同时，这样的文档还很容易导致验证错误。</p>
 <p>还有，MIME类型 <code>appplication/xhtml+xml</code> 与 <code>document.write</code> 不兼容，浏览器在呈现这种 XHTML 文档时根本不会执行 <code>document.write</code> 方法。</p>
 <p>从某种意义上讲，使用 <code>document.write</code> 方法有点像使用 <code>&lt;font&gt;</code> 标签去设定字体和颜色。</p>
 <h3 id="innerHTML-属性"><a href="#innerHTML-属性" class="headerlink" title="innerHTML 属性"></a>innerHTML 属性</h3><p>在需要把一大段 HTML 内容插入一份文档时，innerHTML 属性可以让你又快有简单的完成这一任务。不过，innerHTML 属性不会返回任何对刚插入的内容的引用。如果想对刚插入的内容进行处理，则需要使用 DOM 提供的那些精确的方法和属性。</p>
-<p>innerHTML 属性比 <code>document.write</code> 方法更值得推荐。使用 innerHTML 属性，你就可以吧 JS 代码从标记中分离出来。用不着在标记的 <body> 部分插入 <script> 标签。</p>
+<p>innerHTML 属性比 <code>document.write</code> 方法更值得推荐。使用 innerHTML 属性，你就可以吧 JS 代码从标记中分离出来。用不着在标记的 <code>&lt;body&gt;</code> 部分插入 <code>&lt;script&gt;</code> 标签。</p>
 <p>类似于 <code>document.write</code> 方法，innerHTML 属性也是 HTML 专有属性，不能用于其他任何标记语言文档。<strong>浏览器在呈现正宗的 XHTML 文档时会直接忽略到 innerHTML 属性。</strong></p>
 <p><strong>任何时候，标准的 DOM 都可以用来替代 innerHTML 。虽说这往往需要多编写一些代码才能获得同样的效果，但 DOM 同时也提供了更高的精确性和更强大的功能。</strong></p>
 
@@ -608,7 +608,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#避免使用-document-write-方法"><span class="nav-number">1.</span> <span class="nav-text">避免使用 document.write 方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#避免使用-document-write-方法"><span class="nav-number">1.</span> <span class="nav-text">避免使用 document.write 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#innerHTML-属性"><span class="nav-number">2.</span> <span class="nav-text">innerHTML 属性</span></a></li></ol></div>
             
 
           </div>

@@ -1316,7 +1316,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/13/六道JS面试题/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/13/递归实现斐波那契数列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1335,7 +1335,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/11/13/六道JS面试题/" itemprop="url">六道JS面试题</a></h2>
+                <a class="post-title-link" href="/2016/11/13/递归实现斐波那契数列/" itemprop="url">递归实现斐波那契数列</a></h2>
         
 
         <div class="post-meta">
@@ -1405,18 +1405,10 @@
 
       
         
-          <h3 id="1-创建JS对象的两种方法"><a href="#1-创建JS对象的两种方法" class="headerlink" title="1.创建JS对象的两种方法?"></a>1.创建JS对象的两种方法?</h3><pre><code>var o1 = {};
-var o2 = new object;
-</code></pre><h3 id="2-如何创建数组"><a href="#2-如何创建数组" class="headerlink" title="2.如何创建数组?"></a>2.如何创建数组?</h3><pre><code>var a1 = [];
-var a2 = new Array;
-</code></pre>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/11/13/六道JS面试题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <p>用递归实现斐波那契数列：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">fobi</span>(<span class="params">n</span>)</span>&#123;</div><div class="line"> </div><div class="line"> 	<span class="keyword">if</span>(n == <span class="number">0</span> || n == <span class="number">1</span>)&#123;</div><div class="line"> 		<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line"> 	&#125;</div><div class="line"></div><div class="line"> 	<span class="keyword">return</span> fobi(n<span class="number">-1</span>)+fobi(n<span class="number">-2</span>);</div><div class="line"> &#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result = fobi(<span class="number">3</span>);</div><div class="line"></div><div class="line">alert(result);<span class="comment">//3</span></div></pre></td></tr></table></figure></p>
+
+          
         
       
     </div>
