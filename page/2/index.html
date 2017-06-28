@@ -317,6 +317,582 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/DOM编程艺术：共享-onload-事件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/27/DOM编程艺术：共享-onload-事件/" itemprop="url">DOM编程艺术：共享 onload 事件</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-27T10:10:30+08:00">
+                2017-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>假设我有两个函数：<code>firstFunction</code> 和 <code>secondFunction</code> 。如果想让他们俩在页面加载时得到的执行，该怎么办？如果把它们逐一绑定到 <code>onload</code> 事件上，他们当中只有最后那个才会被实际执行：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = fristFunction;</div><div class="line"><span class="built_in">window</span>.onload = secondFunction;</div></pre></td></tr></table></figure>
+<p>有一种办法可以解决这一难题：可以先创建一个你们函数来容纳这两个函数，然后把那个匿名函数绑定到 <code>onload</code> 事件上：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    firstFunction();</div><div class="line">    secondFunction();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面这段代码在绑定函数不是很多的场合确实可以很好的工作。</p>
+<p>这里还有一个弹性最佳的解决方案：不管你打算在页面加载完毕时执行多少个函数，它都可以应付自如。</p>
+<p>这个函数的名字是 <code>addLoadEvent</code> ，他只有一个参数：打算在页面加载完毕时执行的函数的名字。下面是这个函数将要完成的操作：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1.把现有的 window.onload 事件处理函数的值存入变量 oldonload</span></div><div class="line"><span class="comment">//2.如果在这个处理函数上还没有绑定任何函数，就像平时那样把新函数添加给它</span></div><div class="line"><span class="comment">//3.如果在这个处理函数上已经绑定了一些函数，就把新函数追加到现有指令的末尾</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addLoadEvent</span>(<span class="params">func</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> oldonload = <span class="built_in">window</span>.onload;</div><div class="line">	<span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span>.onload != <span class="string">'function'</span>) &#123;</div><div class="line">		<span class="built_in">window</span>.onload = func;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			oldonload();</div><div class="line">			func();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这将把那些在页面加载完毕时执行的函数创建为一个队列。如果想把刚才那两个函数添加到这个队列中去，只需要写出下面两行代码即可：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">addLoadEvent(firstFunction);</div><div class="line">addLoadEvent(secondFunction);</div></pre></td></tr></table></figure>
+<p>这个函数非常实用，尤其是在代码变得越来越复杂的时候。无论在页面加载完毕时执行多少个函数，只要多写一条语句就可以安排好一切。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/DOM编程艺术：预防性措施/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/27/DOM编程艺术：预防性措施/" itemprop="url">DOM编程艺术：预防性措施</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-27T10:09:38+08:00">
+                2017-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById(<span class="string">'imagegallery'</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</div></pre></td></tr></table></figure>
+<p>这项测试是一个预防性措施。现在我知道用这个调用 JS 函数的文档里有一个 <code>id</code> 属性值等于 <code>imagegallery</code> 的列表清单元素，但我不敢确定这在将来会不会发生变化。有了这个预防性措施<strong>，即使我决定以后从网页上删掉图片库，也用不着担心这个网页的 JS 代码会突然出错。</strong></p>
+<p>把 HTML 文档的内容和 JS 代码所实现的行为分离开来的重要性由此可见一斑。<strong>作为一条原则，如果想用 JS 给某个网页添加一条行为，就不应该让 JS 对这个网页的结构有任何的依赖。</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/结构化程序设计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/27/结构化程序设计/" itemprop="url">结构化程序设计</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-27T09:35:27+08:00">
+                2017-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>结构化程序设计中有这样一条原则：函数应该只有一个入口和一个出口。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">prepareGallery</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementsByTagName) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById(<span class="string">'imagegallery'</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	</div><div class="line">	<span class="keyword">var</span> gallery = <span class="built_in">document</span>.getElementById(<span class="string">'imagegallery'</span>);</div><div class="line">	<span class="keyword">var</span> links = gallery.getElementsByTagName(<span class="string">'a'</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;links.length; i++) &#123;</div><div class="line">		links[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			showPic(<span class="keyword">this</span>);</div><div class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面这个函数的做法已经违背了这条原则，函数的开头部分有多个 <code>return false</code> 语句，他们全都是这个函数的出口。根据结构化程序设计理论，应该把这些出口减少至一个。</p>
+<p>理论上，是这样的，但是在实际工作中，过分拘泥于这项原则会使代码变得非常难以阅读。如果你遵循了这条原则，那么代码看起来将会是下面这样：这个函数的核心代码就会被掩埋在一层有一层的花括号里。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">prepareGallery</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementsByTagName) &#123;</div><div class="line">		<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById) &#123;</div><div class="line">			<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById(<span class="string">'imagegallery'</span>))&#123;</div><div class="line">				<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>如果一个函数有多个出口，只要这些出口集中出现在函数的开头部分，就是可以接受的。</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/DOM编程艺术：性能优化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/27/DOM编程艺术：性能优化/" itemprop="url">DOM编程艺术：性能优化</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-27T08:13:34+08:00">
+                2017-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="尽量少访问-DOM-和-尽量减少标记"><a href="#尽量少访问-DOM-和-尽量减少标记" class="headerlink" title="尽量少访问 DOM 和 尽量减少标记"></a>尽量少访问 DOM 和 尽量减少标记</h3><p><strong>不管是什么时候，只要是查询 DOM 中的某些元素，浏览器都会搜索整个 DOM 树，从中查找可能匹配的元素。</strong></p>
+<p>要是你有多个函数重复做同一件事。比如，要是有一个函数检查每个链接中的 <code>popUp</code> 类，而另外一个函数检查每个链接中的 <code>hover</code> 类，那么同样也会造成搜索浪费。</p>
+<p>在多个函数取得一组类似元素的情况下，可以考虑重构代码，把搜索结果保存在一个全局变量里，或者把一组元素直接以参数的形式传递给函数。</p>
+<p><strong>另一个需要注意的地方，就是要尽量减少文档中的标记数量。过多不必要的元素只会增加 DOM 树的规模，进而增加遍历 DOM 树以查找特定元素的时间。</strong></p>
+<h3 id="合并和放置脚本"><a href="#合并和放置脚本" class="headerlink" title="合并和放置脚本"></a>合并和放置脚本</h3><p>在把脚本引入到页面中时，要把多个脚本合并到一个 。这样，就可以减少加载页面时发送请求的数量。而减少请求的数量通常是在性能优化时首先要考虑的。</p>
+<p><strong>把脚本文件放在文档的末尾，就可以让页面变得更快。即使这样，在加载脚本时，<code>window</code> 对象的 <code>load</code> 事件依然可以执行对文档进行的各种操作。</strong></p>
+<h3 id="压缩脚本"><a href="#压缩脚本" class="headerlink" title="压缩脚本"></a>压缩脚本</h3><p>多数情况下，你应该有两个版本，一个是工作副本，可以修改代码并添加注释；另一个是精简副本，用于放在站点上。通常，为了与非精简版本区分开，最好在精简副本的文件名中加上 min 字样。</p>
+<p>下面是几个有代表性的代码压缩工具：</p>
+<p>1.<code>JSMin</code><br>2.<code>UI Compressor</code><br>3.<code>Closure Compiler</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/DOM编程艺术：向后兼容/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -888,584 +1464,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/阻止默认行为及其实现原理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/26/阻止默认行为及其实现原理/" itemprop="url">阻止默认行为及其实现原理</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T18:48:11+08:00">
-                2017-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="阻止默认行为"><a href="#阻止默认行为" class="headerlink" title="阻止默认行为"></a>阻止默认行为</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/fireworks.gif"</span> <span class="attr">target</span>=<span class="string">"_self"</span> <span class="attr">onclick</span>=<span class="string">"showPic(this) ; return false;"</span> <span class="attr">title</span>=<span class="string">"A fireworks display"</span>; &gt;</span>Fireworks<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>此时这个链接有两个行为，一个是执行函数 <code>showPic()</code> 另一个是链接的默认行为，由于我们要执行的是 <code>showPic()</code>， 所以我们使用 <code>return false</code> 阻止连接的默认行为。</p>
-<h4 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h4><p>在给某个元素添加了事件处理函数之后，一旦事件发生，相应的 js 代码就会得到执行。被调用的 js 代码可以返回一个值，这个值将传递给那个事件处理函数。</p>
-<p>例如，我们可以给某个链接添加一个 <code>onclick</code> 事件处理函数，并让这个处理函数所触发的 <code>js</code> 代码返回布尔值 <code>true</code> 或 <code>false</code>，如果那段 <code>js</code> 代码返回的是 <code>true</code>，<code>onclick</code> 事件处理函数就认为“这个链接被点击了”；反之，如果返回的是 <code>false</code> ，<code>onclick</code> 事件处理函数就会认为这个链接没有被点击。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/JS-基础知识点总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/26/JS-基础知识点总结/" itemprop="url">JS 基础知识点总结</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T16:17:42+08:00">
-                2017-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="宿主对象"><a href="#宿主对象" class="headerlink" title="宿主对象"></a>宿主对象</h4><p>可以在脚本里使用一些已经预先定义好的其他对象。这些对象不是由 js 语言本身而是由它的运行环境提供的。具体到 web 应用，这个环境就是浏览器。有浏览器提供的预定义对象被称为宿主对象。</p>
-<p>宿主对象包括 From、Image、Element 等，我们可以通过这些对象获得关于网页上的表单、图像和各种表单元素信息。其中 document 宿主对象可以用来获取网页上任何一个元素的信息。</p>
-<h4 id="两种方法设置元素的属性"><a href="#两种方法设置元素的属性" class="headerlink" title="两种方法设置元素的属性"></a>两种方法设置元素的属性</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//第一种方法</div><div class="line">element.value = 'content';</div><div class="line"></div><div class="line">//第二种方法</div><div class="line">element.setAttribute('value','content');</div></pre></td></tr></table></figure>
-<p>第二种方法比较好，起码你不用去记忆哪些元素的哪些属性可以用 DOM 之前的哪些方法去设置。虽然哪些老办法可以毫无问题的对文档里的图片、表单和其他的一些元素的属性进行设置，但第二种方法的优势在于他可以修改文档中任何一个元素的任何一个属性。</p>
-<p>第二种方法法的另一个优势是可移植性更好。那些老方法只适用于 web 文档，DOM 则适用于任何一种标记语言。</p>
-<p><strong>第二种方法即 DOM 方法，是一种适用于多种环境和多种程序设计语言的通用 API。如果你想把你学到的 DOM 技巧运用在 web 浏览器以外的应用环境里，严格遵守“第一级 DOM ”能够让你避免与兼容性有关的任何问题。</strong></p>
-<h4 id="chileNodes-属性"><a href="#chileNodes-属性" class="headerlink" title="chileNodes 属性"></a>chileNodes 属性</h4><p>chileNodes 返回的数组包含所有类型的节点，而不仅仅是元素节点。事实上，<strong>文档里几乎每一样东西都是一个节点，甚至连空格和换行符都会被解释为节点，</strong>而且它们也全都包含在 chileNodes 属性所返回的数组当中。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/26/JS-基础知识点总结/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/ie-兼容性问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/26/ie-兼容性问题/" itemprop="url">ie 兼容性问题</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T08:25:40+08:00">
-                2017-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.IE6 / IE7 不支持块属性标签的 <code>inline-block</code></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/CSS-清浮动详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/26/CSS-清浮动详解/" itemprop="url">CSS 清浮动详解</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T08:14:06+08:00">
-                2017-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="什么是浮动？"><a href="#什么是浮动？" class="headerlink" title="什么是浮动？"></a>什么是浮动？</h3><p>使元素脱离文档流，按照指定方向发生移动，遇到父级边界或者相邻的元素停下来。（脱离文档流：此时浮动元素在文档中不占位置，飘了起来）</p>
-<h3 id="浮动的特征"><a href="#浮动的特征" class="headerlink" title="浮动的特征"></a>浮动的特征</h3><p>1.块元素在一行显示<br>2.内联元素支持宽高<br>3.默认内容撑开宽度<br>4.脱离文档流<br>5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来）</p>
-<h3 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h3><h4 id="after-伪类清浮动（主流方法）给浮动元素的父级添加"><a href="#after-伪类清浮动（主流方法）给浮动元素的父级添加" class="headerlink" title="after 伪类清浮动（主流方法）给浮动元素的父级添加"></a>after 伪类清浮动（主流方法）给浮动元素的父级添加</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.clear&#123;*zoom:1&#125;</div><div class="line">.clear:after&#123;content:'';display:block;clear:both;&#125;</div></pre></td></tr></table></figure>
-<h4 id="overflow-hidden-auto-清除浮动-给父级元素添加"><a href="#overflow-hidden-auto-清除浮动-给父级元素添加" class="headerlink" title="overflow:hidden/auto 清除浮动 给父级元素添加"></a>overflow:hidden/auto 清除浮动 给父级元素添加</h4><p>问题：需要配合宽度或者 zoom:1 兼容 IE6</p>
-<h4 id="给父级元素加高"><a href="#给父级元素加高" class="headerlink" title="给父级元素加高"></a>给父级元素加高</h4><p>问题：扩展性不好<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/26/CSS-清浮动详解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1510,7 +1513,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">230</span>
+                <span class="site-state-item-count">234</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1532,7 +1535,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

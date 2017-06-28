@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[DOM编程艺术：重回图片库]]></title>
+    <url>%2F2017%2F06%2F28%2FDOM%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%EF%BC%9A%E9%87%8D%E5%9B%9E%E5%9B%BE%E7%89%87%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[1234567891011121314151617&lt;h1&gt;Snapshots&lt;/h1&gt;&lt;ul id="imagegallery"&gt; &lt;li&gt; &lt;a href="images/fireworks.gif" title="A fireworks display"; &gt;&lt;img src="images/fireworks.gif" alt="Fire"&gt;&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href="images/coffee.gif" title="A cup of black coffee" &gt;&lt;img src="images/coffee.gif" alt="coffee"&gt;&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href="images/rose.gif" title="A red rose" &gt;Rose&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href="images/bigben.gif" title="The famous clock" &gt;Big Ben&lt;/a&gt; &lt;/li&gt;&lt;/ul&gt;&lt;img src="images/hello.gif" id="placeholder" alt="my image gallery"&gt;&lt;p id="description"&gt;Choose an image!&lt;/p&gt; 这个 HTML 文件中有一个图片和一段文字仅仅是为 showPic 脚本服务的。若能被结构和行为彻底分离开那就再好不过了。既然这些元素的存在只是为了让 DOM 方法处理他们，那么用 DOM 方法来创建他们才是最合适的选择。 1234567891011121314151617// html&lt;h1&gt;Snapshots&lt;/h1&gt;&lt;ul id="imagegallery"&gt; &lt;li&gt; &lt;a href="images/fireworks.gif" title="A fireworks display"; &gt;&lt;img src="images/fireworks.gif" alt="Fire"&gt;&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href="images/coffee.gif" title="A cup of black coffee" &gt;&lt;img src="images/coffee.gif" alt="coffee"&gt;&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href="images/rose.gif" title="A red rose" &gt;Rose&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href="images/bigben.gif" title="The famous clock" &gt;Big Ben&lt;/a&gt; &lt;/li&gt;&lt;/ul&gt; 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091// js&lt;script type="text/javascript"&gt;window.onload = addLoadEvent();function showPic(whichpic)&#123; if(!document.getElementById('placeholder')) return false; var source = whichpic.getAttribute("href"); var placeholder = document.getElementById('placeholder'); if(placeholder.nodeName != 'IMG') return false; placeholder.setAttribute("src",source); if(!document.getElementById('description')) return false; var text = whichpic.getAttribute('title') ? whichpic.getAttribute('title') : ""; var description = document.getElementById('description'); if (description.firstChild.nodeType == 3) &#123; description.firstChild .nodeValue = text; &#125; // 阻止 a 连接的默认事件，防止其在新的窗口打开 return false;&#125;function prepareGallery() &#123; if(!document.getElementsByTagName) return false; if(!document.getElementById) return false; if(!document.getElementById('imagegallery')) return false; var gallery = document.getElementById('imagegallery'); var links = gallery.getElementsByTagName('a'); for(var i=0; i&lt;links.length; i++) &#123; links[i].onclick = function() &#123; return showPic(this); // return !showPic(this); // 等价于 // if (showPic(this)) &#123; // return false; // &#125; else &#123; // return true; // &#125; // 等价于 // return showPic(this) ? false : true; &#125; &#125;&#125;function addLoadEvent(func) &#123; var oldonload = window.onload; if (typeof window.onload != 'function') &#123; window.onload = func; &#125; else &#123; window.onload = function() &#123; oldonload(); func(); &#125; &#125;&#125;function insertAfter(newElement, targetElement) &#123; var parent = targetElement.parentNode; if (parent.lastChild == targetElement) &#123; parent.appendChild(newElement); &#125; else &#123; parent.insertBefore(newElement,targetElement.nextSibling); &#125;&#125; function preparePlaceholder() &#123; if (!document.createElement) return false; if (!document.createTextNode) return false; if (!document.getElementById) return false; if (!document.getElementById('imagegallery')) return false; var placeholder = document.createElement('img'); placeholder.setAttribute('id','placeholder'); placeholder.setAttribute('src','images/hello.gif'); placeholder.setAttribute('alt','my image gallery'); var description = document.createElement('p'); description.setAttribute('id','description'); var desctext = document.createTextNode('choose an image!'); description.appendChild(desctext); var gallery = document.getElementById('imagegallery'); insertAfter(placeholder,gallery); insertAfter(description,placeholder); &#125; addLoadEvent(preparePlaceholder);addLoadEvent(prepareGallery);&lt;/script&gt; 现在，图片的行为结构、样式和行为已经彻底分离了。 源代码效果展示]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DOM 初级知识点总结]]></title>
+    <url>%2F2017%2F06%2F28%2FDOM-%E5%88%9D%E7%BA%A7%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[setAttributesetAttribute 可以改变 DOM 节点树上的某个属性节点，相关文档在浏览器里的呈现就会发生相应的变化。不过，setAttribute 方法并未改变文档的物理内容，如果用文本编辑器而不是浏览器去打开这个文档，我们将看不到任何变化。 一旦明白了这个道理，以动态方式实时创建标记就不那么难以理解了。你并不是在创建标记，而是在改变 DOM 节点树。 insertBefore()insertBefore() 把一个新元素插入到一个现有元素的前面。在调用此方法时，你必须告诉它三件事： 1.新元素：你想插入的元素（newElement）2.目标元素：你想把这个元素插入到哪个元素之前（targetElement）3.父元素：目标元素的父元素（parentElement） 123parentElement.insertBefore(newElement,targetElement);targetElement.parentNode.insertBefore(newElement,targetElement); 编写 insertAfter() 函数12345678function insertAfter(newElement, targetElement) &#123; var parent = targetElement.parentNode; if (parent.lastChild == targetElement) &#123; parent.appendChild(newElement); &#125; else &#123; parent.insertBefore(newElement,targetElement.nextSibling); &#125;&#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>DOM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[document.wirte() 和 innerHTML属性]]></title>
+    <url>%2F2017%2F06%2F28%2Fdocument-wirte-%E5%92%8C-innerHTML%E5%B1%9E%E6%80%A7%2F</url>
+    <content type="text"><![CDATA[避免使用 document.write 方法document.write 最大的缺点就是它违背了“行为应该与样式分离”的原则。即使把 document.write 语句挪到外部函数里，也还是需要在标记的 body 部分使用 标签才能调用那个函数。 1234567&lt;body&gt; &lt;p&gt;this is a p&lt;/P &lt;script&gt; document.write("123"); &lt;/script&gt; &lt;p&gt;this is a p&lt;/P&gt;&lt;/body&gt; 把 JS 代码和 HTML 代码混杂在一起是一种很不好的做法。这样的标记既不容易阅读和编辑，也无法享受到把行为与结构分离开来的好处。同时，这样的文档还很容易导致验证错误。 还有，MIME类型 appplication/xhtml+xml 与 document.write 不兼容，浏览器在呈现这种 XHTML 文档时根本不会执行 document.write 方法。 从某种意义上讲，使用 document.write 方法有点像使用 &lt;font&gt; 标签去设定字体和颜色。 innerHTML 属性在需要把一大段 HTML 内容插入一份文档时，innerHTML 属性可以让你又快有简单的完成这一任务。不过，innerHTML 属性不会返回任何对刚插入的内容的引用。如果想对刚插入的内容进行处理，则需要使用 DOM 提供的那些精确的方法和属性。 innerHTML 属性比 document.write 方法更值得推荐。使用 innerHTML 属性，你就可以吧 JS 代码从标记中分离出来。用不着在标记的 部分插入 标签。 类似于 document.write 方法，innerHTML 属性也是 HTML 专有属性，不能用于其他任何标记语言文档。浏览器在呈现正宗的 XHTML 文档时会直接忽略到 innerHTML 属性。 任何时候，标准的 DOM 都可以用来替代 innerHTML 。虽说这往往需要多编写一些代码才能获得同样的效果，但 DOM 同时也提供了更高的精确性和更强大的功能。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>DOM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DOM编程艺术：图片库改进版]]></title>
+    <url>%2F2017%2F06%2F28%2FDOM%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%EF%BC%9A%E5%9B%BE%E7%89%87%E5%BA%93%E6%94%B9%E8%BF%9B%E7%89%88%2F</url>
+    <content type="text"><![CDATA[源代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081//HTML&lt;h1&gt;Snapshots&lt;/h1&gt;&lt;ul id="imagegallery"&gt; &lt;li&gt; &lt;!-- 此时连接上有两个行为，一个是 showPic ，另一个就是连接的默认行为，我们可以使用return false 阻止事件的默认行为 --&gt; &lt;a href="images/fireworks.gif" title="A fireworks display"; &gt;&lt;img src="images/fireworks.gif" alt="Fire"&gt;&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href="images/coffee.gif" title="A cup of black coffee" &gt;&lt;img src="images/coffee.gif" alt="coffee"&gt;&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href="images/rose.gif" title="A red rose" &gt;Rose&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href="images/bigben.gif" title="The famous clock" &gt;Big Ben&lt;/a&gt; &lt;/li&gt;&lt;/ul&gt;&lt;img src="images/hello.gif" id="placeholder" alt="my image gallery"&gt;&lt;p id="description"&gt;Choose an image!&lt;/p&gt;//JS&lt;script type="text/javascript"&gt;window.onload = addLoadEvent();function showPic(whichpic)&#123; if(!document.getElementById('placeholder')) return false; var source = whichpic.getAttribute("href"); var placeholder = document.getElementById('placeholder'); if(placeholder.nodeName != 'IMG') return false; placeholder.setAttribute("src",source); if(!document.getElementById('description')) &#123; var text = whichpic.getAttribute('title') ? whichpic.getAttribute('title') : ""; var description = document.getElementById('description'); if (description.firstChild.nodeType == 3) &#123; description.firstChild.nodeValue = text; &#125; &#125; return true;&#125;function prepareGallery() &#123; if(!document.getElementsByTagName) return false; if(!document.getElementById) return false; if(!document.getElementById('imagegallery')) return false; var gallery = document.getElementById('imagegallery'); var links = gallery.getElementsByTagName('a'); for(var i=0; i&lt;links.length; i++) &#123; links[i].onclick = function() &#123; return !showPic(this); // 等价于 // if (showPic(this)) &#123; // return false; // &#125; else &#123; // return true; // &#125; // 等价于 // return showPic(this) ? false : true; &#125; &#125;&#125;function addLoadEvent(func) &#123; var oldonload = window.onload; if (typeof window.onload != 'function') &#123; window.onload = func; &#125; else &#123; window.onload = function() &#123; oldonload(); func(); &#125; &#125;&#125;addLoadEvent(prepareGallery);addLoadEvent(showPic);&lt;/script&gt; 效果展示]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[HTML Core 和 HTML-DOM]]></title>
     <url>%2F2017%2F06%2F27%2FHTML-Core-%E5%92%8C-HTML-DOM%2F</url>
     <content type="text"><![CDATA[getElementById getElementsByTagName getAttribute setAttribute 这些方法都是 DOM Core 的组成部分，他们并不专属于 JS，支持 DOM 的任何一种程序设计语言都可以使用他们。他们的用途也并非仅限于处理网页，他们可以用来处理任何一种标记语言，比如 XML 编写出来的文档。 在使用 JS 语言和 DOM 为 HTML 文件编写脚本时，还有许多属性可供选用。例如，我们已经使用的一个属性 onclick 。这些属性属于 HTML-DOM ，它们在 DOM Core 出现之前很久就已经为人们所熟悉了。 比如说，HTML-DOM 提供了一个 forms 对象，这个对象可以吧下面这样的语句：document.getElementsByTagName(&#39;from&#39;) 简化为 document.forms 类似的，HTML-DOM 还提供了描述各种描述 HTML 元素的属性。比如说，HTML-DOM为图片提供的 src 属性可以把下面这样的语句：element.getAttribute(&#39;src&#39;) 简化为 element.src 这些方法和属性可以相互替换。同样的操作既可只使用 DOM Core 来实现，也可以使用 HTML-DOM 来实现。正如大家看到的那样，HTML-DOM 代码通常会更短，必须提醒一下，他们只能用来处理 web 文档。如果你打算用 DOM 处理其他类型的文档，务必注意这一点。 123456789//DOM Corevar source = whichpic.getAttribute('href');//HTML-DOMvar source = whichpic.href;//DOM Coreplaceholder.setAttribute('src',source);//HTML-DOMplaceholder.src = source;]]></content>
@@ -144,7 +188,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[JS 基础知识点总结]]></title>
+    <title><![CDATA[JS 初级知识点总结]]></title>
     <url>%2F2017%2F06%2F26%2FJS-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[宿主对象可以在脚本里使用一些已经预先定义好的其他对象。这些对象不是由 js 语言本身而是由它的运行环境提供的。具体到 web 应用，这个环境就是浏览器。有浏览器提供的预定义对象被称为宿主对象。 宿主对象包括 From、Image、Element 等，我们可以通过这些对象获得关于网页上的表单、图像和各种表单元素信息。其中 document 宿主对象可以用来获取网页上任何一个元素的信息。 两种方法设置元素的属性12345//第一种方法element.value = 'content';//第二种方法element.setAttribute('value','content'); 第二种方法比较好，起码你不用去记忆哪些元素的哪些属性可以用 DOM 之前的哪些方法去设置。虽然哪些老办法可以毫无问题的对文档里的图片、表单和其他的一些元素的属性进行设置，但第二种方法的优势在于他可以修改文档中任何一个元素的任何一个属性。 第二种方法法的另一个优势是可移植性更好。那些老方法只适用于 web 文档，DOM 则适用于任何一种标记语言。 第二种方法即 DOM 方法，是一种适用于多种环境和多种程序设计语言的通用 API。如果你想把你学到的 DOM 技巧运用在 web 浏览器以外的应用环境里，严格遵守“第一级 DOM ”能够让你避免与兼容性有关的任何问题。 chileNodes 属性chileNodes 返回的数组包含所有类型的节点，而不仅仅是元素节点。事实上，文档里几乎每一样东西都是一个节点，甚至连空格和换行符都会被解释为节点，而且它们也全都包含在 chileNodes 属性所返回的数组当中。 nodeType 属性nodeType 总共有 12 中可取的值，但其中仅有三种具有实用价值。 1.元素节点的 nodeType 属性值是12.属性节点的 nodeType 属性值是23.文本节点的 nodeType 属性值是3 这意味着，可以让函数值对特定类型的节点进行处理。 获取 p 标签内部的值123456&lt;p id="description"&gt; message &lt;/p&gt;var desc = document.getElementById("description");alert(desc.nodeValue);//nullalert(desc.childNodes[0].nodeValue);//message 注意，包含在 p 元素里面的文本是另一个节点，它是 p 元素的第一个子节点。]]></content>
       <categories>
@@ -491,8 +535,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -503,8 +547,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -625,8 +669,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1700,8 +1744,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -1712,8 +1756,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -1891,18 +1935,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[六道JS面试题]]></title>
-    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>面试指南</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[递归实现斐波那契数列]]></title>
     <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
     <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
@@ -1912,6 +1944,18 @@
       <tags>
         <tag>算法</tag>
         <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[六道JS面试题]]></title>
+    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>面试指南</tag>
       </tags>
   </entry>
   <entry>
@@ -2019,8 +2063,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业技巧</tag>
         <tag>商业</tag>
+        <tag>商业技巧</tag>
       </tags>
   </entry>
   <entry>

@@ -317,6 +317,572 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/21/控制多个选项卡自动播放/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/21/控制多个选项卡自动播放/" itemprop="url">控制多个选项卡自动播放</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-21T15:33:21+08:00">
+                2016-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们使用组件开发的好处就是可以根据不同的需求，快速的做出可扩展可复用的组件，提高团队协同开发的效率。</p>
+<p>在下面的这个例子中，我复用原来的组件，在原来的组件的基础上扩展出了一个可自动播放的功能：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></div><div class="line">		<span class="selector-tag">input</span>&#123;<span class="attribute">padding</span>: <span class="number">0</span>;<span class="attribute">width</span>: <span class="number">20px</span>;<span class="attribute">height</span>: <span class="number">30px</span>;&#125;</div><div class="line">		<span class="selector-class">.active</span>&#123;<span class="attribute">background-color</span>: red;&#125;</div><div class="line">		<span class="selector-id">#tab1</span> <span class="selector-tag">div</span>&#123;<span class="attribute">width</span>: <span class="number">300px</span>;<span class="attribute">height</span>: <span class="number">250px</span>;<span class="attribute">position</span>: relative;<span class="attribute">border</span>: <span class="number">1px</span> solid;<span class="attribute">display</span>: none;&#125;</div><div class="line">		<span class="selector-id">#tab2</span> <span class="selector-tag">div</span>&#123;<span class="attribute">width</span>: <span class="number">300px</span>;<span class="attribute">height</span>: <span class="number">250px</span>;<span class="attribute">position</span>: relative;<span class="attribute">border</span>: <span class="number">1px</span> solid;<span class="attribute">display</span>: none;&#125;</div><div class="line">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"tab1"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display: block"</span>&gt;</span>111<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>222<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>333<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"tab2"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display: block"</span>&gt;</span>111<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>222<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span>333<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Tab</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.doc = <span class="built_in">document</span>;</div><div class="line">	<span class="keyword">this</span>.tab = <span class="keyword">this</span>.doc.getElementById(id);</div><div class="line">	<span class="keyword">this</span>.aBtn = <span class="keyword">this</span>.tab.getElementsByTagName(<span class="string">'input'</span>);</div><div class="line">	<span class="keyword">this</span>.aDiv = <span class="keyword">this</span>.tab.getElementsByTagName(<span class="string">'div'</span>);</div><div class="line">	<span class="keyword">this</span>.iNow = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Tab.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> This  = <span class="keyword">this</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,len=<span class="keyword">this</span>.aBtn.length; i&lt;len; i++) &#123;</div><div class="line">		<span class="keyword">this</span>.aBtn[i].index = i;</div><div class="line">		<span class="keyword">this</span>.aBtn[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			This.change(<span class="keyword">this</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Tab.prototype.change = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>,len=<span class="keyword">this</span>.aBtn.length; j&lt;len; j++) &#123;</div><div class="line">			<span class="keyword">this</span>.aBtn[j].className = <span class="string">''</span>;</div><div class="line">			<span class="keyword">this</span>.aDiv[j].style.display = <span class="string">'none'</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.aBtn[obj.index].className = <span class="string">'active'</span>;</div><div class="line">	<span class="keyword">this</span>.aDiv[obj.index].style.display = <span class="string">'block'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Tab.prototype.autoplay = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> This = <span class="keyword">this</span>;</div><div class="line">	setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,len=This.aBtn.length; i&lt;len; i++) &#123;</div><div class="line">			This.aBtn[i].className = <span class="string">''</span>;</div><div class="line">			This.aDiv[i].style.display = <span class="string">'none'</span>;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		This.aBtn[This.iNow].className = <span class="string">'active'</span>;</div><div class="line">		This.aDiv[This.iNow].style.display = <span class="string">'block'</span>;</div><div class="line">		This.iNow++;</div><div class="line"></div><div class="line">		This.iNow &gt; <span class="number">2</span> ? This.iNow = This.iNow % This.aBtn.length : This.iNow;</div><div class="line">		</div><div class="line">	&#125;,<span class="number">500</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> tab1 = <span class="keyword">new</span> Tab(<span class="string">'tab1'</span>);</div><div class="line">tab1.init();</div><div class="line">	</div><div class="line"><span class="keyword">var</span> tab2 = <span class="keyword">new</span> Tab(<span class="string">'tab2'</span>);</div><div class="line"><span class="comment">// 复用原来的组件</span></div><div class="line">tab2.init();</div><div class="line"><span class="comment">// 在原来的组件基础上，增加自动播放功能</span></div><div class="line">tab2.autoplay();</div><div class="line"></div><div class="line"></div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/github/blob/master/JS_OOP/files/1.3%E6%8E%A7%E5%88%B6%E5%A4%9A%E4%B8%AA%E9%80%89%E9%A1%B9%E5%8D%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE.html">效果展示</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/20/this指向/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/20/this指向/" itemprop="url">this指向</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-20T15:33:21+08:00">
+                2016-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>能清楚的知道 this 的指向，对于编写面向对象的程序来说是至关重要的。下面我们来看两个小例子：</p>
+<h3 id="1-第一个例子"><a href="#1-第一个例子" class="headerlink" title="1.第一个例子"></a>1.第一个例子</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">oDiv.onclick = show;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// 此时 this 指向 oDiv;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-第二个例子"><a href="#2-第二个例子" class="headerlink" title="2.第二个例子"></a>2.第二个例子</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">oDiv.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	show();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// 这个时候 this 指向 window</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>对于 this 指向，我们在编写面向对象程序的时候要记住，在事件处理程序和定时器事件中，this 的指向会发生改变。</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/17/传统选项卡和面向对象选项卡的编写/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/17/传统选项卡和面向对象选项卡的编写/" itemprop="url">传统选项卡和面向对象选项卡的编写</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-17T15:33:21+08:00">
+                2016-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="1-传统方式编写选项卡"><a href="#1-传统方式编写选项卡" class="headerlink" title="1.传统方式编写选项卡"></a>1.传统方式编写选项卡</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;title&gt;&lt;/title&gt;</div><div class="line">	&lt;style type="text/css"&gt;</div><div class="line">		*&#123;margin: 0;padding: 0&#125;</div><div class="line">		#box&#123;</div><div class="line">			height: 100px;</div><div class="line">			width: 250px;</div><div class="line">			margin: 50px auto;</div><div class="line">		&#125;</div><div class="line">		#box input[type=button]&#123;</div><div class="line">			width: 20px;</div><div class="line">			height: 20px;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		#box .backcolor&#123;</div><div class="line">			background-color: red;</div><div class="line">		&#125;</div><div class="line">		#container&#123;</div><div class="line">			width: 250px;</div><div class="line">			height: 100px;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		#container div&#123;</div><div class="line">			width: 250px;</div><div class="line">			height: 100px;</div><div class="line">			border: 1px solid;</div><div class="line">			position: absolute;</div><div class="line">			display: none;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		#container .active&#123;</div><div class="line">			display: block;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id="box"&gt;</div><div class="line">	&lt;input type="button" value="1" class="backcolor"&gt;</div><div class="line">	&lt;input type="button" value="2"&gt;</div><div class="line">	&lt;input type="button" value="3"&gt;</div><div class="line">	&lt;div id="container"&gt;</div><div class="line">		&lt;div class="active"&gt;111&lt;/div&gt;</div><div class="line">		&lt;div&gt;222&lt;/div&gt;</div><div class="line">		&lt;div&gt;333&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	var aBtn = document.getElementsByTagName('input');</div><div class="line">	var oDiv = document.getElementById('container');</div><div class="line">	var aCon = oDiv.getElementsByTagName('div');</div><div class="line"></div><div class="line">	for(var i=0; i&lt;aBtn.length; i++)&#123;</div><div class="line">		aBtn[i].index = i;</div><div class="line">		</div><div class="line">		aBtn[i].onclick = function()&#123;</div><div class="line">		</div><div class="line">			for(var i=0; i&lt;aBtn.length; i++)&#123;</div><div class="line">				aBtn[i].className = '';</div><div class="line">				aCon[i].style.display = 'none';</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			this.className = 'backcolor';</div><div class="line">			aCon[this.index].style.display = 'block';</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/github/blob/master/JS_OOP/files/7.0%E4%BC%A0%E7%BB%9F%E9%80%89%E9%A1%B9%E5%8D%A1.html">效果展示</a><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/17/传统选项卡和面向对象选项卡的编写/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/15/工厂模式之原型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/15/工厂模式之原型/" itemprop="url">工厂模式之原型</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-15T15:33:21+08:00">
+                2016-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们创建的每一个函数都有一个 prototype 属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。</p>
+<p>使用原型对象的好处是可以让所有对象实例共享它所包含的属性和方法。换句话说，不必在构造函数中定义对象实例的信息，而是可以将这些信息直接添加到原型对象中。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">		<span class="comment">//能够共享的放在构造函数里面</span></div><div class="line">		<span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">			<span class="keyword">this</span>.name=name;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">//不能够共享的放在原型里面</span></div><div class="line">		CreatePerson.prototype.showName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			alert(<span class="keyword">this</span>.name);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">var</span> p1 = <span class="keyword">new</span> CreatePerson(<span class="string">'xiaoming'</span>);</div><div class="line">		<span class="keyword">var</span> p2 = <span class="keyword">new</span>  CreatePerson(<span class="string">'xiaoqiang'</span>);</div><div class="line">		</div><div class="line">		alert(p1.showName == p2.showName);<span class="comment">//true--&gt;they have same address.</span></div><div class="line">		<span class="comment">//这就是原型模式和构造函数模式的不同之处，即这些属性和方法是由所有实例共享的</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong>原型模式的写法：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"></div><div class="line">	<span class="comment">// function 构造函数()</span></div><div class="line">	<span class="comment">// &#123;</span></div><div class="line">	<span class="comment">// 	this.属性;</span></div><div class="line">	<span class="comment">// &#125;</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">construct</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">this</span>.property</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// 构造函数.原型.方法 = function()&#123;&#125;</span></div><div class="line">	construct.prototype.method=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">	<span class="comment">// var 对象1 = new 构造函数();</span></div><div class="line">	<span class="keyword">var</span> obj1 = <span class="keyword">new</span> construct();</div><div class="line"></div><div class="line">	<span class="comment">// 对象1.方法();</span></div><div class="line">	obj1.method();</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/14/普通方法与原型方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -867,592 +1433,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/09/面向对象简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/09/面向对象简介/" itemprop="url">面向对象简介</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-09T15:30:27+08:00">
-                2016-12-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="1-面向过程式写法"><a href="#1-面向过程式写法" class="headerlink" title="1.面向过程式写法"></a>1.面向过程式写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">//面向过程的写法</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">	<span class="keyword">for</span>()&#123;&#125;</div><div class="line">	<span class="keyword">if</span>()&#123;&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="2-面向对象式写法"><a href="#2-面向对象式写法" class="headerlink" title="2.面向对象式写法"></a>2.面向对象式写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">/**</div><div class="line">	 * we are always using obj,such as array and date.</div><div class="line">	 * this two guys are system obj. </div><div class="line">	 */</span></div><div class="line">	<span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">	<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"></div><div class="line">	<span class="comment">//propertise and methods</span></div><div class="line">	arr.length;</div><div class="line">	arr.push();</div><div class="line">	arr.sort();</div><div class="line"></div><div class="line">	date.getDate();</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/09/面向对象简介/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/08/详解闭包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/08/详解闭包/" itemprop="url">详解闭包</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-08T14:42:49+08:00">
-                2016-12-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="什么是闭包？"><a href="#什么是闭包？" class="headerlink" title="什么是闭包？"></a>什么是闭包？</h2><p>简单点说，闭包就是函数嵌套函数，其中内部函数可以引用外部函数的参数和变量。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> b = <span class="number">5</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">bbb</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(a);</div><div class="line">		alert(b);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bbb = aaa(<span class="number">3</span>);</div><div class="line">bbb();<span class="comment">//result : 3 5</span></div></pre></td></tr></table></figure>
-<p><strong>垃圾回收机制</strong></p>
-<p>垃圾回收机制：在闭包的情况下,参数 <code>a</code> 和 变量 <code>b</code> 是不会被垃圾回收机制回收的，因为内部的闭包还在引用着外部的变量。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//js 中的垃圾回收机制</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//当这个函数调用完了之后,函数里面的变量就会被垃圾回收机制回收</span></div><div class="line">aaa();</div></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//垃圾回收机制测试</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">5</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">bbb</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(a);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> bbb;</div><div class="line">&#125;</div><div class="line"><span class="comment">// aaa 函数已经执行完毕了,这个时候 c 代表的是 bbb 这个函数</span></div><div class="line"><span class="keyword">var</span> c = aaa();</div><div class="line"><span class="comment">//这里执行的其实是bbb();</span></div><div class="line">c();<span class="comment">// result : 5</span></div><div class="line"></div><div class="line"><span class="comment">//由上述的结果可知：闭包内的变量并不会被垃圾回收机制回收</span></div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/08/详解闭包/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/05/The-tip-point-of-programming/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/05/The-tip-point-of-programming/" itemprop="url">The tip point of programming</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-05T11:22:38+08:00">
-                2016-12-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="number">0</span>&lt;=i &amp;&amp; i&lt;=<span class="number">9</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'0px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">10</span>&lt;=i &amp;&amp; i&lt;=<span class="number">19</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'100px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">20</span>&lt;=i &amp;&amp; i&lt;=<span class="number">29</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'200px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">30</span>&lt;=i &amp;&amp; i&lt;=<span class="number">39</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'300px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">40</span>&lt;=i &amp;&amp; i&lt;=<span class="number">49</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'400px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">10</span>;j++)&#123;</div><div class="line">    <span class="keyword">if</span>((j*<span class="number">10</span>+<span class="number">0</span>)&lt;=i &amp;&amp; i&lt;=(j*<span class="number">10</span>+<span class="number">9</span>))&#123;</div><div class="line">    	oLi[i].style.top=j*<span class="number">110</span>+<span class="number">50</span>+<span class="string">'px'</span>;</div><div class="line">    	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">    &#125;	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>above is my track!!!wow, I get the point of programming, from easy to difficult,form clear to confusion,step by step, you can do it.escapeically, you can keep trying.</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/05/沉默是金/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/05/沉默是金/" itemprop="url">祸从口出</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-05T09:39:59+08:00">
-                2016-12-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
-                    <span itemprop="name">貌似有知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《世说新语》</p>
-<p><strong>有道是”沉默是金”，在谈怎么说话之前，我、先得谈怎么不说。因为祸从口出，常常不说要比说好得多。</strong></p>
-<p>举个我自己的例子，有一天我跟朋友约好中午碰面，因为办公室忙，出门晚了些，对方着急了，又不知道我的手机号码，就拨电话到办公室问。电话是我秘书接的，她挺聪明，说”刘先生早出门了，应该在路上，马上就到了。”</p>
-<p>你说，她不是答得很好吗？偏偏她画蛇添足，又加一句：”刘先生很忙的！”</p>
-<p>我那朋友一听就火了，回一句：”他忙？我不忙吗？”跟着就看我进门了，又把那火发到我头上：”你秘书说你忙，好像你迟到有理似的，你要知道我也忙耶！”</p>
-<p>你说我那秘书笨不笨？我又倒霉不倒霉？</p>
-<p>事实上，我的秘书非常聪明。而在讲话的时候爱画蛇添足的人常常很聪明。</p>
-<p>再举个大家常碰到或常犯的毛病。</p>
-<p>你是职员，老板问你今天客户一共叫了几箱货。</p>
-<p>常一天有一百多箱，那天特别少，只叫了十箱。你是不是很可能答：”报告老板，今天只叫了十箱耶！”</p>
-<p>你现在想，一定觉得这样说没什么错。但我要很郑重地告诉你：如果你只是个小职员，小主管，你错了！除非你是合伙人、大主管、或老板娘，你最好不要说”今天”只”叫了十箱。”而应该讲”今天叫了十箱。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/05/沉默是金/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1497,7 +1482,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">230</span>
+                <span class="site-state-item-count">234</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1519,7 +1504,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -317,6 +317,577 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/28/DOM编程艺术：重回图片库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/28/DOM编程艺术：重回图片库/" itemprop="url">DOM编程艺术：重回图片库</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-28T09:39:51+08:00">
+                2017-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Snapshots<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"imagegallery"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/fireworks.gif"</span> <span class="attr">title</span>=<span class="string">"A fireworks display"</span>; &gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/fireworks.gif"</span> <span class="attr">alt</span>=<span class="string">"Fire"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/coffee.gif"</span> <span class="attr">title</span>=<span class="string">"A cup of black coffee"</span> &gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/coffee.gif"</span> <span class="attr">alt</span>=<span class="string">"coffee"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/rose.gif"</span> <span class="attr">title</span>=<span class="string">"A red rose"</span> &gt;</span>Rose<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/bigben.gif"</span> <span class="attr">title</span>=<span class="string">"The famous clock"</span> &gt;</span>Big Ben<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/hello.gif"</span> <span class="attr">id</span>=<span class="string">"placeholder"</span> <span class="attr">alt</span>=<span class="string">"my image gallery"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"description"</span>&gt;</span>Choose an image!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这个 HTML 文件中有一个图片和一段文字仅仅是为 showPic 脚本服务的。若能被结构和行为彻底分离开那就再好不过了。<strong>既然这些元素的存在只是为了让 DOM 方法处理他们，那么用 DOM 方法来创建他们才是最合适的选择。</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// html</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Snapshots<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"imagegallery"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/fireworks.gif"</span> <span class="attr">title</span>=<span class="string">"A fireworks display"</span>; &gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/fireworks.gif"</span> <span class="attr">alt</span>=<span class="string">"Fire"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/coffee.gif"</span> <span class="attr">title</span>=<span class="string">"A cup of black coffee"</span> &gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/coffee.gif"</span> <span class="attr">alt</span>=<span class="string">"coffee"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/rose.gif"</span> <span class="attr">title</span>=<span class="string">"A red rose"</span> &gt;</span>Rose<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/bigben.gif"</span> <span class="attr">title</span>=<span class="string">"The famous clock"</span> &gt;</span>Big Ben<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/28/DOM编程艺术：重回图片库/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/28/DOM-初级知识点总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/28/DOM-初级知识点总结/" itemprop="url">DOM 初级知识点总结</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-28T09:12:57+08:00">
+                2017-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="setAttribute"><a href="#setAttribute" class="headerlink" title="setAttribute"></a>setAttribute</h3><p>setAttribute 可以改变 DOM 节点树上的某个属性节点，相关文档在浏览器里的呈现就会发生相应的变化。不过，setAttribute 方法并未改变文档的物理内容，如果用文本编辑器而不是浏览器去打开这个文档，我们将看不到任何变化。</p>
+<p><strong>一旦明白了这个道理，以动态方式实时创建标记就不那么难以理解了。你并不是在创建标记，而是在改变 DOM 节点树。</strong></p>
+<h3 id="insertBefore"><a href="#insertBefore" class="headerlink" title="insertBefore()"></a>insertBefore()</h3><p>insertBefore() 把一个新元素插入到一个现有元素的前面。在调用此方法时，你必须告诉它三件事：</p>
+<p>1.新元素：你想插入的元素（newElement）<br>2.目标元素：你想把这个元素插入到哪个元素之前（targetElement）<br>3.父元素：目标元素的父元素（parentElement）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">parentElement.insertBefore(newElement,targetElement);</div><div class="line"></div><div class="line">targetElement.parentNode.insertBefore(newElement,targetElement);</div></pre></td></tr></table></figure>
+<h3 id="编写-insertAfter-函数"><a href="#编写-insertAfter-函数" class="headerlink" title="编写 insertAfter() 函数"></a>编写 insertAfter() 函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertAfter</span>(<span class="params">newElement, targetElement</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> parent = targetElement.parentNode;</div><div class="line">    <span class="keyword">if</span> (parent.lastChild == targetElement) &#123;</div><div class="line">        parent.appendChild(newElement);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        parent.insertBefore(newElement,targetElement.nextSibling);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/28/document-wirte-和-innerHTML属性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/28/document-wirte-和-innerHTML属性/" itemprop="url">document.wirte() 和 innerHTML属性</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-28T09:04:26+08:00">
+                2017-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="避免使用-document-write-方法"><a href="#避免使用-document-write-方法" class="headerlink" title="避免使用 document.write 方法"></a>避免使用 document.write 方法</h3><p><code>document.write</code> 最大的缺点就是它违背了“行为应该与样式分离”的原则。即使把 <code>document.write</code> 语句挪到外部函数里，也还是需要在标记的 body 部分使用 <script> 标签才能调用那个函数。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;p&gt;this is a p&lt;/P</div><div class="line">    &lt;script&gt;</div><div class="line">        document.write("123");</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;p&gt;this is a p&lt;/P&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>把 JS 代码和 HTML 代码混杂在一起是一种很不好的做法。这样的标记既不容易阅读和编辑，也无法享受到把行为与结构分离开来的好处。同时，这样的文档还很容易导致验证错误。</p>
+<p>还有，MIME类型 <code>appplication/xhtml+xml</code> 与 <code>document.write</code> 不兼容，浏览器在呈现这种 XHTML 文档时根本不会执行 <code>document.write</code> 方法。</p>
+<p>从某种意义上讲，使用 <code>document.write</code> 方法有点像使用 <code>&lt;font&gt;</code> 标签去设定字体和颜色。</p>
+<h3 id="innerHTML-属性"><a href="#innerHTML-属性" class="headerlink" title="innerHTML 属性"></a>innerHTML 属性</h3><p>在需要把一大段 HTML 内容插入一份文档时，innerHTML 属性可以让你又快有简单的完成这一任务。不过，innerHTML 属性不会返回任何对刚插入的内容的引用。如果想对刚插入的内容进行处理，则需要使用 DOM 提供的那些精确的方法和属性。</p>
+<p>innerHTML 属性比 <code>document.write</code> 方法更值得推荐。使用 innerHTML 属性，你就可以吧 JS 代码从标记中分离出来。用不着在标记的 <body> 部分插入 <script> 标签。</p>
+<p>类似于 <code>document.write</code> 方法，innerHTML 属性也是 HTML 专有属性，不能用于其他任何标记语言文档。<strong>浏览器在呈现正宗的 XHTML 文档时会直接忽略到 innerHTML 属性。</strong></p>
+<p><strong>任何时候，标准的 DOM 都可以用来替代 innerHTML 。虽说这往往需要多编写一些代码才能获得同样的效果，但 DOM 同时也提供了更高的精确性和更强大的功能。</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/28/DOM编程艺术：图片库改进版/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/28/DOM编程艺术：图片库改进版/" itemprop="url">DOM编程艺术：图片库改进版</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-28T08:10:34+08:00">
+                2017-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line">//HTML</div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Snapshots<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"imagegallery"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 此时连接上有两个行为，一个是 showPic ，另一个就是连接的默认行为，我们可以使用return false 阻止事件的默认行为 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/fireworks.gif"</span> <span class="attr">title</span>=<span class="string">"A fireworks display"</span>; &gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/fireworks.gif"</span> <span class="attr">alt</span>=<span class="string">"Fire"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/coffee.gif"</span> <span class="attr">title</span>=<span class="string">"A cup of black coffee"</span> &gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/coffee.gif"</span> <span class="attr">alt</span>=<span class="string">"coffee"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/rose.gif"</span> <span class="attr">title</span>=<span class="string">"A red rose"</span> &gt;</span>Rose<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/bigben.gif"</span> <span class="attr">title</span>=<span class="string">"The famous clock"</span> &gt;</span>Big Ben<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/hello.gif"</span> <span class="attr">id</span>=<span class="string">"placeholder"</span> <span class="attr">alt</span>=<span class="string">"my image gallery"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"description"</span>&gt;</span>Choose an image!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line">//JS</div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></div><div class="line"></div><div class="line"><span class="built_in">window</span>.onload = addLoadEvent();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showPic</span>(<span class="params">whichpic</span>)</span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById(<span class="string">'placeholder'</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">var</span> source = whichpic.getAttribute(<span class="string">"href"</span>);</div><div class="line">    <span class="keyword">var</span> placeholder = <span class="built_in">document</span>.getElementById(<span class="string">'placeholder'</span>);</div><div class="line">    <span class="keyword">if</span>(placeholder.nodeName != <span class="string">'IMG'</span>) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    placeholder.setAttribute(<span class="string">"src"</span>,source);</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById(<span class="string">'description'</span>)) &#123;</div><div class="line">		<span class="keyword">var</span> text = whichpic.getAttribute(<span class="string">'title'</span>) ? whichpic.getAttribute(<span class="string">'title'</span>) : <span class="string">""</span>;</div><div class="line">        <span class="keyword">var</span> description = <span class="built_in">document</span>.getElementById(<span class="string">'description'</span>);</div><div class="line">        <span class="keyword">if</span> (description.firstChild.nodeType == <span class="number">3</span>) &#123;</div><div class="line">			description.firstChild.nodeValue = text;</div><div class="line">		&#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">prepareGallery</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementsByTagName) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById(<span class="string">'imagegallery'</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	</div><div class="line">	<span class="keyword">var</span> gallery = <span class="built_in">document</span>.getElementById(<span class="string">'imagegallery'</span>);</div><div class="line">	<span class="keyword">var</span> links = gallery.getElementsByTagName(<span class="string">'a'</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;links.length; i++) &#123;</div><div class="line">		links[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">return</span> !showPic(<span class="keyword">this</span>);</div><div class="line">			<span class="comment">// 等价于</span></div><div class="line">			<span class="comment">// if (showPic(this)) &#123;</span></div><div class="line">			<span class="comment">// 	return false;</span></div><div class="line">			<span class="comment">// &#125; else &#123;</span></div><div class="line">			<span class="comment">// 	return true;</span></div><div class="line">			<span class="comment">// &#125;</span></div><div class="line">			<span class="comment">// 等价于</span></div><div class="line">			<span class="comment">// return showPic(this) ? false : true;</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addLoadEvent</span>(<span class="params">func</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> oldonload = <span class="built_in">window</span>.onload;</div><div class="line">	<span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span>.onload != <span class="string">'function'</span>) &#123;</div><div class="line">		<span class="built_in">window</span>.onload = func;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			oldonload();</div><div class="line">			func();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">addLoadEvent(prepareGallery);</div><div class="line">addLoadEvent(showPic);</div><div class="line"></div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web-front-end/blob/master/%E3%80%8AJS%20DOM%20%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E3%80%8B/%E6%A1%88%E4%BE%8B%E7%A0%94%E7%A9%B6%EF%BC%9A%E5%9B%BE%E7%89%87%E5%BA%93%E6%94%B9%E8%BF%9B%E7%89%88.html">效果展示</a></h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/HTML-Core-和-HTML-DOM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -887,587 +1458,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/DOM编程艺术：共享-onload-事件/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/27/DOM编程艺术：共享-onload-事件/" itemprop="url">DOM编程艺术：共享 onload 事件</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-27T10:10:30+08:00">
-                2017-06-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>假设我有两个函数：<code>firstFunction</code> 和 <code>secondFunction</code> 。如果想让他们俩在页面加载时得到的执行，该怎么办？如果把它们逐一绑定到 <code>onload</code> 事件上，他们当中只有最后那个才会被实际执行：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = fristFunction;</div><div class="line"><span class="built_in">window</span>.onload = secondFunction;</div></pre></td></tr></table></figure>
-<p>有一种办法可以解决这一难题：可以先创建一个你们函数来容纳这两个函数，然后把那个匿名函数绑定到 <code>onload</code> 事件上：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    firstFunction();</div><div class="line">    secondFunction();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面这段代码在绑定函数不是很多的场合确实可以很好的工作。</p>
-<p>这里还有一个弹性最佳的解决方案：不管你打算在页面加载完毕时执行多少个函数，它都可以应付自如。</p>
-<p>这个函数的名字是 <code>addLoadEvent</code> ，他只有一个参数：打算在页面加载完毕时执行的函数的名字。下面是这个函数将要完成的操作：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1.把现有的 window.onload 事件处理函数的值存入变量 oldonload</span></div><div class="line"><span class="comment">//2.如果在这个处理函数上还没有绑定任何函数，就像平时那样把新函数添加给它</span></div><div class="line"><span class="comment">//3.如果在这个处理函数上已经绑定了一些函数，就把新函数追加到现有指令的末尾</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addLoadEvent</span>(<span class="params">func</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> oldonload = <span class="built_in">window</span>.onload;</div><div class="line">	<span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span>.onload != <span class="string">'function'</span>) &#123;</div><div class="line">		<span class="built_in">window</span>.onload = func;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			oldonload();</div><div class="line">			func();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这将把那些在页面加载完毕时执行的函数创建为一个队列。如果想把刚才那两个函数添加到这个队列中去，只需要写出下面两行代码即可：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">addLoadEvent(firstFunction);</div><div class="line">addLoadEvent(secondFunction);</div></pre></td></tr></table></figure>
-<p>这个函数非常实用，尤其是在代码变得越来越复杂的时候。无论在页面加载完毕时执行多少个函数，只要多写一条语句就可以安排好一切。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/DOM编程艺术：预防性措施/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/27/DOM编程艺术：预防性措施/" itemprop="url">DOM编程艺术：预防性措施</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-27T10:09:38+08:00">
-                2017-06-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById(<span class="string">'imagegallery'</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</div></pre></td></tr></table></figure>
-<p>这项测试是一个预防性措施。现在我知道用这个调用 JS 函数的文档里有一个 <code>id</code> 属性值等于 <code>imagegallery</code> 的列表清单元素，但我不敢确定这在将来会不会发生变化。有了这个预防性措施<strong>，即使我决定以后从网页上删掉图片库，也用不着担心这个网页的 JS 代码会突然出错。</strong></p>
-<p>把 HTML 文档的内容和 JS 代码所实现的行为分离开来的重要性由此可见一斑。<strong>作为一条原则，如果想用 JS 给某个网页添加一条行为，就不应该让 JS 对这个网页的结构有任何的依赖。</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/结构化程序设计/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/27/结构化程序设计/" itemprop="url">结构化程序设计</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-27T09:35:27+08:00">
-                2017-06-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>结构化程序设计中有这样一条原则：函数应该只有一个入口和一个出口。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">prepareGallery</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementsByTagName) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById(<span class="string">'imagegallery'</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	</div><div class="line">	<span class="keyword">var</span> gallery = <span class="built_in">document</span>.getElementById(<span class="string">'imagegallery'</span>);</div><div class="line">	<span class="keyword">var</span> links = gallery.getElementsByTagName(<span class="string">'a'</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;links.length; i++) &#123;</div><div class="line">		links[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			showPic(<span class="keyword">this</span>);</div><div class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面这个函数的做法已经违背了这条原则，函数的开头部分有多个 <code>return false</code> 语句，他们全都是这个函数的出口。根据结构化程序设计理论，应该把这些出口减少至一个。</p>
-<p>理论上，是这样的，但是在实际工作中，过分拘泥于这项原则会使代码变得非常难以阅读。如果你遵循了这条原则，那么代码看起来将会是下面这样：这个函数的核心代码就会被掩埋在一层有一层的花括号里。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">prepareGallery</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementsByTagName) &#123;</div><div class="line">		<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById) &#123;</div><div class="line">			<span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById(<span class="string">'imagegallery'</span>))&#123;</div><div class="line">				<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>如果一个函数有多个出口，只要这些出口集中出现在函数的开头部分，就是可以接受的。</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/DOM编程艺术：性能优化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/27/DOM编程艺术：性能优化/" itemprop="url">DOM编程艺术：性能优化</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-27T08:13:34+08:00">
-                2017-06-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="尽量少访问-DOM-和-尽量减少标记"><a href="#尽量少访问-DOM-和-尽量减少标记" class="headerlink" title="尽量少访问 DOM 和 尽量减少标记"></a>尽量少访问 DOM 和 尽量减少标记</h3><p><strong>不管是什么时候，只要是查询 DOM 中的某些元素，浏览器都会搜索整个 DOM 树，从中查找可能匹配的元素。</strong></p>
-<p>要是你有多个函数重复做同一件事。比如，要是有一个函数检查每个链接中的 <code>popUp</code> 类，而另外一个函数检查每个链接中的 <code>hover</code> 类，那么同样也会造成搜索浪费。</p>
-<p>在多个函数取得一组类似元素的情况下，可以考虑重构代码，把搜索结果保存在一个全局变量里，或者把一组元素直接以参数的形式传递给函数。</p>
-<p><strong>另一个需要注意的地方，就是要尽量减少文档中的标记数量。过多不必要的元素只会增加 DOM 树的规模，进而增加遍历 DOM 树以查找特定元素的时间。</strong></p>
-<h3 id="合并和放置脚本"><a href="#合并和放置脚本" class="headerlink" title="合并和放置脚本"></a>合并和放置脚本</h3><p>在把脚本引入到页面中时，要把多个脚本合并到一个 。这样，就可以减少加载页面时发送请求的数量。而减少请求的数量通常是在性能优化时首先要考虑的。</p>
-<p><strong>把脚本文件放在文档的末尾，就可以让页面变得更快。即使这样，在加载脚本时，<code>window</code> 对象的 <code>load</code> 事件依然可以执行对文档进行的各种操作。</strong></p>
-<h3 id="压缩脚本"><a href="#压缩脚本" class="headerlink" title="压缩脚本"></a>压缩脚本</h3><p>多数情况下，你应该有两个版本，一个是工作副本，可以修改代码并添加注释；另一个是精简副本，用于放在站点上。通常，为了与非精简版本区分开，最好在精简副本的文件名中加上 min 字样。</p>
-<p>下面是几个有代表性的代码压缩工具：</p>
-<p>1.<code>JSMin</code><br>2.<code>UI Compressor</code><br>3.<code>Closure Compiler</code></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1512,7 +1507,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">230</span>
+                <span class="site-state-item-count">234</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1534,7 +1529,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
