@@ -317,6 +317,724 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/17/如何写出高质量的代码？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/17/如何写出高质量的代码？/" itemprop="url">如何写出高质量的代码？</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-17T07:16:09+08:00">
+                2017-06-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>读书笔记：《剑指offer》</p>
+<h3 id="代码的规范性"><a href="#代码的规范性" class="headerlink" title="代码的规范性"></a>代码的规范性</h3><p>1.清晰地书写：绝大部分面试都是要求应聘者在白纸或者白板上书写，面试过程中减慢写字的速度，尽量把每个字母写清楚，书写清晰。</p>
+<p>2.清晰地布局：如果布局不够清晰，缩进也不能体现出代码的逻辑性，面试官对这样的代码会头昏脑涨。</p>
+<p>3.合理的命名：在书写代码的时候，用完整的英文单词组合命名变量和函数，比如函数需要传入一个二叉树的根节点作为参数，则可以把该参数命名为 <code>BinaryTreeNode * pRoot</code>，不要因为这样会多写几个字母而觉得麻烦。合理的命名应该一眼能看出变量函数的用途。</p>
+<hr>
+<h3 id="代码的完整性"><a href="#代码的完整性" class="headerlink" title="代码的完整性"></a>代码的完整性</h3><p>面试官会非常关注应聘者考虑问题是否周全，通过检查代码是否完整来考察应聘者的思维是否全面，<strong>通常会检查代码是否完成了基本功能，输入边界值是否能得到正确的输出，是否对各种不合规范的非法输入做出了合理的错误处理。</strong></p>
+<p>应聘者在写代码之前，首先要把可能的输入都想清楚，从而避免在程序中出现各种各样的质量漏洞。<strong>也就是说在编码之前要考虑单元测试。如果能够设计全面的单元测试用例并在代码中体现出来，那么写的代码自然也就是完整正确的了。</strong>通常我们可以从功能测试，边界测试和负面测试三方面设计测试用例，以确保代码完整性。</p>
+<p>1.<strong>首先要考虑的是普通功能测试的测试用例。</strong>我们首先要保证写出的代码能够完成面试官的基本要求。比如面试题要求的功能是把字符串转换成整数，我们可以考虑输入字符串“123”来测试你的代码。这里要把零、整数和负数都考虑进去。</p>
+<p>2.<strong>考虑功能测试的时候，我们要尽量突破常规思维的限制。</strong>比如面试题“打印从 1 到最大的 n 位数”，很多人觉得这很简单。最大的二位数是99，最大的三位数是 999，这些数字很容易就能算出来。但是最大的 n 位数都能用 int 型表示吗？超出 int 型的范围我们可以考虑 long long 类型，超出 long long 类型能够表示的范围呢？面试官是不是要求考虑任意大的数字？如果面试官确认题目要求的是任意大的数字，那么这个题目就是一个大数问题，此时我们需要特殊的数据结构来表示数字，比如用字符串或者数组来表示大的数字，以确保不会溢出。</p>
+<p>3.<strong>其次需要考虑各种边界值的测试用例。</strong>很多时候我们的代码中都会有循环和递归。如果我们的代码是基于循环的，那么结束循环的边界条件是否正确？如果使递归，递归终止的边界值是否正确？这些都是边界测试时要考虑的用例。还是以字符串转换成整数的问题为例，我们写出的代码应该确保能够正确转换最大的正整数和最小的负整数。</p>
+<p>4.<strong>最后还要考虑各种可能的错误的输入，也就是通常所说的负面测试的测试用例。</strong>我们写的函数除了要顺利的完成要求的功能之外，当输入不符合要求的时候还能作出合理的错误处理。在设计把字符串转换成整数的函数的时候，我们就要考虑当输入的字符串不是一个数字，比如“1a2b3c”，我们怎么告诉函数的调用者这个输入是非法的。</p>
+<p>5.最后也是最重要的一点。<strong>在软件开发过程中，永远不变的就是需求一直会改变。如果我们在面试的时候写出的代码能够把将来需求可能的变化都考虑进去，在需求发生变化的时候能够尽量减少代码改动的风险，那我们就向面试官展示了自己的对程序可扩展性和可维护性的理解，通过面试就是水到渠成的事情了。</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/16/git-常用操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/16/git-常用操作/" itemprop="url">git 常用操作</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-16T15:26:54+08:00">
+                2017-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.克隆仓库到本地：<code>git clone [url]</code><br>2.查看工作区和暂存区的状态：<code>git status</code><br>3.提交文件从工作区到暂存区：<code>git add .</code><br>4.提交文件从暂存区到版本库：<code>git commit -m &quot;注释&quot;</code><br>5.提交文件直接从工作区到版本库：<code>git commit -a -m &quot;注释&quot;</code><br>6.提交：<code>git push</code><br>7.查看提交历史：<code>git log</code><br>8.更新本地仓库 <code>git pull origin master</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/15/如何写出简洁优美的-CSS-Reset/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/15/如何写出简洁优美的-CSS-Reset/" itemprop="url">如何写出简洁优美的 CSS Reset</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T14:02:15+08:00">
+                2017-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="什么是-CSS-reset"><a href="#什么是-CSS-reset" class="headerlink" title="什么是 CSS reset"></a>什么是 CSS reset</h3><p><code>CSS reset</code> 的就是让各个浏览器的 CSS 样式有一个统一的基准，而这个基准更多的就是“清零”！</p>
+<h3 id="如何写出简洁优美的CSS-reset"><a href="#如何写出简洁优美的CSS-reset" class="headerlink" title="如何写出简洁优美的CSS reset"></a>如何写出简洁优美的CSS reset</h3><p>我们的 <code>reset</code> 应该根据自己的要求来书写。然而，目前的状态是（尤其一些中小型网站）， <code>reset</code> 代码直接拷贝过去，不做任何的思考。</p>
+<h3 id="你所不知的-reset"><a href="#你所不知的-reset" class="headerlink" title="你所不知的 reset"></a>你所不知的 reset</h3><p>1.<code>div</code>、<code>li</code>、还有像 <code>form</code>,<code>img</code>, <code>input</code>, <code>button</code>, <code>textarea</code> 这样子的表单元素标签是没有 <code>margin</code> 值和 <code>padding</code> 值的。<br>2.<code>dt</code> 标签默认的 <code>margin</code> 和 <code>padding</code> 值就是 <code>0</code>。<br>3.<code>code</code> 标签是个属于 <code>inline</code> 水平的元素，不存在 <code>margin</code>值和 <code>padding</code> 值。<br>4.<code>input</code>元素有 <code>padding</code> 值 没有 <code>margin</code> 值<br>5.<code>fieldset</code>, <code>legend</code>这两个90年代的标签使用概率不足1%，不需要拿来重置。<br>6.在某些浏览器中，<code>q</code> 或者是 <code>blockquote</code> 前后会出现引号，该引号严重破换了美感，所以需要重置：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">blockquote</span>,<span class="selector-tag">q</span>&#123;<span class="attribute">quotes</span>:none;&#125;</div><div class="line"><span class="selector-tag">blockquote</span><span class="selector-pseudo">:before</span>,<span class="selector-tag">blockquote</span><span class="selector-pseudo">:after</span>,<span class="selector-tag">q</span><span class="selector-pseudo">:before</span>,<span class="selector-tag">q</span><span class="selector-pseudo">:after</span>&#123;<span class="attribute">content</span>:<span class="string">''</span>;<span class="attribute">content</span>:none;&#125;</div></pre></td></tr></table></figure></p>
+<p>简洁的 reset 可以这样书写：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">body, dl, dd, h1, h2, h3, h4, h5, h6, p, form&#123;margin:0;&#125;   ol,ul&#123;margin:0; padding:0;&#125;</div><div class="line">table&#123;border-collapse:collapse;border-spacing:0;&#125;</div><div class="line"></div><div class="line">//对于具有边框的的元素，可以做如下处理</div><div class="line">fieldset,img&#123;border:0;&#125;</div><div class="line">abbr,acronym&#123;border:0;font-variant:normal;&#125;</div><div class="line"></div><div class="line">//上标，下标及 baseline 的重置</div><div class="line">sup,sub&#123;font-size:100%;vertical-align:baseline;&#125;</div><div class="line"></div><div class="line">//除了重置样式之外，清除浮动也很重要</div><div class="line">.clearfix:after&#123;content:"";display:block;height:0;clear:both;visibility:hidden;&#125;</div><div class="line">.clearfix&#123;display:inline-block;&#125;</div><div class="line"></div><div class="line">/*hides from ie-mac */</div><div class="line">*html .clearfix&#123;height:1%;&#125;</div><div class="line">.clearfix&#123;display:block;&#125;</div><div class="line">/* end hide form ie-mac */</div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/15/如何写出简洁优美的-CSS-Reset/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/14/识破障眼法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/14/识破障眼法/" itemprop="url">识破障眼法</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-14T23:41:51+08:00">
+                2017-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
+                    <span itemprop="name">貌似有知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>读书笔记：《世说新语》</p>
+<p>继续谈说话技巧中的怎么”不说”，但是这个不说，除了借机会听、借机会学，更重要的是你要借机会分析那个说话的人，尤其是当你不说，他却一直说个不停，甚至抢你话的时候，你更得小心，因为他说话很可能是障眼法，把你的注意力分散，免得你发现他的弱点，甚至弊端。</p>
+<p>房地产掮客小姐的技巧很简单，她一方面掠过房子的弱点，根本不提；一方面不断说话，把你的注意力带开。 </p>
+<p><strong>知道了这一点，以后你买自己不熟悉的东西，除了少说话、多听、多比较，而且要在对方指东的时候，除了往东看，也好好往相反的西边看看；当他指着天花板滔滔不绝的时候，你千万小心地上。</strong></p>
+<p>而且无论买什么东西都如此。当你看上一块玉，那卖家指着那玉上的优点、特点，说得天花乱坠的时候，你千万小心，只怕优点之外，全是缺点，等你买回家才发现好多裂璺。上古董铺更得小心，如果他的光线特别昏暗，别以为古董铺因为古，所以应该点古董油灯，而要想想，会不会有些东西是见不得光的，光线一亮，他就露马腳了。</p>
+<p>至于在办公室里。如果你是主管，当你叫一个职员进来问话，他不直接答，或答一半，忽然把话题岔开，好像另有急事向你报告，譬如你问他今天一共收了多少钱、出了几箱货的时候，他刚答一半，说收了五千多呢……突然话题一转，说：”对了！今天老王来找您……”这时候你也得小心，会不会因为那人心里有鬼，怕你发觉，于是主动把话题带开。</p>
+<p>在心理学上早发现人们会这样表现，连你的子女或另一半，当他们突然多话，而且常常抢着说，或一进门就主动找话题的时候，都有可能是声东击西。</p>
+<p>至于当你自己是小职员的时候，更得以此为戒。你千万要避免在主管的话题之外找话题。尤其不能抢话，把话题带开。就算你能干、口才好，又有事情急着想报告，也要懂得忍，等主管的问话告一段落，或会议讨论的事情告一段落之后再说，否则不但会显得你毛躁，而且令人起疑，你言词闪烁是不是有什么心虚的事。</p>
+<p>就算你心里没鬼，也不能喋喋不休。你想嘛，“喋喋不休，言不及义”怎么比得上“不鸣则已，一鸣惊人”。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/13/弹出窗口屏蔽程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/13/弹出窗口屏蔽程序/" itemprop="url">弹出窗口屏蔽程序</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T23:59:35+08:00">
+                2017-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>大多数浏览器都内置有弹出窗口屏蔽程序，而没有内置此类程序的浏览器，也可以安装带有内置屏蔽程序的实用工具。于是，在弹出窗口被屏蔽时，就应该考虑两种可能性。如果是浏览器内置的屏蔽程序阻止的窗口弹出，那么 <code>window.open()</code> 很可能会返回 <code>null</code>。此时，只要检测这个返回值就可以确定弹出的窗口是否被屏蔽了。</p>
+<p>如果是浏览器扩展或其他程序阻止的弹出窗口，那么 <code>window.open()</code> 通常会抛出一个错误。因此，要想准确的检测出弹出窗口是否被屏蔽，必须在检测返回值的同时，将对 <code>window.open()</code> 的调用封装在一个 <code>try-catch</code> 块中，如下所示：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var blocked = false;</div><div class="line"></div><div class="line">try &#123;</div><div class="line">    var wroxWin = window.open('www.ijiangnanbei.com','_blank');</div><div class="line">    if(wroxWin == null) &#123;</div><div class="line">        blocked = true;</div><div class="line">    &#125;</div><div class="line">&#125; catch (ex) &#123;</div><div class="line">    blocked = true;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(blocked) &#123;</div><div class="line">    alert('the popup was blocked!");</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/13/沉默是金-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -749,757 +1467,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/12/《第三部：妖孽宫廷》/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/12/《第三部：妖孽宫廷》/" itemprop="url">《第三部：妖孽宫廷》</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-12T07:22:21+08:00">
-                2017-06-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>1.“莫须有”杀掉了岳飞，“意欲”杀掉了于谦。</p>
-<p>2.徐有贞聪明绝顶，认定李贤是他的亲信，可是他错了。</p>
-<p>石亨位高权重，对李贤许以官位，以为可以拉拢他，可是他也错了。</p>
-<p>他们都认为这个叫李贤的人会乖乖地听他们的话，为他们办事，却绝不会想到，在李贤的眼里，他们不过是猎物而已。</p>
-<p>他原本可以投靠“还乡团”，做大官，拿厚禄，可是他没有这样做，在“还乡团”肆虐的日子里，他默默地隐藏着自己，从那些阴谋家身上学习权谋和诡计，并最终用这些武器打倒他们。但他这样做又是为了什么呢？</p>
-<p>从他后来的言行中，我们可以找到答案：公道。</p>
-<p>3.<strong>真正的政治老手是不同于常人的，他们炒菜时从来不用大火爆炒，只用小火慢炖，打仗时从不中央突破，总是旁敲侧击。</strong></p>
-<p>4.朱见深明白大臣们的疑虑，但他并不想解释什么，因为他知道，这些人是不会理解的。 </p>
-<p>在那孤独无助的岁月里，只有她守护在我的身边，陪伴着我，走过无数的风雨，始终如一，不离不弃。 </p>
-<p>是的，你们永远也不会明白。</p>
-<p>在这世上，爱一个人不需要理由，从来都不需要。</p>
-<p>5.当一个人不得不走向死亡时，自杀代表着尊严和抗争。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/12/《第三部：妖孽宫廷》/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/11/《万国来朝》/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/11/《万国来朝》/" itemprop="url">《第二部：万国来朝》</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-11T00:17:44+08:00">
-                2017-06-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>1.为什么要读书？一般而言这个问题的答案是建设祖国，为国争光之类，当然，真正的目的大多是升官、发财、满足欲望，等等。但事实告诉我们，为了名利去做一件事情也许可以获得动力和成功，但要成就大的事业，需要的是另一种决心和回答——为了读书而读书。</p>
-<p>2.罢官的日子是苦闷的，人类最大的痛苦并不在于一无所有，而是拥有一切再失去。</p>
-<p>3.解缙终于满足了，他似乎意识到，自己多年来没有成功，知识因为当年政治上的幼稚，为什么一定要说这么多违背皇帝意愿的话呢？那不是为难自己吗？</p>
-<p>而这次政治投机的成功也让他认定，今后不再关心那些与己无关的事情，只有积极投身政治，看准政治方向，并放下自己的政治筹码，才能保证自己的权利和地位。</p>
-<p>于是，当年那个一心为民请命、为国效力的单纯的读书人死去了，取而代之的是一个跃跃欲试、胸有城府的政客。</p>
-<p>也许在很多人看来，这也并没有什么大惊小怪的，只不过是一个人对自己人生的选择罢了，但问题在于，解缙在做出这个选择的时候忘记了一个重要而简单的原则，而正是这个简单的原则断送了他的一生。 </p>
-<p>这条原则就是：不要做你不擅长的事。</p>
-<p>这句话倒不一定是打击，在很多情况下，它是真诚的劝诫。</p>
-<p>4.解缙太天真了，他不知道朱棣从根本上讲是一个政治家，政治家说话是不能信的，你对他有用时或他有求于你时，他会对你百依百顺，恨不得叫你爷爷。但事情办完后，你就会立刻恢复孙子的身份。很明显，解缙搞错了辈分。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/11/《万国来朝》/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/09/最常见的错误有哪些？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/09/最常见的错误有哪些？/" itemprop="url">最常见的错误有哪些？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-09T21:55:54+08:00">
-                2017-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/营销/" itemprop="url" rel="index">
-                    <span itemprop="name">营销</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Ego is the No.1 enemy of succesful marketing.</p>
-<h3 id="自大"><a href="#自大" class="headerlink" title="自大"></a>自大</h3><p>骄傲自大是人们常犯的第一个错误。成功往往导致骄傲自大，而骄傲自大则会导致失败。</p>
-<p>自以为是是成功营销的头号敌人。客观性是必要的，当人们成功时，他们往往会变得缺乏客观性，以自己的主观判断代替市场的客观需求。聪明的营销人员能够像潜在顾客那样思考，他们把自己摆在顾客的位置上，不会将自己的主观认识强加到客观环境上。</p>
-<p>但是大量研究表明，在长时间的成功后，人们不太可能做出令人满意的决定。</p>
-<p>以自我为中心是成功营销的头号杀手。</p>
-<h3 id="贪婪"><a href="#贪婪" class="headerlink" title="贪婪"></a>贪婪</h3><p>‘贪婪’就是人们常犯的第二个错误。经理不将精力放在公司经营上，却时刻关注公司的股票价格。这时公司开始扩张，同时它的品牌形象也开始遭到破坏。安然公司便是一个典型的案例。为了保持股票的高价格，安然公司由一家能源公司变成了贸易公司。</p>
-<h3 id="无知"><a href="#无知" class="headerlink" title="无知"></a>无知</h3><p>‘无知’是另一个常见的错误。许多大公司由于不知道‘战略是针对顾客心智之战’这一点而陷入麻烦。重要的不是更好的产品，而在于更好的认知。</p>
-<p>如何避免无知？ 你首先要研究人们的心理，并且要不停学习。</p>
-<p>那你如何才能腾出时间来学习呢？重要的是雇佣可信赖的人。</p>
-<h3 id="妄想"><a href="#妄想" class="headerlink" title="妄想"></a>妄想</h3><p>下一个错误是妄想，如果公司的计划是基于梦想而非事实，这个错误就出现了。大多数成功的公司关注的是事实而不是建立所谓的‘目标’。重要的不是‘你想做什么’，而是‘你能做什么’。过高地估计市场潜力非常危险。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/09/最常见的错误有哪些？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/09/公司标志有多重要？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/09/公司标志有多重要？/" itemprop="url">公司标志有多重要？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-09T21:39:59+08:00">
-                2017-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/营销/" itemprop="url" rel="index">
-                    <span itemprop="name">营销</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>The name is far more powerful than a symbol. A logo should be designed around the name.</p>
-<p>品牌的力量在于名称而不是符号。重要的不是符号，而是与这个符号相关的名字。视觉符号还有商标被高估了，品牌的力量在于名称而不是视觉符号。</p>
-<p>比如说耐克，是耐克这个名字为“对钩”赋予了意义，他们花了数亿美元将二者联系了起来，因此他们可以将该标志印在服装上而不需要展示其名字，而他实际上就是名字的代表。</p>
-<h3 id="对标志的一些研究"><a href="#对标志的一些研究" class="headerlink" title="对标志的一些研究"></a>对标志的一些研究</h3><p>夸张的风格或设计一定不能以易读性为代价，不管商标设计得多么漂亮，如果难以理解，就要放弃。</p>
-<p>在商标设计方面还有其他需要考虑的问题。一个就是形状，最好选择长方形，因为长方形是人类用两眼最容易看清楚的形状，但如果太高或太宽，就不易辨认了。人们犯的最大错误就是将商标设计得让人费解。</p>
-<p>有些人使用比名字还大的标志来做商标，还有人让设计者使用一些字体来表达他们认为品牌应该具有的特性。他们强调商标的特征而忽视商标的易读性。有些人选择了难认的字体，而容易辨认恰恰是选择商标所要考虑的最重要因素。</p>
-<p><strong>夸张的风格或设计一定不能以易读性为代价，不管商标设计得多么漂亮，如果难以理解，就要放弃。</strong></p>
-<h3 id="标志的形状"><a href="#标志的形状" class="headerlink" title="标志的形状"></a>标志的形状</h3><p>那么独特的形状也可以成为品牌的一部分吗，以绝对伏特加为例，具有独特形状的瓶子就是它的商标，他们通过视觉广告将形状进行了戏剧化的演绎。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/09/公司标志有多重要？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/09/怎样选择合适的媒体？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/09/怎样选择合适的媒体？/" itemprop="url">怎样选择合适的媒体？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-09T21:24:51+08:00">
-                2017-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/营销/" itemprop="url" rel="index">
-                    <span itemprop="name">营销</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>The mind works by ear. Media with sound is more powerful than media without sound.</p>
-<p>广告媒体只有印刷品和广告招牌，然后有了广播、电视和互联网，但这些还只是冰山一角。现在我们拥有各种各样的广告媒介，可以利用像小便池、垃圾桶、公园长椅、饭碗、服装、热气球等你所能想到的任何东西来做广告。</p>
-<p>那么你怎样确定哪一种或哪一些媒体才是可以利用的最好的广告形式呢？ 首先，你必须了解不同媒体的优势和弱势。在广告业，一个简单的衡量标准是一种媒体的受众数量。电视拥有相当大的受众数量，广播的受众数量也很大，但是还不够大；印刷体广告拥有较少的受众，并且受众数量呈下降趋势。告示板和广告牌的受众仅限于当地……传媒人员应该能够为你提供某类媒体的受众数量。</p>
-<p>虽然互联网是向顾客传递更多信息的好地方，但它并不是一个发布广告的好地方，因为你不能打断节目来传达你的信息，你所能做的就是在别人的电脑屏幕上零散地放上一些信息，而没人想接收它们。 </p>
-<h3 id="语言与图画"><a href="#语言与图画" class="headerlink" title="语言与图画"></a>语言与图画</h3><p>如果你仔细分析大量的成功营销项目，你会看到它们都不仅仅是视觉上的，它们更强调听觉，它们都是概念而不仅仅是图片。</p>
-<h3 id="两种语言"><a href="#两种语言" class="headerlink" title="两种语言"></a>两种语言</h3><p>听总比阅读有效，差异有两点：首先，大脑对口述语言存储的时间更长，这能使你更清晰地理顺思路；其次，人们的声音、语调会赋予语言情感，这是单纯的书面文字所不能及的。</p>
-<p>也就是说带有口述语言或声音的媒体要比单调的书面文字媒体更好。你的主要媒体是那些带有声音的电视、广播以及电影等，你的次要媒体是那些只有书面文字的媒体，如杂志、报纸等。因此，要尽可能地使用有声媒体。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/09/怎样选择合适的媒体？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1549,7 +1516,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">258</span>
+                <span class="site-state-item-count">263</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1571,7 +1538,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
