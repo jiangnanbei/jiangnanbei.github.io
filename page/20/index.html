@@ -317,7 +317,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/10/工程模式/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/24/scanf-和-printf-的用法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -336,7 +336,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/10/工程模式/" itemprop="url">工厂模式</a></h2>
+                <a class="post-title-link" href="/2016/12/24/scanf-和-printf-的用法/" itemprop="url">scanf 和 printf 的用法</a></h2>
         
 
         <div class="post-meta">
@@ -348,8 +348,748 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-10T15:33:21+08:00">
-                2016-12-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-24T18:34:57+08:00">
+                2016-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="scanf-用法"><a href="#scanf-用法" class="headerlink" title="scanf 用法"></a>scanf 用法</h3><h4 id="用法一-scanf-quot-输入控制符-quot-输入参数"><a href="#用法一-scanf-quot-输入控制符-quot-输入参数" class="headerlink" title="用法一:scanf(&quot;输入控制符&quot;,输入参数);"></a>用法一:<code>scanf(&quot;输入控制符&quot;,输入参数);</code></h4><p>功能:将从键盘输入的字符转化为输入控制符所规定格式的数据,然后存入以输入参数的值为地址的变量中。</p>
+<p>举例：<code>scanf(&quot;%d&quot;,&amp;i);</code>这里之所以要用<code>%d</code>是因为来自你键盘的所有输入都是以字符的形式保存的,所以在这里我们用<code>%d</code>将其转化为一个十进制的数。</p>
+<h4 id="用法二-scanf-quot-非输入控制符-输入控制符-quot-输入参数"><a href="#用法二-scanf-quot-非输入控制符-输入控制符-quot-输入参数" class="headerlink" title="用法二:scanf(&quot;非输入控制符 输入控制符&quot;,输入参数);"></a>用法二:<code>scanf(&quot;非输入控制符 输入控制符&quot;,输入参数);</code></h4><p>功能:非输入控制符必须原样输入。</p>
+<p>举例：<code>scanf(&quot;m%d&quot;,&amp;i);</code>在这里<code>%d</code>前面有一个非输出控制符,所以这里就要求你在输入的时候,你的输入前必须要有一个非输出控制符。比如说你直接输入<code>123</code>就是错的,但是如果你输入<code>m123</code>就是对的,这个时候最终<code>i</code>的值就是 <code>123</code>，但是如果你输入<code>m123n</code>也是对的，但是我们一般不会在前面加一个非输出控制符,目的是让用户输入的越简单越好。</p>
+<h4 id="如何用-scanf-编写出高质量的程序？"><a href="#如何用-scanf-编写出高质量的程序？" class="headerlink" title="如何用 scanf 编写出高质量的程序？"></a>如何用 scanf 编写出高质量的程序？</h4><p>使用 scanf 之前最好先使用 printf 提示用户以什么要的方式来输入。</p>
+<p>scanf 中尽量不要使用非输入控制符,尤其是 \n 。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/24/scanf-和-printf-的用法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/24/预备编程基础知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/24/预备编程基础知识/" itemprop="url">预备编程基础知识</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-24T18:32:13+08:00">
+                2016-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="代码规范化"><a href="#代码规范化" class="headerlink" title="代码规范化"></a>代码规范化</h3><p>写出规范的代码不但方便你自己观看同时也方便别人观看,最重要的是当你的程序写的很大的时候，规范的代码使你的程序不容易出错。</p>
+<h3 id="为什么创建文件的时候要选择C-？"><a href="#为什么创建文件的时候要选择C-？" class="headerlink" title="为什么创建文件的时候要选择C++？"></a>为什么创建文件的时候要选择C++？</h3><p>因为C++是完全兼容C的，所以我们创建文件的时候选择的是C++的格式。</p>
+<h3 id="什么是字节？"><a href="#什么是字节？" class="headerlink" title="什么是字节？"></a>什么是字节？</h3><p>字节就是存储数据的单位,并且是我们硬件所能访问的最小单位。硬件上不能精确到位只能精确到字节,一个字节等于八位,硬件通过我们的地址总线确定的是字节,要精确到位需要用软件来实现(C语言里面字符占一个字节,java里面字符占两个字节)。</p>
+<p>1字节=8位；1k=1024个字节；1M=1024k；1G=1024M。</p>
+<p>说到字节，你肯定会有这样的一个经历：你买一个硬盘内存总是会比实际的要小，这是为什么呢？</p>
+<p>商家是按 1k=1000字节 为单位计算的,而计算机是以 1k=1024字节 为单位计算的，两种换算单位的不一样就导致了我们实际使用的内存比产品标注的内存要小。</p>
+<h3 id="char-使用的常见问题"><a href="#char-使用的常见问题" class="headerlink" title="char 使用的常见问题"></a>char 使用的常见问题</h3><p><code>char ch=&quot;ab&quot;;//error</code> 不能把一个字符串放到字符里面。</p>
+<p><code>char ch=&quot;a&quot;;//error</code>   这个双引号里面其实有两个字符<code>a\0</code>，所以这样书写也是错的。</p>
+<p><strong>在C语言里面字符串有两种保存方式，其一是通过指针，其二是通过数组。</strong><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/24/预备编程基础知识/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/24/预备计算机专业基础知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/24/预备计算机专业基础知识/" itemprop="url">预备计算机专业基础知识</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-24T18:29:26+08:00">
+                2016-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="CPU-内存条-硬盘-显卡-主板和显示器之间的关系"><a href="#CPU-内存条-硬盘-显卡-主板和显示器之间的关系" class="headerlink" title="CPU,内存条,硬盘,显卡,主板和显示器之间的关系?"></a>CPU,内存条,硬盘,显卡,主板和显示器之间的关系?</h3><p>我们来看一个电影是如何运行的?当你双击一部电影的时候,操作系统就会把硬盘上的这部电影的数据掉入内存条中,因为 CPU 不能直接处理硬盘上的数据,所以当数据存储到内存条中之后, CPU 再去处理内存条中的数据(电影),然后把其中的一些数据变成图像,一些数据变成声音,图像数据通过显卡在显示器显示出来,声音数据发送给声卡,声卡将其变成声音输出。</p>
+<p>主板将CPU,内存条,硬盘,显卡连接在一起,并在他们之间传递数据。</p>
+<h3 id="hellow-word-这个程序是如何被运行起来的"><a href="#hellow-word-这个程序是如何被运行起来的" class="headerlink" title="hellow word 这个程序是如何被运行起来的?"></a>hellow word 这个程序是如何被运行起来的?</h3><p>在 VC++6.0 中编程,点击 compile 和 build 按钮之后会产生一个<code>.exe</code>文件,这里需要说明的是我们的软件是不能直接执行<code>.exe</code>文件的,这个文件在后台是靠操作系统来执行的,操作系统调用CPU,CPU来执行这个程序。</p>
+<p>所有软件的运行都是建立在操作系统的基础之上的。</p>
+<h3 id="什么是数据类型"><a href="#什么是数据类型" class="headerlink" title="什么是数据类型?"></a>什么是数据类型?</h3><p>编程语言就是要解决实际的问题,<strong>你解决问题的第一步就是把数据保存到计算机里面,</strong>存储的时候就要按照数据类型进行分类.<strong>(在你编程的过程中,一定要时刻记住”内存”这一个概念,最终你会发现编程的许多问题,其实都是内存的问题.)</strong></p>
+<p>基本数据类型:整数(整形 int ,短整形 short int,长整形 long int ),浮点数(单精度浮点数 float ,双精度浮点数 double),字符( char )(C语言里面是没有一个类型可以直接存储字符串的,如果你要存储一个字符串的话可以使用一个字符数组)</p>
+<p>组合数据类型:结构体;枚举;共用体(所谓组合类型就是把基本类型拼凑到一起)。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/24/预备计算机专业基础知识/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/24/C语言简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/24/C语言简介/" itemprop="url">C语言简介</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-24T18:24:22+08:00">
+                2016-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这是我学习过程中自己整理出来的C语言入门简明教程,希望它能让你轻松入门,这只是开始,后面的路还很长,加油,程序人!</p>
+<p><strong>入门的最基本的方法就是从C语言入手,当你成为C语言的高手,那么你就很容易进到操作系统的平台里面去;当你进入到操作系统的平台里面去实际做程序的时候,就会懂得进行调试;当你懂得调试的时候,你就会发现能轻而易举的了解整个平台的架构.这个时候,计算机基本上一切都在你的掌握之中了,没有什么东西能逃得出你的手心—梁肇新</strong></p>
+<h3 id="C语言的起源和发展"><a href="#C语言的起源和发展" class="headerlink" title="C语言的起源和发展"></a>C语言的起源和发展</h3><p>程序设计语言的发展过程:第一代机器语言；第二代汇编语言；第三方代高级语言。高级语言中又分为 结构化语言 和 面向对象语言，其中结构化语言的代表有:<code>Basic</code> ,<code>Fortran</code> , <code>Pascal</code> ,<code>C.</code> 面向对象小对象语言的代表有:<code>C++</code> , <code>java</code> ,<code>C#</code>.</p>
+<p>C 语言是结构化语言, C++ 是面向对象的语言。结构化语言的缺陷：数据和操作是分离的，导致你写大项目的时候,会出现意想不到的问题。</p>
+<p>C++ 是面向对象里面最难的语言，如果你学会了C++，其他的面向对象的语言你可以很轻松的就掌握了。</p>
+<h3 id="C语言的优点"><a href="#C语言的优点" class="headerlink" title="C语言的优点:"></a>C语言的优点:</h3><p>速度快,代码量小,功能强大.(Java里面没有指针,不能直接访问我们的硬件).</p>
+<h3 id="C语言的缺点："><a href="#C语言的缺点：" class="headerlink" title="C语言的缺点："></a>C语言的缺点：</h3><p>危险性高,在Ｃ语言中只要你写一个程序错的不是很离谱，他都认为你写这个程序有特殊的含义，不会给你报错；开发周期长,Ｃ语言是一个面向过程的语言，当代码上了十万行之后就很容易奔溃，会出现各种各样的错误；可移植性弱,Ｃ语言写的程序有的机器可能不能跑，即便能很多的运行结果也是不一样的.<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/24/C语言简介/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/24/包装对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/24/包装对象/" itemprop="url">包装对象</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-24T15:33:21+08:00">
+                2016-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="包装对象"><a href="#包装对象" class="headerlink" title="包装对象"></a>包装对象</h3><p>基本类型都有自己对应的包装对象:String Number 和 Boolean 。</p>
+<hr>
+<h3 id="基本类型的方法"><a href="#基本类型的方法" class="headerlink" title="基本类型的方法"></a>基本类型的方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'hello'</span>;</div><div class="line"></div><div class="line">alert(<span class="keyword">typeof</span> str);<span class="comment">//string</span></div><div class="line"></div><div class="line"><span class="comment">//注意,这个方法是str的方法,但是我们知道基本类型是没有方法的,那这个在源码中究竟是怎么设计的呢?</span></div><div class="line">str.charAt(<span class="number">0</span>);</div><div class="line"></div><div class="line">alert(str.charAt(<span class="number">0</span>));<span class="comment">//h</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="源码里面是怎么给基本类型设置方法的"><a href="#源码里面是怎么给基本类型设置方法的" class="headerlink" title="源码里面是怎么给基本类型设置方法的"></a>源码里面是怎么给基本类型设置方法的</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'hello'</span>);</div><div class="line"></div><div class="line">alert(<span class="keyword">typeof</span> str);<span class="comment">//obj</span></div><div class="line"></div><div class="line"><span class="comment">//此时str是对象,它再拥有方法就是很自然的事情了.</span></div><div class="line">alert(str.charAt(<span class="number">0</span>));<span class="comment">//h</span></div><div class="line"></div><div class="line"><span class="comment">//源码里面是这么设计的</span></div><div class="line"><span class="built_in">String</span>.prototype.charAt = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div></pre></td></tr></table></figure>
+<hr>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/24/包装对象/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/23/隐藏页面元素/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/23/隐藏页面元素/" itemprop="url">隐藏页面元素的几个技巧</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-23T17:53:20+08:00">
+                2016-12-23
               </time>
             
 
@@ -407,8 +1147,14 @@
       
         
           
-            <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="comment">//工厂模式其实就是封装函数</span></div><div class="line">    <span class="comment">//为什么我们要叫他工厂模式呢?答案在下面:</span></div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    </div><div class="line">    	<span class="comment">//原料</span></div><div class="line">    	<span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">    </div><div class="line">    	<span class="comment">//制作加工</span></div><div class="line">    	obj.name=name;</div><div class="line">    	obj.showName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    		alert(<span class="keyword">this</span>.name);</div><div class="line">    	&#125;</div><div class="line">    	</div><div class="line">    	<span class="comment">//产生结果</span></div><div class="line">    	<span class="keyword">return</span> obj;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">var</span> p1 = createPerson(<span class="string">'xiaoming'</span>);</div><div class="line">    p1.showName();</div><div class="line">    <span class="keyword">var</span> p2 = createPerson(<span class="string">'xiaoqiang'</span>);</div><div class="line">    p2.showName();</div><div class="line"></div><div class="line">    <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
-<p>工厂模式虽然解决了创建多个相似对象的问题,但是却没有解决对象识别的问题,即怎样知道一个对象的类型,于是又出现了构造函数模式。</p>
+            <p><strong>每一个方法的背后其实都是一个效果的实现原理。你的方法越多，你所做出来的效果也就越多。</strong></p>
+<h3 id="display：none；"><a href="#display：none；" class="headerlink" title="display：none；"></a>display：none；</h3><p>显示为无,不占据文档流。得到它的高很麻烦。</p>
+<h3 id="visibility：hidden；"><a href="#visibility：hidden；" class="headerlink" title="visibility：hidden；"></a>visibility：hidden；</h3><p>隐藏，仍然占据文档流，很容易就可以得到它的高。</p>
+<h3 id="width-height"><a href="#width-height" class="headerlink" title="width / height;"></a>width / height;</h3><p>宽高改为 <code>0</code>，去除边框。如果你能想到用高去控制，你就可以做出让一个元素慢慢打开的动画效果。比如说，移动到导航栏上，导航的内容慢慢的下来。</p>
+<h3 id="透明度"><a href="#透明度" class="headerlink" title="透明度"></a>透明度</h3><p>把透明度改为 <code>0</code> 就看不到了。利用透明度你可以做一个淡入淡出的效果。</p>
+<h3 id="通过定位移出布局-left-top-值"><a href="#通过定位移出布局-left-top-值" class="headerlink" title="通过定位移出布局 left/top 值"></a>通过定位移出布局 left/top 值</h3><p>利用定位的原理，你可以做“弹出”的效果，用一个 <code>div</code> 将其覆盖，然后慢慢地将其从 <code>div</code> 下方弹出，很多门户网站常常用这个技巧来做新闻“弹出”的效果。 </p>
+<h3 id="拿另一和背景色一样的-div-将其盖住，"><a href="#拿另一和背景色一样的-div-将其盖住，" class="headerlink" title="拿另一和背景色一样的 div 将其盖住，"></a>拿另一和背景色一样的 div 将其盖住，</h3><p>拿另一和背景色一样的 <code>div</code> 将其盖住，然后用各种方式移开和背景色一样的 <code>div</code>，就可以得到各种各样的动画效果。比如说，你可以让和背景色一样的 <code>div</code> 四周不停的缩小，就可以做出一个类似于“回”字的效果。</p>
+<p><strong>很多你所看到的惊讶的效果背后，其实就是这样出来的。</strong></p>
 
           
         
@@ -456,7 +1202,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/09/面向对象简介/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/23/面向对象的写法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -475,7 +1221,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/09/面向对象简介/" itemprop="url">面向对象简介</a></h2>
+                <a class="post-title-link" href="/2016/12/23/面向对象的写法/" itemprop="url">面向对象的写法</a></h2>
         
 
         <div class="post-meta">
@@ -487,8 +1233,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-09T15:30:27+08:00">
-                2016-12-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-23T15:33:21+08:00">
+                2016-12-23
               </time>
             
 
@@ -545,11 +1291,14 @@
 
       
         
-          <h3 id="1-面向过程式写法"><a href="#1-面向过程式写法" class="headerlink" title="1.面向过程式写法"></a>1.面向过程式写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">//面向过程的写法</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">	<span class="keyword">for</span>()&#123;&#125;</div><div class="line">	<span class="keyword">if</span>()&#123;&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="2-面向对象式写法"><a href="#2-面向对象式写法" class="headerlink" title="2.面向对象式写法"></a>2.面向对象式写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="comment">/**</div><div class="line">	 * we are always using obj,such as array and date.</div><div class="line">	 * this two guys are system obj. </div><div class="line">	 */</span></div><div class="line">	<span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">	<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"></div><div class="line">	<span class="comment">//propertise and methods</span></div><div class="line">	arr.length;</div><div class="line">	arr.push();</div><div class="line">	arr.sort();</div><div class="line"></div><div class="line">	date.getDate();</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+          <h3 id="面向对象的写法"><a href="#面向对象的写法" class="headerlink" title="面向对象的写法"></a>面向对象的写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">construct</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.property</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//原型方法</span></div><div class="line">construct.prototype.method=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="comment">//实例对象并调用</span></div><div class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> construct();</div><div class="line">obj1.method();</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="系统对象的设计"><a href="#系统对象的设计" class="headerlink" title="系统对象的设计"></a>系统对象的设计</h3><p>在 js 源码中,系统对象也是基于原型的程序，我们可以推测出来，在 js 的源码中 js 的数组是这样设计的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Array</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.length = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//原型方法</span></div><div class="line"><span class="built_in">Array</span>.prototype.push = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="built_in">Array</span>.prototype.sort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">arr.push();</div><div class="line">arr.sort();</div></pre></td></tr></table></figure>
+<hr>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/12/09/面向对象简介/#more" rel="contents">
+            <a class="btn" href="/2016/12/23/面向对象的写法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -599,7 +1348,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/08/详解闭包/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/22/拖拽之面向对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -618,7 +1367,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/12/08/详解闭包/" itemprop="url">详解闭包</a></h2>
+                <a class="post-title-link" href="/2016/12/22/拖拽之面向对象/" itemprop="url">拖拽之面向对象</a></h2>
         
 
         <div class="post-meta">
@@ -630,8 +1379,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-08T14:42:49+08:00">
-                2016-12-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-22T15:33:21+08:00">
+                2016-12-22
               </time>
             
 
@@ -688,739 +1437,14 @@
 
       
         
-          <h2 id="什么是闭包？"><a href="#什么是闭包？" class="headerlink" title="什么是闭包？"></a>什么是闭包？</h2><p>简单点说，闭包就是函数嵌套函数，其中内部函数可以引用外部函数的参数和变量。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> b = <span class="number">5</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">bbb</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(a);</div><div class="line">		alert(b);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bbb = aaa(<span class="number">3</span>);</div><div class="line">bbb();<span class="comment">//result : 3 5</span></div></pre></td></tr></table></figure>
-<p><strong>垃圾回收机制</strong></p>
-<p>垃圾回收机制：在闭包的情况下,参数 <code>a</code> 和 变量 <code>b</code> 是不会被垃圾回收机制回收的，因为内部的闭包还在引用着外部的变量。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//js 中的垃圾回收机制</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//当这个函数调用完了之后,函数里面的变量就会被垃圾回收机制回收</span></div><div class="line">aaa();</div></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//垃圾回收机制测试</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">5</span>;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">bbb</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(a);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> bbb;</div><div class="line">&#125;</div><div class="line"><span class="comment">// aaa 函数已经执行完毕了,这个时候 c 代表的是 bbb 这个函数</span></div><div class="line"><span class="keyword">var</span> c = aaa();</div><div class="line"><span class="comment">//这里执行的其实是bbb();</span></div><div class="line">c();<span class="comment">// result : 5</span></div><div class="line"></div><div class="line"><span class="comment">//由上述的结果可知：闭包内的变量并不会被垃圾回收机制回收</span></div></pre></td></tr></table></figure>
+          <h3 id="普通方法编写拖拽"><a href="#普通方法编写拖拽" class="headerlink" title="普通方法编写拖拽"></a>普通方法编写拖拽</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></div><div class="line">		<span class="selector-tag">body</span>&#123;<span class="attribute">margin</span>: <span class="number">0</span>;<span class="attribute">padding</span>: <span class="number">0</span>;&#125;</div><div class="line">		<span class="comment">/* 编写拖拽的时候，使用的是相对定位 */</span></div><div class="line">		<span class="selector-id">#drag</span>&#123;<span class="attribute">width</span>: <span class="number">100px</span>;<span class="attribute">height</span>: <span class="number">100px</span>;<span class="attribute">background-color</span>: red;<span class="attribute">position</span>: relative;&#125;</div><div class="line">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"drag"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></div><div class="line">		<span class="keyword">var</span> oDrag = <span class="built_in">document</span>.getElementById(<span class="string">'drag'</span>);</div><div class="line">		</div><div class="line">		<span class="keyword">var</span> disX = <span class="number">0</span>;</div><div class="line">		<span class="keyword">var</span> disY = <span class="number">0</span>;</div><div class="line"></div><div class="line">		oDrag.onmousedown = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</div><div class="line">			<span class="keyword">var</span> ev = ev || <span class="built_in">window</span>.event;</div><div class="line"></div><div class="line">			disX = ev.clientX - oDrag.offsetLeft;</div><div class="line">			disX = ev.clientY - oDrag.offsetTop;</div><div class="line"></div><div class="line">			<span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</div><div class="line"></div><div class="line">				<span class="keyword">var</span> ev = ev || <span class="built_in">window</span>.event;</div><div class="line"></div><div class="line">				oDrag.style.left = ev.clientX - disX + <span class="string">'px'</span>;</div><div class="line">				oDrag.style.top = ev.clientY - disY + <span class="string">'px'</span>;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">			<span class="built_in">document</span>.onmouseup=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">					<span class="built_in">document</span>.onmousemove=<span class="literal">null</span>;</div><div class="line">					<span class="built_in">document</span>.onmouseup=<span class="literal">null</span>;</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/12/08/详解闭包/#more" rel="contents">
+            <a class="btn" href="/2016/12/22/拖拽之面向对象/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/05/The-tip-point-of-programming/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/05/The-tip-point-of-programming/" itemprop="url">The tip point of programming</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-05T11:22:38+08:00">
-                2016-12-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="number">0</span>&lt;=i &amp;&amp; i&lt;=<span class="number">9</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'0px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">10</span>&lt;=i &amp;&amp; i&lt;=<span class="number">19</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'100px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">20</span>&lt;=i &amp;&amp; i&lt;=<span class="number">29</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'200px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">30</span>&lt;=i &amp;&amp; i&lt;=<span class="number">39</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'300px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">40</span>&lt;=i &amp;&amp; i&lt;=<span class="number">49</span>)&#123;</div><div class="line">	oLi[i].style.top=<span class="string">'400px'</span>;</div><div class="line">	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">10</span>;j++)&#123;</div><div class="line">    <span class="keyword">if</span>((j*<span class="number">10</span>+<span class="number">0</span>)&lt;=i &amp;&amp; i&lt;=(j*<span class="number">10</span>+<span class="number">9</span>))&#123;</div><div class="line">    	oLi[i].style.top=j*<span class="number">110</span>+<span class="number">50</span>+<span class="string">'px'</span>;</div><div class="line">    	oLi[i].style.left=<span class="number">10</span>+(i%<span class="number">10</span>)*<span class="number">110</span>+<span class="string">'px'</span>;</div><div class="line">    &#125;	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>above is my track!!!wow, I get the point of programming, from easy to difficult,form clear to confusion,step by step, you can do it.escapeically, you can keep trying.</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/05/沉默是金/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/05/沉默是金/" itemprop="url">祸从口出</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-05T09:39:59+08:00">
-                2016-12-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
-                    <span itemprop="name">貌似有知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《世说新语》</p>
-<p><strong>有道是”沉默是金”，在谈怎么说话之前，我、先得谈怎么不说。因为祸从口出，常常不说要比说好得多。</strong></p>
-<p>举个我自己的例子，有一天我跟朋友约好中午碰面，因为办公室忙，出门晚了些，对方着急了，又不知道我的手机号码，就拨电话到办公室问。电话是我秘书接的，她挺聪明，说”刘先生早出门了，应该在路上，马上就到了。”</p>
-<p>你说，她不是答得很好吗？偏偏她画蛇添足，又加一句：”刘先生很忙的！”</p>
-<p>我那朋友一听就火了，回一句：”他忙？我不忙吗？”跟着就看我进门了，又把那火发到我头上：”你秘书说你忙，好像你迟到有理似的，你要知道我也忙耶！”</p>
-<p>你说我那秘书笨不笨？我又倒霉不倒霉？</p>
-<p>事实上，我的秘书非常聪明。而在讲话的时候爱画蛇添足的人常常很聪明。</p>
-<p>再举个大家常碰到或常犯的毛病。</p>
-<p>你是职员，老板问你今天客户一共叫了几箱货。</p>
-<p>常一天有一百多箱，那天特别少，只叫了十箱。你是不是很可能答：”报告老板，今天只叫了十箱耶！”</p>
-<p>你现在想，一定觉得这样说没什么错。但我要很郑重地告诉你：如果你只是个小职员，小主管，你错了！除非你是合伙人、大主管、或老板娘，你最好不要说”今天”只”叫了十箱。”而应该讲”今天叫了十箱。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/05/沉默是金/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/02/弱者的逻辑/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/02/弱者的逻辑/" itemprop="url">弱者的逻辑</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-02T07:47:40+08:00">
-                2016-12-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心智/" itemprop="url" rel="index">
-                    <span itemprop="name">心智</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>你刚来到城市，你跟那些大公司比，当然是它强你弱，但是你们之间不是博弈关系，你是拿自己的目标参与到它的事业里面去，如果你的目标只是每个月挣点钱，那好，你打一辈子工好了，你可能给了中国的大城市一辈子也买不起房，但是如果你参与到这个过程中，公司有公司的目标，你有你的目标，你们两个目标在一起博弈，我帮你公司实现业务的增长，你帮我实现个成长，我在这里学习业务，展示给整个市场看我的业务能力，渐渐地没准我的个人地位在社会上就成长了，没准将来我还创业呢。</p>
-<p>人和人、国家和国家，本质上是目标的博弈，而不是力量博弈。</p>
-<p>人和人、国家和国家的互动，是谁的目标好，谁的目标能够拆解为适宜的步骤，而且执行的好，谁赢！本质上说，这不是力量上的博弈，二是目标的博弈。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/01/jQuery入门/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/01/jQuery入门/" itemprop="url">jQuery入门</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-01T17:35:31+08:00">
-                2016-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="选择元素"><a href="#选择元素" class="headerlink" title="选择元素"></a>选择元素</h2><h3 id="原生选择符"><a href="#原生选择符" class="headerlink" title="原生选择符"></a>原生选择符</h3><p> 1.标签选择符 <code>$(&#39;p&#39;)</code></p>
-<p>2.<code>ID</code> 选择符 <code>$(&#39;#some-id&#39;)</code></p>
-<p>3.类选择符 <code>$(&#39;.some-class&#39;)</code></p>
-<p>4.否定式伪类选择符 <code>$(&#39;#some-id li:not(.some-class)&#39;)</code></p>
-<p>5.属性选择符<code>$(&#39;img[alt]&#39;)</code>,属性选择符使用一种从正则表达式借鉴来的通配符语法，以 <code>^</code> 表示值在字符串的开始位置，以 <code>$</code> 表示值在字符串的结尾，用 <code>*</code> 号表示要匹配的值可以出现在字符串的任意位置，用叹号 <code>!</code> 表示对值取反。</p>
-<p><code>eg：$(&#39;a[href^=&quot;mailto:&quot;]&#39;)</code>选中所有电子邮件的链接。<code>$(&#39;a[href$=&quot;.pdf&quot;]&#39;)</code>选中所有pdf文件的链接。</p>
-<p>属性选择符也可以组合使用，例如，可以为 <code>href</code>属性以 <code>http</code> 开头且任意位置包含 <code>henry</code> 的所有链接 <code>$(&#39;a[href^=&quot;http&quot;][href*=&quot;henry&quot;]&#39;)</code><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/01/jQuery入门/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/01/最高级的想象力是不自由的/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/01/最高级的想象力是不自由的/" itemprop="url">最高级的想象力是不自由的</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-01T07:44:24+08:00">
-                2016-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心智/" itemprop="url" rel="index">
-                    <span itemprop="name">心智</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我想很多人对于想象力都有一个这样的认识：想象力和知识是天敌，人在获得知识的过程中，想象力会消失。</p>
-<p>但是一个没有知识的人能够想象的出什么东西呢？看似自由的想象，背后都有其借鉴的根源，而这个“根源”其实就是那些深深地扎在你的大脑中的知识。</p>
-<p>玩过lol的人都知道，在这个游戏中你所赚到的钱的速度正好足够你购买相应等级的物品，否则就会出现“通货膨胀”或者“通货紧缩”。《英雄联盟》为此专门聘请了经济学家来进行设计，甚至必须实时的监视系统。</p>
-<p>所以，最高级的想象力是不自由的！正是因为其不自由，它的难度才大！</p>
-
-          
         
       
     </div>
@@ -1461,7 +1485,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1506,7 +1530,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">243</span>
+                <span class="site-state-item-count">258</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1528,7 +1552,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

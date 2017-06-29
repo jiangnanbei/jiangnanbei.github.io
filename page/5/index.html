@@ -317,7 +317,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/13/弹出窗口屏蔽程序/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/JS-基础知识点总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -336,7 +336,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/13/弹出窗口屏蔽程序/" itemprop="url">弹出窗口屏蔽程序</a></h2>
+                <a class="post-title-link" href="/2017/06/26/JS-基础知识点总结/" itemprop="url">JS 初级知识点总结</a></h2>
         
 
         <div class="post-meta">
@@ -348,8 +348,156 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T23:59:35+08:00">
-                2017-06-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T16:17:42+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="宿主对象"><a href="#宿主对象" class="headerlink" title="宿主对象"></a>宿主对象</h4><p>可以在脚本里使用一些已经预先定义好的其他对象。这些对象不是由 js 语言本身而是由它的运行环境提供的。具体到 web 应用，这个环境就是浏览器。有浏览器提供的预定义对象被称为宿主对象。</p>
+<p>宿主对象包括 From、Image、Element 等，我们可以通过这些对象获得关于网页上的表单、图像和各种表单元素信息。其中 document 宿主对象可以用来获取网页上任何一个元素的信息。</p>
+<h4 id="两种方法设置元素的属性"><a href="#两种方法设置元素的属性" class="headerlink" title="两种方法设置元素的属性"></a>两种方法设置元素的属性</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//第一种方法</div><div class="line">element.value = 'content';</div><div class="line"></div><div class="line">//第二种方法</div><div class="line">element.setAttribute('value','content');</div></pre></td></tr></table></figure>
+<p>第二种方法比较好，起码你不用去记忆哪些元素的哪些属性可以用 DOM 之前的哪些方法去设置。虽然哪些老办法可以毫无问题的对文档里的图片、表单和其他的一些元素的属性进行设置，但第二种方法的优势在于他可以修改文档中任何一个元素的任何一个属性。</p>
+<p>第二种方法法的另一个优势是可移植性更好。那些老方法只适用于 web 文档，DOM 则适用于任何一种标记语言。</p>
+<p><strong>第二种方法即 DOM 方法，是一种适用于多种环境和多种程序设计语言的通用 API。如果你想把你学到的 DOM 技巧运用在 web 浏览器以外的应用环境里，严格遵守“第一级 DOM ”能够让你避免与兼容性有关的任何问题。</strong></p>
+<h4 id="chileNodes-属性"><a href="#chileNodes-属性" class="headerlink" title="chileNodes 属性"></a>chileNodes 属性</h4><p>chileNodes 返回的数组包含所有类型的节点，而不仅仅是元素节点。事实上，<strong>文档里几乎每一样东西都是一个节点，甚至连空格和换行符都会被解释为节点，</strong>而且它们也全都包含在 chileNodes 属性所返回的数组当中。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/26/JS-基础知识点总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/ie-兼容性问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/ie-兼容性问题/" itemprop="url">ie 兼容性问题</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T08:25:40+08:00">
+                2017-06-26
               </time>
             
 
@@ -407,9 +555,7 @@
       
         
           
-            <p>大多数浏览器都内置有弹出窗口屏蔽程序，而没有内置此类程序的浏览器，也可以安装带有内置屏蔽程序的实用工具。于是，在弹出窗口被屏蔽时，就应该考虑两种可能性。如果是浏览器内置的屏蔽程序阻止的窗口弹出，那么 <code>window.open()</code> 很可能会返回 <code>null</code>。此时，只要检测这个返回值就可以确定弹出的窗口是否被屏蔽了。</p>
-<p>如果是浏览器扩展或其他程序阻止的弹出窗口，那么 <code>window.open()</code> 通常会抛出一个错误。因此，要想准确的检测出弹出窗口是否被屏蔽，必须在检测返回值的同时，将对 <code>window.open()</code> 的调用封装在一个 <code>try-catch</code> 块中，如下所示：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var blocked = false;</div><div class="line"></div><div class="line">try &#123;</div><div class="line">    var wroxWin = window.open('www.ijiangnanbei.com','_blank');</div><div class="line">    if(wroxWin == null) &#123;</div><div class="line">        blocked = true;</div><div class="line">    &#125;</div><div class="line">&#125; catch (ex) &#123;</div><div class="line">    blocked = true;</div><div class="line">&#125;</div><div class="line"></div><div class="line">if(blocked) &#123;</div><div class="line">    alert('the popup was blocked!");</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <p>1.IE6 / IE7 不支持块属性标签的 <code>inline-block</code></p>
 
           
         
@@ -457,7 +603,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/13/沉默是金-1/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/CSS-清浮动详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -476,7 +622,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/13/沉默是金-1/" itemprop="url">沉默是金</a></h2>
+                <a class="post-title-link" href="/2017/06/26/CSS-清浮动详解/" itemprop="url">CSS 清浮动详解</a></h2>
         
 
         <div class="post-meta">
@@ -488,8 +634,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T23:46:10+08:00">
-                2017-06-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T08:14:06+08:00">
+                2017-06-26
               </time>
             
 
@@ -511,8 +657,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
-                    <span itemprop="name">貌似有知识</span>
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
                   </a>
                 </span>
 
@@ -546,20 +692,18 @@
 
       
         
-          
-            <p>读书笔记：《世说新语》</p>
-<p><strong>沉默，不出声音，有时候对讲话的人，要比你跟他辩论，来得更有压力。因为他抓不住你，不知道你怎么想，他好像一颗颗石子儿往洞里扔，下去，连一点回音都没有，他能不紧张吗？</strong></p>
-<p>当你听说一个人深沉的时候，眼前很可能浮现一个”惜话如金、莫测高深”的画面。 “莫测高深”，正是你不说话的好处。当别人说，你只冷冷地听，除非你是听长官训话。假使两个人平等，你不讲话，就显得莫测高深，成了”他在明处，你在暗处。” </p>
-<p><strong>一个会说话的人，先要懂得什么时候不说，尤其当你没把握的时候，可以让对方先说，从对方的话里探虚实，甚至用这个方法偷偷学。</strong></p>
-<p>对！偷偷学！举个例子，你要买老式的家具，半窍不通，卻又怕吃亏，你可以去家具店集中的地方，先到第一家店，一样一样看。老板过来，问你对哪种感兴趣，你只笑笑。于是那老板不得不主动介绍了：”您瞧瞧，这明式的如何？”<br>接着你进另一家，进去绕绕，老板问你对什么感兴趣，你说”明式的吧！” 老板立刻把你带到明式家具的那区，你再一样样看，不吭声。这时候老板看你正端详其中一样，说”喔！您要买明式的圈椅？”</p>
-<p>你跟着又出来了，进下一家店，才进门就问”有没有明式的圈椅？”老板赶快带你过去，一样样介绍，看你正摸其中一把，就说”这可是海南的黄花梨，还有，您瞧！这里有瘿子，多漂亮！” ?</p>
-<p>好！接着你又出来了，进下一家，而且这次进门就问”有没有明式圈椅，要海南黄花梨。最好带瘿子装饰的……”</p>
-<p>老板一听，喝！来了行家。这时候，如果你问价钱，而且说：”我可是比价，你开，我不还价，但是如果贵了，我转身就走。”</p>
-<p>请问，他能不开低一点吗？事实证明，你在行！最起码你看过不少，真是比价。</p>
-<p>于是你可以拿着他开出的价钱，作比较，再去别家，甚至回你看过的前面那几家。 </p>
-<p>相反的，如果你当初嘴巴大，进店门先说”我要中国式的、老式的，比较古典的椅子，木料要好一点。”那老板能不立刻看穿，你是外行。碰上奸商又能不狠狠敲你吗？所以说，你可以用沉默的方式去学习。学会了，再开口。</p>
-
-          
+          <h3 id="什么是浮动？"><a href="#什么是浮动？" class="headerlink" title="什么是浮动？"></a>什么是浮动？</h3><p>使元素脱离文档流，按照指定方向发生移动，遇到父级边界或者相邻的元素停下来。（脱离文档流：此时浮动元素在文档中不占位置，飘了起来）</p>
+<h3 id="浮动的特征"><a href="#浮动的特征" class="headerlink" title="浮动的特征"></a>浮动的特征</h3><p>1.块元素在一行显示<br>2.内联元素支持宽高<br>3.默认内容撑开宽度<br>4.脱离文档流<br>5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来）</p>
+<h3 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h3><h4 id="after-伪类清浮动（主流方法）给浮动元素的父级添加"><a href="#after-伪类清浮动（主流方法）给浮动元素的父级添加" class="headerlink" title="after 伪类清浮动（主流方法）给浮动元素的父级添加"></a>after 伪类清浮动（主流方法）给浮动元素的父级添加</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.clear&#123;*zoom:1&#125;</div><div class="line">.clear:after&#123;content:'';display:block;clear:both;&#125;</div></pre></td></tr></table></figure>
+<h4 id="overflow-hidden-auto-清除浮动-给父级元素添加"><a href="#overflow-hidden-auto-清除浮动-给父级元素添加" class="headerlink" title="overflow:hidden/auto 清除浮动 给父级元素添加"></a>overflow:hidden/auto 清除浮动 给父级元素添加</h4><p>问题：需要配合宽度或者 zoom:1 兼容 IE6</p>
+<h4 id="给父级元素加高"><a href="#给父级元素加高" class="headerlink" title="给父级元素加高"></a>给父级元素加高</h4><p>问题：扩展性不好<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/26/CSS-清浮动详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -605,7 +749,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/13/废话少说/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/o-1-时间内删除链表节点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -624,7 +768,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/13/废话少说/" itemprop="url">废话少说</a></h2>
+                <a class="post-title-link" href="/2017/06/26/o-1-时间内删除链表节点/" itemprop="url">o(1) 时间内删除链表节点</a></h2>
         
 
         <div class="post-meta">
@@ -636,152 +780,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T22:14:29+08:00">
-                2017-06-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
-                    <span itemprop="name">貌似有知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>读书笔记：《世说新语》</p>
-<p>千万别在应该听别人说话或专心做事的时候，在旁边啰啰嗦嗦。要知道，当你啰嗦的时候，很可能影响别人的判断，失去听别人意见的机会，或造成对方的错误。结果损失的是自己。</p>
-<p>这里要强调一点，就是有些东西你可以说，但不必先说。譬如你要装修房子，找来设计师。既然他是专家，你应该先听他怎么说，而不是自己先讲：我觉得这个门可以改到那边，这里加个屏风，床头上面像旅馆一样，加几盏石英灯，地上用拋光的石英砖……。</p>
-<p>你这一说，设计师还能发挥他的创意吗？你怎不想想，因为他是专家，能提出你完全想不到的好点子，比你原先的构想好得多呢？如果再碰上个图省事的设计师，你怎么说，他怎么办，办得不好，反正是你的意思，你也不好不接。到头来，请问，是他作设计师，还是你作设计师？如果都由你作了，连材料都自己想好了，你又何必付那么多设计费？ </p>
-<p>不必说的时候先说，是人们的通病，你可能知道当人数钞票的时候，千万别去打扰，却可能在银行职员给你填表格，或医生给你开药单的时候，一个劲的跟他说话，如果金额弄错了、帐号写错了、药开错了，你要怪谁？</p>
-<p>所以无论看病、装修、上银行、找律师，都要懂得有些话得先憋着。</p>
-<p>不是不说，而是等该说的时候才说。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/13/奇数次的数（一个）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/13/奇数次的数（一个）/" itemprop="url">奇数次的数（一个）</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T08:22:27+08:00">
-                2017-06-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T08:00:11+08:00">
+                2017-06-26
               </time>
             
 
@@ -838,17 +838,14 @@
 
       
         
-          <p><strong>问题描述：</strong></p>
-<p>给定一个整形数组 <code>arr</code> 。已知 <code>arr</code> 中只有 1 个数出现了奇数次，其他的数都出现了偶数次，请返回出现了奇数次的数。</p>
-<p>时间复杂度为 <code>O(N)</code> ，额外空间复杂度为 <code>O(1)</code>。</p>
-<p><strong>思路：</strong></p>
-<p>整数 <code>n</code> 与 0 异或的结果是 <code>n</code>，整数 <code>n</code> 与整数 <code>n</code> 异或的结果是 0.所以先申请一个整形变量，记为 <code>use</code>。把 <code>use</code> 和每个数异或（<code>use = use ^当前数</code>），最后 <code>use</code> 的值就是出现了奇数次的那个数。</p>
-<p>异或运算满足交换律和结合律。</p>
-<p><strong>代码：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> use = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>&#125;;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">5</span>; i++)</div><div class="line">	&#123;</div><div class="line">		use ^= arr[i];</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; use &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>打破常规思维，当我们想删除一个节点时，并不一定要删除这个节点本身。可以先把下一个节点的内容复制出来覆盖被删除节点的内容，然后把下一个节点删除。</p>
+<p>比如说，我们要删除节点 i，先把 i 的下一个节点 j 的内容复制到 i，然后把 i 的指针指向节点 j 的下一个节点，此时再删除节点 j，其效果刚好是把节点 i 删除了。</p>
+<p>上述思路还有一个问题，如果要删除的节点位于链表的尾部，那么他就没有下一个节点，怎么办？</p>
+<p>我们仍然从链表的头结点开始，顺序遍历得到该节点的前序节点，并完成删除操作。最后需要注意的是，如果链表中只有一个节点，而我们有需要删除链表的头结点，也就是尾节点，此时在我们删除节点之后，还需要把链表的头结点设置为 null。</p>
+<p>同时，你也要注意思维的全面性，即使你想到删除下一个节点这个办法，也未必能通过这轮面试，你应该要全面的考虑到删除的节点位于链表的尾部及输入得来链表只有一个节点这些特殊情况。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/13/奇数次的数（一个）/#more" rel="contents">
+            <a class="btn" href="/2017/06/26/o-1-时间内删除链表节点/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -898,7 +895,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/12/《第三部：妖孽宫廷》/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/25/CSS-控制图片和文字在同一行显示且对齐/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -917,7 +914,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/12/《第三部：妖孽宫廷》/" itemprop="url">《第三部：妖孽宫廷》</a></h2>
+                <a class="post-title-link" href="/2017/06/25/CSS-控制图片和文字在同一行显示且对齐/" itemprop="url">CSS 控制图片和文字在同一行显示且对齐</a></h2>
         
 
         <div class="post-meta">
@@ -929,8 +926,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-12T07:22:21+08:00">
-                2017-06-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-25T23:11:50+08:00">
+                2017-06-25
               </time>
             
 
@@ -952,8 +949,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
                   </a>
                 </span>
 
@@ -987,21 +984,156 @@
 
       
         
-          <p>1.“莫须有”杀掉了岳飞，“意欲”杀掉了于谦。</p>
-<p>2.徐有贞聪明绝顶，认定李贤是他的亲信，可是他错了。</p>
-<p>石亨位高权重，对李贤许以官位，以为可以拉拢他，可是他也错了。</p>
-<p>他们都认为这个叫李贤的人会乖乖地听他们的话，为他们办事，却绝不会想到，在李贤的眼里，他们不过是猎物而已。</p>
-<p>他原本可以投靠“还乡团”，做大官，拿厚禄，可是他没有这样做，在“还乡团”肆虐的日子里，他默默地隐藏着自己，从那些阴谋家身上学习权谋和诡计，并最终用这些武器打倒他们。但他这样做又是为了什么呢？</p>
-<p>从他后来的言行中，我们可以找到答案：公道。</p>
-<p>3.<strong>真正的政治老手是不同于常人的，他们炒菜时从来不用大火爆炒，只用小火慢炖，打仗时从不中央突破，总是旁敲侧击。</strong></p>
-<p>4.朱见深明白大臣们的疑虑，但他并不想解释什么，因为他知道，这些人是不会理解的。 </p>
-<p>在那孤独无助的岁月里，只有她守护在我的身边，陪伴着我，走过无数的风雨，始终如一，不离不弃。 </p>
-<p>是的，你们永远也不会明白。</p>
-<p>在这世上，爱一个人不需要理由，从来都不需要。</p>
-<p>5.当一个人不得不走向死亡时，自杀代表着尊严和抗争。<br>
+          
+            <h3 id="在css中给div添加上“vertical-align-middle”属性"><a href="#在css中给div添加上“vertical-align-middle”属性" class="headerlink" title="在css中给div添加上“vertical-align:middle”属性"></a>在css中给div添加上“vertical-align:middle”属性</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#box *&#123; </div><div class="line">	vertical-align:middle; /* 居中对齐， */ </div><div class="line">	font-size:14px; </div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xxx.jpg"</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xxx.jpg"</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>使用 vertical-align<span class="tag">&lt;/<span class="name">a</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="把图片设置为背景图片"><a href="#把图片设置为背景图片" class="headerlink" title="把图片设置为背景图片"></a>把图片设置为背景图片</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#box &#123; </div><div class="line">	background:url(1.jpg) no-repeat left center; </div><div class="line">&#125; </div><div class="line">#bg&#123; </div><div class="line">	font-size:14px; </div><div class="line">	padding-left:50px;</div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bg"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>把图片设置为背景图<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/22/如何找到你的人生目标？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/22/如何找到你的人生目标？/" itemprop="url">如何找到你的人生目标？</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T00:00:05+08:00">
+                2017-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心智/" itemprop="url" rel="index">
+                    <span itemprop="name">心智</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>TED Adam Leipzing ： 如何找到人生的目标？</p>
+<p>那些知道自己人生目标的人，知道这五件事：</p>
+<p>他们是谁？<br>他们做了什么？<br>他们为谁而坐？<br>那些人想要什么？需要什么？<br>他们可以从中得到什么？结果会怎样改变？</p>
+<p>这听起来很难吗？事实上，你很容易就能知道自己生活的目标。很多人用尽一生的时间，寻找他们人生的目标，但是如果你只是照着计划表在考核你的人生，那不算是真正的活着。</p>
+<p>你是谁？恩，我是王震。</p>
+<p>你在做什么，如果你想到了很多自己喜欢的事情，那就问自己一个问题，现在哪一件事情，你自己感觉最有能力可以传授给别人的？我在做技术的同时也时刻提升自己对产品和商业的感知。</p>
+<p>你为谁而做，想想你是为谁而做，在你脑子里想想他们的样子。我为了我的目标顾客而做，在获得商业上的成功之后，我会为了我想要去改变那一部分人而做。</p>
+<p>他们想要什么需要什么，他们想要从你身上得到什么？他们来找你是因为你可以给他们东西。我想让他们得到更好的服务，当然我最终的目的是改变他们的思想，提升他们的认知。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/12/《第三部：妖孽宫廷》/#more" rel="contents">
+            <a class="btn" href="/2017/06/22/如何找到你的人生目标？/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1051,7 +1183,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/11/《万国来朝》/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/21/数值的整数次方/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1070,7 +1202,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/11/《万国来朝》/" itemprop="url">《第二部：万国来朝》</a></h2>
+                <a class="post-title-link" href="/2017/06/21/数值的整数次方/" itemprop="url">数值的整数次方</a></h2>
         
 
         <div class="post-meta">
@@ -1082,8 +1214,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-11T00:17:44+08:00">
-                2017-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-21T19:18:06+08:00">
+                2017-06-21
               </time>
             
 
@@ -1105,8 +1237,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -1140,18 +1272,12 @@
 
       
         
-          <p>1.为什么要读书？一般而言这个问题的答案是建设祖国，为国争光之类，当然，真正的目的大多是升官、发财、满足欲望，等等。但事实告诉我们，为了名利去做一件事情也许可以获得动力和成功，但要成就大的事业，需要的是另一种决心和回答——为了读书而读书。</p>
-<p>2.罢官的日子是苦闷的，人类最大的痛苦并不在于一无所有，而是拥有一切再失去。</p>
-<p>3.解缙终于满足了，他似乎意识到，自己多年来没有成功，知识因为当年政治上的幼稚，为什么一定要说这么多违背皇帝意愿的话呢？那不是为难自己吗？</p>
-<p>而这次政治投机的成功也让他认定，今后不再关心那些与己无关的事情，只有积极投身政治，看准政治方向，并放下自己的政治筹码，才能保证自己的权利和地位。</p>
-<p>于是，当年那个一心为民请命、为国效力的单纯的读书人死去了，取而代之的是一个跃跃欲试、胸有城府的政客。</p>
-<p>也许在很多人看来，这也并没有什么大惊小怪的，只不过是一个人对自己人生的选择罢了，但问题在于，解缙在做出这个选择的时候忘记了一个重要而简单的原则，而正是这个简单的原则断送了他的一生。 </p>
-<p>这条原则就是：不要做你不擅长的事。</p>
-<p>这句话倒不一定是打击，在很多情况下，它是真诚的劝诫。</p>
-<p>4.解缙太天真了，他不知道朱棣从根本上讲是一个政治家，政治家说话是不能信的，你对他有用时或他有求于你时，他会对你百依百顺，恨不得叫你爷爷。但事情办完后，你就会立刻恢复孙子的身份。很明显，解缙搞错了辈分。<br>
+          <p><strong>题目：</strong></p>
+<p>实现函数<code>double Power(double base, int exponent)</code> 求 base 的 exponent 次方。不得使用库函数，同时不需要考虑大数问题。</p>
+<p><strong>代码：</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="comment">//我们使用全局变量来标识是否出错，如果出错了，则返回true</span></div><div class="line"><span class="keyword">bool</span> g_InvalidInput = <span class="literal">false</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">equal</span><span class="params">(<span class="keyword">double</span> num1, <span class="keyword">double</span> num2)</span></span>;</div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">PowerWithUnsignedExponent</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">unsigned</span> <span class="keyword">int</span> exponent)</span></span>;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">Power</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">int</span> exponent)</span></div><div class="line"></span>&#123;</div><div class="line">    g_InvalidInput = <span class="literal">false</span>;</div><div class="line"> </div><div class="line">    <span class="keyword">if</span>(equal(base, <span class="number">0.0</span>) &amp;&amp; exponent &lt; <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        g_InvalidInput = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> absExponent = (<span class="keyword">unsigned</span> <span class="keyword">int</span>)(exponent);</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(exponent &lt; <span class="number">0</span>)</div><div class="line">        absExponent = (<span class="keyword">unsigned</span> <span class="keyword">int</span>)(-exponent);</div><div class="line"> </div><div class="line">    <span class="keyword">double</span> result = PowerWithUnsignedExponent(base, absExponent);</div><div class="line">    <span class="keyword">if</span>(exponent &lt; <span class="number">0</span>)</div><div class="line">        result = <span class="number">1.0</span> / result;</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">PowerWithUnsignedExponent</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">unsigned</span> <span class="keyword">int</span> exponent)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">if</span>(exponent == <span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(exponent == <span class="number">1</span>)</div><div class="line">        <span class="keyword">return</span> base;</div><div class="line">    <span class="comment">//这里我们使用右移运算符代替了除以2，使用递归的方法来达到快速计算的目的</span></div><div class="line">    <span class="keyword">double</span> result = PowerWithUnsignedExponent(base, exponent &gt;&gt; <span class="number">1</span>);</div><div class="line">    result *= result;</div><div class="line">    <span class="comment">//这里我们使用了“与”运算代替求余运算来判断一个数时奇数还是偶数</span></div><div class="line">    <span class="keyword">if</span>((exponent &amp; <span class="number">0x1</span>) == <span class="number">1</span>)</div><div class="line">        result *= base;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">equal</span><span class="params">(<span class="keyword">double</span> num1, <span class="keyword">double</span> num2)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">if</span>((num1 - num2 &gt; <span class="number">-0.0000001</span>)</div><div class="line">        &amp;&amp; (num1 - num2 &lt; <span class="number">0.0000001</span>))</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// ====================测试代码====================</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Test</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">int</span> exponent, <span class="keyword">double</span> expectedResult, <span class="keyword">bool</span> expectedFlag)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">double</span> result = Power(base, exponent);</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">abs</span>(result - expectedResult) &lt; <span class="number">0.00000001</span> </div><div class="line">        &amp;&amp; g_InvalidInput == expectedFlag)</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test passed.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test failed.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="comment">// 底数、指数都为正数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test1 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">2</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数为负数、指数为正数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test2 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">-2</span>, <span class="number">3</span>, <span class="number">-8</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 指数为负数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test3 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">2</span>, <span class="number">-3</span>, <span class="number">0.125</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 指数为0</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test4 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数、指数都为0</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test5 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数为0、指数为正数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test6 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数为0、指数为负数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test7 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">0</span>, <span class="number">-4</span>, <span class="number">0</span>, <span class="literal">true</span>);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/11/《万国来朝》/#more" rel="contents">
+            <a class="btn" href="/2017/06/21/数值的整数次方/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1201,7 +1327,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/09/最常见的错误有哪些？/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/21/什么样的人最可怕？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1220,7 +1346,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/09/最常见的错误有哪些？/" itemprop="url">最常见的错误有哪些？</a></h2>
+                <a class="post-title-link" href="/2017/06/21/什么样的人最可怕？/" itemprop="url">什么样的人最可怕？</a></h2>
         
 
         <div class="post-meta">
@@ -1232,8 +1358,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-09T21:55:54+08:00">
-                2017-06-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-21T18:00:09+08:00">
+                2017-06-21
               </time>
             
 
@@ -1255,8 +1381,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/营销/" itemprop="url" rel="index">
-                    <span itemprop="name">营销</span>
+                  <a href="/categories/心智/" itemprop="url" rel="index">
+                    <span itemprop="name">心智</span>
                   </a>
                 </span>
 
@@ -1290,172 +1416,19 @@
 
       
         
-          <p>Ego is the No.1 enemy of succesful marketing.</p>
-<h3 id="自大"><a href="#自大" class="headerlink" title="自大"></a>自大</h3><p>骄傲自大是人们常犯的第一个错误。成功往往导致骄傲自大，而骄傲自大则会导致失败。</p>
-<p>自以为是是成功营销的头号敌人。客观性是必要的，当人们成功时，他们往往会变得缺乏客观性，以自己的主观判断代替市场的客观需求。聪明的营销人员能够像潜在顾客那样思考，他们把自己摆在顾客的位置上，不会将自己的主观认识强加到客观环境上。</p>
-<p>但是大量研究表明，在长时间的成功后，人们不太可能做出令人满意的决定。</p>
-<p>以自我为中心是成功营销的头号杀手。</p>
-<h3 id="贪婪"><a href="#贪婪" class="headerlink" title="贪婪"></a>贪婪</h3><p>‘贪婪’就是人们常犯的第二个错误。经理不将精力放在公司经营上，却时刻关注公司的股票价格。这时公司开始扩张，同时它的品牌形象也开始遭到破坏。安然公司便是一个典型的案例。为了保持股票的高价格，安然公司由一家能源公司变成了贸易公司。</p>
-<h3 id="无知"><a href="#无知" class="headerlink" title="无知"></a>无知</h3><p>‘无知’是另一个常见的错误。许多大公司由于不知道‘战略是针对顾客心智之战’这一点而陷入麻烦。重要的不是更好的产品，而在于更好的认知。</p>
-<p>如何避免无知？ 你首先要研究人们的心理，并且要不停学习。</p>
-<p>那你如何才能腾出时间来学习呢？重要的是雇佣可信赖的人。</p>
-<h3 id="妄想"><a href="#妄想" class="headerlink" title="妄想"></a>妄想</h3><p>下一个错误是妄想，如果公司的计划是基于梦想而非事实，这个错误就出现了。大多数成功的公司关注的是事实而不是建立所谓的‘目标’。重要的不是‘你想做什么’，而是‘你能做什么’。过高地估计市场潜力非常危险。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/09/最常见的错误有哪些？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/09/公司标志有多重要？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/09/公司标志有多重要？/" itemprop="url">公司标志有多重要？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-09T21:39:59+08:00">
-                2017-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
+          
+            <p>什么样的人才是最可怕的呢？在我看来是具有“自我进化”和成长型思维的人才是最可怕的。</p>
+<p>什么是“自我进化”？就是说这个人可以像一个生物一样，不管外部环境如果变化我都能及时的进化出我自己的一套“生态系统”，来适应外界任何的变化，这就是“自我进化”。</p>
+<p>你可能会问，我长这么大怎么从来没有感受到“自我进化”，你怎么判断一个人有没有自我进化的能力呢？这个答案很简单，对于一般人，我会告诉他，如果你今天做错了一件事，在你意识到自己做错了之后你及时把它改正了，这就是你的“自我进化”。比如说有一天你忽然意识到，疯狂的追剧并不会让我变得更好，因为别人的错误惩罚自己其实是没有必要的，“不合群”其实也没什么关系…</p>
+<p>但现实是这样的一般人占了我们生活中的大多数，能够做到“自我变化”的人已经屈指可数，更不要说“自我进化”了。</p>
+<p>对于世道人心有起码心智的人，我会告诉他，所谓“自我进化”就是从你开始对这个世界有最起码的认知，到现在这个时刻你经历过几次“王阳明时刻”。所谓“王阳明时刻”，就是你突然意识到，我要想过的更好，我要达到更高的人格和事业目标，那不是向外求的，你要学会向内求，你自己才是一切问题的根源。想要感受的更深刻一点的话，可以看一下这句话：“未经长夜痛哭者，不足以语人生”。</p>
+<p>从开始“懂事”到现在，我经历过三次“王阳明时刻”。第一次来自我的启蒙老师，这个改变了我一生的男人。就是他让我在 18 岁时对世道人心已经有了起码的认识，他告诉我：“你的人生可以很精彩，你可以这样度过”。</p>
+<p>什么叫成长型思维？这个我说过很多次，听到的人很多，做到的人没有。至少目前我没有看见过。</p>
+<p>所谓成长型思维，通俗一点的解释就是，你不要想着今天你做了多少事情看看明天会发生什么，你要学会拉长一个时间维度，跳到一个大的空间尺度，看看你持续做这件事，三年之后会发生什么，五年之后会发生什么，十年之后会发生什么，他会逐渐向前，争取未来。而不是说，保持你基于现有认知对自己的判断，从而保持一个僵化的思维，固守对自己才智的认知。</p>
+<p>具有成长型思维的人的一个最主要的特征就是，注重过程而不是结果。一个具有成长型思维的人在一次考试失败之后，他不会沮丧，他会分析自己在备考的过程中所没有关注到的点，最重要的是他会非常享受这个过程。而不具备成长型思维的人，一次考试的失败，就会让他对自己造成否定的认知，认为自己也就这个水平了，甚至为了下次考试能够考好，他会冒险作弊。</p>
+<p>如果你具有“自我进化”的能力和成长型思维，不要着急，时间会给你所有你想要的。</p>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/营销/" itemprop="url" rel="index">
-                    <span itemprop="name">营销</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>The name is far more powerful than a symbol. A logo should be designed around the name.</p>
-<p>品牌的力量在于名称而不是符号。重要的不是符号，而是与这个符号相关的名字。视觉符号还有商标被高估了，品牌的力量在于名称而不是视觉符号。</p>
-<p>比如说耐克，是耐克这个名字为“对钩”赋予了意义，他们花了数亿美元将二者联系了起来，因此他们可以将该标志印在服装上而不需要展示其名字，而他实际上就是名字的代表。</p>
-<h3 id="对标志的一些研究"><a href="#对标志的一些研究" class="headerlink" title="对标志的一些研究"></a>对标志的一些研究</h3><p>夸张的风格或设计一定不能以易读性为代价，不管商标设计得多么漂亮，如果难以理解，就要放弃。</p>
-<p>在商标设计方面还有其他需要考虑的问题。一个就是形状，最好选择长方形，因为长方形是人类用两眼最容易看清楚的形状，但如果太高或太宽，就不易辨认了。人们犯的最大错误就是将商标设计得让人费解。</p>
-<p>有些人使用比名字还大的标志来做商标，还有人让设计者使用一些字体来表达他们认为品牌应该具有的特性。他们强调商标的特征而忽视商标的易读性。有些人选择了难认的字体，而容易辨认恰恰是选择商标所要考虑的最重要因素。</p>
-<p><strong>夸张的风格或设计一定不能以易读性为代价，不管商标设计得多么漂亮，如果难以理解，就要放弃。</strong></p>
-<h3 id="标志的形状"><a href="#标志的形状" class="headerlink" title="标志的形状"></a>标志的形状</h3><p>那么独特的形状也可以成为品牌的一部分吗，以绝对伏特加为例，具有独特形状的瓶子就是它的商标，他们通过视觉广告将形状进行了戏剧化的演绎。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/09/公司标志有多重要？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1496,7 +1469,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1541,7 +1514,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">243</span>
+                <span class="site-state-item-count">258</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1563,7 +1536,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
