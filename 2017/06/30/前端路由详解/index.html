@@ -1,0 +1,1163 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试指南,前端开发," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="什么是前端路由？路由是根据不同的 url 地址展示不同的内容或页面，就是把不同路由对应不同的内容或页面的任务交给前端来做，之前是通过服务端根据 url 的不同返回不同的页面实现的。
+什么时候使用前端路由？在单页面应用中，大部分页面结构不变，只改变部分内容的使用。
+前端路由有什么优点和缺点？优点：用户体验好，不需要每次都从服务器全部获取，快速展现给用户
+缺点：使用浏览器的前进，后退键的时候会重新发送">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端路由详解">
+<meta property="og:url" content="http://ijiangnanbei.com/2017/06/30/前端路由详解/index.html">
+<meta property="og:site_name" content="江南北的个人站">
+<meta property="og:description" content="什么是前端路由？路由是根据不同的 url 地址展示不同的内容或页面，就是把不同路由对应不同的内容或页面的任务交给前端来做，之前是通过服务端根据 url 的不同返回不同的页面实现的。
+什么时候使用前端路由？在单页面应用中，大部分页面结构不变，只改变部分内容的使用。
+前端路由有什么优点和缺点？优点：用户体验好，不需要每次都从服务器全部获取，快速展现给用户
+缺点：使用浏览器的前进，后退键的时候会重新发送">
+<meta property="og:updated_time" content="2017-06-30T11:53:33.001Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端路由详解">
+<meta name="twitter:description" content="什么是前端路由？路由是根据不同的 url 地址展示不同的内容或页面，就是把不同路由对应不同的内容或页面的任务交给前端来做，之前是通过服务端根据 url 的不同返回不同的页面实现的。
+什么时候使用前端路由？在单页面应用中，大部分页面结构不变，只改变部分内容的使用。
+前端路由有什么优点和缺点？优点：用户体验好，不需要每次都从服务器全部获取，快速展现给用户
+缺点：使用浏览器的前进，后退键的时候会重新发送">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ijiangnanbei.com/2017/06/30/前端路由详解/"/>
+
+
+
+
+
+  <title>前端路由详解 | 江南北的个人站</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9f1e93c72ab49f0eac76c314748416d3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">江南北的个人站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/30/前端路由详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">前端路由详解</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T17:46:14+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="什么是前端路由？"><a href="#什么是前端路由？" class="headerlink" title="什么是前端路由？"></a>什么是前端路由？</h3><p>路由是根据不同的 url 地址展示不同的内容或页面，就是把不同路由对应不同的内容或页面的任务交给前端来做，之前是通过服务端根据 url 的不同返回不同的页面实现的。</p>
+<h3 id="什么时候使用前端路由？"><a href="#什么时候使用前端路由？" class="headerlink" title="什么时候使用前端路由？"></a>什么时候使用前端路由？</h3><p>在单页面应用中，大部分页面结构不变，只改变部分内容的使用。</p>
+<h3 id="前端路由有什么优点和缺点？"><a href="#前端路由有什么优点和缺点？" class="headerlink" title="前端路由有什么优点和缺点？"></a>前端路由有什么优点和缺点？</h3><p>优点：用户体验好，不需要每次都从服务器全部获取，快速展现给用户</p>
+<p>缺点：使用浏览器的前进，后退键的时候会重新发送请求，没有合理地利用缓存，单页面无法记住之前滚动的位置，无法在前进，后退的时候记住滚动的位置。</p>
+<h3 id="实现的几种方式和几种场景"><a href="#实现的几种方式和几种场景" class="headerlink" title="实现的几种方式和几种场景"></a>实现的几种方式和几种场景</h3><p>故事从名叫 <code>Oliver</code> 的绿箭虾说起，这位大虾酷爱社交网站，一天他打开了 <code>Twitter</code> ，从发过的 <code>tweets</code> 的选项卡一路切到 <code>followers</code> 选项卡，<code>Oliver</code>发现页面的内容变化了，URL也变化了，但为什么页面没有闪烁刷新呢？于是<code>Oliver</code>打开的网络监控器，他惊讶地发现在切换选项卡时，只有几个XHR请求发生，但页面的URL却在对应着变化，这让 <code>Oliver</code> 不得不去思考这一机制的原因…</p>
+<p>叙事体故事讲完，进入正题。首先，我们知道传统而经典的 Web 开发中，服务器端承担了大部分业务逻辑，但随着 2.0 时代 ajax 的到来，前端开始担负起更多的数据通信和与之对应的逻辑。</p>
+<p>在过去，<code>Server</code> 端处理来自浏览器的请求时，要根据不同的 Url 路由，拼接出对应的视图页面，通过 Http 返回给浏览器进行解析渲染。<code>Server</code> 不得不承担这份艰巨的责任。<strong>为了让 Server 端更好地把重心放到实现核心逻辑和看守数据宝库，把部分数据交互的逻辑交给前端担负，让前端来分担 Server 端的压力显得尤为重要，前端也有这个责任和能力。</strong><br><a id="more"></a><br>大部分的复杂的网站，都会把业务解耦为模块进行处理。这些网站中又有很多的网站会把适合的部分应用 Ajax 进行数据交互，展现给用户，很明显处理这样的数据通信交互，不可避免的会涉及到跟 URL 打交道，让数据交互的变化反映到 URL 的变化上，进而可以给用户机会去通过保存的 URL 链接，还原刚才的页面内容板块的布局，这其中包括 Ajax 局部刷新的变化。</p>
+<p>通过记录 URL 来记录 web 页面板块上 Ajax 的变化，我们可以称之为 Ajax 标签化 ，比较好实现可以参考 Pjax 等。而对于较大的 <code>framework</code>，我们称之为 路由系统 ，比如 <code>AngularJS</code> 等。</p>
+<p>我们先熟悉几个新的 <code>H5 history Api</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*Returns the number of entries in the joint session history.*/</span></div><div class="line"><span class="built_in">window</span> . history . length</div><div class="line"></div><div class="line"><span class="comment">/*Returns the current state object.*/</span></div><div class="line"><span class="built_in">window</span> . history . state</div><div class="line"></div><div class="line"><span class="comment">/*Goes back or forward the specified number of steps in the joint session history.A zero delta will reload the current page.If the delta is out of range, does nothing.*/</span></div><div class="line"><span class="built_in">window</span> . history . go( [ delta ] )</div><div class="line"></div><div class="line"><span class="comment">/*Goes back one step in the joint session history.If there is no previous page, does nothing.*/</span></div><div class="line"><span class="built_in">window</span> . history . back()</div><div class="line"></div><div class="line"><span class="comment">/*Goes forward one step in the joint session history.If there is no next page, does nothing.*/</span></div><div class="line"><span class="built_in">window</span> . history . forward()</div><div class="line"></div><div class="line"><span class="comment">/*Pushes the given data onto the session history, with the given title, and, if provided and not null, the given URL.*/</span></div><div class="line"><span class="built_in">window</span> . history . pushState(data, title [url] )</div><div class="line"></div><div class="line"><span class="comment">/*Updates the current entry in the session history to have the given data, title, and,if provided and not null, URL.*/</span></div><div class="line"><span class="built_in">window</span> . history . replaceState(data, title [url] )</div></pre></td></tr></table></figure>
+<p>上边是 <code>Mozilla</code> 在 HTML5 中实现的几个 <code>History api</code> 的官方文档描述，我们先来关注下最后边的两个<code>api</code> ， <code>history.pushState</code> 和 <code>history.replaceState</code> ，这两个 <code>history</code> 新增的 <code>api</code>，为前端操控浏览器历史栈提供了可能性：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</div><div class="line">*parameters</div><div class="line">*@data &#123;object&#125; state对象，这是一个javascript对象，一般是JSON格式的对象</div><div class="line">*字面量。</div><div class="line">*@title &#123;string&#125; 可以理解为document.title，在这里是作为新页面传入参数的。</div><div class="line">*@url &#123;string&#125; 增加或改变的记录，对应的url，可以是相对路径或者绝对路径，</div><div class="line">*url的具体格式可以自定。</div><div class="line">*/</span></div><div class="line">history.pushState(data, title, url) <span class="comment">//向浏览器历史栈中增加一条记录。</span></div><div class="line">history.replaceState(data, title, url) <span class="comment">//替换历史栈中的当前记录。</span></div></pre></td></tr></table></figure>
+<p>这两个 Api 都会操作浏览器的历史栈，而不会引起页面的刷新。不同的是，<code>pushState</code> 会增加一条新的历史记录，而 <code>replaceState</code> 则会替换当前的历史记录。所需的参数相同，在将新的历史记录存入栈后，会把传入的 <code>data</code>（即 <code>state</code> 对象）同时存入，以便以后调用。同时，这俩 api 都会更新或者覆盖当前浏览器的 <code>title</code> 和 <code>url</code> 为对应传入的参数。</p>
+<p> url 参数可以为绝对路径，如： <code>http://tonylee.pw?name=tonylee</code> ，<code>https://www.tonylee.pw/name/tonylee ；</code>也可以为相对路径：<code>?name=tonylee ， /name/tonylee</code> ;等等的形式，让我们来在 <code>console</code> 中做个测试：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//假设当前网页URL为：http://tonylee.pw</span></div><div class="line"><span class="built_in">window</span>.history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="string">"http://tonylee.pw?name=tonylee"</span>);</div><div class="line"><span class="comment">//url变化：http://tonylee.pw -&gt; http://tonylee.pw?name=tonylee</span></div><div class="line"></div><div class="line"><span class="built_in">window</span>.history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="string">"http://tonylee.pw/name/tonylee"</span>);</div><div class="line"><span class="comment">//url变化：http://tonylee.pw -&gt; http://tonylee.pw/name/tonylee</span></div><div class="line"></div><div class="line"><span class="built_in">window</span>.history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="string">"?name=tonylee"</span>);</div><div class="line"><span class="comment">//url变化：http://tonylee.pw -&gt; http://tonylee.pw?name=tonylee</span></div><div class="line"></div><div class="line"><span class="built_in">window</span>.history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="string">"name=tonylee"</span>);</div><div class="line"><span class="comment">//url变化：http://tonylee.pw -&gt; http://tonylee.pw/name=tonylee</span></div><div class="line"></div><div class="line"><span class="built_in">window</span>.history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="string">"/name/tonylee"</span>);</div><div class="line"><span class="comment">//url变化：http://tonylee.pw -&gt; http://tonylee.pw/name/tonylee</span></div><div class="line"></div><div class="line"><span class="built_in">window</span>.history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="string">"name/tonylee"</span>);</div><div class="line"><span class="comment">//url变化：http://tonylee.pw -&gt; http://tonylee.pw/name/tonylee</span></div><div class="line"></div><div class="line"><span class="comment">//错误的用法：</span></div><div class="line"><span class="built_in">window</span>.history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="string">"http://www.tonylee.pw?name=tonylee"</span>);</div><div class="line"><span class="comment">//error: 由于跨域将产生错误</span></div></pre></td></tr></table></figure>
+<p>可以看到，url 作为一个改变当前浏览器地址的参数，用法是很灵活的，<code>replaceState</code> 和 <code>pushState</code> 具有和上边测试相同的特性，传入的url如果可能，总会被做适当的处理，这种处理默以”/”相隔，也可以自己指定为”?”等。要注意，这两个 api 都是不能跨域的！比如在 <code>http://tonylee.pw</code> 下，只能在同域下进行调用，如二级域名<code>http://www.tonylee.pw</code> 就会产生错误。没错，我想你已经猜到了前边讲到的 <code>Oliver</code> 看到 URL 变化，页面板块变化，页面发出 XHR 请求，页面没有 <code>reload</code> 等等特性，都是因此而生！</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">如果有兴趣，你也可以去twitter亲自体验twitter的这一特性，看看他的前端路由系统是如何工作的。</div><div class="line">https:<span class="comment">//twitter.com/following -&gt; https://twitter.com/followers</span></div></pre></td></tr></table></figure>
+<p>至于 api 中的 <code>data</code> 参数，实际上是一个 <code>state</code> 对象，也即是 <code>JavaScript</code> 对象。Firefox 的实现中，它们是存在用户的本地硬盘上的，最大支持到 640k，如果不够用，按照 FF 的说法你可以用 <code>sessionStorage or localStorage</code> 。如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> stateObj = &#123; <span class="attr">foo</span>: <span class="string">"bar"</span> &#125;;</div><div class="line">history.pushState(stateObj, <span class="string">"the blog of Tony Lee"</span>, <span class="string">"name = Later"</span>);</div></pre></td></tr></table></figure>
+<p>如果当前页面经过这样的过程，历史栈对应的条目，被存入了<code>stateObj</code>，那么我们可以随时主动地取出它，如果页面只是一个普通的历史记录，那么这个 <code>state</code> 就是 <code>null</code>。如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> currentState = history.state;  <span class="comment">//如果没有则为null。</span></div></pre></td></tr></table></figure></p>
+<p>mozilla 有一个应用 <code>pushState</code> 和 <code>replaceState</code> 小 <code>demo</code> 大家可以看一下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line"><span class="xml"><span class="comment">&lt;!-- this starts off as http://example.com/line?x=5 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Line Game - 5<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>You are at coordinate <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"coord"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">span</span>&gt;</span> on the line.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"?x=6"</span> <span class="attr">onclick</span>=<span class="string">"go(1); return false;"</span>&gt;</span>Advance to 6<span class="tag">&lt;/<span class="name">a</span>&gt;</span> or</div><div class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"?x=4"</span> <span class="attr">onclick</span>=<span class="string">"go(-1); return false;"</span>&gt;</span>retreat to 4<span class="tag">&lt;/<span class="name">a</span>&gt;</span>?</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></div><div class="line"> <span class="keyword">var</span> currentPage = <span class="number">5</span>; <span class="comment">// prefilled by server！！！！</span></div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">go</span>(<span class="params">d</span>) </span>&#123;</div><div class="line">     setupPage(currentPage + d);</div><div class="line">     history.pushState(currentPage, <span class="built_in">document</span>.title, <span class="string">'?x='</span> + currentPage);</div><div class="line"> &#125;</div><div class="line"> onpopstate = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">     setupPage(event.state);</div><div class="line"> &#125;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">setupPage</span>(<span class="params">page</span>) </span>&#123;</div><div class="line">     currentPage = page;</div><div class="line">     <span class="built_in">document</span>.title = <span class="string">'Line Game - '</span> + currentPage;</div><div class="line">     <span class="built_in">document</span>.getElementById(<span class="string">'coord'</span>).textContent = currentPage;</div><div class="line">     <span class="built_in">document</span>.links[<span class="number">0</span>].href = <span class="string">'?x='</span> + (currentPage+<span class="number">1</span>);</div><div class="line">     <span class="built_in">document</span>.links[<span class="number">0</span>].textContent = <span class="string">'Advance to '</span> + (currentPage+<span class="number">1</span>);</div><div class="line">     <span class="built_in">document</span>.links[<span class="number">1</span>].href = <span class="string">'?x='</span> + (currentPage<span class="number">-1</span>);</div><div class="line">     <span class="built_in">document</span>.links[<span class="number">1</span>].textContent = <span class="string">'retreat to '</span> + (currentPage<span class="number">-1</span>);</div><div class="line"> &#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<p>仔细阅读就会看到，这个 demo 已经快成为一个 Ajax 标签化或者前端路由系统的雏形了！</p>
+<p>了解这俩 api 还不够，再来看下上边的 demo 中涉及到的 <code>popstate</code> 事件，我担心解释的不到位，所以看看 <code>mozilla</code> 官方文档的解释：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">An event handler for the popstate event on the window.</div><div class="line"></div><div class="line">A popstate event is dispatched to the window every time the active history entry changes between two history entries for the same document. If the history entry being activated was created by a call to history.pushState() or was affected by a call to history.replaceState(), the popstateevent's state property contains a copy of the history entry's state object.</div><div class="line"></div><div class="line">Note that just calling history.pushState() or history.replaceState() won't trigger apopstate event. The popstate event is only triggered by doing a browser action such as clicking on the back button (or calling history.back() in JavaScript). And the event is only triggered when the user navigates between two history entries for the same document.</div><div class="line"></div><div class="line">Browsers tend to handle the popstate event differently on page load. Chrome (prior to v34) and Safari always emit a popstate event on page load, but Firefox doesn't.</div><div class="line"></div><div class="line">Syntax</div><div class="line">    window.onpopstate = funcRef;</div><div class="line">    //funcRef is a handler function.</div></pre></td></tr></table></figure></p>
+<p>简而言之，就是说当同一个页面在历史记录间切换时，就会产生 <code>popstate</code> 事件。正常情况下，如果用户点击后退按钮或者开发者调用：<code>history.back() or history.Go()</code>，页面根本就没有处理事件的机会，因为这些操作会使得页面 <code>reload</code>。所以 <code>popstate</code> 只在不会让浏览器页面刷新的历史记录之间切换才能触发，这些历史记录一般由 <code>pushState/replaceState</code> 或者是由 hash 锚点等操作产生。并且在事件的句柄中可以访问 state 对象的引用副本！而且单纯的调用 <code>pushState/replaceState</code> 并不会触发 <code>popstate</code> 事件。页面初次加载时，知否会主动触发 <code>popstate</code> 事件，不同的浏览器实现也不一样。下边是官方的一个 demo：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onpopstate = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line"> alert(<span class="string">"location: "</span> + <span class="built_in">document</span>.location + <span class="string">", state: "</span> +   <span class="built_in">JSON</span>.stringify(event.state));</div><div class="line">&#125;;</div><div class="line"></div><div class="line">history.pushState(&#123;<span class="attr">page</span>: <span class="number">1</span>&#125;, <span class="string">"title 1"</span>, <span class="string">"?page=1"</span>);</div><div class="line">history.pushState(&#123;<span class="attr">page</span>: <span class="number">2</span>&#125;, <span class="string">"title 2"</span>, <span class="string">"?page=2"</span>);</div><div class="line">history.replaceState(&#123;<span class="attr">page</span>: <span class="number">3</span>&#125;, <span class="string">"title 3"</span>, <span class="string">"?page=3"</span>);</div><div class="line">history.back(); <span class="comment">// alerts "location: http://example.com/example.html?page=1, state: &#123;"page":1&#125;"</span></div><div class="line">history.back(); <span class="comment">// alerts "location: http://example.com/example.html, state: null</span></div><div class="line">history.go(<span class="number">2</span>); <span class="comment">// alerts "location: http://example.com/example.html?page=3, state: &#123;"page":3&#125;</span></div></pre></td></tr></table></figure>
+<p>这里便是通过<code>event.state</code>拿到的 <code>state</code> 的引用副本！</p>
+<p>H5还新增了一个 <code>hashchange</code> 事件，也是很有用途的一个新事件：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">The 'hashchange' event is fired when the fragment identifier of the URL has changed (the part of the URL that follows the # symbol, including the # symbol).</div></pre></td></tr></table></figure></p>
+<p>当页面<code>hash(#)</code>变化时，即会触发 <code>hashchange</code>。锚点Hash起到引导浏览器将这次记录推入历史记录栈顶的作用， <code>window.location</code> 对象处理“#”的改变并不会重新加载页面，而是将之当成新页面，放入历史栈里。并且，当前进或者后退或者触发 <code>hashchange</code> 事件时，我们可以在对应的事件处理函数中注册 ajax 等操作！</p>
+<p>但是 <code>hashchange</code> 这个事件不是每个浏览器都有，低级浏览器需要用轮询检测URL是否在变化，来检测锚点的变化。当锚点内容(<code>location.hash</code>)被操作时，如果锚点内容发生改变浏览器才会将其放入历史栈中，如果锚点内容没发生变化，历史栈并不会增加，并且也不会触发 <code>hashchange</code> 事件。</p>
+<p>想必你猜到了，这里说的低级浏览器，指的就是可爱的IE了。比如我有一个url从 <code>http://tonylee.pw#hash_start=1</code> 变化到 <code>http://tonylee.pw#hash_start=2</code> ，实现良好的浏览器是会触发一个名为 <code>hashchange</code> 的事件，但是对于低版本的IE（稍后我会对具体的兼容性做个总结），我们只能通过设置一个 <code>Inerval</code> 来不断的轮询url是否发生变化，来判断是否发生了类似 <code>hashchange</code> 的事件，同时可以声明对应的事件处理函数，从而模拟事件的处理。如下是当浏览器不支持 <code>hashchange</code> 事件时的模拟方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window</span>) </span>&#123;</div><div class="line"></div><div class="line"> <span class="comment">// 如果浏览器不支持原生实现的事件，则开始模拟，否则退出。</span></div><div class="line"> <span class="keyword">if</span> ( <span class="string">"onhashchange"</span> <span class="keyword">in</span> <span class="built_in">window</span>.document.body ) &#123; <span class="keyword">return</span>; &#125;</div><div class="line"></div><div class="line"> <span class="keyword">var</span> location = <span class="built_in">window</span>.location,</div><div class="line"> oldURL = location.href,</div><div class="line"> oldHash = location.hash;</div><div class="line"></div><div class="line"> <span class="comment">// 每隔100ms检查hash是否发生变化</span></div><div class="line"> setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     <span class="keyword">var</span> newURL = location.href,</div><div class="line">     newHash = location.hash;</div><div class="line"></div><div class="line">     <span class="comment">// hash发生变化且全局注册有onhashchange方法（这个名字是为了和模拟的事件名保持统一）；</span></div><div class="line">     <span class="keyword">if</span> ( newHash != oldHash &amp;&amp; <span class="keyword">typeof</span> <span class="built_in">window</span>.onhashchange === <span class="string">"function"</span>  ) &#123;</div><div class="line">         <span class="comment">// 执行方法</span></div><div class="line">         <span class="built_in">window</span>.onhashchange(&#123;</div><div class="line">             <span class="attr">type</span>: <span class="string">"hashchange"</span>,</div><div class="line">             <span class="attr">oldURL</span>: oldURL,</div><div class="line">             <span class="attr">newURL</span>: newURL</div><div class="line">         &#125;);</div><div class="line"></div><div class="line">         oldURL = newURL;</div><div class="line">         oldHash = newHash;</div><div class="line">     &#125;</div><div class="line"> &#125;, <span class="number">100</span>);</div><div class="line">&#125;)(<span class="built_in">window</span>);</div></pre></td></tr></table></figure>
+<p>熟悉了这些新的 <code>H5 api</code>，大概对前端路由的实现方式，有了一个小小的模型了。我们来看下兼容性：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"./jquery-1.9.1.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"> &lt;script&gt;</div><div class="line"> $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">if</span>(history&amp;&amp;history.pushState)&#123;</div><div class="line">     alert(<span class="string">"true"</span>);</div><div class="line">   &#125;<span class="keyword">else</span>&#123;</div><div class="line">     alert(<span class="string">"false"</span>);</div><div class="line">   &#125;</div><div class="line">   $(<span class="built_in">window</span>).on(<span class="string">"hashchange"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">     alert(<span class="string">"hashchange"</span>);</div><div class="line">   &#125;);</div><div class="line"> &#125;);</div><div class="line"> <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>由上边的测试我得出了一些兼容性概览：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">history&amp;&amp;history.pushState兼容如下：</div><div class="line"> chrome <span class="literal">true</span>；</div><div class="line"> Firefox <span class="literal">true</span>；</div><div class="line"> IE10 <span class="literal">true</span>;</div><div class="line"> IE&lt;=<span class="number">9</span> <span class="literal">false</span>;  </div><div class="line"> PS:ie&lt;=<span class="number">9</span>既然不支持这些api那就只能采用hash方案，来实现路由系统的兼容了。</div><div class="line"></div><div class="line">hashchange兼容如下：</div><div class="line"> IE9 <span class="literal">true</span>;</div><div class="line"> IE8 <span class="literal">true</span>;</div><div class="line"> IE7 <span class="literal">false</span>;</div><div class="line"> ...</div><div class="line"></div><div class="line">页面load时，onhashchange默认触发情况：</div><div class="line"> chrome 需主动trigger才能触发</div><div class="line"> FF 需主动trigger才能触发</div><div class="line"> IE 需主动trigger才能触发</div><div class="line"></div><div class="line">页面load时，onpopstate默认触发情况：</div><div class="line"> chrome &lt;<span class="number">34</span>版本之前的默认触发 </div><div class="line"> FF 默认不触发</div><div class="line"> IE 默认不触发</div><div class="line">PS：以上是我手动测试的一个大概情况，具体的兼容情况可以去这里测试（http:<span class="comment">//caniuse.com/）。</span></div></pre></td></tr></table></figure></p>
+<p>只有 <code>webkit</code> 内核浏览器才会默认触发 <code>popstate</code> （<code>chrome&gt;34</code> 的可能实现的有问题， <code>safari</code> 就很正常）。</p>
+<p>到这里，说了这么多 api， 其实我们对标签化/路由系统应该有了一个大概的了解。如果考虑H5的api，过去 <code>facebook</code> 和 <code>twitter</code> 实现路由系统时，约定用”#!”实现，这估计也是一个为了照顾搜索引擎的约定。毕竟前端路由系统涉及到大量的 ajx，而这些 ajax 对应 url 路径对于搜索引擎来说，是很难匹配起来的。</p>
+<p><strong>路由大概的实现过程可以这么理解， 对于高级浏览器，利用 H5 的新 Api 做好页面上不同板块 ajax 等操作与 url 的映射关系，甚至可以自己用 javascript 书写一套历史栈管理模块，从而绕过浏览器自己的历史栈。而当用户的操作触发 popstate 时，可以判断此时的 url 与板块的映射关系，从而加载对应的 ajax 板块。这样你就可以把一个具有很复杂 ajax 版面结构页面的 url 发送给你的朋友了，而你的朋友在浏览器中打开这个链接时，前端路由系统 url 和板块映射关系会解析并还原出整个页面的原貌！一般 SPA（单页面应用）和一些复杂的社交站应用，会普遍拥有自己的前端路由系统。</strong></p>
+<p>看到这里，想必你也想到一个问题，浏览器第一次打开某个链接时，肯定会首先被定向到 <code>server</code> 端进行路由解析，上边所说的前端路由系统，都是建立在页面已经打开，并且前端可以利用 H5 等的 api 拦截下这些 URL 变化，确保这些 URL 变化不会发送的 <code>server</code> 端返回新的页面。但是考虑这种情况，链接是在一个新的浏览器 tab 中打开的，那么这时候前端就无法拦截下这个 url，所以，这就要求 <code>serer</code> 和前端制定好一个规则，那些 url 是需要前端解析的，那些 url 是属于后端的，而 <code>server</code> 判断出这个 url 的某部分结构不是自己应该解决的部分时，它就应该意识到，这是前端路由系统的 URL 部分，需要定向到拥有前端路由系统 <code>javascript</code> 代码的页面，交给前端处理，比如，<code>nodejs</code>中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Express框架的路由访问控制文件server.js，增加路由配置。</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(req.path.indexOf(<span class="string">'/routeForServerSide'</span>)&gt;=<span class="number">0</span>)&#123;</div><div class="line">     res.send(<span class="string">"这里返回的都是server端处理的路由"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//比如AngularJS页面</span></div><div class="line">  <span class="keyword">else</span>&#123; </div><div class="line">     res.sendfile(<span class="string">'这里可以将已经配置好angularJS路由的页面返回'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>通过这样的方式，属于前端的路由系统始终可以被正确的交给前端路由系统去 <code>handle</code>。对于 <code>PHP</code>，<code>.net</code> 也都是类似的配置 <code>server</code> 路由，给前端路由留下出口即可。</p>
+<p><code>angularjs</code> 框架中路由一般都这样配置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">app.config([<span class="string">'$routeProvider'</span>, <span class="string">'$locationProvider'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$routeProvider, $locationProvider</span>) </span>&#123;</div><div class="line"> $routeProvider</div><div class="line"> .when(<span class="string">'/login'</span>, &#123;</div><div class="line">   <span class="attr">templateUrl</span>: <span class="string">'/login.html'</span>,</div><div class="line">   <span class="attr">controller</span>: <span class="string">'LoginController'</span></div><div class="line"> &#125;).otherwise(&#123;</div><div class="line">   <span class="attr">redirectTo</span>: <span class="string">'/homepage'</span></div><div class="line"> &#125;);</div><div class="line"> $locationProvider.html5Mode(<span class="literal">true</span>);</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<p>可以看到，<code>angular</code> 正是将 URL、模块模板、模块控制器，进行一个系统的映射，从而实现出一套前端路由系统。这套路由系统默认是以 # 号开始的， url 中锚点 # 号后边的 url 即标志着前端路由系统 URL 部分的开始。这么做是为了照顾到更多浏览器，因为利用 hash 方案，IE 对这套路由系统也会有很好的支持性（前边已经说到，低版本 IE  对 H5 的新 Api 支持不好）。而如果项目压根就不想考虑 IE，在 Ng 中，就可以直接调用 <code>$locationProvider.html5Mode(true)</code> 来利用 H5 的 api 实现路由系统，从而去掉 # 号，不用 hash 方案，这样做 URL 可能会更美观一些-_-“。</p>
+<p>正常情况下，URL 中的<code>”/”</code>一般是 server 端路由采用的标记，而 ”?” 或者 ”#” 再或者 ”#!”，则一般为前端路由采用的开始标记，我们可以在这些符号后边，通过键值对的形式，描述一个页面具有哪些板块配置信息。也不乏有的网站为了美观，前后端共用 ”/”进行路由索引（比如前边说的 <code>twitter</code>）。</p>
+<p>我们来看两个比较经典的网站：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">1.Sina(新浪)</div><div class="line">作为国内SNS的翘楚，新浪的路由形式也很高大上，比如：</div><div class="line">在FF,Chrome，IE&gt;=10时新浪的URL是这样的：</div><div class="line"></div><div class="line">http://weibo.com/mygroups?gid=221102230086340215&amp;wvr=5&amp;leftnav=1</div><div class="line"></div><div class="line">PS：可以看到从?号开始就是前端路由了，一大堆的键值对。</div><div class="line"></div><div class="line">在IE&lt;=9时：</div><div class="line"></div><div class="line">http://weibo.com/mygroups?gid=221102230086340215&amp;wvr=5&amp;leftnav=1#!/mygroups?gid=221102230086340215&amp;wvr=5&amp;leftnav=1</div><div class="line"></div><div class="line">PS：仔细观察你会发现，新浪在#!后边把路由段，复制了一遍，这是因为IE低版本不支持H5的新api，因此采用#号的hash方案（比如前边讲到的hashchange或轮询等技术），这样就照顾到所有的浏览器啦~</div></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">2.Gmail</div><div class="line">作为一款超好用的SPA应用典范中的典范，无论从界面风格还是易用性...好吧不扯了直接说路由：</div><div class="line">收件箱：https://mail.google.com/mail/u/1/#inbox</div><div class="line">星标箱：https://mail.google.com/mail/u/1/#starred</div><div class="line">发件箱：https://mail.google.com/mail/u/1/#sent</div><div class="line">草稿箱：https://mail.google.com/mail/u/1/#drafts</div><div class="line">PS:看到了么，Gmail表示url不是给正常人看的，一律用#来实现前端路由部分，甚是简洁明了（其实挺赞的！）。最重要的是，这种路由方案，兼容性没的说（可能是Gmail很看重IE用户群体）！</div></pre></td></tr></table></figure>
+<p>最后总结下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">H5+hash方案：兼容有以浏览器，又照顾到了高级浏览器应用新特性。</div><div class="line"></div><div class="line">纯H5方案：表示IE是谁，我不认识-_-"，这套方案应用纯H5的新特性，URL随心定制。</div><div class="line"></div><div class="line">纯Hash方案：其实一开始我是拒绝的，可是...可是...duang...IE~~:)</div></pre></td></tr></table></figure></p>
+<p>不论哪种方案，最终的目的都是希望能解决ajax标签化的问题。以上说了这么多，仅仅是分析了这些路由系统大概的实现方式和兼容性解决方案。</p>
+<p>参考文章：<a href="http://blog.csdn.net/qq_30632003/article/details/52786163">麻球科技</a><br>参考文章：<a href="http://blog.csdn.net/xllily_11/article/details/51820909">小北哥哥</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+
+      
+   </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试指南/" rel="tag"># 面试指南</a>
+          
+            <a href="/tags/前端开发/" rel="tag"># 前端开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/30/双逻辑非操作符/" rel="next" title="双逻辑非操作符">
+                <i class="fa fa-chevron-left"></i> 双逻辑非操作符
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/30/Memory-Management-in-SPA/" rel="prev" title="Memory Management in SPA">
+                Memory Management in SPA <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="江南北" />
+          <p class="site-author-name" itemprop="name">江南北</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">270</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是前端路由？"><span class="nav-number">1.</span> <span class="nav-text">什么是前端路由？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么时候使用前端路由？"><span class="nav-number">2.</span> <span class="nav-text">什么时候使用前端路由？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端路由有什么优点和缺点？"><span class="nav-number">3.</span> <span class="nav-text">前端路由有什么优点和缺点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现的几种方式和几种场景"><span class="nav-number">4.</span> <span class="nav-text">实现的几种方式和几种场景</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">江南北</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

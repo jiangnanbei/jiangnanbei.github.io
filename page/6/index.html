@@ -317,6 +317,1011 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/27/DOM编程艺术：渐进增强/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/27/DOM编程艺术：渐进增强/" itemprop="url">DOM编程艺术：渐进增强</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-27T06:52:17+08:00">
+                2017-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h3><p><strong>你应该总是从最核心的部分，也就是从内容开始。应该根据内容使用标记实现良好的结构；然后再逐步加强这些内容。这些增强工作既可以是通过 CSS 改进呈现效果，也可以是通过 DOM 添加核心内容。如果正在使用 DOM 添加核心内容，那么你添加的时机未免太迟了，内容应该在刚开始编写文档时就成为文档的组成部分。</strong></p>
+<h3 id="结构与样式的分离"><a href="#结构与样式的分离" class="headerlink" title="结构与样式的分离"></a>结构与样式的分离</h3><p> CSS 技术突出的优点，文档结构与文档样式的分离可以确保网页都能平稳退化。具备 CSS 支持的浏览器固然可以把网页呈现的美轮美奂，不支持或者是禁用了 CSS 的浏览器同样可以把网页的内容按照正确的结构显示出来。</p>
+<h3 id="渐进增强"><a href="#渐进增强" class="headerlink" title="渐进增强"></a>渐进增强</h3><p>在创建网站的时候，给内容加上正确的 HTML 标记是第一个步骤，或许也是最重要的步骤，“标记良好的内容就是一切”。</p>
+<p>再给内容加上各种标记之后，就可以使用各种 CSS 指令控制内容的显示效果。CSS 指令构成了一个表示层。这个表示层就像是一张透明的彩色薄膜，可以包裹到文档的结构上，使文档的内容呈现出各种色彩。<strong>但即使去掉这个表示层，文档的内容也依然可以访问。</strong></p>
+<p><strong>所谓“渐进增强”就是用一些额外的信息去包裹原始数据。按照“渐进增强”创建出来的网页几乎都符合“平稳退化”原则。</strong></p>
+<p>类似于 CSS、JS 和 DOM 提供的所有功能也应该构成一个额外的指令层。显然，把 CSS 代码从 HTML 文档里分离出来可以让 CSS 更好的工作。这个适用于 CSS 表示层的结论同样适用于 JS 行为层。</p>
+<h3 id="分离-JS"><a href="#分离-JS" class="headerlink" title="分离 JS"></a>分离 JS</h3><p>类似于使用 <code>style</code> 属性。如果我们使用一个“挂钩”，就像 CSS 机制中的 <code>class</code> 或 <code>id</code> 属性那样，把 JS 代码调用行为与 HTML 文档的结构和内容分离开，网页就会健壮的多。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/27/DOM编程艺术：渐进增强/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/编程艺术：平稳退化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/编程艺术：平稳退化/" itemprop="url">DOM编程艺术：平稳退化</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T20:14:57+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h3><p>如果你按照渐进增强的原则去充实内容，你为内容添加的样式和行为就自然支持平稳退化，那些缺乏必要的 CSS 和 DOM 支持的访问者仍然可以访问到你的核心内容。如果你使用 JS 去添加这些重要内容，他就没法支持平稳退化，不支持 JS，就看不到内容。这好像是一种限制，其实不是，利用 DOM 去生成内容有着 广泛的用途。</p>
+<h3 id="质疑一切"><a href="#质疑一切" class="headerlink" title="质疑一切"></a>质疑一切</h3><p>不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。</p>
+<p>如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？</p>
+<h3 id="平稳退化"><a href="#平稳退化" class="headerlink" title="平稳退化"></a>平稳退化</h3><p>记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持 JS，但用户已经禁用它了。如果没有考虑到这种情况，人们在访问你的网站的时候就会遇到各种各样的麻烦。</p>
+<p>如果正确的使用了 JS 脚本，就可以让访问者在他们的浏览器不支持 JS 的情况下仍能顺利的浏览你的网站。<strong>这就是所谓的平稳退化，就是说，虽然某些功能无法使用，但最基本的操作仍然能顺利完成。</strong></p>
+<h3 id="弹出窗口的使用"><a href="#弹出窗口的使用" class="headerlink" title="弹出窗口的使用"></a>弹出窗口的使用</h3><p>应该只在绝对必要的情况下才使用弹出窗口，因为这将牵涉到网页的可访问性问题，例如，用户使用的屏幕读取软件无法向用户说明弹出了窗口。因此，如果网页上的某个链接将弹出窗口，最好在这个链接本身的文字中予以说明。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/26/编程艺术：平稳退化/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/《DOM-编程艺术-Demos》/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/《DOM-编程艺术-Demos》/" itemprop="url">《DOM 编程艺术 Demos》</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T19:54:35+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="案例研究：JS图片库"><a href="#案例研究：JS图片库" class="headerlink" title="案例研究：JS图片库"></a><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web-front-end/blob/master/%E3%80%8AJS%20DOM%20%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E3%80%8B/%E6%A1%88%E4%BE%8B%E7%A0%94%E7%A9%B6%EF%BC%9AJS%20%E5%9B%BE%E7%89%87%E5%BA%93.html">案例研究：JS图片库</a></h4>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/阻止默认行为及其实现原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/阻止默认行为及其实现原理/" itemprop="url">阻止默认行为及其实现原理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T18:48:11+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="阻止默认行为"><a href="#阻止默认行为" class="headerlink" title="阻止默认行为"></a>阻止默认行为</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/fireworks.gif"</span> <span class="attr">target</span>=<span class="string">"_self"</span> <span class="attr">onclick</span>=<span class="string">"showPic(this) ; return false;"</span> <span class="attr">title</span>=<span class="string">"A fireworks display"</span>; &gt;</span>Fireworks<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>此时这个链接有两个行为，一个是执行函数 <code>showPic()</code> 另一个是链接的默认行为，由于我们要执行的是 <code>showPic()</code>， 所以我们使用 <code>return false</code> 阻止连接的默认行为。</p>
+<h4 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h4><p>在给某个元素添加了事件处理函数之后，一旦事件发生，相应的 js 代码就会得到执行。被调用的 js 代码可以返回一个值，这个值将传递给那个事件处理函数。</p>
+<p>例如，我们可以给某个链接添加一个 <code>onclick</code> 事件处理函数，并让这个处理函数所触发的 <code>js</code> 代码返回布尔值 <code>true</code> 或 <code>false</code>，如果那段 <code>js</code> 代码返回的是 <code>true</code>，<code>onclick</code> 事件处理函数就认为“这个链接被点击了”；反之，如果返回的是 <code>false</code> ，<code>onclick</code> 事件处理函数就会认为这个链接没有被点击。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/JS-基础知识点总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/JS-基础知识点总结/" itemprop="url">JS 初级知识点总结</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T16:17:42+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="宿主对象"><a href="#宿主对象" class="headerlink" title="宿主对象"></a>宿主对象</h4><p>可以在脚本里使用一些已经预先定义好的其他对象。这些对象不是由 js 语言本身而是由它的运行环境提供的。具体到 web 应用，这个环境就是浏览器。有浏览器提供的预定义对象被称为宿主对象。</p>
+<p>宿主对象包括 From、Image、Element 等，我们可以通过这些对象获得关于网页上的表单、图像和各种表单元素信息。其中 document 宿主对象可以用来获取网页上任何一个元素的信息。</p>
+<h4 id="两种方法设置元素的属性"><a href="#两种方法设置元素的属性" class="headerlink" title="两种方法设置元素的属性"></a>两种方法设置元素的属性</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//第一种方法</div><div class="line">element.value = 'content';</div><div class="line"></div><div class="line">//第二种方法</div><div class="line">element.setAttribute('value','content');</div></pre></td></tr></table></figure>
+<p>第二种方法比较好，起码你不用去记忆哪些元素的哪些属性可以用 DOM 之前的哪些方法去设置。虽然哪些老办法可以毫无问题的对文档里的图片、表单和其他的一些元素的属性进行设置，但第二种方法的优势在于他可以修改文档中任何一个元素的任何一个属性。</p>
+<p>第二种方法法的另一个优势是可移植性更好。那些老方法只适用于 web 文档，DOM 则适用于任何一种标记语言。</p>
+<p><strong>第二种方法即 DOM 方法，是一种适用于多种环境和多种程序设计语言的通用 API。如果你想把你学到的 DOM 技巧运用在 web 浏览器以外的应用环境里，严格遵守“第一级 DOM ”能够让你避免与兼容性有关的任何问题。</strong></p>
+<h4 id="chileNodes-属性"><a href="#chileNodes-属性" class="headerlink" title="chileNodes 属性"></a>chileNodes 属性</h4><p>chileNodes 返回的数组包含所有类型的节点，而不仅仅是元素节点。事实上，<strong>文档里几乎每一样东西都是一个节点，甚至连空格和换行符都会被解释为节点，</strong>而且它们也全都包含在 chileNodes 属性所返回的数组当中。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/26/JS-基础知识点总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/ie-兼容性问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/ie-兼容性问题/" itemprop="url">ie 兼容性问题</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T08:25:40+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.IE6 / IE7 不支持块属性标签的 <code>inline-block</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/CSS-清浮动详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/CSS-清浮动详解/" itemprop="url">CSS 清浮动详解</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T08:14:06+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="什么是浮动？"><a href="#什么是浮动？" class="headerlink" title="什么是浮动？"></a>什么是浮动？</h3><p>使元素脱离文档流，按照指定方向发生移动，遇到父级边界或者相邻的元素停下来。（脱离文档流：此时浮动元素在文档中不占位置，飘了起来）</p>
+<h3 id="浮动的特征"><a href="#浮动的特征" class="headerlink" title="浮动的特征"></a>浮动的特征</h3><p>1.块元素在一行显示<br>2.内联元素支持宽高<br>3.默认内容撑开宽度<br>4.脱离文档流<br>5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来）</p>
+<h3 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h3><h4 id="after-伪类清浮动（主流方法）给浮动元素的父级添加"><a href="#after-伪类清浮动（主流方法）给浮动元素的父级添加" class="headerlink" title="after 伪类清浮动（主流方法）给浮动元素的父级添加"></a>after 伪类清浮动（主流方法）给浮动元素的父级添加</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.clear&#123;*zoom:1&#125;</div><div class="line">.clear:after&#123;content:'';display:block;clear:both;&#125;</div></pre></td></tr></table></figure>
+<h4 id="overflow-hidden-auto-清除浮动-给父级元素添加"><a href="#overflow-hidden-auto-清除浮动-给父级元素添加" class="headerlink" title="overflow:hidden/auto 清除浮动 给父级元素添加"></a>overflow:hidden/auto 清除浮动 给父级元素添加</h4><p>问题：需要配合宽度或者 zoom:1 兼容 IE6</p>
+<h4 id="给父级元素加高"><a href="#给父级元素加高" class="headerlink" title="给父级元素加高"></a>给父级元素加高</h4><p>问题：扩展性不好<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/26/CSS-清浮动详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/o-1-时间内删除链表节点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -454,1059 +1459,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/25/CSS-控制图片和文字在同一行显示且对齐/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/25/CSS-控制图片和文字在同一行显示且对齐/" itemprop="url">CSS 控制图片和文字在同一行显示且对齐</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-25T23:11:50+08:00">
-                2017-06-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="在css中给div添加上“vertical-align-middle”属性"><a href="#在css中给div添加上“vertical-align-middle”属性" class="headerlink" title="在css中给div添加上“vertical-align:middle”属性"></a>在css中给div添加上“vertical-align:middle”属性</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#box *&#123; </div><div class="line">	vertical-align:middle; /* 居中对齐， */ </div><div class="line">	font-size:14px; </div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xxx.jpg"</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xxx.jpg"</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>使用 vertical-align<span class="tag">&lt;/<span class="name">a</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="把图片设置为背景图片"><a href="#把图片设置为背景图片" class="headerlink" title="把图片设置为背景图片"></a>把图片设置为背景图片</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#box &#123; </div><div class="line">	background:url(1.jpg) no-repeat left center; </div><div class="line">&#125; </div><div class="line">#bg&#123; </div><div class="line">	font-size:14px; </div><div class="line">	padding-left:50px;</div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bg"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>把图片设置为背景图<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/22/如何找到你的人生目标？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/22/如何找到你的人生目标？/" itemprop="url">如何找到你的人生目标？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T00:00:05+08:00">
-                2017-06-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心智/" itemprop="url" rel="index">
-                    <span itemprop="name">心智</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>TED Adam Leipzing ： 如何找到人生的目标？</p>
-<p>那些知道自己人生目标的人，知道这五件事：</p>
-<p>他们是谁？<br>他们做了什么？<br>他们为谁而坐？<br>那些人想要什么？需要什么？<br>他们可以从中得到什么？结果会怎样改变？</p>
-<p>这听起来很难吗？事实上，你很容易就能知道自己生活的目标。很多人用尽一生的时间，寻找他们人生的目标，但是如果你只是照着计划表在考核你的人生，那不算是真正的活着。</p>
-<p>你是谁？恩，我是王震。</p>
-<p>你在做什么，如果你想到了很多自己喜欢的事情，那就问自己一个问题，现在哪一件事情，你自己感觉最有能力可以传授给别人的？我在做技术的同时也时刻提升自己对产品和商业的感知。</p>
-<p>你为谁而做，想想你是为谁而做，在你脑子里想想他们的样子。我为了我的目标顾客而做，在获得商业上的成功之后，我会为了我想要去改变那一部分人而做。</p>
-<p>他们想要什么需要什么，他们想要从你身上得到什么？他们来找你是因为你可以给他们东西。我想让他们得到更好的服务，当然我最终的目的是改变他们的思想，提升他们的认知。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/22/如何找到你的人生目标？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/21/数值的整数次方/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/21/数值的整数次方/" itemprop="url">数值的整数次方</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-21T19:18:06+08:00">
-                2017-06-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>题目：</strong></p>
-<p>实现函数<code>double Power(double base, int exponent)</code> 求 base 的 exponent 次方。不得使用库函数，同时不需要考虑大数问题。</p>
-<p><strong>代码：</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="comment">//我们使用全局变量来标识是否出错，如果出错了，则返回true</span></div><div class="line"><span class="keyword">bool</span> g_InvalidInput = <span class="literal">false</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">equal</span><span class="params">(<span class="keyword">double</span> num1, <span class="keyword">double</span> num2)</span></span>;</div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">PowerWithUnsignedExponent</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">unsigned</span> <span class="keyword">int</span> exponent)</span></span>;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">Power</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">int</span> exponent)</span></div><div class="line"></span>&#123;</div><div class="line">    g_InvalidInput = <span class="literal">false</span>;</div><div class="line"> </div><div class="line">    <span class="keyword">if</span>(equal(base, <span class="number">0.0</span>) &amp;&amp; exponent &lt; <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        g_InvalidInput = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">return</span> <span class="number">0.0</span>;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> absExponent = (<span class="keyword">unsigned</span> <span class="keyword">int</span>)(exponent);</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(exponent &lt; <span class="number">0</span>)</div><div class="line">        absExponent = (<span class="keyword">unsigned</span> <span class="keyword">int</span>)(-exponent);</div><div class="line"> </div><div class="line">    <span class="keyword">double</span> result = PowerWithUnsignedExponent(base, absExponent);</div><div class="line">    <span class="keyword">if</span>(exponent &lt; <span class="number">0</span>)</div><div class="line">        result = <span class="number">1.0</span> / result;</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">PowerWithUnsignedExponent</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">unsigned</span> <span class="keyword">int</span> exponent)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">if</span>(exponent == <span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(exponent == <span class="number">1</span>)</div><div class="line">        <span class="keyword">return</span> base;</div><div class="line">    <span class="comment">//这里我们使用右移运算符代替了除以2，使用递归的方法来达到快速计算的目的</span></div><div class="line">    <span class="keyword">double</span> result = PowerWithUnsignedExponent(base, exponent &gt;&gt; <span class="number">1</span>);</div><div class="line">    result *= result;</div><div class="line">    <span class="comment">//这里我们使用了“与”运算代替求余运算来判断一个数时奇数还是偶数</span></div><div class="line">    <span class="keyword">if</span>((exponent &amp; <span class="number">0x1</span>) == <span class="number">1</span>)</div><div class="line">        result *= base;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">equal</span><span class="params">(<span class="keyword">double</span> num1, <span class="keyword">double</span> num2)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">if</span>((num1 - num2 &gt; <span class="number">-0.0000001</span>)</div><div class="line">        &amp;&amp; (num1 - num2 &lt; <span class="number">0.0000001</span>))</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// ====================测试代码====================</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Test</span><span class="params">(<span class="keyword">double</span> base, <span class="keyword">int</span> exponent, <span class="keyword">double</span> expectedResult, <span class="keyword">bool</span> expectedFlag)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">double</span> result = Power(base, exponent);</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">abs</span>(result - expectedResult) &lt; <span class="number">0.00000001</span> </div><div class="line">        &amp;&amp; g_InvalidInput == expectedFlag)</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test passed.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test failed.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="comment">// 底数、指数都为正数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test1 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">2</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数为负数、指数为正数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test2 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">-2</span>, <span class="number">3</span>, <span class="number">-8</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 指数为负数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test3 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">2</span>, <span class="number">-3</span>, <span class="number">0.125</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 指数为0</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test4 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数、指数都为0</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test5 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数为0、指数为正数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test6 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line">    <span class="comment">// // 底数为0、指数为负数</span></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Test7 begins.\n"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    Test(<span class="number">0</span>, <span class="number">-4</span>, <span class="number">0</span>, <span class="literal">true</span>);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/21/数值的整数次方/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/21/什么样的人最可怕？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/21/什么样的人最可怕？/" itemprop="url">什么样的人最可怕？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-21T18:00:09+08:00">
-                2017-06-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心智/" itemprop="url" rel="index">
-                    <span itemprop="name">心智</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>什么样的人才是最可怕的呢？在我看来是具有“自我进化”和成长型思维的人才是最可怕的。</p>
-<p>什么是“自我进化”？就是说这个人可以像一个生物一样，不管外部环境如果变化我都能及时的进化出我自己的一套“生态系统”，来适应外界任何的变化，这就是“自我进化”。</p>
-<p>你可能会问，我长这么大怎么从来没有感受到“自我进化”，你怎么判断一个人有没有自我进化的能力呢？这个答案很简单，对于一般人，我会告诉他，如果你今天做错了一件事，在你意识到自己做错了之后你及时把它改正了，这就是你的“自我进化”。比如说有一天你忽然意识到，疯狂的追剧并不会让我变得更好，因为别人的错误惩罚自己其实是没有必要的，“不合群”其实也没什么关系…</p>
-<p>但现实是这样的一般人占了我们生活中的大多数，能够做到“自我变化”的人已经屈指可数，更不要说“自我进化”了。</p>
-<p>对于世道人心有起码心智的人，我会告诉他，所谓“自我进化”就是从你开始对这个世界有最起码的认知，到现在这个时刻你经历过几次“王阳明时刻”。所谓“王阳明时刻”，就是你突然意识到，我要想过的更好，我要达到更高的人格和事业目标，那不是向外求的，你要学会向内求，你自己才是一切问题的根源。想要感受的更深刻一点的话，可以看一下这句话：“未经长夜痛哭者，不足以语人生”。</p>
-<p>从开始“懂事”到现在，我经历过三次“王阳明时刻”。第一次来自我的启蒙老师，这个改变了我一生的男人。就是他让我在 18 岁时对世道人心已经有了起码的认识，他告诉我：“你的人生可以很精彩，你可以这样度过”。</p>
-<p>什么叫成长型思维？这个我说过很多次，听到的人很多，做到的人没有。至少目前我没有看见过。</p>
-<p>所谓成长型思维，通俗一点的解释就是，你不要想着今天你做了多少事情看看明天会发生什么，你要学会拉长一个时间维度，跳到一个大的空间尺度，看看你持续做这件事，三年之后会发生什么，五年之后会发生什么，十年之后会发生什么，他会逐渐向前，争取未来。而不是说，保持你基于现有认知对自己的判断，从而保持一个僵化的思维，固守对自己才智的认知。</p>
-<p>具有成长型思维的人的一个最主要的特征就是，注重过程而不是结果。一个具有成长型思维的人在一次考试失败之后，他不会沮丧，他会分析自己在备考的过程中所没有关注到的点，最重要的是他会非常享受这个过程。而不具备成长型思维的人，一次考试的失败，就会让他对自己造成否定的认知，认为自己也就这个水平了，甚至为了下次考试能够考好，他会冒险作弊。</p>
-<p>如果你具有“自我进化”的能力和成长型思维，不要着急，时间会给你所有你想要的。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/20/逆向选择/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/20/逆向选择/" itemprop="url">逆向选择策略</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T23:30:18+08:00">
-                2017-06-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>清华总裁班：邹亚生 逆向选择策略</p>
-<p>什么叫逆向选择？把这个概念放到企业里面就是劣质商品能够把优质商品驱逐出去，你可能会想这怎么可能呢？</p>
-<p>比如说，用北京的一个市场潘家园，他是北京的一个古董市场，最初建立的时候在这个市场上真品还是比较多的，今天你如果去潘家园，几乎无一例外的是赝品。这个故事的发生过程其实就是一个博弈的过程，那就是最初我们认为这个市场上的东西真品比较多，那么我作为一个买家到了这个市场上，这个市场上既然是真品，那我给你的价格就是真品的价格，但是呢，慢慢地在这个市场上出现了一些赝品，那么这个赝品我去买的时候你是把它当做真品卖给我的，那就会有一批上当的人，然后他就发生了怀疑，那么这个人下一次到这个市场上去买的时候，无论这个东西是真品还是赝品，那我再给它报价的时候，我至少不会再报一个真品的价格，这个时候我报的价格就要比真品的价格要便宜，那这个时候，卖真品的人把自己的产品拿到这个市场上来但是却卖不了一个真品的价格，那下次这个人还会带着真品过来吗？经过这几个来回，最终这个市场上剩下的就全是赝品，这就是劣质品把优质品从这个市场上驱逐出去了。</p>
-<p>当然在这个驱逐的过程中最核心的问题仍然是信息不对称，因为这个东西到底是真品还是赝品，如果你没有相当的专业知识你是没有办法甄选出来的。</p>
-<p>类似于这样的逆向选择经常会出现在我们企业的其他方面，这个词最早出现是因为保险公司。保险公司在制定一个保单的价格的时候，是按所有人群的平均价格给的，但是你们仔细想想谁最愿意到保险公司去主动地买这个险？至少是有着潜在风险大的人才会去买，但是身体好的人是不愿意去买的，因为这样他就替别人承了风险，那这样一来，保险公司就发生了逆向选择，也就是说保险公司如果没有建立起来一个良好的制度，那么所有买这个险的人是高风险的人，所有没有买这个保险的人是低风险的人，那么从保险公司的角度，我是最想把这个保险卖给那些不会得病的人，最不想卖给的就是那些会得病的人，但是从市场的选择来讲，是那些得病的人买了险而不得病的人不买这个险，这个时候对保险公司来讲就出现了逆向选择，劣质客户把优质客户驱逐出去了。同样，银行贷款也是这个道理。</p>
-<p>所以为了避免出现逆向选择，保险公司和银行制定了相应的策略。保险公司的策略是什么呢？既然你是来买健康险的，你先到医院做一个体检。或者说保险公司采取一个更简单的办法，这个险种我就不对个人卖，我不卖个人险，卖团险，这个时候团体里面不生病的人把那些生病的人的损失就担起来了。</p>
-<p>而银行采取的手段则是，凡事要到我这里贷款的，首先要提供三张报表，资产负债表，损益表和合并报表。但是有些中小企业这个时候给出了伪造的报表，那这个时候银行说，行，我不看你的三张报表了，但是我还是要看你的表，我看你的水表，我看你的电表，我看你的海关报表，这三个表不是你自己出的，这三个表是由公共机构出的，我认为这三个表是真的。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/20/逆向选择/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/19/Tab-导航/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/19/Tab-导航/" itemprop="url">Tab 导航</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-19T23:35:26+08:00">
-                2017-06-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计/" itemprop="url" rel="index">
-                    <span itemprop="name">设计</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《见微知著》</p>
-<p>广义上，在页面上能够起到指示和引导作用的元素都可以称之为导航。它就像商场中的指示牌和城市旅游地图一样，能够告诉用户“我在哪里？”还有“我该怎么去想要去的地方？”，以引导用户更好地浏览网站内容。</p>
-<p>导航也是对网站信息架构的一种反映，体现了网站内容的分类和组织方式。没有导航的内容就像一盘散沙，用户不容易找到所需要的内容，却很容易在网站上“迷路”，失去方向感，有时只能后退或者关闭页面才能退出，这会增加用户的挫折感。</p>
-<p>网站页面上存在很多导航元素，引导用户浏览，包括主导航、辅助导航、网站地图、搜索区、Logo和快速入口等。Logo起着网站指明灯的作用，使用户始终可以通过单击Logo返回首页；搜索区也是导航中非常重要的一个辅助元素；快捷入口通常包括登录、注册、帮助、联系方式等常用信息，用户能够快速单击链接进入目标页面。这些元素虽然也都起着导航的作用。</p>
-<p><strong>全局导航，指的是在网站每个页面上始终保持同一位置的导航元素，常见的包括Tab导航、树状导航、鱼眼导航等不同的导航类型。</strong></p>
-<p>辅助导航包括主导航下的分类筛选、面包屑导航、推荐式导航、引导性导航等，虽然其位置没有全局导航那么显眼，但却在用户浏览过程中起着不可替代的作用。</p>
-<p>网站地图指明了一个网站结构，集合了所有链接通道，能够让用户和网络蜘蛛更加清晰地了解网站的大致结构，也起到了对搜索引擎优化的目的。</p>
-<h3 id="Tab-导航"><a href="#Tab-导航" class="headerlink" title="Tab 导航"></a>Tab 导航</h3><p>目前国内大部分网站，包括门户网站、电子商务网站等都采用横向导航条，显示了网站的主要栏目。横向导航的缺点在于页面横向空间有限，因此为了保证各栏目间能够区分开，往往会使网站分类栏目的数量受到限制；还有当导航需要显示二级栏目时，简单的横向导航也很难满足需求。</p>
-<p>当分类栏目过多的时候，横向空间放不下过多的栏目，因此演变出了门户类网站常用的多行导航栏。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/19/Tab-导航/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/17/3种错误处理的方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/17/3种错误处理的方法/" itemprop="url">3种错误处理的方法</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-17T07:57:03+08:00">
-                2017-06-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>通常我们的有三种方式把错误信息传递给函数的调用者。</p>
-<p>1.<strong>函数用返回值来告知调用者是否出错。</strong>这种方式最大的问题是使用不便，因为函数不能直接把计算结果通过返回值赋给其他变量，同时也不能把这个函数的计算结果直接作为参数传递给其他函数。</p>
-<p>2.<strong>当发生错误时设置一个全局变量。</strong>此时我们可以在返回值中传递计算结果了。这种方法比第一种方法使用起来更加方便，因为调用者可以直接把返回值赋给其他变量或者作为参数传递给其他函数。</p>
-<p>但是这个方法有个问题：调用者很容易就会忘记去检查全局变量，因此在调用出错的时候，忘记做相应的错误处理，从而留下安全隐患。</p>
-<p>3.<strong>第三种方式就是异常。</strong>等函数运行出错的时候，我们就抛出一个异常，我们还可以根据不同的出错原因定义不同的异常类型。因此函数的调用者根据异常的类型就能知道出错的原因，从而做相应的处理。</p>
-<p>另外，我们能够显示划分程序正常运行的代码块（try 模块）和异常处理的代码块（catch 模块），逻辑比较清晰。另外，当抛出异常的时候，程序的执行会打乱正常的顺序，对程序的性能有很大的影响。</p>
-<hr>
-<table>
-<thead>
-<tr>
-<th>方式</th>
-<th style="text-align:center">优点</th>
-<th style="text-align:center">缺点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>返回值</td>
-<td style="text-align:center">和系统 API 一致</td>
-<td style="text-align:center">不能方便的使用计算结果</td>
-</tr>
-<tr>
-<td>全局变量</td>
-<td style="text-align:center">能够方便的使用计算结果</td>
-<td style="text-align:center">用户可能会忘记检查全局变量</td>
-</tr>
-<tr>
-<td>异常</td>
-<td style="text-align:center">可以为不同的出错原因定义不同的出错类型，逻辑清晰</td>
-<td style="text-align:center">有些语言不支持异常，抛出异常时对性能有负面影响</td>
-</tr>
-</tbody>
-</table>
-<p>上述三种错误处理方式各有其优缺点。那么，面试的时候我们应该采取哪种方式呢？这要看面试官的要求。在听到面试官的题目之后，我们要尽快分析出可能存在哪些非法的输入，并和面试官讨论如何处理这些非法输入。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1551,7 +1508,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">263</span>
+                <span class="site-state-item-count">270</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

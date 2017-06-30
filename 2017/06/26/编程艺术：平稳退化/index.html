@@ -93,22 +93,19 @@
 
 
 
-<meta name="description" content="质疑一切不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。
-如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？
-平稳退化记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持">
+<meta name="description" content="核心思想如果你按照渐进增强的原则去充实内容，你为内容添加的样式和行为就自然支持平稳退化，那些缺乏必要的 CSS 和 DOM 支持的访问者仍然可以访问到你的核心内容。如果你使用 JS 去添加这些重要内容，他就没法支持平稳退化，不支持 JS，就看不到内容。这好像是一种限制，其实不是，利用 DOM 去生成内容有着 广泛的用途。
+质疑一切不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM编程艺术：平稳退化">
 <meta property="og:url" content="http://ijiangnanbei.com/2017/06/26/编程艺术：平稳退化/index.html">
 <meta property="og:site_name" content="江南北的个人站">
-<meta property="og:description" content="质疑一切不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。
-如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？
-平稳退化记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持">
-<meta property="og:updated_time" content="2017-06-26T22:51:20.524Z">
+<meta property="og:description" content="核心思想如果你按照渐进增强的原则去充实内容，你为内容添加的样式和行为就自然支持平稳退化，那些缺乏必要的 CSS 和 DOM 支持的访问者仍然可以访问到你的核心内容。如果你使用 JS 去添加这些重要内容，他就没法支持平稳退化，不支持 JS，就看不到内容。这好像是一种限制，其实不是，利用 DOM 去生成内容有着 广泛的用途。
+质疑一切不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认">
+<meta property="og:updated_time" content="2017-06-30T07:26:31.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM编程艺术：平稳退化">
-<meta name="twitter:description" content="质疑一切不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。
-如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？
-平稳退化记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持">
+<meta name="twitter:description" content="核心思想如果你按照渐进增强的原则去充实内容，你为内容添加的样式和行为就自然支持平稳退化，那些缺乏必要的 CSS 和 DOM 支持的访问者仍然可以访问到你的核心内容。如果你使用 JS 去添加这些重要内容，他就没法支持平稳退化，不支持 JS，就看不到内容。这好像是一种限制，其实不是，利用 DOM 去生成内容有着 广泛的用途。
+质疑一切不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认">
 
 
 
@@ -408,14 +405,15 @@
       
 
       
-        <h3 id="质疑一切"><a href="#质疑一切" class="headerlink" title="质疑一切"></a>质疑一切</h3><p>不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。</p>
+        <h3 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h3><p>如果你按照渐进增强的原则去充实内容，你为内容添加的样式和行为就自然支持平稳退化，那些缺乏必要的 CSS 和 DOM 支持的访问者仍然可以访问到你的核心内容。如果你使用 JS 去添加这些重要内容，他就没法支持平稳退化，不支持 JS，就看不到内容。这好像是一种限制，其实不是，利用 DOM 去生成内容有着 广泛的用途。</p>
+<h3 id="质疑一切"><a href="#质疑一切" class="headerlink" title="质疑一切"></a>质疑一切</h3><p>不管你想通过 JS 改变网页的哪个行为，都必须三思而后行。首先要确认：为这个网页增加这种额外的行为是否有必要？弹出广告窗口和内容覆盖是一个典型的滥用 JS 的例子。</p>
 <p>如果要使用 JS，就要确认：这么做会对用户的浏览体验产生怎样的影响？还有个更重要的问题：如果用户的浏览器不支持 JS 该怎么办？</p>
 <h3 id="平稳退化"><a href="#平稳退化" class="headerlink" title="平稳退化"></a>平稳退化</h3><p>记住，网站的访问者完全有可能使用的是不支持 JS 的浏览器，还有一种可能是虽然浏览器支持 JS，但用户已经禁用它了。如果没有考虑到这种情况，人们在访问你的网站的时候就会遇到各种各样的麻烦。</p>
 <p>如果正确的使用了 JS 脚本，就可以让访问者在他们的浏览器不支持 JS 的情况下仍能顺利的浏览你的网站。<strong>这就是所谓的平稳退化，就是说，虽然某些功能无法使用，但最基本的操作仍然能顺利完成。</strong></p>
-<h3 id="弹出窗口的使用"><a href="#弹出窗口的使用" class="headerlink" title="弹出窗口的使用"></a>弹出窗口的使用</h3><p>应该只在绝对必要的情况下才使用弹出窗口，因为这将牵涉到网页的可访问性问题，例如，用户使用的屏幕读取软件无法向用户说明弹出了窗口。因此，如果网页上的某个链接将弹出窗口，最好在这个链接本身的文字中予以说明。</p>
+<h3 id="弹出窗口的使用"><a href="#弹出窗口的使用" class="headerlink" title="弹出窗口的使用"></a>弹出窗口的使用</h3><p>应该只在绝对必要的情况下才使用弹出窗口，因为这将牵涉到网页的可访问性问题，例如，用户使用的屏幕读取软件无法向用户说明弹出了窗口。因此，如果网页上的某个链接将弹出窗口，最好在这个链接本身的文字中予以说明。<br><a id="more"></a></p>
 <h3 id="实例：在新窗口打开链接"><a href="#实例：在新窗口打开链接" class="headerlink" title="实例：在新窗口打开链接"></a>实例：在新窗口打开链接</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function popUp(winURL)&#123;</div><div class="line">    window.open(winURL,"popUp","width=320,height=480");</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>open()</code> 方法是使用 BOM 的一个好案例，它的功能对文档的内容也无任何影响，这个方法只与浏览器环境有关。</p>
-<p>这个函数将打开一个 <code>320</code> 像素宽、<code>480</code>像素高的新窗口“popUp”。因为我在这个函数里已经为新的窗口命名，所以当把新的 URL 地址传递给此函数时，这个函数将把心窗口里的现有文档替换为新 URL 地址处的文档，而不是再去创建一个新窗口。<br><a id="more"></a></p>
+<p>这个函数将打开一个 <code>320</code> 像素宽、<code>480</code>像素高的新窗口“popUp”。因为我在这个函数里已经为新的窗口命名，所以当把新的 URL 地址传递给此函数时，这个函数将把心窗口里的现有文档替换为新 URL 地址处的文档，而不是再去创建一个新窗口。<br><!--more--></p>
 <h3 id="“javascript-”伪协议"><a href="#“javascript-”伪协议" class="headerlink" title="“javascript:”伪协议"></a>“javascript:”伪协议</h3><p>调用 <code>popUp()</code> 函数的一个方法是使用伪协议。伪协议是一种非标准化的协议。“javascript:”伪协议让我们通过一个连接来调用 JS 函数。</p>
 <p>下面是“javascript:”伪协议调用 <code>popUp()</code> 的具体做法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:popUp('http://www.example.com/'):"</span>&gt;</span>example<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这条语句在支持 “javascript:”伪协议的浏览器中正常运行，较老的浏览器会去尝试打开那个连接，但是会失败，支持这种协议但是禁用了 JS 功能的浏览器会什么也不做。</p>
@@ -565,7 +563,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">263</span>
+                <span class="site-state-item-count">270</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -622,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#质疑一切"><span class="nav-number">1.</span> <span class="nav-text">质疑一切</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平稳退化"><span class="nav-number">2.</span> <span class="nav-text">平稳退化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹出窗口的使用"><span class="nav-number">3.</span> <span class="nav-text">弹出窗口的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例：在新窗口打开链接"><span class="nav-number">4.</span> <span class="nav-text">实例：在新窗口打开链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“javascript-”伪协议"><span class="nav-number">5.</span> <span class="nav-text">“javascript:”伪协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内嵌的事件处理函数"><span class="nav-number">6.</span> <span class="nav-text">内嵌的事件处理函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谁关心这个？"><span class="nav-number">7.</span> <span class="nav-text">谁关心这个？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#核心思想"><span class="nav-number">1.</span> <span class="nav-text">核心思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质疑一切"><span class="nav-number">2.</span> <span class="nav-text">质疑一切</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平稳退化"><span class="nav-number">3.</span> <span class="nav-text">平稳退化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹出窗口的使用"><span class="nav-number">4.</span> <span class="nav-text">弹出窗口的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例：在新窗口打开链接"><span class="nav-number">5.</span> <span class="nav-text">实例：在新窗口打开链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“javascript-”伪协议"><span class="nav-number">6.</span> <span class="nav-text">“javascript:”伪协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内嵌的事件处理函数"><span class="nav-number">7.</span> <span class="nav-text">内嵌的事件处理函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谁关心这个？"><span class="nav-number">8.</span> <span class="nav-text">谁关心这个？</span></a></li></ol></div>
             
 
           </div>

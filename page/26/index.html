@@ -317,6 +317,1020 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/21/跨浏览器的事件处理程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/21/跨浏览器的事件处理程序/" itemprop="url">跨浏览器的事件处理程序</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-21T16:38:37+08:00">
+                2016-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>要保证事件处理的代码在大多数浏览器下能够一致的运行，只需关注冒泡阶段即可。</p>
+<p>第一个要创建的方法是 <code>addHandler()</code> ，它的职责是视情况分别使用 DOM0 级方法、DOM2 级方法或 IE 方法来添加事件。这个方法属于一个叫做 EventUtil 的对象，<code>addHandler()</code> 接受三个参数：要操作的元素、事件名称和事件处理程序函数。</p>
+<p>与 <code>addHandler()</code> 方法相对应的是 <code>removeHandler()</code>，他也接收相同的参数。这个方法的职责是移除之前添加的事件处理程序，无论该事件处理程序是采取什么方式添加到元素中的，如果其他方法无效，默认采用 DOM0 级方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> EventUtil = &#123;</div><div class="line">    <span class="attr">addHandler</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> element, type, handler </span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( element.addEventListener ) &#123;</div><div class="line">            element.addEventListener( type, handler, <span class="literal">false</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( element.attachEvent ) &#123;</div><div class="line">            element.attachEvent( <span class="string">"on"</span> + type, handler );</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            element[ <span class="string">"on"</span> + type ] = handler;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attr">removeHandler</span> : <span class="function"><span class="keyword">function</span>(<span class="params"> element, type, handler </span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( element.removeEventListener ) &#123;</div><div class="line">            element.removeEventListener( type, handler, <span class="literal">false</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( element.detachEvent ) &#123;</div><div class="line">            element.detachEvent( <span class="string">"on"</span> + type, handler );</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            element[ <span class="string">"on"</span> + type ] = <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;!--more--&gt;</div><div class="line"><span class="comment">//使用方法</span></div><div class="line"><span class="keyword">var</span> oBtn = <span class="built_in">document</span>.querySelector(<span class="string">"#btn"</span>);</div><div class="line"><span class="keyword">var</span> handler = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert( <span class="string">"haha"</span> );</div><div class="line">&#125;</div><div class="line"></div><div class="line">EventUtil.addHandler( oBtn, <span class="string">"click"</span>, handler );</div><div class="line"><span class="comment">// EventUtil.removeHandler( oBtn, "click", handler );</span></div></pre></td></tr></table></figure>
+<p>这两个方法首先都会检测传入的元素中是否存在 DOM2 级方法，如果存在该方法则使用该方法。</p>
+<p>如果存在的是 IE 的方法，则使用第二种方案。注意，为了在 IE8 级更早的版本中运行，此时的事件类型必须加上 <code>“on”</code> 前缀。</p>
+<p>最后一种可能就是使用 DOM0 级方法（在现代浏览器中应该不会执行这里的代码）。此时我们使用的是方括号语法来将属性名指定为事件处理程序。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/20/性能优化之DOM与JS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/20/性能优化之DOM与JS/" itemprop="url">性能优化之DOM与JS</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-20T16:36:13+08:00">
+                2016-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>什么是 DOM？ DOM 就是用于操作 xml 和 html 文档的应用程序，浏览器会把 DOM 和 JS 独立实现。</p>
+<p>JS 操作 DOM 就像是从一个岛到了另一个岛，岛与岛之间的桥，每次通过都是要收取过桥费的,所以我们要尽量减少过桥的次数，意思就是说能在独立的岛上去完成的，就在独立的岛上去做，避免跨“岛”操作。<strong>减少 DOM 与 JS 的交互，可以大大提高浏览器的性能。</strong></p>
+<h3 id="1-使用缓存"><a href="#1-使用缓存" class="headerlink" title="1.使用缓存"></a>1.使用缓存</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>);</div><div class="line">		<span class="keyword">var</span> str = <span class="string">''</span>;</div><div class="line">		<span class="comment">//未使用缓存</span></div><div class="line">		<span class="built_in">console</span>.time(<span class="string">'hello'</span>); </div><div class="line"></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">5000</span>; i++)&#123;</div><div class="line">			oDiv.innerHTML  += <span class="string">'A'</span>;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="built_in">console</span>.timeEnd(<span class="string">'hello'</span>);</div><div class="line">		</div><div class="line">		<span class="comment">//使用缓存</span></div><div class="line">		<span class="built_in">console</span>.time(<span class="string">'hello'</span>); </div><div class="line">		</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">5000</span>; i++)&#123;</div><div class="line">			str += <span class="string">'A'</span>;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		oDiv.innerHTML = str;</div><div class="line">		</div><div class="line">		<span class="built_in">console</span>.timeEnd(<span class="string">'hello'</span>);	 </div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p>通过测试可以发现：使用缓存可以大大提高浏览器的性能。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/20/性能优化之DOM与JS/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/20/性能优化之DOM与浏览器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/20/性能优化之DOM与浏览器/" itemprop="url">性能优化之DOM与浏览器</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-20T16:33:32+08:00">
+                2016-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="1-页面渲染机制"><a href="#1-页面渲染机制" class="headerlink" title="1.页面渲染机制"></a>1.页面渲染机制</h3><p>重排：当你改变页面中元素大小的时候，浏览器在加载页面的时候就会发生重排。</p>
+<p>重绘：当浏览器显示的内容改变的时候就会发生重绘。</p>
+<h3 id="2-添加顺序"><a href="#2-添加顺序" class="headerlink" title="2.添加顺序"></a>2.添加顺序</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;ul id="ul1"&gt;&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line"></div><div class="line">	window.onload = function()&#123;</div><div class="line">		var oUl = document.getElementById('ul1');</div><div class="line">		</div><div class="line">		//添加操作在 appendChild 后，降低了性能</div><div class="line">		console.time('hello');</div><div class="line"></div><div class="line">		for(var i=0; i&lt;5000; i++)&#123;</div><div class="line">			var aLi = document.createElement('li');</div><div class="line">			oUl.appendChild(aLi);</div><div class="line">			aLi.innerHTML = 'LI';</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		console.timeEnd('hello');</div><div class="line">		</div><div class="line">		//添加操作在 appendChild 前，提供了性能</div><div class="line">		console.time('hello');</div><div class="line"></div><div class="line">		for(var i=0; i&lt;5000; i++)&#123;</div><div class="line">			var aLi = document.createElement('li');</div><div class="line">			aLi.innerHTML = 'LI';</div><div class="line">			//当你在 append 之前添加的时候,减少了重排重绘</div><div class="line">			//的过程,提高了性能,我们尽量把一些操作放在添加的</div><div class="line">			//前面进行  </div><div class="line"></div><div class="line">			oUl.appendChild(aLi);</div><div class="line">		&#125;</div><div class="line">		console.timeEnd('hello');</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/20/性能优化之DOM与浏览器/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/20/性能优化之Dome与前端模板/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/20/性能优化之Dome与前端模板/" itemprop="url">性能优化之Dome与前端模板</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-20T16:32:00+08:00">
+                2016-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>利用前端模板来对逻辑和视图进行更好的分离，页面的渲染和你的 JS 是分开进行的,这对大型的架构非常好。前端模板是 MVC  架构的基础。</p>
+<p>（待补充）</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/20/性能优化之Demo与事件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/20/性能优化之Demo与事件/" itemprop="url">性能优化之Demo与事件</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-20T16:30:32+08:00">
+                2016-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>（待补充…）</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/20/前端面试指南JS篇（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/20/前端面试指南JS篇（一）/" itemprop="url">前端面试指南JS篇</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-20T13:21:08+08:00">
+                2016-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-null-和-undefined-的区别"><a href="#1-null-和-undefined-的区别" class="headerlink" title="1.null 和 undefined 的区别?"></a>1.null 和 undefined 的区别?</h3><ul>
+<li><p>对为初始化的变量执行 <code>typeof</code> 操作符会返回 <code>undefined</code> 值，而对未声明的变量执行 <code>typeof</code> 操作符同样也会返回 <code>undefined</code> 值，所以我们在编写代码的过程中应该显示的初始化变量，那么当 <code>typeof</code> 返回 <code>undefined</code> 的时候，我们就知道被检测的变量还没有被声明而不是还没有初始化。、</p>
+</li>
+<li><p><code>undefined</code> 值是派生自 <code>null</code> 值的，他们的相等性测试要返回 <code>true</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alert(<span class="literal">null</span> == <span class="literal">undefined</span>);<span class="comment">//true</span></div><div class="line">alert(<span class="literal">null</span> === <span class="literal">undefined</span>);<span class="comment">//false</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>null</code> 值表示一个空对象指针，而这也正是使用 <code>typeof</code> 操作符检测 <code>null</code> 值会返回 <code>“object”</code> 的原因。</p>
+</li>
+<li><p>如果定义的变量准备在将来用于保存对象，那么最好将该变量初始化为 <code>null</code>，而不是其他值，这样一来，只要直接检查 `null`` 值就可以知道相应的变量是否已经保存了一个对象的引用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (car != <span class="literal">null</span>)&#123;</div><div class="line">	<span class="comment">//对 car 对象执行某些操作</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>无论在什么情况下都没有必要把一个变量的值显示的设置为 <code>undefined</code>，可以同样的规则对 <code>null</code> 却不适用。换句话说，只要意在保存对象的变量还没有真正保存对象，就应该明确的让该变量保存 <code>null</code> 值。这样做不仅可以体现 <code>null</code> 作为空对象指针的惯例，而且也有助于进一步区分 <code>null</code> 和 <code>undefined</code>。</p>
+</li>
+</ul>
+<h3 id="2-XML-和-JSON-的区别？"><a href="#2-XML-和-JSON-的区别？" class="headerlink" title="2.XML 和 JSON 的区别？"></a>2.XML 和 JSON 的区别？</h3><ul>
+<li><p>数据体积方面 ： JSON 相对于 XML 来讲，数据的体积小，传递的速度更快些。</p>
+</li>
+<li><p>数据交互方面：JSON 与 JavaScript 的交互更加方便，更容易解析处理，更好的数据交互。</p>
+</li>
+<li><p>数据描述方面：JSON 对数据的描述性比 XML 较差。</p>
+</li>
+<li><p>传输速度方面：JSON 的速度要远远快于 XML。</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/17/前端初级小Demo集合/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/17/前端初级小Demo集合/" itemprop="url">前端初级小Demo集合</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-17T16:28:50+08:00">
+                2016-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web-front-end/blob/master/Demo/%E6%8E%A7%E5%88%B6div%E5%B1%9E%E6%80%A7.html">控制 div 属性</a>     —-&gt;<a href="https://github.com/jiangnanbei/web-front-end/blob/master/Demo/%E6%8E%A7%E5%88%B6div%E5%B1%9E%E6%80%A7.html">源代码</a></p>
+</li>
+<li><p><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web-front-end/blob/master/Demo/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E4%B8%80%E4%B8%AAdiv.html">水平垂直居中一个 div</a>—-&gt;<a href="https://github.com/jiangnanbei/web-front-end/blob/master/Demo/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E4%B8%80%E4%B8%AAdiv.html">源代码</a></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/15/Ajax小Demo集合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -450,1063 +1464,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/15/IFE任务之JS篇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/15/IFE任务之JS篇/" itemprop="url">IFE任务之JS篇</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-15T16:24:51+08:00">
-                2016-11-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-任务一：零基础JavaScript编码（一）"><a href="#1-任务一：零基础JavaScript编码（一）" class="headerlink" title="1. 任务一：零基础JavaScript编码（一）"></a>1. <a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/01.html">任务一：零基础JavaScript编码（一）</a></h4><h4 id="2-任务二：零基础JavaScript编码（二）-代码简洁优美"><a href="#2-任务二：零基础JavaScript编码（二）-代码简洁优美" class="headerlink" title="2.任务二：零基础JavaScript编码（二）(代码简洁优美)"></a>2.<a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/02.html">任务二：零基础JavaScript编码（二）</a>(代码简洁优美)</h4><h4 id="3-任务三：零基础JavaScript编码（三）"><a href="#3-任务三：零基础JavaScript编码（三）" class="headerlink" title="3.任务三：零基础JavaScript编码（三）"></a>3.<a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/03.html">任务三：零基础JavaScript编码（三）</a></h4><h4 id="4-任务四：基础JavaScript练习（一）"><a href="#4-任务四：基础JavaScript练习（一）" class="headerlink" title="4.任务四：基础JavaScript练习（一）"></a>4.<a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/04.html">任务四：基础JavaScript练习（一）</a></h4><h4 id="5-任务五：基础JavaScript练习（二）"><a href="#5-任务五：基础JavaScript练习（二）" class="headerlink" title="5.任务五：基础JavaScript练习（二）"></a>5.<a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/05.html">任务五：基础JavaScript练习（二）</a></h4><h4 id="6-任务六：基础JavaScript练习（三）–-gt-源代码-amp-amp-效果展示"><a href="#6-任务六：基础JavaScript练习（三）–-gt-源代码-amp-amp-效果展示" class="headerlink" title="6.任务六：基础JavaScript练习（三）–&gt;源代码&amp;&amp;效果展示"></a>6.<a href="https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/06.html">任务六：基础JavaScript练习（三）–&gt;源代码</a>&amp;&amp;<a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web-front-end/blob/master/BaiDuFrontEndTasks/06.html">效果展示</a></h4>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/14/JS实现字符串反转/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/14/JS实现字符串反转/" itemprop="url">JS实现字符串反转</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-14T16:20:21+08:00">
-                2016-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="第一种方法："><a href="#第一种方法：" class="headerlink" title="第一种方法："></a>第一种方法：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;</div><div class="line">alert(str.split(<span class="string">""</span>).reverse().join(<span class="string">""</span>));<span class="comment">//cba</span></div></pre></td></tr></table></figure>
-<h3 id="第二种方法："><a href="#第二种方法：" class="headerlink" title="第二种方法："></a>第二种方法：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;</div><div class="line"><span class="keyword">var</span> len = str.length;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=len<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)&#123;</div><div class="line">	alert(str.charAt(i));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="第三种方法："><a href="#第三种方法：" class="headerlink" title="第三种方法："></a>第三种方法：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;</div><div class="line"><span class="keyword">var</span> str2 = [];</div><div class="line"><span class="keyword">var</span> str3 = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> len = str.length;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=len<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)&#123;</div><div class="line">	str2.push(str[i]);</div><div class="line">&#125;</div><div class="line">str3 = str2.join(<span class="string">""</span>);</div><div class="line">alert(str3);<span class="comment">//cba</span></div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/13/递归实现斐波那契数列/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/13/递归实现斐波那契数列/" itemprop="url">递归实现斐波那契数列</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-13T16:15:59+08:00">
-                2016-11-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>用递归实现斐波那契数列：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">fobi</span>(<span class="params">n</span>)</span>&#123;</div><div class="line"> </div><div class="line"> 	<span class="keyword">if</span>(n == <span class="number">0</span> || n == <span class="number">1</span>)&#123;</div><div class="line"> 		<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line"> 	&#125;</div><div class="line"></div><div class="line"> 	<span class="keyword">return</span> fobi(n<span class="number">-1</span>)+fobi(n<span class="number">-2</span>);</div><div class="line"> &#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result = fobi(<span class="number">3</span>);</div><div class="line"></div><div class="line">alert(result);<span class="comment">//3</span></div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/13/六道JS面试题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/13/六道JS面试题/" itemprop="url">六道JS面试题</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-13T16:15:59+08:00">
-                2016-11-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="1-创建JS对象的两种方法"><a href="#1-创建JS对象的两种方法" class="headerlink" title="1.创建JS对象的两种方法?"></a>1.创建JS对象的两种方法?</h3><pre><code>var o1 = {};
-var o2 = new object;
-</code></pre><h3 id="2-如何创建数组"><a href="#2-如何创建数组" class="headerlink" title="2.如何创建数组?"></a>2.如何创建数组?</h3><pre><code>var a1 = [];
-var a2 = new Array;
-</code></pre>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/11/13/六道JS面试题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/13/字符串和数组的相互转换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/13/字符串和数组的相互转换/" itemprop="url">字符串和数组的相互转换</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-13T16:13:06+08:00">
-                2016-11-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="数组转换为字符串"><a href="#数组转换为字符串" class="headerlink" title="数组转换为字符串"></a>数组转换为字符串</h3><p>解法一：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> str = <span class="string">''</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;data.length; i++)&#123;</div><div class="line">	str += data[i];</div><div class="line">&#125;</div><div class="line">alert(<span class="keyword">typeof</span> str);<span class="comment">//string</span></div><div class="line"><span class="comment">//（不知此方法是否正确，还望高手指教）</span></div></pre></td></tr></table></figure></p>
-<p>解法二：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> str = data.join(<span class="string">","</span>);</div><div class="line">alert(<span class="keyword">typeof</span> str);<span class="comment">//string</span></div></pre></td></tr></table></figure></p>
-<p>解法三：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line">alert(<span class="keyword">typeof</span> <span class="built_in">String</span>(data));<span class="comment">//string</span></div></pre></td></tr></table></figure></p>
-<p>解法四：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line">alert(data.toString());<span class="comment">//string</span></div></pre></td></tr></table></figure></p>
-<p>解法五：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"json2.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line">	<span class="comment">//json2.js 里面的 JSON.stringify 方法会把对象转为字符串</span></div><div class="line">	<span class="keyword">var</span> str = <span class="built_in">JSON</span>.stringify(data);</div><div class="line">	alert(<span class="keyword">typeof</span> str);<span class="comment">//string</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/11/13/字符串和数组的相互转换/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/12/前端面试HTTP篇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/12/前端面试HTTP篇/" itemprop="url">前端面试HTTP篇</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-12T13:18:43+08:00">
-                2016-11-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="TCP-传输的三次握手四次挥手策略"><a href="#TCP-传输的三次握手四次挥手策略" class="headerlink" title="TCP 传输的三次握手四次挥手策略"></a>TCP 传输的三次握手四次挥手策略</h3><p><strong>三次握手</strong></p>
-<p>为了准确无误地把数据送达目标处，TCP 协议采用了三次握手策略。用 TCP 协议把数据包送出去后，TCP 不会对传送 后的情况置之不理，它一定会向对方确认是否成功送达。握手过程中使用了 TCP 的标志： SYN 和 ACK。</p>
-<p>发送端首先发送一个带 SYN 标志的数据包给对方。接收端收到后，回传一个带有 SYN/ACK 标志的数据包以示传达确认信息。 最后，发送端再回传一个带 ACK 标志的数据包，代表“握手”结束。 若在握手过程中某个阶段莫名中断，TCP 协议会再次以相同的顺序发送相同的数据包。</p>
-<p><strong>四次挥手</strong></p>
-<ul>
-<li><p>第一次挥手：主动关闭方发送一个 FIN，用来关闭主动方到被动关闭方的数据传送，也就是主动关闭方告诉被动关闭方：我已经不会再给你发数据了(当然，在 fin 包之前发送出去的数据，如果没有收到对应的 ack 确认报文，主动关闭方依然会重发这些数据)，但是，此时主动关闭方还可 以接受数据。</p>
-</li>
-<li><p>第二次挥手：被动关闭方收到 FIN 包后，发送一个 ACK 给对方，确认序号为收到序号+1（与 SYN 相同，一个 FIN 占用一个序号）。</p>
-</li>
-<li><p>第三次挥手：被动关闭方发送一个 FIN，用来关闭被动关闭方到主动关闭方的数据传送，也就是告诉主动关闭方，我的数据也发送完了，不会再给你发数据了。</p>
-</li>
-<li><p>第四次挥手：主动关闭方收到 FIN 后，发送一个 ACK 给被动关闭方，确认序号为收到序号+1，至此，完成四次挥手。</p>
-</li>
-</ul>
-<hr>
-<h3 id="HTTP-缓存机制？"><a href="#HTTP-缓存机制？" class="headerlink" title="HTTP 缓存机制？"></a>HTTP 缓存机制？</h3><p>缓存是指代理服务器或客户端本地磁盘内保存的资源副本。利用缓存可减少对源服务器的访问，因此也就节省了通信流量和通信时间。</p>
-<p>即使存在缓存，也会因客户端的要求、缓存的有效期等因素，向源服务器确认资源的有效性。若判断缓存失效，代理服务器会再次从源服务器上获取“新”资源。</p>
-<p>（待补充）</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/11/12/前端面试HTTP篇/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/11/12/正则表达式简明教程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/12/正则表达式简明教程/" itemprop="url">正则表达式简明教程</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-12T13:14:13+08:00">
-                2016-11-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="1-认识正则"><a href="#1-认识正则" class="headerlink" title="1.认识正则"></a>1.认识正则</h3><p>正则其实就是字符串规则表达式。来看一个栗子：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$str = <span class="string">'hi,this is his history'</span>;</div><div class="line">$patt = <span class="string">'/hi/'</span>;</div><div class="line">preg_match_all($patt,$str,$matches);</div><div class="line">print_r($matches);</div></pre></td></tr></table></figure></p>
-<ul>
-<li>^ 匹配字符串的开始</li>
-<li>$ 匹配字符串的结尾</li>
-<li>\b 匹配单词的开始和结尾（边界）</li>
-<li>\B 匹配单词的非边界</li>
-</ul>
-<h3 id="2-常用字符簇"><a href="#2-常用字符簇" class="headerlink" title="2.常用字符簇"></a>2.常用字符簇</h3><table>
-<thead>
-<tr>
-<th>簇</th>
-<th style="text-align:center">代表</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>.（点）</td>
-<td style="text-align:center">任意字符，不含换行</td>
-</tr>
-<tr>
-<td>\w</td>
-<td style="text-align:center">[a-z A-Z 0-9_ ]</td>
-</tr>
-<tr>
-<td>\W</td>
-<td style="text-align:center">\w 的补集</td>
-</tr>
-<tr>
-<td>\s</td>
-<td style="text-align:center">空白符，包括\n\r\t\v等</td>
-</tr>
-<tr>
-<td>\S</td>
-<td style="text-align:center">非空白符</td>
-</tr>
-<tr>
-<td>\d</td>
-<td style="text-align:center">[0-9]</td>
-</tr>
-<tr>
-<td>\D</td>
-<td style="text-align:center">非数字</td>
-</tr>
-</tbody>
-</table>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/11/12/正则表达式简明教程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/25/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/27/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/25/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="extend next" rel="next" href="/page/27/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1551,7 +1513,7 @@ var a2 = new Array;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">263</span>
+                <span class="site-state-item-count">270</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
