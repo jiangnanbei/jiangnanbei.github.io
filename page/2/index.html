@@ -317,6 +317,299 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/30/DOM编程艺术：Ajax之挑战/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/30/DOM编程艺术：Ajax之挑战/" itemprop="url">DOM编程艺术：Ajax之挑战</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T15:02:53+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Ajax-的挑战"><a href="#Ajax-的挑战" class="headerlink" title="Ajax 的挑战"></a>Ajax 的挑战</h3><p>Ajax 应用的一个特色就是减少重复加载页面的次数。但这种缺少状态记录的技术会与浏览器的一些使用惯例产生冲突，导致用户无法使用后退按钮或者无法为特定状态下面页面添加书签。</p>
+<p>只更新页面部分区域的特性也会影响到用户的预期。理想情况，用户的每一次操作都应该得到一个清晰明确的结果。为此，web 设计人员再向服务器发出请求和服务器返回响应时，给用户明确的提示。</p>
+<p><strong>要构建成功的 Ajax 应用，关键在于将一般的 Ajax 功能看做一般的 JS 增强功能，在平稳退化的基础上求得渐进增强。</strong></p>
+<h3 id="渐进增强与-Ajax"><a href="#渐进增强与-Ajax" class="headerlink" title="渐进增强与 Ajax"></a>渐进增强与 Ajax</h3><p>如果你一开始设计就以 Ajax 为起点，那么以后确实很难把它从成品站点中剥离出来，再额外提供一个不适用 Ajax 的版本。但是，如果你一开始的应用就是基于老式的页面刷新机制构建的，那么就可以在既有框架的基础上，用 Ajax 拦住发送到服务器的请求，并将请求转交给 <code>XMLHttpRequest</code> 处理。这种情况下，Ajax 功能就扮演了一个位于常规站点之上的层。</p>
+<h3 id="Hijax"><a href="#Hijax" class="headerlink" title="Hijax"></a>Hijax</h3><p>所谓 Hijax，指的就是“渐进增强的Ajax”。</p>
+<p>传统的表单提交实际上就是把整张表单都提交到服务器，所有的操作都在服务器上完成，然后，为了给这个登录表单添加 Ajax 功能，就需要拦截提交表单的请求（Hijax），让 <code>XMLHttpRequest</code> 请求来代为发送。</p>
+<p>拦截了登录表单的请求之后，登陆过程就可以让用户感觉更方便。响应时间加快了，不必刷新整个页面了。可以，万一用户的浏览器没有启动 JS 呢？这时登录表单照样能让用户正常登录，只不过所花的时间要多一点。这时，我们就做到了 Ajax 的平稳退化。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/29/拉个垫背的-显示你便宜/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/29/拉个垫背的-显示你便宜/" itemprop="url">拉个垫背的 显示你便宜</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T23:38:23+08:00">
+                2017-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/商业/" itemprop="url" rel="index">
+                    <span itemprop="name">商业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>读书笔记：《刘润.5分钟商学院》</p>
+<h4 id="概念：价格锚点"><a href="#概念：价格锚点" class="headerlink" title="概念：价格锚点"></a>概念：价格锚点</h4><p>价格锚点是在1992年的时候，有个叫托奥斯基的人提出的，他认为消费者在对产品价格并不确定的时候，会采取两种非常重要的原则，来判断这个产品的价格是否合适。</p>
+<p>第一个原则，避免极端。</p>
+<p>第二个原则，权衡对比。</p>
+<h4 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h4><p>出差住酒店，选择酒店上网付费方案，一个是80元1小时，一个是105元1整天。我毫不犹豫地选择了105元1整天的方案，付费后立刻发现，<strong>80元唯一存在的价值，就是让我觉得那105元非常划算，80元就是所谓的价格锚点。</strong></p>
+<h4 id="运用：场景"><a href="#运用：场景" class="headerlink" title="运用：场景"></a>运用：场景</h4><p><strong>场景1：</strong></p>
+<p>原来只有1399和2288两款净水器的时候，大家都买1399的那款，而你特别想卖2288那款。最简单的办法是，让产品部门再去生产一款4399的净水器。这时候，你就会发现2288的版本会卖得比以前好很多。</p>
+<p><strong>场景2：</strong></p>
+<p>假如你有个体检的产品是600块，如果你这样说：“您一年愿意花6000元的价格来保养您的汽车，为什么却不愿意花600元来保养您自己呢”？很可能会打动很多人。这会让客户觉得，我花6000块钱保养车子，难道人还不如车子吗？这时候，600块钱的体检方案，价值感就会非常明显。</p>
+<h4 id="小结：引导购买的两个原则"><a href="#小结：引导购买的两个原则" class="headerlink" title="小结：引导购买的两个原则"></a>小结：引导购买的两个原则</h4><p>第一、避免极端。就是在有3个或者更多选择的时候，很多人不会选择最低或者最高的版本，而更倾向于选择中间的那个商品。</p>
+<p>第二、权衡对比。当消费者无从判断价值是高还是低的时候，他会去选择一些他认为同类的商品去做对比，让自己有一个可衡量的标准。</p>
+<p><strong>消费者其实并不真的是为商品的成本付费，他是为商品的价值感而付费。价格锚点的逻辑，就是让消费者有一个可对比的价格感知，你明白了吗？</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/29/得到100元可以弥补失去的100元吗？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1203,314 +1496,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/29/构成一场优秀演讲的13个要素/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/29/构成一场优秀演讲的13个要素/" itemprop="url">构成一场优秀演讲的13个要素</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T22:53:29+08:00">
-                2017-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《罗永浩.干货日记》</p>
-<p>首先，我来说说这十三个元素都是些什么，你先听听就好，不需要记，在跟演讲相关的课程结束的时候，我会做一个完整的清单文本，放在最后一期的文稿里，你到时候随时取用就可以了。</p>
-<p>好，那么这十三个元素是什么呢？</p>
-<p><strong>1.要讲笑话<br>2.要吹牛x<br>3.要装x<br>4.要讲故事<br>5.要做类比<br>6.要三段式<br>7.要提问<br>8.要有逻辑<br>9.要有数据<br>10.要有情感<br>11.要有激情<br>12.要有境界<br>13.要有画面</strong></p>
-<p>怎么样？什么也记不住对吧？因为讲话的人对听众直接念一个清单，是完全错误的演讲方式，听众什么也吸收不了， 特别是如果这个清单的内容多达十三个。好，那为了便于消化理解，我现在把这十三个元素归纳成四种类型，这四种类型的具体表述形式是四个问题，每个问题对应的答案就是这十三个元素中的若干个。</p>
-<h4 id="第一个问题是，如何抓住观众的注意力并使他们愿意听下去？"><a href="#第一个问题是，如何抓住观众的注意力并使他们愿意听下去？" class="headerlink" title="第一个问题是，如何抓住观众的注意力并使他们愿意听下去？"></a>第一个问题是，如何抓住观众的注意力并使他们愿意听下去？</h4><p>如果演讲者问你一个问题，并稍事停留，你多半就会忍不住去想这个问题， 或者去想这个问题对应的答案是刚才那十三个元素中的哪几个，虽然你没记住几个。 所以做好演讲的十三个元素里，有一个很重要的就是，你要跟听众问问题， 就算他们对问题兴趣不大，你只要现场问他们，他们还是忍不住会去想。这时候，听众就是被演讲者带着走的节奏了。</p>
-<p>好，这个问题再来一遍，如何抓住观众的注意力并使他们愿意听下去？这个问题对应的三个元素是：</p>
-<ol>
-<li>要讲笑话 </li>
-<li>要吹牛x </li>
-<li>要装x </li>
-</ol>
-<p>你看， 只有三个，你一下就记住了， 至少在刚听到的这一刻是记得住的。所以做好演讲的十三个元素里，有一个很重要的就是， 无论是整篇演讲稿的结构，还是每个分版块的具体要点，还是每个要点的具体细节，最好都是三段式，三个要点，三个细节等等，最好就是三个， 极限是四个，多了观众就不容易记住了，我们的大脑就是被设计成这个样子的。</p>
-<p>好，再听一遍刚才的问题，如何抓住观众的注意力并使他们愿意听下去？</p>
-<p><strong>一场演讲最好的开场形式，就是讲一个笑话……讲一个故事也可以。</strong><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/29/构成一场优秀演讲的13个要素/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/29/如何克服演讲“恐惧症”/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/29/如何克服演讲“恐惧症”/" itemprop="url">如何克服演讲“恐惧症”</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T22:47:34+08:00">
-                2017-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《罗永浩.干货日记》</p>
-<p>接下来的几周，我们要开始的是如何学习演讲和制作幻灯片的课程。 </p>
-<p>今天要讲的是，在正式开始学习演讲之前，你必须好好了解一下演讲恐惧症，以及如何面对它，并克服它。</p>
-<h4 id="1-所有人都有不同程度的“演讲恐惧症”。"><a href="#1-所有人都有不同程度的“演讲恐惧症”。" class="headerlink" title="1. 所有人都有不同程度的“演讲恐惧症”。"></a>1. 所有人都有不同程度的“演讲恐惧症”。</h4><p>关于演讲恐惧症，首先，好消息是：所有的人都害怕当众讲话，只是程度不同而已，所以，你不要以为只有你自己没用。 </p>
-<p>坏消息是：有些人害怕，但没那么害怕，至少没有你那么怕。 </p>
-<p>但还有一个好消息：那些演讲能力特别强的人，包括人类历史上最擅长演讲的，比如丘吉尔、希特勒、马克吐温、乔布斯、罗永浩等等，这些人原来也都是特别害怕演讲的，即使是后来他们把自己锻炼成了公认的优秀演讲家，他们上台前也只有两种状态：一种是紧张，一种是非常紧张。练成和没练成的唯一区别是： 练成之前，上台紧张得整个人完全失控；练成之后，上台还是一样紧张，但是基本上可控。 </p>
-<p>当众演讲到底有多吓人呢？先说说我吧，我不止一次的想过，也跟家人朋友说过，如果我做锤子科技的同时，不用去做发布会这样的公开演讲，我愿意少活五年。他们有时候觉得我这是夸张的说法，其实我一点也没夸张。</p>
-<p>马克吐温说过： 这世上只有两种演讲者，一种是紧张的，一种是假装不紧张的骗子。 </p>
-<h4 id="2-正是因为这么吓人，演讲这门手艺练成了就非常有价值，因为大多数人都会因为害怕而练不成。"><a href="#2-正是因为这么吓人，演讲这门手艺练成了就非常有价值，因为大多数人都会因为害怕而练不成。" class="headerlink" title="2. 正是因为这么吓人，演讲这门手艺练成了就非常有价值，因为大多数人都会因为害怕而练不成。"></a>2. 正是因为这么吓人，演讲这门手艺练成了就非常有价值，因为大多数人都会因为害怕而练不成。</h4><p>我一提起演讲，很多人就误以为是说那种大型的商业发布会，然后就说什么“有几个人有机会对那么多人演讲啊？你练这个干嘛呀？你用的上吗？”</p>
-<p>其实， 演讲能力练成基本上在哪儿都能用上，比如说：你是一个创业公司的老板，你们的业务不需要开大型发布会，但你公司内部总要对员工讲话吧？就算你们公司不频繁搞洗脑大会什么的，但一年一次怎么也有了吧？至少开年会的时候是需要的。还有，就算你不是老板，也不是高管，是一个只带十几二十人团队的小主管，不也得领着他们开会吗？开会的时候，你对他们讲话，需要的也是演讲的能力，你可能这种情况下没那么紧张，但你没练过演讲，对着自己属下的员工，虽然不紧张，但还是讲得很差，这肯定不是你希望的。</p>
-<p>有可能你连小主管也不是，只是一名普通基层员工，那需不需要演讲能力呢？当然也需要。比如说你能力很出色，结果公司开会的时候，你跟领导和同事汇报工作时，一发言就紧张结巴，其他部门的同事或公司高层的领导，看你笨嘴笨舌，误以为你人也笨，这肯定不是你希望的结果。有些同事可能能力跟你差不多，甚至还比你差一些，但在一个公司高管出席的会上汇报工作时表现得非常出色，给管理层留下了很深的印象，没多久就升迁了，这种事情在企业里很常见。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/29/如何克服演讲“恐惧症”/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1560,7 +1545,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">270</span>
+                <span class="site-state-item-count">272</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
