@@ -107,7 +107,7 @@
 3.类选择符 $(&amp;#39;.some-class&amp;#39;)
 4.否定式伪类选择符 $(&amp;#39;#some-id li:not(.some-class)&amp;#39;)
 5.属性选择符$(&amp;#39;img[alt]&amp;#39;),属性选择符使用一种从正则表达式借鉴来的通配符">
-<meta property="og:updated_time" content="2017-06-11T00:39:54.945Z">
+<meta property="og:updated_time" content="2017-07-01T13:49:41.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery入门">
 <meta name="twitter:description" content="选择元素原生选择符 1.标签选择符 $(&amp;#39;p&amp;#39;)
@@ -447,12 +447,12 @@
 <h3 id="2-事件传播"><a href="#2-事件传播" class="headerlink" title="2.事件传播"></a>2.事件传播</h3><h4 id="1-hover-方法"><a href="#1-hover-方法" class="headerlink" title="1..hover()方法"></a>1.<code>.hover()</code>方法</h4><p><code>.hover()</code> 接受两个函数参数，第一个函数会在鼠标指针进入被选择的元素时执行，而第二个函数会在鼠标指针离开该元素时触发。<strong>同时，使用<code>.hover()</code>一意味着可以避免js 中的事件传播导致的头痛问题。</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">'class'</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h4 id="2-事件的旅程"><a href="#2-事件的旅程" class="headerlink" title="2.事件的旅程"></a>2.事件的旅程</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">span</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">a</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <ul>
-<li>事件捕获：事件首先交给最外层的元素，接着在交给更具体的元素，即<div>-&gt;<span>-&gt;<a></li>
-<li>事件冒泡：当事件发生时，首先交给最具体的元素，在这个元素获得响应机会之后，事件会向上冒泡到更一般的元素。即：<a>-&gt;<span>-&gt;<div></li>
+<li>事件捕获：事件首先交给最外层的元素，接着在交给更具体的元素，即 <code>&lt;div&gt;-&gt;&lt;span&gt;-&gt;&lt;a&gt;</code></li>
+<li>事件冒泡：当事件发生时，首先交给最具体的元素，在这个元素获得响应机会之后，事件会向上冒泡到更一般的元素。即：<code>&lt;a&gt;-&gt;&lt;span&gt;-&gt;&lt;div&gt;</code></li>
 </ul>
-<p>为了全包跨浏览器的一致性，而且也为了让人更容易理解，jquery会始终的事件的冒泡阶段注册事件处理程序<strong>。因此，我们总是可以假定最具体的元素会首先获得响应事件的机会。</strong></p>
-<h4 id="3-事件冒泡的副作用"><a href="#3-事件冒泡的副作用" class="headerlink" title="3.事件冒泡的副作用"></a>3.事件冒泡的副作用</h4><p>事件冒泡可能会导致始料不及的行为，特别是在错误的元素响应mouseover或者mouseout事件的情况下。假设在我们这个例子中，为<div>注册了一个mouseout事件处理程序，当用户的鼠标指针退出这个<div>时，会按照预期运行mouseout事件处理程序。因为这个过程发生在顶层元素上，所以其他的元素不会取得这个事件。但是，当指针从<a>元素上离开时，<a>元素回取得一个mouseout事件。然后这个事件会向上冒泡到<span>和<div>，从而触发事件处理程序。这种冒泡序列不是我们所希望的。</p>
-<p>mouseenter和moseleave事件，无论是单独绑定，还是在.hover()方法中组合绑定，都可以避免这些冒泡问题。</p>
+<p>为了全包跨浏览器的一致性，而且也为了让人更容易理解，<code>jquery</code> 会始终的事件的冒泡阶段注册事件处理程序<strong>。因此，我们总是可以假定最具体的元素会首先获得响应事件的机会。</strong></p>
+<h4 id="3-事件冒泡的副作用"><a href="#3-事件冒泡的副作用" class="headerlink" title="3.事件冒泡的副作用"></a>3.事件冒泡的副作用</h4><p>事件冒泡可能会导致始料不及的行为，特别是在错误的元素响应 <code>mouseover</code> 或者 <code>mouseout</code> 事件的情况下。假设在我们这个例子中，为 <code>&lt;div&gt;</code> 注册了一个 <code>mouseout</code> 事件处理程序，当用户的鼠标指针退出这个 <code>&lt;div&gt;</code> 时，会按照预期运行 <code>mouseout</code> 事件处理程序。因为这个过程发生在顶层元素上，所以其他的元素不会取得这个事件。但是，当指针从 <code>&lt;a&gt;</code> 元素上离开时，<code>&lt;a&gt;</code> 元素回取得一个 <code>mouseout</code> 事件。然后这个事件会向上冒泡到 <code>&lt;span&gt;</code> 和 <code>&lt;div&gt;</code> ，从而触发事件处理程序。这种冒泡序列不是我们所希望的。</p>
+<p><code>mouseenter</code> 和 <code>moseleave</code> 事件，无论是单独绑定，还是在 <code>.hover()</code> 方法中组合绑定，都可以避免这些冒泡问题。</p>
 
       
     </div>
@@ -590,7 +590,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">272</span>
+                <span class="site-state-item-count">277</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
