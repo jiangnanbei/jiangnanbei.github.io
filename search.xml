@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何书写出语义化的HTML？]]></title>
+    <url>%2F2017%2F07%2F05%2F%E5%A6%82%E4%BD%95%E4%B9%A6%E5%86%99%E5%87%BA%E8%AF%AD%E4%B9%89%E5%8C%96%E7%9A%84HTML%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[1.对于可拉伸的背景使用三层嵌套，比如说：1&lt;h2&gt;&lt;strong&gt;&lt;span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/h2&gt; 2.写代码结构的时候要从大处着眼，学会分模块书写。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>HTML5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[调整数组顺序使奇数位于偶数前面]]></title>
+    <url>%2F2017%2F07%2F05%2F%E8%B0%83%E6%95%B4%E6%95%B0%E7%BB%84%E9%A1%BA%E5%BA%8F%E4%BD%BF%E5%A5%87%E6%95%B0%E4%BD%8D%E4%BA%8E%E5%81%B6%E6%95%B0%E5%89%8D%E9%9D%A2%2F</url>
+    <content type="text"><![CDATA[题目： 输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有奇数位于数组的前半部分，所有偶数位于数组的后半部分。 思路： 我们可以扫描整个数组，在这个过程中如果发现有偶数出现在奇数的前面，我们可以交换他们的顺序，交换之后就符合要求了，我们可以通过维护两个指针来实现。 功能测试： 1.输入数组中的奇数偶数交替出现；输入数组中的所有偶数都出现在奇数前面；输入数组中的所有奇数都出现在偶数前面。 2.特殊输入测试：输入null指针，输入的数组只包含一个数字。 源代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;iostream&gt;#include &lt;math.h&gt;#include &lt;string.h&gt;using namespace std;void reorderOddEven(int * nums, int len);int main() &#123; int nums[10] = &#123;2,4,6,8,10,1,3,5,7,9&#125;; int len = sizeof(nums) / sizeof(nums[0]); reorderOddEven(nums,len);&#125; void reorderOddEven(int * nums,int len)&#123; if (nums == NULL || len == 0) return; int curBegin = 0; int curEnd = len - 1; int agent; while (curBegin &lt; curEnd) &#123; while (curBegin &lt; curEnd &amp;&amp; nums[curBegin] % 2 != 0) &#123; curBegin++; &#125; while (curBegin &lt; curEnd &amp;&amp; nums[curEnd] % 2 == 0) &#123; curEnd--; &#125; if (curBegin &lt; curEnd) &#123; agent = nums[curBegin]; nums[curBegin] = nums[curEnd]; nums[curEnd] = agent; &#125; &#125; for(int i=0; i&lt;len; i++) cout &lt;&lt; nums[i] &lt;&lt; endl;&#125;]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Modernizr]]></title>
+    <url>%2F2017%2F07%2F05%2FModernizr%2F</url>
+    <content type="text"><![CDATA[Modernizr 是一个开源的 JS 库，利用它的福特性检测功能，可以对 H5 文档进行更好的控制。 Modernizr 不会给你添加浏览器不支持的特性，比如，在 IE6 中就没有办法是用本地存储。Modernizr 能做的是为你提供一些不同的 CSS 类名以及特性检测属性。 根据浏览器支持的特性不同，这个时候就会生成不同的类名，可以在 CSS 中定义相应的增强和退化版本，改善用户体验：1234//为支持多背景浏览器编写的样式.multiplebgs article p &#123;&#125;.no-multiplebgs article p &#123;&#125; 类似的，Modernizr 也提供了 JS 特性检测对象，可以在 DOM 脚本中直接使用：1234if (!Modernizr.inputtypes.date) &#123; //不支持本地数据，使用自定义的数据选择脚本 createDatepicker(document.getElementById(''birthday'));&#125; Modernizr 还可以帮一些老旧的浏览器处理 &lt;section&gt; &lt;article&gt; 这样的新元素。为使用这些新元素，你要做的就是为他们指定一些基本的样式，以便浏览器可以把它们当做块元素来呈现。1article,aside,footer,header,hgroup,nav,section &#123;display:block;&#125; 唯一的特例就是 IE，要在 IE 中添加未知元素，必须使用 JS 代码来创建元素：1document.createElement('article'); Modernizr 可以帮我们来做这件事，但是，这并不意味着你就可以放心的使用 &lt;video&gt; 元素来放心的嵌入视频了。Modernizr 不会为我们添加底层的 JS 及 DOM API，或者与这些元素相关的其他特性。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>HTML5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS DOM 技术]]></title>
+    <url>%2F2017%2F07%2F05%2FCSS-DOM-%E6%8A%80%E6%9C%AF%2F</url>
+    <content type="text"><![CDATA[style 属性在外部样式表里声明的样式不会进入 style 对象，在文档的 &lt;head&gt; 部分里声明的样式也是如此。 DOM style 属性提取不到如此设置的样式。 style 指向只包含在 HTML 代码里用 style 属性声明的样式。但这几乎没有使用价值，因为样式应该与标记分离开来。 现在，你或许认为用DOM 去处理 CSS 样式毫无意义，但这里还有另外一种情况可以让 DOM style 对象能够正确地反射出我们设置的样式。你用 DOM 设置的样式，就可以用 DOM 再把他们检索出来。 使用 DOM 设置样式通过 JS 设置样式并不难，不过，你或许应该先问问自己，为什么要这么做？ 何时该用 DOM 设置样式？在使用 CSS 不便的场合，还是可以利用 DOM 对文档的样式做一些小小的增强。 根据元素在节点树里的位置来设置样式比如说我们可以给每个 h1 元素后紧跟的一个元素设置样式： 1234567&lt;h1&gt;Hold the front page&lt;/h1&gt;&lt;p&gt;This first paragraph leads you in.&lt;/p&gt;&lt;p&gt;Now you get the nitty-gritty of the story.&lt;/p&gt;&lt;p&gt;The most important information is delivered first.&lt;/p&gt;&lt;h1&gt;Extra! Extra!&lt;/h1&gt;&lt;p&gt;Further developments are unfolding.&lt;/p&gt;&lt;p&gt;You can read all about it here.&lt;/p&gt; 1234567891011121314151617181920function styleHeaderSiblings() &#123; if (!document.getElementsByTagName) return false; var headers = document.getElementsByTagName("h1"); for (var i=0; i&lt;headers.length; i++) &#123; var elem = getNextElement(headers[i].nextSibling); elem.style.fontWeight = "bold"; elem.style.fontSize = "1.2em"; &#125;&#125;//确保取到的是元素节点function getNextElement(node) &#123; if(node.nodeType == 1) &#123; return node; &#125; if (node.nextSibling) &#123; return getNextElement(node.nextSibling); &#125; return null;&#125; 从理论上讲，这类样式还是应该使用 CSS 来设置；但在实践中，用 CSS 来设置这类样式的难度往往会很大。具体到这个列子，其实只需要给紧跟在 h1后面的每个元素添加一个 class 属性，就可以用 CSS 来获得同样的效果。 但如果文档的内容需要定期编辑和刷新，添加 class 属性的工作很快就会成为一种负担。不仅如此，如果文档的内容需要通过一个 CMS（内容管理系统）来处理，给文档的个别部分添加 class 属性或其他样式的做法甚至是不允许的。 根据某种条件反复设置样式假设你有一份由一些日期和地名构成的表格清单，为了提高可读性，常用的技巧是交替改变他们的颜色，从而形成斑马线效果，使相邻的两行泾渭分明。如果浏览器支持 CSS3 ，那么使用下面的这个技巧即可以实现：12tr:nth-child(odd) &#123;background-color:#ffc;&#125;tr:nth-child(even) &#123;background-color:#fff;&#125; 如果 nth-child 不可用，要获取同样的效果那就只好采用另外的技术。只需要为表格的每个奇数行设置一个 class 属性即可。不过，这个方法不够方便，尤其是对大表格来说，更是如此：如果以后要在这个表格中插入或者删除一行，就不得不痛苦的更新大量的 class 属性。 123456789101112131415161718function stripeTables() &#123; if (!document.getElementsByTagName) return false; var tables = document.getElementsByTagName("table"); for (var i=0; i&lt;tables.length; i++) &#123; var odd = false; var rows = tables[i].getElementsByTagName("tr"); for (var j=0; j&lt;rows.length; j++) &#123; if (odd == true) &#123; addClass(rows[j],"odd"); odd = false; &#125; else &#123; odd = true; &#125; &#125; &#125;&#125;addLoadEvent(stripeTables); 到底是使用 CSS 还是使用 DOM最简单的答案就是选用最容易实现的办法。比如说，如果只是想让链接再鼠标指针悬停在其上是改变颜色，就应该使用 CSS。 伪类 hover 已经到的了绝大多数浏览器的支持，但是如果想利用这个伪类在鼠标悬停在其他元素上是改变样式，支持这种用法的浏览器就没有这么多了。 DOM 却能够得到公平的对待。绝大多数的现代浏览器，虽然对 CSS 伪类的支持很不完整，但对 DOM 却都有着良好的支持。 需要使用纯粹的 CSS 来解决，还是利用 DOM 来设置样式，你需要考虑一下因素： 1.这个问题最简单的解决方案是什么 2.那种解决方案会得到更多的浏览器的支持 要做出明智的抉择，就必须对 CSS 和 DOM 支持技术又足够深入的了解。如果你手里只有榔头，那么你看到的任何东西都像是的钉子。 想改变某个元素的呈现效果，使用 CSS；如果想改变某个元素的行为，使用 DOM 。如果你想根据某个元素的行为去改变它的呈现效果，请运用你的智慧。 通过 JS 更新元素的 class 属性与其使用 DOM 直接改变某个元素的样式，不如通过 JS 代码去更新这个元素的 class 属性。1ele.classNanme = 'xxx'; 这个技巧有一个不足：通过 className 属性设置某个元素的 class 属性时将替换而不是追加该元素原有的 class 设置：1&lt;p class='dis'&gt;this is a p &lt;/p&gt; 如果对以上的文本元素使用 classNanme 属性，则该元素的 class 属性将从 ‘dis’ 变成 ‘xxx’，如果你想得到两种样式的叠加，你可以利用字符串的拼接操作：1ele.className += 'xxx'; 在需要给一个元素追加新的 class 属性时，你可以按以下的步骤操作： 1.检查className 的属性值是否为null 2.如果是，把新的 class 设置值直接赋值给 className属性 3.如果不是，则使用字符串拼接操作，叠加样式 12345678910function addClass(element,value) &#123; if (!element.className) &#123; element.className = value; &#125; else &#123; newClassName = element.className; newClassName+= " "; newClassName+= value; element.className = newClassName; &#125;&#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>DOM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[我们为什么要读传记？]]></title>
     <url>%2F2017%2F07%2F05%2F%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AF%BB%E4%BC%A0%E8%AE%B0%EF%BC%9F%2F</url>
     <content type="text"><![CDATA[我们为什么要读人物传记？我们之所以读人物传记不是为了给自己打鸡血，不是为了“以史为鉴”，因为即便你看过别人犯过再多的错，吃过再多的亏，到头来你该犯的错还是得犯，该吃的亏还是得吃。 我们之所以读人物传记不过是穿越了时空和当时的那个人交了一个朋友，看他是怎样将自己和那个时代结合度过了自己的一生，然后来返观我们自己该怎样和这个时代结合来度过自己的一生，仅此而已。]]></content>
@@ -75,8 +120,8 @@
         <category>营销</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>营销</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -88,14 +133,14 @@
       </categories>
       <tags>
         <tag>心智</tag>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[CSS 随笔]]></title>
     <url>%2F2017%2F07%2F01%2FCSS-%E9%9A%8F%E7%AC%94%2F</url>
-    <content type="text"><![CDATA[1.页面中的有高的地方，你最好设置一下高，不要等到后面再请浮动。 2.写选择符的原则有两条：第一简短，第二不要互相影响。 3.给页面的元素加上背景或者加上边框是调试页面元素一个非常好的方法。 4.每个模块之间最好用分隔符分割。 5.如果有需要使用数字的，取数字值尽量取双数的。]]></content>
+    <content type="text"><![CDATA[1.页面中的有高的地方，你最好设置一下高，不要等到后面再请浮动。 2.写选择符的原则有两条：第一简短，第二不要互相影响。 3.给页面的元素加上背景或者加上边框是调试页面元素一个非常好的方法。 4.每个模块之间最好用分隔符分割。 5.如果有需要使用数字的，取数字值尽量取双数的。 6.color 样式属性的返回值它的设置值并不相同。color:#999 将返回 rgb(153,153,153) 。但是绝大多数样式属性的返回值与他们的设置值都采用相同的计量单位。 7.style 属性只能返回内部样式。换句话说，只有把 CSS style 属性插入到标记里，才可以用 DOM style 属性去查询那些信息。DOM style 属性不能检索外部 CSS 文件里声明的样式，在文档的 &lt;head&gt; 部分里声明的样式也是如此。]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -222,8 +267,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>面试指南</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -1004,8 +1049,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1016,8 +1061,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1138,8 +1183,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1401,8 +1446,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -1603,8 +1648,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>商业技巧</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -2498,8 +2543,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>面试指南</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -2544,8 +2589,20 @@
         <category>编程</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>面试指南</tag>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[六道JS面试题]]></title>
+    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>面试指南</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -2558,18 +2615,6 @@
       <tags>
         <tag>算法</tag>
         <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[六道JS面试题]]></title>
-    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>面试指南</tag>
       </tags>
   </entry>
   <entry>
@@ -2981,8 +3026,8 @@
       </categories>
       <tags>
         <tag>心智</tag>
-        <tag>随笔</tag>
         <tag>商业技巧</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -3205,8 +3250,8 @@
         <category>营销</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>营销</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
