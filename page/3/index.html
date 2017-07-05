@@ -317,6 +317,579 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/30/Memory-Management-in-SPA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/30/Memory-Management-in-SPA/" itemprop="url">Memory Management in SPA</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T20:23:55+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>In today’s world of increasing demand for more robust, responsive, and adaptable web applications, the traditional multiple page websites take a back-seat owing to its longer page switch-time, server roundtrip time, bulky server API’s , etc.</p>
+<p>Single Page apps are one such way that helps tackle most of the above mentioned problems and more making these kinds of apps increasingly popular. Through this blog, I will try to explain how to manage JavaScript memory and little on server design for the single page application.</p>
+<h3 id="What-is-an-SPA"><a href="#What-is-an-SPA" class="headerlink" title="What is an SPA?"></a>What is an SPA?</h3><p>These are web apps where majority of interactions are handled at the client side without the need of contacting the server, and with the goal of providing a fluidic user experience. The page does not reload at any point in the process, nor does control transfer to another page, although modern web technologies (such as those included in HTML5) can provide the perception and navigability of separate logical pages in the application. Single Page Application is a web based application or website contains every HTML5 code in single HTML (.html) page. SPA architecture is more complex, and it is dependent on AJAX, WebSocket etc for communication with server. Mobile Hybrid applications are mostly SPA. Technologies like Angularjs, Extjs, Enjojs etc, used in SPA.</p>
+<h3 id="Why-use-SPA"><a href="#Why-use-SPA" class="headerlink" title="Why use SPA?"></a>Why use SPA?</h3><p>SPA allow us to offer a more native-app like experience to the user with features like Back/Forward button, ability to go offline, dynamic data loading from Server side, works with Restful web services, fluid transition between page states, Richer interaction between UI Components.Under these edge of richness, flexibility and rich user experience.</p>
+<h3 id="What-to-keep-in-mind-while-developing-an-SPA"><a href="#What-to-keep-in-mind-while-developing-an-SPA" class="headerlink" title="What to keep in mind while developing an SPA?"></a>What to keep in mind while developing an SPA?</h3><p>However, there are many snags like memory leaks, detached nodes, and increasing JS Objects count that need to be overcome before SPA goes to production environment. Traditional web sites manage to overcome these complications as it encourages user to navigate among pages. Unlikely in SPA, these slow down your application time and finally may even crash. In worst case, it forces to reboot the hardware. This scenario can be manageable by limiting the objects creation, reusing those objects and dereferencing it for garbage collection. This reduces use of memory considerably reducing memory leak. <strong>JavaScript and DOM binding is unavoidable while working with any web based application. It should be carefully removed after processing. Event handlers, setTimeout and setTimeInterval should be cleared at finally.</strong><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/30/Memory-Management-in-SPA/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/30/前端路由详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/30/前端路由详解/" itemprop="url">前端路由详解</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T17:46:14+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="什么是前端路由？"><a href="#什么是前端路由？" class="headerlink" title="什么是前端路由？"></a>什么是前端路由？</h3><p>路由是根据不同的 url 地址展示不同的内容或页面，就是把不同路由对应不同的内容或页面的任务交给前端来做，之前是通过服务端根据 url 的不同返回不同的页面实现的。</p>
+<h3 id="什么时候使用前端路由？"><a href="#什么时候使用前端路由？" class="headerlink" title="什么时候使用前端路由？"></a>什么时候使用前端路由？</h3><p>在单页面应用中，大部分页面结构不变，只改变部分内容的使用。</p>
+<h3 id="前端路由有什么优点和缺点？"><a href="#前端路由有什么优点和缺点？" class="headerlink" title="前端路由有什么优点和缺点？"></a>前端路由有什么优点和缺点？</h3><p>优点：用户体验好，不需要每次都从服务器全部获取，快速展现给用户</p>
+<p>缺点：使用浏览器的前进，后退键的时候会重新发送请求，没有合理地利用缓存，单页面无法记住之前滚动的位置，无法在前进，后退的时候记住滚动的位置。</p>
+<h3 id="实现的几种方式和几种场景"><a href="#实现的几种方式和几种场景" class="headerlink" title="实现的几种方式和几种场景"></a>实现的几种方式和几种场景</h3><p>故事从名叫 <code>Oliver</code> 的绿箭虾说起，这位大虾酷爱社交网站，一天他打开了 <code>Twitter</code> ，从发过的 <code>tweets</code> 的选项卡一路切到 <code>followers</code> 选项卡，<code>Oliver</code>发现页面的内容变化了，URL也变化了，但为什么页面没有闪烁刷新呢？于是<code>Oliver</code>打开的网络监控器，他惊讶地发现在切换选项卡时，只有几个XHR请求发生，但页面的URL却在对应着变化，这让 <code>Oliver</code> 不得不去思考这一机制的原因…</p>
+<p>叙事体故事讲完，进入正题。首先，我们知道传统而经典的 Web 开发中，服务器端承担了大部分业务逻辑，但随着 2.0 时代 ajax 的到来，前端开始担负起更多的数据通信和与之对应的逻辑。</p>
+<p>在过去，<code>Server</code> 端处理来自浏览器的请求时，要根据不同的 Url 路由，拼接出对应的视图页面，通过 Http 返回给浏览器进行解析渲染。<code>Server</code> 不得不承担这份艰巨的责任。<strong>为了让 Server 端更好地把重心放到实现核心逻辑和看守数据宝库，把部分数据交互的逻辑交给前端担负，让前端来分担 Server 端的压力显得尤为重要，前端也有这个责任和能力。</strong><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/30/前端路由详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/30/双逻辑非操作符/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/30/双逻辑非操作符/" itemprop="url">双逻辑非操作符</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T16:03:07+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="双逻辑非操作符的作用"><a href="#双逻辑非操作符的作用" class="headerlink" title="双逻辑非操作符的作用"></a>双逻辑非操作符的作用</h3><p>双逻辑非操作，会把一个值（数字，字符串…..）转换为布尔值。第一次逻辑非操作取反的布尔，第二次获得最初元素本身对应的布尔。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">alert(!!<span class="literal">false</span>);     <span class="comment">//false</span></div><div class="line"></div><div class="line">alert(!!<span class="string">"blue"</span>);    <span class="comment">//true</span></div><div class="line"></div><div class="line">alert(!!<span class="number">0</span>);         <span class="comment">//false</span></div><div class="line"></div><div class="line">alert(!!<span class="literal">NaN</span>)        <span class="comment">//false</span></div><div class="line"></div><div class="line">alert(!!<span class="number">12345</span>)     <span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h3 id="双逻辑非操作符的优点"><a href="#双逻辑非操作符的优点" class="headerlink" title="双逻辑非操作符的优点"></a>双逻辑非操作符的优点</h3><p>双逻辑非操作符提高了程序执行的效率，比先存储后访问的效果更好。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> res1 = (<span class="number">0</span> &amp;&amp; <span class="literal">undefined</span>);     <span class="comment">//0</span></div><div class="line"><span class="keyword">var</span> res2 = !!(<span class="number">0</span> &amp;&amp; <span class="literal">undefined</span>);   <span class="comment">//false</span></div><div class="line"></div><div class="line"><span class="comment">/*</div><div class="line">对于 res1 我们每次还需要隐式转换成布尔值，if(Boolean(res1)),而 res2 已经是布尔值，所以使用双逻辑非操作符提高了程序执行的效率。</div><div class="line"></div><div class="line">这里说的先储存后的访问效果好，说的就是先储存布尔值。</div><div class="line">*/</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/30/如何让-JS-停下来？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/30/如何让-JS-停下来？/" itemprop="url">如何让 JS 停下来？</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T15:58:44+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//IE下用</span></div><div class="line"><span class="built_in">document</span>.execCommand(<span class="string">"stop"</span>)  </div><div class="line"></div><div class="line"><span class="comment">//FF下用</span></div><div class="line"><span class="built_in">window</span>.stop();</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt; </div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=gb2312"</span> /&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>测试一下<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"javascript"</span>&gt;</span><span class="javascript"> </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mystop</span>(<span class="params"></span>)</span>&#123; </div><div class="line">    <span class="keyword">if</span>(!!(<span class="built_in">window</span>.attachEvent &amp;&amp; !<span class="built_in">window</span>.opera)) </div><div class="line">        &#123;<span class="built_in">document</span>.execCommand(<span class="string">"stop"</span>);&#125; </div><div class="line">    <span class="keyword">else</span> </div><div class="line">        &#123;<span class="built_in">window</span>.stop();&#125; </div><div class="line">&#125; </div><div class="line">mystop(); </div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </div><div class="line">就是不出来。 </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/30/HTML-解析原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -904,603 +1477,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/29/贵和便宜是相对的/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/29/贵和便宜是相对的/" itemprop="url">贵和便宜是相对的</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T23:31:50+08:00">
-                2017-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>读书笔记：《刘润.5分钟商学院》</p>
-<h4 id="概念：比例偏见"><a href="#概念：比例偏见" class="headerlink" title="概念：比例偏见"></a>概念：比例偏见</h4><p>比例偏见是指，在很多场合，本来应该考虑数值本身的变化，但是人们更加倾向于考虑比例或者倍率的变化，也就是说人们对比例的感知，比对数值本身的感知更加敏感。</p>
-<h4 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h4><p>同一款闹钟，A商店卖100元，B商店卖60元，很多人会选择花10分钟的时间，从A商店到B商店去购买闹钟，来节省这40元。同一款名表，C商店卖6600元，D商店卖6550元，同样10分钟的路程，而且可以省50元，但很多人仍然会在C商店购买名表。</p>
-<h4 id="运用：场景"><a href="#运用：场景" class="headerlink" title="运用：场景"></a>运用：场景</h4><p><strong>场景1：</strong></p>
-<p>与1000元的锅、送50元勺子的方式相比，加1元换购50元勺子的方式，更容易打动消费者。</p>
-<p><strong>场景2：</strong></p>
-<p>200元的4G内存条，顾客单独购买的可能性很小，附加在电脑上，4G内存的电脑4800元，8G内存的电脑5000元，电脑性能提升一倍，只需要多加200元，消费者会觉得特别的划算。</p>
-<h4 id="小结：运用方法"><a href="#小结：运用方法" class="headerlink" title="小结：运用方法"></a>小结：运用方法</h4><p>第一，促销时，价格低的商品用打折的方式，可以让消费者感到更多的优惠感，而价格高的商品，可以用降价的方式让消费者感到优惠。</p>
-<p>第二，用换购的方式，让消费者在心理上把注意力放在价钱变化比例很大的小商品上，这样会产生很划算的感觉。</p>
-<p>第三，把廉价的配置品，搭配在一个非常贵的东西上面一起卖，那相对于单独卖这个廉价商品，会更容易让消费者感到价值感。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/29/不要为打翻的牛奶哭泣/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/29/不要为打翻的牛奶哭泣/" itemprop="url">不要为打翻的牛奶哭泣</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T23:28:50+08:00">
-                2017-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>读书笔记：《刘润.5分钟商学院》</p>
-<h4 id="概念：沉没成本"><a href="#概念：沉没成本" class="headerlink" title="概念：沉没成本"></a>概念：沉没成本</h4><p>人们在决定是否做一件事情的时候，不仅仅是看这件事情未来对他是不是有好处，同时也会注意自己是不是在过去，已经在这件事情上面有过投入，这是一种非常有趣而顽固的非理性的心理，我们称之为叫做沉没成本，也叫做协和效应。</p>
-<h4 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h4><p>英法两国政府联合投资开发大型的超音速客机，叫做协和飞机。最终虽然研发成功，英法两国政府却为此蒙受了巨大的损失。</p>
-<h4 id="运用：场景"><a href="#运用：场景" class="headerlink" title="运用：场景"></a>运用：场景</h4><p><strong>场景1：买衣服讨价还价</strong></p>
-<p>买衣服时，在店里反复挑选，反复试穿，不停地跟店员沟通。店员在你身上花费了大量的精力，为了不让这部分沉没成本损失掉，可能会给你更多的优惠。</p>
-<p><strong>场景2：跟客户收定金</strong></p>
-<p>很多商业机构，在客户稍微有一点购买欲时，就会想方设法收客户一点点定金，可能1万元的东西只收500块定金。当客户回到家里，购买的冲动消失，为了不损失500元的定金，很有可能就会购买你的商品。</p>
-<p><strong>场景3： 举办盛大婚礼</strong></p>
-<p>两个人结婚，举办隆重盛大的婚礼，投入了巨大的时间、精力、金钱等。婚后，如果闹别扭想要分手，很可能会觉得再办一次婚礼太麻烦，就不分手了。</p>
-<h4 id="小结：认识沉没成本"><a href="#小结：认识沉没成本" class="headerlink" title="小结：认识沉没成本"></a>小结：认识沉没成本</h4><p><strong>第一，我们要认清沉没成本其实没有好坏的区别，你可以把它叫做既定成本，或者是已经发生的花费。</strong></p>
-<p><strong>第二，因为这种心态的顽固性，有目的性地制造对方的沉没成本，有利于提高交易的成功率。</strong></p>
-<p><strong>但是，最后我们还是要反过来说，你如果真的能够克服这种沉没成本所带来的心理偏见，不被这种情绪所左右，将有可能做出更加理性的商业判断。</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/29/让用户从最有钱的那个心理账户花钱/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/29/让用户从最有钱的那个心理账户花钱/" itemprop="url">让用户从最有钱的那个心理账户花钱</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T23:23:36+08:00">
-                2017-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>读书笔记：《刘润.5分钟商学院》</p>
-<h4 id="概念：心理账户"><a href="#概念：心理账户" class="headerlink" title="概念：心理账户"></a>概念：心理账户</h4><p>我们会把钱分门别类的存在不同的心理账户里面。比如说，生活必要的开支账户，家庭建设和个人发展账户，情感维系账户，享乐休闲账户等等。虽然这些账户都是在一个大账户之下，但其实各个子账户都是独立存在的。</p>
-<h4 id="案例：听音乐会前，丢失了200块。"><a href="#案例：听音乐会前，丢失了200块。" class="headerlink" title="案例：听音乐会前，丢失了200块。"></a>案例：听音乐会前，丢失了200块。</h4><p>当丢失的是价值200块的公交卡时，大多数人会选择继续前往观看；当丢失的是打算用来购买音乐会门票的200块时，大多数人选择不去看了。</p>
-<h4 id="运用：场景"><a href="#运用：场景" class="headerlink" title="运用：场景"></a>运用：场景</h4><p><strong>巧克力厂家：</strong></p>
-<p>宣传时，将几百块钱的巧克力，放到情感维系账户里面，会比放到生活必须开支账号里面，消费者更有可能购买。</p>
-<p><strong>装修公司：</strong></p>
-<p>如果你能让客户明白，你的装修方案会帮他省下4、5个平方米的面积，他就有可能会非常动心。因为他会觉得，你是帮他在买房的账户里面省了钱，而不是在装修的账户里面多花了钱。</p>
-<p><strong>小结：如何影响消费者</strong></p>
-<p>心理账户，就是每一个人其实把同样的钱在心里面，分门别类地存在了不同的账户里。</p>
-<p><strong>你要改变顾客对你商品的认知，让他从不愿意花钱的心理账户，转移到愿意为此付钱的那个心理账户里面去，这个时候，你就会发现，可能曾经很小气的客户变得非常大方起来。你的客户其实并不真的是小气，而是你的这个商品，并不在他愿意为此付费的那个心理账户里面。</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/29/演讲的什么时候适合讲笑话？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/29/演讲的什么时候适合讲笑话？/" itemprop="url">演讲的什么时候适合讲笑话？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T23:09:04+08:00">
-                2017-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《罗永浩.干货日记》</p>
-<h4 id="老罗，请问你个问题，就是我能够发现到一些笑话的笑点，但是当我跟别人讲的时候，自己首先失控地投入进去了，甚至还没有开始讲我就自己笑起来了，请问我该如何处理现场的自我失控状态？"><a href="#老罗，请问你个问题，就是我能够发现到一些笑话的笑点，但是当我跟别人讲的时候，自己首先失控地投入进去了，甚至还没有开始讲我就自己笑起来了，请问我该如何处理现场的自我失控状态？" class="headerlink" title="老罗，请问你个问题，就是我能够发现到一些笑话的笑点，但是当我跟别人讲的时候，自己首先失控地投入进去了，甚至还没有开始讲我就自己笑起来了，请问我该如何处理现场的自我失控状态？"></a>老罗，请问你个问题，就是我能够发现到一些笑话的笑点，但是当我跟别人讲的时候，自己首先失控地投入进去了，甚至还没有开始讲我就自己笑起来了，请问我该如何处理现场的自我失控状态？</h4><p>嗯，这种情况其实很常见，它对你在生活中跟朋友们一起享受讲笑话的乐趣，可能会是一个问题，但对演讲不是问题。为什么这么说呢？</p>
-<p>因为你要是充分地准备好一个演讲，就需要把里面的内容反复排练，弄得滚瓜烂熟，包括事先准备的笑话。</p>
-<p>再好玩的笑话，你自己为了演讲准备，排练了几十次上百次之后，对你来说，都会变得完全不好笑了。这时候你只管板着面孔讲就好了，因为你自己笑不出来，所以板起脸来也很容易，这时候大家就会夸你，弄不好还说你是一个冷面笑星之类的。还有，就算现场竟然出了意外，你讲到“抖包袱”的地方自己先傻笑起来了，你也可以卖个萌，自嘲一番，效果也是不错的。</p>
-<h4 id="想问问罗老师讲笑话是否有性别偏好？个人感觉女生讲笑话的要求更高，更容易搞砸？"><a href="#想问问罗老师讲笑话是否有性别偏好？个人感觉女生讲笑话的要求更高，更容易搞砸？" class="headerlink" title="想问问罗老师讲笑话是否有性别偏好？个人感觉女生讲笑话的要求更高，更容易搞砸？"></a>想问问罗老师讲笑话是否有性别偏好？个人感觉女生讲笑话的要求更高，更容易搞砸？</h4><p>你这个问题很有意思。首先， 讲笑话确实是有性别差异的。你认为女生讲笑话的要求更高，也是有道理的。</p>
-<p>一般说来，虽然多数男女都喜欢异性具有幽默感，但需求不太一样。《进化与人类行为》杂志上的一篇文章分析了这种性别差异。女性对男性的幽默感的认可，通常表现为她会喜欢能让自己开心发笑的男性。当然了，男性光有幽默感长得不帅也不行，我就是活生生的例子。</p>
-<p><strong>好，我再强调一遍，女性对男性的幽默感的认可，通常表现为她会喜欢能让自己开心发笑的男性，这很好理解。但男性呢，整体上就比较古怪，甚至比较愚蠢， 男性对女性幽默感的认可，通常表现为，这个男性讲一个笑话，发现有的女性听完了没什么反应，其实这时候完全有可能是这个男性笑话讲得很烂，但他自己不这么觉得，他会觉得这个女性缺乏幽默感。而有的女性听完了他讲的笑话，笑得很开心，这时候他就会觉得：“哇！这位女士是谁？怎么会具有如此良好的幽默感？实在太让人喜欢了。”</strong></p>
-<p>那为什么会有这样的差异呢？进化心理学上的一个解释是，女性会通过这种方式， 挑选更优秀，更聪明，更有竞争力的男性基因，保证下一代的质量。 而男性呢，他们在进化方面的需求是更多地把自己的基因传播出去，所以会倾向于喜欢那些能欣赏自己优点的异性，这样操作效率高一些。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/29/演讲的什么时候适合讲笑话？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1545,7 +1526,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">281</span>
+                <span class="site-state-item-count">289</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
