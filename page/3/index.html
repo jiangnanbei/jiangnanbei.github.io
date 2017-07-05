@@ -317,6 +317,160 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/30/HTML-解析原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/30/HTML-解析原理/" itemprop="url">HTML 解析原理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-30T15:44:12+08:00">
+                2017-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Web 页面运行在各种各样的浏览器当中，浏览器载入、渲染页面的速度直接影响着用户体验。</p>
+<p>简单地说，页面渲染就是浏览器将 html 代码根据 CSS 定义的规则显示在浏览器窗口中的这个过程。先来大致了解一下浏览器都是怎么干活的：</p>
+<p>1.用户输入网址（假设是个 html 页面，并且是第一次访问），浏览器向服务器发出请求，服务器返回 html 文件；</p>
+<p>2.浏览器开始载入 html 代码，发现 <code>&lt;head&gt;</code> 标签内有一个 <code>&lt;link&gt;</code> 标签引用外部 CSS 文件；</p>
+<p>3.浏览器又发出 CSS 文件的请求，服务器返回这个 CSS 文件；</p>
+<p>4.浏览器继续载入 html 中 <code>&lt;body&gt;</code> 部分的代码，并且 CSS 文件已经拿到手了，可以开始渲染页面了；</p>
+<p>5.浏览器在代码中发现一个 <code>&lt;img&gt;</code> 标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码；</p>
+<p>6.服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码；</p>
+<p>7.浏览器发现了一个包含一行 <code>Javascript</code> 代码的 <code>&lt;script&gt;</code> 标签，赶快运行它；</p>
+<p>8.<code>Javascript</code> 脚本执行了这条语句，它命令浏览器隐藏掉代码中的某个<code>&lt;div&gt; （style.display=”none”）</code>。杯具啊，突然就少了这么一个元素，浏览器不得不重新渲染这部分代码；</p>
+<p>9.终于等到了 <code>&lt;/html&gt;</code> 的到来，浏览器泪流满面……</p>
+<p>10.等等，还没完，用户点了一下界面中的“换肤”按钮，<code>Javascript</code> 让浏览器换了一下 <code>&lt;link&gt;</code> 标签的 CSS 路径；</p>
+<p>11.浏览器召集了在座的各位 <code>&lt;div&gt;&lt;span&gt;&lt;ul&gt;&lt;li&gt;</code> 们，“大伙儿收拾收拾行李，咱得重新来过……”，浏览器向服务器请求了新的 CSS 文件，重新渲染页面。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/30/HTML-解析原理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/30/DOM编程艺术：Ajax之挑战/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1342,165 +1496,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/29/如何在演讲中讲好笑话？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/29/如何在演讲中讲好笑话？/" itemprop="url">如何在演讲中讲好笑话？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T23:01:05+08:00">
-                2017-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《罗永浩.干货日记》</p>
-<p>从今天开始，我会展开每一个元素和你一起讨论。今天要讲的是“十三个元素”中的第一个，“ 要讲笑话 ”。</p>
-<p>关于优秀的演讲“要讲笑话”的课题，我们用三个问题来展开分析。</p>
-<h4 id="1-一场好的演讲，为什么要讲笑话？或者更准确的说，一场好的演讲，为什么要有幽默感？"><a href="#1-一场好的演讲，为什么要讲笑话？或者更准确的说，一场好的演讲，为什么要有幽默感？" class="headerlink" title="1.一场好的演讲，为什么要讲笑话？或者更准确的说，一场好的演讲，为什么要有幽默感？"></a>1.一场好的演讲，为什么要讲笑话？或者更准确的说，一场好的演讲，为什么要有幽默感？</h4><p>在昨天的课程里，我一再强调，人类喜欢听笑话，因为“我们的大脑就是被设计成这个样子的”，这是什么意思呢？下面我从三个方面来解释一下：</p>
-<p>首先，现代的脑科学研究显示，笑对人类来说，会产生和有氧运动、身体按摩、吃辛辣食品等类似的作用：它会刺激大脑产生内啡肽，因而产生愉悦感。 内啡肽是一种为我们提供舒适、快乐和美好感觉的神经递质，除了产生愉悦感，它甚至还有止痛的作用。这一定程度上也解释了为什么小孩子摔倒疼痛哭哭啼啼时，大人会去逗孩子笑，孩子被逗乐了，笑上一会儿，也就没那么疼了。而且相比较而言，通过笑获取内啡肽的分泌，会更佳高效和经济：你笑上一会儿，要比跑步跑上半天，按摩师捏上个把小时，或是吃四川火锅吃得满嘴起泡容易得多。</p>
-<p>其次，人类在进化过程中，由于一些有利于进化的好处，产生了对于幽默感的偏好。 现代的进化心理学认为，有趣好笑的事物常常伴随着某些不协调的、新奇的、或是独特视角的东西。一般说来，没有受到启发，自己就能发现这类事物的人，通常需要更高的认知水平，进化会激励这样一种正向的能力。</p>
-<p>比如，老师在黑板上画了两座山头，要小学生照着画，大部分孩子会老老实实的画。有些早慧的孩子会从山头的曲线里，联想到乌龟壳、甲壳虫、女人胸和屁股等等，于是就笑嘻嘻地画成了这些东西，并且拿给小伙伴们看，一起高兴上半天。具有这种特质的孩子，貌似也没什么稀奇，无非也就是被别人认为“有意思”、“好玩儿”、“调皮”等等。但是从概率上，他们在长大后，比起那些不具有这种特质的孩子，更容易从某种物体的曲线里受到启发，发现流体力学，空气动力学最初的原理之类的，因为这种人通常具有发现的能力和更高的认知水平。当然，这种结果有时候也是不可控的：他们也可能长大后，成为色情漫画的画家。</p>
-<p>最后，理解笑话，会使人产生某种安全感和满足感。</p>
-<p>能够理解笑话，也是脑功能健全的一个重要表现。听到并理解笑话后，大脑的活动会更加活跃。有些奇怪的病症，比如阿斯伯格综合征的患者，常常是无法理解笑话和双关语的。</p>
-<h4 id="2-为什么不建议那些原本缺乏幽默感的人去努力练好讲笑话的能力？"><a href="#2-为什么不建议那些原本缺乏幽默感的人去努力练好讲笑话的能力？" class="headerlink" title="2.为什么不建议那些原本缺乏幽默感的人去努力练好讲笑话的能力？"></a>2.为什么不建议那些原本缺乏幽默感的人去努力练好讲笑话的能力？</h4><p>首先，比起演讲的能力来，讲笑话的能力在一个社会生存能力的清单里，不算是强需求。 所以教你演讲的培训机构，要远多于教你讲笑话或培养幽默感的培训机构。 其次，比起演讲的能力来，讲笑话的能力相对更依赖天分。</p>
-<p>所以演讲培训班招生的时候不挑学生，即使是培训职业演讲者的培训机构，也不像培训喜剧演员的艺员培训班那样，对入学的学员挑选得那么严格苛刻。而且受过专业训练的演讲者上台演讲，获得一个基本的认可通常是没问题的；一个受过幽默感能力提升训练的人上台讲笑话，下面都感到很冷，是时有发生的。对于幽默感的训练，马克·吐温有一个看法，他说：“研究分析幽默，就像解剖一只青蛙，也许你能收获很多东西，但最终得到的只是一具青蛙的尸体，而不是青蛙。” 这句话供你参考。</p>
-<p>提升生存能力的学习和训练，整体上要合理的权衡自身的优势和劣势。一般说来，一个天生幽默感欠缺的人，我们不建议他／她投入大量的精力去尝试提升讲笑话或表演喜剧的能力。就像对一个长得又胖又丑的男演员，我们通常不会建议他走性感、冷峻的路线。</p>
-<p>我们的时代，心灵鸡汤和骗子精神导师泛滥的结果是，很多人都喜欢非理性地去拿一米六零的NBA球星某某某来说事儿。对此，我的看法是，如果讲好笑话是你无论如何都要实现的梦想，那就去做，不管别人怎么说，甚至不用管结果。如果没到这种程度，那你去看看NBA历史上，有几个低于一米八的球星。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/29/如何在演讲中讲好笑话？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1545,7 +1545,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">280</span>
+                <span class="site-state-item-count">281</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
