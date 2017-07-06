@@ -1,6 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[常用 JS 库汇总]]></title>
+    <url>%2F2017%2F07%2F06%2F%E5%B8%B8%E7%94%A8-JS-%E5%BA%93%E6%B1%87%E6%80%BB%2F</url>
+    <content type="text"><![CDATA[JQueryJQuery 极为强大的选择方法、连缀语法及简化的 Ajax 和事件方法，都会让你的代码变得简洁且容易理解。这个库的背后还有一个非常大的社区，包括大量插件开发人员，他们开发的插件极大的增强了库的功能。 Prototype它把自己描绘成：“一个旨在简化动态 web 应用开发的 JS 框架”，Prototype 提供了很多非常棒的 DOM 操作功能，还有一个广受好评的 Ajax 对象。 YUI LibraryYUI Library 的定位是一套用 JS 编写的实用函数和控件，可用来基于 DOM、DHTML 以及 AJAX 构建高交互的 web 应用。 YUI 还包含了一些核心的 CSS 资源。 Dojo ToolkitDojo Toolkit 说它能“帮你节省时间，性能优异，可以让开发过程收放自如。它是经验丰富的开发人员为构建伟大的 web 体验而提供给你的工具包”。 MooToolsMooTools 说自己是一个小巧，模块化、面向对象的 JS 框架，适合中高级 JS 开发人员。利用它精巧、文档完备且前后一致的 API，可以编写出强大，灵活而又能够跨浏览器的代码。 这个库不仅包含一些非常好用的 DOM 增强 API,他的 Moo.fx 效果库更是令人叫绝，能实现各式各样的或简单或复杂的网页动画。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[认识 JS 库]]></title>
+    <url>%2F2017%2F07%2F06%2F%E8%AE%A4%E8%AF%86-JS-%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[所谓库，就是可重用的代码包。 优点1.库代码经过了大量用户的测试和验证2.库能够很容易的与已有的开发框架集成3.库为日常琐碎的 DOM 编程工作提供了方便、简洁的方案，每个函数都能节省很多行代码4.库很好的解决了跨浏览器的问题 缺点库可以把你从开发工作中解脱出来，让你专注于最重要的环节，极大的提升工作效率。虽然使用库的好处很多，但也不是不存在问题： 1.库是别人而不是自己写的。你可能不了解它的内部工作机制，因此很难调试 bug 或解决由它所导致的问题2.要使用库，就要把它集成到脚本中。这样就会加重页面加载的负担，挤占用户有限的带宽3.混合使用多个库可能会造成冲突，同时也会造成功能浪费 需要注意的问题如果你对库只能亦步亦趋而不能超越，那它也会成为你不思进取的慢性毒药。 要学会理解工作机制，而不要停留在问题的表面上。唾手可得的库比比皆是，但是如果你不能理解他们背后的工作机制，对你和你的程序都不能算是什么好事。 如果你对某个库理解不透，而这个库有假设你知道相关细节，那你就很可能被一些琐碎的问题绊住脚。 选择合适的库要做出正确的选择，你可以考虑下面的问题： 1.它具备你所需要的所有功能吗？混合使用多个库有可能导致问题 2.他的功能是否比你想要的还多？功能太少是一个问题，但功能太多同样不好。其中包含的你所不需要的功能越多，下载速度越慢，开发移动应用时尤其要考虑这一点。 3.它是模块化的吗？在解决文件大小问题时，功能丰富的库通常使用模块化的方法，把不同功能分割保存到不同的文件中。这样，你就可以加载只包含相应功能的个别文件，从而降低下载量。多数情况下，恐怕都得事先加载所有必须的文件，只有少数库提供了动态加载机制，让你能够按需动态加载文件。动态加载文件时，还要事先考虑好请求的次数。经验表明，一次请求一个大文件，要比多次请求多个小文件效果好。 4.它的支持情况怎么样？库背后的社区不仅仅意味着功能和修复，也意味着在你需要帮助时能够及时得到很多人的支持。 5.它有文档吗？如果没有官方文档，至少说明它的开发人员不够投入，而库本身也不会有大的发展前途。 6.它的许可合适吗？再决定使用一个库之前，必须查证自己的用途包含在他的许可范围内，如果有特殊需求，就更要事先确定了。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[表单]]></title>
+    <url>%2F2017%2F07%2F06%2F%E8%A1%A8%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[新的表单元素HTML5 给我们带来了很多新的表单元素、新输入控件类型和新的属性。 新的输入控件类型包括：1234567891011121314151617181920212223//用于输入电子邮件地址email//用于输入 URLurl//用于输入日期和时间date//用于输入数值number//用于生成滑动条range//用于搜索框search//用于输入电话号码tel//用于选择颜色color 新的属性包括：1234567891011121314151617181920//用于为文本输入框添加一组建议的输入项autocomplete//用于让表单元素自动获得焦点autofocus//用于对 &lt;form&gt; 标签外部的表单元素分组form//用在 range 和 number 输入框中min max step//用于定义一个正则表达式，以便验证输入的值pattern//用于在文本输入框中显示临时性的提示信息placeholder//表示必填required 这些属性把很多原来有 DOM 脚本负责的任务都转移给了浏览器，例如提供自动完成的建议项和验证表单输入。但我们要关注的问题，是在浏览器不支持新的类型和属性时怎么办。 兼容性问题为了应对不兼容的浏览器，必须使用特性检测来准备另一个方案。使用 Modernizr 库，就可以进行兼容性检查。比如，要检查浏览器是否支持某个输入类型的控件，可以使用 inputtypes.type 属性：12345678if (!Modernizr.inputtypes.date) &#123; //生成日期选择器的脚本&#125;//要检查某个属性，可以使用 input.attribute 属性if (!Modernizr.input.placeholder) &#123; //生成占位符提示信息的脚本&#125; 在稳妥的特性检查的基础上，就可以一方面试用新的 HTML5 表单元素，另一方面提供备用的 DOM 脚本，以便浏览器不支持某种类型或属性时挺身而出。 举个例子，假设你想在自己的文本输入框中加入占位符信息。在 HTML5 中，只要想下面这样试用 placeholder 就可以：1&lt;input type="text" id="first-name" placeholder="your first name"/&gt; 要在不支持 placeholder 的浏览器中实现相同的效果，就得编写一个简单的 DOM 脚本来完成同样的功能：123456789101112131415161718if (!Modernizr.input.placeholder) &#123; var input = document.getElementById('first-name'); input.onfocus = function () &#123; var text = this.placeholder || this.getAttribute('placeholder'); if (this.value == text) &#123; //重置输入框的值，隐藏临时的占位符文本 this.value = ''; &#125; &#125; input.onblur = function () &#123; if (this.value == '') &#123; //把输入框的值设置为占位符文本 this.value = this.palceholder || this.getAttribute('placeholder'); &#125; &#125; //在 onblur 处理函数运行中添加占位符文本 input.onblur();&#125; 当然这个替代方案的主要问题是必须依赖于 JS 实现同样的 功能。因此，还必须考虑在 JS 不可用的情况下选择什么输入控件最合适。 要作为后备的高级功能越多（如自动完成和滚动条）越多，开发工作量就越大，占用时间就越多。所以，还是选择一些帮我们完成了相应功能的库。 表单实例源代码&amp;&amp;效果展示]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>HTML5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[视频和音频]]></title>
+    <url>%2F2017%2F07%2F06%2F%E8%A7%86%E9%A2%91%E5%92%8C%E9%9F%B3%E9%A2%91-1%2F</url>
+    <content type="text"><![CDATA[1.自定义视频播放控件1234567891011121314//最后利用 paly、pause 和 ended 事件来修改 paly 按钮的状态，并在影片未暂停的情况下显示 pause 按钮vid.addEventListener('play', function () &#123; play.innerHTML = '&amp;#x2590;&amp;#x2590;'; play.setAttribute('paused', true);&#125;, false);vid.addEventListener('pause', function () &#123; play.removeAttribute('paused'); play.innerHTML = '&amp;#x25BA;';&#125;, false);vid.addEventListener('ended', function () &#123; vid.pause();&#125;, false); 这里使用的是 addEventListener 方法为视频添加事件。addEventListener 是为对象添加事件处理函数的规范方法。之前我们使用 oclick 之类的 HTML-DOM 的 on 前缀属性，是因为 IE8 及其以前版本使用的是一个不同的 attachEvent 方法。而到了 IE9，它支持 &lt;video&gt; ,也是完成这个实例所必须的，也开始支持 addEventListener 方法了。因此，在这个例子中使用这个方法是没有问题的。 源代码&amp;&amp;效果展示]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[视频和音频]]></title>
+    <url>%2F2017%2F07%2F06%2F%E8%A7%86%E9%A2%91%E5%92%8C%E9%9F%B3%E9%A2%91%2F</url>
+    <content type="text"><![CDATA[简单 朴素1234&lt;video src="movie.mp4"&gt; //不支持原生视频时的替代内容 &lt;a href="movie.mp4"&gt;download movie.mp4&lt;/a&gt;&lt;/video&gt; 1234&lt;audio src="sound.ogg"&gt; //不支持音频时的替代内容 &lt;a href="sound.ogg"&gt;download sound.ogg&lt;/a&gt;&lt;/audio&gt; 也有混乱的时候没有一款浏览器支持所有容器和编解码器，因此我们必须提供多种后备格式。为了确保 HTML5 的最大兼容性，至少要包含下列三个版本：123456789&lt;video id="movie" preload controls&gt; &lt;source src="movie.mp4"/&gt; &lt;source src="movie.webm" type='video/webm;codecs="vp8,vorbis"'/&gt; &lt;source src="movie.ogv" type='video/ogg;codecs="theora,vorbis"'/&gt; &lt;p&gt;download movie as &lt;a href="movie.mp4"&gt;MP4&lt;/a&gt;, &lt;a href="movie.webm"&gt;WebM&lt;/a&gt;, or &lt;a href="movie.ogv"&gt;Ogg&lt;/a&gt;.&lt;/p&gt;&lt;/video&gt; 1.基于 H.246 和 ACC 的 MP42.WebM（VP8+Vorbis）3.基于 Theora 视频和 Voribs 音频的Ogg 文件 这个例子中没有给出可替代的插件版。为了确保最大程度的兼容那些不支持 HTML5 的浏览器，一般还应该准备一个 flash 或 quicktime 插件版视频。但在这里，为鼓励用户升级到较为先进的浏览器，提供了直接下载不同格式文件的链接。 注意：不同格式的视频的排列次序也是一个问题。把 MP4 放在第一位，是为了让保证 iPad、iPhone 及 iPod Touch 等运行 IOS 的设备能够顺利读取视频。因为 IOS4 之前版本中的 Mobile Safari 只能解析一个 &lt;video&gt; 元素，故而把针对 IOS 的格式放在了最前面。 有人不禁会问：既然最后还是要提供 flash 版本，那为什么不直接提供一个 flash 影片算了？答案是向前兼容，提供较新的 &lt;video&gt; 元素，可以在支持 HTML5 的浏览器中对视频内容进行更多的控制。 自定义控件要想自定义控件的外观，或者添加新的控件，可以通过一些 DOM 属性来实现，主要包括： 1234567891011121314151617181920//返回当前播放的位置，以秒表示currentTime //返回媒体的总时长，以秒表示，对于流媒体返回无穷大duration//表示媒体是否处于暂停状态paused//在媒体播放开始时发生play//在媒体暂停时发生pause//在媒体可以从当前播放位置开始播放时发生loadeddata//在媒体已播放完成而停止时发生ended 自定义控件实例1234567891011121314//最后利用 paly、pause 和 ended 事件来修改 paly 按钮的状态，并在影片未暂停的情况下显示 pause 按钮vid.addEventListener('play', function () &#123; play.innerHTML = '&amp;#x2590;&amp;#x2590;'; play.setAttribute('paused', true);&#125;, false);vid.addEventListener('pause', function () &#123; play.removeAttribute('paused'); play.innerHTML = '&amp;#x25BA;';&#125;, false);vid.addEventListener('ended', function () &#123; vid.pause();&#125;, false); 这里使用的是 addEventListener 方法为视频添加事件。addEventListener 是为对象添加事件处理函数的规范方法。之前我们使用 oclick 之类的 HTML-DOM 的 on 前缀属性，是因为 IE8 及其以前版本使用的是一个不同的 attachEvent 方法。而到了 IE9，它支持 &lt;video&gt; ,也是完成这个实例所必须的，也开始支持 addEventListener 方法了。因此，在这个例子中使用这个方法是没有问题的。 源代码&amp;&amp;效果展示]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>HTML5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HTML5 Canvas]]></title>
+    <url>%2F2017%2F07%2F06%2FHTML5-Canvas%2F</url>
+    <content type="text"><![CDATA[为什么使用 Canvas 而不是多张图片呢？只有在基于用户操作实现交互时，使用 &lt;canvas&gt; 的优势才会显现出来。以前，想要在浏览器中实现高级的图片交互功能，只能依靠 flash 和 silverlight 这样的插件。今天有了 &lt;canvas&gt; ,就可以在浏览器窗口绘制任何对象、任何像素了。当然，还能通过它来操作图像，或者创建令人眼花缭乱的界面元素。 可是，就和使用 flash 一样，也绝对不能滥用 &lt;canvas&gt;。换句话说，即使你真的可以在一个 &lt;canvas&gt; 元素里创建一个站点，也不表示你应该那样做。 此外，你还得考虑那些使用屏幕阅读器或其他辅助浏览技术的用户。HTML5 的这个 &lt;canvas&gt; 元素根 flash 一样，都不具备可访问性，会给那些用户带来同样的烦恼。 记住，不要被先进技术的光环左右了你的心智，必要时还要留一手。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>HTML5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Canvas Demos]]></title>
+    <url>%2F2017%2F07%2F06%2FCanvas-Demos%2F</url>
+    <content type="text"><![CDATA[1.使用 Canvas 绘制小黑盒子源代码&amp;&amp;效果展示 2.使用 Canvas 切换图片灰度源代码&amp;&amp;效果展示 在从图片之类的文件中读取数据时，不同浏览器有不同的安全考虑。为了保证这个列子的正常运行，必须在同一个站点中提供图片和文档。而且，就算在本地硬盘中使用 file 协议加载这个页面，例子也无法运行。虽然可以修改浏览器的安全位置，但是还是建议把这个例子的相关文件都上传的 web 服务器中。 123456//为了在 createGSCanvas 函数中把彩色图片转换为灰度图片，我们创建了一个新的 Canvas 元素，然后在其绘图环境中绘制了彩色图片var canvas=document.createElement("canvas");canvas.width=img.width;canvas.height=img.height;var ctx=canvas.getContext("2d");ctx.drawImage(img,0,0); 1234567891011//接下来在取得原始图像的数据，循环遍历其中的每一个像素，将每个彩色像素的红、绿、蓝彩色成分求平均值，得到对应彩色的灰度值var c = ctx.getImageData(0, 0, img.width, img.height); for (i=0; i&lt;c.height; i++) &#123; for (j=0; j&lt;c.width; j++) &#123; var x = (i*4) * c.width + (j*4); var r = c.data[x]; var g = c.data[x+1]; var b = c.data[x+2]; c.data[x] = c.data[x+1] = c.data[x+2] = (r+g+b)/3; &#125;&#125;]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[一喂天下白]]></title>
+    <url>%2F2017%2F07%2F05%2F%E4%B8%80%E5%96%82%E5%A4%A9%E4%B8%8B%E7%99%BD%2F</url>
+    <content type="text"><![CDATA[读书笔记：《刘墉.世说新语》 中国话的”喂”，那么简短，却能给人打电话的第一印象，所以说的时候更要小心。 首先你要知道，声音很能够反映身体、反映情绪。举个例子，你可以从对方接电话慵懒的声音，猜他八成在睡觉。你也可以由那好像大舌头的声音，猜他可能正吃东西。你还能由他有气无力的声音，猜他可能有病或在情绪的低潮。你更能由他喘气或是气急的声音，猜他是跑过来接电话，或是正在走路、正在运动。 问题是，有些人虽然没有什么不对劲，却可能因为不会说喂，一接电话，就给人错误的联想。 举个例子，有些人深呼吸一口气，却只用最前面的一点点气，说”喂”，这个喂通常会感觉比较硬，比较不亲切。 为什么？因为当你只用一口气的前面说”喂”，表示你要用剩下来的气继续说话。 譬如你是很大牌的长官，打电话给属下：”喂！小张！你到我办公室来一下。”那是十足的命令句。 如果你把那句话分成两口气来说：”喂！””小张，你到我办公室来一下。”感觉却柔和得多。 反过来，如果你用一口气的最后面一点力量说”喂”，因为说的时候已经快没有气了，那气一定会虚。不信你试试看，先吸一口气，再吐气，前面不出声，直到要断气了，才”喂”。是不是显得病恹恹、懒洋洋的？ 虽然用”气头”或”气尾”说”喂”，有那么不好，但是有人可能是学长官或是耍大牌惯了，就算跟老婆孩子说话，也用气头，一副大老爷的样子。 又有人好像总不呼吸完全，或有哮喘的问题，老是用气尾。 还有一种人，虽然不在气头”耍大牌”，也不在气尾”作死相”，却用中间很短的一点点气说”喂！”这时候或许您要问，怎样的喂最好。答案是，你如果希望给人从容的好印象，得用一整口气，去讲那”喂”一个字。 道理很简单！你明明能用一口气说一大串、讲一长句，却只说一个”喂”字，当然显示你从容。 想想：如果有人家里失火了，打电话求救，他还会好整以暇地分两句说”喂！””我家失火了”吗？他当然是用急促的一口气说：”喂！我家失火啦！” 而当你把”喂”说得很长，给人的感觉就会特别柔和。如果你是女生，还可能显得有磁性。 很多人说日本女人会作出贤淑温柔的声音，也是这个道理。你想嘛！Hi！MoxiMoxi，她们是用一整口气打招呼啊！ 还有，喂这个字的发音也有讲究–有人发二声音，说”喂（微）”！有人发四声音，说”喂（畏）”！ 这两种，也会给人不一样的感觉。说二声的”喂（微）”，要比四声的”喂（畏）”，感觉柔和。 如果你从来只讲–”喂（畏）！”不妨试试说二声的喂。搞不好，你的老朋友会认不出你的声音。假使你再把那喂说得比较长，只怕人家会问你是不是有什么喜事，心情特别好呢！ 当然，你也可以利用这一个”喂”字，故意送出暗示。譬如你接电话之前，发现打来的是个你不愿意多谈的人，或是一个说话又臭又长的人，你可以用很匆忙，甚至有点喘气的声音，说”喂！”对方很可能主动问你是不是正在忙？你正好顺水推舟，说：”是啊！我正忙！”于是不用你催，对方自然长话短说了。 喂（微）！喂（畏）！喂（短音）！喂（长音）！喂（虚音）！这喂的学问有多大啊！所以我说”一喂天下白”。 一声喂，大家就明白了啊！]]></content>
+      <categories>
+        <category>貌似有知识</category>
+      </categories>
+      <tags>
+        <tag>貌似有知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[你怎么知道人家早下班了？]]></title>
+    <url>%2F2017%2F07%2F05%2F%E4%BD%A0%E6%80%8E%E4%B9%88%E7%9F%A5%E9%81%93%E4%BA%BA%E5%AE%B6%E6%97%A9%E4%B8%8B%E7%8F%AD%E4%BA%86%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[读书笔记：《刘墉.世说新语》 有一阵子我在台北的办公室非常忙，经常加班到晚上七八点钟。有一天晚上将近八点了，我发现有一家新成立的公司，似乎可以合作，就叫助理拨电话过去。 我助理一笑，说：”刘老师，你知道现在几点了吗？人家早下班了。” 我问她：”你怎么知道人家早下班了？” 助理说：”当然，现在都八点了，只有我们还在加班。” 我又问她：”既然我们能加班，为什么别人不能加班？”然后，坚持叫她拨电话。 电话居然通了，我喜出望外，先幽默地说：”真不简单，你们还上班哪！”对方也很幽默地说：”是啊！你如果不认为我还上班，怎么可能打电话过来呢？你也在上班吗？” 结果我们发现双方都是很拼命、很讲求效率的。 接着谈合作，居然两三下就谈成了。 世界上能够异军突起，有了不得成就的，往往是那些”明知不可而为之”的人。所以西方有句谚语–”最大的冒险，是不敢冒险。”许多人失败，不败在他没能力、没经验，常败在他不敢尝试。甚至像前面我提的助理，在我要尝试之前，先很武断地说：”人家早下班了！” 相信大家都读过《 论语 》里孔子的”毋意、毋必、毋固、毋我”。意思是不要臆测、不要武断、不要固执、不要什么事都以自我为中心。 当你该打电话的时候，你不打，还找借口，说人家一定下班了，就是臆测和武断。当你发现自己先前的看法错了，还坚持不改变，就是自以为是的固执。要知道，很多领导人都是屡战屡败，又屡败屡战，化不可能为可能，才能成功的。他们看事情的态度非常积极。 有个公司以重金招聘两位创意人才。从几百位应征者当中，选出了四个人，每个人都有非常好的学术背景和专业经验，让这公司的老板很为难。决定再跟这四个人吃饭，聊聊天，感受一下哪两个比较适合。 四个人都点了牛排。没多久，牛排端上来了，其中两个人先撒了一些盐，才开始吃。另两位则先吃了一口，才拿起盐罐撒了些盐。 就从这个撒盐的动作，老板决定了他要的人。 各位猜，是哪两个？是牛排上来，没吃，先撒盐的，还是尝一口，才撒盐的？ 答案是，后者。正如老板后来说的，如果你没吃，怎么能武断地认为一定不够咸？就算你十回有八回吃到的牛排都要加盐，你也应该先试一下。我要的是有创意的人，是能在没有机会中找机会，在绝望中找希望的人，而不是自以为是，独断独行的人。 同样的道理，让我们再回到打电话的主题，如果今天你老板叫你，在怎么想对方都早已经下班的时间，打电话去。你能武断地说不吗？”明知不可而为之”是成功者的重要特质啊！]]></content>
+      <categories>
+        <category>貌似有知识</category>
+      </categories>
+      <tags>
+        <tag>貌似有知识</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何书写出语义化的HTML？]]></title>
     <url>%2F2017%2F07%2F05%2F%E5%A6%82%E4%BD%95%E4%B9%A6%E5%86%99%E5%87%BA%E8%AF%AD%E4%B9%89%E5%8C%96%E7%9A%84HTML%EF%BC%9F%2F</url>
     <content type="text"><![CDATA[1.对于可拉伸的背景使用三层嵌套，比如说：1&lt;h2&gt;&lt;strong&gt;&lt;span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/h2&gt; 2.写代码结构的时候要从大处着眼，学会分模块书写。]]></content>
@@ -41,8 +140,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>DOM</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -120,8 +219,8 @@
         <category>营销</category>
       </categories>
       <tags>
-        <tag>营销</tag>
         <tag>随笔</tag>
+        <tag>营销</tag>
       </tags>
   </entry>
   <entry>
@@ -133,8 +232,8 @@
       </categories>
       <tags>
         <tag>心智</tag>
-        <tag>商业</tag>
         <tag>随笔</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
@@ -680,7 +779,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[《DOM 编程艺术 Demos》]]></title>
+    <title><![CDATA[DOM 编程艺术]]></title>
     <url>%2F2017%2F06%2F26%2F%E3%80%8ADOM-%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF-Demos%E3%80%8B%2F</url>
     <content type="text"><![CDATA[案例研究：JS图片库]]></content>
       <categories>
@@ -802,9 +901,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Tab 导航]]></title>
+    <title><![CDATA[导航设计]]></title>
     <url>%2F2017%2F06%2F19%2FTab-%E5%AF%BC%E8%88%AA%2F</url>
-    <content type="text"><![CDATA[读书笔记：《见微知著》 广义上，在页面上能够起到指示和引导作用的元素都可以称之为导航。它就像商场中的指示牌和城市旅游地图一样，能够告诉用户“我在哪里？”还有“我该怎么去想要去的地方？”，以引导用户更好地浏览网站内容。 导航也是对网站信息架构的一种反映，体现了网站内容的分类和组织方式。没有导航的内容就像一盘散沙，用户不容易找到所需要的内容，却很容易在网站上“迷路”，失去方向感，有时只能后退或者关闭页面才能退出，这会增加用户的挫折感。 网站页面上存在很多导航元素，引导用户浏览，包括主导航、辅助导航、网站地图、搜索区、Logo和快速入口等。Logo起着网站指明灯的作用，使用户始终可以通过单击Logo返回首页；搜索区也是导航中非常重要的一个辅助元素；快捷入口通常包括登录、注册、帮助、联系方式等常用信息，用户能够快速单击链接进入目标页面。这些元素虽然也都起着导航的作用。 全局导航，指的是在网站每个页面上始终保持同一位置的导航元素，常见的包括Tab导航、树状导航、鱼眼导航等不同的导航类型。 辅助导航包括主导航下的分类筛选、面包屑导航、推荐式导航、引导性导航等，虽然其位置没有全局导航那么显眼，但却在用户浏览过程中起着不可替代的作用。 网站地图指明了一个网站结构，集合了所有链接通道，能够让用户和网络蜘蛛更加清晰地了解网站的大致结构，也起到了对搜索引擎优化的目的。 Tab 导航目前国内大部分网站，包括门户网站、电子商务网站等都采用横向导航条，显示了网站的主要栏目。横向导航的缺点在于页面横向空间有限，因此为了保证各栏目间能够区分开，往往会使网站分类栏目的数量受到限制；还有当导航需要显示二级栏目时，简单的横向导航也很难满足需求。 当分类栏目过多的时候，横向空间放不下过多的栏目，因此演变出了门户类网站常用的多行导航栏。当导航中需要显示二级栏目时，简单的横向导航已经不能体现出网站的结构，Tab导航也就应运而生了。通过切换Tab页就能够呈现出该标签页对应的二级栏目。 Amazon（亚马逊）向来被认为是Tab导航的鼻祖。 在设计 Tab 导航时需要注意的问题： 1.突出当前 Tab 页，并且对一级分类与对应的二级分类使用相同的颜色，体现其相关性。2.各分类间保持适当的距离，体现出各栏目间的分隔，增加可辨识度。3.使用不同的颜色区分不同的 Tab，增加辨识度，至少区分开当前选中分类和未选中分类。4.不要在导航上放置过多的 Tab，更不要使用两行以上的 Tab 作为导航。Tab 过于拥挤会影响用户的定位和辨识。5.增加“My Store”等个性化功能，并且分析用户的行为轨迹，使内容更加符合用户需求。6.通过 “See More Stores”链接，隐藏重要性略低的分类，避免导航过于臃肿。7.标签色彩的使用要符合网站定位，不要过于夸张。]]></content>
+    <content type="text"><![CDATA[读书笔记：《见微知著》 广义上，在页面上能够起到指示和引导作用的元素都可以称之为导航。它就像商场中的指示牌和城市旅游地图一样，能够告诉用户“我在哪里？”还有“我该怎么去想要去的地方？”，以引导用户更好地浏览网站内容。 导航也是对网站信息架构的一种反映，体现了网站内容的分类和组织方式。没有导航的内容就像一盘散沙，用户不容易找到所需要的内容，却很容易在网站上“迷路”，失去方向感，有时只能后退或者关闭页面才能退出，这会增加用户的挫折感。 网站页面上存在很多导航元素，引导用户浏览，包括主导航、辅助导航、网站地图、搜索区、Logo和快速入口等。Logo起着网站指明灯的作用，使用户始终可以通过单击Logo返回首页；搜索区也是导航中非常重要的一个辅助元素；快捷入口通常包括登录、注册、帮助、联系方式等常用信息，用户能够快速单击链接进入目标页面。这些元素虽然也都起着导航的作用。 全局导航，指的是在网站每个页面上始终保持同一位置的导航元素，常见的包括Tab导航、树状导航、鱼眼导航等不同的导航类型。 辅助导航包括主导航下的分类筛选、面包屑导航、推荐式导航、引导性导航等，虽然其位置没有全局导航那么显眼，但却在用户浏览过程中起着不可替代的作用。 网站地图指明了一个网站结构，集合了所有链接通道，能够让用户和网络蜘蛛更加清晰地了解网站的大致结构，也起到了对搜索引擎优化的目的。 Tab 导航目前国内大部分网站，包括门户网站、电子商务网站等都采用横向导航条，显示了网站的主要栏目。横向导航的缺点在于页面横向空间有限，因此为了保证各栏目间能够区分开，往往会使网站分类栏目的数量受到限制；还有当导航需要显示二级栏目时，简单的横向导航也很难满足需求。 当分类栏目过多的时候，横向空间放不下过多的栏目，因此演变出了门户类网站常用的多行导航栏。当导航中需要显示二级栏目时，简单的横向导航已经不能体现出网站的结构，Tab导航也就应运而生了。通过切换Tab页就能够呈现出该标签页对应的二级栏目。 Amazon（亚马逊）向来被认为是Tab导航的鼻祖。 在设计 Tab 导航时需要注意的问题： 1.突出当前 Tab 页，并且对一级分类与对应的二级分类使用相同的颜色，体现其相关性。2.各分类间保持适当的距离，体现出各栏目间的分隔，增加可辨识度。3.使用不同的颜色区分不同的 Tab，增加辨识度，至少区分开当前选中分类和未选中分类。4.不要在导航上放置过多的 Tab，更不要使用两行以上的 Tab 作为导航。Tab 过于拥挤会影响用户的定位和辨识。5.增加“My Store”等个性化功能，并且分析用户的行为轨迹，使内容更加符合用户需求。6.通过 “See More Stores”链接，隐藏重要性略低的分类，避免导航过于臃肿。7.标签色彩的使用要符合网站定位，不要过于夸张。 树状导航在设计树状导航的时候，要注意一下两点： 1.排序规律：他的纵向导航的分类往往较多，因此需要将分类按照一定的规律进行排序，比如按照重要程度或者字母的顺序，便于用户快速定位。（你也可以通过增加特色图标提高辨识度）]]></content>
       <categories>
         <category>设计</category>
       </categories>
@@ -1049,8 +1148,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>随笔</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
@@ -1061,8 +1160,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>随笔</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
@@ -1183,8 +1282,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>随笔</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
@@ -1446,8 +1545,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>随笔</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>
@@ -1648,8 +1747,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业技巧</tag>
         <tag>随笔</tag>
+        <tag>商业技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -2548,7 +2647,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[前端初级小Demo集合]]></title>
+    <title><![CDATA[前端初级]]></title>
     <url>%2F2016%2F11%2F17%2F%E5%89%8D%E7%AB%AF%E5%88%9D%E7%BA%A7%E5%B0%8FDemo%E9%9B%86%E5%90%88%2F</url>
     <content type="text"><![CDATA[控制 div 属性 —-&gt;源代码 水平垂直居中一个 div—-&gt;源代码]]></content>
       <categories>
@@ -2559,7 +2658,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Ajax小Demo集合]]></title>
+    <title><![CDATA[Ajax]]></title>
     <url>%2F2016%2F11%2F15%2FAjax%E5%B0%8FDemo%E9%9B%86%E5%90%88%2F</url>
     <content type="text"><![CDATA[1.用Ajax实现验证登录12345678910111213141516171819var username=document.getElementById("name").value;var password=document.getElementById("pwd").value;var xhr=null;xhr=new XMLHttpRequest();//新建一个XMLHttpRequest对象xhr.open("get",'./check.php',true);//初始化请求xhr.onreadystatechange=function () &#123;//定义数据返回后的回调函数 if(xhr.readyState==4)&#123; if(xhr.status===200)&#123; var data=xhr.responseText; if(data==1)&#123; result.innerText="登录成功"; &#125; else if(data===2)&#123; result.innerText="登录失败"; &#125; &#125; &#125;&#125;;xhr.send(null);//xhr.send(null); 2.jquery 中的 ajax如果使用原生的 js 发送请求，你需要这么写：1234567891011var xhr=null;xhr=new XMLHttpRequest();xhr.open("get",url,true);xhr.send(null);xhr.onreadystatechange=function () &#123; if(xhr.readyState===4)&#123; if(xhr.status===200)&#123; dosomething(); &#125; &#125;&#125;; 但是如果使用jquery发送 ajax 请求的话，只要一行代码就可以了：1$.ajax(&#123;url:"test.js",dataType:"json"&#125;);]]></content>
       <categories>
@@ -2594,18 +2693,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[六道JS面试题]]></title>
-    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>面试指南</tag>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[递归实现斐波那契数列]]></title>
     <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
     <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
@@ -2614,6 +2701,18 @@
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[六道JS面试题]]></title>
+    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>面试指南</tag>
         <tag>JS</tag>
       </tags>
   </entry>
@@ -3026,8 +3125,8 @@
       </categories>
       <tags>
         <tag>心智</tag>
-        <tag>商业技巧</tag>
         <tag>随笔</tag>
+        <tag>商业技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -3250,8 +3349,8 @@
         <category>营销</category>
       </categories>
       <tags>
-        <tag>营销</tag>
         <tag>随笔</tag>
+        <tag>营销</tag>
       </tags>
   </entry>
 </search>
