@@ -317,7 +317,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/04/14/什么是营销/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/13/字符串定义及单双引号的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -336,7 +336,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/04/14/什么是营销/" itemprop="url">什么是营销?</a></h2>
+                <a class="post-title-link" href="/2017/01/13/字符串定义及单双引号的区别/" itemprop="url">字符串定义及单双引号的区别</a></h2>
         
 
         <div class="post-meta">
@@ -348,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-14T22:35:35+08:00">
-                2017-04-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-13T20:15:38+08:00">
+                2017-01-13
               </time>
             
 
@@ -371,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/营销/" itemprop="url" rel="index">
-                    <span itemprop="name">营销</span>
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
                   </a>
                 </span>
 
@@ -406,14 +406,1317 @@
 
       
         
-          <p>何谓营销?营销是作为思维的存在，而非具体学科.你所学所知的“市场营销”，其实是“企业营销”，冰山一角而已。</p>
-<p>那么什么是营销？</p>
-<p><strong>营销就是A为B创造对方想要的价值，建立与维持关系，以获得回报的思维过程.</strong></p>
-<p><strong>思维过程表达式：STP+4P+CRM</strong></p>
-<p>A与B的等量代换能生一切法，真实不虚.<br>
+          
+            <h3 id="单双引号的区别？"><a href="#单双引号的区别？" class="headerlink" title="单双引号的区别？"></a>单双引号的区别？</h3><ul>
+<li>单引号，系统不做复杂转义，只转义 <code>\&#39;</code> 和 <code>\\</code>，其他的一律原样输出。</li>
+<li>双引号则转义的比较多，<code>\\&quot;</code>,<code>\\</code>,<code>\r</code>,<code>\n</code>,<code>\t</code>,<code>\$</code>…</li>
+<li>单引号不对字符串的 <code>$</code> 作变量解析。</li>
+<li>双引号，会尝试将 <code>$</code> 理解成变量名来解析。</li>
+</ul>
+<h3 id="单双引号定义字符串那个更快？"><a href="#单双引号定义字符串那个更快？" class="headerlink" title="单双引号定义字符串那个更快？"></a>单双引号定义字符串那个更快？</h3><p>单引号解析的更快，不用进行更多的转义和变量解析。</p>
+<h3 id="具体什么时间用单双引号？"><a href="#具体什么时间用单双引号？" class="headerlink" title="具体什么时间用单双引号？"></a>具体什么时间用单双引号？</h3><ul>
+<li>大段文本，新闻标题，文本内容，自我介绍，这样的大段话用单引号，解析更快。</li>
+<li>需要在一段字符中夹杂变量，比如拼凑 sql 语句时：<code>$id = 5;</code>  <code>$sql = &quot;select * from user where id = $id&quot;;</code>，如果此时使用单引号则无法解析 <code>$</code> 变量，所以此时使用双引号更合适。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/12/超全局变量/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/12/超全局变量/" itemprop="url">超全局变量</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-12T20:14:15+08:00">
+                2017-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>常量和超全局变量在函数的任何一处都可以访问到。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$_GET               <span class="comment">//地址栏上的参数</span></div><div class="line">$_POST              <span class="comment">//接收 POST 型的表单参数</span></div><div class="line">$_REQUEST           <span class="comment">//当你不想区分 $_GET 和 $_POST 时，可以使用它</span></div><div class="line">$_FILES             <span class="comment">//文件上传</span></div><div class="line">$_COOKIE,$_SESSION  <span class="comment">//用户登录</span></div><div class="line">$_ENV,$_SERVER      <span class="comment">//服务器和访客的一些信息</span></div><div class="line">$_GLOBALS           <span class="comment">//所有变量的一个注册表，你可以在里面找到声明过的所有变量，我们可以通过它操作普通的全局变量。</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$var1 = 5;</div><div class="line">$var2 = 1;</div><div class="line">function get_value()&#123;</div><div class="line">    $var1 = 0;</div><div class="line">    $GLOBALS['var2]++;</div><div class="line">&#125;</div><div class="line">get_value();</div><div class="line">echo $var1;</div><div class="line">echo $var2;</div><div class="line"></div><div class="line">//result : 5 2</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$age = <span class="number">5</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">t</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">//global 关键字，用在变量前面声明这个变量用是全局范围内的$age</span></div><div class="line">    <span class="keyword">global</span> $age;</div><div class="line">    $age++;</div><div class="line">&#125;</div><div class="line">t();</div><div class="line"><span class="keyword">echo</span> $age;</div><div class="line"></div><div class="line"><span class="comment">//result : 6</span></div></pre></td></tr></table></figure>
+<p>函数和全局变量并不是水火不容的，我们可以：</p>
+<ol>
+<li>通过引用传参影响全局变量</li>
+<li>通过 global 声明，也能直接使用外部变量（不推荐，有风险）</li>
+<li>直接操作超级全局变量</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/11/引用传参/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/11/引用传参/" itemprop="url">引用传参</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-11T20:07:09+08:00">
+                2017-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">t</span><span class="params">($num)</span></span>&#123;</div><div class="line">    $num += <span class="number">5</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$age = <span class="number">19</span>;</div><div class="line">t($age);</div><div class="line"><span class="keyword">echo</span> $age;<span class="comment">//19</span></div><div class="line"></div><div class="line"><span class="comment">//注意这里的输结果是19</span></div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">t</span><span class="params">(&amp;$num)</span></span>&#123;<span class="comment">//此处传的是实参的地址</span></div><div class="line">    $num += <span class="number">5</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$age = <span class="number">19</span>;</div><div class="line">t($age);</div><div class="line"><span class="keyword">echo</span> $age;<span class="comment">//24</span></div><div class="line"></div><div class="line"><span class="comment">//注意这里的输出结果是24</span></div><div class="line"></div><div class="line"><span class="comment">//函数的全局变量和局部变量并不是水火不容的，是有机会相互影响</span></div><div class="line"><span class="comment">//的，比如说通过 `引用传参` 和 `超级全局变量`。</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/10/动态函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/10/动态函数/" itemprop="url">动态函数</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-10T20:07:09+08:00">
+                2017-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>函数的命名规范和变量一样，但是不区分大小写，以后学到面向对象的方法时，也不区分大小写。</p>
+<p><em>函数就像一台机器，比如说其中的一个函数是电饭锅，如果你没有加水（函数出错了），它就会发出响声（报错），但是如果你操作方法都正确的话，就会产生熟饭。</em></p>
+<h3 id="动态函数"><a href="#动态函数" class="headerlink" title="动态函数"></a>动态函数</h3><p>所谓动态函数，就是函数的名字用变量表示的函数。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">wel</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">'welcome'</span>;</div><div class="line">&#125;</div><div class="line">$result = <span class="string">"wel"</span>;</div><div class="line">$result();<span class="comment">//welcome</span></div><div class="line"></div><div class="line"><span class="comment">/*</div><div class="line">php中你可以动态调用函数，分为以下步骤：</div><div class="line"></div><div class="line">1. 定义一个函数 </div><div class="line">2. 将函数名（字符串）赋值给一个变量 </div><div class="line">3. 使用变量名代替函数名动态调用函数</div><div class="line">*/</span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/09/字符串运算及运算返回值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/09/字符串运算及运算返回值/" itemprop="url">字符串运算及运算返回值</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-09T20:04:32+08:00">
+                2017-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$str1 = <span class="string">'hello'</span>;</div><div class="line">$str2 = <span class="string">' '</span>;</div><div class="line">$str3 = <span class="string">'world'</span>;</div><div class="line"><span class="keyword">echo</span> $str1.$str2.$str3;</div><div class="line"><span class="keyword">echo</span> $str1,$str2,$str3;</div><div class="line"></div><div class="line"><span class="comment">/*</div><div class="line">二者的输出结果相同：hello world</div><div class="line">原因：'.'先拼接再整个输出。</div><div class="line">      ','挨个把三个变量输出。</div><div class="line">*/</span></div><div class="line"></div><div class="line"><span class="comment">/*</div><div class="line">面试题：面对上述两种情况，用点好逗号那个输出快，效率高？</div><div class="line">答：逗号，省去了一次拼接计算的过程。</div><div class="line">*/</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/09/比较运算及类运算/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/09/比较运算及类运算/" itemprop="url">比较运算及类运算</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-09T18:04:32+08:00">
+                2017-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$a = <span class="keyword">true</span>;</div><div class="line">$b = <span class="number">5</span>;</div><div class="line">$a = $b;<span class="comment">//把整形转换成bool型</span></div><div class="line"></div><div class="line"><span class="comment">/*</div><div class="line">在有些语言中语言中是没有布尔型的，都是 1 或 0 来充当 true 或 </div><div class="line">false，0 和 0.0 这两个值被转换为布尔值是 false，其他的转换为布</div><div class="line">尔值都是 true。</div><div class="line">*/</span></div></pre></td></tr></table></figure>
+<p>在不同的数据类型进行比较时，PHP 程序本身会把变量转换成一致的类型，然后再比较。</p>
+<ol>
+<li><p>布尔值-&gt;字符串。<code>true-&gt;1;false-&gt;0;</code></p>
+</li>
+<li><p>字符串-&gt;数字。从字符串左端开始找数字，直到第一个非数字结束，取出的这部分，是转换后的值。<code>eg : &#39;ab123&#39;-&gt;0。</code></p>
+</li>
+<li><p>字符串-&gt;布尔值。<code>空字符串</code> 和 <code>&#39;0&#39;</code> 转换为 <code>false</code>， 其余的转换成 <code>true</code>。</p>
+</li>
+<li><p>数字-&gt;字符串。原样输出。</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/09/常量/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/09/常量/" itemprop="url">常量</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-09T17:04:32+08:00">
+                2017-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><h3 id="为什么需要常量？"><a href="#为什么需要常量？" class="headerlink" title="为什么需要常量？"></a>为什么需要常量？</h3><p>某个重要的值赋值给变量容易被改变。</p>
+<h3 id="常量的特点"><a href="#常量的特点" class="headerlink" title="常量的特点"></a>常量的特点</h3><ol>
+<li>一旦定义不可修改。</li>
+<li>不可重复定义。</li>
+<li>全局有效性。</li>
+<li>习惯上大写。（如果引用了一个未定义的常量，最终会把它当做字符串输出）</li>
+</ol>
+<h3 id="什么时候用到常量？"><a href="#什么时候用到常量？" class="headerlink" title="什么时候用到常量？"></a>什么时候用到常量？</h3><p>网站根目录；网站配置文件。</p>
+<h3 id="如何定义常量？"><a href="#如何定义常量？" class="headerlink" title="如何定义常量？"></a>如何定义常量？</h3><p><code>define(&#39;常量名&#39;,&#39;常量值&#39;);</code></p>
+<p>输出常量：<code>echo 常量名;</code>（注意这里没有 $ 符）</p>
+<h3 id="常量类型"><a href="#常量类型" class="headerlink" title="常量类型"></a>常量类型</h3><p>整形；浮点型；字符串；布尔；Null。（五种标量类型）</p>
+<h3 id="动态常量"><a href="#动态常量" class="headerlink" title="动态常量"></a>动态常量</h3><p>想用动态常量，即想用变量名当常量的值，必须使用 <code>constant()</code> 函数。<code>constant($var)</code> 会把 <code>$var</code> 的值当成一个常量的名字，并解析出常量的值。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/08/变量/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/08/变量/" itemprop="url">变量</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-08T17:04:32+08:00">
+                2017-01-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="变量的概念及命名规范"><a href="#变量的概念及命名规范" class="headerlink" title="变量的概念及命名规范"></a>变量的概念及命名规范</h3><p><code>$i = 58;</code> 变量 <code>$i</code> 表示在内存中开辟了一块空间，空间里面的值是58，<code>$i</code> 指向变量所在的地址。</p>
+<p>PHP 的变量是区分大小写的。</p>
+<h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><p>1.整形。</p>
+<p>2.浮点型。</p>
+<p>3.字符串型。</p>
+<p>4.布尔型。直接 <code>echo</code> 布尔型时，布尔型会被转换为字符串，<code>true-&gt;&#39;1&#39;</code> true 转化为字符串 1，<code>false-&gt;&#39;&#39;</code> false 转化为空字符串。</p>
+<p>5.Null型。一个变量在三种情况下其值为 Null：给一个变量赋值为 Null时；当某个变量被 unset 时；只声明不赋值的时候。</p>
+<h3 id="动态变量"><a href="#动态变量" class="headerlink" title="动态变量"></a>动态变量</h3><p>所谓动态变量就是说，变量的名字还可以是一个变量。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$str = <span class="string">'hello'</span>;</div><div class="line">$hello = <span class="string">'hello world'</span>;</div><div class="line"></div><div class="line"><span class="keyword">echo</span> $str   .<span class="string">'&lt;/br&gt;'</span>; <span class="comment">//hello</span></div><div class="line"><span class="keyword">echo</span> $hello .<span class="string">'&lt;/br&gt;'</span>; <span class="comment">//hello world</span></div><div class="line"><span class="keyword">echo</span> $$str  .<span class="string">'&lt;/br&gt;'</span>; <span class="comment">//hello world</span></div><div class="line"></div><div class="line"><span class="comment">//这里的 $$str 就是一个动态变量</span></div></pre></td></tr></table></figure></p>
+<h3 id="变量检测"><a href="#变量检测" class="headerlink" title="变量检测"></a>变量检测</h3><p>用 <code>isset</code> 检测一个变量是否存在。</p>
+<h3 id="判断变量类型"><a href="#判断变量类型" class="headerlink" title="判断变量类型"></a>判断变量类型</h3><p><code>is_int</code>, <code>is_float</code>, <code>is_bool</code>, <code>is_null</code>。 <code>gettype</code> 可以直接获取一个变量的类型。</p>
+<h3 id="变量的销毁"><a href="#变量的销毁" class="headerlink" title="变量的销毁"></a>变量的销毁</h3><p><code>unset();</code> 销毁变量名和变量值。</p>
+<h3 id="传值赋值"><a href="#传值赋值" class="headerlink" title="传值赋值"></a>传值赋值</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$a = <span class="number">3</span>;</div><div class="line">$b = <span class="number">5</span>;</div><div class="line">$b = $a;</div><div class="line"></div><div class="line"><span class="comment">//这一步发生了什么，把$a的值拿出来，放到$b的空间里,就是把$a的值传递给$b，叫做传值赋值。</span></div><div class="line"></div><div class="line"><span class="keyword">echo</span> $b;  <span class="comment">//3</span></div></pre></td></tr></table></figure>
+<p>###　引用赋值<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$a = <span class="number">3</span>;</div><div class="line">$b = <span class="number">5</span>;</div><div class="line">$a = &amp;$b;</div><div class="line"><span class="keyword">echo</span> $a.<span class="string">" "</span>.$b;<span class="comment">// 5 5</span></div><div class="line"></div><div class="line"><span class="comment">//为什么是 5 5,发生了什么？过程是把 $a 的指向指向了 $b 的地址空间，即$a,$b指向同一个地址，两把钥匙，指向同一个房间。</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$b = <span class="number">5</span>;</div><div class="line">$a = &amp;$b;</div><div class="line"><span class="keyword">unset</span>($b);</div><div class="line"><span class="keyword">echo</span> $a; <span class="comment">//5</span></div><div class="line"></div><div class="line"><span class="comment">//为什么销毁 $b 之后 $a 的值仍然是5，因为这个时候 $a $b 指向了同一个地址，即使 $b 被销毁了，但是此时 $a 所指向的仍然是内存中的那个地址，所以值仍然是5。</span></div><div class="line"></div><div class="line"><span class="comment">//变量有一个机制，给某段地址存的值，有一个变量指向它的时候，这个地址所占的内存空间就不会被回收。</span></div></pre></td></tr></table></figure>
+<h3 id="三个输出函数"><a href="#三个输出函数" class="headerlink" title="三个输出函数"></a>三个输出函数</h3><p><code>echo</code> : 输出变量，适用于整形，浮点型，字符串这种标量类型。</p>
+<p><code>print_r</code> : 适合对象，数组，这种二维多维的数据。</p>
+<p><code>var_dump</code> : 不仅可以打印数据，还可以打印出数据的类型。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/06/PHP-快速入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/06/PHP-快速入门/" itemprop="url">PHP 快速入门</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-06T17:04:32+08:00">
+                2017-01-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="PHP快速入门"><a href="#PHP快速入门" class="headerlink" title="PHP快速入门"></a>PHP快速入门</h3><p>首先,我们要明白什么是编程。<strong>所谓编程就是使用一种程序设计语言编写程序代码,让计算机解决某个问题的过程。</strong></p>
+<p><strong>如此来看我们的生活中所做的任何事情都是在编程，</strong>比如说你想告诉别人一件事情，那你就要使用对方能听得懂的语言，把这件事情告诉对方，你所要达到的目的就是使对方能明白你所说的这件事。再比如说你想做一个鸡蛋炒西红柿，那你就要按照一定的顺序来完成这个炒菜的过程，最终的结果就是你做好了一盘西红柿炒鸡蛋。</p>
+<p>PHP是一门程序设计语言，<strong>我们想要学习任何一门语言，最重要的就是把握三个地方：变量，运算和控制。</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/04/JS自定义属性及其应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/04/JS自定义属性及其应用/" itemprop="url">JS自定义属性及其应用</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-04T13:42:38+08:00">
+                2017-01-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h4><p>JS 可以给任何一个 html 元素添加自定义属性，然而你可以使用这一特性做许多有意思的事情。</p>
+<hr>
+<h3 id="实例之图片开关"><a href="#实例之图片开关" class="headerlink" title="实例之图片开关"></a>实例之图片开关</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="css"></div><div class="line">	<span class="selector-tag">li</span>&#123;<span class="attribute">width</span>: <span class="number">114px</span>; <span class="attribute">height</span>: <span class="number">140px</span>; <span class="attribute">list-style</span>: none; <span class="attribute">background</span>: <span class="built_in">url</span>(images/normal.png); <span class="attribute">float</span>: left; <span class="attribute">margin-left</span>: <span class="number">20px</span>; &#125; </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>	</div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span> <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span> <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span> <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span> <span class="tag">&lt;/<span class="name">ul</span>&gt;</span> </div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></div><div class="line">	<span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> aLi=<span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</div><div class="line"></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;aLi.length;i++)&#123;</div><div class="line">		</div><div class="line">			aLi[i].onOff=<span class="literal">true</span>;</div><div class="line">			aLi[i].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">if</span>(<span class="keyword">this</span>.onOff)&#123;</div><div class="line">					<span class="keyword">this</span>.style.background=<span class="string">'url(images/active.png)'</span>;</div><div class="line">					<span class="keyword">this</span>.onOff=<span class="literal">false</span>;</div><div class="line">				&#125;<span class="keyword">else</span>&#123;</div><div class="line">					<span class="keyword">this</span>.style.background=<span class="string">'url(images/normal.png)'</span>;</div><div class="line">					<span class="keyword">this</span>.onOff=<span class="literal">true</span>;</div><div class="line">				&#125;</div><div class="line">				</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Add custom property for every li. Attention: here we use custom property to attach switch for every li,in this way, we can control png switch freedom and don’t influence other li.</p>
+<p><a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web-front-end/blob/master/HexoDemos/%E5%AE%9E%E4%BE%8B%E4%B9%8B%E5%9B%BE%E7%89%87%E5%BC%80%E5%85%B3.html">效果展示</a></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/14/什么是营销/#more" rel="contents">
+            <a class="btn" href="/2017/01/04/JS自定义属性及其应用/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -463,7 +1766,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/04/11/如何制造病毒营销？/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/03/自增自减运算符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -482,7 +1785,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/04/11/如何制造病毒营销？/" itemprop="url">如何制造病毒营销？</a></h2>
+                <a class="post-title-link" href="/2017/01/03/自增自减运算符/" itemprop="url">自增自减运算符</a></h2>
         
 
         <div class="post-meta">
@@ -494,8 +1797,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T23:55:29+08:00">
-                2017-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-03T18:48:29+08:00">
+                2017-01-03
               </time>
             
 
@@ -517,8 +1820,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/营销/" itemprop="url" rel="index">
-                    <span itemprop="name">营销</span>
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
                   </a>
                 </span>
 
@@ -553,10 +1856,18 @@
       
         
           
-            <p>要制造病毒式营销的核心首先你要去抓住人们的好好奇心。说有这么一个人，他在城市里面所有的地方都贴上了这几个字“我要去大山”，那别人就很好奇，这个到底是什么意思，就这大家都百思不得其解的时候，这个人又在这个城市的所有地方都贴上了“我要去大山英语学校”，于是当年的业绩爆了30倍。</p>
-<p>其实如果你想要制造病毒式的营销，最重要的就是：首先你要抓住人与人之间那种微妙的心理，看看究竟是什么能够刺激人内心深处的那个G点，然后你在用一种比较适合病毒式传播的形式，然后把它连接起来。</p>
-<p>比如说：第一：好奇心。第二个：竞争欲。第三：炫耀。</p>
-<p>营销真的很难吗？ 学透了心理学，你也可以做到。说白了，其实就是在玩人性的游戏。</p>
+            <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
+<li>前自增后自增</li>
+<li>前自减后自减</li>
+</ol>
+<h3 id="二者的异同"><a href="#二者的异同" class="headerlink" title="二者的异同"></a>二者的异同</h3><p>相同：最终都使 i 的值加一</p>
+<p>不同：前自增整体表达式的值是i加1之后的值；后自增整体表达式的值是i加1之前的值。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i,j,k,m;</div><div class="line">    i = <span class="number">3</span>;</div><div class="line">    j = <span class="number">3</span>;</div><div class="line">    k = i++;</div><div class="line">    m = ++j;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d %d %d"</span>,i,j,k,m);</div><div class="line">&#125;</div><div class="line"><span class="comment">//result : 4 4 3 4</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">3</span>;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,i++,++i,i);</div><div class="line"><span class="comment">//result : 4 5 5</span></div></pre></td></tr></table></figure>
+<h3 id="为什么会出现自增？"><a href="#为什么会出现自增？" class="headerlink" title="为什么会出现自增？"></a>为什么会出现自增？</h3><p>有<code>i += 1;</code>不就可以了吗?为什么还有出现<code>i++</code>?原因:代码更精炼,自增的速度更快。</p>
+<h3 id="学习自增时要明白的几个问题"><a href="#学习自增时要明白的几个问题" class="headerlink" title="学习自增时要明白的几个问题"></a>学习自增时要明白的几个问题</h3><p>我们编程时应该尽量屏蔽掉前自增和后自增的区别，自增表达式单独成一个语句,最好不要作为一个更大的表达式的一部分来使用。</p>
+<p>比如：<code>int m = i++ + ++i + i + i++;</code>,这样写不但是不规范的代码,而且是不可移植的代码。</p>
+<p>这个程序在不同的机器上的运行结果是不一样的,这里面牵扯到一个叫做顺序点的问题,因为我们不知道<code>i++</code>执行结束之后,这一步是否立即生效,就是在我执行<code>++i</code>的时候,前面的i有没有立即加1是不知道的,我们只有顺序点才能明确的知道这个操作是否生效,而顺序点只有三个:逗号,括号,分号。</p>
+<p><strong>作为一个优秀的程序员,在你的程序里面不应该体现出i++和++i的区别。</strong></p>
 
           
         
@@ -604,7 +1915,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/04/10/产品缺点变卖点/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/01/02/sublime-快捷键总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -623,7 +1934,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/04/10/产品缺点变卖点/" itemprop="url">产品缺点变卖点</a></h2>
+                <a class="post-title-link" href="/2017/01/02/sublime-快捷键总结/" itemprop="url">sublime 快捷键总结</a></h2>
         
 
         <div class="post-meta">
@@ -635,8 +1946,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T22:54:37+08:00">
-                2017-04-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-02T22:01:37+08:00">
+                2017-01-02
               </time>
             
 
@@ -658,8 +1969,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/营销/" itemprop="url" rel="index">
-                    <span itemprop="name">营销</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -693,725 +2004,17 @@
 
       
         
-          
-            <p>有时候，商品的缺点也能变成卖点，关键看你如何引导！</p>
-<p>有一淘宝店在网上卖键盘膜，老是收到差评，纷纷指责键盘膜太薄了，说店家偷工减料，以次充好。店家临机一动，在标题和主图上加上了：<strong>超薄型!</strong>.</p>
-<p>从此以后,好评连连.</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/04/10/《穷查理宝典》/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/10/《穷查理宝典》/" itemprop="url">《穷查理宝典》</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T14:42:02+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心智/" itemprop="url" rel="index">
-                    <span itemprop="name">心智</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>《穷查理宝典》收录了查理过去20年来主要的公开演讲。除简单而权威的查理传略外，其后的《芒格的生活、学习和决策方法》以及《芒格主义：查理的即席谈话》整理了芒格最精华的思维与决策方式和以往在伯克希尔·哈撒韦公司和西科金融公司年会上犀利——和幽默——的评论。</p>
-<p>而最后最珍贵的十一篇讲稿则全面展现了这个传奇人物的聪明才智。贯穿全书的是芒格展示出来的聪慧、机智，其令人敬服的价值观和深不可测的修辞天赋。他拥有百科全书式的知识，所以从古代的雄辩家，到18、19世纪的欧洲文豪，再到当代的流行文化偶像，这些人的名言他都能信手拈来，并用这些来强调终身学习和保持求知欲望的好处。<br>
+          <h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><p>1.<code>Ctrl+D</code> 选中光标所占的文本，继续操作则会选中下一个相同的文本。<br>2.<code>Alt+F3</code> 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中并更改所有相同的变量名、函数名等。<br>3.<code>Ctrl+L</code> 选中整行，继续操作则继续选择下一行，效果和 <code>Shift+↓</code> 效果一样。<br>4.<code>Ctrl+Shift+L</code> 先选中多行，再按下快捷键，会在每行行尾插入光标，即可同时编辑这些行。<br>5.<code>Ctrl+Shift+M</code> 选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。<br>6.<code>Ctrl+M</code> 光标移动至括号内结束或开始的位置。<br>7.<code>Ctrl+Enter</code> 在下一行插入新行。举个栗子：即使光标不在行尾，也能快速向下插入一行。<br>8.<code>Ctrl+Shift+Enter</code> 在上一行插入新行。举个栗子：即使光标不在行首，也能快速向上插入一行。<br>9.<code>Ctrl+Shift+[</code>选中代码，按下快捷键，折叠代码。<br>10.<code>Ctrl+Shift+]</code> 选中代码，按下快捷键，展开代码。<br>11.<code>Ctrl+K+0</code> 展开所有折叠代码。<br>12.<code>Ctrl+←</code>向左单位性地移动光标，快速移动光标。<br>13.<code>Ctrl+→</code> 向右单位性地移动光标，快速移动光标。</p>
+<hr>
+<h3 id="编辑类"><a href="#编辑类" class="headerlink" title="编辑类"></a>编辑类</h3><p>1.<code>Ctrl+J</code> 合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。<br>2.<code>Ctrl+Shift+D</code> 复制光标所在整行，插入到下一行。<br>3.<code>Ctrl+K+K</code> 从光标处开始删除代码至行尾。<br>4.<code>Ctrl+Shift+K</code> 删除整行。<br>5.<code>Ctrl+Shift+/</code>注释多行。<br>6.<code>Ctrl+K+U</code> 转换大写。<br>7.<code>Ctrl+K+L</code> 转换小写。<br>8.<code>Ctrl+Y</code> 恢复撤销。<br>9.<code>Ctrl+F2</code> 设置书签<br>10.<code>F6</code>单词检测拼写</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/10/《穷查理宝典》/#more" rel="contents">
+            <a class="btn" href="/2017/01/02/sublime-快捷键总结/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/04/10/《牛奶可乐经济学》/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/10/《牛奶可乐经济学》/" itemprop="url">《牛奶可乐经济学》</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T14:35:57+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/经济学/" itemprop="url" rel="index">
-                    <span itemprop="name">经济学</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>《牛奶可乐经济学》原名叫做《经济博物学家：破解日常生活的密码》。作者罗伯特•弗兰克教授著有最畅销的中级经济学教材《微观经济学和行为》，他教的微观经济学入门课程每年都会吸引6000多名学生，他布置过这样的书面作业：“利用经济学原理，探讨你亲身观察到的事件或行为模式中的有趣题。”而且不要长篇大论，字数限制在500字以内。“文章里面不要掺杂复杂的技术，要假设你是在给一个从没上过经济学课的亲戚讲故事。”</p>
-<p>《牛奶可乐经济学》就是一本这样的故事合集。问题千奇百怪，分析工具却相当简单——成本效益原则。<strong>当一个行动带来的收益大于成本时，人们就会采取行动。这是绝大多数举动的根源。</strong></p>
-<p><strong>比如，为什么最畅销的书常常打折销售，而最热门的电影却不打折？</strong>因为对电影院来说，最稀缺的资源不是电影本身，而是座位。大受欢迎的电影即使不打折也会满座，出于收益最大化的考虑，电影院有理由不给票价打折。但是书不一样，如果预见到哪些产品更热门，卖家往往可以提前准备好充足的库存。卖家给书打折以促进销量，是更有利的做法。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/10/《牛奶可乐经济学》/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/04/10/为什么要读书？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/10/为什么要读书？/" itemprop="url">为什么要读书？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T14:30:05+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在我们的的生活中总是要有一些这样的人，当我们被困在了一个漆黑的山洞中，我们的粮食只能够吃有限天，面临着前方的未知和恐惧，以及资源的有限，我们不可能让每个人都去探寻出口，于是我们就把多数的粮食给了其中一些人，让他们去摸索出口，找到以后再回来带我们出去……我便是其中的一员，书籍就是我的粮食，时间是我的朋友。至于最终我会摸索到什么，别急，让时间告诉你…… </p>
-<p>那么我们为什么要读书呢？<strong>首先我觉得我们读书是为了让我们更加了解这个世界，当你更加了解这个世界的时候，无论你身处何处你的内心都不会有丝毫的慌张和恐惧，因为你知道世界就是这个样子，它就在那里。其次，有时候读书它是一件没办法的事情啊，你不读书你就没法和一些有趣的人有思想的人交流，就好像不能见面就只好写信一样，书只是一个载体，人和人之间的关系才是这个世界的根本。</strong><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/10/为什么要读书？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/04/10/《明朝那些事》有感/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/10/《明朝那些事》有感/" itemprop="url">《明朝那些事》</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T14:24:31+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>高中与《明朝那些事儿》擦肩而过，那时候我的我喜欢钱钟书，喜欢韩寒，喜欢李敖，喜欢鲁迅。</p>
-<p>大一我一股脑的钻研商业，那时候我喜欢Jason Fried，我喜欢彼得·蒂尔，我喜欢罗伯特·弗兰克、布莱克·马斯特斯、贝索斯、李善有、乔布斯、吴晓波、罗振宇、罗永浩、马尔科姆·格拉德威尔、埃里克·施密特……</p>
-<p>现在大二虽然现在我的世界里更多的是郭霖、是刘末鹏、是Benjamin J. Evans、paul graham ……但是我仍旧在这一年之内将《明朝那些事儿》一书共七部通读了两遍。恩，历史可以很“好玩”。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/10/《明朝那些事》有感/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/04/10/书读多了你会变成什么样/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/10/书读多了你会变成什么样/" itemprop="url">书读多了你会变成什么样?</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T14:15:11+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/心智/" itemprop="url" rel="index">
-                    <span itemprop="name">心智</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>如果你读的足够多，你会获得一种超凡的经历：感受人类知识的进步。</p>
-<p>你会发现一个问题在这本书里是这个说法，而过了几年之后有人另写了一本书，引用更有力的证据，把整个结论给改变了。有时候你会赞同这个新结论，有时候你会反对。有时候你必须从几本书的几个不同的结论中判断哪个才是最靠谱的。有时候你会觉得他们说的都不对，只有你知道正确的答案，如果你到了这个层次，那么，恭喜你…你已经可以俯视他们，评判他们之间的高下了。</p>
-
-          
         
       
     </div>
@@ -1452,7 +2055,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1497,7 +2100,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">305</span>
+                <span class="site-state-item-count">309</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
