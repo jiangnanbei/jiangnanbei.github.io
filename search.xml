@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CSS 动画]]></title>
+    <url>%2F2017%2F07%2F07%2FCSS-%E5%8A%A8%E7%94%BB%2F</url>
+    <content type="text"><![CDATA[CSS 翻书动画效果 效果展示 &amp;&amp; 源代码 这个动画效果的实现，主要靠是 perspective + rotateY的应用。 由于 li 之所以没有写闭合，是因为写了的话每个 li 之间会有 4px 的间距，不写浏览器也会自动补全。 之所以出现 4px 空白是因为 li 换行了，换行会多一个空白字符，字符受字体影响，你可以把 ul 的 font-size 为 0，就没有了，或者 li不要换行。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端职场软技能]]></title>
+    <url>%2F2017%2F07%2F07%2F%E5%89%8D%E7%AB%AF%E8%81%8C%E5%9C%BA%E8%BD%AF%E6%8A%80%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[原文出处：前端职场软技能01期-前端江湖安身立命的三个基本点 主动学习 也就是，你主动去找上级沟通，以获得关键的信息，资源，以及申请一些练手的机会。没有人会主动来教你，但你可以主动向他们索取。我曾经刚入职一家新公司，很多都不懂，于是我空闲的时候有事没事跟同事闲聊，参加公司聚餐，主动给他们买水，买烟，甚至一起打游戏，慢慢就了解到了公司里谁负责什么，我的业务可以找谁对接，要向谁请教，谁能给我关键的资源。就这样，我的工作很快就上手了，负责的几个项目都做得很出色，不久之后就得到了转正，薪水也得到了大幅度的增长。 可能有些人排斥同事聚餐，不太愿意和同事有太多的交流，平时也自己一个人独来独往。但是，哪怕你再孤僻，在职场中也需要学会和同事相处。在职场，一个项目需要很多很多人的协作，需要足够的资源支持。你的成功，需要大量人的帮助，如果你人缘很差，你将寸步难行。所以，如果你想在职场中有所作为，就请你主动一点。主动与同事交流，沟通，学会向上级调用资源，获取信息，只有这样，你才会获得快速的成长。 主动承担责任除了学习，前端职场中另一个非常关键的地方，是你需要学会主动承担责任。没有人喜欢承担责任，不仅是因为压力，也是因为如果失败了，你要付出代价。但是，承担责任，却能让你变得更自由和强大。这是因为，职场中，一个人能够主动出来承担责任，说明他是愿意认真干这件事的，所以哪怕这个人能力一般，领导也愿意给他更多的资源和自由，看他发挥到什么程度。 而这种机会，是你成长过程中不可或缺的，它不仅可以给你提供宝贵的经验，还能成为你往后给别人证明自己能力的最佳例证，为你的下一份工作增加筹码。但是，如果想获得这种机会，你只能去主动承担责任。 当然，有时候你会失败，这不可避免，但失败了又怎么样呢？最糟最糟也就是丢掉这份工作，但哪怕这样，你的职场经验也是增加的，这些经验才是最宝贵的东西。而且一般都不会到丢掉工作这么严重，一般来说，老板不会因为你的一次失败而放弃你，你的机会比你想象中的要多得多。 永远不要做坏事是的，你可能随着工作越来越熟练，职位越来越高，你发现了一些漏洞，发现了一些捞回扣的法子。但是我非常不建议你这么做。首先，你可能被人发现，而承受相应的惩罚。而这会成为你身上的污点，一直伴随你的职业生涯。 也许，你可以一直做到不被人发现，神不知鬼不觉。但是，这种钱太容易赚，会使得你放弃去做那些难做的事，长久下去，你会慢慢失去你的核心竞争力。当这个漏洞或者机会消失了，你会瞬间一无所有。]]></content>
+      <categories>
+        <category>貌似有知识</category>
+      </categories>
+      <tags>
+        <tag>职场</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[链表中倒数第 k 个结点]]></title>
+    <url>%2F2017%2F07%2F07%2F%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%AC-k-%E4%B8%AA%E7%BB%93%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[问题：输入一个链表，输出该链表中倒数第 k 个结点。为了符合大多输入的习惯，本题从 1 开始计数，即链表的尾节点是倒数第一个结点。例如一个链表有六个结点，从头结点开始他们的值 依次是 1，2,3,4,5,6 这个链表的倒数第三个结点是值为4的结点。 思路：为了实现只遍历链表一次就能找到倒数第 k 个结点，我们可以定义两个指针。第一个指针从链表的头指针开始遍历向前走 k-1，第二个指针保持不动；从第 k 步开始，第二个指针也开始从链表的头指针开始遍历。由于两个指针的距离保持在 k-1，当地一个指针到达链表的尾节点时，第二个指针正好是倒数第 k 个结点。 鲁棒性12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849ListNode * FindKthToTail(ListNode * pListHead , unsigned int k)&#123; if(pListHead == NULL || k == 0) return NULL; ListNode * pAhead = pListHead; ListNode * pBehind = NULL; for(unsigned int i=0; i&lt;k-1; i++) &#123; if(pAhead-&gt;m_pNext != NULL) pAhead = pAhead-&gt;m_pNext; else &#123; return NULL; &#125; &#125; pBehind = pListHead; while(pAhead-&gt;m_pNext != NULL) &#123; pAhead = pAhead-&gt;m_pNext; pBehind = pBehind-&gt;m_pNext; &#125; return pBehind;&#125;ListNode * FindKthToTail(ListNode * pListHead , unsigned int k)&#123; ListNode * pAhead = pListHead; ListNode * pBehind = NULL; for(unsigned int i=0; i&lt;k-1; i++) pAhead = pAhead-&gt;m_pNext; pBehind = pListHead; while(pAhead-&gt;m_pNext != NULL) &#123; pAhead = pAhead-&gt;m_pNext; pBehind = pBehind-&gt;m_pNext; &#125; return pBehind;&#125; 以上的代码，面试官可以找出三种方法让这段代码崩溃 1.输入的 pListHead 为空指针。由于代码会视图访问空指针所指向的内存，程序崩溃。 2.输入以 pListHead 为头结点的链表的结点总数小于 k，由于在 for 循环中会在链表上向前走 k-1 步，仍然会由于空指针造成程序崩溃 3.输入的参数k为0.由于k是一个无符号整数，那么在 for 循环中 k-1 得到的将不是 -1，而是 4294967295 ，因此 for 循环执行的次数，远远超出我们的预计，仍然会由于空指针造成程序崩溃 代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;struct ListNode &#123; int m_nValue; ListNode * m_pNext;&#125;ListNode * FindKthToTail(ListNode * pListHead , unsigned int k)&#123; if(pListHead == NULL || k == 0) return NULL; ListNode * pAhead = pListHead; ListNode * pBehind = NULL; for(unsigned int i=0; i&lt;k-1; i++) &#123; if(pAhead-&gt;m_pNext != NULL) pAhead = pAhead-&gt;m_pNext; else &#123; return NULL; &#125; &#125; pBehind = pListHead; while(pAhead-&gt;m_pNext != NULL) &#123; pAhead = pAhead-&gt;m_pNext; pBehind = pBehind-&gt;m_pNext; &#125; return pBehind;&#125;// ====================测试代码====================// 测试要找的结点在链表中间void Test1()&#123; printf("=====Test1 starts:=====\n"); ListNode* pNode1 = CreateListNode(1); ListNode* pNode2 = CreateListNode(2); ListNode* pNode3 = CreateListNode(3); ListNode* pNode4 = CreateListNode(4); ListNode* pNode5 = CreateListNode(5); ConnectListNodes(pNode1, pNode2); ConnectListNodes(pNode2, pNode3); ConnectListNodes(pNode3, pNode4); ConnectListNodes(pNode4, pNode5); printf("expected result: 4.\n"); ListNode* pNode = FindKthToTail(pNode1, 2); PrintListNode(pNode); DestroyList(pNode1);&#125;// 测试要找的结点是链表的尾结点void Test2()&#123; printf("=====Test2 starts:=====\n"); ListNode* pNode1 = CreateListNode(1); ListNode* pNode2 = CreateListNode(2); ListNode* pNode3 = CreateListNode(3); ListNode* pNode4 = CreateListNode(4); ListNode* pNode5 = CreateListNode(5); ConnectListNodes(pNode1, pNode2); ConnectListNodes(pNode2, pNode3); ConnectListNodes(pNode3, pNode4); ConnectListNodes(pNode4, pNode5); printf("expected result: 5.\n"); ListNode* pNode = FindKthToTail(pNode1, 1); PrintListNode(pNode); DestroyList(pNode1);&#125;// 测试要找的结点是链表的头结点void Test3()&#123; printf("=====Test3 starts:=====\n"); ListNode* pNode1 = CreateListNode(1); ListNode* pNode2 = CreateListNode(2); ListNode* pNode3 = CreateListNode(3); ListNode* pNode4 = CreateListNode(4); ListNode* pNode5 = CreateListNode(5); ConnectListNodes(pNode1, pNode2); ConnectListNodes(pNode2, pNode3); ConnectListNodes(pNode3, pNode4); ConnectListNodes(pNode4, pNode5); printf("expected result: 1.\n"); ListNode* pNode = FindKthToTail(pNode1, 5); PrintListNode(pNode); DestroyList(pNode1);&#125;// 测试空链表void Test4()&#123; printf("=====Test4 starts:=====\n"); printf("expected result: NULL.\n"); ListNode* pNode = FindKthToTail(NULL, 100); PrintListNode(pNode);&#125;// 测试输入的第二个参数大于链表的结点总数void Test5()&#123; printf("=====Test5 starts:=====\n"); ListNode* pNode1 = CreateListNode(1); ListNode* pNode2 = CreateListNode(2); ListNode* pNode3 = CreateListNode(3); ListNode* pNode4 = CreateListNode(4); ListNode* pNode5 = CreateListNode(5); ConnectListNodes(pNode1, pNode2); ConnectListNodes(pNode2, pNode3); ConnectListNodes(pNode3, pNode4); ConnectListNodes(pNode4, pNode5); printf("expected result: NULL.\n"); ListNode* pNode = FindKthToTail(pNode1, 6); PrintListNode(pNode); DestroyList(pNode1);&#125;// 测试输入的第二个参数为0void Test6()&#123; printf("=====Test6 starts:=====\n"); ListNode* pNode1 = CreateListNode(1); ListNode* pNode2 = CreateListNode(2); ListNode* pNode3 = CreateListNode(3); ListNode* pNode4 = CreateListNode(4); ListNode* pNode5 = CreateListNode(5); ConnectListNodes(pNode1, pNode2); ConnectListNodes(pNode2, pNode3); ConnectListNodes(pNode3, pNode4); ConnectListNodes(pNode4, pNode5); printf("expected result: NULL.\n"); ListNode* pNode = FindKthToTail(pNode1, 0); PrintListNode(pNode); DestroyList(pNode1);&#125;int main( )&#123; Test1(); Test2(); Test3(); Test4(); Test5(); Test6(); return 0;&#125;]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[代码的鲁棒性]]></title>
+    <url>%2F2017%2F07%2F07%2F%E4%BB%A3%E7%A0%81%E7%9A%84%E9%B2%81%E6%A3%92%E6%80%A7%2F</url>
+    <content type="text"><![CDATA[鲁棒是英文 Robust 的英译，有时也翻译成健壮性。 所谓的鲁棒性是指程序能够判断输入是否合乎规范要求，对不和要求的输入予以合理的处理。 容错性是鲁棒性的一个重要体现。不鲁棒的软件在发生异常事件的时候，比如用户输入错误的用户名、视图打开的文件不存在或者网络不能连接，就会出现不可预见的诡异行为，或者干脆整个软件崩溃。这样的软件对于用户而言，不亚于一常灾难。 由于鲁棒性对软件开发非常重要，面试官在招聘的时候对应聘者写出的代码是否鲁棒也非常关注。 提高代码鲁棒性的有效途径是进行防御性编程。防御性编程是一种编程习惯，是指预见在什么地方可能会出现问题，并为这些可能出现的问题制定处理方式。比如试图打开文件时发现文件不存在，我们可以提示用户检查文件名和路径；当服务器链接不上时，我们可以试图链接备用服务器等。这样当异常情况发生时，软件的行为也尽在我们的掌握之中，而不至于出现不可预见的事情。 在面试时，最简单也最实用的防御性编程就是在函数入口添加代码已验证用户输入是否符合要求。通常面试要求的是写一两个函数，我们需要格外关注这些函数的输入参数。如果输入的是一个指针，那指针是空指针怎么办？如果输入的是一个字符串，那么字符串的内容为空怎么办？如果我们能把这些问题都提前考虑到，并做相应的处理，那么面试官就会觉得我们有防御性编程的习惯，能够写出鲁棒的软件。 当然，并不是所有与鲁棒性相关的问题都只是检查输入的参数那么简单。当我们看到问题的时候，要多问几个“如果不…..那么…..”这样的问题。 比如面试题：“链表中倒数第k个结点”，这里隐含的一个条件就是链表中节点的个数大于k。我们就要问如果链表中结点的数目不是大于k个，那么代码会出什么问题？这样的思考方式能够帮助我们发现潜在的问题并提前解决问题。这比让面试官发现问题之后我们再去慌忙分析代码查找问题的根源要好的多。]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>编程思想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[斐波那契数列]]></title>
+    <url>%2F2017%2F07%2F07%2F%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
+    <content type="text"><![CDATA[斐波那契数列，又称黄金分割数列、因数学家列昂纳多·斐波那契以兔子繁殖为例子而引入，故又称为“兔子数列”，指的是这样一个数列：1、1、2、3、5、8、13、21、34、……在数学上，斐波纳契数列以如下被以递归的方法定义：F(0)=0，F(1)=1, F(n)=F(n-1)+F(n-2)（n&gt;=2，n∈N*）在现代物理、准晶体结构、化学等领域，斐波纳契数列都有直接的应用。 斐波那契数列数列的迭代实现12345678910111213141516171819#include &lt;iostream&gt;using namespace std;int main()&#123; int i; //定义输出斐波那契数列的前四十个数 int a[40]; a[0] = 0; a[1] = 1; cout &lt;&lt; a[1]; for(i=2; i&lt;=39; i++) &#123; a[i] = a[i-1] + a[i-2]; cout &lt;&lt; "\n" &lt;&lt; a[i]; &#125;&#125;]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[这是一个 web 设计师激动不已的时代]]></title>
     <url>%2F2017%2F07%2F07%2F%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA-web-%E8%AE%BE%E8%AE%A1%E5%B8%88%E6%BF%80%E5%8A%A8%E4%B8%8D%E5%B7%B2%E7%9A%84%E6%97%B6%E4%BB%A3%2F</url>
     <content type="text"><![CDATA[基于 DOM 的脚本编程是一项值得深入掌握的技术。希望你能肩负起一位技术人应有的责任，坚守 DOM 可用性的阵地，并且能够乐在其中。 在光怪陆离的现实世界中，你稍不留神就会误入歧途，掉进一味标新立异的泥潭里。有时候，只要静下心来，回头看一看，把视角放的更开阔一些，问题就会变得很清楚。 通过综合 web 标准和最佳实践，让我们一起来保障 web 的开放、无障碍。 使用有意义的标记来构建页面的结构把表现性的信息都分离到 CSS 样式表中负责任的使用不唐突的 JS 来应用行为增强，同时确保平稳退化]]></content>
@@ -217,8 +272,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>DOM</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -296,8 +351,8 @@
         <category>营销</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>营销</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -443,8 +498,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>面试指南</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -1286,9 +1341,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[尾部设计]]></title>
-    <url>%2F2017%2F05%2F25%2F%E5%B0%BE%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[页尾设计 页尾，也称为 Tailer，指的是页面底部部分，通常放置联系方式和版权信息等补充信息。由于其位置不够显著、重要性较低，因此也往往成为设计师容易忽略的地方。 需要规避的细节问题页尾的信息过多过杂由于页尾不太重要，因此应该尽量简化它，节约页面宝贵的空间。 不同页面的页尾不统一 有时候，由于网站的迅速扩张，页面数量迅速增加，如缺乏统一的规范约束，往往容易导致页尾等元素在同一类型页面中表现得不够统一。 这虽然只是一个很小的细节，却容易让用户对网站的专业度产生怀疑，这是页面设计中需要注意的问题之一。 版权说明格式 一般网站都会在页尾进行版权说明，目前国际上标准的格式是：Copyright[日期（dates）]by[作者/所有者（author/owner）]，其中 Copyright 通常可以用 © 代替，但是不可以用（c）。All Rights Reserved 在某些国家曾经是必需的，但是现在在大多数国家，都不是法律上必须有的字样。 设计新趋势为了更好的利用网站的空间，目前有些网站在页尾除了放置联系方式和版权信息以外，也放置网站的辅助导航，使页尾发挥更大的引导作用。]]></content>
+    <title><![CDATA[头部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%A4%B4%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[网站上每个元素都是为了满足了用户、网站或者赞助商不同角度的需求而存在的。按照各部分作用的不同，可将网站划分成以下功能区域，包括头部、页尾、导航区、搜索区、登录注册区、信息展示区、广告区等。 头部 网页头部，也称为 Header，简称头部，指的是网站页面的顶部区域，通常包含网站的 Logo、Slogan、Banner、导航条等元素，有时还提供常用功能的快速入口，如登录、帮助等。头部主要用于网站展示品牌形象，告诉用户目前在浏览哪个网站以及该网站主要提供什么内容。 头部类型实用型头部实用型的网站头部设计简洁、不花哨，能够在合理有限的空间内起到必要的作用，一般其只包含 Logo、导航条和快速入口等重要元素。 大型网站由于页面空间有限，而且品牌的知名度使其不需要使用过多的元素去渲染网站的特色和气氛，因此往往采用这种类型的头部设计。 设计型头部很多网站，尤其是个性化的网站，往往会利用头部的设计体现出网站的特色，常见于博客、小型特色网站以及部分企业网站首页。 设计型头部的优点在于有很大的发挥空间，如果设计效果好，就会造成很强的视觉冲击力，给用户留下很深的印象；其缺点在于往往占用过多空间，削减了网站内容的重要性，造成喧宾夺主的效果，也容易产生头重脚轻的感觉。 头部元素的设计不管是哪种类型的头部，一般包括 Logo、Slogan、导航条等元素。 LogoLogo 的基本作用之一是返回页面首页，使用户在网站迷路时，可以找到回去的路，增加用户在网站上的方向感和安全感。更重要的是 Logo 代表着网站的品牌和形象，尤其对知名的网站来讲，Logo 能够唤起用户对网站的品牌认知度，从而提升用户的信任感。 Logo 本身的设计非常重要，必需清晰易辨识，能体现出网站的定位和特色，具体的设计更多取决于设计者，在这不多加叙述。 对于不同类型的页面或者网站，Logo 的呈现的方式不一样。如独立的 logo，适用于网站首页。logo+文字，适用于网站子类目。logo+logo，适用于合并后的网站。 除此之外，很多网站会在节日期间设计应景的节日 logo 体现气氛，提升用户对网站的体验。 SloganSlogan 虽然只是一句简单的标语，但能够很好地体现出网站的定位和特色，显示企业文化、塑造网站个性，配合 Logo 一起使用能够达到更好的效果。Slogan 一般要求朗朗上口，而且点出网站的最大亮点。好的标语往往能让用户更好地记住网站的特色及其提供的主要服务。如： ·阿里巴巴。“全球领先的网上贸易市场和商人社区”。 ·淘宝。“淘我喜欢！” 除了 Logo 和 Slogan 以上两个主要元素之外，总体上来讲，同一级别或者同一类型页面的头部设计应该尽量保持一致。]]></content>
       <categories>
         <category>设计</category>
       </categories>
@@ -1297,9 +1352,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[头部设计]]></title>
-    <url>%2F2017%2F05%2F25%2F%E5%A4%B4%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[网站上每个元素都是为了满足了用户、网站或者赞助商不同角度的需求而存在的。按照各部分作用的不同，可将网站划分成以下功能区域，包括头部、页尾、导航区、搜索区、登录注册区、信息展示区、广告区等。 头部 网页头部，也称为 Header，简称头部，指的是网站页面的顶部区域，通常包含网站的 Logo、Slogan、Banner、导航条等元素，有时还提供常用功能的快速入口，如登录、帮助等。头部主要用于网站展示品牌形象，告诉用户目前在浏览哪个网站以及该网站主要提供什么内容。 头部类型实用型头部实用型的网站头部设计简洁、不花哨，能够在合理有限的空间内起到必要的作用，一般其只包含 Logo、导航条和快速入口等重要元素。 大型网站由于页面空间有限，而且品牌的知名度使其不需要使用过多的元素去渲染网站的特色和气氛，因此往往采用这种类型的头部设计。 设计型头部很多网站，尤其是个性化的网站，往往会利用头部的设计体现出网站的特色，常见于博客、小型特色网站以及部分企业网站首页。 设计型头部的优点在于有很大的发挥空间，如果设计效果好，就会造成很强的视觉冲击力，给用户留下很深的印象；其缺点在于往往占用过多空间，削减了网站内容的重要性，造成喧宾夺主的效果，也容易产生头重脚轻的感觉。 头部元素的设计不管是哪种类型的头部，一般包括 Logo、Slogan、导航条等元素。 LogoLogo 的基本作用之一是返回页面首页，使用户在网站迷路时，可以找到回去的路，增加用户在网站上的方向感和安全感。更重要的是 Logo 代表着网站的品牌和形象，尤其对知名的网站来讲，Logo 能够唤起用户对网站的品牌认知度，从而提升用户的信任感。 Logo 本身的设计非常重要，必需清晰易辨识，能体现出网站的定位和特色，具体的设计更多取决于设计者，在这不多加叙述。 对于不同类型的页面或者网站，Logo 的呈现的方式不一样。如独立的 logo，适用于网站首页。logo+文字，适用于网站子类目。logo+logo，适用于合并后的网站。 除此之外，很多网站会在节日期间设计应景的节日 logo 体现气氛，提升用户对网站的体验。 SloganSlogan 虽然只是一句简单的标语，但能够很好地体现出网站的定位和特色，显示企业文化、塑造网站个性，配合 Logo 一起使用能够达到更好的效果。Slogan 一般要求朗朗上口，而且点出网站的最大亮点。好的标语往往能让用户更好地记住网站的特色及其提供的主要服务。如： ·阿里巴巴。“全球领先的网上贸易市场和商人社区”。 ·淘宝。“淘我喜欢！” 除了 Logo 和 Slogan 以上两个主要元素之外，总体上来讲，同一级别或者同一类型页面的头部设计应该尽量保持一致。]]></content>
+    <title><![CDATA[尾部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%B0%BE%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[页尾设计 页尾，也称为 Tailer，指的是页面底部部分，通常放置联系方式和版权信息等补充信息。由于其位置不够显著、重要性较低，因此也往往成为设计师容易忽略的地方。 需要规避的细节问题页尾的信息过多过杂由于页尾不太重要，因此应该尽量简化它，节约页面宝贵的空间。 不同页面的页尾不统一 有时候，由于网站的迅速扩张，页面数量迅速增加，如缺乏统一的规范约束，往往容易导致页尾等元素在同一类型页面中表现得不够统一。 这虽然只是一个很小的细节，却容易让用户对网站的专业度产生怀疑，这是页面设计中需要注意的问题之一。 版权说明格式 一般网站都会在页尾进行版权说明，目前国际上标准的格式是：Copyright[日期（dates）]by[作者/所有者（author/owner）]，其中 Copyright 通常可以用 © 代替，但是不可以用（c）。All Rights Reserved 在某些国家曾经是必需的，但是现在在大多数国家，都不是法律上必须有的字样。 设计新趋势为了更好的利用网站的空间，目前有些网站在页尾除了放置联系方式和版权信息以外，也放置网站的辅助导航，使页尾发挥更大的引导作用。]]></content>
       <categories>
         <category>设计</category>
       </categories>
@@ -1612,6 +1667,17 @@
       <tags>
         <tag>心智</tag>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PS 常用快捷键]]></title>
+    <url>%2F2017%2F03%2F19%2FPS-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <content type="text"><![CDATA[1.ctrl + j 赋值并粘贴到新的图层2.ctrl + e 合并图片3.ctrl + r 调出辅助线4.ctrl + shift + i 反转选区]]></content>
+      <categories>
+        <category>设计</category>
+      </categories>
+      <tags>
+        <tag>设计</tag>
       </tags>
   </entry>
   <entry>
@@ -2579,8 +2645,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -2591,8 +2657,8 @@
   </entry>
   <entry>
     <title><![CDATA[前端面试指南HTML5篇]]></title>
-    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87-%E4%B8%80%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素]]></content>
+    <url>%2F2016%2F11%2F25%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97HTML5%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[1.介绍一下你对浏览器内核的理解？主要分成两部分：渲染引擎和JS引擎。 渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后会输出至显示器或打印机。 浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。 JS 引擎则：解析和执行 javascript 来实现网页的动态效果。 最开始渲染引擎和 JS 引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。 2.常见的浏览器内核有哪些？Trident 内核：IE ,MaxThon ,TT ,The World ,360, 搜狗浏览器等。[又称 MSHTML ]。 Gecko内核：Netscape6 及以上版本，FF, MozillaSuite / SeaMonkey等。 Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;] Webkit 内核：Safari,Chrome等。 [ Chrome 的：Blink（WebKit的分支）] 3.简述一下你对HTML语义化的理解？用正确的标签做正确的事情。 html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的; 搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO; 使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。 4.html5 有哪些新特性、移除了那些元素？如何处理 HTML5 新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？ HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。 绘画 canvas;用于媒介回放的 video 和 audio 元素;本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除; 语意化更好的内容元素，比如 article、footer、header、nav、section;表单控件，calendar、date、time、email、url、search; 新的技术webworker, websocket, Geolocation; 支持 HTML5 新标签：IE8/IE7/IE6 支持通过document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。当然也可以直接使用成熟的框架、比如html5shim 方法一：1234&lt;!–[if lt IE9]&gt; &lt;scriptsrc="html5.js"&gt;&lt;/script&gt; &lt;![endif]–&gt; --&gt; 方法二：123/*css代码，将新标签的样式变成块级元素*/article,aside,dialog,footer,header,section,footer,nav,figure,menu&#123;display:block;&#125; 1234567891011121314//js代码，创建新元素(function() &#123; if (!0) return; var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', '); var i= e.length; while (i--)&#123; document.createElement(e[i]); &#125; &#125;)(); 移除的元素：纯表现的元素：basefont，big，center，font, s，strike，tt，u;对可用性产生负面影响的元素：frame，frameset，noframes； 如何区分HTML5： DOCTYPE 声明\新增的结构元素\功能元素 5.什么是渐进增强？渐进增强是指在 web 设计时强调可访问性、语义化 HTML 标签、外部样式表和脚本。保证所有人都能访问页面的基本内容和功能，同时为高级浏览器和高带宽用户提供更好的用户体验。 核心原则如下: 所有浏览器都必须能访问基本内容 所有浏览器都必须能使用基本功能 所有内容都包含在语义化标签中 通过外部CSS提供增强的布局 通过非侵入式、外部javascript提供增强功能 end-user web browser preferences are respected 6.什么是 web 语义化？有什么好处？web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 CSS 命名的语义化。 HTML 标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构 。 CSS 命名的语义化是指：为 HTML 标签添加有意义的class，id 补充未表达的语义。 为什么需要语义化？ 去掉样式后页面呈现清晰的结构 盲人使用读屏器更好地阅读 搜索引擎更好地理解页面，有利于收录 便团队项目的可持续运作及维护]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -2719,8 +2785,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>面试指南</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -2742,8 +2808,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>Ajax</tag>
         <tag>Demo</tag>
+        <tag>Ajax</tag>
       </tags>
   </entry>
   <entry>
@@ -2765,20 +2831,8 @@
         <category>编程</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>面试指南</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[六道JS面试题]]></title>
-    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
         <tag>JS</tag>
-        <tag>面试指南</tag>
       </tags>
   </entry>
   <entry>
@@ -2790,6 +2844,18 @@
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[六道JS面试题]]></title>
+    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>面试指南</tag>
         <tag>JS</tag>
       </tags>
   </entry>
@@ -3194,6 +3260,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[单链表操作]]></title>
+    <url>%2F2016%2F09%2F04%2F%E5%8D%95%E9%93%BE%E8%A1%A8%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121struct ListNode &#123; int m_nValue; ListNode * m_pNext;&#125;ListNode* CreateListNode(int value);void ConnectListNodes(ListNode* pCurrent, ListNode* pNext);void PrintListNode(ListNode* pNode);void PrintList(ListNode* pHead);void DestroyList(ListNode* pHead);void AddToTail(ListNode** pHead, int value);void RemoveNode(ListNode** pHead, int value);ListNode* CreateListNode(int value)&#123; ListNode* pNode = new ListNode(); pNode-&gt;m_nValue = value; pNode-&gt;m_pNext = NULL; return pNode;&#125;void ConnectListNodes(ListNode* pCurrent, ListNode* pNext)&#123; if(pCurrent == NULL) &#123; printf("Error to connect two nodes.\n"); exit(1); &#125; pCurrent-&gt;m_pNext = pNext;&#125;void PrintListNode(ListNode* pNode)&#123; if(pNode == NULL) &#123; printf("The node is NULL\n"); &#125; else &#123; printf("The key in node is %d.\n", pNode-&gt;m_nValue); &#125;&#125;void PrintList(ListNode* pHead)&#123; printf("PrintList starts.\n"); ListNode* pNode = pHead; while(pNode != NULL) &#123; printf("%d\t", pNode-&gt;m_nValue); pNode = pNode-&gt;m_pNext; &#125; printf("\nPrintList ends.\n");&#125;void DestroyList(ListNode* pHead)&#123; ListNode* pNode = pHead; while(pNode != NULL) &#123; pHead = pHead-&gt;m_pNext; delete pNode; pNode = pHead; &#125;&#125;void AddToTail(ListNode** pHead, int value)&#123; ListNode* pNew = new ListNode(); pNew-&gt;m_nValue = value; pNew-&gt;m_pNext = NULL; if(*pHead == NULL) &#123; *pHead = pNew; &#125; else &#123; ListNode* pNode = *pHead; while(pNode-&gt;m_pNext != NULL) pNode = pNode-&gt;m_pNext; pNode-&gt;m_pNext = pNew; &#125;&#125;void RemoveNode(ListNode** pHead, int value)&#123; if(pHead == NULL || *pHead == NULL) return; ListNode* pToBeDeleted = NULL; if((*pHead)-&gt;m_nValue == value) &#123; pToBeDeleted = *pHead; *pHead = (*pHead)-&gt;m_pNext; &#125; else &#123; ListNode* pNode = *pHead; while(pNode-&gt;m_pNext != NULL &amp;&amp; pNode-&gt;m_pNext-&gt;m_nValue != value) pNode = pNode-&gt;m_pNext; if(pNode-&gt;m_pNext != NULL &amp;&amp; pNode-&gt;m_pNext-&gt;m_nValue == value) &#123; pToBeDeleted = pNode-&gt;m_pNext; pNode-&gt;m_pNext = pNode-&gt;m_pNext-&gt;m_pNext; &#125; &#125; if(pToBeDeleted != NULL) &#123; delete pToBeDeleted; pToBeDeleted = NULL; &#125;&#125;]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[不信...如果...]]></title>
     <url>%2F2016%2F09%2F03%2F%E4%B8%8D%E4%BF%A1-%E5%A6%82%E6%9E%9C%2F</url>
     <content type="text"><![CDATA[我一直认为从古至今很多人的一生都被两个词所左右，一个词是“不信”，一个词是“如果”，有的人的一生平平庸庸无所作为因为他相信了前者忽视了后者，有的人的一生注定改变世界因为他坚信后者，坚信。 乔布斯想“如果”手机能做的再简单一点该有多好，于是有了 iphone 美得令人窒息的设计，莱特兄弟像“如果”人能够在天上飞该有多好，于是有了飞机。]]></content>
@@ -3426,8 +3503,8 @@
         <category>营销</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>营销</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
