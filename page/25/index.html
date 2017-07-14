@@ -317,7 +317,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/10/07/你错失了哪些创业机会？/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/30/结构体使用概述/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -336,7 +336,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/10/07/你错失了哪些创业机会？/" itemprop="url">你错失了哪些创业机会？</a></h2>
+                <a class="post-title-link" href="/2016/08/30/结构体使用概述/" itemprop="url">结构体使用概述</a></h2>
         
 
         <div class="post-meta">
@@ -348,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-07T18:25:46+08:00">
-                2016-10-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-30T19:27:16+08:00">
+                2016-08-30
               </time>
             
 
@@ -371,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -407,9 +407,9 @@
       
         
           
-            <p>创业的过程仿佛就是不断看到机会、错失机会的过程，看到Facebook的时候想，哎呀自己怎么没想到呢。但其实机会有的是，有了Fackbook以后还能有 Twitter，有了 Twitter 以后照样还能诞生照片分享软件<br>Instagram。每次觉得痛失某个创业机会的时候，下一个机会可能正在面前走过。所以不用太过担心，摆正心态，不断累积不断尝试，为下一个机会做好准备。当机会来临的时候，所有的付出都会得到回报，就像我们2010年遇到网页游戏的机会时那样。</p>
-<p>回顾历史，学学古人的智慧 先抛开这个问题，让我们回头看看 。每个时代都有每个时代独特的机会，都出现在自己独特的领域。像赵佗那样建个南越国是根本没有可能的，但是其他领域的机会却多如牛毛。三皇五帝，唐尧虞舜，靠教化百姓、种地打鱼、兴修水利，就能成就天下圣王；商汤周武，靠武力争夺天下；到了春秋战国，普通士人的机会，则在于在思想文化上开创新的学术流派。</p>
-<p>所以不要那么多地去听周围的声音，什么职业是好的，你该成为什么样的人，而要更多地去思考我擅长做什么，我爱做什么。一个成功的公司，它的CEO做的一定是他擅长的事，并且是他爱做的事。</p>
+            <p><strong>结构体与我们面向对象里面的‘类’是类似的，只不过结构体里面没有‘方法’,只有成员，结构体是类的一个过渡。</strong></p>
+<p>结构体是用户根据自己的需求自己定义的复合数据类型，java 里面类也是一个数据类型。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">struct Student</div><div class="line">&#123;</div><div class="line">    int sid;</div><div class="line">    char name[200];</div><div class="line">    int age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main(void)</div><div class="line">&#123;</div><div class="line">    struct Student st = &#123;1000,'jiang',20&#125;;</div><div class="line">    </div><div class="line">    //st.sid = 99;这是第一种方式，不过我们常用第二种方式</div><div class="line">    struct Student * pst;</div><div class="line">    pst = &amp;st;</div><div class="line">    //pst-&gt;sid 等价于 (*pst).sid 等价于 st.sid</div><div class="line">    pst-&gt;sid = 99;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -457,7 +457,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/10/05/一个有效的新产品上线策略应考虑哪些因素？/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/29/如何通过函数修改实参的值？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -476,7 +476,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/10/05/一个有效的新产品上线策略应考虑哪些因素？/" itemprop="url">一个有效的新产品上线策略应考虑哪些因素？</a></h2>
+                <a class="post-title-link" href="/2016/08/29/如何通过函数修改实参的值？/" itemprop="url">如何通过函数修改实参的值？</a></h2>
         
 
         <div class="post-meta">
@@ -488,8 +488,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-05T18:09:58+08:00">
-                2016-10-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T19:27:16+08:00">
+                2016-08-29
               </time>
             
 
@@ -511,8 +511,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -546,13 +546,151 @@
 
       
         
-          <p>和线下的传统商务不一样的是，互联网这条商业街上并没有现成的精准用户。产品的推出只是最基础的工作，通过哪些策略去获取正确的用户，是产品上线后面临的第一个问题。</p>
-<h3 id="1-精准精准再精准。"><a href="#1-精准精准再精准。" class="headerlink" title="1.精准精准再精准。"></a>1.精准精准再精准。</h3><p>首先要分析谁是你的目标用户、核心用户。</p>
-<h3 id="2-低调低调再低调。"><a href="#2-低调低调再低调。" class="headerlink" title="2.低调低调再低调。"></a>2.低调低调再低调。</h3><p>如果你的第一批目标用户是非IT群体，建议可以尽量在IT圈保持低调，不然有这么几点坏处：第一是吸引了非目标群体的用户，这些用户基本是本着调研产品的心态来的，会影响产品的数据，得不到正确的反馈；第二是会在行业内引起很多人的注意，过早让自己的产品暴露在全中国产品经理的雷达下，提前引入很多竞争对手。</p>
-<h3 id="3-简单简单再简单。"><a href="#3-简单简单再简单。" class="headerlink" title="3.简单简单再简单。"></a>3.简单简单再简单。</h3>
+          
+            <p>要修改一个变量的值同时被调函数没有返回值，那你只能通过传递地址的方式来进行修改。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> *q)</span></span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">9</span>;</div><div class="line">    <span class="keyword">int</span> *p = &amp;i;</div><div class="line">    <span class="comment">//%p 表示以16进制的方式输出</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,p);</div><div class="line">    f(p);<span class="comment">//虽然 p==&amp;i,但这里传入p是错的</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,p);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> *q)</span></div><div class="line"></span>&#123;</div><div class="line">    q = (<span class="keyword">int</span> *)<span class="number">0xFFFFFF</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//输出结果：0060FF08 0060FF08</span></div><div class="line"><span class="comment">//两次输出的结果相同，可见把p当做参数传入时没有效果</span></div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> **q)</span></span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">9</span>;</div><div class="line">    <span class="keyword">int</span> *p = &amp;i;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,p);</div><div class="line">    <span class="comment">//p是（int*）类型，那么&amp;p就是（int**）类型，这个叫做指针的指针</span></div><div class="line">    <span class="comment">//我们这么做的目的只有一个，无论这个十个什么类型的变量，想要改写</span></div><div class="line">    <span class="comment">//它的值，你只需要发送它的地址就可以了</span></div><div class="line">    f(&amp;p);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,p);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> **q)</span></div><div class="line"></span>&#123;</div><div class="line">    *q = (<span class="keyword">int</span> *)<span class="number">0xFFFFFF</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//两次输出的结果相同，可见把&amp;p当做参数传入时有效果</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/29/学习编程的秘诀/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/29/学习编程的秘诀/" itemprop="url">学习编程的秘诀</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T17:13:33+08:00">
+                2016-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>学习编程的秘诀自然是学习解决问题的秘诀,那就拿编程中比较让人蛋疼的数据结构开始吧.</p>
+<p>1.判断一个数字是否为素数?<br>2.判断一个数字是否是回文数?<br>3.编程实现求一个十进制数字的二进制形式….<br>4…….</p>
+<p>买到任何一本与数据结构有关的书籍,你总会看到无数的这种题,然后你就想啊想啊,想啊想啊,到最后你就是想不出来,然后你就痛苦,然后看下一道题你还是搞不定…到最后你竟然发现没有一道题你可以搞定的,然后你就开始怀疑你的智商,最后你就开始怀疑自己适不适合搞计算机,最终你竟然愚蠢的相信了自己不适合搞计算机…%&gt;_&lt;%<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/10/05/一个有效的新产品上线策略应考虑哪些因素？/#more" rel="contents">
+            <a class="btn" href="/2016/08/29/学习编程的秘诀/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -602,7 +740,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/10/04/变数/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/29/心智随笔（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -621,7 +759,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/10/04/变数/" itemprop="url">变数</a></h2>
+                <a class="post-title-link" href="/2016/08/29/心智随笔（一）/" itemprop="url">心智随笔</a></h2>
         
 
         <div class="post-meta">
@@ -633,1151 +771,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-04T07:00:24+08:00">
-                2016-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>问题描述：</strong></p>
-<p>输入两个整数 m 和 n，计算需要改变 m 的二进制表示中多少位才可以得到 n。比如 10 的二进制表示为 1010，13 的二进制表示为 1101，需要改变 1010 中的三位才能到的 1101。</p>
-<p><strong>思路：</strong></p>
-<p>我们可以分为两步解决这个问题：第一步求这两个数的异或，第二部统计异或结果中 1 的个数。</p>
-<p><strong>代码：</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Timesof2</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></div><div class="line"></span>&#123;	</div><div class="line">	<span class="keyword">int</span> r = m^n;</div><div class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(r)</div><div class="line">	&#123;</div><div class="line">		++ count;</div><div class="line">		r = (r<span class="number">-1</span>) &amp; r;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> count;</div><div class="line">&#125;	</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> m = <span class="number">10</span>, n = <span class="number">13</span>;</div><div class="line"></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; Timesof2(m,n) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/10/03/新产品上线策略/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/03/新产品上线策略/" itemprop="url">新产品上线策略</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-03T16:35:35+08:00">
-                2016-10-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>一个新产品上线策略主要可以从以下几个方面来考虑：</p>
-<h3 id="1-商业。"><a href="#1-商业。" class="headerlink" title="1. 商业。"></a>1. 商业。</h3><p>一个公司的所有商业行为都是为了商业目标服务的，发布、运营一个新产品也是如此。目标用户和市场情况如何，产品如何到达目标用户和市场；产品和商业模式如何运转并形成竞争力，产品如何与市场上的各利益相关方形成有效的合作关系，产品和配套的服务如何为公司创造可持续的经济利益。只有商业问题想清楚了，后续的具体做法才有坚实的目标和依据。</p>
-<h3 id="2-产品。"><a href="#2-产品。" class="headerlink" title="2.产品。"></a>2.产品。</h3><p>弄清此次新产品上线的目的是什么，是要大张旗鼓的营销，还是悄悄进行的测试。 检验产品前端（直接面对用户的界面）能为目标用户提供怎样的使用体验，以及产品后端（服务器、CDN等）能支撑多少用户并发、稳定、流畅的访问，为产品正式上线做准备。</p>
-<p>在产品中如何布局数据采集点，建立分析模型，为产品上线后的快速迭代、持续改进做准备。</p>
-<p>建立用户反馈收集和处理机制，如何及时应对用户反馈、利用用户反馈进行产品改进做准备。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/10/03/新产品上线策略/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/10/03/2的整数次方/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/03/2的整数次方/" itemprop="url">2的整数次方</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-03T07:00:24+08:00">
-                2016-10-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>问题描述：</strong></p>
-<p>用一条语句判断一个数是不是 2 的整数次方。</p>
-<p><strong>思路：</strong></p>
-<p>一个数如果是 2 的整数次方，那么它的二进制表示中有且只有一位是 1，而其他所有位都是 0。所以，把这个数减去 1 之后再和它自己做与运算，这个整数中唯一的 1 就会变成 0。</p>
-<p><strong>代码实现：</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result = n<span class="number">-1</span> &amp; n ? <span class="string">"false"</span> : <span class="string">"true"</span>;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/10/02/二进制中1的个数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/02/二进制中1的个数/" itemprop="url">二进制中1的个数</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-02T07:00:24+08:00">
-                2016-10-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>问题描述：</strong></p>
-<p>请实现一个函数，输入一个整数，输出该数二进制表示中一的个数。例如把 <code>9</code> 变成二进制是 <code>1001</code> ，有 <code>2</code> 位是 <code>1</code> 。因此如果输入 <code>9</code> 则该函数输出 <code>2</code>。</p>
-<p><strong>思路：</strong></p>
-<p>把一个整数减去1，再和原来的整数做与运算，会把该整数最右边一个1变成0，那么一个整数的二进制表示中有多少个1，就可以进行多少次这样的操作，基于这个思路我们可以写出如下的代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Numberof1</span><span class="params">(<span class="keyword">int</span> n)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(n)</div><div class="line">	&#123;</div><div class="line">		++ count;</div><div class="line">		n = n<span class="number">-1</span> &amp; n;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> count;</div><div class="line">&#125;	</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = <span class="number">9</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; Numberof1(n) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/10/01/二进制中-1-的个数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/01/二进制中-1-的个数/" itemprop="url">二进制中 1 的个数</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-01T23:54:21+08:00">
-                2016-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>问题描述：</strong></p>
-<p>请实现一个函数，输入一个整数，输出该数二进制表示中一的个数。例如把 <code>9</code> 变成二进制是 <code>1001</code> ，有 <code>2</code> 位是 <code>1</code> 。因此如果输入 <code>9</code> 则该函数输出 <code>2</code>。</p>
-<p><strong>思路：</strong></p>
-<p>首先把输入的数字 <code>i</code> 和 <code>1</code> 做与运算，判断 <code>i</code> 的最低位是不是 <code>1</code>。接着把 <code>1</code> 左移一位得到 <code>2</code> ，再和  <code>i</code> 做与运算，<br>就能判断 <code>i</code> 的次低位是不是<code>1</code>… 这样反复的左移，每次都能判断 <code>i</code> 的其中一位是不是 <code>1</code>。<br> */</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span> n)</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> flag = <span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span>(flag) </div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>(n&amp;flag)</div><div class="line">			count++;</div><div class="line"></div><div class="line">		flag = flag &lt;&lt; <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> count;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">	<span class="keyword">int</span> num = <span class="number">9</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; count(num) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/10/01/用最土的办法获得用户/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/01/用最土的办法获得用户/" itemprop="url">用最土的办法获得用户</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-01T16:28:16+08:00">
-                2016-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>一个产品，三分设计、七分运营，冷启动是考验运营的基本功。</p>
-<p>第一步：搞清楚你的目标用户，千万别铺大平台，现在不缺平台，缺的是扎实解决小量用户垂直需求的精品。听人说过一句话：只做1厘米宽，100米深的事情。搞清楚你所服务的那一小撮人是谁。</p>
-<p>如果一旦不幸，你做了个平台，恭喜你，你得想清楚你的运营策略，先抓住某类用户，比如你的平台是C2C，那么你先服务好商家还是用户？这时候听听有经验的人怎么说吧，答案很简单——商家。</p>
-<p>第二步：用最土的办法、低成本获得用户，搞清楚目标用户后，80%的情境就是你知道去哪里找用户了。比如你就为中学生服务，那就去中学生扎堆的地方吧，发传单，设咨询台，找校方做赞助，做宣讲，总之别在家里待着。让那些鼓励你去买百度关键词、去分众买广告、去CCTV砸钱的人一边儿待着吧。</p>
-<p>第三步：让第一批用户用得爽。我们只讨论运营层面，所以假定你的产品设计和体验是OK的，这时候爽不爽全在用户的心理感受，不同产品爽点不同，社交产品得热闹，工具产品得高效，内容产品得有料，如果没有咋办？好吧，你自己每天穿50个马甲不断激励你社交产品的种子用户，工具类产品就来人工智能，至于内容产品，你每天熬到深夜精选内容传上来再用 Photoshop（图片处理软件）美化一下，发布吧。</p>
-<p>第四步：持续第一至三步。运营就好比夏天吹空调，你面对的永远是个老旧空调，热得要死的时候，打开空调没啥感觉，耐心等待，慢慢地温度就降下来了，爽点要在很久以后。而那些一开空调就冷气十足的永远是别人家产品，所以，坚持、等待，你会让你的产品不再冷的。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/10/01/用最土的办法获得用户/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/09/26/《经济学通识》/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/26/《经济学通识》/" itemprop="url">《经济学通识》</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-26T16:18:02+08:00">
-                2016-09-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/经济学/" itemprop="url" rel="index">
-                    <span itemprop="name">经济学</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这本书断断续续读到现在还没有读完，先占个坑。</p>
-<p>《经济学通识》，薛兆丰老师在序里这样说：用什么养的眼光，就有什么样的世界。随着阅读和思考的深化，你将逐渐学会把“愿望”和“结果”分开来衡量；你知道不仅要看“局部”还要看“全部”；你不仅能看见“别人看的见的”，还能看见“别人看不见的”；你会发现“事实是什么”比“别人怎么形容”更重要；你还会觉得不少过去看来理所当然的因果关系其实颠倒过来才对。</p>
-<p>改造“世界”，非经济学所长；但改造“世界观”，却是经济学的强项。阅读本书的后果，就是“世界观”的转变。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/09/25/创业的修炼/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/25/创业的修炼/" itemprop="url">创业的修炼</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-25T16:15:26+08:00">
-                2016-09-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>创业不是突然迸发的，她是有过程的：</p>
-<ul>
-<li>第一：你的心态是不是一直在磨练自己，让自己成为一个有心的人</li>
-<li>第二：你是不是到了第一线，你是不是踏实的为这个结果和目标负责任</li>
-<li>第三：等待机会</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/09/22/如何让潜意识帮助你思考？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/22/如何让潜意识帮助你思考？/" itemprop="url">如何让潜意识帮助你思考？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-22T13:06:43+08:00">
-                2016-09-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-29T12:27:43+08:00">
+                2016-08-29
               </time>
             
 
@@ -1835,16 +830,7 @@
       
         
           
-            <p>潜意识会帮助我们思考，即使我们不主动去想一个问题时，他也会非常“勤奋”的为我们工作。更有意思的是，潜意识不会被我们的条条框框限制住，他就像不羁的游侠，游走在我们思考疆域的角角落落。</p>
-<p>那么，怎样才能让潜意识为我们工作呢？在讨论创意思维的经典之作《创意的生成》一书中，介绍了其中的奥秘：</p>
-<ul>
-<li>1.尽可能地搜集原始资料</li>
-<li>2.重复“咀嚼”原始资料，构思初始创意</li>
-<li>3.终止有意识的思考，启动潜意识思考</li>
-<li>4.随时准备迎接“灵光乍现”的时刻降临</li>
-<li>5.加以改造、完善，使之切实可用</li>
-</ul>
-<p>总之，你要记住，如果你想让潜意识为你工作，就首先必须向潜意识“投喂”足够多的“养料”，有了这些“养料”之后，潜意识用它们不断进行重新组合的试验，直至最好的想法出现。</p>
+            <p>我学会了查理. 芒格所说的用不同的专业的思维去思考一个问题。我现在能用的就是不同的思维：经济学，数学（概率论，从《万万没想到》里面学到的），心理学，工程学（我的专业），程序，设计。 </p>
 
           
         
@@ -1892,7 +878,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/09/20/《产业阴谋链：笔记六-结语》/">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/28/如何编写出更有价值的程序？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江南北">
@@ -1911,7 +897,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/09/20/《产业阴谋链：笔记六-结语》/" itemprop="url">产业阴谋链结语</a></h2>
+                <a class="post-title-link" href="/2016/08/28/如何编写出更有价值的程序？/" itemprop="url">如何编写出更有价值的程序？</a></h2>
         
 
         <div class="post-meta">
@@ -1923,8 +909,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-20T12:47:51+08:00">
-                2016-09-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-28T23:19:19+08:00">
+                2016-08-28
               </time>
             
 
@@ -1946,8 +932,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/经济学/" itemprop="url" rel="index">
-                    <span itemprop="name">经济学</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -1982,9 +968,1042 @@
       
         
           
-            <p>《产业阴谋链：笔记六 》</p>
-<p>由于我们已经进入了前所未有的产业链战争的新时代，因此政府推动的产业政策就格外的重要。</p>
-<p>过去中国的企业犯了很多错误，例如市场换技术，结果市场丢了，技术也没换来。这两年很多地方政府呼吁企业搞产业升级和品牌战略，这又是一个误区。所谓的产业升级，不应该仍然在6+1的1上面搞升级，而应该从1升级到6的环节。因此我们不能倒果为因。政策的转变必然牵扯到思维转变的先行，只有政府，企业，都发挥思维的创新，进一步理解中国产业链没有来得及打造的闭环，理解中国企业受阻的瓶颈（这个瓶子是倒着放的）即如何从1过渡到6，进而打造属于中国特色企业的产业链，才能真正地走出低谷。</p>
+            <p>如何写出更有保存价值和使用价值的程序呢？其实很简单，你只需要在你的程序中写上这五点即可：</p>
+<p>1.写上编写此程序的时间。</p>
+<p>2.写上编写此程序的功能。</p>
+<p>3.写上此程序输出的结果。</p>
+<p>4.写上编写此程序的目的。</p>
+<p>5.写上自己的总结，写上你从中学到的东西。</p>
+<p><strong>如果你通过一个程序明白了很多道理，那你就应该这样去写程序，如果你这样做了，那么在任何时候你打开任何一个程序，一看就知道你为什么编写这个程序，当时的你是怎么想的，你从这个程序中学到了什么。</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/28/数组和指针/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/28/数组和指针/" itemprop="url">数组和指针</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-28T19:27:16+08:00">
+                2016-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a[<span class="number">3</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</div><div class="line">    </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,a);   <span class="comment">//0060FEF4</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,a+<span class="number">1</span>); <span class="comment">//0060FEF8  </span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%p\n"</span>,a+<span class="number">2</span>); <span class="comment">//0060FEFC</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>由以上程序我们知道，数组的地址是连续的，而且数组名是数组的首地址。</p>
+<hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">include &lt;stdio.h&gt;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a[<span class="number">3</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</div><div class="line">    </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,*a+<span class="number">2</span>);<span class="comment">//*a+2 等价于 a[0]+2</span></div><div class="line">    </div><div class="line">    <span class="comment">//结果：3</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> *p,<span class="keyword">int</span> len)</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="comment">//这样是可以修改 a[0] 的，此时p[0]==*(p+0)==*(a+0)</span></div><div class="line">    p[<span class="number">0</span>] = <span class="number">100</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></div><div class="line"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a[<span class="number">3</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</div><div class="line">    show(a,<span class="number">3</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a[<span class="number">0</span>]);<span class="comment">//100</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/28/数组和指针/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/27/创业从做产品开始/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/27/创业从做产品开始/" itemprop="url">创业从做产品开始</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-27T23:52:55+08:00">
+                2016-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/商业/" itemprop="url" rel="index">
+                    <span itemprop="name">商业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我一直认为，如果你要去创业，那么首先也是最重要的就是你得有自己的产品。就像你在经营自己的人生一样，其实你自己就是一个产品，你需要对她进行“包装”、“宣传”、“营销”、“上市”……这个产品可以不完美，但是你一定要有。</p>
+<p>今天我想从产品的角度来谈一下创业，在我看来，现在的创业产品可以分为两大类，第一类：互联网产品，第二类；传统行业产品。</p>
+<p>你可以用做互联网产品的思维来做传统产品，你也可以用借鉴传统行业产品的经验来做你的互联网产品，今天我们不谈做产品的思维，我们就谈一下做这两种不同的产品，我们需要抓住的那个最基本的点是什么。</p>
+<p>做互联网产品一定是“速度为王”，所以你要想尽一切办法让你的产品快速上市，极速迭代。在这个过程中不断地去有选择的接受用户的反馈，不断地去试错，一点一点地去完善你的产品。在这个过程中，你所服务的用户中一定会有那么一小撮人一直追随着你，如果你在用心的做着这个为他们服务的产品，他们一定会陪伴着你把它做到极致，做到完美。在这个过程中，你一要稳重求快，稳中求胜，抓住这一个点把它做到极致，万万不可自我膨胀，这个产品还没有做好就想去做更多的产品，很多的创业者死就死在这里，死就死在自我膨胀。</p>
+<p>做传统行业产品，你所要抓住的基本点是：产品不做到完美绝不上市。一个不完美的产品虽然决定不了你现在的生死，但是它注定了你以后的生死。你需要对产品进行长期的内测，包括消费者的满意的、物流、供应链、营销、竞争力、能不能大规模生产、采购….最关键的是消费者接触的第一次，如果你不能快速让消费者产生共鸣，这款产品很难再有第二次了。所以你一定要把最好的一个产品拿出来，记住是最好的一个产品，一招制敌，第一次就要将其提升到一个高度，否则你就没有第二次机会了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/27/预备知识：指针/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/27/预备知识：指针/" itemprop="url">预备知识：指针</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-27T19:27:16+08:00">
+                2016-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="指针的重要性"><a href="#指针的重要性" class="headerlink" title="指针的重要性"></a>指针的重要性</h3><pre><code>学好了指针你才能在程序越写越大的时候明白程序之间的来回调用
+
+指针是C语言的灵魂
+
+如果你不明白C语言的指针,你就不会明白面向对象语言里面的引用
+</code></pre><h3 id="指针的概念"><a href="#指针的概念" class="headerlink" title="指针的概念"></a>指针的概念</h3><pre><code>地址就是指针 指针就是地址
+指针变量是存放内存单元地址的变量
+指针的本质是一个操作受限的非负整数
+</code></pre><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">include &lt;stdio.h&gt;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line"><span class="comment">//p 是变量名，‘int *’表示p只能存放整形地址的变量</span></div><div class="line">    <span class="keyword">int</span> *p;</div><div class="line">    <span class="keyword">int</span> i = <span class="number">10</span>;</div><div class="line">    <span class="keyword">int</span> j;</div><div class="line">    </div><div class="line">    p = &amp;i;<span class="comment">// *p = i</span></div><div class="line">    j = *p;<span class="comment">// j = i</span></div><div class="line">    </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d,j = %d,*p = %d"</span>,i,j,*p);<span class="comment">//10 10 10</span></div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="/img/2017-06-14_203443.png" alt="vivg"></p>
+<p>由上图可知变量不一定是连续分配的。<code>p</code> 保存了 <code>i</code> 的地址，所以我们说 <code>p</code> 指向了 <code>i</code>，但 <code>p</code> 不是 <code>i</code> ，<code>i</code> 不是 <code>p</code>，修改这两个值中的任何一个不会影响另一个。如果 <code>p</code> 指向 <code>i</code> ，<code>*p</code> 就代表了 <code>i</code>，不能说它是 <code>i</code> 的值，它就是 <code>i</code> 本身， <code>*p</code> 和 <code>i</code> 就是同一个东西。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/27/预备知识：指针/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/26/递归思想解读/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/26/递归思想解读/" itemprop="url">递归思想解读</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-26T23:32:59+08:00">
+                2016-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>递归：这两个字面的意思就非常形象化，<code>递</code> 就是传递，你把一个东西一层一层的传递下去；<code>归</code> 就是从最后一层，比如说你去故宫走过了一个门又一个门，然后等你走到头之后，你就要返回，所以说 <code>归</code> 就是 <code>回</code>，回到之前的位置。</p>
+<p><strong>所以递归要遵循两个原则：</strong></p>
+<ol>
+<li>函数自身调用自身，执行 <code>递</code> 的动作</li>
+<li>最后一次判断一个终止条件，执行 <code>归</code> 的动作<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//先进入函数n，然后进入函数n-1...知道最后进入函数1</span></div><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params">n</span>)--&gt;<span class="title">function</span>(<span class="params">n<span class="number">-1</span></span>)....<span class="title">function</span>(<span class="params"><span class="number">1</span></span>)</div><div class="line"></div><div class="line">//然后又从函数1，一直返回到函数<span class="title">n</span></div><div class="line"><span class="title">function</span>(<span class="params"><span class="number">1</span></span>)...<span class="title">function</span>(<span class="params">n<span class="number">-1</span></span>)--&gt;<span class="title">function</span>(<span class="params">n</span>)</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>举一个栗子：（用JS求阶乘）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">console</span>.trace();<span class="comment">//跟踪递归调用的过程</span></div><div class="line">		</div><div class="line">		<span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//终止条件--&gt;“归”</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> n * factorial(n<span class="number">-1</span>);<span class="comment">//自身调用自身--&gt;“递”</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">alert(factorial(<span class="number">5</span>));<span class="comment">//120</span></div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/26/递归思想解读/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/26/狭义算法和广义算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/26/狭义算法和广义算法/" itemprop="url">狭义算法和广义算法</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-26T19:57:20+08:00">
+                2016-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>狭义的算法是与数据的存储方式密切相关的。</p>
+<p>广义的算法与数据的存储方式无关。广义算法为什么能够做到与存储方式无关呢？因为他利用某种技术达到了这种假象，也就是说不管数据是怎么存的，我用同样的算法都可以搞定，这个技术就是泛型。</p>
+<p>泛型就是一种假象，只不过是牛人从内部都已经给你实现好了，你就不用考虑这些问题了，你想怎么用都可以，好像感觉就是一样的，实际上是不一样的。</p>
+<p>泛型利用某种技术达到的效果就是：不同的存储方式，执行的操作是一样的。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/26/数据结构概述/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/26/数据结构概述/" itemprop="url">数据结构概述</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-26T19:18:09+08:00">
+                2016-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="什么是数据结构？"><a href="#什么是数据结构？" class="headerlink" title="什么是数据结构？"></a>什么是数据结构？</h3><p>狭义的讲:数据结构是专门研究数据存储的问题。数据的存储包含两个方面:个体的存储+个体关系的存储。</p>
+<p>广义的讲:数据结构既包含数据的存储也包含数据的操作，算法是对存储数据的操作。</p>
+<p>数据结构里面，我们所谓的栈就是堆栈，数据结构里面是没有堆这么一个概念的，<strong>堆属于分配内存的一种方式，不属于存储数据的一种结构。</strong></p>
+<p>我们如何把现实中大量而复杂的问题以特定的数据类型(<strong>特定的数据类型指个体如何存储</strong>)和特定的存储结构(<strong>特定的存储结构指的是个体和个体的关系</strong>)保存到主存储器中(内存中)，以及在此基础上为实现某个功能(比如查找某个元，删除某个元素，对所有的元素进行排序)，而执行的相应操作，这个相应的操作叫做算法。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">数据结构 = 个体 + 个体的关系</div><div class="line"></div><div class="line">算法 = 对存储数据的操作</div><div class="line"></div><div class="line">广义算法:从广义来讲算法和存储是没有关系的</div><div class="line"></div><div class="line">狭义算法:从狭义上来讲存储方式不一样所执行的算法也不一样。你只有知道狭义的算法是什么，你才会理解泛型，泛型就是广义的算法。</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="数据结构的特点"><a href="#数据结构的特点" class="headerlink" title="数据结构的特点"></a>数据结构的特点</h3><p>你在写代码的时候总是会遇到“栈”和“堆”，所谓<strong>栈内存</strong>和<strong>堆内存</strong>是指分配内存的算法不一样，如果是以压栈，出栈的方式分配的内存，这个就叫栈内存。而如果你是一种堆排序的方式分配的内存，这个就叫堆内存。</p>
+<p><strong>说到函数调用，你怎么去调用函数？你要想知道如何去调用一个函数里面真正运行的原理，你必须要去学栈，因为他是靠压栈和出栈来实现的。</strong></p>
+<p>同时学习操作系统你一定需要知道队列的知识。</p>
+<p>如果你要学编译原理你会学到里面的语法树，它实际上就是我们数据结构里面的树。</p>
+<p>数据库就是数据结构的简化版，只不过他考虑的问题更加简单了：字段-&gt;反映的是一个事物的属性；记录-&gt;表示的是一个整体的事物；表-&gt;同一类事物的集合，事物与事物之间的关系是通过外界来反映的。</p>
+<pre><code>程序:数据的存储+数据的操作+可以被计算机执行的语言
+</code></pre>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/26/数据结构概述/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/08/25/创业随笔（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/25/创业随笔（一）/" itemprop="url">创业随笔</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-25T23:44:54+08:00">
+                2016-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/商业/" itemprop="url" rel="index">
+                    <span itemprop="name">商业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-节奏感"><a href="#1-节奏感" class="headerlink" title="1.节奏感"></a>1.节奏感</h3><p>真正要创业做的好，其实是要有很强的节奏感，以为着你对整个市场的把握，你对整个资本的把握，以及你对自己企业所处状态的一种判断。比如说：你在什么时候切入到这样一个市场，你在什么时候融资，你融资多大的规模，你对未来市场的预判，包括你未来如何去花钱，乃至于最后你在什么时候挣钱，如何赚多少钱。</p>
+<p>如果你有一个很好的节奏感，在这个过程中你会发现你每一个阶段都有一个明确的目标，每一个阶段都把握的非常清楚，你知道了什么东西你要去做，什么东西你不能做，有所为有所不为。 </p>
+<h3 id="2-顺势而为-amp-另辟蹊径"><a href="#2-顺势而为-amp-另辟蹊径" class="headerlink" title="2.顺势而为&amp;另辟蹊径"></a>2.顺势而为&amp;另辟蹊径</h3><p>整个互联网的商业模式实际上核心就是三个：最顶层的在上游的是流量入口，中间的是内容运营，底层的是商业经营。</p>
+<p>如果你处在别人的生态体系里，比如说BAT，你就要学会顺势而为，借用他们的生态，借用他们打造的势能，然后思考如何成就自己。但是如果你不想遵循这个生态法则，那你就必须自己要去找 到一块新的土地，一个新的领域，或者说是另辟蹊径，比如说你到海外去，到BAT鞭长莫及的地方去。</p>
+<h3 id="3-产品没颜值，必死"><a href="#3-产品没颜值，必死" class="headerlink" title="3.产品没颜值，必死"></a>3.产品没颜值，必死</h3><p>为什么中国的产品普遍没有颜值？第一点就是山寨，他只想着去解决温饱问题，所以他只能沿着山寨的道路走。第二点就是：老板喜欢画龙点睛，觉得自己是见识最多的，经验最足的，这个画龙点睛其实是狗尾续貂。第三点：就是即便你请了国外的大牌设计师因为不一定能够做出很好的产品。</p>
+<p>最后我想说：只要你花足够多的时间和精力一定可以做出一款非常漂亮的产品。</p>
 
           
         
@@ -2027,7 +2046,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/24/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/26/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/24/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/26/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2072,7 +2091,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">329</span>
+                <span class="site-state-item-count">302</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2094,7 +2113,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

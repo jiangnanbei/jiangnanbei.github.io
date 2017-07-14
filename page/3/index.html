@@ -317,153 +317,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/06/内容分发网络CDN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/06/内容分发网络CDN/" itemprop="url">内容分发网络CDN</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T13:35:31+08:00">
-                2017-07-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="为什么要使用-CDN？"><a href="#为什么要使用-CDN？" class="headerlink" title="为什么要使用 CDN？"></a>为什么要使用 CDN？</h4><p>一定要尽可能想办法减少网页文档的大小，并让浏览器缓存文件。除此之外，当然还要让用户尽可能快的加载到页面。</p>
-<p><strong>对于库来说，如果有很多站点要使用同一个库，那么最好是把这个库托管到一个公共服务器上，以便所有站点共享和访问。这样，当一个用户从一个站点跳到另一个站点时，他们就不用再重复下载相同的文件了。</strong></p>
-<hr>
-<h4 id="什么是-CDN？"><a href="#什么是-CDN？" class="headerlink" title="什么是 CDN？"></a>什么是 CDN？</h4><p>内容分发网络（CDN，<code>Content Delevery Network</code>）可以解决分布共享库的问题。CDN 就是一个由服务器构成的网络，这个网络的用途就是分散存储一些公共的内容。CDN 中的每台服务器都包含库的一份复本，这些服务器分布在世界上不同的国家和地区，以便达到利用带宽和加快下载的目的。</p>
-<p>浏览器访问库的时候使用一个公共的 URL ，而 CDN 的底层则通过地理位置最近、速度最快的服务器提相应的文件，从而解决了整个系统中的瓶颈问题。</p>
-<hr>
-<h4 id="如何使用-CDN？"><a href="#如何使用-CDN？" class="headerlink" title="如何使用 CDN？"></a>如何使用 CDN？</h4><p>使用 CDN 中托管的库与其他 JS 文件一样。例如，<code>Google CDN</code> 中 JQuery 库的 URL 是：<code>https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js</code>，所以你就可以在文档中添加以下的 <code>&lt;script&gt;</code> 标签：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>如果你觉得仅仅依赖 Google 或其他 CDN 不保险，可以在提供一个后备 <script> 标签，以便在 CDN 不可用时从本地服务器下载相应文件。方法简单，无法就是检测一下相应对象是否存在，如果不存在就添加加载本地文件的 <script> 标签：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script&gt;!<span class="built_in">window</span>.jQuery &amp;&amp; <span class="built_in">document</span>.write(<span class="built_in">unescape</span>(<span class="string">'%3Cscript src="scripts/jquery.min.js"%3E%3C/script%3E'</span>))&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
-<p>这个方法使用 <code>document.write</code> 在 jQuery 库没有创建全局 <code>window.jQuery</code> 对象的情况下添加一个 <code>&lt;/script&gt;</code>标签。</p>
-<p>有了后备代码后，即便 CDN 的服务器出了问题，也不会连累你的网站了。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/06/常用-JS-库汇总/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1475,310 +1328,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/05/一喂天下白/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/05/一喂天下白/" itemprop="url">一喂天下白</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T23:28:37+08:00">
-                2017-07-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
-                    <span itemprop="name">貌似有知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《刘墉.世说新语》</p>
-<p>中国话的”喂”，那么简短，却能给人打电话的第一印象，所以说的时候更要小心。 </p>
-<p>首先你要知道，声音很能够反映身体、反映情绪。举个例子，你可以从对方接电话慵懒的声音，猜他八成在睡觉。你也可以由那好像大舌头的声音，猜他可能正吃东西。你还能由他有气无力的声音，猜他可能有病或在情绪的低潮。你更能由他喘气或是气急的声音，猜他是跑过来接电话，或是正在走路、正在运动。</p>
-<p><strong>问题是，有些人虽然没有什么不对劲，却可能因为不会说喂，一接电话，就给人错误的联想。</strong> </p>
-<p>举个例子，有些人深呼吸一口气，却只用最前面的一点点气，说”喂”，这个喂通常会感觉比较硬，比较不亲切。</p>
-<p>为什么？因为当你只用一口气的前面说”喂”，表示你要用剩下来的气继续说话。</p>
-<p>譬如你是很大牌的长官，打电话给属下：”喂！小张！你到我办公室来一下。”那是十足的命令句。</p>
-<p>如果你把那句话分成两口气来说：”喂！””小张，你到我办公室来一下。”感觉却柔和得多。 </p>
-<p>反过来，如果你用一口气的最后面一点力量说”喂”，因为说的时候已经快没有气了，那气一定会虚。不信你试试看，先吸一口气，再吐气，前面不出声，直到要断气了，才”喂”。是不是显得病恹恹、懒洋洋的？</p>
-<p>虽然用”气头”或”气尾”说”喂”，有那么不好，但是有人可能是学长官或是耍大牌惯了，就算跟老婆孩子说话，也用气头，一副大老爷的样子。</p>
-<p>又有人好像总不呼吸完全，或有哮喘的问题，老是用气尾。</p>
-<p>还有一种人，虽然不在气头”耍大牌”，也不在气尾”作死相”，却用中间很短的一点点气说”喂！”<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/一喂天下白/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/05/你怎么知道人家早下班了？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/05/你怎么知道人家早下班了？/" itemprop="url">你怎么知道人家早下班了？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T23:22:26+08:00">
-                2017-07-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
-                    <span itemprop="name">貌似有知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《刘墉.世说新语》</p>
-<p> 有一阵子我在台北的办公室非常忙，经常加班到晚上七八点钟。有一天晚上将近八点了，我发现有一家新成立的公司，似乎可以合作，就叫助理拨电话过去。</p>
-<p> 我助理一笑，说：”刘老师，你知道现在几点了吗？人家早下班了。”</p>
-<p> 我问她：”你怎么知道人家早下班了？”</p>
-<p> 助理说：”当然，现在都八点了，只有我们还在加班。”</p>
-<p> 我又问她：”既然我们能加班，为什么别人不能加班？”然后，坚持叫她拨电话。 电话居然通了，我喜出望外，先幽默地说：”真不简单，你们还上班哪！”对方也很幽默地说：”是啊！你如果不认为我还上班，怎么可能打电话过来呢？你也在上班吗？” 结果我们发现双方都是很拼命、很讲求效率的。</p>
-<p> 接着谈合作，居然两三下就谈成了。</p>
-<p> <strong>世界上能够异军突起，有了不得成就的，往往是那些”明知不可而为之”的人。所以西方有句谚语–”最大的冒险，是不敢冒险。”许多人失败，不败在他没能力、没经验，常败在他不敢尝试。甚至像前面我提的助理，在我要尝试之前，先很武断地说：”人家早下班了！”</strong></p>
-<p> 相信大家都读过《 论语 》里孔子的”毋意、毋必、毋固、毋我”。意思是不要臆测、不要武断、不要固执、不要什么事都以自我为中心。</p>
-<p>当你该打电话的时候，你不打，还找借口，说人家一定下班了，就是臆测和武断。当你发现自己先前的看法错了，还坚持不改变，就是自以为是的固执。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/你怎么知道人家早下班了？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/05/如何书写出语义化的HTML？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2058,11 +1607,445 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/05/Modernizr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/Modernizr/" itemprop="url">Modernizr</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T17:50:47+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Modernizr 是一个开源的 JS 库，利用它的福特性检测功能，可以对 H5 文档进行更好的控制。</p>
+<p>Modernizr 不会给你添加浏览器不支持的特性，比如，在 IE6 中就没有办法是用本地存储。Modernizr 能做的是为你提供一些不同的 CSS 类名以及特性检测属性。</p>
+<p>根据浏览器支持的特性不同，这个时候就会生成不同的类名，可以在 CSS 中定义相应的增强和退化版本，改善用户体验：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//为支持多背景浏览器编写的样式</span></div><div class="line">.multiplebgs article p &#123;&#125;</div><div class="line"></div><div class="line">.no-multiplebgs article p &#123;&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>类似的，Modernizr 也提供了 JS 特性检测对象，可以在 DOM 脚本中直接使用：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if (!Modernizr.inputtypes.date) &#123;</div><div class="line">    //不支持本地数据，使用自定义的数据选择脚本</div><div class="line">    createDatepicker(document.getElementById(''birthday'));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>Modernizr 还可以帮一些老旧的浏览器处理 <code>&lt;section&gt;</code> <code>&lt;article&gt;</code> 这样的新元素。为使用这些新元素，你要做的就是为他们指定一些基本的样式，以便浏览器可以把它们当做块元素来呈现。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">article,aside,footer,header,hgroup,nav,section &#123;<span class="attr">display</span>:block;&#125;</div></pre></td></tr></table></figure></p>
+<p>唯一的特例就是 IE，要在 IE 中添加未知元素，必须使用 JS 代码来创建元素：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.createElement(<span class="string">'article'</span>);</div></pre></td></tr></table></figure></p>
+<p>Modernizr 可以帮我们来做这件事，但是，这并不意味着你就可以放心的使用 <code>&lt;video&gt;</code> 元素来放心的嵌入视频了。Modernizr 不会为我们添加底层的 JS 及 DOM API，或者与这些元素相关的其他特性。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/05/CSS-DOM-技术/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/CSS-DOM-技术/" itemprop="url">CSS DOM 技术</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T16:42:03+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="style-属性"><a href="#style-属性" class="headerlink" title="style 属性"></a>style 属性</h3><p>在外部样式表里声明的样式不会进入 <code>style</code> 对象，在文档的 <code>&lt;head&gt;</code> 部分里声明的样式也是如此。</p>
+<p>DOM style 属性提取不到如此设置的样式。</p>
+<p><code>style</code> 指向只包含在 HTML 代码里用 <code>style</code> 属性声明的样式。但这几乎没有使用价值，因为样式应该与标记分离开来。</p>
+<p>现在，你或许认为用DOM 去处理 CSS 样式毫无意义，但这里还有另外一种情况可以让 DOM style 对象能够正确地反射出我们设置的样式。<strong>你用 DOM 设置的样式，就可以用 DOM 再把他们检索出来。</strong></p>
+<h3 id="使用-DOM-设置样式"><a href="#使用-DOM-设置样式" class="headerlink" title="使用 DOM 设置样式"></a>使用 DOM 设置样式</h3><p>通过 JS 设置样式并不难，不过，你或许应该先问问自己，为什么要这么做？</p>
+<h4 id="何时该用-DOM-设置样式？"><a href="#何时该用-DOM-设置样式？" class="headerlink" title="何时该用 DOM 设置样式？"></a>何时该用 DOM 设置样式？</h4><p>在使用 CSS 不便的场合，还是可以利用 DOM 对文档的样式做一些小小的增强。</p>
+<h4 id="根据元素在节点树里的位置来设置样式"><a href="#根据元素在节点树里的位置来设置样式" class="headerlink" title="根据元素在节点树里的位置来设置样式"></a>根据元素在节点树里的位置来设置样式</h4><p>比如说我们可以给每个 <code>h1</code> 元素后紧跟的一个元素设置样式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hold the front page<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This first paragraph leads you in.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Now you get the nitty-gritty of the story.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>The most important information is delivered first.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Extra! Extra!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Further developments are unfolding.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>You can read all about it here.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/05/CSS-DOM-技术/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/05/我们为什么要读传记？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/我们为什么要读传记？/" itemprop="url">我们为什么要读传记？</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T15:21:38+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心智/" itemprop="url" rel="index">
+                    <span itemprop="name">心智</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们为什么要读人物传记？我们之所以读人物传记不是为了给自己打鸡血，不是为了“以史为鉴”，因为即便你看过别人犯过再多的错，吃过再多的亏，到头来你该犯的错还是得犯，该吃的亏还是得吃。</p>
+<p>我们之所以读人物传记不过是穿越了时空和当时的那个人交了一个朋友，看他是怎样将自己和那个时代结合度过了自己的一生，然后来返观我们自己该怎样和这个时代结合来度过自己的一生，仅此而已。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2107,7 +2090,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">329</span>
+                <span class="site-state-item-count">302</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2129,7 +2112,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
