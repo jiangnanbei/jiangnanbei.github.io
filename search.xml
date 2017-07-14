@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[offsetTop clientTop scrollTop 各属性介绍]]></title>
+    <url>%2F2017%2F07%2F14%2FoffsetTop-clientTop-scrollTop-%E5%90%84%E5%B1%9E%E6%80%A7%E4%BB%8B%E7%BB%8D%2F</url>
+    <content type="text"><![CDATA[HTML 精确定位scrollHeight: 获取对象的滚动高度scrollLeft:设置或获取位于对象左边界和窗口中目前可见内容的最左端之间的距离scrollTop:设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离scrollWidth:获取对象的滚动宽度offsetHeight:获取对象相对于版面或由父坐标 offsetParent 属性指定的父坐标的高度 offsetLeft:获取对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置offsetTop:获取对象相对于版面或由 offsetTop 属性指定的父坐标的计算顶端位置event.clientX 相对文档的水平座标event.clientY 相对文档的垂直座标event.offsetX 相对容器的水平坐标event.offsetY 相对容器的垂直坐标document.documentElement.scrollTop 垂直方向滚动的值event.clientX+document.documentElement.scrollTop 相对文档的水平座标+垂直方向滚动的量 JS中建造迁移转变代码的常用属性页可见区域宽： document.body.clientWidth;网页可见区域高： document.body.clientHeight;网页可见区域宽： document.body.offsetWidth （包含边线的宽）;网页可见区域高： document.body.offsetHeight （包含边线的宽）;网页正文全文宽： document.body.scrollWidth;网页正文全文高： document.body.scrollHeight;网页被卷去的高： document.body.scrollTop;网页被卷去的左： document.body.scrollLeft;网页正文项目组上：window.screenTop;网页正文项目组左：window.screenLeft;屏幕辨别率的高： window.screen.height;屏幕辨别率的宽： window.screen.width;屏幕可用工作区高度：window.screen.availHeight; 常见属性的简单介绍offsetLeft假设 obj 为某个 HTML 控件。 obj.offsetTop 指 obj 间隔上方或上层控件的地位，整型，单位像素。obj.offsetLeft 指 obj 间隔左方或上层控件的地位，整型，单位像素。obj.offsetWidth 指 obj 控件自身的宽度，整型，单位像素。obj.offsetHeight 指 obj 控件自身的高度，整型，单位像素。 我们对前面提到的“上方或上层”与“左方或上层”控件作个申明。例如：1234&lt;div id="tool"&gt; &lt;input type="button" value="提交"&gt; &lt;input type="button" value="重置"&gt;&lt;/div&gt; “提交”按钮的 offsetTop 指“提交”按钮距“tool”层上边框的间隔，因为距其上边比来的是 “tool” 层的上边框。 “重置”按钮的 offsetTop 指“重置”按钮距“tool”层上边框的间隔，因为距其上边比来的是 “tool” 层的上边框。 “提交”按钮的 offsetLeft 指“提交”按钮距“tool”层左边框的间隔，因为距其左边比来的是“tool” 层的左边框。 “重置”按钮的 offsetLeft 指“重置”按钮距“提交”按钮右边框的间隔，因为距其左边比来的是“提交”按钮的右边框。以上属性在 FireFox 中也有效。 另 外：我们这里所说的是指 HTML 控件的属性值，并不是 document.body，document.body 的值在不同浏览器中有不同申明（实际上大多半景象是因为对 document.body 申明不合造成的，并不是因为对 offset 申明不合造成的），点击这里查看不合点。 题目：offsetTop 与 style.top 的差别我们知道 offsetTop 可以获得 HTML 元素间隔上方或外层元素的地位，style.top 也是可以的，二者的差别是： 1.offsetTop 返回的是数字，而 style.top 返回的是字符串，除了数字外还带有单位：px。 2.offsetTop 只读，而 style.top 可读写。 3.若是没有给 HTML 元素指定过 top 样式，则 style.top 返回的是空字符串。 offsetLeft 与 style.left、offsetWidth 与 style.width、offsetHeight 与 style.height 也是同样事理。 clientHeightclientHeight是内容可视区域的高度，也就是说页面浏览器中可以看到内容的这个区域的高度，一般是最后一个对象条以下到状况栏以上的这个区域，与页面内容无关。 简单地说 clientHeight 就是透过浏览器看内容的这个区域高度。 scrollLeftscrollTop 是“卷”起来的高度值，示例：12345678910&lt;div style="width:100px;height:100px;background-color:＃FF0000;overflow:hidden;" id="p"&gt;&lt;div style="width:50px;height:300px;background-color:＃0000FF;" id="t"&gt;若是为 p 设置了 scrollTop，这些内容可能不会完全显示。&lt;/div&gt;&lt;/div&gt;&lt;script type="text/javascript"&gt;var p = document.getElementById（"p"）;p.scrollTop = 10;&lt;/script&gt; 因为为外层元素 p 设置了 scrollTop，所以内层元素会向上卷。scrollLeft 也是类似事理。我们已经知道 offsetHeight 是自身元素的宽度。而 scrollHeight 是内部元素的绝对宽度，包含内部元素的隐蔽的项目组。 上述中 p 的 scrollHeight 为 300，而 p 的 offsetHeight 为 100。scrollWidth 也是类似事理。 clientLeft返回对象的 offsetLeft 属性值和到当前窗口左边的真实值之间的间隔，可以懂得为边框的长度。 一向以来对offsetLeft，offsetTop，scrollLeft，scrollTop这几个办法很含混，花了一天的时候好好的进修了一下．得出了以下的成果： offsetTop当前对象到其上级层顶部的间隔,不过不可对其进行赋值,设置对象到页面顶部的间隔请用 style.top 属性. offsetLeft当前对象到其上级层左边的间隔，不过不可对其进行赋值，设置对象到页面左部的间隔请用 style.left 属性 offsetWidth当前对象的宽度，与 style.width 属性的差别在于：如对象的宽度设定值为百分比宽度，则无论页面变大还是变小，style.width都返回此百分比，而offsetWidth则返回在不合页面中对象的宽度值而不是百分比值 offsetHeight与 style.height 属性的差别在于:如对象的宽度设定值为百分比高度，则无论页面变大还是变小，style.height 都返回此百分比，而offsetHeight则返回在不合页面中对象的高度值而不是百分比值 offsetParent当前对象的上级层对象。 重视，若是对象是包含在一个DIV中时，此DIV不会被当做是此对象的上级层，（即对象的上级层会跳过DIV对象）上级层是 Table 时则不会有题目。 哄骗这个属性，可以获得当前对象在不合大小的页面中的绝对地位。获得绝对地位脚本代码:123456789101112function GetPosition（obj）&#123; var left = 0; var top = 0; while（obj != document.body） &#123; left = obj.offsetLeft; top = obj.offsetTop; obj = obj.offsetParent; &#125; alert（"Left Is : " + left + "\r\n" + "Top Is : " + top）;&#125; scrollLeft对象的最左边到对象在当前窗口显示的局限内的左边的间隔． 便是在呈现了横向迁移转变条的景象下，迁移转变条拉动的间隔． scrollTop对象的最顶部到对象在当前窗口显示的局限内的顶边的间隔． 便是在呈现了纵向迁移转变条的景象下，迁移转变条拉动的间隔．]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[前端面试指南JS代码篇]]></title>
     <url>%2F2017%2F07%2F14%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97JS%E4%BB%A3%E7%A0%81%E7%AF%87%2F</url>
     <content type="text"><![CDATA[图片懒加载在实际的项目开发中，我们通常会遇见这样的场景：一个页面有很多图片，而首屏出现的图片大概就一两张，那么我们还要一次性把所有图片都加载出来吗？显然这是愚蠢的，不仅影响页面渲染速度，还浪费带宽。这也就是们通常所说的首屏加载，技术上现实其中要用的技术就是图片懒加载–到可视区域再加载。 思路：将页面里所有 img 属性 src 属性用 data-xx 代替，当页面滚动直至此图片出现在可视区域时，用 js 取到该图片的 data-xx 的值赋给src。 原生JS实现源代码 &amp;&amp; 效果展示]]></content>
@@ -2700,18 +2711,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[六道JS面试题]]></title>
-    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>面试指南</tag>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[递归实现斐波那契数列]]></title>
     <url>%2F2016%2F11%2F13%2F%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%2F</url>
     <content type="text"><![CDATA[用递归实现斐波那契数列：123456789101112 function fobi(n)&#123; if(n == 0 || n == 1)&#123; return 1; &#125; return fobi(n-1)+fobi(n-2); &#125;var result = fobi(3);alert(result);//3]]></content>
@@ -2720,6 +2719,18 @@
       </categories>
       <tags>
         <tag>算法</tag>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[六道JS面试题]]></title>
+    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>面试指南</tag>
         <tag>JS</tag>
       </tags>
   </entry>
