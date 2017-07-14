@@ -317,6 +317,840 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/22/工作中的请求处理-post/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/22/工作中的请求处理-post/" itemprop="url">工作中的请求处理 post</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-22T11:49:16+08:00">
+                2017-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></div><div class="line">	<span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> oBtn=<span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</div><div class="line">		oBtn.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			</div><div class="line">			<span class="keyword">var</span> xhr=<span class="literal">null</span>;</div><div class="line">			</div><div class="line">			<span class="keyword">try</span>&#123;</div><div class="line">				xhr=<span class="keyword">new</span> XMLHttpRequest();</div><div class="line">			&#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">				xhr=<span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMHTTP'</span>);</div><div class="line">			&#125;</div><div class="line">		</div><div class="line">			xhr.open(<span class="string">'post'</span>,<span class="string">'8post.php'</span>,<span class="literal">true</span>);</div><div class="line">			<span class="comment">//post方式：数据放在send（）方法里面传递过去</span></div><div class="line">				<span class="comment">//如果你在用post传递数据的时候不告诉当前计算机你所传递的数据的格式，计算机就不会处理你传递的</span></div><div class="line">				<span class="comment">//信息。通过设置请求头告诉浏览器你所发过去的文档是什么类型。</span></div><div class="line">			</div><div class="line">			<span class="comment">//post没有缓存问题，post是用来提交数据的，而提交数据而不会被缓存的，当你从服务器获取的时候它就可</span></div><div class="line">			<span class="comment">//能被缓存</span></div><div class="line">			</div><div class="line">			<span class="comment">//不存在编码问题</span></div><div class="line">			xhr.setRequestHeader(<span class="string">'content-type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>);</div><div class="line">			xhr.send(<span class="string">'username=leo&amp;age=20'</span>);</div><div class="line">		</div><div class="line"></div><div class="line">			xhr.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">				<span class="keyword">if</span>(xhr.readyState==<span class="number">4</span>)&#123;</div><div class="line">					<span class="keyword">if</span>(xhr.status==<span class="number">200</span>)&#123;</div><div class="line">						alert(xhr.responseText);</div><div class="line">					&#125;<span class="keyword">else</span>&#123;</div><div class="line">						alert(<span class="string">'出错了,Err:'</span>+xhr.status);</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">name</span>=<span class="string">"btn"</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">value</span>=<span class="string">"Button"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/20/工作中的请求处理-get/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/20/工作中的请求处理-get/" itemprop="url">工作中的请求处理 get</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-20T11:47:39+08:00">
+                2017-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></div><div class="line">	<span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> oBtn=<span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</div><div class="line">		oBtn.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			</div><div class="line">			<span class="keyword">var</span> xhr=<span class="literal">null</span>;</div><div class="line">			</div><div class="line">			<span class="keyword">try</span>&#123;</div><div class="line">				xhr=<span class="keyword">new</span> XMLHttpRequest();</div><div class="line">			&#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">				xhr=<span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMHTTP'</span>);</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">			<span class="comment">//get方法出现的问题：</span></div><div class="line">			<span class="comment">//	1.缓存问题：在url？后面连接在一个随机数或者时间戳都可以</span></div><div class="line">			<span class="comment">//	2.乱码：编码encodeURI</span></div><div class="line">			xhr.open(<span class="string">'get'</span>,<span class="string">'6.get.php?username='</span>+<span class="built_in">encodeURI</span>(<span class="string">'刘伟'</span>)+<span class="string">'&amp;age=30&amp;'</span>+<span class="keyword">new</span> <span class="built_in">Date</span>().getTime(),<span class="literal">true</span>);</div><div class="line">			<span class="comment">//提交</span></div><div class="line">			xhr.send();</div><div class="line">		</div><div class="line"></div><div class="line">			xhr.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">				<span class="keyword">if</span>(xhr.readyState==<span class="number">4</span>)&#123;</div><div class="line">					<span class="keyword">if</span>(xhr.status==<span class="number">200</span>)&#123;</div><div class="line">						alert(xhr.responseText);</div><div class="line">					&#125;<span class="keyword">else</span>&#123;</div><div class="line">						alert(<span class="string">'出错了,Err:'</span>+xhr.status);</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">name</span>=<span class="string">"btn"</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">value</span>=<span class="string">"Button"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/20/定时刷新实例/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/20/定时刷新实例/" itemprop="url">定时刷新实例</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-20T11:46:27+08:00">
+                2017-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">'6ajax.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></div><div class="line">	<span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</div><div class="line">		oBtn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">			setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				ajax(<span class="string">'get'</span>, <span class="string">'6getNews.php'</span>, <span class="string">''</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">					<span class="comment">// JSON 是一个对象，ie 7 以下不支持</span></div><div class="line">					<span class="comment">//利用 JSON.parse 将传进来的数据转换为一个数组</span></div><div class="line">					<span class="keyword">var</span> data = <span class="built_in">JSON</span>.parse(data); </div><div class="line">					<span class="keyword">var</span> oUL = <span class="built_in">document</span>.getElementById(<span class="string">'ul1'</span>);</div><div class="line">					<span class="keyword">var</span> html = <span class="string">''</span>;</div><div class="line">					<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</div><div class="line">						html += <span class="string">'&lt;li&gt;&lt;a href=""&gt;'</span> + data[i].title + <span class="string">'&lt;/a&gt; [&lt;span&gt;'</span> + data[i].date + <span class="string">'&lt;/span&gt;]&lt;/li&gt;'</span></div><div class="line">					&#125;</div><div class="line">					oUL.innerHTML = html;</div><div class="line">				&#125;);</div><div class="line">			&#125;, <span class="number">1000</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">name</span>=<span class="string">"btn"</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">value</span>=<span class="string">"Button"</span>&gt;</span></div><div class="line">	<span class="comment">&lt;!-- 从后端获取新闻，然后将获取到的新闻放到ul里面，不刷新页面就可以获取到 --&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"ul1"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/18/获取数据/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/18/获取数据/" itemprop="url">获取数据</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-18T11:45:11+08:00">
+                2017-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></div><div class="line">	<span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> oBtn=<span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</div><div class="line">		oBtn.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			</div><div class="line">			<span class="keyword">var</span> xhr=<span class="literal">null</span>;</div><div class="line">			</div><div class="line">			<span class="keyword">try</span>&#123;</div><div class="line">				xhr=<span class="keyword">new</span> XMLHttpRequest();</div><div class="line">			&#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">				xhr=<span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMHTTP'</span>);</div><div class="line">			&#125;</div><div class="line">			</div><div class="line"></div><div class="line">			xhr.open(<span class="string">'get'</span>,<span class="string">'1.txt'</span>,<span class="literal">true</span>);</div><div class="line">			xhr.send();</div><div class="line">			</div><div class="line">			<span class="comment">//readyState属性：请求状态</span></div><div class="line">				<span class="comment">//0：（初始化）还没有调用open方法</span></div><div class="line">				<span class="comment">//1：（载入）一调用send方法正在发送请求</span></div><div class="line">				<span class="comment">//2：（载入完成）send（）方法以完成，以收到全部响应内容</span></div><div class="line">				<span class="comment">//3：（解析）正在解析相应内容</span></div><div class="line">				<span class="comment">//4：（完成）响应内容解析完成，可以在客户端调用了</span></div><div class="line">			</div><div class="line">			<span class="comment">//onreadystatechange：当状态值 readyState 改变的时候触发</span></div><div class="line">			xhr.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				</div><div class="line">				<span class="keyword">if</span>(xhr.readyState==<span class="number">4</span>)&#123;</div><div class="line">					<span class="comment">//status:服务器状态，http状态码</span></div><div class="line">					<span class="keyword">if</span>(xhr.status==<span class="number">200</span>)&#123;</div><div class="line"><span class="comment">// responseText 这是一个属性，ajax请求返回的数据就被放到了这个属性的下面这里面的所有数据都是字符串类型的</span></div><div class="line">						alert(xhr.responseText);</div><div class="line">					&#125;<span class="keyword">else</span>&#123;</div><div class="line">						alert(<span class="string">'出错了,Err:'</span>+xhr.status);</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">name</span>=<span class="string">"btn"</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">value</span>=<span class="string">"Button"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/16/详解表单/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/16/详解表单/" itemprop="url">详解表单</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-16T11:44:17+08:00">
+                2017-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	</div><div class="line">    <span class="comment">&lt;!-- 表单：数据的提交 --&gt;</span></div><div class="line">    	<span class="comment">&lt;!-- action : 数据提交的地址，默认是当前页面 --&gt;</span></div><div class="line">        <span class="comment">&lt;!-- method : 数据提交的方式，默认是get方式 --&gt;</span></div><div class="line">        	<span class="comment">&lt;!-- 1.get --&gt;</span></div><div class="line">            	<span class="comment">&lt;!-- 把数据名称和数据值用=连接，如果有多个的话，那么他会把多个数据组合用&amp;amp; --&gt;</span></div><div class="line">                <span class="comment">&lt;!-- 进行连接，然后把数据放到url?后面传到指定页面，url长度限制的原因，我们 --&gt;</span></div><div class="line">                <span class="comment">&lt;!-- 不要通过get方式传递过多的数据 --&gt;</span></div><div class="line">            <span class="comment">&lt;!-- 2.post --&gt;</span></div><div class="line">                <span class="comment">&lt;!-- 理论上无限制 --&gt;</span></div><div class="line">        <span class="comment">&lt;!-- enctype : 提交的数据格式，默认application/x-www-form-urlencoded --&gt;</span></div><div class="line">        </div><div class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"1.get.php"</span> <span class="attr">enctype</span>=<span class="string">"application/x-www-form-urlencoded"</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"age"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/14/对象的创建和兼容性处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/14/对象的创建和兼容性处理/" itemprop="url">对象的创建和兼容性处理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-14T11:42:51+08:00">
+                2017-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="异步请求"><a href="#异步请求" class="headerlink" title="异步请求"></a>异步请求</h4><p>异步请求有一个很容易被忽略的特性使异步性，就是脚本在发送 <code>XMLHttpRequest</code> 请求之后，仍然会继续执行，不会等待响应返回。为了证明这一点，可以在 <code>request.onreadystatechange</code> 函数和 <code>getNewContent</code> 函数中各添加一个警告框。</p>
+<p>现在加载一下页面试试，很可能显示 <code>“Function done”</code> 的警告框会先于 <code>“reponse received”</code> 的警告框出现。这就证明了脚本不会等待 <code>send</code> 的响应，而是会继续执行。</p>
+<p>之所以说“很可能”，是因为有时候服务器的响应也会非常快。如果你是从本地硬盘上加载文件，那么在收到响应之前恐怕要等上很长的时间。</p>
+<p>为此，如果其他脚本依赖于服务器的响应，那么就要把相应的代码都转移到指定给 <code>onreadystatechange</code> 属性的那个函数中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getHTTPObject</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> xhr=<span class="literal">null</span>;</div><div class="line"></div><div class="line">	<span class="keyword">try</span>&#123;</div><div class="line">		xhr=<span class="keyword">new</span> XMLHttpRequest();</div><div class="line">	&#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">		xhr=<span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMHTTP'</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> xhr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNewContent</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> request = getHTTPObject();</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (request) &#123;</div><div class="line">		request.open(<span class="string">"GET"</span>, <span class="string">'example.txt'</span>, <span class="literal">true</span>);</div><div class="line">		request.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">if</span> (request.readyState == <span class="number">4</span>) &#123;</div><div class="line">				alert(<span class="string">"reponse received"</span>);</div><div class="line"></div><div class="line">				<span class="keyword">var</span> para = <span class="built_in">document</span>.createElement(<span class="string">'p'</span>);</div><div class="line">				<span class="keyword">var</span> txt = <span class="built_in">document</span>.createTextNode(request.responseText);</div><div class="line">				para.appendChild(txt);</div><div class="line">				<span class="built_in">document</span>.getElementsByClassName(<span class="string">'new'</span>).appendChild(para);</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">		request.send(<span class="literal">null</span>);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		alert(<span class="string">"sorry, your browser doesn't suppurt new XMLHttpRequest"</span>);</div><div class="line">	&#125;</div><div class="line">	alert(<span class="string">'function done'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">addLoadEvent(getNewContent);</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/14/对象的创建和兼容性处理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/13/第一个-Ajax-程序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1179,903 +2013,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/04/给人好印象的接电话技巧/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/04/给人好印象的接电话技巧/" itemprop="url">给人好印象的接电话技巧</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-04T15:59:54+08:00">
-                2017-02-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
-                    <span itemprop="name">貌似有知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《世说新语》</p>
-<p>人很聪明，每个人都会用各种资讯来组合，譬如你认识个新朋友，留他家的地址，他说住在某高级地区大厦的四十楼。</p>
-<p>你心里很可能就浮现他家的画面，猜他家很富有。</p>
-<p>又譬如，你打电话给朋友，发现那边非常吵，你会一边讲电话，一边猜：是宴会？电视？地铁车站？还是夜总会的嘈杂声？</p>
-<p>好！不谈这么多，讲个最简单的–如果你拨电话，铃还没响，对方就接了，你是不是可能问他：”您在等谁的电话吗？”</p>
-<p>所以别以为打电话是”只有一线牵”，其实在还没说”喂”之前，可能已经传达了一些消息。 先从”电话铃几乎没响，就接电话”这件事来说吧！</p>
-<p><strong>如果才响半声就接，人家以为你正急着等别人的电话。如果响一声就接，表示你一定不忙。如果响了三声再接，对方八成猜你在忙，或是由别的地方赶过来接。</strong></p>
-<p>第一印象真是太重要了。相信大家一定有过这样的经验──你打电话去某某公司或某单位，那接线小姐的声音既甜美又有礼貌，让你听着就舒服。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/04/给人好印象的接电话技巧/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/04/问题就是你的机会/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/04/问题就是你的机会/" itemprop="url">问题就是你的机会</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-04T12:37:22+08:00">
-                2017-02-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、公司的问题：就是你改善的机会；</p>
-<p>2、客户的问题：就是你提供服务的机会；</p>
-<p>3、自己的问题：就是你成长的机会；</p>
-<p>4、同事的问题：就是你提供支持建立合作机会；</p>
-<p>5、领导的问题：就是你积极解决获得信任的机会；</p>
-<p>6、竞争对手的问题：就是你变强的机会。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/03/任何赚钱的方法都是利用了信息不对称/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/03/任何赚钱的方法都是利用了信息不对称/" itemprop="url">任何能赚钱的方法都是利用了信息不对称</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-03T12:34:30+08:00">
-                2017-02-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>任何能赚钱的方法都是利用了信息不对称。而不对称的信息往往都是细节信息。想要挣钱就得有细节信息的交换。然而你连交换的资本都没有，你还想获得信息，这不是扯淡么？</p>
-<p>那你会问怎么获得这样的资本。这里有我总结的几个途径：</p>
-<p>1.拿钱直接买信息。例如购买商业间谍的信息，例如花钱买别人的研究数据，例如你爸是人家想笼络的李刚…</p>
-<p>2.拿时间直接换。例如新手天天在厨房混，混个一年半载学一些技能技巧没问题；又例如你天天去逛商场，把人家商品的价格的设定原因、摆放位置的道理、进货渠道的联系方式之类的关键信息抓住了，自己开个小商店也没问题。</p>
-<p>3.拿身体换。就不举例子了。</p>
-<p>绝大多数人会选择前两个方式。另外，读书在第二类。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/02/说话的顺序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/02/说话的顺序/" itemprop="url">说话的顺序</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-02T15:50:04+08:00">
-                2017-02-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
-                    <span itemprop="name">貌似有知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《世说新语》</p>
-<p>一位老板，下午去开会，才回公司，就见一个职员匆匆忙忙跑来：”不得了啦！不得了啦！我们的东西出问题了，因为手续少办一项，被押在海关上不了飞机。”</p>
-<p>老板听到这儿，因为血压高，差点晕倒。</p>
-<p>哪知道那职员继续说：”幸亏我跑去，托关系，把手续补办好，东西及时上了飞机，现在应该已经到了。</p>
-<p>你说他可恨不可恨？如果你有这样的员工，或自己不懂说话的优先顺序，一定要改，免得造成很大的困扰。 </p>
-<p>记得我女儿上初中的时候，有一天电话响，我接起来，是女儿校长打来的。那校长没说她是校长，居然先说”没有急事！”然后讲：”我是某校长，只是要告诉你个好消息，你的女儿得奖了。”</p>
-<p>她为什么不说：”我是校长，我要告诉你一件事，你的女儿在学校如何如何……”</p>
-<p>因为她怕我着急，怕我吓一跳，以为孩子在学校出了事。</p>
-<p><strong>说话最重要的是要把握重点。对于需要引人入胜的题材，譬如形容你去旅游的经过，你可以按部就班、娓娓道来，但是对于急迫的事，则要开门见山。</strong><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/02/说话的顺序/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/01/实话虚说/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/01/实话虚说/" itemprop="url">实话虚说</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-01T15:43:54+08:00">
-                2017-02-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/貌似有知识/" itemprop="url" rel="index">
-                    <span itemprop="name">貌似有知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《世说新语》</p>
-<p>虚说的实话，基本上还是实话，只是说得不够精确，或者说得松散。</p>
-<p>有朋友突然造访，十二点半，正是吃中饭的时候。你问他吃了没有，他不直说，卻绕弯子：”我今天其实起得很早，也不知为什么，瞎忙，又接到一个电话，瞎扯了半天，突然想到有个东西早该交给你，匆匆忙忙赶过来，说实话，我连早饭都没吃，可饿死了！” </p>
-<p>他何不直接说他没吃呢？八成因为客气，扯了一堆。</p>
-<p>如果你说话有这种毛病，一定要检讨，因为实话虚说的人，非但不干脆，而且容易显得不诚恳。 </p>
-<p>譬如你问你的部属，前天交代他的报告作好没有？</p>
-<p>他不直接答，先说：”哎呀！报告长官，我最近是真倒楣，前天半夜下大雨，房子居然漏了，东边接水，西边接水，整夜没睡，昨天办公室又忙……”</p>
-<p>他是不是才说三句，你已经猜到他没做好。问题是听他这么说，你特别火大。 因为他在答话之前，先找了一堆借口。</p>
-<p>你注意，很多心里有鬼的人，都爱用这种说话的方法。</p>
-<p><strong>但是”实话虚说”也不是完全没用。很多人就用这种方法，既没有撒谎，说了实话，又能避免尴尬。</strong></p>
-<p>譬如有一位台湾政界的名人，为了选举拉票，不得不上一个很搞笑的电视节目，那主持人真够刁的，她居然问：”您都穿什么颜色的內裤啊？”</p>
-<p>那位名人反应还真不错，一笑，说：”我都穿我太太知道的颜色。”<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/01/实话虚说/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/02/01/考察市场八种另类方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/01/考察市场八种另类方法/" itemprop="url">考察市场八种另类方法</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-01T11:53:32+08:00">
-                2017-02-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/商业/" itemprop="url" rel="index">
-                    <span itemprop="name">商业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>如何准确调查市场需求一直是困扰中小投资者的难题之一。主要原因是教科书中的方法过于深奥和复杂。同时完成调查任务要花费大量的人力和物力，这是中小投资者无法承担的。以下一些被许多人不屑一提的方法却能让投资者取得意想不到的效果。</p>
-<h3 id="方法一：样板市场模拟法"><a href="#方法一：样板市场模拟法" class="headerlink" title="方法一：样板市场模拟法"></a>方法一：样板市场模拟法</h3><p>案例：长沙的马女士在2009年初看中了一个饰品类的项目。她从公司进了一小批货，然后到样板市场——苏州进行模拟实验。具体做法是，马女士先选择一家样板店附近且规格相近的饰品店，然后与店主协商，让对方代销产品。为了保证试验成功，马女士与商家签订协议，在代销过程中，补贴店家一定的费用。</p>
-<p>结果：经过一个月的模拟实验，马女士发现店家代销的产品一件也没有卖出去。她认为该产品没有市场。2009年5月初，该项目宣告破产。</p>
-<p>提示：该方法对于新奇特产品的市场验证有一定的效果，但是存在两个缺陷：一是，消耗精力大，既要寻找合作伙伴，又要考察样板市场;二是，前期投入较大。建议有一定经济实力的投资者选用此方法。同时投资者为了保证实验成功，一定要与合作者签订相关文字协议。</p>
-<p>适用领域：饰品类、服饰类、保健类、食品类、新奇特电子产品类的加盟项目。</p>
-<h3 id="方法二：试销法"><a href="#方法二：试销法" class="headerlink" title="方法二：试销法"></a>方法二：试销法</h3><p>案例：鞍山的李先生欲投资一款儿童玩具。为了验证产品的市场需求，他从厂家进了200件产品，并且在公园、游乐场、学校附近等不同的地点，进行不同价格的试销。</p>
-<p>结果：经过试销，李先生发现这种玩具在鞍山颇受6~12岁儿童的欢迎，而且公园和游乐园是最佳试销地点。现在李先生均能销售近1500套玩具/月，月盈利超过4万元。</p>
-<p>提示：试销时，投资者要量力而行，资金投入额度不能过大，一般投资者试销时的投入约是后期投入的三分之一，即项目总投资额约6万元时，试销时的投资额不能超过2万元。</p>
-<p>适用领域：代理经销电子类、家居类、玩具类产品。</p>
-<h3 id="方法三：查看垃圾法"><a href="#方法三：查看垃圾法" class="headerlink" title="方法三：查看垃圾法"></a>方法三：查看垃圾法</h3><p>案例：北京的何先生在某加盟展上看中了一个烤鱼项目。他为了考证该菜品是否有市场需求，在样板店的后门蹲了三天。他每天的工作就是查看样板店扔掉的垃圾。通过扔掉的鱼头、鱼骨等垃圾统计，哪种鱼点菜率高，多大的鱼受欢迎。</p>
-<p>结果：何先生的餐馆开业一直都顾客盈门。不到一年的时间，不仅收回了前期50万元的投资，还赚取了近40万元的纯利润。</p>
-<p>提示：这个方法要求投资者必须有丰富的相关从业经验。如何先生必须要熟悉各地鱼的特征，否则他看到鱼头或者鱼刺，也辨别不出来。</p>
-<p>适用领域：餐饮类项目、生产加工类项目。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/01/考察市场八种另类方法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2120,7 +2062,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">323</span>
+                <span class="site-state-item-count">329</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

@@ -93,31 +93,31 @@
 
 
 
-<meta name="description" content="1.页面中的有高的地方，你最好设置一下高，不要等到后面再请浮动。
+<meta name="description" content="备忘1.页面中的有高的地方，你最好设置一下高，不要等到后面再请浮动。
 2.写选择符的原则有两条：第一简短，第二不要互相影响。
 3.给页面的元素加上背景或者加上边框是调试页面元素一个非常好的方法。
 4.每个模块之间最好用分隔符分割。
 5.如果有需要使用数字的，取数字值尽量取双数的。
-6.color 样式属性的返回值它的设置值并不相同。color:#999 将返回 rgb(153,153,153) 。但是">
+6.color 样式属性的返回值它的设置值并不相同。color:#999 将返回 rgb(153,153,153) 。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS 随笔">
 <meta property="og:url" content="http://ijiangnanbei.com/2017/07/01/CSS-随笔/index.html">
 <meta property="og:site_name" content="江南北的个人站">
-<meta property="og:description" content="1.页面中的有高的地方，你最好设置一下高，不要等到后面再请浮动。
+<meta property="og:description" content="备忘1.页面中的有高的地方，你最好设置一下高，不要等到后面再请浮动。
 2.写选择符的原则有两条：第一简短，第二不要互相影响。
 3.给页面的元素加上背景或者加上边框是调试页面元素一个非常好的方法。
 4.每个模块之间最好用分隔符分割。
 5.如果有需要使用数字的，取数字值尽量取双数的。
-6.color 样式属性的返回值它的设置值并不相同。color:#999 将返回 rgb(153,153,153) 。但是">
-<meta property="og:updated_time" content="2017-07-07T05:33:26.221Z">
+6.color 样式属性的返回值它的设置值并不相同。color:#999 将返回 rgb(153,153,153) 。">
+<meta property="og:updated_time" content="2017-07-14T05:52:08.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 随笔">
-<meta name="twitter:description" content="1.页面中的有高的地方，你最好设置一下高，不要等到后面再请浮动。
+<meta name="twitter:description" content="备忘1.页面中的有高的地方，你最好设置一下高，不要等到后面再请浮动。
 2.写选择符的原则有两条：第一简短，第二不要互相影响。
 3.给页面的元素加上背景或者加上边框是调试页面元素一个非常好的方法。
 4.每个模块之间最好用分隔符分割。
 5.如果有需要使用数字的，取数字值尽量取双数的。
-6.color 样式属性的返回值它的设置值并不相同。color:#999 将返回 rgb(153,153,153) 。但是">
+6.color 样式属性的返回值它的设置值并不相同。color:#999 将返回 rgb(153,153,153) 。">
 
 
 
@@ -417,7 +417,7 @@
       
 
       
-        <p>1.页面中的有高的地方，你最好设置一下高，不要等到后面再请浮动。</p>
+        <h3 id="备忘"><a href="#备忘" class="headerlink" title="备忘"></a>备忘</h3><p>1.页面中的有高的地方，你最好设置一下高，不要等到后面再请浮动。</p>
 <p>2.写选择符的原则有两条：第一简短，第二不要互相影响。</p>
 <p>3.给页面的元素加上背景或者加上边框是调试页面元素一个非常好的方法。</p>
 <p>4.每个模块之间最好用分隔符分割。</p>
@@ -425,6 +425,7 @@
 <p>6.<code>color</code> 样式属性的返回值它的设置值并不相同。<code>color:#999</code> 将返回 <code>rgb(153,153,153)</code> 。但是绝大多数样式属性的返回值与他们的设置值都采用相同的计量单位。</p>
 <p>7.<code>style</code> 属性只能返回内部样式。换句话说，只有把 CSS style 属性插入到标记里，才可以用 DOM style 属性去查询那些信息。DOM style 属性不能检索外部 CSS 文件里声明的样式，在文档的 <code>&lt;head&gt;</code> 部分里声明的样式也是如此。</p>
 <p>8.让块级元素在一行显示可以使用 <code>display:inline</code>，同理，让行内元素在不同的行显示可以使用 <code>display:block</code>。</p>
+<h3 id="关于各种宽高"><a href="#关于各种宽高" class="headerlink" title="关于各种宽高"></a>关于各种宽高</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">页可见区域宽： <span class="built_in">document</span>.body.clientWidth;</div><div class="line">网页可见区域高： <span class="built_in">document</span>.body.clientHeight;</div><div class="line">网页可见区域宽： <span class="built_in">document</span>.body.offsetWidth (包括边线的宽);</div><div class="line">网页可见区域高： <span class="built_in">document</span>.body.offsetHeight (包括边线的宽);</div><div class="line">网页正文全文宽： <span class="built_in">document</span>.body.scrollWidth;</div><div class="line">网页正文全文高： <span class="built_in">document</span>.body.scrollHeight;</div><div class="line">网页被卷去的高： <span class="built_in">document</span>.body.scrollTop;</div><div class="line">网页被卷去的左： <span class="built_in">document</span>.body.scrollLeft;</div><div class="line">网页正文部分上： <span class="built_in">window</span>.screenTop;</div><div class="line">网页正文部分左： <span class="built_in">window</span>.screenLeft;</div><div class="line">屏幕分辨率的高： <span class="built_in">window</span>.screen.height;</div><div class="line">屏幕分辨率的宽： <span class="built_in">window</span>.screen.width;</div><div class="line">屏幕可用工作区高度： <span class="built_in">window</span>.screen.availHeight;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -537,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -553,7 +563,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">323</span>
+                <span class="site-state-item-count">329</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -600,6 +610,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#备忘"><span class="nav-number">1.</span> <span class="nav-text">备忘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于各种宽高"><span class="nav-number">2.</span> <span class="nav-text">关于各种宽高</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
