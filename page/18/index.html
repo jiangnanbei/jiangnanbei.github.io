@@ -317,6 +317,303 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/24/scanf-和-printf-的用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/24/scanf-和-printf-的用法/" itemprop="url">scanf 和 printf 的用法</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-24T18:34:57+08:00">
+                2016-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="scanf-用法"><a href="#scanf-用法" class="headerlink" title="scanf 用法"></a>scanf 用法</h3><h4 id="用法一-scanf-quot-输入控制符-quot-输入参数"><a href="#用法一-scanf-quot-输入控制符-quot-输入参数" class="headerlink" title="用法一:scanf(&quot;输入控制符&quot;,输入参数);"></a>用法一:<code>scanf(&quot;输入控制符&quot;,输入参数);</code></h4><p>功能:将从键盘输入的字符转化为输入控制符所规定格式的数据,然后存入以输入参数的值为地址的变量中。</p>
+<p>举例：<code>scanf(&quot;%d&quot;,&amp;i);</code>这里之所以要用<code>%d</code>是因为来自你键盘的所有输入都是以字符的形式保存的,所以在这里我们用<code>%d</code>将其转化为一个十进制的数。</p>
+<h4 id="用法二-scanf-quot-非输入控制符-输入控制符-quot-输入参数"><a href="#用法二-scanf-quot-非输入控制符-输入控制符-quot-输入参数" class="headerlink" title="用法二:scanf(&quot;非输入控制符 输入控制符&quot;,输入参数);"></a>用法二:<code>scanf(&quot;非输入控制符 输入控制符&quot;,输入参数);</code></h4><p>功能:非输入控制符必须原样输入。</p>
+<p>举例：<code>scanf(&quot;m%d&quot;,&amp;i);</code>在这里<code>%d</code>前面有一个非输出控制符,所以这里就要求你在输入的时候,你的输入前必须要有一个非输出控制符。比如说你直接输入<code>123</code>就是错的,但是如果你输入<code>m123</code>就是对的,这个时候最终<code>i</code>的值就是 <code>123</code>，但是如果你输入<code>m123n</code>也是对的，但是我们一般不会在前面加一个非输出控制符,目的是让用户输入的越简单越好。</p>
+<h4 id="如何用-scanf-编写出高质量的程序？"><a href="#如何用-scanf-编写出高质量的程序？" class="headerlink" title="如何用 scanf 编写出高质量的程序？"></a>如何用 scanf 编写出高质量的程序？</h4><p>使用 scanf 之前最好先使用 printf 提示用户以什么要的方式来输入。</p>
+<p>scanf 中尽量不要使用非输入控制符,尤其是 \n 。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/24/scanf-和-printf-的用法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/24/预备编程基础知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/24/预备编程基础知识/" itemprop="url">预备编程基础知识</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-24T18:32:13+08:00">
+                2016-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="代码规范化"><a href="#代码规范化" class="headerlink" title="代码规范化"></a>代码规范化</h3><p>写出规范的代码不但方便你自己观看同时也方便别人观看,最重要的是当你的程序写的很大的时候，规范的代码使你的程序不容易出错。</p>
+<h3 id="为什么创建文件的时候要选择C-？"><a href="#为什么创建文件的时候要选择C-？" class="headerlink" title="为什么创建文件的时候要选择C++？"></a>为什么创建文件的时候要选择C++？</h3><p>因为C++是完全兼容C的，所以我们创建文件的时候选择的是C++的格式。</p>
+<h3 id="什么是字节？"><a href="#什么是字节？" class="headerlink" title="什么是字节？"></a>什么是字节？</h3><p>字节就是存储数据的单位,并且是我们硬件所能访问的最小单位。硬件上不能精确到位只能精确到字节,一个字节等于八位,硬件通过我们的地址总线确定的是字节,要精确到位需要用软件来实现(C语言里面字符占一个字节,java里面字符占两个字节)。</p>
+<p>1字节=8位；1k=1024个字节；1M=1024k；1G=1024M。</p>
+<p>说到字节，你肯定会有这样的一个经历：你买一个硬盘内存总是会比实际的要小，这是为什么呢？</p>
+<p>商家是按 1k=1000字节 为单位计算的,而计算机是以 1k=1024字节 为单位计算的，两种换算单位的不一样就导致了我们实际使用的内存比产品标注的内存要小。</p>
+<h3 id="char-使用的常见问题"><a href="#char-使用的常见问题" class="headerlink" title="char 使用的常见问题"></a>char 使用的常见问题</h3><p><code>char ch=&quot;ab&quot;;//error</code> 不能把一个字符串放到字符里面。</p>
+<p><code>char ch=&quot;a&quot;;//error</code>   这个双引号里面其实有两个字符<code>a\0</code>，所以这样书写也是错的。</p>
+<p><strong>在C语言里面字符串有两种保存方式，其一是通过指针，其二是通过数组。</strong><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/24/预备编程基础知识/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/24/预备计算机专业基础知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1750,286 +2047,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/14/普通方法与原型方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/14/普通方法与原型方法/" itemprop="url">普通方法与原型方法</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-14T15:33:21+08:00">
-                2016-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-普通方法"><a href="#1-普通方法" class="headerlink" title="1.普通方法"></a>1.普通方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">	<span class="keyword">var</span> arr2 = [<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line">	arr1.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> result = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">			result+=<span class="keyword">this</span>[i];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	alert(arr.sum());</div><div class="line"></div><div class="line">	arr2.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> result = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">			result+=<span class="keyword">this</span>[i];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	alert(arr2.sum());</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
-<p>从上面的例子可以看出，对于普通方法而言我们要对每一个对象分别创建一个方法。</p>
-<h3 id="2-原型方法"><a href="#2-原型方法" class="headerlink" title="2.原型方法"></a>2.原型方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">	<span class="keyword">var</span> arr2 = [<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line">	<span class="comment">//使用原型方法这个时候你只需要借用构造函数创建一个函数</span></div><div class="line">	<span class="built_in">Array</span>.prototype.sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> result = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">			result+=<span class="keyword">this</span>[i];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	alert(arr.sum());</div><div class="line">	alert(arr2.sum());</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
-<h3 id="3-普通方法和原型方法的优先级比较"><a href="#3-普通方法和原型方法的优先级比较" class="headerlink" title="3.普通方法和原型方法的优先级比较"></a>3.普通方法和原型方法的优先级比较</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> arr = [];</div><div class="line">	arr.number = <span class="number">10</span>;</div><div class="line">	<span class="built_in">Array</span>.prototype.number = <span class="number">20</span>;</div><div class="line"></div><div class="line">	alert(arr.number); <span class="comment">//result : 10</span></div><div class="line">	</div><div class="line">	<span class="comment">//从中我们可以看出，普通方法的优先级高于原型方法</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2016/12/13/理解对象的引用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/13/理解对象的引用/" itemprop="url">理解对象的引用</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-13T15:33:21+08:00">
-                2016-12-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-实例一"><a href="#1-实例一" class="headerlink" title="1.实例一"></a>1.实例一</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">		</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">		<span class="keyword">this</span>.name=name;</div><div class="line">		<span class="keyword">this</span>.showName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			alert(<span class="keyword">this</span>.name);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> p1 = <span class="keyword">new</span> CreatePerson(<span class="string">'xiaoming'</span>);</div><div class="line">	<span class="keyword">var</span> p2 = <span class="keyword">new</span>  CreatePerson(<span class="string">'xiaoqiang'</span>);</div><div class="line"></div><div class="line">	alert(p1.showName == p2.showName);<span class="comment">//false</span></div><div class="line">	<span class="comment">//由于对对象的引用不同，所以这里的结果是 false</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="2-实列二"><a href="#2-实列二" class="headerlink" title="2.实列二"></a>2.实列二</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">	<span class="keyword">var</span> b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"></div><div class="line">	<span class="comment">// they have the same value but different addresses</span></div><div class="line">	alert(a == b);<span class="comment">//false</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="3-实例三"><a href="#3-实例三" class="headerlink" title="3.实例三"></a>3.实例三</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">	<span class="keyword">var</span> b = a;</div><div class="line"></div><div class="line">	b.push(<span class="number">4</span>);</div><div class="line">	alert(b);<span class="comment">//[1,2,3,4]</span></div><div class="line">	alert(a);<span class="comment">//[1,2,3,4]</span></div><div class="line">	alert(a == b);<span class="comment">//ture--&gt;same address</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="4-实例四"><a href="#4-实例四" class="headerlink" title="4.实例四"></a>4.实例四</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	<span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">	<span class="keyword">var</span> b = a;</div><div class="line">	<span class="comment">//只要你重新声明了一个变量，在内存里就会有一块新的空间被创建</span></div><div class="line">	b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line">	alert(b);<span class="comment">//[1,2,3,4];</span></div><div class="line">	alert(a);<span class="comment">//[1,2,3] </span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2079,7 +2096,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">303</span>
+                <span class="site-state-item-count">305</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

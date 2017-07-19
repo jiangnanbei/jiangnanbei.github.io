@@ -317,6 +317,295 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/阻止默认行为及其实现原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/阻止默认行为及其实现原理/" itemprop="url">阻止默认行为及其实现原理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T18:48:11+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="阻止默认行为"><a href="#阻止默认行为" class="headerlink" title="阻止默认行为"></a>阻止默认行为</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"images/fireworks.gif"</span> <span class="attr">target</span>=<span class="string">"_self"</span> <span class="attr">onclick</span>=<span class="string">"showPic(this) ; return false;"</span> <span class="attr">title</span>=<span class="string">"A fireworks display"</span>; &gt;</span>Fireworks<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>此时这个链接有两个行为，一个是执行函数 <code>showPic()</code> 另一个是链接的默认行为，由于我们要执行的是 <code>showPic()</code>， 所以我们使用 <code>return false</code> 阻止连接的默认行为。</p>
+<h4 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h4><p>在给某个元素添加了事件处理函数之后，一旦事件发生，相应的 js 代码就会得到执行。被调用的 js 代码可以返回一个值，这个值将传递给那个事件处理函数。</p>
+<p>例如，我们可以给某个链接添加一个 <code>onclick</code> 事件处理函数，并让这个处理函数所触发的 <code>js</code> 代码返回布尔值 <code>true</code> 或 <code>false</code>，如果那段 <code>js</code> 代码返回的是 <code>true</code>，<code>onclick</code> 事件处理函数就认为“这个链接被点击了”；反之，如果返回的是 <code>false</code> ，<code>onclick</code> 事件处理函数就会认为这个链接没有被点击。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/JS-基础知识点总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/26/JS-基础知识点总结/" itemprop="url">JS 初级知识点总结</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T16:17:42+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="宿主对象"><a href="#宿主对象" class="headerlink" title="宿主对象"></a>宿主对象</h4><p>可以在脚本里使用一些已经预先定义好的其他对象。这些对象不是由 js 语言本身而是由它的运行环境提供的。具体到 web 应用，这个环境就是浏览器。有浏览器提供的预定义对象被称为宿主对象。</p>
+<p>宿主对象包括 From、Image、Element 等，我们可以通过这些对象获得关于网页上的表单、图像和各种表单元素信息。其中 document 宿主对象可以用来获取网页上任何一个元素的信息。</p>
+<h4 id="两种方法设置元素的属性"><a href="#两种方法设置元素的属性" class="headerlink" title="两种方法设置元素的属性"></a>两种方法设置元素的属性</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//第一种方法</div><div class="line">element.value = 'content';</div><div class="line"></div><div class="line">//第二种方法</div><div class="line">element.setAttribute('value','content');</div></pre></td></tr></table></figure>
+<p>第二种方法比较好，起码你不用去记忆哪些元素的哪些属性可以用 DOM 之前的哪些方法去设置。虽然哪些老办法可以毫无问题的对文档里的图片、表单和其他的一些元素的属性进行设置，但第二种方法的优势在于他可以修改文档中任何一个元素的任何一个属性。</p>
+<p>第二种方法法的另一个优势是可移植性更好。那些老方法只适用于 web 文档，DOM 则适用于任何一种标记语言。</p>
+<p><strong>第二种方法即 DOM 方法，是一种适用于多种环境和多种程序设计语言的通用 API。如果你想把你学到的 DOM 技巧运用在 web 浏览器以外的应用环境里，严格遵守“第一级 DOM ”能够让你避免与兼容性有关的任何问题。</strong></p>
+<h4 id="chileNodes-属性"><a href="#chileNodes-属性" class="headerlink" title="chileNodes 属性"></a>chileNodes 属性</h4><p>chileNodes 返回的数组包含所有类型的节点，而不仅仅是元素节点。事实上，<strong>文档里几乎每一样东西都是一个节点，甚至连空格和换行符都会被解释为节点，</strong>而且它们也全都包含在 chileNodes 属性所返回的数组当中。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/26/JS-基础知识点总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/26/ie-兼容性问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1786,298 +2075,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/17/如何写出高质量的代码？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/17/如何写出高质量的代码？/" itemprop="url">如何写出高质量的代码？</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-17T07:16:09+08:00">
-                2017-06-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>读书笔记：《剑指offer》</p>
-<h3 id="思先于行"><a href="#思先于行" class="headerlink" title="思先于行"></a>思先于行</h3><p>在实际的软件开发周期中，设计的时间通常不会比编码的时间短。我们先不要急于动手写代码，而是一开始仔细的分析和设计。与其写出一段漏洞百出的代码，倒不如仔细分析再写出鲁棒的代码。</p>
-<h3 id="代码的鲁棒性"><a href="#代码的鲁棒性" class="headerlink" title="代码的鲁棒性"></a>代码的鲁棒性</h3><p>鲁棒是英文 Robust 的英译，有时也翻译成健壮性。</p>
-<p><strong>所谓的鲁棒性是指程序能够判断输入是否合乎规范要求，对不和要求的输入予以合理的处理。</strong></p>
-<p><strong>容错性是鲁棒性的一个重要体现。</strong>不鲁棒的软件在发生异常事件的时候，比如用户输入错误的用户名、视图打开的文件不存在或者网络不能连接，就会出现不可预见的诡异行为，或者干脆整个软件崩溃。这样的软件对于用户而言，不亚于一常灾难。</p>
-<p>由于鲁棒性对软件开发非常重要，面试官在招聘的时候对应聘者写出的代码是否鲁棒也非常关注。</p>
-<p><strong>提高代码鲁棒性的有效途径是进行防御性编程。防御性编程是一种编程习惯，是指预见在什么地方可能会出现问题，并为这些可能出现的问题制定处理方式。</strong>比如试图打开文件时发现文件不存在，我们可以提示用户检查文件名和路径；当服务器链接不上时，我们可以试图链接备用服务器等。这样当异常情况发生时，软件的行为也尽在我们的掌握之中，而不至于出现不可预见的事情。</p>
-<p>在面试时，最简单也最实用的防御性编程就是在函数入口添加代码已验证用户输入是否符合要求。通常面试要求的是写一两个函数，我们需要格外关注这些函数的输入参数。如果输入的是一个指针，那指针是空指针怎么办？如果输入的是一个字符串，那么字符串的内容为空怎么办？如果我们能把这些问题都提前考虑到，并做相应的处理，那么面试官就会觉得我们有防御性编程的习惯，能够写出鲁棒的软件。</p>
-<p>当然，并不是所有与鲁棒性相关的问题都只是检查输入的参数那么简单。当我们看到问题的时候，要多问几个“如果不…..那么…..”这样的问题。</p>
-<p>比如面试题：“链表中倒数第k个结点”，这里隐含的一个条件就是链表中节点的个数大于k。我们就要问如果链表中结点的数目不是大于k个，那么代码会出什么问题？这样的思考方式能够帮助我们发现潜在的问题并提前解决问题。这比让面试官发现问题之后我们再去慌忙分析代码查找问题的根源要好的多。</p>
-<h3 id="如何才能发现并纠正代码中的问题？"><a href="#如何才能发现并纠正代码中的问题？" class="headerlink" title="如何才能发现并纠正代码中的问题？"></a>如何才能发现并纠正代码中的问题？</h3><p><strong>一个很好的办法就是提前想好测试用例。</strong>在写出代码之后，立即用事先准备好的测试用例检查测试。如果面试是以手写代码的方式，那也要在心里默默运行代码做单元测试。只有确保代码通过测试之后，再提交面试官。</p>
-<p>我们要记住一点：自己多花时间找出问题并修正问题，比在面试官找出问题之后再去慌慌张张修改代码要好的多。</p>
-<p>其实面试官检查应聘者的代码的方法也是用他事先准备好的测试用例来测试。如果应聘者能先想到这些测试用例，并用他们来检查测试自己的代码，那就能保证有备无患，万无一失了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/17/如何写出高质量的代码？/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/06/16/git-常用操作/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/16/git-常用操作/" itemprop="url">git 常用操作</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-16T15:26:54+08:00">
-                2017-06-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.克隆仓库到本地：<code>git clone &quot;url&quot;</code><br>2.查看工作区和暂存区的状态：<code>git status</code><br>3.提交文件从工作区到暂存区：<code>git add .</code><br>4.提交文件从暂存区到版本库：<code>git commit -m &quot;注释&quot;</code><br>5.提交文件直接从工作区到版本库：<code>git commit -a -m &quot;注释&quot;</code><br>6.提交：<code>git push</code><br>7.查看提交历史：<code>git log</code><br>8.更新本地仓库 <code>git pull origin master</code></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2127,7 +2124,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">303</span>
+                <span class="site-state-item-count">305</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

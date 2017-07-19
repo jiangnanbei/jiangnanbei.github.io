@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue 介绍]]></title>
+    <url>%2F2017%2F07%2F16%2FVue-%E4%BB%8B%E7%BB%8D%2F</url>
+    <content type="text"><![CDATA[vue 到底是什么？读音:v-u-e view 一个 mvvm 框架(库)、和 angular 类似，比较容易上手、小巧。 vue 和 angular 区别1.vue ——简单、易学；指令以 v-xxx;一片 html 代码配合上 json，再 new 出来 vue 实例；vue 是一个个人维护项目。 适合: 移动端项目,小巧。 vue 的发展势头很猛，github 上 start 数量已经超越 angular 2.angular ——上手难；指令以 ng-xxx；所有属性和方法都挂到$scope身上；angular 由 google 维护。 合适: pc 端项目 3.共同点: 不兼容低版本 IE 简单了解1.vue 只关注视图层 2.vue是一个渐进式框架 就是说你需要使用其中的哪一块直接去用就可以，不用把它全部用上。用哪个取哪个。 如果你只是想渲染你的数据到视图中，按你直接使用它的核心库；如果你想把你的界面分成许多个小模块，你就可以使用它的组件系统；如果你想用在移动端，或者想做一个 spa，这个时候你可以用到客户端路由；当我们组件过多，需要共享一些数据的时候，这个时候我们需要用到状态管理这个工具。 两个核心点1.响应的数据绑定 当数据发生改变时，自动更新视图。利用 Object.definedProperty 中的 getter/setter 代理数据，监控对数据的操作。 2.可组合的视图组件 ui页面映射为组件树，多个组件构成了一个完整的页面，但是修改其中的一个组件，不会影响其他的组件。划分组件可维护，可重用，可测试 虚拟 DOM运行 js 的速度很快，但是大量的操作 dom 就会很慢，时常在更新数据后会重新渲染页面，这样就造成了在没有改变数据的地方也重新渲染了 dom 节点，这样就造成了很大程度上的资源浪费。 利用在内存中生成与真实 dom 与之对应的数据结构，这个在内存中生成的结构称之为虚拟 dom。 当数据发生变化时，能够只能的计算出重新渲染组建的最小代价并应用到 dom 操作上。 MVVM 模式MVVM 模式：M：model数据模型； V：view 视图模板；vm：view-model 视图模型。 m 和 v 都是各自独立的，他们两个的练习都是通过 vm 层联系的，vm 一方面帮你把数据绑定，同时，另一方面帮你去监听 dom 的事件。 在我们写前端页面的时候，我们经常会拿到数据，在我们拿到数据之后，我们所做的事情就是通过 dom 将其呈现出来，拿到数据之后，vm 层就会帮我们把数据绑定起来，然后呈现在 v 层，同时，页面也要和用户交互，在和用户交互的过程中，如果你的页面发生改变了，这个时候数据发生改变 vm 会帮助我方监听改变的事件，最后改变数据。 12345678910111213141516//双向数据绑定&lt;div id="demo"&gt; &lt;input type="text" v-model="message"&gt; &lt;p&gt;&#123;&#123;message&#125;&#125;&lt;/p&gt;&lt;/div&gt;//数据let data = &#123; message :"hello world"&#125;//vm 实列var vm = new Vue(&#123; el:"#demo",//挂在元素 data:data&#125;); vue实例1.vue实例 每一个应用都是通过 vue 这个构造函数创建根实例启动new Vue，需要传入对象，对象包含挂载元素，数据，模板，方法等。123el：挂在元素选择器 String|HtmlElementdata：代理数据 Object | Functionmethods：定义方法 Object 2.vue 代理 data 数据 每个 vue 实例都会代理 data 对象里所有的属性，这些被代理的属性是响应的。新添加的属性不具备响应的功能，改变后不会更新视图。 3.vue实例自身属性和方法 暴露自身属性和方法以 $ 开头：$el,$data…document 声明式渲染1.声明式 只需要声明在哪里、做什么、而无需关心如何实现 2.命令式 需要以具体代码表达在哪里、做什么、如何实现12345例如：求数组中每一项的倍数命令式：使用 for 循环拿出每一项，然后求值完成后，再放到另一数组中声明是：使用 map 方法，关注如何求值 3.vue声明式渲染： 初始化根实例，vue 自动将数据绑定在 dom 模板上 1234567891011121314//求数组中每一项的倍数，放在另一个数组中//命令式var arr = [1,2,3,4,5];var newArr = [];for( var i = 0; i &lt; arr.length; i++ )&#123; newArr.push(arr[i]*2)&#125;//声明式，你只需要知道调用什么函数，然后知道做什么事情就完了var newArr = arr.map(function(item)&#123; return item * 2;&#125;);]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>vue.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS必备操作]]></title>
+    <url>%2F2017%2F07%2F15%2FJS%E5%BF%85%E5%A4%87%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[动态选择方法和属性在实际工作中，我们会经常遇到这种情况：根据某个条件来调用两个方法中的一个，或是在两个属性中的一个上面进行读写操作。下面的两码展示了这种情形：12345if (condition) &#123; myObj.method1(someArg);&#125; else &#123; myObj.method2(someArg);&#125; JS 提供了一种简单的语法，即使用方括号操作符（[]）来动态的选择方法和属性。正如下面的代码所示，JS 有两种等价的成员访问语法（这个特征在动态语言里面很常见）：1obj[expressionResultingInMembername] == obj.memberName; 如果你曾用整数下标来访问数组中元素的个数，那你已经开始使用方括号操作符来进行动态成员选择了。这是因为，数组对象本身就包含以数字下标命名的属性（以及 length 属性）。 为什么方括号操作符比点操作符更为强大呢？这是因为你可以在方括号中使用任何代表成员名称的内容来访问对象的成员。这些内容包括字面量、保存者成员名称的变量、名称组合（多数情况下是字符串的拼接）以及用三元操作符实现快速的if/else 的选择。所有这些内容都会被处理成一个字符串，然后 JS 会用这个字符串来寻找对应的成员。 由于 JS 中的函数本身也是对象，所以它也可以像其他值一样被引用。如果一个表达式的结果是函数，你可以直接用括号操作符调用它，就像你直接用函数名称调用函数一样。 需要注意的是，如果你在像方法传递的参数上大量使用此类技巧，混乱的括号可能会使代码变得难以阅读，此时使用常规的 if/else 结构更加明智。 使用方括号符操作12object['propertyName'] //=&gt;object.propertyNameobject['methodName'](arg) //=&gt;object.methodName(arg) 切换行为1234element[shouldBeVisible ? 'show' : 'hide']();//避免 IE 中动画带来的巨大开销element[isIE ? 'simpleEffect' : 'complexEffect'](); 拼接方法名称1element[(enable ? 'add' : 'remove') + 'ClassName']('enabled');]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[offsetTop clientTop scrollTop 各属性介绍]]></title>
     <url>%2F2017%2F07%2F14%2FoffsetTop-clientTop-scrollTop-%E5%90%84%E5%B1%9E%E6%80%A7%E4%BB%8B%E7%BB%8D%2F</url>
     <content type="text"><![CDATA[HTML 精确定位scrollHeight: 获取对象的滚动高度scrollLeft:设置或获取位于对象左边界和窗口中目前可见内容的最左端之间的距离scrollTop:设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离scrollWidth:获取对象的滚动宽度offsetHeight:获取对象相对于版面或由父坐标 offsetParent 属性指定的父坐标的高度 offsetLeft:获取对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置offsetTop:获取对象相对于版面或由 offsetTop 属性指定的父坐标的计算顶端位置event.clientX 相对文档的水平座标event.clientY 相对文档的垂直座标event.offsetX 相对容器的水平坐标event.offsetY 相对容器的垂直坐标document.documentElement.scrollTop 垂直方向滚动的值event.clientX+document.documentElement.scrollTop 相对文档的水平座标+垂直方向滚动的量 JS中建造迁移转变代码的常用属性页可见区域宽： document.body.clientWidth;网页可见区域高： document.body.clientHeight;网页可见区域宽： document.body.offsetWidth （包含边线的宽）;网页可见区域高： document.body.offsetHeight （包含边线的宽）;网页正文全文宽： document.body.scrollWidth;网页正文全文高： document.body.scrollHeight;网页被卷去的高： document.body.scrollTop;网页被卷去的左： document.body.scrollLeft;网页正文项目组上：window.screenTop;网页正文项目组左：window.screenLeft;屏幕辨别率的高： window.screen.height;屏幕辨别率的宽： window.screen.width;屏幕可用工作区高度：window.screen.availHeight; 常见属性的简单介绍offsetLeft假设 obj 为某个 HTML 控件。 obj.offsetTop 指 obj 间隔上方或上层控件的地位，整型，单位像素。obj.offsetLeft 指 obj 间隔左方或上层控件的地位，整型，单位像素。obj.offsetWidth 指 obj 控件自身的宽度，整型，单位像素。obj.offsetHeight 指 obj 控件自身的高度，整型，单位像素。 我们对前面提到的“上方或上层”与“左方或上层”控件作个申明。例如：1234&lt;div id="tool"&gt; &lt;input type="button" value="提交"&gt; &lt;input type="button" value="重置"&gt;&lt;/div&gt; “提交”按钮的 offsetTop 指“提交”按钮距“tool”层上边框的间隔，因为距其上边比来的是 “tool” 层的上边框。 “重置”按钮的 offsetTop 指“重置”按钮距“tool”层上边框的间隔，因为距其上边比来的是 “tool” 层的上边框。 “提交”按钮的 offsetLeft 指“提交”按钮距“tool”层左边框的间隔，因为距其左边比来的是“tool” 层的左边框。 “重置”按钮的 offsetLeft 指“重置”按钮距“提交”按钮右边框的间隔，因为距其左边比来的是“提交”按钮的右边框。以上属性在 FireFox 中也有效。 另 外：我们这里所说的是指 HTML 控件的属性值，并不是 document.body，document.body 的值在不同浏览器中有不同申明（实际上大多半景象是因为对 document.body 申明不合造成的，并不是因为对 offset 申明不合造成的），点击这里查看不合点。 题目：offsetTop 与 style.top 的差别我们知道 offsetTop 可以获得 HTML 元素间隔上方或外层元素的地位，style.top 也是可以的，二者的差别是： 1.offsetTop 返回的是数字，而 style.top 返回的是字符串，除了数字外还带有单位：px。 2.offsetTop 只读，而 style.top 可读写。 3.若是没有给 HTML 元素指定过 top 样式，则 style.top 返回的是空字符串。 offsetLeft 与 style.left、offsetWidth 与 style.width、offsetHeight 与 style.height 也是同样事理。 clientHeightclientHeight是内容可视区域的高度，也就是说页面浏览器中可以看到内容的这个区域的高度，一般是最后一个对象条以下到状况栏以上的这个区域，与页面内容无关。 简单地说 clientHeight 就是透过浏览器看内容的这个区域高度。 scrollLeftscrollTop 是“卷”起来的高度值，示例：12345678910&lt;div style="width:100px;height:100px;background-color:＃FF0000;overflow:hidden;" id="p"&gt;&lt;div style="width:50px;height:300px;background-color:＃0000FF;" id="t"&gt;若是为 p 设置了 scrollTop，这些内容可能不会完全显示。&lt;/div&gt;&lt;/div&gt;&lt;script type="text/javascript"&gt;var p = document.getElementById（"p"）;p.scrollTop = 10;&lt;/script&gt; 因为为外层元素 p 设置了 scrollTop，所以内层元素会向上卷。scrollLeft 也是类似事理。我们已经知道 offsetHeight 是自身元素的宽度。而 scrollHeight 是内部元素的绝对宽度，包含内部元素的隐蔽的项目组。 上述中 p 的 scrollHeight 为 300，而 p 的 offsetHeight 为 100。scrollWidth 也是类似事理。 clientLeft返回对象的 offsetLeft 属性值和到当前窗口左边的真实值之间的间隔，可以懂得为边框的长度。 一向以来对offsetLeft，offsetTop，scrollLeft，scrollTop这几个办法很含混，花了一天的时候好好的进修了一下．得出了以下的成果： offsetTop当前对象到其上级层顶部的间隔,不过不可对其进行赋值,设置对象到页面顶部的间隔请用 style.top 属性. offsetLeft当前对象到其上级层左边的间隔，不过不可对其进行赋值，设置对象到页面左部的间隔请用 style.left 属性 offsetWidth当前对象的宽度，与 style.width 属性的差别在于：如对象的宽度设定值为百分比宽度，则无论页面变大还是变小，style.width都返回此百分比，而offsetWidth则返回在不合页面中对象的宽度值而不是百分比值 offsetHeight与 style.height 属性的差别在于:如对象的宽度设定值为百分比高度，则无论页面变大还是变小，style.height 都返回此百分比，而offsetHeight则返回在不合页面中对象的高度值而不是百分比值 offsetParent当前对象的上级层对象。 重视，若是对象是包含在一个DIV中时，此DIV不会被当做是此对象的上级层，（即对象的上级层会跳过DIV对象）上级层是 Table 时则不会有题目。 哄骗这个属性，可以获得当前对象在不合大小的页面中的绝对地位。获得绝对地位脚本代码:123456789101112function GetPosition（obj）&#123; var left = 0; var top = 0; while（obj != document.body） &#123; left = obj.offsetLeft; top = obj.offsetTop; obj = obj.offsetParent; &#125; alert（"Left Is : " + left + "\r\n" + "Top Is : " + top）;&#125; scrollLeft对象的最左边到对象在当前窗口显示的局限内的左边的间隔． 便是在呈现了横向迁移转变条的景象下，迁移转变条拉动的间隔． scrollTop对象的最顶部到对象在当前窗口显示的局限内的顶边的间隔． 便是在呈现了纵向迁移转变条的景象下，迁移转变条拉动的间隔．]]></content>
@@ -595,8 +617,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>面试指南</tag>
         <tag>JS</tag>
+        <tag>面试指南</tag>
       </tags>
   </entry>
   <entry>
@@ -1328,9 +1350,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[头部设计]]></title>
-    <url>%2F2017%2F05%2F25%2F%E5%A4%B4%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[网站上每个元素都是为了满足了用户、网站或者赞助商不同角度的需求而存在的。按照各部分作用的不同，可将网站划分成以下功能区域，包括头部、页尾、导航区、搜索区、登录注册区、信息展示区、广告区等。 头部 网页头部，也称为 Header，简称头部，指的是网站页面的顶部区域，通常包含网站的 Logo、Slogan、Banner、导航条等元素，有时还提供常用功能的快速入口，如登录、帮助等。头部主要用于网站展示品牌形象，告诉用户目前在浏览哪个网站以及该网站主要提供什么内容。 头部类型实用型头部实用型的网站头部设计简洁、不花哨，能够在合理有限的空间内起到必要的作用，一般其只包含 Logo、导航条和快速入口等重要元素。 大型网站由于页面空间有限，而且品牌的知名度使其不需要使用过多的元素去渲染网站的特色和气氛，因此往往采用这种类型的头部设计。 设计型头部很多网站，尤其是个性化的网站，往往会利用头部的设计体现出网站的特色，常见于博客、小型特色网站以及部分企业网站首页。 设计型头部的优点在于有很大的发挥空间，如果设计效果好，就会造成很强的视觉冲击力，给用户留下很深的印象；其缺点在于往往占用过多空间，削减了网站内容的重要性，造成喧宾夺主的效果，也容易产生头重脚轻的感觉。 头部元素的设计不管是哪种类型的头部，一般包括 Logo、Slogan、导航条等元素。 LogoLogo 的基本作用之一是返回页面首页，使用户在网站迷路时，可以找到回去的路，增加用户在网站上的方向感和安全感。更重要的是 Logo 代表着网站的品牌和形象，尤其对知名的网站来讲，Logo 能够唤起用户对网站的品牌认知度，从而提升用户的信任感。 Logo 本身的设计非常重要，必需清晰易辨识，能体现出网站的定位和特色，具体的设计更多取决于设计者，在这不多加叙述。 对于不同类型的页面或者网站，Logo 的呈现的方式不一样。如独立的 logo，适用于网站首页。logo+文字，适用于网站子类目。logo+logo，适用于合并后的网站。 除此之外，很多网站会在节日期间设计应景的节日 logo 体现气氛，提升用户对网站的体验。 SloganSlogan 虽然只是一句简单的标语，但能够很好地体现出网站的定位和特色，显示企业文化、塑造网站个性，配合 Logo 一起使用能够达到更好的效果。Slogan 一般要求朗朗上口，而且点出网站的最大亮点。好的标语往往能让用户更好地记住网站的特色及其提供的主要服务。如： ·阿里巴巴。“全球领先的网上贸易市场和商人社区”。 ·淘宝。“淘我喜欢！” 除了 Logo 和 Slogan 以上两个主要元素之外，总体上来讲，同一级别或者同一类型页面的头部设计应该尽量保持一致。]]></content>
+    <title><![CDATA[尾部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%B0%BE%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[页尾设计 页尾，也称为 Tailer，指的是页面底部部分，通常放置联系方式和版权信息等补充信息。由于其位置不够显著、重要性较低，因此也往往成为设计师容易忽略的地方。 需要规避的细节问题页尾的信息过多过杂由于页尾不太重要，因此应该尽量简化它，节约页面宝贵的空间。 不同页面的页尾不统一 有时候，由于网站的迅速扩张，页面数量迅速增加，如缺乏统一的规范约束，往往容易导致页尾等元素在同一类型页面中表现得不够统一。 这虽然只是一个很小的细节，却容易让用户对网站的专业度产生怀疑，这是页面设计中需要注意的问题之一。 版权说明格式 一般网站都会在页尾进行版权说明，目前国际上标准的格式是：Copyright[日期（dates）]by[作者/所有者（author/owner）]，其中 Copyright 通常可以用 © 代替，但是不可以用（c）。All Rights Reserved 在某些国家曾经是必需的，但是现在在大多数国家，都不是法律上必须有的字样。 设计新趋势为了更好的利用网站的空间，目前有些网站在页尾除了放置联系方式和版权信息以外，也放置网站的辅助导航，使页尾发挥更大的引导作用。]]></content>
       <categories>
         <category>设计</category>
       </categories>
@@ -1339,9 +1361,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[尾部设计]]></title>
-    <url>%2F2017%2F05%2F25%2F%E5%B0%BE%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[页尾设计 页尾，也称为 Tailer，指的是页面底部部分，通常放置联系方式和版权信息等补充信息。由于其位置不够显著、重要性较低，因此也往往成为设计师容易忽略的地方。 需要规避的细节问题页尾的信息过多过杂由于页尾不太重要，因此应该尽量简化它，节约页面宝贵的空间。 不同页面的页尾不统一 有时候，由于网站的迅速扩张，页面数量迅速增加，如缺乏统一的规范约束，往往容易导致页尾等元素在同一类型页面中表现得不够统一。 这虽然只是一个很小的细节，却容易让用户对网站的专业度产生怀疑，这是页面设计中需要注意的问题之一。 版权说明格式 一般网站都会在页尾进行版权说明，目前国际上标准的格式是：Copyright[日期（dates）]by[作者/所有者（author/owner）]，其中 Copyright 通常可以用 © 代替，但是不可以用（c）。All Rights Reserved 在某些国家曾经是必需的，但是现在在大多数国家，都不是法律上必须有的字样。 设计新趋势为了更好的利用网站的空间，目前有些网站在页尾除了放置联系方式和版权信息以外，也放置网站的辅助导航，使页尾发挥更大的引导作用。]]></content>
+    <title><![CDATA[头部设计]]></title>
+    <url>%2F2017%2F05%2F25%2F%E5%A4%B4%E9%83%A8%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[网站上每个元素都是为了满足了用户、网站或者赞助商不同角度的需求而存在的。按照各部分作用的不同，可将网站划分成以下功能区域，包括头部、页尾、导航区、搜索区、登录注册区、信息展示区、广告区等。 头部 网页头部，也称为 Header，简称头部，指的是网站页面的顶部区域，通常包含网站的 Logo、Slogan、Banner、导航条等元素，有时还提供常用功能的快速入口，如登录、帮助等。头部主要用于网站展示品牌形象，告诉用户目前在浏览哪个网站以及该网站主要提供什么内容。 头部类型实用型头部实用型的网站头部设计简洁、不花哨，能够在合理有限的空间内起到必要的作用，一般其只包含 Logo、导航条和快速入口等重要元素。 大型网站由于页面空间有限，而且品牌的知名度使其不需要使用过多的元素去渲染网站的特色和气氛，因此往往采用这种类型的头部设计。 设计型头部很多网站，尤其是个性化的网站，往往会利用头部的设计体现出网站的特色，常见于博客、小型特色网站以及部分企业网站首页。 设计型头部的优点在于有很大的发挥空间，如果设计效果好，就会造成很强的视觉冲击力，给用户留下很深的印象；其缺点在于往往占用过多空间，削减了网站内容的重要性，造成喧宾夺主的效果，也容易产生头重脚轻的感觉。 头部元素的设计不管是哪种类型的头部，一般包括 Logo、Slogan、导航条等元素。 LogoLogo 的基本作用之一是返回页面首页，使用户在网站迷路时，可以找到回去的路，增加用户在网站上的方向感和安全感。更重要的是 Logo 代表着网站的品牌和形象，尤其对知名的网站来讲，Logo 能够唤起用户对网站的品牌认知度，从而提升用户的信任感。 Logo 本身的设计非常重要，必需清晰易辨识，能体现出网站的定位和特色，具体的设计更多取决于设计者，在这不多加叙述。 对于不同类型的页面或者网站，Logo 的呈现的方式不一样。如独立的 logo，适用于网站首页。logo+文字，适用于网站子类目。logo+logo，适用于合并后的网站。 除此之外，很多网站会在节日期间设计应景的节日 logo 体现气氛，提升用户对网站的体验。 SloganSlogan 虽然只是一句简单的标语，但能够很好地体现出网站的定位和特色，显示企业文化、塑造网站个性，配合 Logo 一起使用能够达到更好的效果。Slogan 一般要求朗朗上口，而且点出网站的最大亮点。好的标语往往能让用户更好地记住网站的特色及其提供的主要服务。如： ·阿里巴巴。“全球领先的网上贸易市场和商人社区”。 ·淘宝。“淘我喜欢！” 除了 Logo 和 Slogan 以上两个主要元素之外，总体上来讲，同一级别或者同一类型页面的头部设计应该尽量保持一致。]]></content>
       <categories>
         <category>设计</category>
       </categories>
@@ -2660,8 +2682,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>面试指南</tag>
         <tag>JS</tag>
+        <tag>面试指南</tag>
       </tags>
   </entry>
   <entry>
@@ -2683,8 +2705,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>Ajax</tag>
         <tag>Demo</tag>
+        <tag>Ajax</tag>
       </tags>
   </entry>
   <entry>
@@ -2706,8 +2728,20 @@
         <category>编程</category>
       </categories>
       <tags>
-        <tag>面试指南</tag>
         <tag>JS</tag>
+        <tag>面试指南</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[六道JS面试题]]></title>
+    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>面试指南</tag>
       </tags>
   </entry>
   <entry>
@@ -2719,18 +2753,6 @@
       </categories>
       <tags>
         <tag>算法</tag>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[六道JS面试题]]></title>
-    <url>%2F2016%2F11%2F13%2F%E5%85%AD%E9%81%93JS%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[1.创建JS对象的两种方法?var o1 = {}; var o2 = new object; 2.如何创建数组?var a1 = []; var a2 = new Array; 3.什么是变量提升?无论在哪一个范围内,哪个位置声明的变量,JS引擎都会将这个声明移 动到作用域范围的顶部. 例子: var a = 0; function foo(){ if(false){ var a = 2; } console.log(a);//undefined } 这段代码等于: var a = 0; function foo(){ var a; if(false){ a = 2; } console.log(a); } 4.全局变量有什么风险,以及如何保护代码不受干扰?风险是:污染命名空间,也就是说其他人或者自己可能创建相同名称的变量,然后覆盖了正在使用的变量. 预防方法: i.使用命名空间 var namespace = {}; namespace.myVariable = &apos;abc&apos;; ii.使用立即执行函数进行封装 (function(){ var a = &apos;abc&apos;; })(); 5.如何通过JS对象中的成员变量迭代for(var property in obj){ if(obj.hasOwnProperty(property)){ //do something here } } 6.什么是闭包?闭包是有权限访问另外一个函数作用域变量的函数.闭包可以保持值的状态,比如说一些迭代值的当前值. function foo(){ var result = [],i; for(i = 0; i &lt; 3; i++){ result[i] = function(){ return i; } } return result; } var result = foo(); result[0]();//3 result[1]();//3 result[2]();//3]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>面试指南</tag>
         <tag>JS</tag>
       </tags>
   </entry>
@@ -2839,8 +2861,8 @@
         <category>商业</category>
       </categories>
       <tags>
-        <tag>商业</tag>
         <tag>商业技巧</tag>
+        <tag>商业</tag>
       </tags>
   </entry>
   <entry>

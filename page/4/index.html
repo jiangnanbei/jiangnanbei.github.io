@@ -317,6 +317,301 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/05/Modernizr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/Modernizr/" itemprop="url">Modernizr</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T17:50:47+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Modernizr 是一个开源的 JS 库，利用它的福特性检测功能，可以对 H5 文档进行更好的控制。</p>
+<p>Modernizr 不会给你添加浏览器不支持的特性，比如，在 IE6 中就没有办法是用本地存储。Modernizr 能做的是为你提供一些不同的 CSS 类名以及特性检测属性。</p>
+<p>根据浏览器支持的特性不同，这个时候就会生成不同的类名，可以在 CSS 中定义相应的增强和退化版本，改善用户体验：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//为支持多背景浏览器编写的样式</span></div><div class="line">.multiplebgs article p &#123;&#125;</div><div class="line"></div><div class="line">.no-multiplebgs article p &#123;&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>类似的，Modernizr 也提供了 JS 特性检测对象，可以在 DOM 脚本中直接使用：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if (!Modernizr.inputtypes.date) &#123;</div><div class="line">    //不支持本地数据，使用自定义的数据选择脚本</div><div class="line">    createDatepicker(document.getElementById(''birthday'));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p>Modernizr 还可以帮一些老旧的浏览器处理 <code>&lt;section&gt;</code> <code>&lt;article&gt;</code> 这样的新元素。为使用这些新元素，你要做的就是为他们指定一些基本的样式，以便浏览器可以把它们当做块元素来呈现。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">article,aside,footer,header,hgroup,nav,section &#123;<span class="attr">display</span>:block;&#125;</div></pre></td></tr></table></figure></p>
+<p>唯一的特例就是 IE，要在 IE 中添加未知元素，必须使用 JS 代码来创建元素：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.createElement(<span class="string">'article'</span>);</div></pre></td></tr></table></figure></p>
+<p>Modernizr 可以帮我们来做这件事，但是，这并不意味着你就可以放心的使用 <code>&lt;video&gt;</code> 元素来放心的嵌入视频了。Modernizr 不会为我们添加底层的 JS 及 DOM API，或者与这些元素相关的其他特性。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/05/CSS-DOM-技术/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江南北">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江南北的个人站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/CSS-DOM-技术/" itemprop="url">CSS DOM 技术</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T16:42:03+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="style-属性"><a href="#style-属性" class="headerlink" title="style 属性"></a>style 属性</h3><p>在外部样式表里声明的样式不会进入 <code>style</code> 对象，在文档的 <code>&lt;head&gt;</code> 部分里声明的样式也是如此。</p>
+<p>DOM style 属性提取不到如此设置的样式。</p>
+<p><code>style</code> 指向只包含在 HTML 代码里用 <code>style</code> 属性声明的样式。但这几乎没有使用价值，因为样式应该与标记分离开来。</p>
+<p>现在，你或许认为用DOM 去处理 CSS 样式毫无意义，但这里还有另外一种情况可以让 DOM style 对象能够正确地反射出我们设置的样式。<strong>你用 DOM 设置的样式，就可以用 DOM 再把他们检索出来。</strong></p>
+<h3 id="使用-DOM-设置样式"><a href="#使用-DOM-设置样式" class="headerlink" title="使用 DOM 设置样式"></a>使用 DOM 设置样式</h3><p>通过 JS 设置样式并不难，不过，你或许应该先问问自己，为什么要这么做？</p>
+<h4 id="何时该用-DOM-设置样式？"><a href="#何时该用-DOM-设置样式？" class="headerlink" title="何时该用 DOM 设置样式？"></a>何时该用 DOM 设置样式？</h4><p>在使用 CSS 不便的场合，还是可以利用 DOM 对文档的样式做一些小小的增强。</p>
+<h4 id="根据元素在节点树里的位置来设置样式"><a href="#根据元素在节点树里的位置来设置样式" class="headerlink" title="根据元素在节点树里的位置来设置样式"></a>根据元素在节点树里的位置来设置样式</h4><p>比如说我们可以给每个 <code>h1</code> 元素后紧跟的一个元素设置样式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hold the front page<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This first paragraph leads you in.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Now you get the nitty-gritty of the story.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>The most important information is delivered first.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Extra! Extra!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Further developments are unfolding.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>You can read all about it here.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/05/CSS-DOM-技术/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+   </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/05/我们为什么要读传记？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1758,295 +2053,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/01/DOM编程艺术：文件来源链接列表/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/01/DOM编程艺术：文件来源链接列表/" itemprop="url">DOM编程艺术：文件来源链接列表</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T09:28:48+08:00">
-                2017-07-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">font-family</span>: <span class="string">"Helvetica"</span>,<span class="string">"Arial"</span>,sans-serif; <span class="attribute">font-size</span>: <span class="number">10pt</span>; &#125;</div><div class="line"><span class="selector-tag">abbr</span> &#123;<span class="attribute">text-decoration</span>: none; <span class="attribute">border</span>: <span class="number">0</span>; <span class="attribute">font-style</span>: normal; &#125;</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>What is the Document Object Model?<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">The <span class="tag">&lt;<span class="name">abbr</span> <span class="attr">title</span>=<span class="string">"World Wide Web Consortium"</span>&gt;</span>W3C<span class="tag">&lt;/<span class="name">abbr</span>&gt;</span> defines</div><div class="line">the <span class="tag">&lt;<span class="name">abbr</span> <span class="attr">title</span>=<span class="string">"Document Object Model"</span>&gt;</span>DOM<span class="tag">&lt;/<span class="name">abbr</span>&gt;</span> as:</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">cite</span>=<span class="string">"http://www.w3.org/DOM/"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">A platform- and language-neutral interface that will allow programs</div><div class="line">and scripts to dynamically access and update the</div><div class="line">content, structure and style of documents.</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">It is an <span class="tag">&lt;<span class="name">abbr</span> <span class="attr">title</span>=<span class="string">"Application Programming Interface"</span>&gt;</span>API<span class="tag">&lt;/<span class="name">abbr</span>&gt;</span></div><div class="line">that can be used to navigate <span class="tag">&lt;<span class="name">abbr</span> <span class="attr">title</span>=<span class="string">"HyperText Markup Language"</span>&gt;</span></div><div class="line">HTML<span class="tag">&lt;/<span class="name">abbr</span>&gt;</span> and <span class="tag">&lt;<span class="name">abbr</span> <span class="attr">title</span>=<span class="string">"eXtensible Markup Language"</span>&gt;</span>XML</div><div class="line"><span class="tag">&lt;/<span class="name">abbr</span>&gt;</span> documents. </div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/01/DOM编程艺术：文件来源链接列表/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ijiangnanbei.com/2017/07/01/DOM编程艺术：缩略语列表/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="江南北">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="江南北的个人站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/01/DOM编程艺术：缩略语列表/" itemprop="url">DOM编程艺术：缩略语列表</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-01T08:54:42+08:00">
-                2017-07-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">font-family</span>: <span class="string">"Helvetica"</span>,<span class="string">"Arial"</span>,sans-serif;<span class="attribute">font-size</span>: <span class="number">10pt</span>;&#125;</div><div class="line"><span class="selector-tag">abbr</span> &#123;<span class="attribute">text-decoration</span>: none;<span class="attribute">border</span>: <span class="number">0</span>;<span class="attribute">font-style</span>: normal;&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>want is the document object model<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">	the <span class="tag">&lt;<span class="name">abbr</span> <span class="attr">title</span>=<span class="string">"world wide web consortium"</span>&gt;</span>W3C<span class="tag">&lt;/<span class="name">abbr</span>&gt;</span> defines the <span class="tag">&lt;<span class="name">abbr</span> <span class="attr">title</span>=<span class="string">"document object model"</span>&gt;</span>DOM<span class="tag">&lt;/<span class="name">abbr</span>&gt;</span> as:</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">cite</span>=<span class="string">"http://www.w3.org/DOM/"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">		A platform and language-neutral interface that will allow programs and scripts to dynamically access and update</div><div class="line">		the content, structure and style of documents.</div><div class="line">	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">	It is an <span class="tag">&lt;<span class="name">abbr</span> <span class="attr">title</span>=<span class="string">"application programming interface"</span>&gt;</span>API<span class="tag">&lt;/<span class="name">abbr</span>&gt;</span> that can be used to navigate <span class="tag">&lt;<span class="name">abbr</span> <span class="attr">title</span>=<span class="string">"hypertext markup language"</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">abbr</span>&gt;</span> and <span class="tag">&lt;<span class="name">abbr</span> <span class="attr">title</span>=<span class="string">"extensible markup language"</span>&gt;</span>XML<span class="tag">&lt;/<span class="name">abbr</span>&gt;</span> documents.</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
-<!--mpre-->
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = displayAbbreviations;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">displayAbbreviations</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// checks for compatibility</span></div><div class="line">    <span class="keyword">if</span> (!<span class="built_in">document</span>.getElementsByTagName || !<span class="built_in">document</span>.createElement || !<span class="built_in">document</span>.createTextNode) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="comment">// get all the abbreviations</span></div><div class="line">    <span class="keyword">var</span> abbreviations = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"abbr"</span>);</div><div class="line">    <span class="keyword">if</span> (abbreviations.length &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">var</span> defs = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    <span class="comment">// loop through the abbreviations</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;abbreviations.length; i++) &#123;</div><div class="line">        <span class="keyword">var</span> current_abbr = abbreviations[i];</div><div class="line">        <span class="keyword">if</span> (current_abbr.childNodes.length &lt; <span class="number">1</span>) <span class="keyword">continue</span>;</div><div class="line">        <span class="keyword">var</span> definition = current_abbr.getAttribute(<span class="string">"title"</span>);</div><div class="line">        <span class="keyword">var</span> key = current_abbr.lastChild.nodeValue;</div><div class="line">        defs[key] = definition;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// create the definition list</span></div><div class="line">    <span class="keyword">var</span> dlist = <span class="built_in">document</span>.createElement(<span class="string">"dl"</span>);</div><div class="line">    <span class="comment">// loop through the definitions</span></div><div class="line">    <span class="keyword">for</span> (key <span class="keyword">in</span> defs) &#123;</div><div class="line">        <span class="keyword">var</span> definition = defs[key];</div><div class="line">        <span class="comment">// create the definition title</span></div><div class="line">        <span class="keyword">var</span> dtitle = <span class="built_in">document</span>.createElement(<span class="string">"dt"</span>);</div><div class="line">        <span class="keyword">var</span> dtitle_text = <span class="built_in">document</span>.createTextNode(key);</div><div class="line">        dtitle.appendChild(dtitle_text);</div><div class="line">        <span class="comment">// create the definition description</span></div><div class="line">        <span class="keyword">var</span> ddesc = <span class="built_in">document</span>.createElement(<span class="string">"dd"</span>);</div><div class="line">        <span class="keyword">var</span> ddesc_text = <span class="built_in">document</span>.createTextNode(definition);</div><div class="line">        ddesc.appendChild(ddesc_text);</div><div class="line">        <span class="comment">// add them to the definition list</span></div><div class="line">        dlist.appendChild(dtitle);</div><div class="line">        dlist.appendChild(ddesc);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (dlist.childNodes.length &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="comment">// create a headline</span></div><div class="line">    <span class="keyword">var</span> header = <span class="built_in">document</span>.createElement(<span class="string">"h2"</span>);</div><div class="line">    <span class="keyword">var</span> header_text = <span class="built_in">document</span>.createTextNode(<span class="string">"Abbreviations"</span>);</div><div class="line">    header.appendChild(header_text);</div><div class="line">    <span class="comment">// add the headline to the body</span></div><div class="line">    <span class="built_in">document</span>.body.appendChild(header);</div><div class="line">    <span class="comment">// add the definition list to the body</span></div><div class="line">    <span class="built_in">document</span>.body.appendChild(dlist);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="一个浏览器地雷"><a href="#一个浏览器地雷" class="headerlink" title="一个浏览器地雷"></a>一个浏览器地雷</h3><p>微软的 IE 浏览器知道 IE7 才开始支持 <code>abbr</code> 元素。所以，如果需要保证 <code>displayAbbreviations</code> 函数在 IE 中能够平稳退化，我们可以采用这种方法：首先在 JS 代码的 12 行加一条 <code>if</code> 语句，“如果当面元素没有子节点，就立刻开始下一次循环”。因为 IE 浏览器在统计 <code>abbr</code> 元素子节点的个数时总会返回一个错误的值 0,，所以这条新语句会让 IE 浏览器不再继续执行这个循环中的后续代码。</p>
-<p>当 IE 浏览器执行到 <code>displayAbbreviations</code> 函数中负责创建“缩略语列表”的那个 <code>for</code> 循环时，因为 <code>defs</code> 数组是空的，所以他将不会创建出任何 <code>dl</code> 和 <code>dd</code> 元素。我们在那个 <code>for</code> 循环的后面添加了这样一条语句：如果 <code>dl</code> 元素没有任何子节点，则立刻退出函数。即 JS 代码的 34 行。</p>
-<p>这两条新语句确保文档就算遇到那些不理解 abbr 元素的浏览器也不会出问题。</p>
-<p><strong>缩略语列别猜是一种很好的增强补充，但它还算不上是页面必不可少的部分。如果它真的必不可少，从一开始就应该把它包含在标记里。</strong></p>
-<p>效果展示：<a href="">缩略语列表</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-   </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2096,7 +2102,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">303</span>
+                <span class="site-state-item-count">305</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
