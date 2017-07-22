@@ -103,7 +103,7 @@
 <meta property="og:description" content="图片懒加载在实际的项目开发中，我们通常会遇见这样的场景：一个页面有很多图片，而首屏出现的图片大概就一两张，那么我们还要一次性把所有图片都加载出来吗？显然这是愚蠢的，不仅影响页面渲染速度，还浪费带宽。这也就是们通常所说的首屏加载，技术上现实其中要用的技术就是图片懒加载–到可视区域再加载。
 
 思路：将页面里所有 img 属性 src 属性用 data-xx 代替，当页面滚动直至此图片出现在可视区域时，">
-<meta property="og:updated_time" content="2017-07-14T06:15:22.747Z">
+<meta property="og:updated_time" content="2017-07-19T05:16:28.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试指南JS代码篇">
 <meta name="twitter:description" content="图片懒加载在实际的项目开发中，我们通常会遇见这样的场景：一个页面有很多图片，而首屏出现的图片大概就一两张，那么我们还要一次性把所有图片都加载出来吗？显然这是愚蠢的，不仅影响页面渲染速度，还浪费带宽。这也就是们通常所说的首屏加载，技术上现实其中要用的技术就是图片懒加载–到可视区域再加载。
@@ -413,6 +413,10 @@
 <p>思路：将页面里所有 <code>img</code> 属性 <code>src</code> 属性用 <code>data-xx</code> 代替，当页面滚动直至此图片出现在可视区域时，用 <code>js</code> 取到该图片的 <code>data-xx</code> 的值赋给src。</p>
 </blockquote>
 <h4 id="原生JS实现"><a href="#原生JS实现" class="headerlink" title="原生JS实现"></a>原生JS实现</h4><p><a href="https://github.com/jiangnanbei/web/blob/master/%E5%8D%9A%E5%AE%A2/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97JS%E4%BB%A3%E7%A0%81%E7%AF%87/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.html">源代码</a> &amp;&amp; <a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web/blob/master/%E5%8D%9A%E5%AE%A2/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97JS%E4%BB%A3%E7%A0%81%E7%AF%87/JS%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD.html">效果展示</a></p>
+<h3 id="JS实现滚动条"><a href="#JS实现滚动条" class="headerlink" title="JS实现滚动条"></a>JS实现滚动条</h3><p>首先我们要知道的是，目前没有任何浏览器可以直接获取正在加载对象的大小。所以我们无法通过数据大小来实现 <code>0-100%</code> 的加载显示过程。因此我们需要通过 <code>html</code> 代码逐行加载的特性，在整页代码的若干个跳跃行数中设置节点，进行大概的模糊进度反馈来实现进度加载的效果。</p>
+<p>大致意思是：页面每加载到指定区域，则返回<code>(n)%</code>的进度结果，通过设置多个节点，来达到一步一步显示加载进度的目的。</p>
+<p>假如有一个页面，按区块分为页头、左侧内容、右边侧栏、页脚四部分，我们把这四部分作为四个节点，当页面加载每一个节点后，设置大概加载百分比，接下来，我们要在每个节点后面加上进度动画。</p>
+<p><a href="https://github.com/jiangnanbei/web/blob/master/%E5%8D%9A%E5%AE%A2/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97JS%E4%BB%A3%E7%A0%81%E7%AF%87/jQuery%E5%AE%9E%E7%8E%B0%E5%8A%A0%E8%BD%BD%E6%9D%A1.html">源代码</a> &amp;&amp; <a href="http://htmlpreview.github.io/?https://github.com/jiangnanbei/web/blob/master/%E5%8D%9A%E5%AE%A2/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97JS%E4%BB%A3%E7%A0%81%E7%AF%87/jQuery%E5%AE%9E%E7%8E%B0%E5%8A%A0%E8%BD%BD%E6%9D%A1.html">效果展示</a></p>
 
       
     </div>
@@ -550,7 +554,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">305</span>
+                <span class="site-state-item-count">309</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -607,7 +611,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图片懒加载"><span class="nav-number">1.</span> <span class="nav-text">图片懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原生JS实现"><span class="nav-number">1.1.</span> <span class="nav-text">原生JS实现</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图片懒加载"><span class="nav-number">1.</span> <span class="nav-text">图片懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原生JS实现"><span class="nav-number">1.1.</span> <span class="nav-text">原生JS实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS实现滚动条"><span class="nav-number">2.</span> <span class="nav-text">JS实现滚动条</span></a></li></ol></div>
             
 
           </div>

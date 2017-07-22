@@ -94,21 +94,18 @@
 
 
 <meta name="description" content="什么是浮动？使元素脱离文档流，按照指定方向发生移动，遇到父级边界或者相邻的元素停下来。（脱离文档流：此时浮动元素在文档中不占位置，飘了起来）
-浮动的特征1.块元素在一行显示2.内联元素支持宽高3.默认内容撑开宽度4.脱离文档流5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来）
-清除浮动的方法after 伪类清浮动（主流方法）给浮动元素的父级添加12.clear&amp;#123;*zoom:">
+浮动的特征1.块元素在一行显示2.内联元素支持宽高3.默认内容撑开宽度4.脱离文档流5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来）6.父元素的高度无法被撑开，影响与父元素同级的元素7.与浮动元素同级的非浮动元素（内联元素）会跟随其后8.若非">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS 清浮动详解">
 <meta property="og:url" content="http://ijiangnanbei.com/2017/06/26/CSS-清浮动详解/index.html">
 <meta property="og:site_name" content="江南北的个人站">
 <meta property="og:description" content="什么是浮动？使元素脱离文档流，按照指定方向发生移动，遇到父级边界或者相邻的元素停下来。（脱离文档流：此时浮动元素在文档中不占位置，飘了起来）
-浮动的特征1.块元素在一行显示2.内联元素支持宽高3.默认内容撑开宽度4.脱离文档流5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来）
-清除浮动的方法after 伪类清浮动（主流方法）给浮动元素的父级添加12.clear&amp;#123;*zoom:">
-<meta property="og:updated_time" content="2017-06-26T08:14:15.283Z">
+浮动的特征1.块元素在一行显示2.内联元素支持宽高3.默认内容撑开宽度4.脱离文档流5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来）6.父元素的高度无法被撑开，影响与父元素同级的元素7.与浮动元素同级的非浮动元素（内联元素）会跟随其后8.若非">
+<meta property="og:updated_time" content="2017-07-21T05:06:43.799Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 清浮动详解">
 <meta name="twitter:description" content="什么是浮动？使元素脱离文档流，按照指定方向发生移动，遇到父级边界或者相邻的元素停下来。（脱离文档流：此时浮动元素在文档中不占位置，飘了起来）
-浮动的特征1.块元素在一行显示2.内联元素支持宽高3.默认内容撑开宽度4.脱离文档流5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来）
-清除浮动的方法after 伪类清浮动（主流方法）给浮动元素的父级添加12.clear&amp;#123;*zoom:">
+浮动的特征1.块元素在一行显示2.内联元素支持宽高3.默认内容撑开宽度4.脱离文档流5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来）6.父元素的高度无法被撑开，影响与父元素同级的元素7.与浮动元素同级的非浮动元素（内联元素）会跟随其后8.若非">
 
 
 
@@ -409,7 +406,7 @@
 
       
         <h3 id="什么是浮动？"><a href="#什么是浮动？" class="headerlink" title="什么是浮动？"></a>什么是浮动？</h3><p>使元素脱离文档流，按照指定方向发生移动，遇到父级边界或者相邻的元素停下来。（脱离文档流：此时浮动元素在文档中不占位置，飘了起来）</p>
-<h3 id="浮动的特征"><a href="#浮动的特征" class="headerlink" title="浮动的特征"></a>浮动的特征</h3><p>1.块元素在一行显示<br>2.内联元素支持宽高<br>3.默认内容撑开宽度<br>4.脱离文档流<br>5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来）</p>
+<h3 id="浮动的特征"><a href="#浮动的特征" class="headerlink" title="浮动的特征"></a>浮动的特征</h3><p>1.块元素在一行显示<br>2.内联元素支持宽高<br>3.默认内容撑开宽度<br>4.脱离文档流<br>5.提升层级半层（只能够放元素本身，这个元素里的内容会被挤出来）<br>6.父元素的高度无法被撑开，影响与父元素同级的元素<br>7.与浮动元素同级的非浮动元素（内联元素）会跟随其后<br>8.若非第一个元素浮动，则该元素之前的元素也需要浮动，否则会影响页面显示的结构</p>
 <h3 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h3><h4 id="after-伪类清浮动（主流方法）给浮动元素的父级添加"><a href="#after-伪类清浮动（主流方法）给浮动元素的父级添加" class="headerlink" title="after 伪类清浮动（主流方法）给浮动元素的父级添加"></a>after 伪类清浮动（主流方法）给浮动元素的父级添加</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.clear&#123;*zoom:1&#125;</div><div class="line">.clear:after&#123;content:'';display:block;clear:both;&#125;</div></pre></td></tr></table></figure>
 <h4 id="overflow-hidden-auto-清除浮动-给父级元素添加"><a href="#overflow-hidden-auto-清除浮动-给父级元素添加" class="headerlink" title="overflow:hidden/auto 清除浮动 给父级元素添加"></a>overflow:hidden/auto 清除浮动 给父级元素添加</h4><p>问题：需要配合宽度或者 zoom:1 兼容 IE6</p>
 <h4 id="给父级元素加高"><a href="#给父级元素加高" class="headerlink" title="给父级元素加高"></a>给父级元素加高</h4><p>问题：扩展性不好<br><a id="more"></a></p>
@@ -556,7 +553,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">305</span>
+                <span class="site-state-item-count">309</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

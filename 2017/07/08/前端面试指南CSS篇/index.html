@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="江南北的个人站">
 <meta property="og:description" content="CSS3的新特性有哪些？
 新增各种CSS选择器    （: not(.input)：所有 class 不是“input”的节点）圆角            （border-radius:8px）多列布局        （multi-column layout）阴影和反射    （Shadow\Reflect）文字特效        （text-shadow、）文字渲染        （Text-d">
-<meta property="og:updated_time" content="2017-07-14T05:14:05.978Z">
+<meta property="og:updated_time" content="2017-07-21T05:04:37.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试指南CSS篇">
 <meta name="twitter:description" content="CSS3的新特性有哪些？
@@ -408,6 +408,33 @@
         <h3 id="CSS3的新特性有哪些？"><a href="#CSS3的新特性有哪些？" class="headerlink" title="CSS3的新特性有哪些？"></a>CSS3的新特性有哪些？</h3><blockquote>
 <p>新增各种CSS选择器    （<code>: not(.input)</code>：所有 <code>class</code> 不是<code>“input”</code>的节点）<br>圆角            <code>（border-radius:8px）</code><br>多列布局        <code>（multi-column layout）</code><br>阴影和反射    <code>（Shadow\Reflect）</code><br>文字特效        <code>（text-shadow、）</code><br>文字渲染        <code>（Text-decoration）</code><br>线性渐变        <code>（gradient）</code><br>旋转             <code>（transform）</code><br>缩放,定位,倾斜,动画,多背景<br>例如:<code>transform:\scale(0.85,0.90)\ translate(0px,-30px)\ skew(-9deg,0deg)\Animation:</code></p>
 </blockquote>
+<h3 id="position的值，-relative和absolute分别是相对于谁进行定位的？"><a href="#position的值，-relative和absolute分别是相对于谁进行定位的？" class="headerlink" title="position的值， relative和absolute分别是相对于谁进行定位的？"></a>position的值， relative和absolute分别是相对于谁进行定位的？</h3><p>1.<code>absolute</code> :生成绝对定位的元素，相对于最近一级的定位不是 <code>static</code> 的父元素来进行定位。</p>
+<p>2.<code>fixed</code> （老IE不支持）生成绝对定位的元素，通常相对于浏览器窗口或 <code>frame</code> 进行定位。</p>
+<p>3.<code>relative</code> 生成相对定位的元素，相对于其在普通流中的位置进行定位。</p>
+<p>4.<code>static</code> 默认值。没有定位，元素出现在正常的流中</p>
+<p>5.<code>sticky</code> 生成粘性定位的元素，容器的位置根据正常文档流计算得出</p>
+<h3 id="谈谈浮动和清除浮动"><a href="#谈谈浮动和清除浮动" class="headerlink" title="谈谈浮动和清除浮动"></a>谈谈浮动和清除浮动</h3><p>浮动的框可以向左或向右移动，直到他的外边缘碰到包含框或另一个浮动框的边框为止。</p>
+<p>由于浮动框不在文档的普通流中，所以文档的普通流的块框表现得就像浮动框不存在一样。浮动的块框会漂浮在文档普通流的块框上。</p>
+<h3 id="CSS中-link-和-import-的区别是？"><a href="#CSS中-link-和-import-的区别是？" class="headerlink" title="CSS中 link 和 @import 的区别是？"></a>CSS中 <code>link</code> 和 <code>@import</code> 的区别是？</h3><p>1.<code>link</code> 属于 HTML 标签，而 <code>@import</code> 是 CSS 提供的;</p>
+<p>2.页面被加载的时，<code>link</code> 会同时被加载，而 <code>@import</code> 被引用的 CSS 会等到引用它的 CSS 文件被加载完再加载;</p>
+<p>3.<code>link</code> 方式的样式的权重 高于 <code>@import</code> 的权重.</p>
+<h3 id="position-absolute-和-float-属性的异同"><a href="#position-absolute-和-float-属性的异同" class="headerlink" title="position:absolute 和 float 属性的异同"></a><code>position:absolute</code> 和 <code>float</code> 属性的异同</h3><p>共同点：对内联元素设置 <code>float</code> 和 <code>absolute</code> 属性，可以让元素脱离文档流，并且可以设置其宽高。</p>
+<p>不同点：<code>float</code> 仍会占据位置，<code>absolute</code> 会覆盖文档流中的其他元素。</p>
+<h3 id="介绍一下-box-sizing-属性？"><a href="#介绍一下-box-sizing-属性？" class="headerlink" title="介绍一下 box-sizing 属性？"></a>介绍一下 <code>box-sizing</code> 属性？</h3><p><code>box-sizing</code> 属性主要用来控制元素的盒模型的解析模式。默认值是<code>content-box</code>。</p>
+<p><code>content-box</code>：让元素维持 W3C 的标准盒模型。元素的宽度/高度由 <code>border + padding + content</code> 的宽度/高度决定，设置 <code>width/height</code> 属性指的是 <code>content</code> 部分的宽/高</p>
+<p><code>border-box</code>：让元素维持 IE 传统盒模型（IE6以下版本和IE6~7的怪异模式）。设置 <code>width/height</code> 属性指的是 <code>border + padding + content</code></p>
+<p>标准浏览器下，按照 W3C 规范对盒模型解析，一旦修改了元素的边框或内距，就会影响元素的盒子尺寸，就不得不重新计算元素的盒子尺寸，从而影响整个页面的布局。</p>
+<blockquote>
+<p>content-box（默认）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">布局所占宽度Width：</div><div class="line">Width = width + padding-left + padding-right + border-left + border-right</div><div class="line"></div><div class="line">布局所占高度Height:</div><div class="line">Height = height + padding-top + padding-bottom + border-top + border-bottom</div></pre></td></tr></table></figure></p>
+<p>padding-box<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">布局所占宽度Width：</div><div class="line">Width = width(包含padding-left + padding-right) + border-left + border-right</div><div class="line"></div><div class="line">布局所占高度Height:</div><div class="line">Height = height(包含padding-top + padding-bottom) + border-top + border-bottom</div></pre></td></tr></table></figure></p>
+<p>border-box<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">布局所占宽度Width：</div><div class="line">Width = width(包含padding-left + padding-right + border-left + border-right)</div><div class="line"></div><div class="line">布局所占高度Height:</div><div class="line">Height = height(包含padding-top + padding-bottom + border-top + border-bottom)</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="CSS-选择符有哪些？哪些属性可以继承？"><a href="#CSS-选择符有哪些？哪些属性可以继承？" class="headerlink" title="CSS 选择符有哪些？哪些属性可以继承？"></a>CSS 选择符有哪些？哪些属性可以继承？</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1.id选择器（ # myid）</div><div class="line"></div><div class="line">2.类选择器（.myclassname）</div><div class="line"></div><div class="line">3.标签选择器（div, h1, p）</div><div class="line"></div><div class="line">4.相邻选择器（h1 + p）</div><div class="line"></div><div class="line">5.子选择器（ul &gt; li）</div><div class="line"></div><div class="line">6.后代选择器（li a）</div><div class="line"></div><div class="line">7.通配符选择器（ * ）</div><div class="line"></div><div class="line">8.属性选择器（a[rel = "external"]）</div><div class="line"></div><div class="line">9.伪类选择器（a: hover, li:nth-child）</div></pre></td></tr></table></figure>
+<h3 id="优先级算法如何计算？"><a href="#优先级算法如何计算？" class="headerlink" title="优先级算法如何计算？"></a>优先级算法如何计算？</h3><p><code>!important &gt; id &gt; class &gt; tag</code></p>
+<p><code>important</code> 比内联优先级高,但内联比 <code>id</code> 要高</p>
+<h3 id="CSS3新增伪类有那些？"><a href="#CSS3新增伪类有那些？" class="headerlink" title="CSS3新增伪类有那些？"></a>CSS3新增伪类有那些？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">p:first-<span class="keyword">of</span>-type 选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</div><div class="line"></div><div class="line">p:last-<span class="keyword">of</span>-type  选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</div><div class="line"></div><div class="line">p:only-<span class="keyword">of</span>-type  选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</div><div class="line"></div><div class="line">p:only-child    选择属于其父元素的唯一子元素的每个 &lt;p&gt; 元素。</div><div class="line"></div><div class="line">p:nth-child(<span class="number">2</span>)  选择属于其父元素的第二个子元素的每个 &lt;p&gt; 元素。</div><div class="line"></div><div class="line">:enabled  :disabled 控制表单控件的禁用状态。</div><div class="line"></div><div class="line">:checked        单选框或复选框被选中。</div></pre></td></tr></table></figure>
+<h3 id="对-BFC-规范的理解？"><a href="#对-BFC-规范的理解？" class="headerlink" title="对 BFC 规范的理解？"></a>对 BFC 规范的理解？</h3><p> BFC，块级格式化上下文，一个创建了新的 BFC 的盒子是独立布局的，盒子里面的子元素的样式不会影响到外面的元素。在同一个 BFC 中的两个毗邻的块级盒在垂直方向（和布局方向有关系）的 margin 会发生折叠。</p>
+<p><code>W3C CSS 2.1</code> 规范中的一个概念，它决定了元素如何对其内容进行布局，以及与其他元素的关系和相互作用。</p>
 
       
     </div>
@@ -545,7 +572,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">305</span>
+                <span class="site-state-item-count">309</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -602,7 +629,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3的新特性有哪些？"><span class="nav-number">1.</span> <span class="nav-text">CSS3的新特性有哪些？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3的新特性有哪些？"><span class="nav-number">1.</span> <span class="nav-text">CSS3的新特性有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position的值，-relative和absolute分别是相对于谁进行定位的？"><span class="nav-number">2.</span> <span class="nav-text">position的值， relative和absolute分别是相对于谁进行定位的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谈谈浮动和清除浮动"><span class="nav-number">3.</span> <span class="nav-text">谈谈浮动和清除浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS中-link-和-import-的区别是？"><span class="nav-number">4.</span> <span class="nav-text">CSS中 link 和 @import 的区别是？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position-absolute-和-float-属性的异同"><span class="nav-number">5.</span> <span class="nav-text">position:absolute 和 float 属性的异同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍一下-box-sizing-属性？"><span class="nav-number">6.</span> <span class="nav-text">介绍一下 box-sizing 属性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-选择符有哪些？哪些属性可以继承？"><span class="nav-number">7.</span> <span class="nav-text">CSS 选择符有哪些？哪些属性可以继承？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级算法如何计算？"><span class="nav-number">8.</span> <span class="nav-text">优先级算法如何计算？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3新增伪类有那些？"><span class="nav-number">9.</span> <span class="nav-text">CSS3新增伪类有那些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对-BFC-规范的理解？"><span class="nav-number">10.</span> <span class="nav-text">对 BFC 规范的理解？</span></a></li></ol></div>
             
 
           </div>
